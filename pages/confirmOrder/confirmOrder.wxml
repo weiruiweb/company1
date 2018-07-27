@@ -1,0 +1,66 @@
+<!--manageAddress.wxml-->
+<view id="confirmOrder">
+<view class="confirm_address">
+	<view class="order_user flexRowBetween" bindtap="manageAddress">
+		<view class="user_name">
+			<text class="text1">收货人:</text>
+			<text class="text1">米桃子</text>
+		</view>
+		<view class="user_phone">
+			18888888888
+		</view>
+	</view>
+	<view class="user_address flexRowBetween">
+		<image class="address_icon" src="/images/user_icon4.jpg"></image>
+		<view class="detail_address">收货地址：陕西省西安市高新大都荟</view>
+		<image class="next_page" src="/images/next_page.jpg"></image>
+	</view>
+</view>
+<view class="order_list">
+	<view class="order_confirm">
+		<view class="flexRowBetween orderlistShow">
+			<view><image src="/images/order.jpg"></image></view>
+			<view class="order_name" style="display: flex; flex-direction: column;">
+				<view class="text1">高端网站建设(含小程序）</view>
+				<view class="order_type">个性化定制</view>
+				<view class="orders flexRowBetween">
+					<text class="order_price">¥4999</text>
+					<text class="order_number">X1</text>
+				</view>
+			</view>
+		</view>
+		<view class="flexRowBetween orderlistShow">
+			<view><image src="/images/order.jpg"></image></view>
+			<view class="order_name" style="display: flex; flex-direction: column;">
+				<view class="text1">高端网站建设(含小程序）</view>
+				<view class="order_type">个性化定制</view>
+				<view class="orders flexRowBetween">
+					<text class="order_price">¥4999</text>
+					<text class="order_number">X1</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="user_message">
+	<view class="flexRowBetween">
+		<text class="text1">买家留言</text>
+		<textarea placeholder="选填:填写内容已和卖家协商确认" auto-height="true">
+		</textarea>
+	</view>
+</view>
+</view>
+<view class="pay_footer">
+	<view class="pay_order flexRowBetween">
+		<view class="total_money ">
+			<view>
+				<text>合计 :</text>
+					  <text class="text2"> ¥4999</text>
+			</view>
+			<view class="price_note">（实际价格，请与客服沟通）</view>
+		</view>
+		<view class="submit_order">
+			提交订单
+		</view>
+	</view>
+</view>

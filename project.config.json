@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.0",
-	"appid": "wx212611f012b9cf1d",
-	"projectname": "company",
+	"appid": "touristappid",
+	"projectname": "%E5%B0%8F%E7%A8%8B%E5%BA%8F",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -24,13 +24,48 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 3,
+			"list": [
+				{
+					"id": 0,
+					"name": "shopping",
+					"pathName": "pages/Shopping/shopping",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "order",
+					"pathName": "pages/order/order",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "user",
+					"pathName": "pages/User/user",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "1",
+					"pathName": "pages/caseDetail/caseDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/Index/index",
+					"query": ""
+				}
+			]
 		}
 	}
 }

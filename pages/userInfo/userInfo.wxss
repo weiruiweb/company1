@@ -1,0 +1,39 @@
+/**index.wxss**/
+.input_note{width:160rpx;
+	color:#363636;
+	font-size:32rpx;
+}
+.user_input{
+	height:90rpx;
+	line-height:90rpx;
+	border-bottom:solid 1px #e0e0e0;
+	padding:0px 25px;}
+.user_input input{
+	height:32rpx;
+	line-height:32rpx;
+	color:#b2b2b2;
+	font-size:30rpx;
+	width:542rpx;
+	margin-left:38rpx;
+	margin-top:20rpx;
+}
+.user_input image{
+	width:11rpx;
+	height:20rpx;
+	margin-top:35rpx;
+}
+.input_date{
+	font-size:32rpx;
+	color:#333;
+	margin-right:38rpx;
+}
+.submit_info{
+margin:0rpx 25rpx;
+width:700rpx;
+height:88rpx;
+line-height:99rpx;
+text-align:center;
+font-size:36rpx;
+color:#fff;
+background:linear-gradient(to right,rgba(72,222,223,1.00),rgba(42,154,225,1.00));
+border-radius:10rpx;margin-top:260rpx;}

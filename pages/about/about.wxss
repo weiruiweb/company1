@@ -1,0 +1,51 @@
+/**about.wxss**/
+.about_banner image{
+	width:100%;
+	height:252rpx;
+}
+.introduce{
+	font-size:28rpx;
+	color:#262626;
+}
+#about{
+	padding:0rpx 25rpx;
+	margin:42rpx 0rpx 50rpx;
+}
+.service_tlt{
+	position:relative;
+	left:24rpx;
+	margin-bottom:26rpx;}
+.service_tlt image{
+	width:154rpx;
+	height:40rpx;}
+.service_tlt .text1{
+	position:absolute;
+	left:24rpx;
+	top:0rpx;
+	font-size:30rpx;
+	color:#fff;
+	}
+.news_list{
+	padding:32rpx 25rpx 28rpx;
+	border-bottom:solid 1px #ececec;
+}
+.news_cont{
+	font-size:26rpx;
+	color:#262626;
+	width:415rpx;
+}
+.news_time{
+	font-size:22rpx;
+	color:#808080;
+	margin-top:50rpx;
+}
+.news_data{
+	margin-left:18rpx;
+}
+.news_right image{
+	width:200rpx;
+	height:145rpx;
+}
+#news_cont{
+	border-top:solid 1px #ececec;
+}

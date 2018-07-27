@@ -1,0 +1,36 @@
+<!--manageAddress.wxml-->
+
+<view id="comment">	
+	<view class="flexRowBetween orderlistShow">
+		<view><image src="/images/order.jpg"></image></view>
+		<view class="order_name" style="display: flex; flex-direction: column;">
+			<view class="text1">高端网站建设(含小程序）</view>
+			<view class="orders flexRowBetween">
+				<text class="order_number">X1</text>
+				<text class="order_type">一对一vip定制</text>
+				<text class="order_price">¥4999</text>
+			</view>
+		</view>
+	</view>
+	<view class="flexRowBetween orderlistShow">
+		<view><image src="/images/order.jpg"></image></view>
+		<view class="order_name" style="display: flex; flex-direction: column;">
+			<view class="text1">高端网站建设(含小程序）</view>
+			<view class="orders flexRowBetween">
+				<text class="order_number">X1</text>
+				<text class="order_type">一对一vip定制</text>
+				<text class="order_price">¥4999</text>
+			</view>
+		</view>
+	</view>
+	<view class="write_comment">	
+		<text>填写评论</text>
+		<textarea placeholder="请写下您对这次交易的看法" cursor-spacing="10px">
+		</textarea>
+
+	</view>
+	
+</view>
+<view class="submit_info" bindtap="backOrder">
+		提交
+</view>

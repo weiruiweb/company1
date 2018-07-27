@@ -1,0 +1,73 @@
+<!--userINfo.wxml-->
+<view id="sign_top">
+	<image src="/images/sign_banner.jpg" class="sign_banner"></image>
+	<view class="has_sign">
+		<view class="sign_in">
+			<view class="text1">
+				已签到
+			</view>
+			<view class="text2">
+				连续1天
+			</view>
+		</view>
+	</view>
+	<view class="sign_credit">	
+		<view class="text1">
+			我的积分
+		</view>
+		<view class="text2">
+			30
+		</view>
+	</view>
+	<view class="sign_progress flexRowBetween">
+		<image src="/images/sign1.png" class="sign1"></image>
+		<view class="sign_jion"></view>
+		<image src="/images/sign2.png" class="sign2"></image>
+		<view class="sign_jion"></view>
+		<image src="/images/sign2.png" class="sign2"></image>
+		<view class="sign_jion"></view>
+		<image src="/images/sign2.png" class="sign2"></image>
+		<view class="sign_jion"></view>
+		<view class="current_day">
+			<view class="current_credit">
+				<image src="/images/sign4.png" class="sign4"></image>
+				<text>+30</text>
+			</view>
+			<image src="/images/sign3.png" class="sign3"></image>
+		</view>
+		<view class="sign_jion"></view>
+		<image src="/images/sign2.png" class="sign2"></image>
+		<view class="sign_jion"></view>
+		<image src="/images/sign2.png" class="sign2"></image>
+	</view>
+	<view class="sign_day flexRowBetween">
+		<view class="sign_day1">4.18</view>
+		<view class="sign_day1">4.19</view>
+		<view class="sign_day1">4.20</view>
+		<view class="sign_day1">4.21</view>
+		<view class="sign_day1">4.22</view>
+		<view class="sign_day1">4.23</view>
+		<view class="sign_day1 sign_end">4.24</view>
+	</view>
+</view>
+<view class="great">
+	<view class="great_txt">
+		猜你喜欢的
+	</view>
+	<view class="great_item">
+		<image src="/images/great.jpg"></image>
+		<text>网站套餐</text>
+	</view>
+	<view class="great_item">
+		<image src="/images/great.jpg"></image>
+		<text>网站套餐</text>
+	</view>
+	<view class="great_item">
+		<image src="/images/great.jpg"></image>
+		<text>网站套餐</text>
+	</view>
+	<view class="great_item">
+		<image src="/images/great.jpg"></image>
+		<text>网站套餐</text>
+	</view>
+</view>

@@ -1,0 +1,99 @@
+<!--logs.wxml-->
+<view class="users">
+<view class="user_top">
+	<image src="/images/user_icon.jpg" class="banner">	</image>
+	<view class="user_info flexRowBetween">
+		<view class="user_img">
+			<open-data type="userAvatarUrl"></open-data>
+		</view>
+		 <view class="user_word">
+		 	<view class="user_name">米老子<open-data type="userNickName" lang="zh_CN"></open-data></view>
+		 	<view class="phone">158767678</view>
+		 </view>
+    	<view class="sign_up">
+    		<text>签</text>
+    	</view>
+    	<view class="consult">
+    		<image src="/images/kefu.jpg"></image>
+    	</view>
+	</view>
+ 
+</view>
+</view>
+<view id="user">
+	<view class="user_two flexRowBetween">
+		<view class="user_credit user_collect">
+			<view class="collect_number">0</view>
+			<view class="collect_txt">我的收藏</view>
+		</view>
+		<view class="user_credit">
+			<view class="credit_number">0</view>
+			<view class="credit_txt">我的积分</view>
+		</view>
+	</view>
+	<view class="order" bindtap="order">
+		<view class="user_order flexRowBetween">
+			<view class="order_left flexRowBetween">
+				<image src="/images/user_icon1.jpg"></image>
+				<view class="my_order">我的订单</view>
+			</view>
+			<view class="check_order flexRowBetween">
+				<view>
+					查看订单
+				</view>
+				<image src="/images/next_page.jpg"></image>
+			</view>
+		</view>
+	</view>
+	<view class="process flexRowBetween">
+		<view class="peocess_item item_other">
+			<image src="/images/user_icon5.jpg"></image>
+			<text>待付款</text>
+		</view>
+		<view class="peocess_item">
+			<image src="/images/user_icon6.jpg"></image>
+			<text>待发货</text>
+		</view>
+		<view class="peocess_item">
+			<image src="/images/user_icon7.jpg"></image>
+			<text>待收货</text>
+		</view>
+		<view class="peocess_item">
+			<image src="/images/user_icon8.jpg"></image>
+			<text>待评价</text>
+		</view>
+		<view class="peocess_item">
+			<image src="/images/user_icon9.jpg"></image>
+			<text>退换货</text>
+		</view>
+	</view>
+	<view class="user_all">
+		<view class="user_infor flexRowBetween"  bindtap="userInfo">
+			<view class="user_left flexRowBetween">
+				<image src="/images/user_icon2.jpg"></image>
+				<text>我的信息</text>
+			</view>
+			<view class="next_page">
+				<image src="/images/next_page.jpg"></image>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="discount">
+			<view class="user_left flexRowBetween">
+				<image src="/images/user_icon3.jpg"></image>
+				<text>我的优惠劵</text>
+			</view>
+			<view class="next_page">
+				<image src="/images/next_page.jpg"></image>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="address">
+			<view class="user_left flexRowBetween">
+				<image src="/images/user_icon4.jpg"></image>
+				<text>我的地址</text>
+			</view>
+			<view class="next_page">
+				<image src="/images/next_page.jpg"></image>
+			</view>
+		</view>
+	</view>
+</view>

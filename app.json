@@ -1,12 +1,54 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/Index/index",
+    "pages/Sort/sort",
+    "pages/Shopping/shopping",
+    "pages/User/user",
+    "pages/userInfo/userInfo",
+    "pages/discount/discount",
+    "pages/manageAddress/manageAddress",
+    "pages/newAddress/newAddress",
+    "pages/order/order",
+    "pages/commentOrder/commentOrder",
+    "pages/shoppingEmpty/shoppingEmpty",
+    "pages/confirmOrder/confirmOrder",
+    "pages/gongzhonghao/gongzhonghao",
+    "pages/detail/detail",
+    "pages/about/about",
+    "pages/sign/sign",
+    "pages/caseDetail/caseDetail"
+
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "纯粹科技",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/Index/index",
+      "text": "纯粹科技",
+      "iconPath":"/images/navbar1.jpg",
+      "selectedIconPath":"/images/navbar1-a.jpg"
+    }, {
+      "pagePath": "pages/Sort/sort",
+      "text": "分类",
+      "iconPath":"/images/navbar2.jpg",
+      "selectedIconPath":"/images/navbar2-a.jpg"
+    }, {
+      "pagePath":"pages/Shopping/shopping",
+      "text": "购物车",
+      "iconPath":"/images/navbar3.jpg",
+      "selectedIconPath":"/images/navbar3-a.jpg"
+    }, {
+      "pagePath":"pages/User/user",
+      "text": "我的",
+      "iconPath":"/images/navbar4.jpg",
+      "selectedIconPath":"/images/navbar4-a.jpg"
+    }],
+    "borderStyle": "#505050",
+    "color":"#666",
+    "selectedColor":"#17abaa"
   }
 }

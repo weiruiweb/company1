@@ -1,0 +1,97 @@
+<!--sort wxml-->
+
+<view id="sort">
+<view class="search flexRowBetween">
+	<view class="sort_all" bindtap="sort_show">
+		<image src="/images/sort.jpg"></image>
+		<view class="sort_txt">分类</view>
+	</view>
+	
+	<input placeholder="搜索商品名称"></input>
+</view>
+<view class="made_product flexRowBetween">
+	<view class="{{isShow?'mask':''}}">
+	</view>
+	<view class="made_sort {{isShow?'sildeIn':'slideOut'}}" >
+		<view class="madeSort  {{tapCurrent == 0?'made_bg':''}}" data-current="0" catchtap="menuTap">
+			<image src="/images/made_bg.png" class="img_bg"></image>
+			<view class="madeSortItem">
+				<text class="text1 active">官网定制</text>
+				<text class="text2"  bindtap="tabCont"  data-id="0">模板类</text>
+				<text class="text2 text3"  bindtap="tabCont"  data-id="1">vip定制</text>
+			</view>
+			
+		</view>
+		<view  class="madeSort {{tapCurrent == 1?'made_bg':''}}" data-current="1" catchtap="menuTap">
+			<image src="/images/made_bg.png" class="img_bg"></image>
+			<view class="madeSortItem">
+				<text class="text1 active">小程序</text>
+				<text class="text2"  bindtap="tabCont"  data-id="2">模板类</text>
+				<text class="text2 text3"  bindtap="tabCont"  data-id="3">vip定制</text>
+			</view>
+		</view>
+		<view  class="madeSort {{tapCurrent == 2?'made_bg':''}}" data-current="2" catchtap="menuTap">
+			<image src="/images/made_bg.png" class="img_bg"></image>
+			<view class="madeSortItem">
+				<text class="text1 active">公众号</text>
+				<text class="text2"  bindtap="tabCont"  data-id="4">模板类</text>
+				<text class="text2 text3"  bindtap="tabCont"  data-id="5">vip定制</text>
+			</view>
+		</view>
+	</view>
+	<view class="made_cont">	
+		<view class="product_sort flexRowBetween">
+			<view class="product_item {{changeCurrent == 0?'changeColor':''}}" data-current="0" bindtap="changeImage">
+				<text>综合</text>
+				<image src="{{changeCurrent == 0?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
+			</view>
+			<view class="product_item {{changeCurrent == 1?'changeColor':''}}"  data-current="1" bindtap="changeImage">
+				
+				<text>销量</text>
+				<image src="{{changeCurrent == 1?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
+			</view>
+			<view class="product_item {{changeCurrent == 2?'changeColor':''}}"  data-current="2" bindtap="changeImage">
+				
+				<text>新品</text>
+				<image src="{{changeCurrent == 2?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
+			</view>
+			<view class="product_item {{changeCurrent == 3?'changeColor':''}}"  data-current="3" bindtap="changeImage">
+				
+				<text>价格</text>
+				<image src="{{changeCurrent == 3?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
+			</view>
+		</view>
+		<view class="madeContItem madeShow">
+			<view class="shopping_item flexRowBetween" bindtap="detail">
+				<view class="shopping_img">
+					<image src="/images/produc3.jpg"></image>
+				</view>
+				<view class="shopping_name">
+					<text class="text1">网站建设</text>
+					<text class="text2">个性化定制</text>
+					<text class="price">¥3999</text>
+				</view>
+				<view class="edit_number flexRowBetween">
+					<text>4999件已售</text>
+					<image src="/images/shopCart.jpg"></image>
+
+				</view>
+			</view>
+			<view class="shopping_item flexRowBetween">
+				<view class="shopping_img">
+					<image src="/images/produc3.jpg"></image>
+				</view>
+				<view class="shopping_name">
+					<text class="text1">网站建设</text>
+					<text class="text2">个性化定制</text>
+					<text class="price">¥3999</text>
+				</view>
+				<view class="edit_number flexRowBetween">
+					<text>4999件已售</text>
+					<image src="/images/shopCart.jpg"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+</view>

@@ -1,0 +1,33 @@
+<!--userINfo.wxml-->
+<view class="user_input flexRowBetween">
+	<view class="input_note">昵称:</view>
+	<input placeholder="请输入昵称"></input>
+</view>
+<view class="user_input flexRowBetween">
+	<view class="input_note">真实姓名:</view>
+	<input placeholder="请输入真实姓名"></input>
+</view>
+<view class="user_input flexRowBetween">
+	<view class="input_note">性别:</view>
+	<input placeholder="请输入性别"></input>
+</view>
+<view class="user_input flexRowBetween">	
+	<view class="input_note">出生日期:</view>
+	<input placeholder="请输入出生日期" value="{{date}}" style=""></input>
+	<picker mode="date" class="" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+	<image src="/images/next_page.jpg"></image>
+	</picker>
+</view>
+<view class="user_input flexRowBetween">
+	<view class="input_note">联系方式:</view>
+	<input placeholder="请输入联系方式"></input>
+</view>
+<view class="user_input flexRowBetween">
+	<view class="input_note">住址:</view>
+	<input placeholder="请输入住址"></input>
+</view>
+<view class="submit_info">
+	保存
+</view>
+
+

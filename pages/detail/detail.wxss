@@ -1,0 +1,293 @@
+/**detail.wxss**/
+.banner image{
+	width:100%;
+	height:420rpx;
+}
+.product_name{
+	font-size:32rpx;
+}
+.product_top{
+	padding:20rpx 35rpx 35rpx;
+	border-bottom:solid 1px #ececec;
+}
+.name_share image{
+	width:35rpx;
+	height:35rpx;
+
+}
+.name_share{
+	height:40rpx;
+	line-height:40rpx;
+}
+.guarantee{
+	width:265rpx;
+	font-size:20rpx;
+	color:#999;
+	margin:20rpx 0rpx 35rpx;
+}
+.price{
+	font-size:30rpx;
+	color:#21c3d4;
+}
+.sale{
+	font-size:26rpx;
+	color:#5b5b5b;
+	padding-top:5rpx;
+}
+.next_page image{
+	width:11rpx;
+	height:20rpx;
+}
+.choose{
+	padding:0rpx 35rpx;
+	height:64rpx;
+	line-height:64rpx;
+	border-bottom:solid 1px #ececec;
+}
+.choose_left text{
+	font-size:22rpx;
+	margin-right:16rpx;
+}
+.choose_left .text1{
+	margin-right:40rpx;
+	color:#999;
+}
+.choose_left input{
+font-size:22rpx;
+color:#262626;
+height:62rpx;
+line-height:62rpx;}
+.detail_comment{
+	font-size:24rpx;
+	color:#a1a1a1;
+	height:78rpx;
+	line-height:78rpx;
+	border-bottom:solid 1px #ececec;
+}
+.detail_select{
+	color:#21c3d4;
+}
+.detail_comment .detail{
+	width:50%;
+	text-align:center;}
+.comment{
+	border-left:solid 1px #ececec;
+	width:50%;text-align:center;}
+#detail image{
+	width:550rpx;
+	height:354rpx;
+	margin:60rpx auto 40rpx auto;
+}
+#detail{
+	text-align:center;
+}
+.good_percent image{
+	width:11rpx;
+	height:20rpx;
+}
+.good_com{
+	font-size:24rpx;
+	color:#3e3e3e;
+	padding:0rpx 35rpx;
+	height:68rpx;
+	line-height:68rpx;
+	border-bottom:solid 1px #ecece;}
+.percent{color:#ffb040;margin:0rpx 20rpx 0rpx 10rpx;}
+.comment_user image{
+	width:68rpx;
+	height:68rpx;
+	border-radius:50%;
+	margin-right:10rpx;
+	float:left;
+}
+.user_img{
+	float:left;
+	padding-top:10rpx;
+}
+.comment_list{
+	padding:22rpx 35rpx 14rpx;
+	border-bottom:solid 1px #ececec;
+	overflow:hihdden;
+}
+.star{
+	padding-top:20rpx;
+}
+.star image{
+	width:15rpx;
+	height:15rpx;
+	margin-left:8rpx;
+
+}
+.comment_list{
+}
+.comment_user .text1{
+	font-size:24rpx;
+	color:#262626;
+}
+.comment_user .text2{
+	font-size:18rpx;
+	color:#808080;
+	display:block;
+}
+.comment_cont{
+	font-size:22rpx;
+	color:#696969;
+	margin-top:20rpx;}
+#buy{
+	border-top:solid 1px #ececec;
+	height:60rpx;
+	position:fixed;
+	bottom:0rpx;
+	padding:15rpx 35rpx;
+	overflow:hidden;
+	background:#fff;
+	z-index:999;
+}
+.consult{
+	width:35rpx;
+	text-align:center;
+}
+.consult image{
+	width:35rpx;
+	height:34rpx;
+}
+.consult .text1{
+	font-size:18rpx;
+	color:#626262;
+}
+.go_buy{
+	width:537rpx;
+	height:66rpx;
+	line-height:66rpx;
+	color:#fff;
+	font-size:28rpx;
+	font-weight:bold;
+	margin-left:38rpx;
+	background:#fff;
+	border-radius:30rpx;
+	overflow:hidden;
+}
+.shoppingCart{
+	width:50%;
+	
+	background:#49e3de;
+	text-align:center;
+	}
+.go_pay{
+	width:50%;
+	
+	background:#2c9fe1;
+	text-align:center;
+	
+}
+
+.mask{
+	position:absolute;
+	top:0rpx;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.4);
+	transition:all 1s;
+}
+
+#details{
+	position:relative;
+}
+#choose{
+	height:566rpx;
+	width:700rpx;
+	position:fixed;
+	bottom:-100rpx;
+	padding:32rpx 25rpx;
+	background:#fff;
+	z-index:99;
+}
+.sildeIn{
+	transition:all 1s;
+	transform:translateY(-120rpx);
+
+}
+.slideOut{
+	transition:all 1s;
+	transform:translateY(450rpx);
+
+}
+.pricity{
+	margin-bottom:55rpx;
+}
+.choose_pro image{
+	width:160rpx;
+	height:135rpx;
+}
+.close image{
+	width:34rpx;
+	height:34rpx;
+}
+.pro_name{
+	font-size:28rpx;
+	color:#333;
+}
+.pro_type{
+	font-size:22rpx;
+	color:#999;
+	margin-top:10rpx;
+}
+.price_choose{
+	font-size:28rpx;
+	color:#21c3d4;
+	margin-top:30rpx;
+}
+.product_txt{width:470rpx;}
+#type{
+	height:60rpx;
+	margin-bottom:28rpx;
+	width:350rpx;
+}
+.pro_type{
+	font-size:30rpx;
+	color:#262626;
+}
+.pro_types{
+	width:108rpx;
+	height:60rpx;
+	line-height:60rpx;
+	text-align:center;
+	font-size:28rpx;
+	color:#666;
+	background:#f7f7f7;
+	border-radius:3rpx;
+}
+.choose_number{
+	height:126rpx;
+}
+.number_txt{
+	font-size:30rpx;
+	color:#444;
+}
+
+.edit_number{
+	width:166rpx;
+	height:50rpx;
+	line-height:52rpx;
+	border:solid 1px #e5e5e5;
+	font-size:20rpx;
+}
+.edit_number .minus,.edit_number .add{
+	width:50rpx;
+	text-align:center;
+	color:#aeaeae;
+	font-size:40rpx;
+	border-right:solid 1px #e5e5e5; 
+	background:#e8e9e9;
+}
+.number{
+	width:72rpx;
+	text-align:center;
+	color:#878787;
+	border-right:solid 1px #e5e5e5; 
+	}
+.video{
+	width:624rpx;
+	height:350rpx;
+	margin:0rpx auto 200rpx;
+}

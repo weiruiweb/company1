@@ -1,0 +1,58 @@
+<!--userINfo.wxml-->
+<view class="about_banner">
+	<image src="/images/about_banner.jpg"></image>
+</view>
+<view id="about">
+	<view class="introduce">
+		完美的产品如同建筑，只有布局整体而又专注细节，方能成就惊世之美。纯粹科技正是如此，制定策略以为框架，构思创意以成主体，精确执行
+	</view>
+</view>
+<view class="service_tlt">
+    <image src="/images/tlt_bg_03.jpg"></image>
+    <text class="text1">新闻资讯</text>
+</view>
+<view id="news_cont">
+	<view class="news_list flexRowBetween">
+		<view class="news_left">
+			<view class="news_cont">
+				完美的产品如同建筑，只有布局整体 而又专注细节，方能成就惊世之美。
+			</view>
+			<view class="news_time">
+				<text class="com_name">纯粹科技    </text>
+				<text class="news_data">2018-01-18</text>
+			</view>
+		</view>
+		<view class="news_right">
+			<image src="/images/about1.jpg"></image>
+		</view>
+	</view>
+
+	<view class="news_list flexRowBetween">
+		<view class="news_left">
+			<view class="news_cont">
+				完美的产品如同建筑，只有布局整体 而又专注细节，方能成就惊世之美。
+			</view>
+			<view class="news_time">
+				<text class="com_name">纯粹科技    </text>
+				<text class="news_data">2018-01-18</text>
+			</view>
+		</view>
+		<view class="news_right">
+			<image src="/images/about1.jpg"></image>
+		</view>
+	</view>
+	<view class="news_list flexRowBetween">
+		<view class="news_left">
+			<view class="news_cont">
+				完美的产品如同建筑，只有布局整体 而又专注细节，方能成就惊世之美。
+			</view>
+			<view class="news_time">
+				<text class="com_name">纯粹科技    </text>
+				<text class="news_data">2018-01-18</text>
+			</view>
+		</view>
+		<view class="news_right">
+			<image src="/images/about1.jpg"></image>
+		</view>
+	</view>
+</view>

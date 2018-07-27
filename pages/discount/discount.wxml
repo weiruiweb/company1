@@ -1,0 +1,24 @@
+<!--userINfo.wxml-->
+<view class="discount_sort flexRowBetween">
+	<view class="discount_item {{tapCurrent == 0?'discount_this':''}}" data-current="0" bindtap="discount" >
+		抵扣券 
+		<view class="border-short"></view>
+	</view>
+	<view class="discount_item {{tapCurrent == 1?'discount_this':''}}" data-current="1" bindtap="discount">
+		折扣券 
+		<view class="border-short"></view>
+	</view>
+</view>
+<view class="ticket">
+	<view class="ticket_sort {{tapCurrent == 0?'madeShow':''}}">
+	   <image src="/images/youhui_02.jpg"></image>
+	   <image src="/images/youhui_04.jpg"></image>
+	   <image src="/images/youhui_06.jpg"></image>
+	</view>
+	<view class="ticket_sort {{tapCurrent == 1?'madeShow':''}}">
+	  <image src="/images/youhui.jpg"></image>
+	  <image src="/images/youhui.jpg"></image>
+	  <image src="/images/youhui.jpg"></image>
+	</view>
+</view>
+

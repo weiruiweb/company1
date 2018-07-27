@@ -1,0 +1,82 @@
+/**index.wxss**/
+.order_sort{
+	padding:0rpx 25rpx;
+	border-bottom:solid 1px #ececec;
+	height:87rpx;
+	line-height:84rpx;}
+.order_item{
+	font-size:32rpx;
+	color:#333;
+}
+.order_this{
+	color:#21c3d4;
+	border-bottom:solid 3rpx #21c3d4;
+}
+.order_all{
+	display:none;
+}
+.order_show{
+	display:block;
+}
+.order_list{padding:0rpx 25rpx;}
+.order_all .orderlistShow{
+	padding:42rpx 0rpx 32rpx;
+	border-bottom:solid 1rpx #ececec;
+}
+.order_all image{
+	width:160rpx;
+	height:160rpx;
+	margin-right:25rpx;}
+.order_name{width:520rpx;}
+.order_name .text1{
+	font-size:32rpx;
+}
+.orders{
+	font-size:28rpx;
+	color:#808080;
+	margin-top:90rpx;
+}
+.order_price{
+	color:#21c3d4;
+	font-size:32rpx;
+}
+.order_type{
+	width:340rpx;
+}
+.total_money{
+	font-size:28rpx;
+	color:#666;
+}
+.total_money .text2{
+	font-size:28rpx;
+	color:#21c3d4;
+	margin-left:10rpx;
+	font-weight:bold;
+}
+.user_discount{
+	color:#262626;
+	font-size:24rpx;
+}
+.total_order{
+	margin-top:32rpx;
+	wdith:475rpx;
+	float:right;
+	margin-right:15rpx;
+}
+.handle_order{
+	clear:both;
+	width:364rpx;
+	float:right;
+	margin-right:25rpx;
+	margin-top:70rpx;
+}
+.handle_orders{
+	width:158rpx;
+	height:58rpx;
+	border:solid 1px #aeaeae;
+	border-radius:10rpx;
+	text-align:center;
+	line-height:58rpx;
+	font-size:28rpx;
+	color:#636363;
+}

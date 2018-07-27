@@ -1,0 +1,135 @@
+.users{height:300rpx;
+overflow:hidden;}
+.user_top{
+	position:relative;
+}
+.user_top .banner{
+	position:absolute;
+	left:0rpx;
+	top:rpx;
+	width:100%;
+	height:300rpx;}
+.user_info{
+	position:absolute;
+	top:80rpx;
+	left:60rpx;
+}
+.user_img{
+	width:140rpx;
+	height:140rpx;
+	border:solid 1px #fff;
+	border-radius:50%;
+	margin-right:30rpx;
+}
+.user_word{
+	margin-top:40rpx;
+	width:360rpx;
+}
+.user_name{
+	font-size:34rpx;
+	color:#fff;
+
+}
+.phone{
+	font-size:20rpx;
+	color:#fff;
+}
+.sign_up{
+margin-top:55rpx;
+font-size:24rpx;
+width:42rpx;
+height:42rpx;
+text-align:center;
+line-height:42rpx;
+background:#fff;
+border-radius:50%;}
+.sign_up text{
+	font-size:24rpx;
+	color:#2988c8;
+}
+.consult{
+	margin-top:55rpx;
+	margin-left:47rpx;
+}
+.consult image{width:38rpx;height:40rpx;}
+#user{background:#f5f5f5;oerflow:hidden;padding-top:12rpx;}
+.user_credit{
+	width:50%;
+	text-align:center;
+	padding:14rpx 0px;
+}
+.user_two{
+	background:#fff;
+	font-size:26rpx;
+	color:#333;
+	padding: 30rpx 0rpx;
+}
+.user_collect{border-right:solid 1px #dcdcdc;}
+.order{
+	margin-top:12rpx;
+	padding:0rpx 30rpx;
+	overflow:hidden;
+	background:#fff;
+	border-bottom:solid 1px #dcdcdc;}
+.user_order{
+	height:96rpx;
+	
+	line-height:96rpx;
+}
+.order_left{
+	font-size:30rpx;
+	color:#333;
+}
+.order_left image{
+	width:28rpx;
+	height:32rpx;
+	margin-top:34rpx;
+	margin-right:16rpx;
+}
+.check_order image{
+	width:11rpx;
+	height:20rpx;
+	margin-left:8rpx;
+	margin-top:38rpx;
+}
+.check_order{
+	font-size:24rpx;
+	color:66rpx;
+	color:#333;
+}
+.process{
+	padding:26px 56rpx;
+	background:#fff;
+}
+.peocess_item {
+	text-align:center;
+}
+.peocess_item image{
+	width:40rpx;
+	height:40rpx;}
+.item_other image{
+	width:50rpx;
+}
+.peocess_item text{color:#666;font-size:26rpx;display:block;}
+.user_left image{
+	width:30rpx;
+	height:32rpx;
+	margin-top:32rpx;
+	margin-right:12rpx;
+}
+.user_infor{
+	padding:0rpx 32rpx;
+	height:96rpx;
+	line-height:96rpx;
+	font-size:30rpx;
+	color:#333;
+	background:#fff;
+	border-bottom:solid 1px #dcdcdc;}
+.next_page image{
+	width:11rpx;
+	height:20rpx;
+}
+.user_all{
+	background:#fff;
+	margin-top:12rpx;
+}

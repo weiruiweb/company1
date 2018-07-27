@@ -1,0 +1,85 @@
+<!--shopping.wxml-->
+<view id="shopping">
+	<view class="shopping_item flexRowBetween">
+		<view class="select_status">
+			<image src="/images/select.png"></image>
+		</view>
+		<view class="shopping_img">
+			<image src="/images/product_buy.png"></image>
+		</view>
+		<view class="shopping_name">
+			<text class="text1">网站建设</text>
+			<text class="text2">个性化定制</text>
+			<text class="price">¥3999</text>
+		</view>
+		<view class="edit_number flexRowBetween">
+			<view class="minus">-</view>
+			<view class="number">1</view>
+			<view class="add">+</view>
+
+		</view>
+	</view>
+	<view class="shopping_item flexRowBetween">
+		<view class="select_status">
+			<image src="/images/select_active.jpg"></image>
+		</view>
+		<view class="shopping_img">
+			<image src="/images/product_buy.png"></image>
+		</view>
+		<view class="shopping_name">
+			<text class="text1">网站建设</text>
+			<text class="text2">个性化定制</text>
+			<text class="price">¥3999</text>
+		</view>
+		<view class="edit_number flexRowBetween">
+			<view class="minus">-</view>
+			<view class="number">1</view>
+			<view class="add">+</view>
+
+		</view>
+	</view>
+	<view class="shopping_item">
+		<view class="flexRowBetween">
+			<view class="select_status">
+				<image src="/images/select.png"></image>
+			</view>
+			<view class="shopping_img">
+				<image src="/images/product_buy.png"></image>
+			</view>
+			<view class="shopping_name">
+				<text class="text1">网站建设</text>
+				<text class="text2">个性化定制</text>
+				<text class="price">¥3999</text>
+			</view>
+			<view class="edit_number flexRowBetween">
+				<view class="minus">-</view>
+				<view class="number">1</view>
+				<view class="add">+</view>
+			</view>
+		</view>
+	</view>
+	<view class="total flexRowBetween">
+		<view class="all_select">
+			<image src="/images/select.png"></image>
+		</view>
+		<view class="select_c">全选</view>
+		<view class="del_shopping">
+			删除
+		</view>
+		<view class="toalt1">
+			合计:
+		</view>
+		<view class="priceNumber">
+		¥3999
+		</view>
+		<view class="">
+			<view class="submit_shopping">
+			<image src="/images/pay.jpg"></image>
+			<view class="pay_note" bindtap="confirmOrder">
+				<text class="text1">结算</text>
+				<text class="number_pay">(1)</text>
+			</view>
+			</view>
+		</view>
+	</view>
+</view>

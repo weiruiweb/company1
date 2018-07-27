@@ -1,0 +1,22 @@
+<!--caseDetail.wxml-->
+<view class="caseDetail">
+	<view class="case_top">	
+		<image src="/images/caseDetail_banner.jpg"></image>
+	</view>
+	<view class="case_cont">
+		<view class="caseTxt">
+			精品案例
+		</view>
+		<view class="caseIntro">
+			精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案
+		</view>
+		<view class="case_img1">
+			<image src="/images/case_detail1.jpg"></image>
+		</view>
+	</view>
+	<view class="case_bottom">
+		<image src="/images/case-curtol.jpg">
+		</image>
+	</view>
+</view>
+

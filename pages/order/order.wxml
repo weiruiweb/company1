@@ -1,0 +1,175 @@
+<!--manageAddress.wxml-->
+<view class="order_sort flexRowBetween">
+	<view class="order_item {{currentTap ==0?'order_this':''}}" data-current="0" bindtap="order_status">
+		全部
+	</view>
+	<view class="order_item {{currentTap ==1?'order_this':''}}" data-current="1"  bindtap="order_status">
+		待付款
+	</view>
+	<view class="order_item {{currentTap ==2?'order_this':''}}" data-current="2" bindtap="order_status">
+		待服务
+	</view>
+	<view class="order_item {{currentTap ==3?'order_this':''}}" data-current="3" bindtap="order_status">
+		服务中
+	</view>
+	<view class="order_item {{currentTap ==4?'order_this':''}}" data-current="4" bindtap="order_status">
+		待评价
+	</view>
+</view>
+<view class="order_list">
+	<view class="order_all  {{currentTap ==0?'order_show':''}}">
+		<view class="flexRowBetween orderlistShow">
+			<view><image src="/images/order.jpg"></image></view>
+			<view class="order_name" style="display: flex; flex-direction: column;">
+				<view class="text1">高端网站建设(含小程序）</view>
+				<view class="orders flexRowBetween">
+					<text class="order_number">X1</text>
+					<text class="order_type">一对一vip定制</text>
+					<text class="order_price">¥3999</text>
+				</view>
+			</view>
+		</view>
+		<view class="flexRowBetween orderlistShow">
+			<view><image src="/images/order.jpg"></image></view>
+			<view class="order_name" style="display: flex; flex-direction: column;">
+				<view class="text1">高端网站建设(含小程序）</view>
+				<view class="orders flexRowBetween">
+					<text class="order_number">X1</text>
+					<text class="order_type">一对一vip定制</text>
+					<text class="order_price">¥4999</text>
+				</view>
+			</view>
+		</view>
+		<view class="total_order">
+			<view class="flexRowBetween">
+				<view class="total_money">
+					<text>合计:</text>
+					<text class="text2">¥3999</text>
+				</view>
+				<view class="user_discount">
+					（优惠券：-¥10.00）
+				</view>
+			</view>
+		</view>
+		<view class="handle_order">
+			<view class="flexRowBetween">
+				<view class="handle_orders delete_order">删除订单</view>
+				<view class="handle_orders comment_order" bindtap="commentOrder">去评价</view>
+			</view>
+		</view>
+	</view>
+	<view class="order_all {{currentTap ==1?'order_show':''}}">
+		<view class="flexRowBetween orderlistShow">
+			<view><image src="/images/order.jpg"></image></view>
+			<view class="order_name" style="display: flex; flex-direction: column;">
+				<view class="text1">高端网站建设(含小程序）</view>
+				<view class="orders flexRowBetween">
+					<text class="order_number">X1</text>
+					<text class="order_type">一对一vip定制</text>
+					<text class="order_price">¥8999</text>
+				</view>
+			</view>
+		</view>
+		<view class="flexRowBetween orderlistShow">
+			<view><image src="/images/order.jpg"></image></view>
+			<view class="order_name" style="display: flex; flex-direction: column;">
+				<view class="text1">高端网站建设(含小程序）</view>
+				<view class="orders flexRowBetween">
+					<text class="order_number">X1</text>
+					<text class="order_type">一对一vip定制</text>
+					<text class="order_price">¥4999</text>
+				</view>
+			</view>
+		</view>
+		<view class="total_order">
+			<view class="flexRowBetween">
+				<view class="total_money">
+					<text>合计:</text>
+					<text class="text2">¥3999</text>
+				</view>
+				<view class="user_discount">
+					（优惠券：-¥10.00）
+				</view>
+			</view>
+		</view>
+		<view class="handle_order">
+			<view class="flexRowBetween">
+				<view class="handle_orders delete_order">删除订单</view>
+				<view class="handle_orders comment_order" bindtap="commentOrder">去付款</view>
+			</view>
+		</view>
+	</view>
+	<view class="order_all {{currentTap ==2?'order_show':''}}">
+		<view class="flexRowBetween orderlistShow">
+			<view><image src="/images/order.jpg"></image></view>
+			<view class="order_name" style="display: flex; flex-direction: column;">
+				<view class="text1">高端网站建设(含小程序）</view>
+				<view class="orders flexRowBetween">
+					<text class="order_number">X1</text>
+					<text class="order_type">一对一vip定制</text>
+					<text class="order_price">¥6999</text>
+				</view>
+			</view>
+		</view>
+		<view class="flexRowBetween orderlistShow">
+			<view><image src="/images/order.jpg"></image></view>
+			<view class="order_name" style="display: flex; flex-direction: column;">
+				<view class="text1">高端网站建设(含小程序）</view>
+				<view class="orders flexRowBetween">
+					<text class="order_number">X1</text>
+					<text class="order_type">一对一vip定制</text>
+					<text class="order_price">¥4999</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="order_all {{currentTap ==3?'order_show':''}}">
+		<view class="flexRowBetween orderlistShow">
+			<view><image src="/images/order.jpg"></image></view>
+			<view class="order_name" style="display: flex; flex-direction: column;">
+				<view class="text1">高端网站建设(含小程序）</view>
+				<view class="orders flexRowBetween">
+					<text class="order_number">X1</text>
+					<text class="order_type">一对一vip定制</text>
+					<text class="order_price">¥5999</text>
+				</view>
+			</view>
+		</view>
+		<view class="flexRowBetween orderlistShow">
+			<view><image src="/images/order.jpg"></image></view>
+			<view class="order_name" style="display: flex; flex-direction: column;">
+				<view class="text1">高端网站建设(含小程序）</view>
+				<view class="orders flexRowBetween">
+					<text class="order_number">X1</text>
+					<text class="order_type">一对一vip定制</text>
+					<text class="order_price">¥4999</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="order_all {{currentTap ==4?'order_show':''}}">
+		<view class="flexRowBetween orderlistShow">
+			<view><image src="/images/order.jpg"></image></view>
+			<view class="order_name" style="display: flex; flex-direction: column;">
+				<view class="text1">高端网站建设(含小程序）</view>
+				<view class="orders flexRowBetween">
+					<text class="order_number">X1</text>
+					<text class="order_type">一对一vip定制</text>
+					<text class="order_price">¥4999</text>
+				</view>
+			</view>
+		</view>
+		<view class="flexRowBetween orderlistShow">
+			<view><image src="/images/order.jpg"></image></view>
+			<view class="order_name" style="display: flex; flex-direction: column;">
+				<view class="text1">高端网站建设(含小程序）</view>
+				<view class="orders flexRowBetween">
+					<text class="order_number">X1</text>
+					<text class="order_type">一对一vip定制</text>
+					<text class="order_price">¥4999</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+

@@ -1,0 +1,34 @@
+/**index.wxss**/
+.case_top image{
+	width:100%;
+	height:330rpx;
+}
+.caseTxt{
+	height:160rpx;
+	line-height:160rpx;
+	text-align:center;
+	font-size:32rpx;
+	color:#363636;
+}
+.caseIntro{
+	font-size:28rpx;
+	color:#363636;
+}
+.case_cont{
+	padding:0rpx 25rpx;
+}
+.case_img1{
+	text-align:center;
+	margin:130rpx 0rpx 170rpx;
+}
+.case_img1 image{
+	width:206rpx;
+	height:460rpx;
+}
+.case_bottom{
+	text-align:center;
+}
+.case_bottom image{
+	width:700rpx;
+	height:484rpx;
+}

@@ -1,13 +1,103 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class="banner">
+  <image class="bannerImg" src="/images/banner.jpg"></image>
+  <image src="/images/cloude.png" class="clude"></image>
+  <view class="custom">立即定制 ></view>
+</view>
+<view class="module flexRowBetween" bindtap="sign">
+  <view class="module_item">
+    <view class="module_icon module1">
+      <image src="/images/index_icon1.png" class="firstImg"></image>
+      <image src="/images/index_icon1_a.png" class="secondImg"></image>
+    </view>
+    <text>积分签到</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="module_item">
+    <view class="module_icon module2">
+      <image src="/images/index_icon2.jpg" class="firstImg"></image>
+      <image src="/images/index_icon2-a.png" class="secondImg"></image>
+    </view>
+    <text>优惠券</text>
+  </view>
+  <view class="module_item" bindtap="about">
+    <view class="module_icon module3">
+      <image src="/images/index_icon3.jpg" class="firstImg"></image>
+      <image src="/images/index_icon3.png" class="secondImg"></image>
+    </view>
+    <text>关于我们</text>
+  </view>
+  <view class="module_item">
+   <view class="module_icon module4">
+      <image src="/images/index_icon4.jpg" class="firstImg"></image>
+      <image src="/images/index_icon4-a.png" class="secondImg"></image>
+    </view>
+    <text>联系我们</text>
+  </view>
+</view>
+<view class="service">
+  <view class="service_tlt">
+    <image src="/images/tlt_bg_03.jpg"></image>
+    <text class="text1">服务类别</text>
+  </view>
+  <view class="service_cont  flexRowBetween">
+    <view class="service_left">
+        <text class="text1">微信小程序</text>
+        <text class="text2">联系更紧密</text>
+        <image src="/images/sort_Img1.jpg"></image>
+    </view>
+    <view class="service_right">
+        <view class="service_top  flexRowBetween">
+          <view class="serviceTLeft">
+            <text class="text1">网站</text>
+            <text class="text2">浏览更方便</text>
+          </view>
+
+          <view class="serviceTright">
+            <image class="" src="/images/sort_img2.jpg"></image>
+          </view>
+        </view>
+        <view class="service_bottom  flexRowBetween">
+          <view class="serviceBLeft">
+              <text class="text1">公众号</text>
+              <text class="text2">管理更方便</text>
+            </view>
+          <view class="serviceBright">
+            <image class="" src="/images/sort_img3.jpg"></image>
+          </view>
+        </view>
+    </view>
+  </view>
+</view>
+<view class="solely_more">
+  <image src="/images/more_bg.jpg"></image>
+  <view class="company_name">
+    <text>纯粹科技</text>
+    <view class="more">了解更多 ></view>
+  </view>
+</view>
+<view class="case">
+  <view class="service_tlt">
+    <image src="/images/tlt_bg_03.jpg"></image>
+    <text class="text1">案例展示</text>
+  </view>
+  <view class="case_cont">
+    <view class="case_top flexRowBetween" bindtap="caseDetail">
+        <view  class="case_left">
+        <image src="/images/case1.jpg"></image>
+        </view>
+        <view class="case_right">
+          <view class="text1">高端定制最美中国网站高端定制最美中国网站高端定制最 美中国网站</view>
+          <view class="case_more">了解更多 > </view>
+        </view>
+    </view>
+    <view class="case_bottom flexRowBetween" bindtap="caseDetail">
+        <view class="case_right">
+            <view class="text1">高端定制最美中国网站高端定制最美中国网站高端定制最 美中国网站</view>
+          <view class="case_more">了解更多 > </view>
+        </view>
+        <view class="case_left">
+          <image src="/images/case2.jpg"></image>
+        </view>
+    </view>
   </view>
 </view>

@@ -1,0 +1,60 @@
+<!--manageAddress.wxml-->
+<view id="address">
+<view class="address_item flexRowBetween">
+	<view class="address_left">
+		<view class="text1">
+			李雷
+		</view>
+		<view class="text1 text_other">
+			科技路高新大都荟
+		</view>
+	</view>
+	<view class="address_right">
+		18888888888
+	</view>
+</view>
+<view class="address_set flexRowBetween">
+	<view class="default">
+		<image src="/images/select_active.jpg"></image>
+		<text>默认地址</text>
+	</view>
+	<view class="edit">
+		<image src="/images/edit.jpg"></image>
+		<text>编辑</text>
+	</view>
+	<view class="edit delete">
+		<image src="/images/del.jpg"></image>
+		<text>删除</text>
+	</view>
+</view>
+<view class="address_item flexRowBetween">
+	<view class="address_left">
+		<view class="text1">
+			李雷
+		</view>
+		<view class="text1 text_other">
+			科技路高新大都荟
+		</view>
+	</view>
+	<view class="address_right">
+		18888888888
+	</view>
+</view>
+<view class="address_set flexRowBetween">
+	<view class="default">
+		<image src="/images/select.png"></image>
+		<text class="de_color">设为默认地址</text>
+	</view>
+	<view class="edit">
+		<image src="/images/edit.jpg"></image>
+		<text>编辑</text>
+	</view>
+	<view class="edit">
+		<image src="/images/del.jpg"></image>
+		<text>删除</text>
+	</view>
+</view>
+<view class="submit_info" bindtap="newAddress">
+	添加新地址
+</view>
+</view>

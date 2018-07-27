@@ -1,0 +1,9 @@
+<!--shopping.wxml-->
+<view id="shoppingEmpty">
+	<view class="shopping_cart">
+		<image src="/images/shopping_icon.jpg"></image>
+	</view>
+	<view class="note">空空如也购物车没有任何商品</view>
+	<view class="goShopping" bindtap="go_shopping">去逛逛</view>
+</view>
+

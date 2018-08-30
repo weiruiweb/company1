@@ -101,16 +101,12 @@ line-height:62rpx;}
 	float:left;
 }
 .user_img{
-	float:left;
-	padding-top:10rpx;
+	height:68rpx;
 }
 .comment_list{
 	padding:22rpx 35rpx 14rpx;
 	border-bottom:solid 1px #ececec;
 	overflow:hihdden;
-}
-.star{
-	padding-top:20rpx;
 }
 .star image{
 	width:15rpx;
@@ -135,16 +131,23 @@ line-height:62rpx;}
 	margin-top:20rpx;}
 #buy{
 	border-top:solid 1px #ececec;
-	height:60rpx;
+	height:120rpx;
 	position:fixed;
 	bottom:0rpx;
-	padding:15rpx 35rpx;
 	overflow:hidden;
 	background:#fff;
 	z-index:999;
+	width:100%;
+	align-items:center;
+}
+.buy_click{
+	display:flex;
+	justify-content:center;
+	height:120rpx;
+	align-items:center;
 }
 .consult{
-	width:35rpx;
+	width:15%;
 	text-align:center;
 }
 .consult image{
@@ -156,13 +159,13 @@ line-height:62rpx;}
 	color:#626262;
 }
 .go_buy{
-	width:537rpx;
-	height:66rpx;
-	line-height:66rpx;
+	width:66%;
+	margin-right:4%;
+	height:70rpx;
+	line-height:70rpx;
 	color:#fff;
 	font-size:28rpx;
 	font-weight:bold;
-	margin-left:38rpx;
 	background:#fff;
 	border-radius:30rpx;
 	overflow:hidden;
@@ -192,10 +195,11 @@ line-height:62rpx;}
 
 #details{
 	position:relative;
+	margin-bottom:120rpx;
 }
 #choose{
 	height:566rpx;
-	width:700rpx;
+	width:704rpx;
 	position:fixed;
 	bottom:-100rpx;
 	padding:32rpx 25rpx;
@@ -214,10 +218,20 @@ line-height:62rpx;}
 }
 .pricity{
 	margin-bottom:55rpx;
+	width:100%;
+	height:135rpx;
+}
+.choose_pro{
+	width:25%;
+	height:
 }
 .choose_pro image{
 	width:160rpx;
 	height:135rpx;
+}
+.close{
+	width:10%;
+	text-align:right;
 }
 .close image{
 	width:34rpx;
@@ -230,22 +244,21 @@ line-height:62rpx;}
 .pro_type{
 	font-size:22rpx;
 	color:#999;
-	margin-top:10rpx;
 }
 .price_choose{
 	font-size:28rpx;
 	color:#21c3d4;
-	margin-top:30rpx;
 }
-.product_txt{width:470rpx;}
+.product_txt{width:65%;}
 #type{
 	height:60rpx;
 	margin-bottom:28rpx;
 	width:350rpx;
+	align-items:center;
 }
 .pro_type{
-	font-size:30rpx;
-	color:#262626;
+	font-size:26rpx;
+	color:#666;
 }
 .pro_types{
 	width:108rpx;
@@ -259,6 +272,7 @@ line-height:62rpx;}
 }
 .choose_number{
 	height:126rpx;
+	align-items:center;
 }
 .number_txt{
 	font-size:30rpx;
@@ -290,4 +304,16 @@ line-height:62rpx;}
 	width:624rpx;
 	height:350rpx;
 	margin:0rpx auto 200rpx;
+	z-index:0;
+	overflow:hidden;
+	position:relative;
+}
+video{
+	width:624rpx;
+	height:350rpx;
+	margin:0rpx auto 200rpx;
+	z-index:0;
+	position:absolute;
+	top:0rpx;
+	left:0rpx;
 }

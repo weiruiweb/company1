@@ -24,31 +24,6 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "纯粹科技",
     "navigationBarTextStyle":"black"
-  },
-  "tabBar": {
-    "list": [{
-      "pagePath": "pages/Index/index",
-      "text": "纯粹科技",
-      "iconPath":"/images/navbar1.jpg",
-      "selectedIconPath":"/images/navbar1-a.jpg"
-    }, {
-      "pagePath": "pages/Sort/sort",
-      "text": "分类",
-      "iconPath":"/images/navbar2.jpg",
-      "selectedIconPath":"/images/navbar2-a.jpg"
-    }, {
-      "pagePath":"pages/Shopping/shopping",
-      "text": "购物车",
-      "iconPath":"/images/navbar3.jpg",
-      "selectedIconPath":"/images/navbar3-a.jpg"
-    }, {
-      "pagePath":"pages/User/user",
-      "text": "我的",
-      "iconPath":"/images/navbar4.jpg",
-      "selectedIconPath":"/images/navbar4-a.jpg"
-    }],
-    "borderStyle": "#505050",
-    "color":"#666",
-    "selectedColor":"#17abaa"
   }
+  
 }

@@ -9,7 +9,9 @@ Page({
   },
   
   onLoad: function () {
-   
+    this.setData({
+      fonts:app.globalData.font
+    })
   },
   order_status:function(e){
     var current = e.currentTarget.dataset.current

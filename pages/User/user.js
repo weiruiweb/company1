@@ -1,12 +1,16 @@
 //logs.js
 const util = require('../../utils/util.js')
+const app = getApp()
+
 
 Page({
   data: {
     
   },
   onLoad: function () {
-    
+    this.setData({
+      fonts:app.globalData.font
+    })
   },
   userInfo:function(){
     wx.navigateTo({
@@ -26,6 +30,26 @@ Page({
   order:function(){
     wx.navigateTo({
       url:'/pages/order/order'
+    })
+  },
+ shopping:function(){
+     wx.redirectTo({
+      url:'/pages/Shopping/shopping'
+    })
+  },
+  sort:function(){
+     wx.redirectTo({
+      url:'/pages/Sort/sort'
+    })
+  },
+  index:function(){
+     wx.redirectTo({
+      url:'/pages/Index/index'
+    })
+  },
+  User:function(){
+     wx.redirectTo({
+      url:'/pages/User/user'
     })
   }
 })

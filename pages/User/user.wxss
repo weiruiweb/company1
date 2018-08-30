@@ -1,55 +1,49 @@
-.users{height:300rpx;
-overflow:hidden;}
-.user_top{
-	position:relative;
-}
-.user_top .banner{
-	position:absolute;
-	left:0rpx;
-	top:rpx;
+.users{
+	height:300rpx;
 	width:100%;
-	height:300rpx;}
+	background:linear-gradient(to right,rgba(72,222,223,1.00),rgba(42,154,225,1.00));
+	overflow:hidden;
+	align-items:center;}
 .user_info{
-	position:absolute;
-	top:80rpx;
-	left:60rpx;
+	height:300rpx;
+	align-items:center;
 }
 .user_img{
 	width:140rpx;
 	height:140rpx;
-	border:solid 1px #fff;
 	border-radius:50%;
-	margin-right:30rpx;
+	overflow:hidden;
+	margin:0 auto;
 }
 .user_word{
-	margin-top:40rpx;
-	width:360rpx;
+	width:40%;
+	height:80rpx;
 }
 .user_name{
 	font-size:34rpx;
 	color:#fff;
-
 }
+
 .phone{
 	font-size:20rpx;
 	color:#fff;
 }
 .sign_up{
-margin-top:55rpx;
-font-size:24rpx;
-width:42rpx;
-height:42rpx;
-text-align:center;
-line-height:42rpx;
-background:#fff;
-border-radius:50%;}
+
+	font-size:24rpx;
+	width:42rpx;
+	height:42rpx;
+	text-align:center;
+	line-height:42rpx;
+	background:#fff;
+	border-radius:50%;}
 .sign_up text{
 	font-size:24rpx;
 	color:#2988c8;
 }
 .consult{
-	margin-top:55rpx;
-	margin-left:47rpx;
+height:42rpx;
+line-height:42rpx;
 }
 .consult image{width:38rpx;height:40rpx;}
 #user{background:#f5f5f5;oerflow:hidden;padding-top:12rpx;}
@@ -73,17 +67,18 @@ border-radius:50%;}
 	border-bottom:solid 1px #dcdcdc;}
 .user_order{
 	height:96rpx;
-	
+	align-items:center;
 	line-height:96rpx;
 }
 .order_left{
 	font-size:30rpx;
 	color:#333;
+	align-items:center;
 }
 .order_left image{
 	width:28rpx;
 	height:32rpx;
-	margin-top:34rpx;
+
 	margin-right:16rpx;
 }
 .check_order image{
@@ -94,15 +89,15 @@ border-radius:50%;}
 }
 .check_order{
 	font-size:24rpx;
-	color:66rpx;
 	color:#333;
 }
 .process{
-	padding:26px 56rpx;
+	padding:26px 0;
 	background:#fff;
 }
 .peocess_item {
 	text-align:center;
+	width:25%;
 }
 .peocess_item image{
 	width:40rpx;
@@ -111,10 +106,12 @@ border-radius:50%;}
 	width:50rpx;
 }
 .peocess_item text{color:#666;font-size:26rpx;display:block;}
+.user_left{
+	align-items:center;
+}
 .user_left image{
 	width:30rpx;
 	height:32rpx;
-	margin-top:32rpx;
 	margin-right:12rpx;
 }
 .user_infor{
@@ -124,7 +121,9 @@ border-radius:50%;}
 	font-size:30rpx;
 	color:#333;
 	background:#fff;
-	border-bottom:solid 1px #dcdcdc;}
+	border-bottom:solid 1px #dcdcdc;
+	align-items:center;
+	}
 .next_page image{
 	width:11rpx;
 	height:20rpx;

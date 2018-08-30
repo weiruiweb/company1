@@ -4,19 +4,22 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+     // isHidden:false,
+
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
+ 
   onLoad: function () {
-   
+     this.setData({
+          isHidden: false,
+          fonts:app.globalData.font
+        });
+        // var that = this;
+        // setTimeout(function(){
+        //   that.setData({
+        //       isHidden: true
+        //   });
+         
+        // }, 2000);
   },
   about:function(){
     wx.navigateTo({
@@ -33,5 +36,30 @@ Page({
       url:'/pages/caseDetail/caseDetail'
     })
   },
+  discount:function(){
+    wx.navigateTo({
+      url:'/pages/discount/discount'
+    })
+  },
+  shopping:function(){
+     wx.redirectTo({
+      url:'/pages/Shopping/shopping'
+    })
+  },
+  sort:function(){
+     wx.redirectTo({
+      url:'/pages/Sort/sort'
+    })
+  },
+  index:function(){
+     wx.redirectTo({
+      url:'/pages/Index/index'
+    })
+  },
+  User:function(){
+     wx.redirectTo({
+      url:'/pages/User/user'
+    })
+  }
 
 })

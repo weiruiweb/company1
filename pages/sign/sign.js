@@ -8,7 +8,9 @@ Page({
   },
   
   onLoad: function () {
-   
+    this.setData({
+      fonts:app.globalData.font
+    })
   },
   userInfo:function(){
     wx.navigateTo({

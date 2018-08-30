@@ -5,11 +5,13 @@
 </view>
 <view class="detail">
 	<view class="product_top">
-		<view class="name_share flexRowBetween">
-			<view class="product_name">
-				网站开发高端定制
+		<view class="name_share flexRowBetween" style="align-items:center;">
+			<view class="product_name avoidOverflow" style="width:80%;">
+				网站开发高端定制网站开发高端定制网站开发高端定制网站开发高端定制网站开发高端定制网站开发高端定制x
 			</view>
+			<view style="width:20%;text-align:right;">
 			<image src="/images/share.jpg"></image>
+			</view>
 		</view>
 		<view class="guarantee flexRowBetween">
 			<text>【售后保障1】</text><text>【售后保障1】</text>
@@ -24,11 +26,11 @@
 		</view>
 	</view>
 	<view class="choose flexRowBetween" bindtap="goBuy">
-		<view class="choose_left flexRowBetween" >
-			<text class="text1">请选择</text>
-			<input placeholder="基本展示 基本展示"></input>
+		<view class="choose_left flexRowBetween" style="width:80%;overflow:hidden;">
+			<text class="text1" style="{{fonts[2].font}}">请选择</text>
+			<view style="{{fonts[2].font}};color:#666;">基本展示 基本展示</view>
 		</view>
-		<view class="next_page">	
+		<view class="next_page" style="width:20%;text-align:right;">	
 			<image src="/images/next_page.jpg"></image>
 		</view>
 	</view>
@@ -43,9 +45,10 @@
 	<view class="detail_show">
 		<view id="detail" style="{{tabCurrent == 0?'display:block':'display:none'}}">
 			<image src="/images/detail1.jpg"></image>
-			<view class="video">
- <video style="width: 100%;height=400px;margin:1px;" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" binderror="videoErrorCallback"></video>
-</view>
+			<!--
+			<view class="video" style="z-index:0;">
+ <video style="width: 100%;height:350rpx;margin:1px;z-index:0;" src="" binderror="videoErrorCallback"></video>
+</view> -->
 		</view>
 		<view id="comment" style="{{tabCurrent == 1?'display:block':'display:none'}}">
 			<view class="good_com flexRowBetween">
@@ -59,14 +62,39 @@
 				</view>
 			</view>
 			<view class="comment_list ">
-				<view class="flexRowBetween">
-					<view class="comment_user ">
+				<view class="flexRowBetween" style="align-items:center;">
+					<view class="comment_user" style="display:flex;align-items:center;">
 						<view class="user_img">
-						<image src="/images/user1.jpg"></image>
+							<image src="/images/user1.jpg"></image>
 						</view>
-							<text class="text1">米桃子</text>
-							<text class="text2">2015.3.2</text>
-						
+						<view class="txts" style="height:58rpx;">
+							<view class="text1">米桃子</view>
+							<view class="text2">2015.3.2</view>
+						</view>
+					</view>
+					<view class="star flexRowBetween">
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+					</view>
+				</view>
+				<view class="comment_cont">
+					很满意的一次购物很满意的一次购物很满意的一次购物
+					很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物
+				</view>
+			</view>
+			<view class="comment_list ">
+				<view class="flexRowBetween"  style="align-items:center;">
+					<view class="comment_user" style="display:flex;align-items:center;">
+						<view class="user_img">
+							<image src="/images/user1.jpg"></image>
+						</view>
+						<view class="txts" style="height:58rpx;">
+							<view class="text1">米桃子</view>
+							<view class="text2">2015.3.2</view>
+						</view>
 					</view>
 					<view class="star flexRowBetween">
 						<image src="/images/star.jpg"></image>
@@ -81,36 +109,15 @@
 				</view>
 			</view>
 			<view class="comment_list ">
-				<view class="flexRowBetween">
-					<view class="comment_user ">
+				<view class="flexRowBetween"  style="align-items:center;">
+					<view class="comment_user" style="display:flex;align-items:center;">
 						<view class="user_img">
-						<image src="/images/user1.jpg"></image>
+							<image src="/images/user1.jpg"></image>
 						</view>
-							<text class="text1">米桃子</text>
-							<text class="text2">2015.3.2</text>
-						
-					</view>
-					<view class="star flexRowBetween">
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-					</view>
-				</view>
-				<view class="comment_cont">
-					很满意的一次购物很满意的一次购物很满意的一次购物
-				</view>
-			</view>
-			<view class="comment_list ">
-				<view class="flexRowBetween">
-					<view class="comment_user ">
-						<view class="user_img">
-						<image src="/images/user1.jpg"></image>
+						<view class="txts" style="height:58rpx;">
+							<view class="text1">米桃子</view>
+							<view class="text2">2015.3.2</view>
 						</view>
-							<text class="text1">米桃子</text>
-							<text class="text2">2015.3.2</text>
-						
 					</view>
 					<view class="star flexRowBetween">
 						<image src="/images/star.jpg"></image>
@@ -131,13 +138,13 @@
 
 </view>
 <view id="buy">
-	<view class="flexRowBetween">
-		<view class="consult" style="margin-right:40rpx;">
-			<image src="/images/kefu1.jpg"></image>
+	<view class="buy_click">
+		<view class="consult">
+			<image src="/images/kefu1.png"></image>
 			<view class="text1">客服</view>
 		</view>
 		<view class="consult collect">
-			<image src="/images/collect.jpg"></image>
+			<image src="/images/collect.png"></image>
 			<view class="text1">收藏</view>
 		</view>
 		<view class="go_buy flexRowBetween" bindtap="goBuy">
@@ -169,24 +176,24 @@
 		</view>
 	</view>
 	<view id="type" class="flexRowBetween">
-		<view class="pro_type">	
+		<view class="pro_type"  >	
 			类型
 		</view>
-		<view class="pro_types">	
+		<view class="pro_types" data-type="0"  bindtap="chooseType" style="{{chooseType == 0?'background:#21c3d4;color:#fff;':'' }}">	
 			模板
 		</view>
-		<view class="pro_types">	
+		<view class="pro_types" data-type="1"  bindtap="chooseType" style="{{chooseType == 1?'background:#21c3d4;color:#fff;':'' }}">	
 			定制
 		</view>
 	</view>
 	<view id="type" class="flexRowBetween">
-		<view class="pro_type">	
+		<view class="pro_type" >	
 			售后
 		</view>
-		<view class="pro_types">	
+		<view class="pro_types" data-type="0"  bindtap="chooseType1" style="{{chooseType1 == 0?'background:#21c3d4;color:#fff;':''}}">	
 			有
 		</view>
-		<view class="pro_types">	
+		<view class="pro_types" data-type="1" bindtap="chooseType1" bindtap="chooseType1" style="{{chooseType1 == 1?'background:#21c3d4;color:#fff;':''}} ">	
 			无
 		</view>
 	</view>
@@ -195,7 +202,7 @@
 			数量
 		</view>
 		<view class="edit_number flexRowBetween">
-			<view class="minus">-</view>
+			<view class="minus" style="line-height:45rpx;">-</view>
 			<view class="number">1</view>
 			<view class="add">+</view>
 

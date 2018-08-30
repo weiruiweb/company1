@@ -54,24 +54,31 @@
 	color:#222;
 }
 .great{
-	padding:0px 25rpx;
+	
+}
+#great{
+	width:96%;
+	padding:0rpx 2%;
 	overflow:hidden;
+	
 }
 .great_item{
-	width:320rpx;
-	height:auto;
-	margin:0rpx 17rpx;
-	float:left;
+	width:50%;
+	height:410rpx;
 	text-align:center;
-	margin-bottom:45rpx;
+	float:left;
+	overflow:hidden;
 }
-
+.great_item span{
+	text-align:center;
+}
 .great_item image{
 	width:320rpx;
 	height:320rpx;
 	border-radius:10rpx;
 }
 .great_item text{
+width:100%;
 	font-size:24rpx;
 	color:#333;
 }

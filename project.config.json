@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.0",
-	"appid": "touristappid",
-	"projectname": "%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"appid": "wx212611f012b9cf1d",
+	"projectname": "cc",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 12,
 			"list": [
 				{
 					"id": 0,
@@ -56,13 +56,61 @@
 				{
 					"id": 3,
 					"name": "1",
-					"pathName": "pages/caseDetail/caseDetail",
+					"pathName": "pages/detail/detail",
 					"query": ""
 				},
 				{
 					"id": -1,
 					"name": "index",
 					"pathName": "pages/Index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "1",
+					"pathName": "pages/confirmOrder/confirmOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "1",
+					"pathName": "pages/userInfo/userInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "manne",
+					"pathName": "pages/manageAddress/manageAddress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "sort",
+					"pathName": "pages/Sort/sort",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "datai",
+					"pathName": "pages/detail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "conf",
+					"pathName": "pages/confirmOrder/confirmOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "userinfo",
+					"pathName": "pages/userInfo/userInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "gg",
+					"pathName": "pages/gongzhonghao/gongzhonghao",
 					"query": ""
 				}
 			]

@@ -21,23 +21,29 @@
 .address_set{
 	padding:20px 25rpx;
 	border-bottom:solid 1px #ececec;
-	background:#fff;}
+	background:#fff;
+	justify-content:center;
+	}
 .address_set text{font-size:24rpx;}
-.address_set .default{color:#2c9fe1;width:498rpx;}
+.address_set .default{
+	color:#2c9fe1;
+	width:71%;
+	align-items:center;
+	height:30rpx;
+	display:flex;
+	align-items:center;
+	}
 .address_set .default image{
 	margin-right:15px;
 	width:29rpx;
-	height:29rpx;
-	position:relative;
-	top:5rpx;}
+	height:29rpx;}
 .address_set  .edit image{
 	width:26rpx;
 	height:26rpx;
-	position:relative;
-	top:3rpx;
 	margin-right:10rpx;
 }
-.edit{color:#7d7d7d;}
+.edit{color:#7d7d7d;width:15%;display:flex;
+	align-items:center;}
 .de_color{color:#7d7d7d}
 .submit_info{
 margin-top:0rpx;

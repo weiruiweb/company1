@@ -11,6 +11,19 @@
 	padding:0rpx 25rpx;
 	margin:42rpx 0rpx 50rpx;
 }
+.news_left{
+	width:59%;
+	overflow:hidden;
+	height:170rpx;
+	overflow:hidden;
+}
+.news_right{
+	width:41%;
+	text-align:right;
+	overflow:hidden;
+	height:170rpx;
+	overflow:hidden;
+}
 .service_tlt{
 	position:relative;
 	left:24rpx;
@@ -28,23 +41,30 @@
 .news_list{
 	padding:32rpx 25rpx 28rpx;
 	border-bottom:solid 1px #ececec;
+	align-items:center;
+	height:160rpx;
+	overflow:hidden;
 }
 .news_cont{
 	font-size:26rpx;
 	color:#262626;
-	width:415rpx;
+	height:68%;
+	width:100%;
+	overflow:hidden;
 }
 .news_time{
 	font-size:22rpx;
 	color:#808080;
-	margin-top:50rpx;
+	height:32%;
+	align-items:center;
+	overflow:hidden;
 }
 .news_data{
 	margin-left:18rpx;
 }
 .news_right image{
 	width:200rpx;
-	height:145rpx;
+	height:160rpx;
 }
 #news_cont{
 	border-top:solid 1px #ececec;

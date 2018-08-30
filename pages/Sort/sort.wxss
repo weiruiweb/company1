@@ -1,4 +1,9 @@
 /**index.wxss**/
+page{
+	width:100%;
+	min-height:100%;
+	background:#f5f5f5;
+}
 #sort{
 	background:#f5f5f5;
 	padding-top:35rpx;
@@ -13,52 +18,63 @@
 	border-radius:20rpx;
 	color:#979797;
 	font-size:24rpx;}
-.made_product{padding-right:24rpx;}
+.made_product{
+	margin-bottom:120rpx;
+}
 .made_sort{
-	width:160rpx;
+	width:27%;
 	text-align:center;
 	background:#fff;
-	height:100%;
+	min-height:100%;
 }
 .made_cont{
-	width:520rpx;
+	width:70%;
 	background:#fff;}
 .madeSort{
-	position:relative;
-	height:210rpx;}
-.madeSort .img_bg{
-	width:160rpx;
+	height:auto;
+	padding-bottom:12rpx;
+	}
+.left_bar{
+	width:100%;
+	text-align:center;
+}
+.lsort_LeftAll{
+	width:100%;
 	height:88rpx;
-	position:absolute;
-	top:0rpx;
-	left:0rpx;
-	display:none;}
-.made_bg .img_bg{display:block;}
+	font-size:30rpx;
+	color:#666;
+}
+.madeSort .img_bg{
+	width:100%;
+	height:88rpx;
+	line-height:88rpx;
 
-.madeSortItem  text{display:inline-block;}
-.madeSortItem{
-	position:absolute;
-	left:0px;
-	top:0px;
-	padding:0px 25rpx;
-}
-.madeSortItem .text1{
-	display:block;
-	height:84rpx;
-	line-height:84rpx;
-	color:#444;
-	font-size:28rpx;
-	border-bottom:solid 1px #666;
-}
-.madeSortItem .text2{
+	color:#666;
+	
+	}
+.madeSort .text2{
 	font-size:22rpx;
 	color:#999;
-	height:60rpx;
-	line-height:60rpx;
+	height:70rpx;
+	line-height:70rpx;
 }
-.madeSortItem .text3{
+.small_sort{
+	width:65%;
+	margin:0rpx auto;
+	border-top:solid 1px #666;
+	}
+.small_txt{
+	width:80%;
+	margin:0rpx auto;
+}
+.small_sort text{
+	display:block;
+}
+.madeSort .text3{
 	border-top:solid 1px #b1b1b1;
 }
+.made_bg .img_bg{background:linear-gradient(to right,rgba(72,222,223,1.00),rgba(42,154,225,1.00));}
+
 .made_bg .active{color:#fff;}
 .madeContItem{display:none;}
 .madeShow{display:block}
@@ -70,30 +86,33 @@
 .made_tlt{
 	height:86rpx;
 	line-height:86rpx;
-	background:#f5f5f5;}
+	background:#fff;
+	}
 .made_tlt .made_name{
+	margin-left:4%;
 	color:#222;
 	font-size:28rpx;
 }
 .made_tlt .made_more{
 	font-size:24rpx;
-	color:#a3a3a3;}
+	color:#a3a3a3;
+	margin-right:4%;}
 .made_case{
 	border-radius:30rpx;
-	padding:30rpx 21rpx;
 	overflow:hidden;
+	padding:2%;
 }
 .made_item{
-	width:124rpx;
-	height:auto;
 	float:left;
-	margin:0px 19rpx;
+	width:44%;
+	height:200rpx;
+	float:left;
+	margin:3%;
 	text-align:center;
-	margin-bottom:25rpx;
 }
 .made_item image{
-	width:124rpx;
-	height:124rpx;
+	width:100%;
+	height:80%;
 }
 .made_item .product_name{
 	font-size:24rpx;

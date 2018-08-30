@@ -11,7 +11,9 @@ Page({
   },
   
   onLoad: function () {
-   
+    this.setData({
+      fonts:app.globalData.font
+    })
   },
   
   changeImage:function(e){
@@ -30,5 +32,19 @@ Page({
     wx.navigateTo({
       url:'/pages/detail/detail'
     })
-  }
+  },
+  tabCont:function(e){
+      var currentId=e.currentTarget.dataset.id;
+      this.setData({
+       currentId:currentId,
+       isShow:false
+      });
+
+  },
+   menuTap:function(e){
+      var current=e.currentTarget.dataset.current;
+      this.setData({
+       tapCurrent:current
+      });
+  },
 })

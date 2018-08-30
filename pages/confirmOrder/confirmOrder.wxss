@@ -6,21 +6,24 @@
 }
 .order_list{padding:0rpx 25rpx;background:#fff;}
 .order_user{
-	padding:0px 100rpx;
+	padding:0px 13%;
 	font-size:32rpx;
 	color:#262626;
 	height:90rpx;
 	line-height:90rpx;
 	background:#fff;
+	width:74%;
 }
 .order_confirm .orderlistShow{
+	width:100%;
+	height:160rpx;
 	padding:42rpx 0rpx 32rpx;
 	border-bottom:solid 1rpx #ececec;
+	align-items:center;
 }
 .order_confirm image{
 	width:160rpx;
-	height:160rpx;
-	margin-right:25rpx;}
+	height:160rpx;}
 .user_address{
 	padding:0px 25rpx 30rpx;
 	border-bottom:solid 1px #ececec;
@@ -29,25 +32,30 @@
 .user_address .address_icon{
 	width:30rpx;
 	height:31rpx;
-	margin:0px 22rpx 0rpx 28rpx;
 }
-.next_page{
+.next_page image{
 	width:11rpx;
-	height:20rpx;
+	height:24rpx;
+	text-align:right
 }
 .detail_address{
 	font-size:24rpx;
 	color:#262626;
-	width:610rpx;
+	overflow:hidden;
 }
-.order_name{width:520rpx;}
+.img_left{width:26%;}
+.order_name{
+	width:74%;
+	align-items:center;
+	overflow:hidden;
+	}
 .order_name .text1{
 	font-size:28rpx;
 	color:#262626;
+	width:100%;
+	overflow:hidden;
 }
-.orders{
-	margin-top:40rpx;
-}
+
 .order_price{
 	color:#21c3d4;
 	font-size:32rpx;
@@ -76,6 +84,7 @@
 	padding:52rpx 25rpx;
 	overflow:hidden;
 	border-bottom:solid 1px #ececec;
+	align-items:center;
 }
 .text1{
 	font-size:28rpx;
@@ -91,6 +100,7 @@ textarea{
 	border-top:solid 1px #ececec;
 	position:absolute;
 	bottom:0rpx;
+	width:100%;
 }
 .pay_order{
 
@@ -98,25 +108,31 @@ textarea{
 }
 .total_money{	
 	color:#21c3d4;
-	font-size:28rpx;
-	margin-left:256rpx;}
+	font-size:28rpx;}
 .total_money .text2{
 	font-weight:bold;
 }
 .submit_order{
-	width:260rpx;
+	width:35%;
 	height:90rpx;
 	background:linear-gradient(to right,rgba(72,222,223,1.00),rgba(42,154,225,1.00));
-	margin-left:48rpx;
+
 	font-size:28rpx;
 	line-height:90rpx;
 	text-align:center;
 	color:#fff;
 }
-.total_money{margin-top:20rpx;}
-.total_money text{float:left;}
+
+
 .total_money .text2{margin-left:30rpx;}
 .price_note{
-	clear:both;
+
 	font-size:16rpx;
 	color:#6f6f6f;}
+textarea{
+	position:none;
+}
+.recive{
+	width:100%;
+	align-items:center;
+}

@@ -4,18 +4,57 @@
 	flex-direction:row;
 	justify-content:space-between;
 }
+.flexRowBetween1{
+	display:flex;
+	flex-direction:row;
+}
 .flexColumnBetween{
 	flex-direction:column;
 	justify-content:space-between;
+}
+.avoidOverflow{
+	overflow-x:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
 }
 /***********提交按钮***********/
 .submit_info{
 margin:0rpx 25rpx;
 width:700rpx;
 height:88rpx;
-line-height:99rpx;
+line-height:88rpx;
 text-align:center;
 font-size:36rpx;
 color:#fff;
 background:linear-gradient(to right,rgba(72,222,223,1.00),rgba(42,154,225,1.00));
 border-radius:10rpx;margin-top:260rpx;}
+/***********navbar***********/
+.navbar{
+	height:115rpx;
+	width:100%;
+	position:fixed;
+	bottom:0rpx;
+	z-index:999;
+	background:#fff;
+	display:flex;
+	justify-content:center;
+	border-top:solid 1px #dbdbdb;
+	align-items:center;
+}
+.navbar_item{
+
+	width:25%;
+	text-align:center;
+
+}
+.navbar .text{
+	color:#656565;
+}
+.navbar .this-text{
+	color:#21c3d4;
+}
+
+.navigator-hover {
+	background:none;
+	color:#21c3d4;
+}

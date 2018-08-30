@@ -51,23 +51,27 @@
 	</view>
 </view>
 <view class="great">
-	<view class="great_txt">
+	<view class="great_txt" style="{{fonts[4].font}}">
 		猜你喜欢的
 	</view>
-	<view class="great_item">
-		<image src="/images/great.jpg"></image>
-		<text>网站套餐</text>
-	</view>
-	<view class="great_item">
-		<image src="/images/great.jpg"></image>
-		<text>网站套餐</text>
-	</view>
-	<view class="great_item">
-		<image src="/images/great.jpg"></image>
-		<text>网站套餐</text>
-	</view>
-	<view class="great_item">
-		<image src="/images/great.jpg"></image>
-		<text>网站套餐</text>
+	<view id="great">
+		<view class="great_item">
+			<span>
+			<image src="/images/great.jpg"></image>
+			</span>
+			<view class="text" style="{{fonts[3].font}}">网站套餐</view>
+		</view>
+		<view class="great_item">
+			<image src="/images/great.jpg"></image>
+			<view class="text" style="{{fonts[3].font}}">网站套餐</view>
+		</view>
+		<view class="great_item">
+			<image src="/images/great.jpg"></image>
+			<view class="text"  style="{{fonts[3].font}}">网站套餐</view>
+		</view>
+		<view class="great_item">
+			<image src="/images/great.jpg"></image>
+			<view class="text"  style="{{fonts[3].font}}">网站套餐</view>
+		</view>
 	</view>
 </view>

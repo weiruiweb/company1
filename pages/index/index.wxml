@@ -1,70 +1,131 @@
 <!--index.wxml-->
+<!--
+<view id="loading-wrapper" hidden="{{isHidden}}">
+  <view id="loading-text">LOADING</view>
+  <view id="loading-content"></view>
+</view>-->
 <view class="banner">
-  <image class="bannerImg" src="/images/banner.jpg"></image>
+  <image class="bannerImg" src="/images/banner.png"></image>
   <image src="/images/cloude.png" class="clude"></image>
-  <view class="custom">立即定制 ></view>
+  <view class="banner_txt" style="position:absolute;top:35%;right:15%;display:block;">
+    <view style="{{fonts[2].font}};color:#fff;">小程序/公众号/网站</view>
+    <view style="{{fonts[1].font}};color:#fff;">提供优质一对一客户服务</view>
+    <view class="custom">立即定制 ></view>
+  </view>
+  <!-- <image src="/images/cloude.png" class="clude1"></image> -->
 </view>
-<view class="module flexRowBetween" bindtap="sign">
-  <view class="module_item">
-    <view class="module_icon module1">
-      <image src="/images/index_icon1.png" class="firstImg"></image>
-      <image src="/images/index_icon1_a.png" class="secondImg"></image>
+
+<view  class="module">
+    <view class="module_item" bindtap="sign">
+      <view class="item_top">
+       <image style="width:84rpx;height:84rpx" src="/images/index_icon1.png"></image>
+      </view>
+      <view  class="text" style="{{fonts[3].font}}">
+        积分签到
+      </view>
     </view>
-    <text>积分签到</text>
-  </view>
-  <view class="module_item">
-    <view class="module_icon module2">
-      <image src="/images/index_icon2.jpg" class="firstImg"></image>
-      <image src="/images/index_icon2-a.png" class="secondImg"></image>
+    <view class="module_item" bindtap="discount">
+      <view class="item_top">
+       <image style="width:84rpx;height:84rpx" src="/images/index_icon2.png"></image>
+      </view>
+      <view  class="text" style="{{fonts[3].font}}">
+        优惠券
+      </view>
     </view>
-    <text>优惠券</text>
-  </view>
-  <view class="module_item" bindtap="about">
-    <view class="module_icon module3">
-      <image src="/images/index_icon3.jpg" class="firstImg"></image>
-      <image src="/images/index_icon3.png" class="secondImg"></image>
+    <view class="module_item"  bindtap="about">
+      <view class="item_top">
+       <image style="width:84rpx;height:84rpx" src="/images/index_icon3.png"></image>
+      </view>
+      <view  class="text" style="{{fonts[3].font}}">
+        关于我们
+      </view>
     </view>
-    <text>关于我们</text>
-  </view>
-  <view class="module_item">
-   <view class="module_icon module4">
-      <image src="/images/index_icon4.jpg" class="firstImg"></image>
-      <image src="/images/index_icon4-a.png" class="secondImg"></image>
+    <view class="module_item"  bindtap="discount">
+      <view class="item_top">
+       <image style="width:84rpx;height:84rpx" src="/images/index_icon4.png"></image>
+      </view>
+      <view  class="text" style="{{fonts[3].font}}">
+        联系我们
+      </view>
     </view>
-    <text>联系我们</text>
   </view>
-</view>
+<!--
+  <view style=width:100%;height:140rpx;display:flex;">
+    <view style="width:25%;text-align:center;">
+      <view style="width:100%;height:60%">
+        <span><image style="width:84rpx;height:84rpx" src="/images/index_icon1.png"></image></span>
+      </view>
+      <view style="width:100%;">
+        test
+      </view>
+    </view>
+    <view style="width:25%;text-align:center;">
+      <view style="width:100%;height:50%">
+        <span><image style="width:84rpx;height:84rpx" src="/images/index_icon2.png"></image></span>
+      </view>
+      <view style="width:100%;">
+        test
+      </view>
+    </view>
+    <view style="width:25%;text-align:center;">
+      <view style="width:100%;height:50%">
+        <span><image style="width:84rpx;height:84rpx" src="/images/index_icon3.png"></image></span>
+      </view>
+      <view style="width:100%;">
+        test
+      </view>
+    </view>
+    <view style="width:25%;text-align:center;">
+      <view style="width:100%;height:50%">
+        <span><image style="width:84rpx;height:84rpx" src="/images/index_icon4.png"></image></span>
+      </view>
+      <view style="width:100%;">
+        test
+      </view>
+    </view>
+  </view>
+-->
 <view class="service">
   <view class="service_tlt">
     <image src="/images/tlt_bg_03.jpg"></image>
     <text class="text1">服务类别</text>
   </view>
-  <view class="service_cont  flexRowBetween">
+
+  
+  <view class="service_cont">
     <view class="service_left">
-        <text class="text1">微信小程序</text>
-        <text class="text2">联系更紧密</text>
+      <view class="service_leftT">
+       <text class="text1">微信小程序</text>
+        <text class="text2" style="{{fonts[1].font}}">联系更紧密</text>
+      </view>
+      <view class="service_leftB">
         <image src="/images/sort_Img1.jpg"></image>
+      </view>
     </view>
     <view class="service_right">
-        <view class="service_top  flexRowBetween">
+      <view class="service_rightT">
+          <view class="service_top  flexRowBetween">
           <view class="serviceTLeft">
             <text class="text1">网站</text>
-            <text class="text2">浏览更方便</text>
+            <text class="text2"  style="{{fonts[1].font}}">浏览更方便</text>
           </view>
 
           <view class="serviceTright">
             <image class="" src="/images/sort_img2.jpg"></image>
           </view>
         </view>
-        <view class="service_bottom  flexRowBetween">
+      </view>
+      <view class="service_rightB">
+          <view class="service_bottom  flexRowBetween">
           <view class="serviceBLeft">
               <text class="text1">公众号</text>
-              <text class="text2">管理更方便</text>
+              <text class="text2"  style="{{fonts[1].font}}">管理更方便</text>
             </view>
           <view class="serviceBright">
             <image class="" src="/images/sort_img3.jpg"></image>
           </view>
         </view>
+      </view>
     </view>
   </view>
 </view>
@@ -83,21 +144,72 @@
   <view class="case_cont">
     <view class="case_top flexRowBetween" bindtap="caseDetail">
         <view  class="case_left">
-        <image src="/images/case1.jpg"></image>
+          <view class="img_scale">
+           <image src="/images/case1.jpg"></image>
+          </view>
         </view>
         <view class="case_right">
-          <view class="text1">高端定制最美中国网站高端定制最美中国网站高端定制最 美中国网站</view>
-          <view class="case_more">了解更多 > </view>
+          <view class="right_in">
+            <view class="text1"  style="{{fonts[2].font}}">高端定制最美中国网站高端定制最美中国网站高端定制最 美中国网站高端定制最美中国网站高端定制最美中国网站高端定制最高端定制最美中国网站高端定制最美中国网站高端定制最高端定制最美中国网站高端定制最美中国网站高端定制最</view>
+            <view class="right_more">
+                <view class="case_more">了解更多 > </view>
+            </view>
+            
+          </view>
         </view>
     </view>
     <view class="case_bottom flexRowBetween" bindtap="caseDetail">
         <view class="case_right">
-            <view class="text1">高端定制最美中国网站高端定制最美中国网站高端定制最 美中国网站</view>
-          <view class="case_more">了解更多 > </view>
+            <view class="right_in">
+            <view class="text1"  style="{{fonts[2].font}}">高端定制最美中国网站高端定制最美中国网站高端定制最 美中国网站高端定制最美中国网站高端定制最美中国网站高端定制最高端定制最美中国网站高端定制最美中国网站高端定制最高端定制最美中国网站高端定制最美中国网站高端定制最</view>
+            <view class="right_more">
+                <view class="case_more">了解更多 > </view>
+            </view>
+            
+          </view>
         </view>
         <view class="case_left">
-          <image src="/images/case2.jpg"></image>
+         
+            <image src="/images/case2.jpg"></image>
+         
         </view>
     </view>
   </view>
+</view>
+
+<view class="navbar">
+    
+      <view class="navbar_item" bindtap="index">
+      
+          <view class="nav_img">
+            <image src="/images/navbar1-a.png" style="width:42rpx;height:42rpx;"></image>
+          </view>
+          <view class="text this-text" style="{{fonts[2].font}}">首页</view>
+
+      </view>
+    
+    <view class="navbar_item" bindtap="sort">
+   
+        <view class="nav_img">
+           <image src="/images/navbar2.png" style="width:42rpx;height:42rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">分类</view>
+    
+    </view>
+    <view class="navbar_item"  bindtap="shopping">
+   
+        <view class="nav_img">
+            <image src="/images/navbar3.png" style="width:42rpx;height:42rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">购物车</view>
+
+    </view>
+    <view class="navbar_item"  bindtap="User">
+   
+        <view class="nav_img">
+            <image src="/images/navbar4.png" style="width:42rpx;height:42rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">我的</view>
+
+    </view>
 </view>

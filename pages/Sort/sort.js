@@ -9,7 +9,9 @@ Page({
   },
   
   onLoad: function () {
-   
+    this.setData({
+      fonts:app.globalData.font
+    })
   },
   menuTap:function(e){
       var current=e.currentTarget.dataset.current;
@@ -26,6 +28,26 @@ Page({
   gongzhonghao:function(){
     wx.navigateTo({
       url:'/pages/gongzhonghao/gongzhonghao'
+    })
+  },
+  shopping:function(){
+     wx.redirectTo({
+      url:'/pages/Shopping/shopping'
+    })
+  },
+  sort:function(){
+     wx.redirectTo({
+      url:'/pages/Sort/sort'
+    })
+  },
+  index:function(){
+     wx.redirectTo({
+      url:'/pages/Index/index'
+    })
+  },
+  User:function(){
+     wx.redirectTo({
+      url:'/pages/User/user'
     })
   }
 })

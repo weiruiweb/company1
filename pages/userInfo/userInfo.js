@@ -20,5 +20,10 @@ Page({
       date: e.detail.value
     })
   },
+  user:function(){
+     wx.switchTab({
+      url:'/pages/User/user'
+    })
+  }
   
 })

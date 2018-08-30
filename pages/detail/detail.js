@@ -6,10 +6,14 @@ Page({
   data: {
   tabCurrent:0,
   isShow:false,
+  chooseType:0,
+  chooseType1:0,
   },
   
   onLoad: function () {
-   
+   this.setData({
+      fonts:app.globalData.font
+    })
   },
   userInfo:function(){
     wx.navigateTo({
@@ -33,5 +37,18 @@ Page({
     this.setData({
       isShow:false
     })
+  },
+  chooseType:function(e){
+    var chooseType = e.currentTarget.dataset.type;
+    this.setData({
+      chooseType:chooseType
+    })
+  },
+  chooseType1:function(e){
+    var chooseType1 = e.currentTarget.dataset.type;
+    this.setData({
+      chooseType1:chooseType1
+    })
+
   }
 })

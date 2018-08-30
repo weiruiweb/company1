@@ -1,26 +1,29 @@
 /**index.wxss**/
-.input_note{width:160rpx;
+.input_note{width:23%;
 	color:#363636;
 	font-size:32rpx;
+}
+.users_detail{
+	width:100%;
+	align-items:center;
 }
 .user_input{
 	height:90rpx;
 	line-height:90rpx;
 	border-bottom:solid 1px #e0e0e0;
-	padding:0px 25px;}
+	padding:0px 25rpx;
+	align-items:center;
+	}
 .user_input input{
 	height:32rpx;
 	line-height:32rpx;
 	color:#b2b2b2;
 	font-size:30rpx;
-	width:542rpx;
-	margin-left:38rpx;
-	margin-top:20rpx;
+	width:77%;
 }
 .user_input image{
 	width:11rpx;
 	height:20rpx;
-	margin-top:35rpx;
 }
 .address_right text{color:#b2b2b2;font-size:28rpx;}
 .address_right image{margin-left:15rpx;}

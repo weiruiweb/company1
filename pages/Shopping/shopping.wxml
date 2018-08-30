@@ -1,45 +1,7 @@
 <!--shopping.wxml-->
 <view id="shopping">
-	<view class="shopping_item flexRowBetween">
-		<view class="select_status">
-			<image src="/images/select.png"></image>
-		</view>
-		<view class="shopping_img">
-			<image src="/images/product_buy.png"></image>
-		</view>
-		<view class="shopping_name">
-			<text class="text1">网站建设</text>
-			<text class="text2">个性化定制</text>
-			<text class="price">¥3999</text>
-		</view>
-		<view class="edit_number flexRowBetween">
-			<view class="minus">-</view>
-			<view class="number">1</view>
-			<view class="add">+</view>
-
-		</view>
-	</view>
-	<view class="shopping_item flexRowBetween">
-		<view class="select_status">
-			<image src="/images/select_active.jpg"></image>
-		</view>
-		<view class="shopping_img">
-			<image src="/images/product_buy.png"></image>
-		</view>
-		<view class="shopping_name">
-			<text class="text1">网站建设</text>
-			<text class="text2">个性化定制</text>
-			<text class="price">¥3999</text>
-		</view>
-		<view class="edit_number flexRowBetween">
-			<view class="minus">-</view>
-			<view class="number">1</view>
-			<view class="add">+</view>
-
-		</view>
-	</view>
 	<view class="shopping_item">
-		<view class="flexRowBetween">
+		<view class="flexRowBetween" style="align-items:center;">
 			<view class="select_status">
 				<image src="/images/select.png"></image>
 			</view>
@@ -52,34 +14,114 @@
 				<text class="price">¥3999</text>
 			</view>
 			<view class="edit_number flexRowBetween">
-				<view class="minus">-</view>
-				<view class="number">1</view>
-				<view class="add">+</view>
+				<view class="minus" style="font-size:50rpx;line-height:36rpx;">-</view>
+				<view class="number" style="font-size:30rpx;">1</view>
+				<view class="add"  data-num="1"  bindtap="onAddingToCartTap">+</view>
 			</view>
 		</view>
+		<view class="circle {{flayTo==1?'animate':''}}" mode="aspectFill" style="{{flayTo==1?translateStyle:''}}"></view>
 	</view>
-	<view class="total flexRowBetween">
-		<view class="all_select">
+	
+	<view class="shopping_item">
+		<view class="flexRowBetween" style="align-items:center;">
+			<view class="select_status">
+				<image src="/images/select_active.jpg"></image>
+			</view>
+			<view class="shopping_img">
+				<image src="/images/product_buy.png"></image>
+			</view>
+			<view class="shopping_name">
+				<text class="text1">网站建设</text>
+				<text class="text2">个性化定制</text>
+				<text class="price">¥3999</text>
+			</view>
+			<view class="edit_number flexRowBetween">
+				<view class="minus" style="font-size:50rpx;line-height:36rpx;">-</view>
+				<view class="number" style="font-size:30rpx;">1</view>
+				<view class="add"  data-num="2"  bindtap="onAddingToCartTap">+</view>
+
+			</view>
+		</view>
+		<view class="circle {{flayTo==2?'animate':''}}" mode="aspectFill" style="{{flayTo==2?translateStyle:''}}"></view>
+	</view>
+	<view class="shopping_item">
+		<view class="flexRowBetween" style="align-items:center;">
+			<view class="select_status">
+				<image src="/images/select.png"></image>
+			</view>
+			<view class="shopping_img">
+				<image src="/images/product_buy.png"></image>
+			</view>
+			<view class="shopping_name">
+				<text class="text1">网站建设</text>
+				<text class="text2">个性化定制</text>
+				<text class="price">¥3999</text>
+			</view>
+			<view class="edit_number flexRowBetween">
+				<view class="minus" style="font-size:50rpx;line-height:36rpx;">-</view>
+				<view class="number" style="font-size:30rpx;">1</view>
+				<view class="add"  data-num="3"  bindtap="onAddingToCartTap">+</view>
+
+			</view>
+		</view>
+		<view class="circle {{flayTo==3?'animate':''}}" mode="aspectFill" style="{{flayTo==3?translateStyle:''}}"></view>
+	</view>
+	<view class="total" style="display:flex;">
+		<view class="all_select" style="width:10%;text-align:center;;overflow:hidden;">
 			<image src="/images/select.png"></image>
 		</view>
-		<view class="select_c">全选</view>
-		<view class="del_shopping">
+		<view class="select_c"  style="width:10%;text-align:left;overflow:hidden;">全选</view>
+		<view class="del_shopping" style="width:10%;text-align:left;overflow:hidden;">
 			删除
 		</view>
-		<view class="toalt1">
+		<view class="toalt1"  style="width:20%;text-align:right;overflow:hidden;">
 			合计:
 		</view>
-		<view class="priceNumber">
+		<view class="priceNumber" style="width:15%;text-align:center;overflow:hidden;">
 		¥3999
 		</view>
-		<view class="">
-			<view class="submit_shopping">
-			<image src="/images/pay.jpg"></image>
-			<view class="pay_note" bindtap="confirmOrder">
-				<text class="text1">结算</text>
-				<text class="number_pay">(1)</text>
-			</view>
+		<view class="" style="align-items:center;width:35%;text-align:center;overflow:hidden;">
+			<view class="submit_shopping" style="margin:0rpx auto;">
+				<view class="pay_note" bindtap="confirmOrder">
+					<text class="text1">结算</text>
+					<text class="number_pay">(1)</text>
+				</view>
 			</view>
 		</view>
 	</view>
+</view>
+<view class="navbar">
+    
+      <view class="navbar_item"  bindtap="index">
+          <view class="nav_img">
+            <image src="/images/navbar1.jpg" style="width:42rpx;height:42rpx;"></image>
+          </view>
+          <view class="text " style="{{fonts[2].font}}">首页</view>
+      </view>
+    
+    <view class="navbar_item" bindtap="sort">
+
+        <view class="nav_img">
+           <image src="/images/navbar2.png" style="width:42rpx;height:42rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">分类</view>
+
+    </view>
+    <view class="navbar_item"  bindtap="shopping">
+        <view class="nav_img">
+	        <view class="cart_number" bindtap="onCartTap">
+	            <view class="fiexd-cart {{isShake?'animate':''}}" style="">
+	                <view style="color:#fff;font-size:16rpx;">{{cartTotalCounts}}</view>
+	            </view>
+	        </view>
+            <image src="/images/navbar3-a.png" style="width:42rpx;height:42rpx;" class="{{isShake?'jisster':''}}"></image>
+        </view>
+        <view class="text this-text" style="{{fonts[2].font}}">购物车</view>
+    </view>
+    <view class="navbar_item" bindtap="User">
+        <view class="nav_img">
+            <image src="/images/navbar4.png" style="width:42rpx;height:42rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">我的</view>
+    </view>
 </view>

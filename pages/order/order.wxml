@@ -73,8 +73,14 @@
 				</view>
 				<view class="handle_order">
 					<view class="flexRowBetween">
-						<view class="handle_orders delete_order">删除订单</view>
-						<view class="handle_orders comment_order" bindtap="commentOrder">去评价</view>
+						<view class="handle_orders delete_order" data-id="{{item.id}}" bindtap='deleteOrder' wx:if="{{item.pay_status == '0'}}">删除订单</view>
+
+						<view class="handle_orders comment_order" bindtap="intoPath" data-path="/pages/commentOrder/commentOrder" wx:if="{{item.pay_status == '1'&&item.item[0].isremark!='1'}}">去评价</view>
+
+						<view class="handle_orders comment_order" bindtap="intoPath"  wx:if="{{item.pay_status == '1'&&item.transport_status == '1'&&item.order_step == '0'}}" data-id="{{item.id}}">确认收货</view>
+
+						<view class="handle_orders comment_order" bindtap="intoPath" data-path="/pages/commentOrder/commentOrder" wx:if="{{item.pay_status == '1'&&item.transport_status == '1'&&item.order_step == '0'}}">查看物流</view>
+
 					</view>
 				</view>
 			</view>

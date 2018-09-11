@@ -1,4 +1,5 @@
 /**detail.wxss**/
+@import "../../wxParse/wxParse.wxss"; 
 .banner image{
 	width:100%;
 	height:420rpx;

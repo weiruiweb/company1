@@ -1,3 +1,4 @@
+@import "../../wxParse/wxParse.wxss"; 
 .users{
 	height:300rpx;
 	width:100%;

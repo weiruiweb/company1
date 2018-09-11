@@ -1,4 +1,5 @@
 /**index.wxss**/
+@import "../../wxParse/wxParse.wxss"; 
 .shopping_cart{
 	width:228rpx;
 	height:228rpx;

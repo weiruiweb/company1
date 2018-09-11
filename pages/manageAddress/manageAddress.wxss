@@ -1,4 +1,5 @@
 /**index.wxss**/
+@import "../../wxParse/wxParse.wxss"; 
 #address{
 	width:100%;
 	height:100%;

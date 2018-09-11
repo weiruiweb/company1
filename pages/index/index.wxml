@@ -85,6 +85,7 @@
     </view>
   </view>
 -->
+
 <view class="service">
   <view class="service_tlt">
     <image src="/images/tlt_bg_03.jpg"></image>
@@ -129,7 +130,7 @@
     </view>
   </view>
 </view>
-<view class="solely_more">
+<view class="solely_more" bindtap="about">
   <image src="/images/more_bg.jpg"></image>
   <view class="company_name">
     <text>纯粹科技</text>
@@ -141,40 +142,39 @@
     <image src="/images/tlt_bg_03.jpg"></image>
     <text class="text1">案例展示</text>
   </view>
-  <view class="case_cont">
-    <view class="case_top flexRowBetween" bindtap="caseDetail">
-        <view  class="case_left">
-          <view class="img_scale">
-           <image src="/images/case1.jpg"></image>
-          </view>
-        </view>
-        <view class="case_right">
-          <view class="right_in">
-            <view class="text1"  style="{{fonts[2].font}}">高端定制最美中国网站高端定制最美中国网站高端定制最 美中国网站高端定制最美中国网站高端定制最美中国网站高端定制最高端定制最美中国网站高端定制最美中国网站高端定制最高端定制最美中国网站高端定制最美中国网站高端定制最</view>
-            <view class="right_more">
-                <view class="case_more">了解更多 > </view>
+  <block wx:for="{{web_caseData}}" wx:key="id">
+    <view class="case_cont">
+      <view class="case_top flexRowBetween" bindtap="intoPath" data-path="/pages/caseDetail/caseDetail?id={{item.id}}" wx:if="{{index%2==0}}">
+          <view  class="case_left">
+            <view class="img_scale">
+             <image src="{{item.mainImg[0].url}}"></image>
             </view>
-            
           </view>
-        </view>
-    </view>
-    <view class="case_bottom flexRowBetween" bindtap="caseDetail">
+          <view class="case_right">
+            <view class="right_in">
+              <view class="text1"  style="{{fonts[2].font}}">{{item.description}}</view>
+              <view class="right_more">
+                  <view class="case_more">了解更多 > </view>
+              </view>            
+            </view>
+          </view>
+      </view>
+
+      <view class="case_bottom flexRowBetween" bindtap="intoPath" data-path="/pages/caseDetail/caseDetail?id={{item.id}}" wx:else>
         <view class="case_right">
             <view class="right_in">
-            <view class="text1"  style="{{fonts[2].font}}">高端定制最美中国网站高端定制最美中国网站高端定制最 美中国网站高端定制最美中国网站高端定制最美中国网站高端定制最高端定制最美中国网站高端定制最美中国网站高端定制最高端定制最美中国网站高端定制最美中国网站高端定制最</view>
+            <view class="text1"  style="{{fonts[2].font}}">{{item.description}}</view>
             <view class="right_more">
                 <view class="case_more">了解更多 > </view>
-            </view>
-            
+            </view>            
           </view>
         </view>
         <view class="case_left">
-         
-            <image src="/images/case2.jpg"></image>
-         
+          <image src="{{item.mainImg[0].url}}"></image>          
         </view>
+      </view>
     </view>
-  </view>
+  </block>
 </view>
 
 <view class="navbar">

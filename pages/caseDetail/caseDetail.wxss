@@ -1,4 +1,5 @@
 /**index.wxss**/
+@import "../../wxParse/wxParse.wxss"; 
 .case_top image{
 	width:100%;
 	height:330rpx;

@@ -1,4 +1,5 @@
 /**sign.wxss**/
+@import "../../wxParse/wxParse.wxss"; 
 #sign_top{
 	position:relative;
 }

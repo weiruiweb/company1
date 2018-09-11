@@ -2,47 +2,59 @@
 <view class="user_input ">
 	<view class="users_detail flexRowBetween">
 		<view class="input_note">昵称:</view>
-		<input placeholder="请输入昵称"></input>
+		<input placeholder="请输入昵称"   value="{{web_mainData.info.data[0].nickname}}"></input>
 	</view>
 </view>
 <view class="user_input ">
 	<view class="users_detail flexRowBetween">
 		<view class="input_note">真实姓名:</view>
-		<input placeholder="请输入真实姓名"></input>
+		<input placeholder="请输入真实姓名"  data-key="name" bindblur="changeBind" value="{{web_sForm.name}}"></input>
 	</view>
 </view>
+
 <view class="user_input ">
-	<view class="users_detail flexRowBetween">
+	<view class="users_detail flexRowBetween" style="justify-content:flex-start">
 		<view class="input_note">性别:</view>
-		<input placeholder="请输入性别"></input>
+		<view data-value="1" data-key="gender" bindtap="changeBind" style="display:flex;align-items:center">
+			<image src="{{web_sForm.gender=='1'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx" ></image>
+      		<view style="font-size:15px;margin-left:10rpx">男</view>
+		</view>
+   		
+		<view data-value="0" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:80rpx;align-items:center">
+			<image src="{{web_sForm.gender=='0'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx" ></image>
+      		<view style="font-size:15px;margin-left:10rpx">女</view>
+		</view>
 	</view>
 </view>
+
+
 <view class="user_input ">
 	<view class="users_detail flexRowBetween">	
 		<view class="input_note">出生日期:</view>
 		
-		<picker mode="date" class="flexRowBetween" value="{{date}}" start="2015-09-01" end="2050-09-01" bindchange="bindDateChange" style="width:70%;">
-			<input placeholder="请输入出生日期" value="{{date}}" style="width:100%;"></input>
-			
+		<picker mode="date" class="flexRowBetween" value="{{web_sForm.passage1}}" start="1970-09-01" end="2050-09-01" bindchange="bindDateChange" style="width:70%;">
+			<input placeholder="请输入出生日期" value="{{web_sForm.passage1}}" style="width:100%;"></input> 
 		</picker>
 		<view class="next_page" style="width:7%;text-align:right;">
 				<image src="/images/next_page.jpg" style=""></image>
 		</view>
 	</view>
 </view>
+
 <view class="user_input ">
 	<view class="users_detail flexRowBetween">
 		<view class="input_note">联系方式:</view>
-		<input placeholder="请输入联系方式"></input>
+		<input placeholder="请输入联系方式" data-key="phone" bindblur="changeBind" value="{{web_sForm.phone}}"></input>
 	</view>
 </view>
+
 <view class="user_input ">
 	<view class="users_detail flexRowBetween">
 		<view class="input_note">住址:</view>
-		<input placeholder="请输入住址"></input>
+		<input placeholder="请输入住址" data-key="address" bindblur="changeBind" value="{{web_sForm.address}}"></input>
 	</view>
 </view>
-<view class="submit_info" bindtap="user">
+<view class="submit_info" bindtap="submit">
 	保存
 </view>
 

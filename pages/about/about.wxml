@@ -1,35 +1,34 @@
 <!--userINfo.wxml-->
 <view class="about_banner">
-	<image src="/images/about_banner.jpg"></image>
+	<image src="{{web_aboutData.mainImg[0].url}}"></image>
 </view>
 <view id="about">
 	<view class="introduce" style="{{fonts[4].font}}">
-		完美的产品如同建筑，只有布局整体而又专注细节，方能成就惊世之美。纯粹科技正是如此，制定策略以为框架，构思创意以成主体，精确执行
+		{{web_aboutData.description}}
 	</view>
 </view>
 <view class="service_tlt">
     <image src="/images/tlt_bg_03.jpg"></image>
     <text class="text1">新闻资讯</text>
 </view>
+
 <view id="news_cont">
-	<view class="news_list ">
-		<view class="news_items flexRowBetween">
-			<view class="news_left">
-				<view class="news_cont"  style="{{fonts[3].font}}">
-					完美的产品如同建筑，只有布局整体 而又专注细节，方能成就惊世之美。
-					完美的产品如同建筑，只有布局整体 而又专注细节，方能成就惊世之美。
-					完美的产品如同建筑，只有布局整体 而又专注细节，方能成就惊世之美。
+	<block wx:for="{{web_newsData}}" wx:key="id">
+		<view class="news_list">
+			<view class="news_items flexRowBetween">
+				<view class="news_left">
+					<view class="news_cont"  style="{{fonts[3].font}}">
+						{{item.description}}
+					</view>
+					<view class="news_time">
+						<text class="com_name">{{item.title}} </text>
+						<text class="news_data">{{item.create_time}}</text>
+					</view>
 				</view>
-				<view class="news_time">
-					<text class="com_name">纯粹科技    </text>
-					<text class="news_data">2018-01-18</text>
+				<view class="news_right">
+					<image src="{{item.mainImg[0].url}}"></image>
 				</view>
-			</view>
-			<view class="news_right">
-				<image src="/images/about1.jpg"></image>
 			</view>
 		</view>
-	</view>
-
-	
+	</block>
 </view>

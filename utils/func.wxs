@@ -1,0 +1,117 @@
+
+var timestampToTime = function(timestamp) {
+    
+    timestamp = parseInt(timestamp);
+    
+    var format = getDate(timestamp).getFullYear()+'/'+(getDate(timestamp).getMonth()+1)+'/'+getDate(timestamp).getDate()+'  ';
+
+    if(getDate(timestamp).getHours()<10){
+    	var format = format + '0' + getDate(timestamp).getHours();
+    }else{
+    	var format = format +  getDate(timestamp).getHours();
+    }
+    if(getDate(timestamp).getMinutes()<10){
+    	var format = format + ':' + '0' + getDate(timestamp).getMinutes();
+    }else{
+    	var format = format + ':' + getDate(timestamp).getMinutes();
+    }
+
+    return format;
+
+}
+
+var timeToTimestamp= function(format){
+    
+    var mydata=format.replace('-', '/'); 
+    mydata=mydata.replace('-', '/'); 
+    return getDate(mydata)/1000;
+    
+}
+
+var stringToArray= function(str,babel){
+    if(str){
+        return str.split(babel);
+    };
+}
+
+var arrayByItem = function(field,fieldName,array){
+        
+        for(var i=0;i<array.length;i++){
+            if(array[i][fieldName] == field){
+                return array[i];
+            }
+        };
+}
+
+var countPrice= function(price,discount){
+    
+    var num = price*discount/10;
+    return num.toFixed(2);
+}
+
+var multiply= function(num1,num2){
+    
+    var num = num1*num2;
+    return num.toFixed(2);
+}
+
+var integer= function(num){
+    
+    return  Math.floor(num);
+}
+
+var inArray= function(value,array){
+    return  array.indexOf(parseInt(value));
+}
+
+
+
+var getArrayByTarget = function(array,targetName,target){
+  var getItemsBytarget =function(array,targetName,target){
+
+    for(var i = 0;i < array.length; i++){
+      if(results.length>0){
+        return false;
+      }  
+      var item = array[i];
+      for(var c_i=0;c_i<target.length;c_i++){
+        if(item[targetName] == target[c_i]){  
+          results.push(item);
+        }else if(item.child&&item.child.length>0){            
+          getItemsBytarget(item.child,targetName,target);
+        }
+      }
+    };
+
+  }; 
+  var results = [];
+  getItemsBytarget(array,targetName,target);
+  return results;   
+  
+};
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = {
+  timestampToTime: timestampToTime,
+  timeToTimestamp: timeToTimestamp,
+  stringToArray: stringToArray,
+  arrayByItem: arrayByItem,
+  countPrice: countPrice,
+  multiply: multiply,
+  integer: integer,
+  getArrayByTarget: getArrayByTarget,
+  inArray:inArray
+
+ 
+ 
+};

@@ -1,4 +1,5 @@
 /**index.wxss**/
+@import "../../wxParse/wxParse.wxss"; 
 .input_note{width:23%;
 	color:#363636;
 	font-size:32rpx;

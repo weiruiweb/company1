@@ -29,11 +29,11 @@
 			<view class="collect_txt">我的收藏</view>
 		</view>
 		<view class="user_credit"  style="{{fonts[3].font}}">
-			<view class="credit_number">0</view>
+			<view class="credit_number">{{web_userData.info.data[0].score?web_userData.info.data[0].score:'网络故障'}}</view>
 			<view class="credit_txt">我的积分</view>
 		</view>
 	</view>
-	<view class="order" bindtap="order">
+	<view class="order" bindtap="intoPath" data-path="/pages/order/order">
 		<view class="user_order flexRowBetween">
 			<view class="order_left flexRowBetween">
 				<image src="/images/user_icon1.png"></image>
@@ -71,7 +71,7 @@
 		</view>
 	</view>
 	<view class="user_all">
-		<view class="user_infor flexRowBetween"  bindtap="userInfo">
+		<view class="user_infor flexRowBetween"  bindtap="intoPath" data-path="/pages/userInfo/userInfo">
 			<view class="user_left flexRowBetween">
 				<image src="/images/user_icon2.png"></image>
 				<text>我的信息</text>
@@ -80,7 +80,7 @@
 				<image src="/images/next_page.jpg"></image>
 			</view>
 		</view>
-		<view class="user_infor flexRowBetween" bindtap="discount">
+		<view class="user_infor flexRowBetween" bindtap="intoPath" data-path="/pages/discount/discount">
 			<view class="user_left flexRowBetween">
 				<image src="/images/user_icon3.png"></image>
 				<text>我的优惠劵</text>
@@ -89,7 +89,7 @@
 				<image src="/images/next_page.jpg"></image>
 			</view>
 		</view>
-		<view class="user_infor flexRowBetween" bindtap="address">
+		<view class="user_infor flexRowBetween" bindtap="intoPath" data-path="/pages/manageAddress/manageAddress">
 			<view class="user_left flexRowBetween">
 				<image src="/images/user_icon4.png"></image>
 				<text>我的地址</text>
@@ -103,20 +103,20 @@
 
 <view class="navbar">
     
-      <view class="navbar_item"  bindtap="index">
+      <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pages/Index/index">
           <view class="nav_img">
             <image src="/images/navbar1.png" style="width:42rpx;height:42rpx;"></image>
           </view>
           <view class="text " style="{{fonts[2].font}}">首页</view>
       </view>
     
-    <view class="navbar_item" bindtap="sort">
+    <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pages/Sort/sort">
         <view class="nav_img">
            <image src="/images/navbar2.png" style="width:42rpx;height:42rpx;"></image>
         </view>
         <view class="text" style="{{fonts[2].font}}">分类</view>
     </view>
-    <view class="navbar_item"  bindtap="shopping">
+    <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/Shopping/shopping">
         <view class="nav_img">
             <image src="/images/navbar3.png" style="width:42rpx;height:42rpx;" ></image>
         </view>

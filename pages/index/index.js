@@ -1,26 +1,61 @@
-//index.js
-//获取应用实例
-const app = getApp()
+import {Api} from '../../utils/api.js';
+const api = new Api();
+var app = getApp()
+import {Token} from '../../utils/token.js';
+
 
 Page({
   data: {
-     // isHidden:false,
+     caseData:[]
 
   },
  
-  onLoad: function () {
-     this.setData({
-          isHidden: false,
-          fonts:app.globalData.font
-        });
-        // var that = this;
-        // setTimeout(function(){
-        //   that.setData({
-        //       isHidden: true
-        //   });
-         
-        // }, 2000);
+  onLoad() {
+    const self = this;
+    if(!wx.getStorageSync('token')){
+      var token = new Token();
+      token.getUserInfo();
+    };
+    self.setData({
+      isHidden: false,
+      fonts:app.globalData.font
+    });
+    self.getCaseData()
   },
+
+  getCaseData(){
+    const self = this;
+    const postData = {};
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.thirdapp_id
+    };
+    postData.getBefore = {
+      caseData:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['案例展示']],
+        },
+        middleKey:'menu_id',
+        key:'id',
+        condition:'in',
+      },
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.caseData.push.apply(self.data.caseData,res.info.data);
+      }else{
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','fail');
+      };
+      self.setData({
+        web_caseData:self.data.caseData,
+      });
+      console.log(res)
+    };
+    api.articleGet(postData,callback);
+  },
+
+
   about:function(){
     wx.navigateTo({
       url:'/pages/about/about'
@@ -60,6 +95,16 @@ Page({
      wx.redirectTo({
       url:'/pages/User/user'
     })
-  }
+  },
+  
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
+  },
+
+  intoPathRedi(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'redi');
+  },
 
 })

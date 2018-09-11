@@ -1,4 +1,5 @@
 /**index.wxss**/
+@import "../../wxParse/wxParse.wxss"; 
 /*************loading*****************/
 #loading-wrapper {
   position: relative;

@@ -1,29 +1,50 @@
 //index.js
 //获取应用实例
-const app = getApp()
+import {Api} from '../../utils/api.js';
+var api = new Api();
+var app = getApp();
 
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-  tapCurrent:0,
+    
+    mainData:[]
+    
+  },
+    
+
+  onLoad(options){
+    const self = this;
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    self.data.id = options.id;
+    self.getMainData();
+  },
+
+
+  getMainData(){
+    const self = this;
+    const postData = {};
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.thirdapp_id,
+    };
+    postData.searchItem.id = self.data.id;
+    const callback = (res)=>{
+      self.data.mainData = {};
+      if(res.info.data.length>0){
+        self.data.mainData = res.info.data[0];
+        self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
+      };
+      console.log(self.data.mainData);
+      wx.hideLoading();
+      self.setData({
+        web_mainData:self.data.mainData,
+      });   
+    };
+    api.articleGet(postData,callback);
   },
   
-  onLoad: function () {
-   
-  },
-  userInfo:function(){
-    wx.navigateTo({
-      url:'/pages/userInfo/userInfo'
-    })
-  },
-   bindDateChange: function(e) {
-    this.setData({
-      date: e.detail.value
-    })
-  },
-  discount:function(e){
-    var current=e.currentTarget.dataset.current;
-    this.setData({
-      tapCurrent:current
-    })
-  }
+
 })

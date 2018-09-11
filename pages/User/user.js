@@ -1,55 +1,69 @@
-//logs.js
-const util = require('../../utils/util.js')
-const app = getApp()
+import {Api} from '../../utils/api.js';
+const api = new Api();
+const app = getApp();
+import {Token} from '../../utils/token.js';
+const token = new Token();
 
 
 Page({
   data: {
-    
+
+    userData:[],
+
   },
-  onLoad: function () {
-    this.setData({
-      fonts:app.globalData.font
-    })
+
+  
+  onLoad(options){
+    const self = this;
+    self.setData({
+     fonts:app.globalData.font
+    });
+    self.getUserInfoData();
+    if(options.scene){
+      var scene = decodeURIComponent(options.scene)
+    };
+    if(options.parentNo){
+      var scene = options.parentNo
+    };
+    if(scene){
+      var token = new Token({parent_no:scene});
+      
+    }else{
+      var token = new Token();
+    };
+    token.getUserInfo();
   },
-  userInfo:function(){
-    wx.navigateTo({
-      url:'/pages/userInfo/userInfo'
-    })
+
+ 
+
+  getUserInfoData(){
+    const self = this;
+    const postData = {};
+    postData.token = wx.getStorageSync('token');
+    const callback = (res)=>{
+      if(res.solely_code==100000){
+        self.data.userData = res;
+        self.setData({
+          web_userData:self.data.userData,
+        });  
+      }else{
+        api.showToast('网络故障','none')
+      }
+      
+     
+      wx.hideLoading();
+    };
+    api.userInfoGet(postData,callback);   
   },
-  discount:function(){
-    wx.navigateTo({
-      url:'/pages/discount/discount'
-    })
+ 
+
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
   },
-  address:function(){
-    wx.navigateTo({
-      url:'/pages/manageAddress/manageAddress'
-    })
+
+  intoPathRedi(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'redi');
   },
-  order:function(){
-    wx.navigateTo({
-      url:'/pages/order/order'
-    })
-  },
- shopping:function(){
-     wx.redirectTo({
-      url:'/pages/Shopping/shopping'
-    })
-  },
-  sort:function(){
-     wx.redirectTo({
-      url:'/pages/Sort/sort'
-    })
-  },
-  index:function(){
-     wx.redirectTo({
-      url:'/pages/Index/index'
-    })
-  },
-  User:function(){
-     wx.redirectTo({
-      url:'/pages/User/user'
-    })
-  }
 })

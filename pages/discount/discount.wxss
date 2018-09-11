@@ -1,4 +1,5 @@
 /**index.wxss**/
+@import "../../wxParse/wxParse.wxss"; 
 .discount_sort{
 	padding:0rpx 195rpx;
 	height:86rpx;

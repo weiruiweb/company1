@@ -7,7 +7,7 @@
 	<view class="product_top">
 		<view class="name_share flexRowBetween" style="align-items:center;">
 			<view class="product_name avoidOverflow" style="width:80%;">
-				网站开发高端定制网站开发高端定制网站开发高端定制网站开发高端定制网站开发高端定制网站开发高端定制x
+				{{web_mainData.title}}
 			</view>
 			<view style="width:20%;text-align:right;">
 			<image src="/images/share.jpg"></image>
@@ -18,7 +18,7 @@
 		</view>
 		<view class="price_sale flexRowBetween">
 			<view class="price">
-				￥5000.00元
+				￥{{web_mainData.price}}元
 			</view>
 			<view class="sale">
 				销量2888笔
@@ -175,28 +175,18 @@
 		<image src="/images/close.jpg"></image>
 		</view>
 	</view>
-	<view id="type" class="flexRowBetween">
-		<view class="pro_type"  >	
-			类型
+	<block wx:for="{{web_labelData}}" wx:key="id">
+		<view id="type" class="flexRowBetween">
+			<view class="pro_type"  >	
+				{{item.title}}
+			</view>
+			<block wx:for="{{web_labelData[index].child}}" wx:key="id" wx:for-item="c_item">
+				<view class="pro_types" data-id="{{c_item.id}}"  bindtap="chooseType" style="{{web_chooseId == c_item.id?'background:#21c3d4;color:#fff;':'' }}">
+					{{c_item.title}}
+				</view>
+			</block>
 		</view>
-		<view class="pro_types" data-type="0"  bindtap="chooseType" style="{{chooseType == 0?'background:#21c3d4;color:#fff;':'' }}">	
-			模板
-		</view>
-		<view class="pro_types" data-type="1"  bindtap="chooseType" style="{{chooseType == 1?'background:#21c3d4;color:#fff;':'' }}">	
-			定制
-		</view>
-	</view>
-	<view id="type" class="flexRowBetween">
-		<view class="pro_type" >	
-			售后
-		</view>
-		<view class="pro_types" data-type="0"  bindtap="chooseType1" style="{{chooseType1 == 0?'background:#21c3d4;color:#fff;':''}}">	
-			有
-		</view>
-		<view class="pro_types" data-type="1" bindtap="chooseType1" bindtap="chooseType1" style="{{chooseType1 == 1?'background:#21c3d4;color:#fff;':''}} ">	
-			无
-		</view>
-	</view>
+	</block>
 	<view class="choose_number flexRowBetween">
 		<view class="number_txt">
 			数量

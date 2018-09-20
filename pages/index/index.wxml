@@ -10,7 +10,7 @@
   <view class="banner_txt" style="position:absolute;top:35%;right:15%;display:block;">
     <view style="{{fonts[2].font}};color:#fff;">小程序/公众号/网站</view>
     <view style="{{fonts[1].font}};color:#fff;">提供优质一对一客户服务</view>
-    <view class="custom">立即定制 ></view>
+    <view class="custom" data-path="/pages/Sort/sort" bindtap="intoPathRedi">立即定制 ></view>
   </view>
   <!-- <image src="/images/cloude.png" class="clude1"></image> -->
 </view>
@@ -93,7 +93,7 @@
   </view>
 
   
-  <view class="service_cont">
+  <view class="service_cont" data-path="/pages/Sort/sort" bindtap="intoPathRedi">
     <view class="service_left">
       <view class="service_leftT">
        <text class="text1">微信小程序</text>
@@ -103,7 +103,7 @@
         <image src="/images/sort_Img1.jpg"></image>
       </view>
     </view>
-    <view class="service_right">
+    <view class="service_right" data-path="/pages/Sort/sort" bindtap="intoPathRedi">
       <view class="service_rightT">
           <view class="service_top  flexRowBetween">
           <view class="serviceTLeft">
@@ -116,7 +116,7 @@
           </view>
         </view>
       </view>
-      <view class="service_rightB">
+      <view class="service_rightB" data-path="/pages/Sort/sort" bindtap="intoPathRedi">
           <view class="service_bottom  flexRowBetween">
           <view class="serviceBLeft">
               <text class="text1">公众号</text>

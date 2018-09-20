@@ -122,7 +122,7 @@
         </view>
         <view class="text" style="{{fonts[2].font}}">购物车</view>
     </view>
-    <view class="navbar_item"  bindtap="User">
+    <view class="navbar_item" >
         <view class="nav_img">
             <image src="/images/navbar4-a.png" style="width:42rpx;height:42rpx;"></image>
         </view>

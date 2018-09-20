@@ -1,217 +1,69 @@
 <!--sort wxml-->
 <view id="sort">
-<view class="search">
-	<input placeholder="搜索商品名称"></input>
-</view>
-<view class="made_product flexRowBetween">
-	<view class="made_sort">
-		<view class="madeSort">
-			<view  class="left_bar  {{tapCurrent == 0?'made_bg':''}}" data-current="0" catchtap="menuTap">
-				<view class="lsort_LeftAll">
-					<view class="img_bg text1 active" style="{{fonts[4].font}}">官网定制</view>
-				</view>
-				<view class="small_sort">
-					<view class="small_txt">
-						<text class="text2" bindtap="tabCont"  data-id="0" style="{{fonts[2].font}};{{currentId == 0?'color:#39bddf':''}}">模板类</text>
-						<text class="text2 text3"  bindtap="tabCont"  data-id="1" style="{{fonts[2].font}};{{currentId == 1?'color:#39bddf':''}}">vip定制</text>
-					</view>
-				</view>
-			</view>	
-		</view>
-		<view  class="madeSort">
-			<view  class="left_bar {{tapCurrent == 1?'made_bg':''}}" data-current="1" catchtap="menuTap">
-				<view class="lsort_LeftAll">
-					<view class="img_bg text1 active" style="{{fonts[4].font}}">小程序定制</view>
-				</view>
-				<view class="small_sort">
-					<view class="small_txt">
-						<text class="text2" bindtap="tabCont"  data-id="2" style="{{fonts[2].font}};{{currentId == 2?'color:#39bddf':''}}">模板类</text>
-						<text class="text2 text3"  bindtap="tabCont"  data-id="3"  style="{{fonts[2].font}};{{currentId == 3?'color:#39bddf':''}}">vip定制</text>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view  class="madeSort ">
-			<view  class="left_bar {{tapCurrent == 2?'made_bg':''}}" data-current="2" catchtap="menuTap">
-				<view class="lsort_LeftAll">
-					<view class="img_bg text1 active" style="{{fonts[4].font}}">公众号</view>
-				</view>
-				<view class="small_sort">
-					<view class="small_txt">
-						<text class="text2" bindtap="tabCont"  data-id="4" style="{{fonts[2].font}};{{currentId == 4?'color:#39bddf':''}}">模板类</text>
-						<text class="text2 text3"  bindtap="tabCont"  data-id="5" style="{{fonts[2].font}};{{currentId == 5?'color:#39bddf':''}}">vip定制</text>
-					</view>
-				</view>
-			</view>
-			
-		</view>
+	<view class="search">
+		<input placeholder="搜索商品名称"></input>
 	</view>
-	<view class="made_cont">
-		<view class="madeContItem {{currentId == 0?'madeShow':''}}">
+
+	<view class="made_product flexRowBetween">
+		<view class="made_sort">
+			<block wx:for="{{web_labelData}}" wx:key="id">
+				<view class="madeSort">
+					<view  class="left_bar {{web_index == index?'made_bg':''}}" data-index="{{index}}" data-id="{{item.child[0].id}}" catchtap="menuTap">
+						<view class="lsort_LeftAll">
+							<view class="img_bg text1 active" style="{{fonts[4].font}}">{{item.title}}</view>
+						</view> 
+						
+						<view class="small_sort">
+							<view class="small_txt">
+								<block wx:for="{{web_labelData[index].child}}" wx:for-item="c_item" wx:for-index="c_index">
+									<text class="text2" catchtap="menuTap"  data-id="{{c_item.id}}" data-index="{{index}}" style="{{fonts[2].font}};{{web_currentId == c_item.id?'color:#39bddf':''}}">{{c_item.title}}</text>
+								</block>
+							</view>
+						</view>
+
+					</view>	
+				</view>
+			</block>
+		</view>
+
+		<view class="made_cont">
 			<view class="flexRowBetween made_tlt">
-				<view class="made_name">官网定制-模板</view>
+				<view class="made_name">{{web_labelData[web_index].title}}</view>
 				<view class="made_more" >更多 ></view>
 			</view>
-			<view class="made_case" bindtap="gongzhonghao">
-				<view class="made_item">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name" style="{{fonts[2].font}}">官网订制</view>
+			<block wx:for="{{web_mainData[index].sku}}" wx:key="id">
+				<view class="made_case" bindtap="intoPath" data-path="/pages/detail/detail?id={{item.id}}">
+					<view class="made_item">
+						<image src="{{item.mainImg[0].url}}"></image>
+						<view class="product_name" style="{{fonts[2].font}}">{{item.title}}</view>
+					</view>
 				</view>
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name" style="{{fonts[2].font}}">官网订制</view>
-				</view>
-				<view class="made_item">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name" style="{{fonts[2].font}}">官网订制</view>
-				</view>
-				<view class="made_item">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name" style="{{fonts[2].font}}">官网订制</view>
-				</view>
-				<view class="made_item">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name" style="{{fonts[2].font}}">官网订制</view>
-				</view>
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name" style="{{fonts[2].font}}">官网订制</view>
-				</view>
-				<view class="made_item">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name" style="{{fonts[2].font}}">官网订制</view>
-				</view>
-				<view class="made_item">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name" style="{{fonts[2].font}}">官网订制</view>
-				</view>
-			</view>
-		</view>
-		<view class="madeContItem {{currentId == 1?'madeShow':''}}">
-			<view class="flexRowBetween made_tlt">
-				<view class="made_name">官网订制-vip定制</view>
-				<view class="made_more">更多 ></view>
-			</view>
-			<view class="made_case">
-				
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">小程序</view>
-				</view>
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">小程序</view>
-				</view>
-				
-			</view>
-		</view>
-		<view class="madeContItem {{currentId == 2?'madeShow':''}}">
-			<view class="flexRowBetween made_tlt">
-				<view class="made_name">小程序-模板</view>
-				<view class="made_more">更多 ></view>
-			</view>
-			<view class="made_case">
-				
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">公众号</view>
-				</view>
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">公众号</view>
-				</view>
-				<view class="made_item">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">公众号</view>
-				</view>
-			</view>
-		</view>
-		<view class="madeContItem {{currentId == 3?'madeShow':''}}">
-			<view class="flexRowBetween made_tlt">
-				<view class="made_name">小程序-vip定制</view>
-				<view class="made_more">更多 ></view>
-			</view>
-			<view class="made_case">
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">公众号</view>
-				</view>
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">公众号</view>
-				</view>
-				<view class="made_item">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">公众号</view>
-				</view>
-			</view>
-		</view>
-		<view class="madeContItem {{currentId == 4?'madeShow':''}}">
-			<view class="flexRowBetween made_tlt">
-				<view class="made_name">公众号-模板</view>
-				<view class="made_more">更多 ></view>
-			</view>
-			<view class="made_case">
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">公众号</view>
-				</view>
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">公众号</view>
-				</view>
-				<view class="made_item">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">公众号</view>
-				</view>
-				
-			</view>
-		</view>
-		<view class="madeContItem {{currentId == 5?'madeShow':''}}">
-			<view class="flexRowBetween made_tlt">
-				<view class="made_name">公众号-vip模板</view>
-				<view class="made_more">更多 ></view>
-			</view>
-			<view class="made_case">
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">公众号</view>
-				</view>
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">公众号</view>
-				</view>
-				<view class="made_item" bindtap="gongzhonghao">
-					<image src="/images/product1.jpg"></image>
-					<view class="product_name">公众号</view>
-				</view>
-				
-			</view>
+			</block>
 		</view>
 	</view>
 </view>
-</view>
+
 <view class="navbar">
-      <view class="navbar_item"  bindtap="index"> 
+      <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pagesIndex/index"> 
           <view class="nav_img">
             <image src="/images/navbar1.png" style="width:42rpx;height:42rpx;"></image>
           </view>
           <view class="text" style="{{fonts[2].font}}">首页</view>
       </view>
     
-    <view class="navbar_item" bindtap="sort">
+    <view class="navbar_item" >
         <view class="nav_img">
            <image src="/images/navbar2-a.png" style="width:42rpx;height:42rpx;"></image>
         </view>
         <view class="text this-text" style="{{fonts[2].font}}">分类</view>
     </view>
-    <view class="navbar_item"  bindtap="shopping">
+    <view class="navbar_item"  bindtap="shopping"  bindtap="intoPathRedi" data-path="/pages/Shopping/shopping">
         <view class="nav_img">
             <image src="/images/navbar3.png" style="width:42rpx;height:42rpx;"></image>
         </view>
         <view class="text" style="{{fonts[2].font}}">购物车</view>
     </view>
-    <view class="navbar_item"  bindtap="User">
+    <view class="navbar_item"  bindtap="User" bindtap="intoPathRedi" data-path="/pages/User/user">
         <view class="nav_img">
             <image src="/images/navbar4.png" style="width:42rpx;height:42rpx;"></image>
         </view>

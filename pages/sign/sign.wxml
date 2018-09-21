@@ -1,55 +1,76 @@
 <!--userINfo.wxml-->
-<view id="sign_top">
-	<image src="/images/sign_banner.jpg" class="sign_banner"></image>
-	<view class="has_sign">
-		<view class="sign_in">
-			<view class="text1">
-				已签到
-			</view>
-			<view class="text2">
-				连续1天
-			</view>
-		</view>
+
+<wxs module="func" src="../../utils/func.wxs"   />
+
+<view class="sign">
+
+	<view class="sign_bg">
+		<image src="/images/sign_bg.jpg"></image>
 	</view>
-	<view class="sign_credit">	
-		<view class="text1">
-			我的积分
-		</view>
-		<view class="text2">
-			30
-		</view>
-	</view>
-	<view class="sign_progress flexRowBetween">
-		<image src="/images/sign1.png" class="sign1"></image>
-		<view class="sign_jion"></view>
-		<image src="/images/sign2.png" class="sign2"></image>
-		<view class="sign_jion"></view>
-		<image src="/images/sign2.png" class="sign2"></image>
-		<view class="sign_jion"></view>
-		<image src="/images/sign2.png" class="sign2"></image>
-		<view class="sign_jion"></view>
-		<view class="current_day">
-			<view class="current_credit">
-				<image src="/images/sign4.png" class="sign4"></image>
-				<text>+30</text>
+	<view class="sign_date" >
+		<view class="year">
+			<view class="year_in">
+				<view class="date_year flexRowBetween"  style="{{fonts[3].font}}">
+					<view bindtap="changeMonth" data-type="mins" style="width:50rpx">  <image src="/images/left.png"></image> </view>
+					<view> {{web_year}}年{{web_month}}月</view>
+					<view bindtap="changeMonth" data-type="add" style="width:50rpx">  <image src="/images/right.png"></image> </view>
+				</view>
 			</view>
-			<image src="/images/sign3.png" class="sign3"></image>
 		</view>
-		<view class="sign_jion"></view>
-		<image src="/images/sign2.png" class="sign2"></image>
-		<view class="sign_jion"></view>
-		<image src="/images/sign2.png" class="sign2"></image>
-	</view>
-	<view class="sign_day flexRowBetween">
-		<view class="sign_day1">4.18</view>
-		<view class="sign_day1">4.19</view>
-		<view class="sign_day1">4.20</view>
-		<view class="sign_day1">4.21</view>
-		<view class="sign_day1">4.22</view>
-		<view class="sign_day1">4.23</view>
-		<view class="sign_day1 sign_end">4.24</view>
+		<view class="sign_month">
+			<view class="month_in">
+				<view class="weak" style="{{fonts[3].font}}" >
+					<view class="weak_day">
+						日
+					</view>
+					<view class="weak_day">
+						一
+					</view>
+					<view class="weak_day">
+						二
+					</view>
+					<view class="weak_day">
+						三
+					</view>
+					<view class="weak_day">
+						四
+					</view>
+					<view class="weak_day">
+						五
+					</view>
+					<view class="weak_day">
+						六
+					</view>
+				</view>
+				<view class="sign_day" style="{{fonts[3].font}}">
+					<block wx:for="{{web_calendar}}" >
+						<view class="{{(web_signData&&func.inArray(item,web_signData)!=-1)?'this_day':'weak_day'}}">
+						
+							<view>{{item>0?item:''}}</view>
+						</view>
+					</block>
+					
+				</view>
+			</view>
+		</view>
 	</view>
 </view>
+<view class="today_sign">
+	<view class="begin_sign">
+			<view class="sign_left">
+				<view class="sign_now">
+					<button open-type="getUserInfo" bindgetuserinfo="submit"   style="{{isSign?'background:#fff;':'background:#00c6f7;color:#fff;'}};height:80rpx;line-height:80rpx;font-size:30rpx;">
+						{{isSign?'今日已签到':'签到'}}
+					</button>
+				</view>
+			</view>
+			<view class="sign_right"  style="{{fonts[5].font}}">
+				总积分:{{web_computeData.info.FlowLog.countsum}}
+			</view>
+
+	</view>
+</view>
+
 <view class="great">
 	<view class="great_txt" style="{{fonts[4].font}}">
 		猜你喜欢的

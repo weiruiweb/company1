@@ -1,7 +1,7 @@
 <!--sort wxml-->
 <view id="sort">
 	<view class="search">
-		<input placeholder="搜索商品名称"></input>
+		<input placeholder="搜索商品名称" bindconfirm="changeBind" data-key="item"></input>
 	</view>
 
 	<view class="made_product flexRowBetween">
@@ -44,7 +44,7 @@
 </view>
 
 <view class="navbar">
-      <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pagesIndex/index"> 
+      <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pages/Index/index"> 
           <view class="nav_img">
             <image src="/images/navbar1.png" style="width:42rpx;height:42rpx;"></image>
           </view>

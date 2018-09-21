@@ -8,7 +8,7 @@ Page({
    num:0,
    mainData:[],
    searchItem:{
-      thirdapp_id:'59',
+      thirdapp_id:'2',
     },
   },
 

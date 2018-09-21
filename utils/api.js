@@ -65,6 +65,54 @@ class Api extends Base{
         this.request(allParams);
     }
 
+    skuGet(param,callback){
+        var allParams ={
+            url:'Common/Sku/get',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
+    }
+
+    skuAdd(param,callback){
+        var allParams ={
+            url:'Common/Sku/add',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
+    }
+
+    skuDelete(param,callback){
+        var allParams ={
+            url:'Common/Sku/delete',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
+    }
+
+    skuUpdate(param,callback){
+        var allParams ={
+            url:'Common/Sku/update',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
+    }
+
     logGet(param,callback){
         var allParams ={
             url:'Common/Log/get',

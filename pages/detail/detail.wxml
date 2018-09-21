@@ -7,18 +7,18 @@
 	<view class="product_top">
 		<view class="name_share flexRowBetween" style="align-items:center;">
 			<view class="product_name avoidOverflow" style="width:80%;">
-				{{web_mainData.title}}
+				{{web_mainData.product[0].title}}
 			</view>
-			<view style="width:20%;text-align:right;">
-			<image src="/images/share.jpg"></image>
-			</view>
+			<button style="width:20%;text-align:right;opacity:0" bindtap="onShareAppMessage"  open-type="share">
+				<image src="/images/share.jpg"></image>
+			</button>
 		</view>
 		<view class="guarantee flexRowBetween">
-			<text>【售后保障1】</text><text>【售后保障1】</text>
+			<text>【{{web_mainData.product[0].passage1}}】</text><text>【{{web_mainData.product[0].passage2}}】</text>
 		</view>
 		<view class="price_sale flexRowBetween">
 			<view class="price">
-				￥{{web_mainData.price}}元
+				￥{{web_mainData.product[0].price}}元
 			</view>
 			<view class="sale">
 				销量2888笔
@@ -27,8 +27,8 @@
 	</view>
 	<view class="choose flexRowBetween" bindtap="goBuy">
 		<view class="choose_left flexRowBetween" style="width:80%;overflow:hidden;">
-			<text class="text1" style="{{fonts[2].font}}">请选择</text>
-			<view style="{{fonts[2].font}};color:#666;">基本展示 基本展示</view>
+			<text class="text1" style="{{fonts[2].font}}">请选择规格</text>
+
 		</view>
 		<view class="next_page" style="width:20%;text-align:right;">	
 			<image src="/images/next_page.jpg"></image>
@@ -44,11 +44,10 @@
 	</view>
 	<view class="detail_show">
 		<view id="detail" style="{{tabCurrent == 0?'display:block':'display:none'}}">
-			<image src="/images/detail1.jpg"></image>
-			<!--
-			<view class="video" style="z-index:0;">
- <video style="width: 100%;height:350rpx;margin:1px;z-index:0;" src="" binderror="videoErrorCallback"></video>
-</view> -->
+			<view class="content ql-editor" >
+                <import src="../../wxParse/wxParse.wxml"/>
+                <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+            </view> 
 		</view>
 		<view id="comment" style="{{tabCurrent == 1?'display:block':'display:none'}}">
 			<view class="good_com flexRowBetween">
@@ -143,8 +142,8 @@
 			<image src="/images/kefu1.png"></image>
 			<view class="text1">客服</view>
 		</view>
-		<view class="consult collect">
-			<image src="/images/collect.png"></image>
+		<view class="consult collect" bindtap="collect">
+			<image src="{{url}}"></image>
 			<view class="text1">收藏</view>
 		</view>
 		<view class="go_buy flexRowBetween" bindtap="goBuy">

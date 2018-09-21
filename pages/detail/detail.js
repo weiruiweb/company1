@@ -20,7 +20,19 @@ Page({
       self.data.id = options.id
     };
     self.getMainData();
-    self.getLabelData()
+    self.getLabelData();
+    if(wx.getStorageSync('collectData')[self.data.id]){
+      self.setData({
+        url: '/images/collect1.png',
+      });
+    }else{
+      self.setData({
+        url: '/images/collect.png',
+      });
+    };
+    wx.showShareMenu({
+      withShareTicket: true
+    });
   },
 
 
@@ -28,6 +40,22 @@ Page({
     wx.navigateTo({
       url:'/pages/userInfo/userInfo'
     })
+  },
+
+  collect(){
+    const self = this;
+    const id = self.data.id;
+    if(wx.getStorageSync('collectData')&&wx.getStorageSync('collectData')[id]){
+      api.deleteFootOne(id,'collectData');
+      self.setData({
+        url: '/images/collect.png',
+      });
+    }else{
+      api.footOne(self.data.mainData,'id',100,'collectData');  
+      self.setData({
+        url: '/images/collect1.png',
+      });
+    };
   },
 
   getMainData(){
@@ -38,24 +66,24 @@ Page({
       id:self.data.id
     };
     postData.getAfter={
-      sku:{
-        tableName:'sku',
-        middleKey:'product_no',
-        key:'sku_no',
+      product:{
+        tableName:'product',
+        middleKey:'sku_no',
+        key:'product_no',
         condition:'=',
-
       } 
     }
     const callback = (res)=>{
       if(res.info.data.length>0){
-        self.data.mainData = res.info.data[0]
+        self.data.mainData = res.info.data[0];
+        self.data.mainData.content = api.wxParseReturn(res.info.data[0].product[0].content).nodes;
       }
       wx.hideLoading();
       self.setData({
         web_mainData:self.data.mainData,
       });  
     };
-    api.productGet(postData,callback);
+    api.skuGet(postData,callback);
   },
 
   getLabelData(){
@@ -105,6 +133,43 @@ Page({
       web_chooseId:chooseId
     })
 
+  },
+
+  onShareAppMessage(res){
+    const self = this;
+     console.log(res)
+      if(res.from == 'button'){
+        self.data.shareBtn = true;
+      }else{   
+        self.data.shareBtn = false;
+      }
+      return {
+        title: '纯粹科技',
+        path: 'pages/detail/detail?id='+self.data.id,
+        success: function (res){
+          console.log(res);
+          console.log(parentNo)
+          if(res.errMsg == 'shareAppMessage:ok'){
+            console.log('分享成功')
+            if (self.data.shareBtn){
+              if(res.hasOwnProperty('shareTickets')){
+              console.log(res.shareTickets[0]);
+                self.data.isshare = 1;
+              }else{
+                self.data.isshare = 0;
+              }
+            }
+          }else{
+            wx.showToast({
+              title: '分享失败',
+            })
+            self.data.isshare = 0;
+          }
+        },
+        fail: function(res) {
+          console.log(res)
+        }
+      }
   },
 
 })

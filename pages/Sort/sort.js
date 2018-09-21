@@ -9,7 +9,10 @@ Page({
     mainData:[],
     index:0,
     currentId:20,
-    isLoadAll:false
+    isLoadAll:false,
+    sForm:{
+      item:''
+    }
   },
   
   onLoad: function () {
@@ -25,6 +28,8 @@ Page({
     });
     self.getMainData()
   },
+
+
 
   menuTap(e){
     const self = this;

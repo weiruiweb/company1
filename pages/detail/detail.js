@@ -74,16 +74,32 @@ Page({
     const postData = {};
     postData.searchItem = {
       thirdapp_id:getApp().globalData.thirdapp_id,
-      id:self.data.id
+    };
+    postData.getBefore={
+      sku:{
+        tableName:'sku',
+        searchItem:{
+          id:['in',[self.data.id]]
+        },
+        fixSearchItem:{
+          status:1
+        },
+        key:'product_no',
+        middleKey:'product_no',
+        condition:'in',
+      } 
     };
     postData.getAfter={
-      product:{
-        tableName:'product',
-        middleKey:'sku_no',
+      sku:{
+        tableName:'sku',
+        middleKey:'product_no',
         key:'product_no',
         condition:'=',
+        searchItem:{
+          status:['in',[1]]
+        },
       } 
-    }
+    };
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];
@@ -97,7 +113,7 @@ Page({
       });
       self.checkLoadComplete()    
     };
-    api.skuGet(postData,callback);
+    api.productGet(postData,callback);
   },
 
   getLabelData(){

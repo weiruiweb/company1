@@ -6,11 +6,15 @@ const token = new Token();
 
 
 Page({
+
+
   data: {
-  tabCurrent:0,
-  isShow:false,
-  labelData:[],
-  complete_api:[]
+
+    tabCurrent:0,
+    isShow:false,
+    labelData:[],
+    complete_api:[]
+    
   },
   
   onLoad(options){

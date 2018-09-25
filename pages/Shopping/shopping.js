@@ -189,24 +189,16 @@ Page({
       url: '/pages/confirmOrder/confirmOrder'
     })
   },
-  shopping:function(){
-     wx.redirectTo({
-      url:'/pages/Shopping/shopping'
-    })
+
+
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
   },
-  sort:function(){
-     wx.redirectTo({
-      url:'/pages/Sort/sort'
-    })
+
+  intoPathRedi(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'redi');
   },
-  index:function(){
-     wx.redirectTo({
-      url:'/pages/Index/index'
-    })
-  },
-  User:function(){
-     wx.redirectTo({
-      url:'/pages/User/user'
-    })
-  },
+  
 })

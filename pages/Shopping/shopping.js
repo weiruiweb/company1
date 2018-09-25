@@ -1,6 +1,9 @@
-//index.js
-//获取应用实例
-const app = getApp()
+import {Api} from '../../utils/api.js';
+var api = new Api();
+var app = getApp();
+import {Token} from '../../utils/token.js';
+const token = new Token();
+
 
 Page({
   data: {
@@ -25,6 +28,10 @@ Page({
   
   onLoad() {
     const self = this;
+    if(!wx.getStorageSync('token')){
+      var token = new Token();
+      token.getUserInfo();
+    };
     console.log(this.data.windowHeight)
     this.setData({
       fonts:app.globalData.font

@@ -1,6 +1,9 @@
 import {Api} from '../../utils/api.js';
 var api = new Api();
-var app = getApp()
+var app = getApp();
+import {Token} from '../../utils/token.js';
+const token = new Token();
+
 
 
 Page({
@@ -15,6 +18,10 @@ Page({
 
   onLoad(options){
     const self = this;
+    if(!wx.getStorageSync('token')){
+      var token = new Token();
+      token.getUserInfo();
+    };
     if(options.num){
       self.changeSearch(options.num)
     }

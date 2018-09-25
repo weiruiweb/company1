@@ -1,18 +1,25 @@
 import {Api} from '../../utils/api.js';
 var api = new Api();
-var app = getApp()
+var app = getApp();
+import {Token} from '../../utils/token.js';
+const token = new Token();
+
 
 Page({
   data: {
   tabCurrent:0,
   isShow:false,
-  chooseType:0,
-  chooseType1:0,
-  labelData:[]
+  labelData:[],
+  complete_api:[]
   },
   
   onLoad(options){
     const self = this;
+    wx.showLoading();
+    if(!wx.getStorageSync('token')){
+      var token = new Token();
+      token.getUserInfo();
+    };
     self.setData({
       fonts:app.globalData.font
     })
@@ -77,11 +84,14 @@ Page({
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].product[0].content).nodes;
+        self.data.complete_api.push('getMainData')
+      }else{
+        api.showToast('商品信息有误','none')
       }
-      wx.hideLoading();
       self.setData({
         web_mainData:self.data.mainData,
-      });  
+      });
+      self.checkLoadComplete()    
     };
     api.skuGet(postData,callback);
   },
@@ -96,30 +106,28 @@ Page({
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.labelData.push.apply(self.data.labelData,res.info.data);
+        self.data.complete_api.push('getLabelData')
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       }
-      wx.hideLoading();
       self.setData({
         web_labelData:self.data.labelData,
       });
+      self.checkLoadComplete()  
     };
     api.labelGet(postData,callback);   
   },
   
-  select_this:function(e){
-    var current= e.currentTarget.dataset.current;
-    this.setData({
-      tabCurrent:current
-    })
-  },
+
+
   goBuy:function(){
     var isShow = !this.data.isShow;
     this.setData({
       isShow:isShow
     })
   },
+
   close:function(){
     this.setData({
       isShow:false
@@ -170,6 +178,14 @@ Page({
           console.log(res)
         }
       }
+  },
+
+  checkLoadComplete(){
+    const self = this;
+    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData','getLabelData']);
+    if(complete){
+      wx.hideLoading();
+    };
   },
 
 })

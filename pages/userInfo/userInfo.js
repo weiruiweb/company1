@@ -20,6 +20,11 @@ Page({
 
   onLoad(){
     const self = this;
+    wx.showLoading();
+    if(!wx.getStorageSync('token')){
+      var token = new Token();
+      token.getUserInfo();
+    };
     self.userInfoGet();
   },
 
@@ -72,12 +77,13 @@ Page({
     postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
     const callback = (data)=>{
-      wx.hideLoading();
+      
       if(data.solely_code==100000){
         api.showToast('完善成功','none')
       }else{
         api.showToast('网络故障','none')
       };
+      wx.hideLoading();
     };
     api.userInfoUpdate(postData,callback);
   },
@@ -90,12 +96,12 @@ Page({
     postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
     const callback = (data)=>{
-      wx.hideLoading();
       if(data.solely_code==100000){
         api.showToast('完善成功','none')
       }else{
         api.showToast('网络故障','none')
-      }
+      };
+      wx.hideLoading();
     };
     api.userInfoAdd(postData,callback);
   },

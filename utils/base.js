@@ -78,6 +78,16 @@ class Base{
         return event.currentTarget.dataset[key];
     };
 
+    checkArrayEqual(array1,array2){
+        
+        if(array1.sort().toString() == array2.sort().toString()){
+            return true;
+        }else{
+            return false;
+        }
+        
+    };
+
 
     /*wxParse插件返回函数*/
     wxParseReturn(data){

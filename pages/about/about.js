@@ -8,12 +8,13 @@ Page({
   data:{
 
      aboutData:[],
-     newsData:[]
-
+     newsData:[],
+     complete_api:[]
   },
  
   onLoad() {
     const self = this;
+    wx.showLoading();
     if(!wx.getStorageSync('token')){
       var token = new Token();
       token.getUserInfo();
@@ -49,10 +50,11 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
+      self.data.complete_api.push('getNewsData');
       self.setData({
         web_newsData:self.data.newsData,
       });
-      console.log(res)
+      self.checkLoadComplete()
     };
     api.articleGet(postData,callback);
   },
@@ -78,11 +80,11 @@ Page({
       if(res.info.data.length>0){
         self.data.aboutData = res.info.data[0];
       };
-      console.log(self.data.aboutData);
-      wx.hideLoading();
+      self.data.complete_api.push('getAboutData');
       self.setData({
         web_aboutData:self.data.aboutData,
-      });   
+      });
+      self.checkLoadComplete()
     };
     api.articleGet(postData,callback);
   },
@@ -95,6 +97,14 @@ Page({
   intoPathRedi(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
-  }
+  },
+
+  checkLoadComplete(){
+    const self = this;
+    var complete = api.checkArrayEqual(self.data.complete_api,['getAboutData','getNewsData']);
+    if(complete){
+      wx.hideLoading();
+    };
+  },
 
 })

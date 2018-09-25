@@ -15,6 +15,11 @@ Page({
   
   onLoad(options){
     const self = this;
+    wx.showLoading();
+    if(!wx.getStorageSync('token')){
+      var token = new Token();
+      token.getUserInfo();
+    };
     self.setData({
      fonts:app.globalData.font
     });

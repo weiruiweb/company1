@@ -12,6 +12,7 @@ Page({
  
   onLoad() {
     const self = this;
+    wx.showLoading();
     if(!wx.getStorageSync('token')){
       var token = new Token();
       token.getUserInfo();
@@ -47,10 +48,10 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
+      wx.hideLoading();
       self.setData({
         web_caseData:self.data.caseData,
       });
-      console.log(res)
     };
     api.articleGet(postData,callback);
   },

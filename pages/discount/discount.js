@@ -1,6 +1,8 @@
 import {Api} from '../../utils/api.js';
 var api = new Api();
-var app = getApp()
+var app = getApp();
+import {Token} from '../../utils/token.js';
+const token = new Token();
 
 Page({
   data: {
@@ -11,11 +13,17 @@ Page({
       type:4
     },
     buttonClicked:false,
-    isLoadAll:false
+    isLoadAll:false,
+    complete_api:[]
   },
   
   onLoad() {
     const self = this;
+    wx.showLoading();
+    if(!wx.getStorageSync('token')){
+      var token = new Token();
+      token.getUserInfo();
+    };
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData()
   },
@@ -35,14 +43,14 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       }
-      wx.hideLoading();
+      self.data.complete_api.push('getMainData')
       self.setData({
         buttonClicked:false,
       })
       self.setData({
         web_mainData:self.data.mainData,
       });     
-      console.log(self.data.mainData)
+      self.checkLoadComplete()
     };
     api.productGet(postData,callback);
   },
@@ -73,5 +81,13 @@ Page({
       web_mainData:[],
     });
     self.getMainData(true);
+  },
+
+  checkLoadComplete(){
+    const self = this;
+    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData']);
+    if(complete){
+      wx.hideLoading();
+    };
   },
 })

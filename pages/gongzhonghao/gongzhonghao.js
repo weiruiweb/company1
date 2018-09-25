@@ -1,6 +1,9 @@
-//index.js
-//获取应用实例
-const app = getApp()
+import {Api} from '../../utils/api.js';
+var api = new Api();
+var app = getApp();
+import {Token} from '../../utils/token.js';
+const token = new Token();
+
 
 Page({
   data: {

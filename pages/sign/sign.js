@@ -2,7 +2,10 @@
 //获取应用实例
 import {Api} from '../../utils/api.js';
 var api = new Api();
-const app = getApp()
+const app = getApp();
+import {Token} from '../../utils/token.js';
+const token = new Token();
+
 
 
 Page({
@@ -23,6 +26,10 @@ Page({
 
   onLoad(){
     const self = this;
+    if(!wx.getStorageSync('token')){
+      var token = new Token();
+      token.getUserInfo();
+    };
     self.setData({
       fonts:getApp().globalData.font
     });   

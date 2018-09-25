@@ -1,8 +1,9 @@
-//index.js
-//获取应用实例
 import {Api} from '../../utils/api.js';
-const api = new Api();
-const app = getApp()
+var api = new Api();
+var app = getApp();
+import {Token} from '../../utils/token.js';
+const token = new Token();
+
 
 Page({
 
@@ -18,6 +19,11 @@ Page({
 
   onLoad(){
     const self = this;
+    wx.showLoading();
+    if(!wx.getStorageSync('token')){
+      var token = new Token();
+      token.getUserInfo();
+    };
     self.setData({
       fonts:app.globalData.font
     });
@@ -46,6 +52,7 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
+      wx.hideLoading();
       self.setData({
         web_mainData:self.data.mainData,
       });

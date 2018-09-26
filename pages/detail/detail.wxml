@@ -1,4 +1,9 @@
 <!--detail.wxml-->
+
+<wxs module="func" src="../../utils/func.wxs" />
+ 
+
+
 <view id="details">
 <view class="banner">
 	<image src="/images/detail.jpg"></image>
@@ -180,7 +185,7 @@
 					{{cc_item.title}}
 				</view>
 				<block wx:for="{{web_labelData[index].child}}" wx:key="id" wx:for-item="c_item">
-					<view class="pro_types" data-id="{{c_item.id}}"  bindtap="chooseType" style="{{web_chooseId == c_item.id?'background:#21c3d4;color:#fff;':'' }}">
+					<view class="pro_types" data-id="{{c_item.id}}" data-parentid="{{cc_item.id}}"  bindtap="chooseSku" style="{{func.inArray(c_item.id,web_sku_item)!=-1?'background:#21c3d4;color:#fff;':'' }}">
 						{{c_item.title}}
 					</view>
 				</block>

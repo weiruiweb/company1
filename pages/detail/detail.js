@@ -17,8 +17,11 @@ Page({
     complete_api:[],
     keys:[],
     values:[],
-    skuData:[],
-    count:1
+    skuData:{},
+    count:1,
+    id:'',
+    sku_item:[],
+    
   },
   
   onLoad(options){
@@ -106,33 +109,33 @@ Page({
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];
-        for(var key in self.data.mainData.label){    
-          self.data.keys.push(key);    
-          self.data.values.push(self.data.mainData.label[key]);   
+        for(var key in self.data.mainData.label){
+          if(self.data.mainData.sku_array.indexOf(parseInt(key))!=-1){
+            self.data.labelData.push(self.data.mainData.label[key])
+          };    
         };
-        for (var i = 0; i < self.data.mainData.sku_array.length; i++) {
-          for (var j = 0; j < self.data.keys.length; j++) {
-            if(self.data.mainData.sku_array[i]==self.data.keys[j]){
-              self.data.labelData.push(self.data.values[j])
-            } 
-          }
-        };
+        
         for (var i = 0; i < self.data.mainData.sku.length; i++) {
           if(self.data.mainData.sku[i].id==self.data.id){
-            self.data.skuData.push(self.data.mainData.sku[i])
-          }
-        }
+            self.data.skuData = api.cloneForm(self.data.mainData.sku[i]);
+          };
+        };
+        console.log('self.data.skuData',self.data.skuData)
+        self.data.sku_item = self.data.skuData.sku_item;
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
-        self.data.complete_api.push('getMainData')
+        self.data.complete_api.push('getMainData');
+
       }else{
-        api.showToast('商品信息有误','none')
-      }
+        api.showToast('商品信息有误','none');
+      };
 
       self.setData({
-        web_skuData:self.data.skuData[0],
+        web_skuData:self.data.skuData,
         web_labelData:self.data.labelData,
         web_mainData:self.data.mainData,
+        web_sku_item:self.data.sku_item,
       });
+
       self.checkLoadComplete();
     };
     api.productGet(postData,callback);
@@ -188,14 +191,28 @@ Page({
     })
   },
 
-  chooseType(e){
+  chooseSku(e){
     const self = this;
-    self.data.chooseId = []
-    self.data.chooseId.push(e.currentTarget.dataset.id);
+    console.log('e',e);
+    var id = api.getDataSet(e,'id');
+    var parentid = api.getDataSet(e,'parentid');
+    var sku = self.data.mainData.label[parentid];
+    for(var i=0;i<sku.child.length;i++){
+      if(self.data.sku_item.indexOf(sku.child[i].id)!=-1){
+        self.data.sku_item.splice(self.data.sku_item.indexOf(sku.child[i].id), 1);
+      };
+    };
+    self.data.sku_item.push(id);
+    for(var i=0;i<self.data.mainData.sku.length;i++){ 
+      if(JSON.stringify(self.data.mainData.sku[i].sku_item.sort())==JSON.stringify(self.data.sku_item.sort())){
+        self.data.id = self.data.mainData.sku[i].id;
+        self.data.skuData = api.cloneForm(self.data.mainData.sku[i]);
+      };
+    };
     self.setData({
-      web_chooseId:chooseId
-    })
-
+      web_sku_item:self.data.sku_item,
+      web_skuData:self.data.skuData,
+    });
   },
 
   onShareAppMessage(res){

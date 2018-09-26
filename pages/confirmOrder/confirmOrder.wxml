@@ -27,34 +27,25 @@
 <view>
 <view class="order_list">
 	<view class="order_confirm">
-		<view class="flexRowBetween orderlistShow">
-			<view class="img_left"><image src="/images/order.jpg"></image></view>
-			<view class="order_name">
-				<view class="text1 avoidOverflow">高端网站建设(含小程序）高端网站建设(含小程序）高端网站建设(含小程序）</view>
-				<view class="order_type avoidOverflow">个性化定制</view>
-				<view class="orders flexRowBetween">
-					<text class="order_price">¥4999</text>
-					<text class="order_number">X1</text>
+		<block wx:for="{{web_mainData}}" wx:key="id">
+			<view class="flexRowBetween orderlistShow ">
+				<view class="img_left"><image src="{{item.mainImg[0].url}}"></image></view>
+				<view class="order_name">
+					<view class="text1 avoidOverflow">{{item.title}}</view>
+					<view class="order_type avoidOverflow">个性化定制</view>
+					<view class="orders flexRowBetween">
+						<text class="order_price">¥{{item.price}}</text>
+						<text class="order_number">X{{web_count}}</text>
+					</view>
 				</view>
 			</view>
-		</view>
-		<view class="flexRowBetween orderlistShow">
-			<view class="img_left"><image src="/images/order.jpg"></image></view>
-			<view class="order_name">
-				<view class="text1 avoidOverflow">高端网站建设(含小程序）</view>
-				<view class="order_type avoidOverflow">个性化定制</view>
-				<view class="orders flexRowBetween">
-					<text class="order_price">¥4999</text>
-					<text class="order_number">X1</text>
-				</view>
-			</view>
-		</view>
+		</block>
 	</view>
 </view>
 <view class="user_message">
 	<view class="flexRowBetween">
 		<text class="text1">买家留言</text>
-		<textarea placeholder="选填:填写内容已和卖家协商确认" auto-height="true">
+		<textarea placeholder="选填:填写内容已和卖家协商确认" auto-height="true" data-key="passage1" bindblur="changeBind" value="{{web_submitData.passage1}}">
 		</textarea>
 	</view>
 </view>
@@ -64,13 +55,13 @@
 		<view class="total_money" style="width:70%;margin-right:5%;text-align:right;">
 			<view class="heji" style="width:100%;text-align:right;">
 				<text>合计 :</text>
-				<text class="text2"> ¥4999</text>
+				<text class="text2"> ¥{{web_totalPrice}}</text>
 			</view>
 			<view class="price_note" style="display:block;width:100%;text-align:right;">
 				<text style="">（实际价格，请与客服沟通）</text>
 			</view>
 		</view>
-		<view class="submit_order">
+		<view class="submit_order" bindtap="addOrder">
 			提交订单
 		</view>
 	</view>

@@ -14,6 +14,9 @@ Page({
     searchItem:{
       isdefault:1
     },
+    submitData:{
+      passage1:''
+    },
     buttonClicked: true,
     order_id:'',
     complete_api:[]
@@ -25,10 +28,12 @@ Page({
       var token = new Token();
       token.getUserInfo();
     };
+    self.data.id = options.id;
+    self.data.count = options.count;
     this.setData({
+      web_count:self.data.count,
       fonts:app.globalData.font
     });
-    self.data.id = options.id;
     self.getMainData();
  
     getApp().globalData.address_id = '';
@@ -43,6 +48,33 @@ Page({
       self.data.searchItem.isdefault = 1;
     };
     self.getAddressData();
+  },
+
+
+
+
+  getMainData(){
+    const self = this;
+    const postData = {};
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.thirdapp_id,
+      id:self.data.id
+    }
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.mainData.push.apply(self.data.mainData,res.info.data);
+        self.countTotalPrice(); 
+        self.data.complete_api.push('getMainData');
+      }else{
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','none');
+      }
+      self.setData({
+        web_mainData:self.data.mainData,
+      });
+      self.checkLoadComplete()   
+    };
+    api.skuGet(postData,callback);
   },
 
   getAddressData(){
@@ -60,55 +92,24 @@ Page({
   },
 
 
-  getMainData(){
-    const self = this;
-    const postData = {};
-    postData.searchItem = {
-      thirdapp_id:59,
-      id:self.data.id
-    }
-    const callback = (res)=>{
-      if(res.info.data.length>0){
-        self.data.mainData = res.info.data[0],
-        self.data.complete_api.push('getMainData')  
-      }else{
-        api.showToast('商品信息有误','none')
-      }
-      self.setData({
-        web_mainData:self.data.mainData,
-      });
-      self.checkLoadComplete()   
-    };
-    api.productGet(postData,callback);
-  },
-
-
-  intoPath(e){
-    const self = this;
-    api.pathTo(api.getDataSet(e,'path'),'nav');
-  },
+ 
 
   addOrder(){
     const self = this;
     if(self.data.buttonClicked){
       api.showToast('数据有误请稍等','none');
       return;
-    };
-    if(wx.getStorageSync('info').info.length==0){
-      api.showToast('请完善信息');
-      setTimeout(function(){
-           api.pathTo('/pages/userComplete/userComplete','nav');
-        },800)
-      return;
     }else if(!self.data.order_id){
       self.data.buttonClicked = false;
       const postData = {
         token:wx.getStorageSync('token'),
         product:[
-          {id:self.data.mainData.id,count:1}
+          {id:self.data.id,count:self.data.count}
         ],
-        pay:{score:self.data.mainData.price},
-        snap_address:self.data.addressData.info.data[0]
+        pay:{wxPay:self.data.totalPrice.toFixed(2)},
+      };
+      if(self.data.addressData.info.data[0]){
+        postData.snap_address = self.data.addressData.info.data[0];
       };
       const callback = (res)=>{
         if(res&&res.solely_code==100000){
@@ -135,7 +136,8 @@ Page({
       searchItem:{
         id:order_id
       },
-      score:self.data.mainData.price
+      wxPay:self.data.totalPrice.toFixed(2),
+      wxPayStatus:0
     };
     const callback = (res)=>{
       wx.hideLoading();
@@ -159,5 +161,29 @@ Page({
       wx.hideLoading();
       self.data.buttonClicked = false;
     };
+  },
+
+  countTotalPrice(){  
+    const self = this;
+    var totalPrice = 0;
+    totalPrice += self.data.count*parseFloat(self.data.mainData[0].price);
+    self.data.totalPrice = totalPrice;
+    self.setData({
+      web_totalPrice:self.data.totalPrice.toFixed(2)
+    });
+  },
+
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
+  },
+
+  changeBind(e){
+    const self = this;
+    api.fillChange(e,self,'submitData');
+    console.log(self.data.submitData);
+    self.setData({
+      web_submitData:self.data.submitData,
+    });  
   },
 })

@@ -162,6 +162,7 @@
 	</view>
 </view>
 <view id="choose" class="{{isShow?'sildeIn':'slideOut'}}">
+	<view style="padding:0 2.5%">
 		<view class="flexRowBetween pricity">
 			<view class="choose_pro">
 				<image src="{{web_skuData.mainImg[0].url}}"></image>
@@ -172,7 +173,7 @@
 					个性化定制
 				</view>
 				<view class="price_choose">
-				￥{{web_totalPrice}}
+				￥{{web_totalPrice?web_totalPrice:web_skuData.price}}
 				</view>
 			</view>
 			<view class="close" bindtap="close">
@@ -197,11 +198,17 @@
 			</view>
 			<view class="edit_number flexRowBetween">
 				<view class="minus" style="line-height:45rpx;" data-type="-" bindtap="counter" data-id="{{web_skuData.id}}">-</view>
-				<input class="number" type="number" bindchange="bindManual" value="{{web_skuData.count}}" />
+				<input class="number" type="number" bindchange="bindManual" value="{{web_count}}" />
 				<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuData.id}}">+</view>
-
 			</view>
 		</view>
+		
+	</view>	
+	<view bindtap="intoPath" data-path="/pages/confirmOrder/confirmOrder?count={{web_count}}&&id={{web_skuData.id}}">
+		<view class="shoppingCart" style="width:100%;height:80rpx;line-height:80rpx;color:#fff">
+			确    认
+		</view>
+	</view>
 </view>
 
 

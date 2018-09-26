@@ -137,7 +137,7 @@ line-height:62rpx;}
 	bottom:0rpx;
 	overflow:hidden;
 	background:#fff;
-	z-index:999;
+	z-index:9;
 	width:100%;
 	align-items:center;
 }
@@ -200,16 +200,16 @@ line-height:62rpx;}
 }
 #choose{
 	height:566rpx;
-	width:704rpx;
+	width:100%;
 	position:fixed;
-	bottom:-100rpx;
-	padding:32rpx 25rpx;
+	bottom:-170rpx;
+	padding:32rpx 0;
 	background:#fff;
 	z-index:99;
 }
 .sildeIn{
 	transition:all 1s;
-	transform:translateY(-120rpx);
+	transform:translateY(-142rpx);
 
 }
 .slideOut{

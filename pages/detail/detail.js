@@ -33,7 +33,8 @@ Page({
     };
     self.setData({
       fonts:app.globalData.font,
-    })
+      web_count:self.data.count
+    });
     if(options.id){
       self.data.id = options.id
     };
@@ -53,11 +54,6 @@ Page({
   },
 
 
-  userInfo:function(){
-    wx.navigateTo({
-      url:'/pages/userInfo/userInfo'
-    })
-  },
 
   collect(){
     const self = this;
@@ -146,13 +142,13 @@ Page({
   counter(e){
     const self = this;
     if(api.getDataSet(e,'type')=='+'){
-      self.data.skuData[0].count++;
-    }else if(self.data.skuData[0].count > '1'){
-      self.data.skuData[0].count--;
+      self.data.count++;
+    }else if(self.data.skuData.count > '1'){
+      self.data.count--;
     }
-    console.log(self.data.skuData[0].count)
     self.setData({
-      web_skuData:self.data.skuData[0],
+      web_count:self.data.count,
+      web_skuData:self.data.skuData,
     });
     self.countTotalPrice();
   },
@@ -161,15 +157,17 @@ Page({
     const self = this;
     var count = e.detail.value;
     self.setData({
-      count:count
+      web_count:count
     });
-
   },
+
+
 
   countTotalPrice(){  
     const self = this;
     var totalPrice = 0;
-    totalPrice += self.data.skuData[0].count*parseFloat(self.data.skuData[0].price);
+
+    totalPrice += self.data.count*parseFloat(self.data.skuData.price);
     self.data.totalPrice = totalPrice;
     self.setData({
       web_totalPrice:self.data.totalPrice.toFixed(2)
@@ -193,6 +191,8 @@ Page({
 
   chooseSku(e){
     const self = this;
+    self.data.count = 1;
+    delete self.data.totalPrice;
     console.log('e',e);
     var id = api.getDataSet(e,'id');
     var parentid = api.getDataSet(e,'parentid');
@@ -210,6 +210,8 @@ Page({
       };
     };
     self.setData({
+      web_totalPrice:'',
+      web_count:self.data.count,
       web_sku_item:self.data.sku_item,
       web_skuData:self.data.skuData,
     });
@@ -258,6 +260,11 @@ Page({
     if(complete){
       wx.hideLoading();
     };
+  },
+
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 
 })

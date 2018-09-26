@@ -9,12 +9,16 @@ Page({
 
 
   data: {
-
+    mainData:[],
+    chooseId:[],
     tabCurrent:0,
     isShow:false,
     labelData:[],
-    complete_api:[]
-    
+    complete_api:[],
+    keys:[],
+    values:[],
+    skuData:[],
+    count:1
   },
   
   onLoad(options){
@@ -25,13 +29,12 @@ Page({
       token.getUserInfo();
     };
     self.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
     })
     if(options.id){
       self.data.id = options.id
     };
     self.getMainData();
-    self.getLabelData();
     if(wx.getStorageSync('collectData')[self.data.id]){
       self.setData({
         url: '/images/collect1.png',
@@ -103,43 +106,74 @@ Page({
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];
-        self.data.mainData.content = api.wxParseReturn(res.info.data[0].product[0].content).nodes;
+        for(var key in self.data.mainData.label){    
+          self.data.keys.push(key);    
+          self.data.values.push(self.data.mainData.label[key]);   
+        };
+        for (var i = 0; i < self.data.mainData.sku_array.length; i++) {
+          for (var j = 0; j < self.data.keys.length; j++) {
+            if(self.data.mainData.sku_array[i]==self.data.keys[j]){
+              self.data.labelData.push(self.data.values[j])
+            } 
+          }
+        };
+        for (var i = 0; i < self.data.mainData.sku.length; i++) {
+          if(self.data.mainData.sku[i].id==self.data.id){
+            self.data.skuData.push(self.data.mainData.sku[i])
+          }
+        }
+        self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
         self.data.complete_api.push('getMainData')
       }else{
         api.showToast('商品信息有误','none')
       }
+
       self.setData({
+        web_skuData:self.data.skuData[0],
+        web_labelData:self.data.labelData,
         web_mainData:self.data.mainData,
       });
-      self.checkLoadComplete()    
+      self.checkLoadComplete();
     };
     api.productGet(postData,callback);
   },
 
-  getLabelData(){
-    const self = this;
-    const postData = {};
-    postData.searchItem = {
-      thirdapp_id:getApp().globalData.thirdapp_id,
-      type:['in',[5,6]]
-    };
-    const callback = (res)=>{
-      if(res.info.data.length>0){
-        self.data.labelData.push.apply(self.data.labelData,res.info.data);
-        self.data.complete_api.push('getLabelData')
-      }else{
-        self.data.isLoadAll = true;
-        api.showToast('没有更多了','none');
-      }
-      self.setData({
-        web_labelData:self.data.labelData,
-      });
-      self.checkLoadComplete()  
-    };
-    api.labelGet(postData,callback);   
-  },
-  
 
+
+  counter(e){
+    const self = this;
+    if(api.getDataSet(e,'type')=='+'){
+      self.data.skuData[0].count++;
+    }else if(self.data.skuData[0].count > '1'){
+      self.data.skuData[0].count--;
+    }
+    console.log(self.data.skuData[0].count)
+    self.setData({
+      web_skuData:self.data.skuData[0],
+    });
+    self.countTotalPrice();
+  },
+
+  bindManual(e) {
+    const self = this;
+    var count = e.detail.value;
+    self.setData({
+      count:count
+    });
+
+  },
+
+  countTotalPrice(){  
+    const self = this;
+    var totalPrice = 0;
+    totalPrice += self.data.skuData[0].count*parseFloat(self.data.skuData[0].price);
+    self.data.totalPrice = totalPrice;
+    self.setData({
+      web_totalPrice:self.data.totalPrice.toFixed(2)
+    });
+  },
+
+  
 
   goBuy:function(){
     var isShow = !this.data.isShow;
@@ -156,7 +190,8 @@ Page({
 
   chooseType(e){
     const self = this;
-    var chooseId = e.currentTarget.dataset.id;
+    self.data.chooseId = []
+    self.data.chooseId.push(e.currentTarget.dataset.id);
     self.setData({
       web_chooseId:chooseId
     })
@@ -202,7 +237,7 @@ Page({
 
   checkLoadComplete(){
     const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData','getLabelData']);
+    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData']);
     if(complete){
       wx.hideLoading();
     };

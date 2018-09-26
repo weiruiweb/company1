@@ -132,7 +132,7 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 16,
 					"name": "detail",
 					"pathName": "pages/detail/detail",
 					"query": "id=2"

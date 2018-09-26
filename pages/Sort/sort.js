@@ -68,18 +68,11 @@ Page({
       thirdapp_id:getApp().globalData.thirdapp_id
     };
     if(currentId){
-      postData.searchItem.category_id = currentId
+      postData.searchItem.parentid = currentId
     }else{
-      postData.searchItem.category_id = self.data.currentId
+      postData.searchItem.parentid = self.data.currentId
     }
-    postData.getAfter={
-      sku:{
-        tableName:'sku',
-        middleKey:'product_no',
-        key:'sku_no',
-        condition:'=',
-      } 
-    }
+
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
@@ -92,7 +85,7 @@ Page({
         web_mainData:self.data.mainData,
       });  
     };
-    api.productGet(postData,callback);
+    api.labelGet(postData,callback);
   },
 
   getLabelData(){

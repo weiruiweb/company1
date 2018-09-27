@@ -186,7 +186,7 @@
 					{{cc_item.title}}
 				</view>
 				<block wx:for="{{web_labelData[index].child}}" wx:key="id" wx:for-item="c_item">
-					<view class="pro_types" data-id="{{c_item.id}}" data-parentid="{{cc_item.id}}"  bindtap="chooseSku" style="{{func.inArray(c_item.id,web_choose_sku_item)==-1?'background:gray;color:white;':(func.inArray(c_item.id,web_sku_item)!=-1?'background:#21c3d4;color:#fff;':'')}}">
+					<view class="pro_types" data-id="{{c_item.id}}" data-parentid="{{cc_item.id}}"  bindtap="{{func.inArray(c_item.id,web_choose_sku_item)!=-1?'chooseSku':''}}" style="{{func.inArray(c_item.id,web_choose_sku_item)==-1?'border:1px dashed  #e5e5e5;color:#e5e5e5;':(func.inArray(c_item.id,web_sku_item)!=-1?'border:1px solid #21c3d4;color:#21c3d4;':'')}}">
 						{{c_item.title}}
 					</view>
 				</block>

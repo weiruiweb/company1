@@ -21,8 +21,8 @@ Page({
     count:1,
     id:'',
     sku_item:[],
-    choose_sku_item:[]
-    
+    choose_sku_item:[],
+    buttonClicked:true,
   },
   
   onLoad(options){
@@ -57,7 +57,14 @@ Page({
 
 
   collect(){
-    const self = this;
+    const self = this;  
+    if(self.data.buttonClicked){
+      api.showToast('数据有误请稍等','none');
+      setTimeout(function(){
+        wx.showLoading();
+      },800)   
+      return;
+    };
     const id = self.data.id;
     if(wx.getStorageSync('collectData')&&wx.getStorageSync('collectData')[id]){
       api.deleteFootOne(id,'collectData');
@@ -144,6 +151,13 @@ Page({
 
   counter(e){
     const self = this;
+    if(self.data.buttonClicked){
+      api.showToast('数据有误请稍等','none');
+      setTimeout(function(){
+        wx.showLoading();
+      },800)   
+      return;
+    };
     if(api.getDataSet(e,'type')=='+'){
       self.data.count++;
     }else if(self.data.skuData.count > '1'){
@@ -179,9 +193,17 @@ Page({
 
   
 
-  goBuy:function(){
-    var isShow = !this.data.isShow;
-    this.setData({
+  goBuy(){
+    const self = this;
+    if(self.data.buttonClicked){
+      api.showToast('数据有误请稍等','none');
+      setTimeout(function(){
+        wx.showLoading();
+      },800)   
+      return;
+    };
+    var isShow = !self.data.isShow;
+    self.setData({
       isShow:isShow
     })
   },
@@ -194,30 +216,40 @@ Page({
 
   chooseSku(e){
     const self = this;
+    if(self.data.buttonClicked){
+      api.showToast('数据有误请稍等','none');
+      setTimeout(function(){
+        wx.showLoading();
+      },800)   
+      return;
+    };
     self.data.choose_sku_item = [];
     self.data.count = 1;
     delete self.data.totalPrice;
-    console.log('e',e);
     var id = api.getDataSet(e,'id');
     var parentid = api.getDataSet(e,'parentid');
     var sku = self.data.mainData.label[parentid];
+
     for(var i=0;i<sku.child.length;i++){
       if(self.data.sku_item.indexOf(sku.child[i].id)!=-1){
         self.data.sku_item.splice(self.data.sku_item.indexOf(sku.child[i].id), 1);
       };
       self.data.choose_sku_item.push(sku.child[i].id);
     };
+
     self.data.sku_item.push(id);
+    for (var i = 0; i < self.data.mainData.sku.length; i++) {
+      if(self.data.mainData.sku[i].sku_item.indexOf(parseInt(id))!=-1){
+        self.data.choose_sku_item.push.apply(self.data.choose_sku_item,self.data.mainData.sku[i].sku_item);  
+      };
+    }
     for(var i=0;i<self.data.mainData.sku.length;i++){ 
       if(JSON.stringify(self.data.mainData.sku[i].sku_item.sort())==JSON.stringify(self.data.sku_item.sort())){
         self.data.id = self.data.mainData.sku[i].id;
         self.data.skuData = api.cloneForm(self.data.mainData.sku[i]);
-      };
-      if(self.data.mainData.sku[i].sku_item.indexOf(parseInt(id))!=-1){
-        self.data.choose_sku_item.push.apply(self.data.choose_sku_item,self.data.mainData.sku[i].sku_item);
-        
-      };
+      };   
     };
+    console.log(self.data.skuData)
     self.setData({
       web_totalPrice:'',
       web_count:self.data.count,
@@ -230,6 +262,13 @@ Page({
 
   onShareAppMessage(res){
     const self = this;
+    if(self.data.buttonClicked){
+      api.showToast('数据有误请稍等','none');
+      setTimeout(function(){
+        wx.showLoading();
+      },800)   
+      return;
+    };
      console.log(res)
       if(res.from == 'button'){
         self.data.shareBtn = true;
@@ -270,6 +309,7 @@ Page({
     var complete = api.checkArrayEqual(self.data.complete_api,['getMainData']);
     if(complete){
       wx.hideLoading();
+      self.data.buttonClicked = false;
     };
   },
 

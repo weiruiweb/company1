@@ -268,7 +268,8 @@ line-height:62rpx;}
 	text-align:center;
 	font-size:28rpx;
 	color:#666;
-	background:#f7f7f7;
+	border:1px solid #e5e5e5;
+	background:#fff;
 	border-radius:3rpx;
 }
 .choose_number{

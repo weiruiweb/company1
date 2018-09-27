@@ -103,10 +103,11 @@ Page({
       self.data.buttonClicked = false;
       const postData = {
         token:wx.getStorageSync('token'),
-        product:[
+        sku:[
           {id:self.data.id,count:self.data.count}
         ],
         pay:{wxPay:self.data.totalPrice.toFixed(2)},
+        type:1
       };
       if(self.data.addressData.info.data[0]){
         postData.snap_address = self.data.addressData.info.data[0];

@@ -223,10 +223,19 @@ Page({
       },800)   
       return;
     };
-    self.data.choose_sku_item = [];
+
+    self.data.skuData = {};
+    self.data.id = '';
+    
     self.data.count = 1;
     delete self.data.totalPrice;
     var id = api.getDataSet(e,'id');
+    
+    if(self.data.choose_sku_item.indexOf(id)==-1){
+      return;
+    };
+    console.log('self.data.choose_sku_item',self.data.choose_sku_item)
+    self.data.choose_sku_item = [];
     var parentid = api.getDataSet(e,'parentid');
     var sku = self.data.mainData.label[parentid];
 
@@ -237,12 +246,20 @@ Page({
       self.data.choose_sku_item.push(sku.child[i].id);
     };
 
-    self.data.sku_item.push(id);
+    
     for (var i = 0; i < self.data.mainData.sku.length; i++) {
       if(self.data.mainData.sku[i].sku_item.indexOf(parseInt(id))!=-1){
         self.data.choose_sku_item.push.apply(self.data.choose_sku_item,self.data.mainData.sku[i].sku_item);  
       };
-    }
+    };
+
+    for(var i=0;i<self.data.sku_item.length;i++){
+      if(self.data.choose_sku_item.indexOf(parseInt(self.data.sku_item[i]))==-1){
+        self.data.sku_item.splice(i, 1); 
+      };
+    };
+    self.data.sku_item.push(id);
+
     for(var i=0;i<self.data.mainData.sku.length;i++){ 
       if(JSON.stringify(self.data.mainData.sku[i].sku_item.sort())==JSON.stringify(self.data.sku_item.sort())){
         self.data.id = self.data.mainData.sku[i].id;
@@ -257,7 +274,7 @@ Page({
       web_skuData:self.data.skuData,
       web_choose_sku_item:self.data.choose_sku_item,
     });
-    console.log('self.data.choose_sku_item',self.data.choose_sku_item)
+    
   },
 
   onShareAppMessage(res){

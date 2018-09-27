@@ -129,8 +129,7 @@ Page({
           };
           self.data.choose_sku_item.push.apply(self.data.choose_sku_item,self.data.mainData.sku[i].sku_item);
         };
-        self.data.skuData.count = self.data.count;
-        self.data.skuData.isSelect = true;
+
         self.data.sku_item = self.data.skuData.sku_item;
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
         self.data.complete_api.push('getMainData');
@@ -218,6 +217,8 @@ Page({
 
   addCart(){
     const self = this;
+    self.data.skuData.count = self.data.count;
+    self.data.skuData.isSelect = true;
     console.log(self.data.skuData);
     if(JSON.stringify(self.data.skuData) != "{}"){
       api.footOne(self.data.skuData,'id',100,'cartData'); 

@@ -23,7 +23,7 @@ Page({
     mainData:[],
     products:[],
     totalPrice:0,
-    isChooseAll:true
+    isChooseAll:''
   },
   
   onLoad() {
@@ -107,7 +107,7 @@ Page({
   onShow() {
     const self = this;
     self.data.mainData = api.jsonToArray(wx.getStorageSync('cartData'),'unshift');
-    console.log(self.data.mainData)
+    self.checkChooseAll()
     self.setData({
       web_isChooseAll:self.data.isChooseAll,
       web_mainData:self.data.mainData
@@ -135,6 +135,17 @@ Page({
 
   checkChooseAll(){
     const self = this;
+    for (var i = 0; i < self.data.mainData.length; i++) {
+      if(self.data.mainData[i].isSelect){
+        self.data.isChooseAll = true
+      }else{
+        self.data.isChooseAll = false
+      };
+      console.log(self.data.isChooseAll)
+      self.setData({
+        web_isChooseAll:self.data.isChooseAll
+      });
+    }
   },
 
   chooseAll(){
@@ -154,11 +165,13 @@ Page({
   delete(){
     const self = this;
     for(var i=0;i<self.data.mainData.length;i++){
-      if(self.data.mainData[i].isSelect == 'true'){
+      if(self.data.mainData[i].isSelect){
         api.deleteFootOne(self.data.mainData[i].id ,'cartData')
       }
     };
+    self.isChooseAll();
     self.setData({
+      web_isChooseAll:self.data.isChooseAll,
       web_mainData:self.data.mainData
     });
   },
@@ -171,11 +184,12 @@ Page({
     }else{
       self.data.mainData[index].isSelect = true;
     };
-    console.log(self.data.mainData[index]);
-    api.updateFootOne(self.data.mainData[index].id,'cartData','isSelect',self.data.mainData[index].isSelect)
+    api.updateFootOne(self.data.mainData[index].id,'cartData','isSelect',self.data.mainData[index].isSelect);
+
     self.setData({
       web_mainData:self.data.mainData
     });
+    self.checkChooseAll();
     self.countTotalPrice();
   },
 

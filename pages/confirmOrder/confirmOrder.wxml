@@ -1,6 +1,6 @@
 <!--manageAddress.wxml-->
-<view id="confirmOrder">
-	<view class="confirm_address" bindtap="manageAddress"  wx:if="{{web_addressData.info.data[0].name}}">
+<view id="confirmOrder"  wx:if="{{web_addressData.info.data[0].name}}">
+	<view class="confirm_address" bindtap="manageAddress" >
 		<view class="order_user flexRowBetween">
 			
 				<view class="user_name" style="width:50%;text-align:left;overflow:hidden;">
@@ -24,31 +24,42 @@
 		</view>
 	</view>
 </view>
+<view class="confirm"  style="display:flex;align-items:center;border-bottom:solid 1px #ececec" bindtap="intoPath" data-path="/pages/userAddress/userAddress" wx:else>
+	<view class="order_user"  style="{{fonts[5].font}};padding:0 50rpx" >
+		<view class="order_left" >
+			请选择收货地址
+		</view>
+	</view>
+	<view class="next_page" style="text-align:center;margin-left:360rpx" >
+		<image src="/images/next_page.jpg"></image>
+	</view>
+</view>
+
 <view>
-<view class="order_list">
-	<view class="order_confirm">
-		<block wx:for="{{web_mainData}}" wx:key="id">
-			<view class="flexRowBetween orderlistShow ">
-				<view class="img_left"><image src="{{item.mainImg[0].url}}"></image></view>
-				<view class="order_name">
-					<view class="text1 avoidOverflow">{{item.title}}</view>
-					<view class="order_type avoidOverflow">个性化定制</view>
-					<view class="orders flexRowBetween">
-						<text class="order_price">¥{{item.price}}</text>
-						<text class="order_number">X{{web_count}}</text>
+	<view class="order_list">
+		<view class="order_confirm">
+			<block wx:for="{{web_mainData}}" wx:key="id">
+				<view class="flexRowBetween orderlistShow ">
+					<view class="img_left"><image src="{{item.mainImg[0].url}}"></image></view>
+					<view class="order_name">
+						<view class="text1 avoidOverflow">{{item.title}}</view>
+						<view class="order_type avoidOverflow">个性化定制</view>
+						<view class="orders flexRowBetween">
+							<text class="order_price">¥{{item.price}}</text>
+							<text class="order_number">X{{web_count}}</text>
+						</view>
 					</view>
 				</view>
-			</view>
-		</block>
+			</block>
+		</view>
 	</view>
-</view>
-<view class="user_message">
-	<view class="flexRowBetween">
-		<text class="text1">买家留言</text>
-		<textarea placeholder="选填:填写内容已和卖家协商确认" auto-height="true" data-key="passage1" bindblur="changeBind" value="{{web_submitData.passage1}}">
-		</textarea>
+	<view class="user_message">
+		<view class="flexRowBetween">
+			<text class="text1">买家留言</text>
+			<textarea placeholder="选填:填写内容已和卖家协商确认" auto-height="true" data-key="passage1" bindblur="changeBind" value="{{web_submitData.passage1}}">
+			</textarea>
+		</view>
 	</view>
-</view>
 </view>
 <view class="pay_footer">
 	<view class="pay_order " style="display:flex;width:100%;align-items:center;">

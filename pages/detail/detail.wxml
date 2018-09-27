@@ -204,7 +204,7 @@
 		</view>
 		
 	</view>	
-	<view bindtap="intoPath" data-path="/pages/confirmOrder/confirmOrder?count={{web_count}}&&id={{web_skuData.id}}">
+	<view bindtap="{{web_count&&web_skuData.id?'intoPath':''}}" data-path="/pages/confirmOrder/confirmOrder?count={{web_count}}&&id={{web_skuData.id}}">
 		<view class="shoppingCart" style="width:100%;height:80rpx;line-height:80rpx;color:#fff">
 			确    认
 		</view>

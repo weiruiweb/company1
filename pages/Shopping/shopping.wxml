@@ -4,7 +4,7 @@
 		<view class="shopping_item">
 			<view class="flexRowBetween" style="align-items:center;">
 				<view class="select_status" data-index="{{index}}" bindtap='choose'>
-					<image src="{{item.isSelect=='true'?'/images/select_active.jpg':'/images/select.png'}}"></image>
+					<image src="{{item.isSelect?'/images/select_active.jpg':'/images/select.png'}}"></image>
 				</view>
 				<view class="shopping_img">
 					<image src="{{item.mainImg[0].url}}"></image>

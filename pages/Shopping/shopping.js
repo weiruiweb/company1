@@ -22,8 +22,8 @@ Page({
 
     mainData:[],
     products:[],
-    totalPrice:0
-
+    totalPrice:0,
+    isChooseAll:true
   },
   
   onLoad() {
@@ -104,10 +104,12 @@ Page({
 
 
 
-  onShow: function () {
+  onShow() {
     const self = this;
     self.data.mainData = api.jsonToArray(wx.getStorageSync('cartData'),'unshift');
+    console.log(self.data.mainData)
     self.setData({
+      web_isChooseAll:self.data.isChooseAll,
       web_mainData:self.data.mainData
     });
     self.countTotalPrice();
@@ -116,21 +118,48 @@ Page({
   counter(e){
     const self = this;
     const index = api.getDataSet(e,'index');
-    if(api.getDataSet(e,'type')=='+'){
-      
+    if(api.getDataSet(e,'type')=='+'){  
       self.data.mainData[index].count++;
     }else{
       if(self.data.mainData[index].count > '1'){
-        
+  
         self.data.mainData[index].count--;
       }
     };
-    api.updateFootOne(self.data.mainData[index].model_id,'cartData','count',self.data.mainData[index].count);
+    api.updateFootOne(self.data.mainData[index].id,'cartData','count',self.data.mainData[index].count);
     self.setData({
       web_mainData:self.data.mainData
     });
     self.countTotalPrice();
+  },
 
+  chooseAll(){
+    const self = this;
+    var isChooseAll = self.data.isChooseAll;
+    isChooseAll = !isChooseAll;
+    for (var i = 0; i < self.data.mainData.length; i++) {
+      self.data.mainData[i].isSelect = isChooseAll;
+    }
+     api.updateFootOne(self.data.mainData[i].id,'cartData','isSelect',self.data.mainData[i].isSelect)
+     
+      self.setData({
+        web_isChooseAll:isChooseAll,
+        web_mainData:self.data.mainData
+      });
+   
+    self.countTotalPrice();
+  },
+
+  delete(){
+    const self = this;
+    for(var i=0;i<self.data.mainData.length;i++){
+      if(self.data.mainData[i].isSelect == 'true'){
+        api.deleteFootOne(self.data.mainData[i].id ,'cartData')
+      }
+    };
+    self.setData({
+      web_mainData:self.data.mainData
+    });
   },
 
   choose(e){
@@ -142,7 +171,7 @@ Page({
       self.data.mainData[index].isSelect = 'true';
     }
     console.log(self.data.mainData[index]);
-    api.updateFootOne(self.data.mainData[index].model_id,'cartData','isSelect',self.data.mainData[index].isSelect)
+    api.updateFootOne(self.data.mainData[index].id,'cartData','isSelect',self.data.mainData[index].isSelect)
     self.setData({
       web_mainData:self.data.mainData
     });
@@ -157,9 +186,6 @@ Page({
         totalPrice += self.data.mainData[i].price*self.data.mainData[i].count
       }
     };
-    if(self.data.user_level=='super'){
-      totalPrice = totalPrice*self.data.user_discount/10;
-    };
     self.setData({
       web_totalPrice:totalPrice.toFixed(2)
     })
@@ -167,22 +193,24 @@ Page({
 
 
 
-  check(){
+  pay(){
     const self = this;
-    const callback = res =>{
-      const products = [];
-      for(var i=0;i<self.data.mainData.length;i++){
-        if(self.data.mainData[i].isSelect == 'true'){
-          
-          products.push(self.data.mainData[i]);
-        }
-      };
-      console.log(products);
-      wx.setStorageSync('payPro',products);
-      api.pathTo('/pages/mine/order/cat/cat','nav')
+    const skuDatas = [];
+    for(var i=0;i<self.data.mainData.length;i++){
+      if(self.data.mainData[i].isSelect == 'true'){
+        skuDatas.push(self.data.mainData[i]);
+      }
     };
-    api.checkPhoneCallback(callback);
+    console.log(skuDatas);
+    wx.setStorageSync('payPro',skuDatas);
+    api.pathTo('/pages/confirmOrder/confirmOrder','nav')
   },
+
+
+
+
+
+
   
   confirmOrder:function(){
     wx.navigateTo({
@@ -200,5 +228,13 @@ Page({
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
   },
+
+  bindManual(e) {
+    const self = this;
+    var num = e.detail.value;
+    this.setData({
+      num: num
+    });
+  }  
   
 })

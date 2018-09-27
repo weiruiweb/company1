@@ -28,6 +28,7 @@ Page({
       var token = new Token();
       token.getUserInfo();
     };
+    console.log(options)
     self.data.id = options.id;
     self.data.count = options.count;
     this.setData({

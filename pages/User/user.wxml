@@ -24,7 +24,7 @@
 </view>
 <view id="user">
 	<view class="user_two flexRowBetween">
-		<view class="user_credit user_collect" style="{{fonts[3].font}}">
+		<view class="user_credit user_collect" style="{{fonts[3].font}}" bindtap="intoPath" data-path="/pages/collectData/collectData">
 			<view class="collect_number">0</view>
 			<view class="collect_txt">我的收藏</view>
 		</view>

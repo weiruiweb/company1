@@ -16,8 +16,8 @@
     "pages/detail/detail",
     "pages/about/about",
     "pages/sign/sign",
-    "pages/caseDetail/caseDetail"
-
+    "pages/caseDetail/caseDetail",
+    "pages/collectData/collectData"
   ],
   "window":{
     "backgroundTextStyle":"light",

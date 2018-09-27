@@ -22,11 +22,14 @@ Page({
     id:'',
     sku_item:[],
     choose_sku_item:[],
+    buttonType:'',
     buttonClicked:true,
   },
   
   onLoad(options){
     const self = this;
+    console.log(self.data.skuData);
+    
     wx.showLoading();
     if(!wx.getStorageSync('token')){
       var token = new Token();
@@ -40,6 +43,7 @@ Page({
       self.data.id = options.id
     };
     self.getMainData();
+    
     if(wx.getStorageSync('collectData')[self.data.id]){
       self.setData({
         url: '/images/collect1.png',
@@ -125,7 +129,8 @@ Page({
           };
           self.data.choose_sku_item.push.apply(self.data.choose_sku_item,self.data.mainData.sku[i].sku_item);
         };
-        console.log('self.data.skuData',self.data.skuData)
+        self.data.skuData.count = self.data.count;
+        self.data.skuData.isSelect = true;
         self.data.sku_item = self.data.skuData.sku_item;
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
         self.data.complete_api.push('getMainData');
@@ -163,6 +168,7 @@ Page({
     }else if(self.data.skuData.count > '1'){
       self.data.count--;
     }
+    self.data.skuData.count = self.data.count
     self.setData({
       web_count:self.data.count,
       web_skuData:self.data.skuData,
@@ -183,7 +189,6 @@ Page({
   countTotalPrice(){  
     const self = this;
     var totalPrice = 0;
-
     totalPrice += self.data.count*parseFloat(self.data.skuData.price);
     self.data.totalPrice = totalPrice;
     self.setData({
@@ -193,7 +198,7 @@ Page({
 
   
 
-  goBuy(){
+  goBuy(e){
     const self = this;
     if(self.data.buttonClicked){
       api.showToast('数据有误请稍等','none');
@@ -202,17 +207,27 @@ Page({
       },800)   
       return;
     };
+    self.data.buttonType = api.getDataSet(e,'type');
+    console.log( self.data.buttonType)
     var isShow = !self.data.isShow;
     self.setData({
+      web_buttonType:self.data.buttonType,
       isShow:isShow
     })
   },
 
-  close:function(){
-    this.setData({
-      isShow:false
-    })
+  addCart(){
+    const self = this;
+    console.log(self.data.skuData);
+    if(JSON.stringify(self.data.skuData) != "{}"){
+      api.footOne(self.data.skuData,'id',100,'cartData'); 
+    }else{
+      api.showToast('请完善信息','none')
+    }
+   
   },
+
+
 
   chooseSku(e){
     const self = this;
@@ -223,7 +238,6 @@ Page({
       },800)   
       return;
     };
-
     self.data.skuData = {};
     self.data.id = '';
     
@@ -234,7 +248,6 @@ Page({
     if(self.data.choose_sku_item.indexOf(id)==-1){
       return;
     };
-    console.log('self.data.choose_sku_item',self.data.choose_sku_item)
     self.data.choose_sku_item = [];
     var parentid = api.getDataSet(e,'parentid');
     var sku = self.data.mainData.label[parentid];
@@ -266,7 +279,6 @@ Page({
         self.data.skuData = api.cloneForm(self.data.mainData.sku[i]);
       };   
     };
-    console.log(self.data.skuData)
     self.setData({
       web_totalPrice:'',
       web_count:self.data.count,
@@ -321,6 +333,8 @@ Page({
       }
   },
 
+
+
   checkLoadComplete(){
     const self = this;
     var complete = api.checkArrayEqual(self.data.complete_api,['getMainData']);
@@ -333,6 +347,13 @@ Page({
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
+  },
+
+  close(){
+    const self = this;
+    self.setData({
+      isShow:false
+    })
   },
 
 })

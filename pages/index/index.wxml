@@ -92,7 +92,6 @@
     <text class="text1">服务类别</text>
   </view>
 
-  
   <view class="service_cont" data-path="/pages/Sort/sort" bindtap="intoPathRedi">
     <view class="service_left">
       <view class="service_leftT">
@@ -176,7 +175,6 @@
     </view>
   </block>
 </view>
-<view style="width:100%;height:120rpx;"></view>
 <view class="navbar"> 
   <view class="navbar_item" bindtap="index">
       <view class="nav_img">

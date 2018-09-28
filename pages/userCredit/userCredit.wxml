@@ -1,28 +1,20 @@
 <!--userPoster.wxml-->
-<view class="user_credit">
-	<view class="user_top" style="justify-content:start">
-		<view class="user_info" style="width:38%">
 
+<view class="user_credit">
+	<view class="user_top">
+		<view class="user_info">
 			<view class="user_img">
 				<open-data type="userAvatarUrl"></open-data>
 			</view>
-
 			 <view class="user_word">
 			 	<view class="user_name"  style="fonts[5].font"><open-data type="userNickName" lang="zh_CN"></open-data></view>
 			 </view>
 		</view>
-
-		<view class="user_cre" style="width:34%">
-			<view class="user_cres">
-				总佣金:¥{{web_userData.info.data[0].balance}}	
+		<view class="user_cre">
+			<view class="user_cres" style="color:#39bddf;text-align:right">
+				积分:{{web_userData.info.data[0].score}}	
 			</view>
 		</view>
-		<view top_left style="width:28%">
-			<view class="submit_info" bindtap="intoPath"  data-path="/pages/dealerCashMo/dealerCashMo" style="height:30px;width:100%;font-size:15px;line-height:30px;margin-top:0">
-				立即提现
-			</view>
-		</view>
-
 	</view>
 </view>
 <view class="date" style="{{fonts[4].font}}">

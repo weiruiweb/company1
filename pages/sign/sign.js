@@ -17,7 +17,7 @@ Page({
     computeData:[],
     rewardScore:'',
     searchItem :{
-      thirdapp_id:'59',
+      thirdapp_id:'2',
       type:3
     },
     isSign:false

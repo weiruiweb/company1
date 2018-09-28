@@ -23,7 +23,7 @@ Page({
     self.setData({
      fonts:app.globalData.font
     });
-    self.getUserInfoData();
+    
     if(options.scene){
       var scene = decodeURIComponent(options.scene)
     };
@@ -39,7 +39,15 @@ Page({
     token.getUserInfo();
   },
 
- 
+  onShow(){
+    const self = this;
+    self.getUserInfoData();
+    self.data.mainData = api.jsonToArray(wx.getStorageSync('collectData'),'unshift');
+    console.log(self.data.mainData.length)
+    self.setData({
+      web_collectData:self.data.mainData.length
+    })
+  },
 
   getUserInfoData(){
     const self = this;
@@ -47,7 +55,9 @@ Page({
     postData.token = wx.getStorageSync('token');
     const callback = (res)=>{
       if(res.solely_code==100000){
-        self.data.userData = res;
+        if(res.info.data.length>0){
+          self.data.userData = res.info.data[0]; 
+        }
         self.setData({
           web_userData:self.data.userData,
         });  

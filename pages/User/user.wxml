@@ -1,26 +1,24 @@
 <!--logs.wxml-->
 <view class="users">
-
-		<view class="user_info flexRowBetween">
-			<view style="width:30%;">
-				<view class="user_img">
-					<open-data type="userAvatarUrl"></open-data>
-				</view>
+	<view class="user_info flexRowBetween">
+		<view style="width:30%;">
+			<view class="user_img">
+				<open-data type="userAvatarUrl"></open-data>
 			</view>
-			 <view class="user_word">
-			 	<view class="user_name"><open-data type="userNickName" lang="zh_CN"></open-data></view>
-			 	<view class="phone">158767678</view>
-			 </view>
-			 <view style="width:15%;">
-		    	<view class="sign_up">
-		    		<text>签</text>
-		    	</view>
-		    </view>
-	    	<view class="consult" style="width:15%;">
-	    		<image src="/images/kefu.png"></image>
-	    	</view>
 		</view>
-
+		 <view class="user_word">
+		 	<view class="user_name"><open-data type="userNickName" lang="zh_CN"></open-data></view>
+		 	<view class="phone">158767678</view>
+		 </view>
+		 <view style="width:15%;">
+	    	<view class="sign_up">
+	    		<text>签</text>
+	    	</view>
+	    </view>
+    	<view class="consult" style="width:15%;">
+    		<image src="/images/kefu.png"></image>
+    	</view>
+	</view>
 </view>
 <view id="user">
 	<view class="user_two flexRowBetween">
@@ -80,7 +78,7 @@
 				<image src="/images/next_page.jpg"></image>
 			</view>
 		</view>
-		<view class="user_infor flexRowBetween" bindtap="intoPath" data-path="/pages/discount/discount">
+		<view class="user_infor flexRowBetween" bindtap="intoPath" data-path="/pages/userDiscount/userDiscount">
 			<view class="user_left flexRowBetween">
 				<image src="/images/user_icon3.png"></image>
 				<text>我的优惠劵</text>
@@ -100,32 +98,30 @@
 		</view>
 	</view>
 </view>
-
+<view style="width:100%;height:120rpx;"></view>
 <view class="navbar">
-    
-      <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pages/Index/index">
-          <view class="nav_img">
-            <image src="/images/navbar1.png" style="width:42rpx;height:42rpx;"></image>
-          </view>
-          <view class="text " style="{{fonts[2].font}}">首页</view>
-      </view>
-    
-    <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pages/Sort/sort">
-        <view class="nav_img">
-           <image src="/images/navbar2.png" style="width:42rpx;height:42rpx;"></image>
-        </view>
-        <view class="text" style="{{fonts[2].font}}">分类</view>
-    </view>
-    <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/Shopping/shopping">
-        <view class="nav_img">
-            <image src="/images/navbar3.png" style="width:42rpx;height:42rpx;" ></image>
-        </view>
-        <view class="text" style="{{fonts[2].font}}">购物车</view>
-    </view>
-    <view class="navbar_item" >
-        <view class="nav_img">
-            <image src="/images/navbar4-a.png" style="width:42rpx;height:42rpx;"></image>
-        </view>
-        <view class="text this-text" style="{{fonts[2].font}}">我的</view>
-    </view>
+	<view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/Index/index">
+	    <view class="nav_img">
+	        <image src="/images/navbar1.png" style="width:42rpx;height:42rpx;"></image>
+	    </view>
+	    <view class="text " style="{{fonts[2].font}}">首页</view>
+	</view>
+	<view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/Sort/sort">
+	    <view class="nav_img">
+	        <image src="/images/navbar2.png" style="width:42rpx;height:42rpx;"></image>
+	    </view>
+	    <view class="text" style="{{fonts[2].font}}">分类</view>
+	</view>
+	<view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/Shopping/shopping">
+	    <view class="nav_img">
+	        <image src="/images/navbar3.png" style="width:42rpx;height:42rpx;"></image>
+	    </view>
+	    <view class="text" style="{{fonts[2].font}}">购物车</view>
+	</view>
+	<view class="navbar_item">
+	    <view class="nav_img">
+	        <image src="/images/navbar4-a.png" style="width:42rpx;height:42rpx;"></image>
+	    </view>
+	    <view class="text this-text" style="{{fonts[2].font}}">我的</view>
+	</view>
 </view>

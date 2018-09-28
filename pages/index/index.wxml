@@ -176,40 +176,30 @@
     </view>
   </block>
 </view>
-
-<view class="navbar">
-    
-      <view class="navbar_item" bindtap="index">
-      
-          <view class="nav_img">
-            <image src="/images/navbar1-a.png" style="width:42rpx;height:42rpx;"></image>
-          </view>
-          <view class="text this-text" style="{{fonts[2].font}}">首页</view>
-
+<view style="width:100%;height:120rpx;"></view>
+<view class="navbar"> 
+  <view class="navbar_item" bindtap="index">
+      <view class="nav_img">
+        <image src="/images/navbar1-a.png" style="width:42rpx;height:42rpx;"></image>
       </view>
-    
-    <view class="navbar_item" bindtap="sort">
-   
-        <view class="nav_img">
-           <image src="/images/navbar2.png" style="width:42rpx;height:42rpx;"></image>
-        </view>
-        <view class="text" style="{{fonts[2].font}}">分类</view>
-    
-    </view>
-    <view class="navbar_item"  bindtap="shopping">
-   
-        <view class="nav_img">
-            <image src="/images/navbar3.png" style="width:42rpx;height:42rpx;"></image>
-        </view>
-        <view class="text" style="{{fonts[2].font}}">购物车</view>
-
-    </view>
-    <view class="navbar_item"  bindtap="User">
-   
-        <view class="nav_img">
-            <image src="/images/navbar4.png" style="width:42rpx;height:42rpx;"></image>
-        </view>
-        <view class="text" style="{{fonts[2].font}}">我的</view>
-
-    </view>
+      <view class="text this-text" style="{{fonts[2].font}}">首页</view>
+  </view>
+  <view class="navbar_item" bindtap="sort">
+      <view class="nav_img">
+         <image src="/images/navbar2.png" style="width:42rpx;height:42rpx;"></image>
+      </view>
+      <view class="text" style="{{fonts[2].font}}">分类</view>
+  </view>
+  <view class="navbar_item"  bindtap="shopping">
+      <view class="nav_img">
+          <image src="/images/navbar3.png" style="width:42rpx;height:42rpx;"></image>
+      </view>
+      <view class="text" style="{{fonts[2].font}}">购物车</view>
+  </view>
+  <view class="navbar_item"  bindtap="User">
+      <view class="nav_img">
+          <image src="/images/navbar4.png" style="width:42rpx;height:42rpx;"></image>
+      </view>
+      <view class="text" style="{{fonts[2].font}}">我的</view>
+  </view>
 </view>

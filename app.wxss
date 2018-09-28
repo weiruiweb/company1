@@ -111,3 +111,35 @@ border-radius:10rpx;margin-top:260rpx;}
 	background:none;
 	color:#21c3d4;
 }
+/****************优惠券******************/
+.discount_sort {
+    padding: 0rpx 195rpx;
+    height: 86rpx;
+    line-height: 86rpx;
+    border-bottom: solid 1rpx #ececec;
+    margin-bottom: 20rpx;
+}
+.discount_sort {
+    font-size: 32rpx;
+    color: #333;
+}
+.discount_this .border-short {
+    position: relative;
+    left: 25rpx;
+    width: 42rpx;
+    height: 1rpx;
+    background: #21c3d4;
+    bottom: 0rpx;
+}
+.discount_sort .active {
+    color: #21c3d4;
+}
+.ticket_sort {
+    display: none
+}
+.madeShow {
+    display: block;
+}
+.discount_this {
+    color: #21c3d4;
+}

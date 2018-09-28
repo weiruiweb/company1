@@ -295,7 +295,6 @@
 	height:100%;
 	align-items:center;
 }
-
 .service_left .text1{
 	margin-top:30rpx;
 }
@@ -303,20 +302,14 @@
 .service_cont .text2{
 	font-size:18rpx;
 	color:#969696;}	
-
-.service_right{
-	
-}
 .serviceTLeft .text1{
 	font-size:38rpx;
 	color:#ffb66d;
-
 }
 .service_bottom{margin-top:8rpx;}
 .serviceBLeft{color:#21c5d4;font-size:38rpx;}
 .service_top image{width:135rpx;height:105rpx;}
 .serviceBright image{width:116rpx;height:116rpx;}
-
 .solely_more{
 	text-align:center;
 	width:100%;
@@ -326,14 +319,12 @@
 	width:100%;
 	height:264rpx;
 }
-
 .service_cont{
 	width:98%;
 	padding:0 1%;
 	height:300rpx;
 	flex-direction:row;
 	display:flex;
-	
 }
 .service_left{
 	width:50%;
@@ -385,7 +376,6 @@
 	width:100%;
 	position:relative;
 }
-
 .solely_more text{
 	font-size:38rpx;
 	color:#b4a078;}
@@ -408,7 +398,6 @@
 	background:#f4e9ca;
 }
 .case{margin-top:32rpx;
-	margin-bottom:130rpx;
 }
 .case_cont image{
 	width:485rpx;

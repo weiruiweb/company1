@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 18,
+			"current": 19,
 			"list": [
 				{
 					"id": 0,
@@ -146,7 +146,13 @@
 				{
 					"id": -1,
 					"name": "自提",
-					"pathName": "pages/confirmOrderSince/confirmOrderSince"
+					"pathName": "pages/confirmOrderSince/confirmOrderSince",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的优惠券",
+					"pathName": "pages/userDiscount/userDiscount"
 				}
 			]
 		}

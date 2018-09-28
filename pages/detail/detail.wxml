@@ -141,6 +141,7 @@
 <view class="{{isShow?'mask':''}}"></view>
 
 </view>
+<view style="width:100%;height:120rpx;"></view>
 <view id="buy">
 	<view class="buy_click">
 		<view class="consult">

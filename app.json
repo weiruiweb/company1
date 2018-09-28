@@ -4,6 +4,7 @@
     "pages/Sort/sort",
     "pages/Shopping/shopping",
     "pages/User/user",
+    "pages/userDiscount/userDiscount",
     "pages/userInfo/userInfo",
     "pages/discount/discount",
     "pages/manageAddress/manageAddress",

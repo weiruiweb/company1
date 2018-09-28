@@ -1,0 +1,89 @@
+<!--userPoster.wxml-->
+<view class="user_credit">
+	<view class="user_top" style="justify-content:start">
+		<view class="user_info" style="width:38%">
+
+			<view class="user_img">
+				<open-data type="userAvatarUrl"></open-data>
+			</view>
+
+			 <view class="user_word">
+			 	<view class="user_name"  style="fonts[5].font"><open-data type="userNickName" lang="zh_CN"></open-data></view>
+			 </view>
+		</view>
+
+		<view class="user_cre" style="width:34%">
+			<view class="user_cres">
+				总佣金:¥{{web_userData.info.data[0].balance}}	
+			</view>
+		</view>
+		<view top_left style="width:28%">
+			<view class="submit_info" bindtap="intoPath"  data-path="/pages/dealerCashMo/dealerCashMo" style="height:30px;width:100%;font-size:15px;line-height:30px;margin-top:0">
+				立即提现
+			</view>
+		</view>
+
+	</view>
+</view>
+<view class="date" style="{{fonts[4].font}}">
+	<view class="date_item">
+		<view style="width:45%;display:flex;align-items:center;">
+			<view class="date_left" style="color:#39bddf;width:100%;">
+				<picker  mode="date" value="{{web_startTime}}" data-type="startTime" bindchange="bindTimeChange" >
+					<view style="display:flex;align-items:center;width:100%;height:100%;">
+						<view style="width:85%;height:70rpx;">
+						    <view class="picker text">
+						      起始日期
+						    </view>
+						    <view class="text" style="{{fonts[2].font}}">{{web_startTime}}</view>
+						</view>
+						<view style="width:15%;height:70rpx;align-items:center;">
+							<image src="/images/up_icon2.jpg"></image>
+						</view>
+					</view>	
+				</picker>
+			    
+			</view>
+			
+		</view>	
+	</view>
+	<view class="date_item">
+		<view style="width:45%;display:flex;align-items:center;">
+			<view class="date_left" style="color:#39bddf;width:100%;">
+				<picker  mode="date" value="{{web_endTime}}" data-type="endTime" bindchange="bindTimeChange" >
+					<view style="display:flex;align-items:center;width:100%;height:100%;">
+						<view style="width:85%;height:70rpx;">
+						    <view class="picker text">
+						      截至日期
+						    </view>
+						    <view class="text" style="{{fonts[2].font}}">{{web_endTime}}</view>
+					    </view>
+					    <view style="width:15%;height:70rpx;">
+							<image src="/images/up_icon1.jpg"></image>
+						</view>
+					</view>
+				</picker>
+			</view>
+			
+		</view>	
+	</view>		
+</view>
+<view class="credit_cont">
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="credit_list">
+			<view class="credit_item">
+				<view class="credit_left">
+					<view class="credit_reson" style="{{fonts[3].font}}">
+						{{item.trade_info}}
+					</view>
+					<view class="credit_dates" style="{{fonts[2].font}}">
+						{{item.create_time}}
+					</view>
+				</view>
+				<view class="credit_right"  style="{{fonts[3].font}};color:#39bddf;">
+					{{item.count}}
+				</view>
+			</view>
+		</view>
+	</block>
+</view>

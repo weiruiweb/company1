@@ -77,7 +77,7 @@
         <view class="nav_img">
 	        <view class="cart_number" bindtap="onCartTap">
 	            <view class="fiexd-cart {{isShake?'animate':''}}" style="">
-	                <view style="color:#fff;font-size:16rpx;">{{cartTotalCounts}}</view>
+	                <view style="color:#fff;font-size:16rpx;">{{web_cartTotalCounts}}</view>
 	            </view>
 	        </view>
             <image src="/images/navbar3-a.png" style="width:42rpx;height:42rpx;" class="{{isShake?'jisster':''}}"></image>

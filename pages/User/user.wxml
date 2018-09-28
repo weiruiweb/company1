@@ -28,7 +28,7 @@
 			<view class="collect_number">0</view>
 			<view class="collect_txt">我的收藏</view>
 		</view>
-		<view class="user_credit"  style="{{fonts[3].font}}">
+		<view class="user_credit"  style="{{fonts[3].font}}" bindtap="intoPath" data-path="/pages/userCredit/userCredit">
 			<view class="credit_number">{{web_userData.info.data[0].score?web_userData.info.data[0].score:'网络故障'}}</view>
 			<view class="credit_txt">我的积分</view>
 		</view>
@@ -80,7 +80,16 @@
 				<image src="/images/next_page.jpg"></image>
 			</view>
 		</view>
-		<view class="user_infor flexRowBetween" bindtap="intoPath" data-path="/pages/discount/discount">
+		<view class="user_infor flexRowBetween"  bindtap="intoPath" data-path="/pages/userGroup/userGroup">
+			<view class="user_left flexRowBetween">
+				<image src="/images/user_icon2.png"></image>
+				<text>我的团队</text>
+			</view>
+			<view class="next_page">
+				<image src="/images/next_page.jpg"></image>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="intoPath" data-path="/pages/userDiscount/userDiscount">
 			<view class="user_left flexRowBetween">
 				<image src="/images/user_icon3.png"></image>
 				<text>我的优惠劵</text>

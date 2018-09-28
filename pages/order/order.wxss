@@ -26,12 +26,7 @@ page{
 .order_left{width:26%;
 	text-align:left;
 }
-.order_all{
-	display:none;
-}
-.order_show{
-	display:block;
-}
+
 .order_list{
 
 	}

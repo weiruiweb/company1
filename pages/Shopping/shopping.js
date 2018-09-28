@@ -166,28 +166,11 @@ Page({
     const self = this;
     for(var i=0;i<self.data.mainData.length;i++){
       if(self.data.mainData[i].isSelect){
-        wx.showModal({
-         title: '删除',
-         content: '确定要删除？',
-         showCancel: true,
-         cancelText:"否",
-         cancelColor:'skyblue',
-         confirmText:"是",
-         confirmColor: 'skyblue',
-         success: function (res) {
-            if (res.cancel) {
-               //点击取消,默认隐藏弹框
-            } else {
-              api.deleteFootOne(self.data.mainData[i].id ,'cartData')
-            }
-         },
-         fail: function (res) { },//接口调用失败的回调函数
-         complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
-      })
-        
+        api.deleteFootOne(self.data.mainData[i].id ,'cartData')
       }
     };
-    self.isChooseAll();
+    self.data.mainData = api.jsonToArray(wx.getStorageSync('cartData'),'unshift');
+    self.checkChooseAll();
     self.setData({
       web_isChooseAll:self.data.isChooseAll,
       web_mainData:self.data.mainData
@@ -214,13 +197,16 @@ Page({
   countTotalPrice(){
     const self = this;
     var totalPrice = 0;
+    var cartTotalCounts = 0;
     for(var i=0;i<self.data.mainData.length;i++){
       if(self.data.mainData[i].isSelect){
-        totalPrice += self.data.mainData[i].price*self.data.mainData[i].count
+        totalPrice += self.data.mainData[i].price*self.data.mainData[i].count;
+        cartTotalCounts += self.data.mainData[i].count;
       }
     };
     self.setData({
-      web_totalPrice:totalPrice.toFixed(2)
+      web_cartTotalCounts:cartTotalCounts,
+      web_totalPrice:totalPrice.toFixed(2),
     })
   },
 

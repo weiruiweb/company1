@@ -197,7 +197,7 @@ Page({
 
   
 
-  goBuy(e){
+  selectModel(e){
     const self = this;
     if(self.data.buttonClicked){
       api.showToast('数据有误请稍等','none');
@@ -226,7 +226,23 @@ Page({
     }else{
       api.showToast('请完善信息','none')
     }
-   
+  },
+
+  goBuy(){
+    const self = this;
+    const skuDatas = [];
+    skuDatas.push({
+      id:self.data.id,
+      count:self.data.count
+    });
+    console.log(skuDatas);
+    if(self.data.skuData.id !=''&&self.data.skuData.id !=undefined){
+      wx.setStorageSync('payPro',skuDatas);
+      api.pathTo('/pages/confirmOrder/confirmOrder','nav')
+    }else{
+      api.showToast('请完善信息','none')
+    }
+
   },
 
 

@@ -1,0 +1,73 @@
+<!--userPoster.wxml-->
+<view class="team_tlt flexRowBetween">
+	<view class="next_bank" style="{{fonts[4].font}}">
+		我的下级
+	</view>
+	<view class="next_number" style="{{fonts[4].font}}">
+		总计<text >{{web_total}}</text>人
+	</view>
+	
+</view>
+<view class="date" style="{{fonts[4].font}}">
+	<view class="date_item">
+		<view style="width:45%;display:flex;align-items:center;">
+			<view class="date_left" style="color:#39bddf;width:100%;">
+				<picker  mode="date" value="{{web_startTime}}" data-type="startTime" bindchange="bindTimeChange" >
+					<view style="display:flex;align-items:center;width:100%;">
+						<view style="width:85%;height:70rpx;">
+						    <view class="picker text">
+						      起始日期
+						    </view>
+						    <view class="text" style="{{fonts[2].font}}">{{web_startTime}}</view>
+						</view>
+						<view style="width:15%;height:70rpx;">
+							<image src="/images/up_icon2.jpg"></image>
+						</view>
+					</view>	
+				</picker>
+			    
+			</view>
+			
+		</view>	
+	</view>
+	<view class="date_item" style="border:none;">
+		<view style="width:45%;display:flex;align-items:center;">
+			<view class="date_left" style="color:#39bddf;width:100%;">
+				<picker  mode="date" value="{{web_endTime}}" data-type="endTime" bindchange="bindTimeChange" >
+					<view style="display:flex;align-items:center;width:100%;">
+						<view style="width:85%;height:70rpx;">
+						    <view class="picker text">
+						      截至日期
+						    </view>
+						    <view class="text" style="{{fonts[2].font}}">{{web_endTime}}</view>
+					    </view>
+					    <view style="width:15%;height:70rpx;">
+							<image src="/images/up_icon1.jpg"></image>
+						</view>
+					</view>
+				</picker>
+			</view>
+			
+		</view>	
+	</view>	
+</view>
+<view class="team_all">
+	<block wx:for="{{web_mainData}}" wx:key='id'>
+		<view class="team_list">
+			<view class="team_item">
+				<view class="team_left">
+					<image src="{{item.userInfo.headImgUrl}}" style="border-radius:50%"></image>
+				</view>
+				<view class="team_right">
+					<view class="team_user flexRowBetween">
+						<view class="tuser_name" style="{{fonts[4].font}}">{{item.userInfo.nickname}}</view>
+						<view class="tuser_name" style="{{fonts[2].font}};color:#444;">{{item.create_time}}</view>
+					</view>
+					<view class="teat_add" style="{{fonts[1].font}}">
+						通过微信分享二维码加入团队
+					</view>
+				</view>
+			</view>
+		</view>
+	</block>
+</view>

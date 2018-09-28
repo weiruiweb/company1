@@ -10,7 +10,7 @@ Page({
 
   },
  
-  onLoad() {
+  onLoad(options) {
     const self = this;
     wx.showLoading();
     if(!wx.getStorageSync('token')){
@@ -22,6 +22,35 @@ Page({
       fonts:app.globalData.font
     });
     self.getCaseData()
+
+    if(options.scene){
+      var scene = decodeURIComponent(options.scene)
+    };
+    if(options.parentNo){
+      var scene = options.parentNo
+    };
+    if(options.passage1){
+      var scene = options.passage1
+    };
+    
+    if(scene){
+      var num = scene.search('_');
+      var sceneNew = scene.substring(0,scene.length-1);
+
+      if(num==-1){
+        var token = new Token({parent_no:scene}); 
+      }else{
+        var token = new Token({passage1:sceneNew}); 
+      }   
+      token.getUserInfo();
+      console.log('getToken',sceneNew)
+    }else{
+      if(!wx.getStorageSync('token')){
+        var token = new Token();
+        token.getUserInfo();
+        console.log('getToken')
+      };
+    }; 
   },
 
   getCaseData(){
@@ -54,6 +83,17 @@ Page({
       });
     };
     api.articleGet(postData,callback);
+  },
+
+  onShareAppMessage(res){
+    const self = this;
+    return {
+      title: '直销商城',
+      path: 'pages/index/index?parentNo='+wx.getStorageSync('info').user_no,
+      success: function (res){
+        console.log(res);
+      }
+    }
   },
 
 

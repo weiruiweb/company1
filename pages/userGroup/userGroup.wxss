@@ -1,0 +1,70 @@
+.team_tlt{
+	align-items:center;
+	padding:0rpx 20rpx;
+	height:110rpx;
+}
+.next_bank{
+	color:#2e2e2e;
+	border-left:solid 2px #550f0f;
+	padding-left:20rpx;
+}
+.next_number{
+	color:#666;
+}
+.next_number text{
+	color:#550f0f;
+}
+.date{
+	height:90rpx;
+	border-top:solid 1px #ccc;
+	border-bottom:solid 1px #ccc;
+	display:flex;
+	align-items: center;
+  	justify-content: center;
+  	color:#666;
+}
+.date_left{
+	height:70rpx;
+}
+.date_item{
+	height:70rpx;
+	border-right:solid 1px #ccc;
+	width:50%;
+	text-align:center;
+	display:flex;
+	align-items: center;
+  	justify-content: center;
+}
+.date_item .text{
+	
+	height:50%;
+}
+.date_item image{
+	width:17rpx;
+	height:10rpx;
+	margin-left:10rpx;
+}
+.team_list{
+	padding:40rpx 20rpx 20rpx;
+	border-bottom:solid 1px #ccc;
+}
+.team_item{
+	height:78rpx;
+	display:flex;
+	align-items: center;
+  	justify-content: center;
+}
+.team_left{
+	width:14%;
+	text-align:left;
+}
+.team_right{
+	width:86%;
+}
+.team_left image{
+	width:78rpx;
+	height:78rpx;
+}
+.teat_add{
+	color:#666;
+}

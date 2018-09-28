@@ -95,6 +95,9 @@ Page({
       thirdapp_id:getApp().globalData.thirdapp_id,
       type:3
     };
+    postData.order = {
+      create_time:'normal'
+    }
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.labelData.push.apply(self.data.labelData,res.info.data);

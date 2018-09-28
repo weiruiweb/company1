@@ -30,7 +30,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="choose flexRowBetween" bindtap="goBuy">
+	<view class="choose flexRowBetween" bindtap="selectModel">
 		<view class="choose_left flexRowBetween" style="width:80%;overflow:hidden;">
 			<text class="text1" style="{{fonts[2].font}}">请选择规格</text>
 
@@ -152,10 +152,10 @@
 			<view class="text1">收藏</view>
 		</view>
 		<view class="go_buy flexRowBetween" >
-			<view class="shoppingCart" bindtap="goBuy" data-type="addCart">
+			<view class="shoppingCart" bindtap="selectModel" data-type="addCart">
 				加入购物车
 			</view>
-			<view class="go_pay" bindtap="goBuy" data-type="buy">
+			<view class="go_pay" bindtap="selectModel" data-type="buy">
 				立即购买
 			</view>
 		</view>
@@ -204,7 +204,7 @@
 		</view>
 		
 	</view>	
-	<view bindtap="{{web_buttonType=='buy'?'intoPath':'addCart'}}" data-path="/pages/confirmOrder/confirmOrder?count={{web_count}}&&id={{web_skuData.id}}">
+	<view bindtap="{{web_buttonType=='buy'?'goBuy':'addCart'}}">
 		<view class="shoppingCart" style="width:100%;height:80rpx;line-height:80rpx;color:#fff">
 			确    认
 		</view>

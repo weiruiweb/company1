@@ -12,6 +12,7 @@ Page({
    mainData:[],
    searchItem:{
       thirdapp_id:'2',
+      type:['in',[1,2]]
     },
   },
 

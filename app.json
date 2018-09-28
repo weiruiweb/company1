@@ -12,6 +12,8 @@
     "pages/commentOrder/commentOrder",
     "pages/shoppingEmpty/shoppingEmpty",
     "pages/confirmOrder/confirmOrder",
+    "pages/confirmOrderDelivery/confirmOrderDelivery",
+    "pages/confirmOrderSince/confirmOrderSince",
     "pages/gongzhonghao/gongzhonghao",
     "pages/detail/detail",
     "pages/about/about",

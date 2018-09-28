@@ -82,24 +82,26 @@
 }
 .user_message{
 	background:#fff;
-	padding:52rpx 25rpx;
+	padding:52rpx 0rpx;
 	overflow:hidden;
 	border-bottom:solid 1px #ececec;
 	align-items:center;
 }
 .text1{
 	font-size:28rpx;
-	color:#262626;}
+	color:#262626;
+	width:22%;}
 textarea{
-	width:580rpx;
-	height:30rpx;
+	width:78%;
+	height:80rpx;
 	font-size:28rpx;
 	color:#999;
+	overflow:auto;
 }
 .pay_footer{
 	height:90rpx;
 	border-top:solid 1px #ececec;
-	position:fixed;
+	position:absolute;
 	bottom:0rpx;
 	width:100%;
 }
@@ -143,13 +145,8 @@ textarea{
 	border-bottom:solid 1px #e0e0e0;
 }
 .send_left{
-	width:60%;
+	width:22%;
 }
 .send_right{
-	width:40%;
-	text-align:right;
-}
-.send image{
-	width:12rpx;
-	height:24rpx;
+	width:78%;
 }

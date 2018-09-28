@@ -56,15 +56,23 @@
 </view>
 <view class="w710 font28">
 	<view class="flex send color6" bindtap="intoPath" data-path="/pages/confirmOrderDelivery/confirmOrderDelivery">
-		<view class="send_left">快递配送</view>
-		<view class="send_right"><image src="/images/next_page.jpg"></image></view>
+		<view class="send_left">优惠抵扣券</view>
+		<view class="send_right"> <text>-¥10</text> <image src="/images/next_page.jpg"></image></view>
 	</view>
 	<view class="flex send  color6"  bindtap="intoPath" data-path="/pages/confirmOrderSince/confirmOrderSince">
-		<view class="send_left">上门自提</view>
-		<view class="send_right"><image src="/images/next_page.jpg"></image></view>
+		<view class="send_left">积分抵扣券</view>
+		<view class="send_right"> <text>-¥15</text>  <image src="/images/next_page.jpg"></image></view>
 	</view>
 </view>
-<view style="width:100%;height:90rpx;"></view>
+<view class="w710">
+	<view class="user_message">
+		<view class="flexRowBetween">
+			<text class="text1">买家留言</text>
+			<textarea placeholder="选填:填写内容已和卖家协商确认" auto-height="true" data-key="passage1" bindblur="changeBind" value="{{web_submitData.passage1}}">
+			</textarea>
+		</view>
+	</view>
+</view>
 <view class="pay_footer">
 	<view class="pay_order " style="display:flex;width:100%;align-items:center;">
 		<view class="total_money" style="width:70%;margin-right:5%;text-align:right;">

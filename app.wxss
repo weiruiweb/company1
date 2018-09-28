@@ -17,6 +17,59 @@
 	text-overflow:ellipsis;
 	white-space:nowrap;
 }
+.flex{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	align-items:center;
+}
+.w710{
+	width:94.8%;
+	padding:0 2.6%;
+}
+.p40{
+	padding:0 5.6%;
+	width:88.8%;
+}
+.w100{
+	width:100%;
+}
+.font28{
+  font-size:28rpx;
+}
+.font30{
+  font-size:30rpx;
+}
+.font32{
+  font-size:32rpx;
+}
+.font24{
+  font-size:24rpx;
+}
+.font26{
+  font-size:26rpx;
+}
+.font22{
+  font-size:22rpx;
+}
+.color{
+  color:#ed7101;
+}
+.color1{
+  color: #fff;
+}
+.color3{
+  color:#333;
+}
+.color6{
+  color:#666;
+}
+.color9{
+  color:#999;
+}
+.color5{
+  color:#f2f2f2;
+}
 /***********提交按钮***********/
 .submit_info{
 margin:0rpx 25rpx;

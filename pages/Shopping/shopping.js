@@ -135,17 +135,16 @@ Page({
 
   checkChooseAll(){
     const self = this;
+    var isChooseAll = true;
     for (var i = 0; i < self.data.mainData.length; i++) {
-      if(self.data.mainData[i].isSelect){
-        self.data.isChooseAll = true
-      }else{
-        self.data.isChooseAll = false
+      if(!self.data.mainData[i].isSelect){
+        isChooseAll = false;
       };
-      console.log(self.data.isChooseAll)
-      self.setData({
-        web_isChooseAll:self.data.isChooseAll
-      });
-    }
+    };
+    self.data.isChooseAll = isChooseAll;
+    self.setData({
+      web_isChooseAll:self.data.isChooseAll
+    });
   },
 
   chooseAll(){
@@ -212,8 +211,11 @@ Page({
     const self = this;
     const skuDatas = [];
     for(var i=0;i<self.data.mainData.length;i++){
-      if(self.data.mainData[i].isSelect == 'true'){
-        skuDatas.push(self.data.mainData[i]);
+      if(self.data.mainData[i].isSelect){
+        skuDatas.push({
+          id:self.data.mainData[i].id,
+          count:self.data.mainData[i].count
+        });
       }
     };
     console.log(skuDatas);

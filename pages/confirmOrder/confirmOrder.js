@@ -11,6 +11,8 @@ Page({
     mainData:[],
     addressData:[],
     userInfoData:[],
+    idData:[],
+   
     searchItem:{
       isdefault:1
     },
@@ -22,21 +24,15 @@ Page({
     complete_api:[]
   },
 
-  onLoad(options) {
+  onLoad() {
     const self = this;
     if(!wx.getStorageSync('token')){
       var token = new Token();
       token.getUserInfo();
     };
-    console.log(options)
-    self.data.id = options.id;
-    self.data.count = options.count;
     this.setData({
-      web_count:self.data.count,
       fonts:app.globalData.font
     });
-    self.getMainData();
- 
     getApp().globalData.address_id = '';
   },
 
@@ -48,6 +44,11 @@ Page({
     }else{
       self.data.searchItem.isdefault = 1;
     };
+    for (var i = 0; i < wx.getStorageSync('payPro').length; i++) {
+      self.data.idData.push(wx.getStorageSync('payPro')[i].id)
+    }
+    self.getMainData();
+    console.log(self.data.idData)
     self.getAddressData();
   },
 
@@ -59,7 +60,7 @@ Page({
     const postData = {};
     postData.searchItem = {
       thirdapp_id:getApp().globalData.thirdapp_id,
-      id:self.data.id
+      id:['in',self.data.idData]
     }
     const callback = (res)=>{
       if(res.info.data.length>0){
@@ -70,9 +71,22 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       }
+
       self.setData({
         web_mainData:self.data.mainData,
       });
+      console.log(self.data.mainData)
+      for (var i = 0; i < wx.getStorageSync('payPro').length; i++) {
+        for (var j = 0; j < self.data.mainData.length; j++) {
+          if(self.data.mainData[j].id == wx.getStorageSync('payPro')[i].id){
+            self.data.countData={};
+            self.data.countData.count = wx.getStorageSync('payPro')[i].count
+            console.log(self.data.countData)
+            self.data.mainData[j].push(self.data.countData)
+          }
+        }
+      };
+      
       self.checkLoadComplete()   
     };
     api.skuGet(postData,callback);

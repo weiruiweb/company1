@@ -54,10 +54,10 @@
 	color:#999;
 }
 .choose_left input{
-font-size:22rpx;
-color:#262626;
-height:62rpx;
-line-height:62rpx;}
+	font-size:22rpx;
+	color:#262626;
+	height:62rpx;
+	line-height:62rpx;}
 .detail_comment{
 	font-size:24rpx;
 	color:#a1a1a1;
@@ -113,7 +113,6 @@ line-height:62rpx;}
 	width:15rpx;
 	height:15rpx;
 	margin-left:8rpx;
-
 }
 .comment_list{
 }
@@ -179,12 +178,9 @@ line-height:62rpx;}
 	}
 .go_pay{
 	width:50%;
-	
 	background:#2c9fe1;
 	text-align:center;
-	
 }
-
 .mask{
 	position:absolute;
 	top:0rpx;
@@ -199,22 +195,22 @@ line-height:62rpx;}
 	margin-bottom:120rpx;
 }
 #choose{
-	height:566rpx;
+	min-height:566rpx;
 	width:100%;
 	position:fixed;
-	bottom:-170rpx;
+	bottom:-50%;
 	padding:32rpx 0;
 	background:#fff;
 	z-index:99;
 }
 .sildeIn{
 	transition:all 1s;
-	transform:translateY(-142rpx);
+	transform:translateY(-90%);
 
 }
 .slideOut{
 	transition:all 1s;
-	transform:translateY(450rpx);
+	transform:translateY(50%);
 
 }
 .pricity{

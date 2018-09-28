@@ -70,7 +70,7 @@
 			<text>退换货</text>
 		</view>
 	</view>
-	<view class="user_all">
+	<view class="user_all" style="margin-bottom:120rpx">
 		<view class="user_infor flexRowBetween"  bindtap="intoPath" data-path="/pages/userInfo/userInfo">
 			<view class="user_left flexRowBetween">
 				<image src="/images/user_icon2.png"></image>

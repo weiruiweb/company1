@@ -61,7 +61,7 @@ Page({
       }else{
         api.showToast('网络故障','none')
       }
-      
+      console.log('getMainData',self.data.mainData)
     };
     api.orderGet(postData,callback);
   },
@@ -128,14 +128,14 @@ Page({
     this.setData({
       num: num
     });
-    self.data.searchItem = {};
+
     if(num=='0'){
 
     }else if(num=='1'){
       self.data.searchItem.pay_status = '0';
       self.data.searchItem.order_step = '0';
     }else if(num=='2'){
-      self.data.searchItem.pay_status = '0';
+      self.data.searchItem.pay_status = '1';
       self.data.searchItem.transport_status = '0';
       self.data.searchItem.order_step = '0';
     }else if(num=='3'){

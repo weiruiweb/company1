@@ -185,14 +185,13 @@ Page({
     for(var i=0;i<productsArray.length;i++){
       totalPrice += productsArray[i].product.price*productsArray[i].count;
     };
-    /*if(JSON.stringify(self.data.coupon) != "{}"){
-      if(self.data.coupon.passage1=='deduction'){
-        totalPrice -= self.data.coupon.deduction
-      }else if(self.data.coupon.passage1=='discount'){
+    if(JSON.stringify(self.data.coupon) != "{}"){
+      if(self.data.coupon.type==3){
+        totalPrice -= self.data.coupon.discount
+      }else if(self.data.coupon.type==4){
         totalPrice = totalPrice*self.data.coupon.discount/10;
       };
-    };*/
-
+    };
     self.data.totalPrice = totalPrice;
     self.setData({
       web_totalPrice:totalPrice.toFixed(2)

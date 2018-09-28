@@ -19,13 +19,14 @@ Page({
     submitData:{
       passage1:''
     },
-    buttonClicked: true,
+    buttonClicked:true,
     order_id:'',
     complete_api:[]
   },
 
   onLoad() {
     const self = this;
+    wx.showLoading();
     if(!wx.getStorageSync('token')){
       var token = new Token();
       token.getUserInfo();
@@ -44,8 +45,10 @@ Page({
     }else{
       self.data.searchItem.isdefault = 1;
     };
-    for (var i = 0; i < wx.getStorageSync('payPro').length; i++) {
-      self.data.idData.push(wx.getStorageSync('payPro')[i].id)
+    self.data.mainData = api.jsonToArray(wx.getStorageSync('payPro'),'unshift');
+    wx.removeStorageSync('payPro');
+    for (var i = 0; i < self.data.mainData.length; i++) {
+      self.data.idData.push(self.data.mainData[i].id)
     }
     self.getMainData();
     console.log(self.data.idData)
@@ -63,30 +66,19 @@ Page({
       id:['in',self.data.idData]
     }
     const callback = (res)=>{
-      if(res.info.data.length>0){
-        self.data.mainData.push.apply(self.data.mainData,res.info.data);
-        self.countTotalPrice(); 
-        self.data.complete_api.push('getMainData');
-      }else{
-        self.data.isLoadAll = true;
-        api.showToast('没有更多了','none');
-      }
-
+      for (var i = 0; i < self.data.mainData.length; i++) {
+        for (var j = 0; j < res.info.data.length; j++) {
+          if(self.data.mainData[i].id == res.info.data[j].id){
+            self.data.mainData[i].product = res.info.data[j]
+          }
+        }
+      };
+      self.data.complete_api.push('getMainData')
       self.setData({
         web_mainData:self.data.mainData,
       });
       console.log(self.data.mainData)
-      for (var i = 0; i < wx.getStorageSync('payPro').length; i++) {
-        for (var j = 0; j < self.data.mainData.length; j++) {
-          if(self.data.mainData[j].id == wx.getStorageSync('payPro')[i].id){
-            self.data.countData={};
-            self.data.countData.count = wx.getStorageSync('payPro')[i].count
-            console.log(self.data.countData)
-            self.data.mainData[j].push(self.data.countData)
-          }
-        }
-      };
-      
+      self.countTotalPrice();
       self.checkLoadComplete()   
     };
     api.skuGet(postData,callback);
@@ -98,7 +90,10 @@ Page({
     postData.token = wx.getStorageSync('token');
     postData.searchItem = api.cloneForm(self.data.searchItem);
     const callback = (res)=>{
-      self.data.addressData = res;
+      if(res.info.data.length>0){
+        self.data.addressData = res.info.data[0]; 
+      };
+      console.log('getAddressData',self.data.addressData)
       self.setData({
         web_addressData:self.data.addressData,
       });
@@ -113,19 +108,28 @@ Page({
     const self = this;
     if(self.data.buttonClicked){
       api.showToast('数据有误请稍等','none');
+      setTimeout(function(){
+        wx.showLoading();
+      },800)   
       return;
     }else if(!self.data.order_id){
-      self.data.buttonClicked = false;
+      self.data.buttonClicked = true;
+      for (var i = 0; i < self.data.mainData.length; i++) {
+        self.data.payData={};
+        self.data.payData.id=self.data.mainData[i].id,
+        self.data.payData.count=self.data.mainData[i].count,
+        console.log(self.data.payData)
+      };
       const postData = {
         token:wx.getStorageSync('token'),
         sku:[
-          {id:self.data.id,count:self.data.count}
+          {id:self.data.payData.id,count:self.data.payData.count}
         ],
         pay:{wxPay:self.data.totalPrice.toFixed(2)},
         type:1
       };
-      if(self.data.addressData.info.data[0]){
-        postData.snap_address = self.data.addressData.info.data[0];
+      if(self.data.addressData){
+        postData.snap_address = self.data.addressData;
       };
       const callback = (res)=>{
         if(res&&res.solely_code==100000){
@@ -179,14 +183,29 @@ Page({
     };
   },
 
-  countTotalPrice(){  
+
+
+  
+  countTotalPrice(){
     const self = this;
     var totalPrice = 0;
-    totalPrice += self.data.count*parseFloat(self.data.mainData[0].price);
+    var productsArray = self.data.mainData;
+    for(var i=0;i<productsArray.length;i++){
+      totalPrice += productsArray[i].product.price*productsArray[i].count;
+    };
+    /*if(JSON.stringify(self.data.coupon) != "{}"){
+      if(self.data.coupon.passage1=='deduction'){
+        totalPrice -= self.data.coupon.deduction
+      }else if(self.data.coupon.passage1=='discount'){
+        totalPrice = totalPrice*self.data.coupon.discount/10;
+      };
+    };*/
+
     self.data.totalPrice = totalPrice;
     self.setData({
-      web_totalPrice:self.data.totalPrice.toFixed(2)
+      web_totalPrice:totalPrice.toFixed(2)
     });
+
   },
 
   intoPath(e){

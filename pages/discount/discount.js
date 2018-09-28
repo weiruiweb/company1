@@ -10,7 +10,7 @@ Page({
     mainData:[],
     searchItem:{
       thirdapp_id:getApp().globalData.thirdapp_id,
-      type:4
+      type:3
     },
     buttonClicked:false,
     isLoadAll:false,
@@ -73,9 +73,9 @@ Page({
     });
     self.data.searchItem = {};
     if(num=='0'){
-      self.data.searchItem.type = '4';
-    }else if(num=='1'){
       self.data.searchItem.type = '3';
+    }else if(num=='1'){
+      self.data.searchItem.type = '4';
     }
     self.setData({
       web_mainData:[],

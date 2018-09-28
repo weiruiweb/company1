@@ -220,8 +220,9 @@ Page({
     self.data.skuData.count = self.data.count;
     self.data.skuData.isSelect = true;
     console.log(self.data.skuData);
-    if(JSON.stringify(self.data.skuData) != "{}"){
+    if(self.data.skuData.id !=''&&self.data.skuData.id !=undefined){
       api.footOne(self.data.skuData,'id',100,'cartData'); 
+      api.showToast('已加入购物车啦','none')
     }else{
       api.showToast('请完善信息','none')
     }

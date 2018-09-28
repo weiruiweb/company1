@@ -114,18 +114,10 @@ Page({
       return;
     }else if(!self.data.order_id){
       self.data.buttonClicked = true;
-      for (var i = 0; i < self.data.mainData.length; i++) {
-        self.data.payData={};
-        self.data.payData.id=self.data.mainData[i].id,
-        self.data.payData.count=self.data.mainData[i].count,
-        console.log(self.data.payData)
-      };
       const postData = {
         token:wx.getStorageSync('token'),
-        sku:[
-          {id:self.data.payData.id,count:self.data.payData.count}
-        ],
-        pay:{wxPay:self.data.totalPrice.toFixed(2)},
+        sku:self.data.mainData,
+        pay:{score:self.data.totalPrice.toFixed(2)},
         type:1
       };
       if(self.data.addressData){
@@ -137,7 +129,7 @@ Page({
             self.data.buttonClicked = false;
           }, 1000)         
         }; 
-        self.data.order_id = res.info
+        self.data.order_id = res.info.id
         self.pay(self.data.order_id);     
       };
       api.addOrder(postData,callback);
@@ -156,8 +148,8 @@ Page({
       searchItem:{
         id:order_id
       },
-      wxPay:self.data.totalPrice.toFixed(2),
-      wxPayStatus:0
+      score:self.data.totalPrice.toFixed(2),
+/*      wxPayStatus:0*/
     };
     const callback = (res)=>{
       wx.hideLoading();

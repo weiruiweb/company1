@@ -1,27 +1,66 @@
 <!--userINfo.wxml-->
 <view class="discount_sort flexRowBetween">
-	<view class="discount_item {{num==0?'discount_this':''}}" data-num="0"  bindtap="{{!buttonClicked?'menuClick':''}}" >
+	<view class="discount_item {{num== 0?'discount_this':''}}" data-num="0" bindtap="menuClick" >
 		抵扣券 
 		<view class="border-short"></view>
 	</view>
-	<view class="discount_item {{num==1?'discount_this':''}}" data-num="1"  bindtap="{{!buttonClicked?'menuClick':''}}">
+	<view class="discount_item {{num== 1?'discount_this':''}}" data-num="1" bindtap="menuClick">
 		折扣券 
 		<view class="border-short"></view>
 	</view>
 </view>
 <view class="ticket">
-
-	<view class="ticket_sort">
-	   <image src="/images/youhui_02.jpg"></image>
-	   <image src="/images/youhui_04.jpg"></image>
-	   <image src="/images/youhui_06.jpg"></image>
+	<view class="ticket_sort {{num== 0?'madeShow':''}}">
+		<view class="ticket_bg">
+		   <image src="/images/discount1.png"></image>
+		   <view class="ticket_cont">
+		   		<view class="discount_left">
+		   			¥<text>100</text>
+		   		</view>
+		   		<view class="discount_center">
+		   			<view class="discount_txt1">满99元享用</view>
+		   			<view class="discount_txt2">11.12当日有效 可叠加店铺券</view>
+		   			<view class="discount_txt3">限制公众号使用</view>
+		   		</view>
+		   		<view class="discount_right"><view class="ac_discount">立即领取</view></view>
+		   </view>
+		</view>
+		<view class="ticket_bg">
+		   <image src="/images/discount2.png"></image>
+		   <view class="ticket_cont">
+		   		<view class="discount_left">
+		   			¥<text>100</text>
+		   		</view>
+		   		<view class="discount_center">
+		   			<view class="discount_txt1">满99元享用</view>
+		   			<view class="discount_txt2">11.12当日有效 可叠加店铺券</view>
+		   			<view class="discount_txt3" style="background: #d6d6d6;color:#5d5d5d;">限制公众号使用</view>
+		   		</view>
+		   		<view class="discount_right"><view class="ac_discount" style="color:#5d5d5d;">已经使用</view></view>
+		   </view>
+		</view>
 	</view>
-
-	<view class="ticket_sort">
-	  <image src="/images/youhui.jpg"></image>
-	  <image src="/images/youhui.jpg"></image>
-	  <image src="/images/youhui.jpg"></image>
+	<view class="ticket_sort {{num== 1?'madeShow':''}}">
+	  <view class="ticket_bg">
+		   <image src="/images/discount3.png"></image>
+		   <view class="ticket_cont">
+		   		<view class="discount_left discount_left1" style="width:33%">
+		   			<text>5</text>折
+		   		</view>
+		   		<view class="discount_center discount_center1" style="width:52.5%">
+		   			<view class="discount_txt1">
+						<view>满300元享5折</view>
+						<view>最高可减1000元</view>
+		   			</view>
+		   			<view class="discount_txt2">
+		   				<view>0/10/14/20/22点限量领取</view>
+		   				<view>11.7 限服饰类部分商品</view>
+		   			</view>
+		
+		   		</view>
+		   		<view class="discount_right"><view class="ac_discount">立即领取</view></view>
+		   </view>
+		</view>
 	</view>
-
 </view>
 

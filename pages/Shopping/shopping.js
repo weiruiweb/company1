@@ -107,6 +107,7 @@ Page({
   onShow() {
     const self = this;
     self.data.mainData = api.jsonToArray(wx.getStorageSync('cartData'),'unshift');
+    console.log(self.data.mainData)
     self.checkChooseAll()
     self.setData({
       web_isChooseAll:self.data.isChooseAll,
@@ -165,7 +166,25 @@ Page({
     const self = this;
     for(var i=0;i<self.data.mainData.length;i++){
       if(self.data.mainData[i].isSelect){
-        api.deleteFootOne(self.data.mainData[i].id ,'cartData')
+        wx.showModal({
+         title: '删除',
+         content: '确定要删除？',
+         showCancel: true,
+         cancelText:"否",
+         cancelColor:'skyblue',
+         confirmText:"是",
+         confirmColor: 'skyblue',
+         success: function (res) {
+            if (res.cancel) {
+               //点击取消,默认隐藏弹框
+            } else {
+              api.deleteFootOne(self.data.mainData[i].id ,'cartData')
+            }
+         },
+         fail: function (res) { },//接口调用失败的回调函数
+         complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
+      })
+        
       }
     };
     self.isChooseAll();
@@ -245,6 +264,7 @@ Page({
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
   },
+
 
   bindManual(e) {
     const self = this;

@@ -21,9 +21,16 @@ Page({
     },
     buttonClicked:true,
     order_id:'',
-    complete_api:[]
+    complete_api:[],
+    currentId:0,
   },
-
+  choose(e){
+    const self = this;
+    this.setData({
+      currentId:e.currentTarget.dataset.id
+    })
+    console.log(self.data.currentId);
+  },
   onLoad() {
     const self = this;
     wx.showLoading();

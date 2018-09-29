@@ -54,15 +54,57 @@
 		</view>
 	</view>
 </view>
-<view class="w710 font28">
-	<view class="flex send color6" bindtap="intoPath" data-path="/pages/confirmOrderDelivery/confirmOrderDelivery">
-		<view class="send_left">快递配送</view>
-		<view class="send_right"><image src="/images/next_page.jpg"></image></view>
+<view class="w710 delivery flex1 font28">
+	<view class="delivery_item flex1" data-id="0" bindtap="choose">
+		<image src="{{currentId == 0?'/images/select_active.jpg':'/images/select.png'}}"></image>
+		快递配送
 	</view>
-	<view class="flex send  color6"  bindtap="intoPath" data-path="/pages/confirmOrderSince/confirmOrderSince">
-		<view class="send_left">上门自提</view>
-		<view class="send_right"><image src="/images/next_page.jpg"></image></view>
+	<view class="delivery_item flex1" data-id="1" bindtap="choose">
+		<image src="{{currentId == 1?'/images/select_active.jpg':'/images/select.png'}}"></image>
+		上门自提
 	</view>
+</view>
+<view class="ticket flex">
+    <view class="ticket_bg">
+        <image src="/images/discount4.png"></image>
+        <view class="ticket_cont">
+            <view class="discount_left discount_left1" style="width:40%">
+                <text>5</text>折
+            </view>
+            <view class="discount_center discount_center1" style="width:60%">
+                <view class="discount_txt1">
+                    <view>满300元享5折</view>
+                    <view>最高可减1000元</view>
+                </view>
+                <view class="discount_txt2">
+                    <view>0/10/14/20/22点限量领取</view>
+                    <view>11.7 限服饰类部分商品</view>
+                </view>
+            </view>
+        </view>
+        <view class="select_discount">
+        	<image src="/images/select_active.jpg" style="width:30rpx;height:30rpx;"></image>
+        </view>
+    </view>
+</view>
+<view class="ticket flex">
+    <view class="ticket_bg">
+        <image src="/images/discount5.png"></image>
+        <view class="ticket_cont">
+            <view class="discount_left">
+                ¥
+                <text>100</text>
+            </view>
+            <view class="discount_center">
+                <view class="discount_txt1">满99元享用</view>
+                <view class="discount_txt2">11.12当日有效 可叠加店铺券</view>
+                <view class="discount_txt3" style="background: #d6d6d6;color:#5d5d5d;">限制公众号使用</view>
+            </view>
+        </view>
+        <view class="select_discount">
+        	<image src="/images/select_active.jpg" style="width:30rpx;height:30rpx;"></image>
+        </view>
+    </view>
 </view>
 <view style="width:100%;height:90rpx;"></view>
 <view class="pay_footer">

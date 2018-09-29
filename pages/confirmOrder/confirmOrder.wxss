@@ -138,18 +138,94 @@ textarea{
 	align-items:center;
 }
 /**********添加*************/
-.send{
+.delivery{
+	width:100%;
 	height:70rpx;
-	border-bottom:solid 1px #e0e0e0;
 }
-.send_left{
-	width:60%;
+.delivery_item{
+	width:50%;
+	height: 100%;
 }
-.send_right{
-	width:40%;
-	text-align:right;
+.delivery_item image{
+	width:30rpx;
+	height:30rpx;
+	margin-right:10rpx;
 }
-.send image{
-	width:12rpx;
-	height:24rpx;
+.ticket{
+	width:100%;
+}
+.ticket_bg{
+	width:100%;
+	height:200rpx;
+	position: relative;
+	margin-top: 40rpx;
+}
+.select_discount{
+	position: absolute;
+	top:10%;
+	right:5%;
+}
+.select_discount image{
+	width:30rpx;
+	height:30rpx;
+}
+.ticket_bg image{
+	width:100%;
+	height:100%;
+}
+.ticket_cont{
+	width:100%;
+	height:200rpx;
+	position:absolute;
+	left:0;
+	top:0;
+	display: flex;
+	align-items: center;
+}
+.discount_left{
+	width:50%;
+	font-size:40rpx;
+	color:#fff;
+	text-align: center;
+}
+.discount_left1{
+	color:#000;
+}
+.discount_left text{
+	font-size: 150rpx;
+}
+.discount_center{
+	width:50%;
+	color: #fff;
+}
+.discount_center1{
+	margin-bottom: 20rpx;
+	color:#9d5d00;
+	font-size: 26rpx;
+}
+.discount_center1 .discount_txt2{
+	color:#333;
+	margin-top:20rpx;
+}
+.discount_center1 .discount_txt1{
+	font-size: 24rpx;
+	padding: 0;
+	margin-top: 10rpx;
+}
+.discount_txt1{
+	font-size: 28rpx;
+	padding-bottom: 10rpx;
+}
+.discount_txt2{
+	font-size: 24rpx;
+	padding-bottom: 10rpx;
+}
+.discount_txt3{
+	width:220rpx;
+	height:28rpx;
+	background: #89d9ec;
+	font-size:22rpx;
+	text-align: center;
+	line-height: 28rpx;
+	color:#1f70ae; 
 }

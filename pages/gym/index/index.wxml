@@ -1,0 +1,145 @@
+<!--index.wxml-->
+<view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:400rpx">
+        <block wx:for="{{web_sliderUrl}}" wx:key="id">
+            <swiper-item>
+                <image src="{{item.url}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<!--   <view id="green" class="scroll-view-item bc_green"></view>
+  <view id="red" class="scroll-view-item bc_red"></view>
+  <view id="yellow" class="scroll-view-item bc_yellow"></view>
+  <view id="blue" class="scroll-view-item bc_blue"></view>
+  <view id="blue" class="scroll-view-item bc_blue"></view>
+  <view id="blue" class="scroll-view-item bc_blue"></view>
+  <view id="blue" class="scroll-view-item bc_blue"></view>
+  <view id="blue" class="scroll-view-item bc_blue"></view>
+</scroll-view> -->
+<view class="w710" id="index_cont">
+  <view class="w100 index_in">
+    <view class="gym_intro">
+      <view class="intro_cont">
+        <view class="gym_name flexRowBetween"  bindtap="intoPath" data-path="/pages/gym/store/store?id={{web_artData.id}}">
+          <view class="name_left avoidOverflow">{{web_artData.title}}</view>
+          <view class="name_right">查看更多>></view>
+        </view>
+        <view class="intro_detail flexRowBetween">
+          <view class="detail_left ">
+            本地特色：{{web_artData.description}}
+          </view>
+          <view class="detail_right">
+            <view class="star">
+              <image src="/images_gym/star_a.png"></image>
+              <image src="/images_gym/star_a.png"></image>
+              <image src="/images_gym/star_a.png"></image>
+              <image src="/images_gym/star_a.png"></image>
+              <image src="/images_gym/star.png"></image>
+            </view>
+            <view class="star_number">4/5</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="intro_img">
+      <image src="/images_gym/index1.jpg"></image>
+    </view>
+  </view>
+</view>
+
+<view class="w710">
+  <view class="index_coach flexRowBetween">
+    <view class="coach_icon">
+      <image src="/images_gym/index_icon2.png"></image>
+    </view>
+
+    <view class="coach_list">
+    <scroll-view scroll-x class="scroll-header">
+      <block wx:for="{{web_mainData}}" wx:key="id">
+        <view class="coach_item">
+            <view class="coach_img"><image src="{{item.mainImg[0].url}}"></image></view>
+            <view class="coach_name">
+              {{item.title}}
+            </view>
+            <view class="coach_cal">
+              3000cal
+            </view>
+            <view class="coach_cal">
+              300min
+            </view>
+            <view class="coach_add">
+              <image src="/images_gym/index_icon1.png"></image>
+            </view>
+        </view>
+      </block>
+    </scroll-view>
+    </view>
+  </view>
+</view>
+<view class="w710">
+  <view class="course">
+    <view class="course_tlt">
+      本店热门课程
+    </view>
+    <block wx:for="{{web_classData}}" wx:key="id">
+      <view class="course_list flexRowBetween">
+          <view class="course_left">
+            <image src="{{item.mainImg[0].url}}"></image>
+          </view>
+          <view class="course_right">
+            <view class="course1">{{item.title}}</view>
+            <view class="course2 flexRowBetween">
+              <view class="courde_left">PM18:00 | 2小时 | 2小时</view>
+              <view class="courde_right">预约</view>
+            </view>
+            <view class="course2">
+              <view class="sign_up">
+                <image src="/images_gym/index_icon4.png"></image>
+                <view style="color:#bb212e;margin-right:26rpx;">79℃</view>
+                <view >报名状态：{{item.stock>1?'未满':'已满'}}</view>
+              </view>
+            </view>
+          </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="solely" style="font-size:20rpx;color:#666;text-align:center;">
+  技术支持:西安纯粹科技有限公司
+</view>
+<view style="height:120rpx;width:100%;">
+</view>
+<view class="navbar">
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/index/index">
+        <view class="nav_img">
+          <image src="/images_gym/navbar1-a.png" style="width:65rpx;height:55rpx;"></image>
+        </view>
+        <view class="text this-text" style="{{fonts[2].font}}">健身房</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/course/course">
+        <view class="nav_img">
+           <image src="/images_gym/navbar2.png" style="width:65rpx;height:55rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">分类</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/send/send">
+        <view class="nav_img">
+           <image src="/images_gym/navbar3.png" style="width:65rpx;height:55rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">发布</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/coach/coach">
+        <view class="nav_img">
+           <image src="/images_gym/navbar4.png" style="width:65rpx;height:55rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">教练</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/user/user">
+        <view class="nav_img">
+            <image src="/images_gym/navbar5.png" style="width:65rpx;height:55rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">我的</view>
+    </view>
+</view>

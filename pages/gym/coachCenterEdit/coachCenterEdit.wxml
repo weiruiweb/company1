@@ -1,0 +1,92 @@
+<!--coachCenterEdit.wxml-->
+<view class="w710">
+	<view class="order">
+		<view class="w710">	
+			<view class="edit_list">	
+				<view class="input_before">
+					训练阶段
+				</view>
+				<input placeholder="请输入训练阶段"></input>
+			</view>
+			<view class="edit_list">	
+				<view class="input_before">
+					编辑上课时间
+				</view>
+				<view class="edit_time flexRowBetween">	
+				 <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+				    <view class="picker">
+				      起始时间 :  {{time}}
+				    </view>
+				  </picker>
+				  <picker mode="time" value="{{time1}}" start="09:01" end="21:01" bindchange="bindTimeChange1">
+				    <view class="picker" style="color:">
+				      结束时间:  {{time1}}
+				    </view>
+				  </picker>
+				</view>
+			</view>
+			<view class="edit_list">	
+				<view class="input_before">
+					预计目标
+				</view>
+				<textarea  placeholder="请输入预计目标"></textarea>
+			</view>
+			<view class="edit_list">	
+				<view class="input_before">
+					课程安排
+				</view>
+				<textarea  placeholder="请输入课程安排"></textarea>
+			</view>
+			<view class="edit_list">	
+				<view class="input_before">
+					课后作业
+				</view>
+				<textarea  placeholder="请输入课后作业"></textarea>
+			</view>
+		</view>
+		<view class="w710">
+			<view class="input_before">
+				课程瞬间
+			</view>
+			<view class="uploder">
+			    <view class="uploder_all flex">
+			        <view class="uploder_item" style="display:flex">
+			              <image src="/images_gym/product1.jpg"></image>
+			        </view>
+			        <view class="uploder_item">
+			          <view class="uploader__input" bindtap="upLoadImg" >
+			            <image src="/images_gym/fabu.png"></image>
+			          </view>
+			        </view>
+			    </view>
+			</view>
+		 </view>
+		 <view class="w710">
+			<view class="input_before">
+				课程视频
+			</view>
+			<view class="uploder">
+			    <view class="uploder_all flex">
+			        <view class="uploder_item" style="display:flex">
+			              <image src="/images_gym/product1.jpg"></image>
+			        </view>
+			        <view class="uploder_item">
+			          <view class="uploader__input" bindtap="upLoadImg" >
+			            <image src="/images_gym/fabu.png"></image>
+			          </view>
+			        </view>
+			    </view>
+			</view>
+			<view class="fabu">
+			  <view class="fabu_cont flexRowBetween"  style="font-size:30rpx;">
+			    <view class="fabu_right"   bindtap="intoPathRedi" data-path="/pages/gym/user/user">
+			        保存
+			    </view>
+			    <view class="fabu_left">
+			      取消
+			    </view>
+			  </view>
+			</view>
+		 </view>
+	</view>
+</view>

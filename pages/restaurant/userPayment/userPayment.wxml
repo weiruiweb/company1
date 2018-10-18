@@ -1,0 +1,45 @@
+<!--payment.wxml-->
+    <view class="pay_money flexRowBetween">
+        <view class="pay_before">
+          桌号
+        </view>
+        <input placeholder="请输入桌号"></input>
+    </view>
+    <view class="pay_money flexRowBetween">
+        <view class="pay_before">
+          金额
+        </view>
+        <input placeholder="请输入消费金额"></input>
+    </view>
+    <view class="pay_money pay_discount flexRowBetween" bindtap="intoPath"  data-path="/pages/restaurant/discount/discount">
+        <view class="pay_before">
+          优惠券
+        </view>
+        <input placeholder="请选择优惠劵"></input>
+        <image src="/images_restaurant/next_page.jpg"></image>
+    </view>
+    <view class="pay_methodT" style="font-size:28rpx;margin-top:32rpx;padding:0px 20rpx;">
+      付款方式
+    </view>
+    <view class="pay_method flexRowBetween">
+      <view class="chose_pay flexRowBetween" data-id="1" bindtap="choosePay">
+          <view class="pay1 flexRowCenter">
+              <image src="/images_restaurant/pay2.jpg"></image>
+              <text class="text1">微信支付</text>
+          </view>
+          <view class="choose_this">
+            <image src="{{isChoose ==1?'/images_restaurant/choose.png':''}}"></image>
+          </view>
+      </view>
+    </view>
+    <view class="pay_method flexRowBetween">
+      <view class="chose_pay flexRowBetween"  data-id="2"  bindtap="choosePay">
+          <view class="pay1 flexRowCenter">
+              <image src="/images_restaurant/pay1.png" style="width:80rpx;height:64rpx;"></image>
+              <text class="text1">余额支付</text>
+          </view>
+          <view class="choose_this">
+              <image src="{{isChoose ==2?'/images_restaurant/choose.png':''}}"></image>
+          </view>
+      </view>
+    </view>

@@ -1,0 +1,29 @@
+<!--user.wxml-->
+<view class="banner">
+  <image src="/images_gym/user_banner.jpg"></image>
+  <view class="banner_bottom flex">
+    <view style="width:22%;">
+        <view class="user_img">
+              <open-data type="userAvatarUrl"></open-data>
+        </view>
+    </view>
+    <view class="user_left">
+      <view style="font-size:32rpx;color:#fff;">
+        教练名称
+      </view>
+      <view class="resume" >18888888 </view>
+    </view>
+  </view>
+</view>
+<view class="w710">
+    <view class="user">
+        <view class="user_top flex user_line" bindtap="intoPath"  data-path="/pages/gym/coachCenterCheck/coachCenterCheck">
+            <image src="/images_gym/coach_icon1.png"></image>
+            预约订单查询
+        </view>
+        <view class="user_top flex"  bindtap="intoPath"  data-path="/pages/gym/userCenterStudent/userCenterStudent">
+            <image src="/images_gym/coach_icon2.png"></image>
+            查看学员信息
+        </view>
+    </view>
+</view>

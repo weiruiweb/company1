@@ -1,0 +1,69 @@
+
+.comment_save{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:86rpx;
+	font-size:32rpx;
+}
+.has_send{
+	width:33.33%;
+	text-align:center;
+	color:#b2b2b2;
+	height:85rpx;
+	line-height:85rpx;
+	border-bottom:solid 1rpx #262626;
+	
+}
+.order{
+	width:100%;
+	height:214rpx;
+	position:relative;
+	border-radius:10rpx;
+	margin-top:20rpx;
+}
+.order_list {
+	height:160rpx;
+	border-bottom:solid 1px #6b6b6b;
+	padding-bottom:30rpx;
+}
+
+.order image{
+	width:100%;
+	height:100%;
+}
+#discount{
+	position:absolute;
+	left:0;
+	top:0;
+}
+.discount_date{
+	font-size:22rpx;
+	color:#ffff;
+	width:100%;
+	text-align:right;
+	line-height:50rpx;
+}
+.discount_number{
+	height:152rpx;
+}
+.number_left{
+	width:26%;
+	font-size:100rpx;
+	color:#bb212e;
+}
+.number_center{
+	width:30%;
+	color:#fff;
+}
+.number_right view{
+	width:150rpx;
+	height:32rpx;
+	background:#262626;
+	border-radius:10rpx;
+	line-height:32rpx;
+	text-align:center;
+	font-size:24rpx;
+	color:#fff;
+	margin-top:20rpx;
+}

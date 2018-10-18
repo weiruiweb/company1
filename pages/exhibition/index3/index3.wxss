@@ -1,0 +1,48 @@
+/**index.wxss**/
+
+@import "../../../wxParse/wxParse.wxss"; 
+.contact_title{
+	height:158rpx;
+	line-height:128rpx;
+}
+.contact_title text{
+	line-height:158rpx;
+	margin-left:10rpx;
+}
+.contact_list{
+	height:76rpx;
+	border-bottom:dashed 1px #e0e0e0;
+	width:100%;
+	margin-bottom:30rpx;
+}
+.contact_list input{
+	border-radius:10rpx;
+}
+.input_before{
+	width:22%;
+}
+.contact_list input{
+	width:60%;
+}
+.input_icon{
+	width:18%;
+	text-align:center;
+	border-left:dashed 1px #e0e0e0;
+}
+.input_icon image{
+	width:36rpx;
+	height:36rpx;
+}
+.textarea{
+	width:96%;
+	height:252rpx;
+	background:#f2f2f2;
+	padding:2%;
+	overflow:hidden;
+}
+.textarea textarea{
+	width:100%;
+	height:100%;
+	overflow:auto;
+
+}

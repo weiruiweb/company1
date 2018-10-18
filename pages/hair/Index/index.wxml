@@ -1,0 +1,131 @@
+<!--index.wxml-->
+<view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:370rpx">
+        <block wx:for="{{web_sliderUrl}}" wx:key="id">
+            <swiper-item>
+                <image src="{{item.url}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<view class="module flexRowBetween" >
+  <view class="module_item" bindtap="HairDresser">
+    <view class="module_icon module1">
+      <image src="/images_hair/index_icon1.jpg" class="firstImg"></image>
+
+    </view>
+    <text>预约技师</text>
+  </view>
+  <view class="module_item" bindtap="shoppingEmpty">
+    <view class="module_icon module2">
+      <image src="/images_hair/index_icon2.jpg" class="firstImg"></image>
+
+    </view>
+    <text>会员权益</text>
+  </view>
+  <view class="module_item" bindtap="group">
+    <view class="module_icon module3">
+      <image src="/images_hair/index_icon3.jpg" class="firstImg"></image>
+
+    </view>
+    <text>团购活动</text>
+  </view>
+  <view class="module_item" bindtap="about">
+    <view class="module_icon module4">
+      <image src="/images_hair/index_icon4.jpg" class="firstImg"></image>
+
+    </view>
+    <text>关于我们</text>
+  </view>
+  <view class="module_item">
+   <view class="module_icon module5">
+      <image src="/images_hair/index_icon5.jpg" class="firstImg"></image>
+
+    </view>
+    <text>联系我们</text>
+  </view>
+</view>
+
+<view class="store flex">
+  <view class="store_text1" >
+    门店
+  </view>
+  <view class="near" bindtap="store">
+    <image src="/images_hair/stores_icon.jpg"></image>
+    <view class="text1">最近</view>
+  </view>
+  <text class="store_active">高新一号店，会员优惠日充200送200~</text>
+  <view class="map" bindtap="map"> 
+    <image src="/images_hair/stores1.jpg"></image>
+  </view>
+</view>
+<view class="discont">
+  <view class="discont_tlt flexRowBetween">
+      <view class="tlt_left"></view>
+      <view class="tlts">优惠劵</view>
+      <view class="tlt_left"></view>
+  </view>
+  <view class="discount_card flexRowBetween">
+    <block wx:for="{{web_couponData}}" wx:key="id">
+      <image src="{{item.mainImg[0].url}}" data-id="{{item.id}}" data-type="{{item.type}}" data-deadline="{{item.deadline}}" bindtap="addOrder"></image>
+    </block>  
+  </view>
+</view>
+<view class="vip_card" bindtap="intoPath" data-path="/pages/hair/newMemeber/newMemeber">
+  <image src="{{web_CardUrl}}"></image>
+</view>
+<view class="dresser">
+  <view class="discont_tlt flexRowBetween" style="background:#f5f5f5;">
+      <view class="tlt_left"></view>
+      <view class="tlts">推荐技师</view>
+      <view class="tlt_left"></view>
+  </view>
+
+  <view class="dresser_list">
+    <block wx:for="{{web_mainData}}" wx:key="id">
+      <view class="dresser_item" bindtap="order">
+        <image src="{{item.mainImg[0].url}}"></image>
+        <view class="text">
+          <text class="text1">{{item.title}}</text><text class="text1 text2">{{item.description}}</text>
+        </view>
+        <text class="number">160人预约过</text>
+        <view class="order">
+          预约TA
+        </view>
+      </view>
+    </block>  
+  </view>
+</view>
+<view class="bottom_spacing"></view>
+<view class="navbar">
+    <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Index/index">
+        <view class="nav_img">
+            <image src="/images_hair/navbar1-a.jpg"></image>
+        </view>
+        <view class="text  this-text" style="color:#fb5676">首页</view>
+    </view>
+    <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Service/service">
+        <view class="nav_img">
+            <image src="/images_hair/navbar2.jpg"></image>
+        </view>
+        <view class="text">服务</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairStyle/hairstyle">
+        <view class="nav_img">
+            <image src="/images_hair/navbar3.jpg"></image>
+        </view>
+        <view class="text">发型</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairDresser/hairDresser">
+        <view class="nav_img">
+            <image src="/images_hair/navbar4.jpg"></image>
+        </view>
+        <view class="text">技师</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/User/user">
+        <view class="nav_img">
+            <image src="/images_hair/navbar5.jpg"></image>
+        </view>
+        <view class="text">我的</view>
+    </view>
+</view>

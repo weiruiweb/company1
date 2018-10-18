@@ -1,0 +1,180 @@
+/**index.wxss**/
+page{
+	background:#f5f5f5;
+}
+
+.banner{position:relative;}
+.bannerImg{
+	width:100%;
+	height:288rpx;}
+
+
+.custom{
+	width:92rpx;
+	height:21rpx;
+	border-radius:20rpx;
+	background:#3497fd;
+	line-height:21rpx;
+	text-align:center;
+	font-size:16rpx;
+	color:#fff;
+	position:absolute;
+	right:276rpx;
+	bottom:68rpx;
+}
+
+.module{
+	padding:0rpx 55rpx;
+	margin:40rpx 0rpx 50rpx;}
+.module_icon{
+	width:84rpx;
+	height:84rpx;
+	border-radius:50%;
+	position:relative;
+	overflow:hidden;
+	transition:0.5s ease-in-out;
+}
+.module_icon image{
+	width:84rpx;
+	height:84rpx;
+}
+.module_item text{color:#151515;font-size:20rpx;text-align:center;}
+
+
+/********************服务类别*************************/
+.store{
+	height:88rpx;
+	background:#fff;
+	line-height:88rpx;
+	padding:0rpx 55rpx;
+}
+
+.near image{
+	width:85rpx;
+	height:55rpx;
+	position:absolute;
+	left:0rpx;
+	top:0rpx;
+}
+.store_text1{
+	font-size:28rpx;
+	color:#666;
+	width:10%;
+}
+.near{
+	position:relative;
+	width:14%;
+	height:55rpx;}
+.near .text1{
+	width:60rpx;
+	font-size:24rpx;
+	color:#fff;
+	position:absolute;
+	left:20rpx;
+	line-height:55rpx;
+	z-index:99;
+}
+.store_active{
+	width:66%;
+	font-size:22rpx;
+	color:#999;
+	height:30rpx;
+	line-height:30rpx;
+	border-right:solid 1px #666;
+}
+.map{
+	width:10%;
+	text-align:right;
+}
+.map image{
+	width:35rpx;
+	height:32rpx;
+}
+/**优惠店**/
+.discont_tlt{
+	padding:0rpx 90rpx;
+}
+.discont_tlt{
+	height:90rpx;
+	line-height:90rpx;
+}
+.tlt_left{
+	height:1rpx;
+	background:#d9d9d9;
+	width:194rpx;
+	margin-top:42rpx;
+}
+.tlts{
+	color:#333;
+	font-size:32rpx;
+	text-align:center;
+}
+.discount_card{
+	padding:0rpx 26rpx;
+}
+.discount_card image{
+	width:340rpx;
+	height:136rpx;
+}
+.discont{
+	background:#fff;
+	margin-top:20rpx;
+}
+.vip_card{
+	padding:0rpx 19rpx;
+	margin-top:45rpx;
+}
+.vip_card image{
+	width:712rpx;
+	height:270rpx;
+}
+/************预约技师****************/
+.dresser_list{
+width:98%;
+	padding:0rpx 1%;
+}
+.dresser_item{
+	width:46%;
+	margin:0rpx 2%;
+	margin-bottom:30rpx;
+	float:left;
+	text-align:center;
+	border-radius:10rpx;
+	background:#fff;
+	padding-bottom:30rpx;
+}
+.dresser_item image{
+	width:135rpx;
+	height:135rpx;
+	border-radius:50%;
+	margin-top:28rpx;
+
+}
+
+.dresser_list .text1{
+	color:#4c4c4c;
+	font-size:24rpx;
+}
+.text2{
+	margin-left:20rpx;
+}
+.number{
+	font-size:20rpx;
+	color:#999;
+}
+.order{
+	width:90rpx;
+	height:30rpx;
+	text-align:center;
+	line-height:30rpx;
+	background:#fe5174;
+	font-size:20rpx;
+	margin:0rpx auto;
+	color:#fff;
+	border-radius:20rpx;
+	margin-top:25rpx;
+}
+.dresser_list{
+	overflow:hidden;
+
+}

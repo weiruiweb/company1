@@ -1,0 +1,34 @@
+/**index.wxss**/
+
+@import "../../../wxParse/wxParse.wxss"; 
+view {
+    color: #ccc;
+}
+
+page {
+    width: 100%;
+    min-height: 100%;
+    background: #333;
+}
+.intro_detail{
+    width:100%;
+    height:100%;
+    background:#262626;
+    border-radius:10rpx;
+    overflow:hidden;
+    font-size:28rpx;
+    color:#ccc;
+    padding-top:20rpx;
+    padding-bottom: 20rpx;
+    margin-top: 20rpx;
+}
+.store_img{
+    width: 100%;
+    height:340rpx;
+    margin-top: 40rpx;
+    margin-bottom: 30rpx;
+}
+.store_img image{
+    width:100%;
+    height:340rpx;
+}

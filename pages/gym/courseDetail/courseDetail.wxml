@@ -1,0 +1,62 @@
+<!--index.wxml-->
+<view class="banner">
+    <image src="/images_gym/banner.png"></image>
+</view>
+<view class="w710" id="index_cont">
+  <view class="user_img">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="w100 index_in">
+    <view class="gym_intro">
+      <view class="intro_cont">
+        <view class="gym_name">
+        <view class="user_tlt flex">
+            <view class="tlt_cont">格莱美舞蹈</view>
+            <view class="mark"><image src="/images_gym/detail_icon1.png"></image>2h</view>
+            <view class="mark"><image src="/images_gym/index_icon4.png"></image>79°</view>
+        </view>
+        </view>
+        <view class="intro_detail">
+            教练：内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="detail_list">
+      <view class="user_tlt">
+        <view class="tlt_cont">时间</view>
+      </view>
+      <view class="time flex">
+          <view>8月23日</view>
+          <view>星期三 19:00-21:00</view>
+      </view>
+  </view>
+  <view class="detail_list">
+      <view class="user_tlt">
+        <view class="tlt_cont">地点</view>
+      </view>
+      <view class="time flex">
+          <view style="width:77.5%;">西安市雁塔区高新大都荟C座***健身房</view>
+          <view class="address">查看地址</view>
+      </view>
+  </view>
+   <view class="detail_list">
+      <view class="user_tlt">
+        <view class="tlt_cont">价格</view>
+      </view>
+      <view class="time flex">
+          <view><text>¥49</text>/节</view>
+      </view>
+  </view>
+  <view class="intro_cont" style="background: #262626;border-radius:10rpx;margin-top: 20rpx;padding-bottom: 20rpx;">
+    <view class="w710">
+        <view class="user_tlt">
+            <view class="tlt_cont">课程介绍</view>
+        </view>
+        <view class="intro_detail">
+            教练：内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        </view>
+      </view>
+    </view>
+</view>
+<button class="submit_info" bindtap="intoPath" data-path="/pages/courseDtailConfirm/courseDtailConfirm">¥49预约</button>

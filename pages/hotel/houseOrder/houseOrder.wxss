@@ -1,0 +1,157 @@
+/**index.wxss**/
+@import "../../../wxParse/wxParse.wxss"; 
+page{
+	width:100%;
+	min-height:100%;
+	background:#f2f2f2;
+
+}
+view{
+	color:#666;
+}
+#album{
+	margin-top:30rpx;
+}
+.flexRowCenter{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+}
+.flex{
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:center;
+}
+.house_name{
+	height:92rpx;
+	font-size:34rpx;
+	line-height:92rpx;
+	color:#222;
+}
+.house_name text{
+	margin-right:24rpx;
+}
+.input_list{
+	width:100%;
+	height:86rpx;
+	margin-bottom:20rpx;
+}
+.input_before{
+	width:20%;
+	font-size:28rpx;
+	color:#222;
+}
+.house_input{
+	width:80%;
+	border:solid 1px #e0e0e0;
+	border-radius:10rpx;
+	height:86rpx;
+	font-size:28rpx;
+}
+.house_input input{
+	width:96%;
+	height:86rpx;
+	line-height:86rpx;
+	padding:0 2%;
+	border-radius:10rpx;
+	font-size:28rpx;
+}
+.infor_center{
+	width:63%;
+	text-align:right;
+}
+.infor_center image{
+	width:50rpx;
+	height:50rpx;
+}
+.house_input image{
+	width:20rpx;
+	height:38rpx;
+	margin-right:30rpx;
+}
+.house_note{
+	font-size:28rpx;
+	padding:2%;
+	width:96%;
+	line-height:42rpx;
+}
+.submit_btn{
+	width:200rpx;
+	height:74rpx;
+	background:#404040;
+	text-align:center;
+	line-height:74rpx;
+	font-size:28rpx;
+	color:#fff;
+	border-radius:16rpx;
+	float:right;
+}
+.confirm_left{
+	width:50%;
+	color:#666;
+	font-size:30rpx;
+}
+.confirm_right{
+	width:50%;
+}
+.confirm{
+	height:100rpx;
+	width:100%;
+	background:#fff;
+	margin-top:50rpx;
+	position:absolute;
+	bottom:0;
+}
+.select_tlt{
+	height:80rpx;
+	line-height:80rpx;
+	text-align:center;
+	font-size:30rpx;
+	color:#666;
+}
+.select_list{
+	height:80rpx;
+	border-bottom:solid 1px #e0e0e0;
+	font-size:26rpx;
+}
+.select_left{
+	width:70%;
+}
+.select_right{
+	width:30%;
+	text-align:right;
+}
+.select_right image{
+	width:28rpx;
+	height:28rpx;
+}
+.select_discount{
+	width:100%;
+	background:#fff;
+	overflow:hidden;
+	position:fixed;
+	height:600rpx;
+	bottom:-600rpx;
+}
+.close{
+	height:80rpx;
+	width:100%;
+	line-height:80rpx;
+	background:#404040;
+	font-size:28rpx;
+	color:#fff;
+	text-align:center;
+	margin-top:200rpx;
+}
+.sildeIn{
+	transition:all 1s;
+	transform:translateY(-100%);
+}
+.slideOut{
+	transition:all 1s;
+	transform:translateY(100%);
+	height:0;
+
+}

@@ -1,0 +1,61 @@
+/**index.wxss**/
+page{background-color:#ededed;}
+.credit_top{
+	height:330rpx;
+	border-top:solid 1px #e3e3e3;
+	border-bottom:solid 1px #e3e3e3;
+	text-align:center;
+	font-size:32rpx;
+	color:#111;
+	background:#fff;
+}
+.credit_top image{
+	width:160rpx;
+	height:125rpx;
+	margin-top:106rpx;
+	margin-bottom:30rpx;
+}
+.cre_number{
+	color:#06c1ae;
+	margin-left:35rpx;
+}
+#credit{
+	background:#f5f5f5;
+	width:100%;
+	height:100%;
+}
+.cre_detail{
+	padding-left:48rpx;
+	height:100rpx;
+	line-height:100rpx;
+	border-bottom:solid 1px #eaeaea;
+	font-size:30rpx;
+	color:#000;
+	background:#fff;
+	margin-top:30rpx;
+}
+.cre_detail image{
+	width:32rpx;
+	height:32rpx;
+	margin-right:25rpx;
+	margin-top:10rpx;
+	align-items:center;
+}
+.credit_list{
+	height:90rpx;
+	line-height:100rpx;
+	border-bottom:solid 1px #eaeaea;
+	padding:0rpx 78rpx 0rpx 44rpx;
+	background:#fff;
+}
+.cre_data{
+	width:340rpx;
+	color:#585858;
+	font-size:28rpx;}
+.adrees{
+	color:#585858;
+	font-size:28rpx;
+	}
+.credit_number	{
+	font-size:30rpx;
+	color:#06c1ae;}

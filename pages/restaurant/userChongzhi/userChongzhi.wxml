@@ -1,0 +1,12 @@
+<!--payment.wxml-->
+    <view class="pay_money">
+        <view class="pay_before">
+          充值金额
+        </view>
+        <input placeholder="请输入充值金额"></input>
+    </view>
+    <view class="submit_info">
+      立即充值
+    </view>
+    
+    

@@ -1,0 +1,7 @@
+/**index.wxss**/
+
+@import "../../../wxParse/wxParse.wxss"; 
+.cultrue{
+	text-indent:60rpx;
+	line-height:40rpx;
+}

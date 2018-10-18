@@ -1,0 +1,86 @@
+<!--sort wxml-->
+<view id="sort">
+<view class="made_product" style="display:flex;">
+	<view class="made_sort">
+		<view class="madeSort  " data-current="0" catchtap="menuTap">
+			<block wx:for="{{web_labelData}}" wx:key="id">
+				<view class="madeSortItem">
+
+					<text class="text1"  style="{{web_index == index?'background:#fb5676;color:#fff;font-size:26rpx;':''}}" data-index="{{index}}" data-id="{{item.child[0].id}}" catchtap="menuTap">{{item.title}}</text>
+
+					<block wx:for="{{web_labelData[index].child}}" wx:for-item="c_item" wx:for-index="c_index">
+						<text class="text2 text3  {{web_currentId == c_item.id?'this_text':''}}"  catchtap="menuTap"  data-id="{{c_item.id}}" data-index="{{index}}">{{c_item.title}}</text>
+					</block>
+
+				</view>
+			</block>
+		</view>
+	</view>
+
+
+	<view class="made_cont">
+		<view class="madeShow">
+			<view class="flexRowBetween made_tlt">
+				<view class="made_name">女士-短发</view>
+				<view class="made_more">更多 ></view>
+			</view>
+			<view class="made_case">
+				<view class="hairs_left">
+					<block wx:for="{{web_mainData}}" wx:key='id'>
+						<view class="made_item"   wx:if="{{index%2 == 0}}">
+							<image src="{{item.mainImg[0].url}}" class="hairs_small"></image>
+							<view class="product_name">{{item.title}}</view>
+							<view class="product_cont">{{item.description}}</view>
+						</view>
+					</block>
+				</view>
+
+				<view  class="hairs_right">
+					<block wx:for="{{web_mainData}}" wx:key='id'>
+						<view class="made_item"   wx:if="{{index%2 == 1}}">
+							<image src="{{item.mainImg[0].url}}" class="hairs_big"></image>
+							<view class="product_name">{{item.title}}</view>
+							<view class="product_cont">{{item.description}}</view>
+						</view>
+					</block>
+				</view>
+
+			</view>
+		</view>
+	</view>
+</view>
+</view>
+
+<view class="bottom_spacing"></view>
+<view class="navbar">
+    <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Index/index">
+        <view class="nav_img">
+            <image src="/images_hair/navbar1.jpg"></image>
+        </view>
+        <view class="text">首页</view>
+    </view>
+    <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Service/service">
+        <view class="nav_img">
+            <image src="/images_hair/navbar2.jpg"></image>
+        </view>
+        <view class="text">服务</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairStyle/hairstyle">
+        <view class="nav_img">
+            <image src="/images_hair/navbar3-a.jpg" ></image>
+        </view>
+        <view class="text this-text" style="color:#fb5676">发型</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairDresser/hairDresser">
+        <view class="nav_img">
+            <image src="/images_hair/navbar4.jpg"></image>
+        </view>
+        <view class="text">技师</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/User/user">
+        <view class="nav_img">
+            <image src="/images_hair/navbar5.jpg"></image>
+        </view>
+        <view class="text">我的</view>
+    </view>
+</view>

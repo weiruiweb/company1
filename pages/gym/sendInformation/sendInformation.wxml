@@ -1,0 +1,31 @@
+<!--sendInformation.wxml-->
+<view class="textarea">
+  <textarea  type="" placeholder="请输入要发布的内容..." style="font-size:30rpx;" data-key="content" bindinput="changeBind" style="font-size:16px">
+  </textarea>
+</view>
+<view class="uploder">
+    <view class="uploder_all" style="display:flex">
+      <block wx:for="{{web_imgData}}">
+        <view class="uploder_item" style="display:flex">
+              <image class="uploader__input" src="{{item.url}}"></image>
+        </view>
+      </block>
+        <view class="uploder_item" wx:if="{{web_imgData.length<3}}">
+          <view class="uploader__input" bindtap="upLoadImg" >
+            <image src="/images_gym/fabu.png"></image>
+          </view>
+        </view>
+
+
+    </view>
+</view>
+<view class="fabu">
+  <view class="fabu_cont"  style="font-size:30rpx;">
+    <view class="fabu_left" bindtap="menuClick" data-key="passage1" data-num="0">
+        保存
+    </view>
+    <view class="fabu_right" bindtap="menuClick" data-key="passage1" data-num="1">
+      发布
+    </view>
+  </view>
+</view>

@@ -1,0 +1,77 @@
+<!--manageAddress.wxml-->
+<view class="userComment">
+	<view class="comment_save">
+		<view class="has_send" data-id="0" bindtap="has_send" style="{{currentId == 0?'background:#404040':''}}"> 
+			已领取
+		</view>
+		<view class="has_send" data-id="1" bindtap="has_send" style="{{currentId == 1?'background:#404040':''}}"> 
+			已使用
+		</view>
+		<view class="has_send" data-id="2" bindtap="has_send" style="{{currentId == 2?'background:#404040':''}}"> 
+			已过期
+		</view>
+	</view>
+</view>
+<view class="w710" style="{{currentId == 0?'display: block;':'display:none;'}}">
+	<view class="order">
+		<image src="/images_hotel/discount1.jpg"></image>
+		<view class="w710" id="discount">		
+			<view class="discount_number flex">
+				<view class="number_left">
+					<view class="discount_date">有效日期:18/08/15-18/09/15</view>
+					<view class="number flex">¥ <text>50</text></view>
+				</view>
+				<view class="number_right">
+					<view class="discount_date" style="text-align:right;margin-top: 10rpx;">满99元使用</view>
+					<view class="introduct flex">
+						<view style="width:40%;text-align: center;">使用说明：</view>
+						<view style="width:60%;">内容内容内容内容内容内容内容内容</view>
+					</view>
+					<view class="btn_discount">已领取</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="w710"  style="{{currentId == 1?'display: block;':'display:none;'}}">
+	<view class="order">
+		<image src="/images_hotel/discount2.jpg"></image>
+		<view class="w710" id="discount">		
+			<view class="discount_number flex">
+				<view class="number_left">
+					<view class="discount_date">有效日期:18/08/15-18/09/15</view>
+					<view class="number flex">¥ <text>50</text></view>
+				</view>
+				<view class="number_right">
+					<view class="discount_date" style="text-align:right;margin-top: 10rpx;">满99元使用</view>
+					<view class="introduct flex">
+						<view style="width:40%;text-align: center;">使用说明：</view>
+						<view style="width:60%;">内容内容内容内容内容内容内容内容</view>
+					</view>
+					<view class="btn_discount">已使用</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="w710"  style="{{currentId == 2?'display: block;':'display:none;'}}">
+	<view class="order">
+		<image src="/images_hotel/discount2.jpg"></image>
+		<view class="w710" id="discount">		
+			<view class="discount_number flex">
+				<view class="number_left">
+					<view class="discount_date">有效日期:18/08/15-18/09/15</view>
+					<view class="number flex">¥ <text>50</text></view>
+				</view>
+				<view class="number_right">
+					<view class="discount_date" style="text-align:right;margin-top: 10rpx;">满99元使用</view>
+					<view class="introduct flex">
+						<view style="width:40%;text-align: center;">使用说明：</view>
+						<view style="width:60%;">内容内容内容内容内容内容内容内容</view>
+					</view>
+					<view class="btn_discount">已过期</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,227 @@
+/**index.wxss**/
+
+@import "../../../wxParse/wxParse.wxss"; 
+page{
+	width:100%;
+	min-height:100%;
+	background:#333;
+}
+.banner{
+	width:100%;
+	height:478rpx;
+	overflow:hidden;
+	position:relative;
+}
+.index_tab{
+	height:90rpx;
+	line-height:90rpx;
+	width:100%;
+	background:#262626;
+}
+.tab_item{
+	width:33.33%;
+	border-bottom:solid 1px #d9d9d9;
+	text-align:center;
+	font-size:32rpx;
+	color:#b2b2b2;
+}
+
+.tab_text{
+	height:88rpx;
+	display:inline-block;
+	border-bottom:solid 1px #262626;
+}
+.this_tab{
+	border-bottom:solid 1px #bb212e;
+	color:#bb212e;
+}
+.sort_item{
+	width:50%;
+	text-align:center;
+	font-size:28rpx;
+	color:#fff;
+	height:88rpx;
+	display:flex;
+	align-items:center;
+}
+.sort_in{
+	height:60rpx;
+	width:100%;
+}
+
+.sort_in image{
+	width:17rpx;
+	height:11rpx;
+	margin-left:8rpx;
+}
+.choose_item{
+	display:none;
+	width:100%;
+	z-index:999;
+}
+.choose_this{
+	color:#bb212e;
+}
+.course{
+	height:250rpx;
+	width:96%;
+	padding:0 2%;
+	background:#262626;
+	border-radius:20rpx;
+	display:flex;
+	align-items:center;
+	margin-bottom:20rpx;
+}
+.course_list{
+	width:100%;
+	height:190rpx;
+	color:#fff;
+}
+.course_left{
+	width:32%;
+	height:100%;
+}
+.course_right{
+	width:44%;
+	height:100%;
+}
+.course_end{
+	width:24%;
+	height:100%;
+	align-items:center;
+	display:flex;
+}
+.course_left image{
+	width:188rpx;
+	height:190rpx;
+	border-radius:15rpx;
+}
+.course1{
+	height:32%;
+	font-size:30rpx;
+}
+.course2{
+	height:33%;
+	font-size:24rpx;
+}
+.course1{
+	font-size:32rpx;
+	height:25%;
+}
+.course2{
+	font-size:28rpx;
+	height:25%;
+}
+.course_appoint{
+	width:160rpx;
+	height:60rpx;
+	text-align:center;
+	line-height:60rpx;
+	font-size:26rpx;
+	background:#4c4c4c;
+	color:#fff;
+	border-radius:30rpx;
+}
+.this_appoint{
+	background:#bb212e;
+	color:#333;
+}
+.this_course{
+	display:block;
+}
+#course{
+	display:none;
+}
+.card1{
+	width:100%;
+	height:293rpx;
+	overflow:hidden;
+	border-radius:10rpx;
+	position:relative;
+	margin-top:20rpx;
+}
+.card1 image{
+	width:100%;
+	height:100%;
+}
+.card_cont{
+	width:100%;
+	height:290rpx;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.cont1{
+	height:36%;
+	padding:0 3%;
+	align-items:center;
+	color:#fff;
+}
+.cont2{
+	height:36%;
+	overflow:hidden;
+	width:94%;
+	font-size:26rpx;
+	color:#b2b2b2;
+	padding:0 3%;
+	line-height:40rpx;
+}
+.cont3{
+	height:28%;
+	overflow:hidden;
+	width:96%;
+	font-size:34rpx;
+	
+	padding:0 1% 0 3%;
+	display:flex;
+	align-items:center;
+}
+.card_sort{
+	width:32%;
+	font-size:38rpx;
+}
+.card_date{
+	width:38%;
+	font-size:26rpx;
+	text-align:right;
+	color:#b2b2b2;
+}
+.qcored{
+	
+}
+.price{
+	font-size:34rpx;
+	color:#bb212e;
+}
+.vip{
+	font-size:32rpx;
+	color:#fff;
+}
+.product{
+	height:412rpx;
+	width:48.5%;
+	background:#262626;
+	border-radius:20rpx;
+	margin-top:20rpx;
+}
+.product image{
+	width:100%;
+	height:280rpx;
+}
+.product_cont{
+	height:132rpx;
+	width:100%;
+}
+.product_cont1{
+	width:94%;
+	padding:0 3%;
+	height:40%;
+	font-size:28rpx;
+	color:#b2b2b2;
+}
+.product_cont2{
+	height:30%;
+	font-size:30rpx;
+	color:#bb212e;
+	padding:0 3%;
+}

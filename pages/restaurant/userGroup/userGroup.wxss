@@ -1,0 +1,76 @@
+/**mygroup.wxss**/
+page{
+	background:#f5f5f5;
+}
+.mygroup{
+	height:64rpx;
+	padding:13rpx 0rpx;
+	background:#fff;
+}
+.group_success{
+	text-align:center;
+	font-size:30rpx;
+	color:#666;
+	width:33.3%;
+	height:64rpx;
+	line-height:64rpx;
+}
+.this_status text{
+	color:#fe5678;
+	border-bottom:2rpx solid #fe5678;
+	padding-bottom:18rpx;
+}
+.group_item{
+	margin-top:20rpx;
+	background:#fff;
+	padding:0rpx 30rpx;
+	height:220rpx;
+}
+.group_list{
+	display:none;
+	
+
+}
+.this_group{
+	display:block;
+}
+.group_info{
+	width:65%;
+	height:142rpx;
+}
+.group_status{
+	width:35%;
+	text-align:center;
+	height:142rpx;
+}
+.group_info text{
+	font-size:30rpx;
+
+}
+.group_info .text1{
+	color:#999;
+}
+.group_info .text2{
+	margin-left:30rpx;
+	color:#999;
+	border-left:solid 1px #999;
+	padding-left:28rpx;
+}
+.data{
+	color:#333;
+}
+.circle{
+	width:10rpx;
+	height:10rpx;
+	margin-right:10rpx;
+}
+.status{
+	width:186rpx;
+	height:145rpx;
+}
+.group_top{
+	height:60%;
+}
+.my_name{
+	height:40%;
+}

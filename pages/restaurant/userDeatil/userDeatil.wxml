@@ -1,0 +1,67 @@
+<!--userDeatil.wxml-->
+<view class="userTop">
+	<view class="user_process flexRowBetween">
+		<view class="user_pro">
+			<image src="/images_restaurant/pro1.png"></image>
+		</view>
+		<view class="user_center">
+			
+		</view>
+		<view class="user_pro">
+			<image src="/images_restaurant/pro2.png"></image>
+		</view>
+	</view>
+	<view class="user_txt flexRowBetween">
+		<view class="user_txt1">享用着</view>
+		<view class="user_txt1">已付款</view>
+	</view>
+	<view class="notes">祝您用餐愉快！
+	</view>
+</view>
+<view class="order_title flexRowBetween">
+	<view class="order_data" style="{{fonts[3].font}}">
+	订单号:0212315 <text class="time" style="margin-left:20rpx;color:#666;">2018-2-18</text>
+	</view>
+	<view class="order_datas" style="{{fonts[2].font}}">
+	正在制作中
+	</view>
+</view>
+<view class="order_cont">
+	<view class="order_tlt">
+		已点商品（4）
+	</view>
+</view>
+<view class="order_all">
+	<view class="oreder_detail flexRowCenter">
+		<view class="order_name avoidOverflow">
+			温蟹温蟹
+		</view>
+		<view class="order_number">
+			<text>x1</text><text>168元</text>
+		</view>
+	</view>
+	<view class="oreder_detail flexRowCenter">
+		<view class="order_name avoidOverflow">
+			温蟹温蟹
+		</view>
+		<view class="order_number">
+			<text>x1</text><text>168元</text>
+		</view>
+	</view>
+	<view class="oreder_detail flexRowCenter">
+		<view class="order_name avoidOverflow">
+			温蟹温蟹
+		</view>
+		<view class="order_number">
+			<text>x1</text><text>168元</text>
+		</view>
+	</view>
+</view>
+ <view class="order_numbers flexRowBetween">
+      <view class="order_time" style="color:#666;font-size:24rpx;">
+        提交订单已：10分钟
+      </view>
+      <view class="order_total">
+      <text style="margin-right:20rpx;">共8件</text>合计：<text style="color:#f2665f;">688元</text>
+      </view>
+    </view>

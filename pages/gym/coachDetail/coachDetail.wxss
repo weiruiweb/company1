@@ -1,0 +1,239 @@
+/**index.wxss**/
+
+@import "../../../wxParse/wxParse.wxss"; 
+view{
+	
+}
+page{
+	width:100%;
+	min-height:100%;
+	background:#333;
+}
+.banner{
+	width:100%;
+	height:320rpx;
+	position:relative;
+}
+.banner image{
+	width:100%;
+	height:320rpx;
+
+}
+.coach_name{
+	width:190rpx;
+	height:56rpx;
+	background:#262626;
+	border-radius:20rpx;
+	text-align:center;
+	line-height:56rpx;
+	position:absolute;
+	bottom:-10%;
+	left:10%;
+	font-size:28rpx;
+	color:#ccc;
+}
+.info_img{
+	height:220rpx;
+	display:flex;
+	width:100%;
+	align-items:center;
+	border-bottom:solid 1px #e0e0e0;
+	background:#fff;
+}
+.user_img{
+	width:160rpx;
+	height:160rpx;
+	border-radius:50%;
+	overflow:hidden;
+	margin:0px auto;
+}
+.infor_list{
+	height:100rpx;
+	font-size:28rpx;
+	color:#b2b2b2;
+	border-bottom:solid 1px #b2b2b2;
+}
+.infor_left{
+	width:22%;
+}
+.infor_center{
+	width:63%;
+	text-align:right;
+}
+.infor_center image{
+	width:50rpx;
+	height:50rpx;
+}
+.infor_rgiht{
+	width:15%;
+}
+.infor_right image{
+	width:14rpx;
+	height:20rpx;
+}
+.p40{
+	background:#fff;
+}
+.picker{
+	width:100%;
+}
+.w_30{
+	width:35%;
+}
+.w_70{
+	width:30%;
+	text-align:left;
+}
+.user_tlt{
+	height:60rpx;
+	width:100%;
+	align-items:center;
+	display:flex;
+}
+.tlt_cont{
+	align-items:center;
+	display:flex;
+	height:36rpx;
+	font-size:30rpx;
+	color:#b2b2b2;
+	line-height:36rpx;
+}
+.tlt_cont image{
+	width:36rpx;
+	height:36rpx;
+	margin-right:20rpx;
+}
+.ader{
+	height:110rpx;
+	font-size:26rpx;
+	color:#e5e5e5;
+	margin-top:30rpx;
+}
+.ader image{
+	width:34rpx;
+	height:28rpx;
+}
+.gym_intro{
+	height:196rpx;
+	width:92%;
+	display:flex;
+	align-items:center;
+	padding:0 4%;
+}
+.intro_cont{
+	height:164rpx;
+	width:100%;
+	background:#262626;
+	border-radius:10rpx;
+}
+.gym_name{
+	height:46rpx;
+}
+.intro_detail{
+	font-size:28rpx;
+	color:#ccc;
+	height:74rpx;
+	overflow:hidden;
+}
+.kemu{
+	height:88rpx;
+	line-height:88rpx;
+	color:#ccc;
+	font-size:30rpx;
+	color:#b2b2b2;
+}
+.kemu_item{
+    width:144rpx;
+    height:60rpx;
+    border-radius:16rpx;
+    line-height:60rpx;
+    text-align:center;
+    background:#262626;
+    font-size:24rpx;
+    color:#ccc;
+}
+.this_item{
+	background:#bb212e;
+}
+.appiont{
+	height:640rpx;
+	width:100%;
+	background:#262626;
+	border-radius:10rpx;
+	margin-top:36rpx;
+}
+.appiont_time{
+	height:166rpx;
+}
+.time_item{
+	width:25%;
+	text-align:center;
+	color:#fefefe;
+	height:100%;
+	position:relative;
+
+}
+.text1{
+	font-size:28rpx;
+	text-align:center;
+	margin:20rpx 0;
+}
+.text2{
+	font-size:26rpx;
+	text-align:center;
+}
+.time_item image{
+	width:40rpx;
+	height:40rpx;
+	mrigin:0 auto;
+}
+
+.up_down{
+	position:absolute;
+	left:0;
+	bottom:0;
+	text-align:center;
+	width:100%;
+}
+.up_down image{
+	width:50rpx;
+	height:22rpx;
+	margin:0 auto;
+}
+.select_time{
+	height:354rpx;
+	background:#333;
+	border-radius:10rpx;
+	padding:38rpx 0;
+}
+.appont1{
+	height:150rpx;
+	width:100%;
+	border-radius:10rpx;
+	background:#4d4d4d;
+}
+.appont2{
+	margin-top:36rpx;
+	background:#262626;
+}
+.appont_left{
+	width:50%;
+	font-size:28rpx;
+	color:#ccc;
+	text-align:center;
+}
+.appont_right view{
+	font-size:24rpx;
+	color:#ccc;
+}
+#phone{
+	height:98rpx;
+	font-size:28rpx;
+	color:#fff;
+}
+.phone{
+	width:24%;
+}
+#phone input{
+	width:76%;
+}

@@ -1,0 +1,125 @@
+<!--dishes1.wxml-->
+<view class="w750 muens_list">
+	<view class="w710">
+		<view class="recommend_img">
+	      <image src="/images_restaurant/index3.jpg"/>
+	    </view>
+	    <view class="dishes_info flexRowCenter">
+	      <view class="dishes_left">
+	        <view class="avoidOverflow" style="{{fonts[4].font}};color:#333;height:55%;">
+	            蟹黄芝士面包
+	        </view>
+	        <view class="avoidOverflow comment_star flexRowBetween">
+	           <text style="{{fonts[3].font}};color:#666;"> 综合评分：</text>
+	           <view class="sta_list flexRowBetween">
+	              <image src="/images_restaurant/star.png"/>
+	              <image src="/images_restaurant/star.png"/>
+	              <image src="/images_restaurant/star.png"/>
+	              <image src="/images_restaurant/star.png"/>
+	              <image src="/images_restaurant/star_a.png"/>
+	           </view>
+	        </view>
+	      </view>
+	      <view class="dishes_right" style="{{fonts[2].font}};color:#666;">
+	        月售200单
+	      </view>
+	    </view>
+	    <view class="price flexRowBetween">
+	    	<view class="price_left" >
+	    		168元
+	    	</view>
+	    	<view class="add"  data-num="1"  bindtap="onAddingToCartTap">+</view>
+	    	<view class="circle {{flayTo==1?'animate':''}}" mode="aspectFill" style="{{flayTo==1?translateStyle:''}}"></view>
+	    </view>
+	</view>
+</view>
+
+<view class="w750">
+	<view class="dishes_intro"  style="background:#fff;padding:20rpx;">
+		<view class="intro_tlt" style="font-size:30rpx;color:#333;height:60rpx;line-height:60rpx;">
+			商品简介
+		</view>
+		<view class="intro_cont" style="font-size:26rpx;color:#666;">
+			商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
+		</view>
+	</view>
+</view>
+<view id="comment">
+	<view class="comment_list">
+		<view class="comment_item flexRowBetween">
+			<view class="commet_user">
+				<image src="/images_restaurant/index_icon4.png"></image>
+			</view>
+			<view class="commet_cont">
+				<view class="user_name">
+					用户名
+				</view>
+				<view class="star flexRowBetween">
+					<view class="star_xt">打分</view>
+					<view class="star_all">
+						<image src="/images_restaurant/star.png"></image>
+						<image src="/images_restaurant/star.png"></image>
+						<image src="/images_restaurant/star.png"></image>
+						<image src="/images_restaurant/star.png"></image>
+						<image src="/images_restaurant/star.png"></image>
+					</view>
+				</view>
+			</view>
+			<view class="commet_data">
+				2018-8-8 <text>18:30</text>
+			</view>
+		</view>
+		<view class="com_content">
+				味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~
+		</view>
+	</view>
+	<view class="comment_list">
+		<view class="comment_item flexRowBetween">
+			<view class="commet_user">
+				<image src="/images_restaurant/index_icon4.png"></image>
+			</view>
+			<view class="commet_cont">
+				<view class="user_name">
+					用户名
+				</view>
+				<view class="star flexRowBetween">
+					<view class="star_xt">打分</view>
+					<view class="star_all">
+						<image src="/images_restaurant/star.png"></image>
+						<image src="/images_restaurant/star.png"></image>
+						<image src="/images_restaurant/star.png"></image>
+						<image src="/images_restaurant/star.png"></image>
+						<image src="/images_restaurant/star.png"></image>
+					</view>
+				</view>
+			</view>
+			<view class="commet_data">
+				2018-8-8 <text>18:30</text>
+			</view>
+		</view>
+		<view class="com_content">
+				味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~
+		</view>
+	</view>
+</view>
+<view class="space_bottom" style="height:100rpx;">
+</view>
+<view id="menus">
+	<view class="has_menus flexRowCenter">
+		<view class="menus_icon">
+			<image src="/images_restaurant/dian.png"></image>
+			 <view class="cart_number" bindtap="onCartTap">
+	            <view class="fiexd-cart {{isShake?'animate':''}}" style="">
+	                <view style="color:#fff;font-size:16rpx;">{{cartTotalCounts}}</view>
+	            </view>
+	        </view>
+		</view>
+		<view class="menus_number">
+			<text class="text1" style="{{fonts[5].font}};color:#666;">已点:</text>
+			<text class="text2"  style="{{fonts[5].font}};color:#f2665f;">266元</text>
+		</view>
+		<view id="has_menus" bindtap="intoPath"  data-path="/pages/restaurant/dishesComfirm/dishesComfirm">
+			<view class="menus_click">确认下单</view>
+		</view>
+	</view>
+</view>

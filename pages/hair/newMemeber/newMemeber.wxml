@@ -1,0 +1,34 @@
+<!--manageAddress.wxml-->
+<view class="user_input flexRowBetween">
+	<view class="input_note">姓名:</view>
+	<input placeholder="请输入姓名" value="{{web_sForm.name}}"  data-key="name" bindblur="changeBind"></input>
+</view>
+<view class="user_input flexRowBetween">
+	<view class="input_note">性别:</view>
+	<input placeholder="请输入性别" value="{{web_sForm.gender}}"  data-key="gender" bindblur="changeBind"></input>
+</view>
+<view class="user_input flexRowBetween">
+	<view class="input_note">充值金额:</view>
+	<input placeholder="请输入充值金额" ></input>
+</view>
+<view class="user_input flexRowBetween">	
+	<view class="input_note">出生日期:</view>
+	<input placeholder="请输入出生日期" value="{{web_sForm.passage1}}" style=""></input>
+	<picker mode="date" class="" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+	<image src="/images_hair/next_page.jpg"></image>
+	</picker>
+</view>
+<view class="user_input flexRowBetween">
+	<view class="input_note">联系方式:</view>
+	<input placeholder="联系方式" value="{{web_sForm.phone}}"  data-key="phone" bindblur="changeBind"></input>
+
+</view>
+<view class="user_input flexRowBetween">
+	<view class="input_note">详细地址:</view>
+	<input placeholder="如街道，门牌号" value="{{web_sForm.address}}"  data-key="address" bindblur="changeBind"></input>
+</view>
+
+<view class="submit_info" bindtap="backAddress">
+	办理会员
+</view>
+

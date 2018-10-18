@@ -1,0 +1,247 @@
+page{
+	min-height:100%;
+	width:100%;
+	background:#333;
+}
+.sign_banner{
+	width:100%;
+	height:502rpx;
+	position:relative;
+}
+.sign_banner image{
+	width:100%;
+	height:100%;
+}
+.sign_cont{
+	position:absolute;
+	top:0;
+	left:0;
+	height:502rpx;
+	width:100%;
+}
+#sign{
+	height:210rpx;
+	width:210rpx;
+	padding:16rpx;
+	border-radius:50%;
+	background:rgba(119,119,119,0.5);
+	margin:40rpx auto 30rpx auto;
+	line-height:210rpx;
+	text-align:center;
+
+}
+.sign_btn{
+	width:100%;
+	height:100%;
+	background:#fff;
+	color:#333;
+	font-size:28rpx;
+	border-radius:50%;
+}
+.sign_nuber{
+	width:260rpx;
+	height:44rpx;
+	border-radius:20rpx;
+	background:#bb212e;
+	font-size:26rpx;
+	line-height:44rpx;
+	text-align:center;
+	margin:0 auto;
+	color:#fff;
+}
+.left1{
+	height:74rpx;
+	width:100%;
+	margin-top:40rpx;
+}
+.insist{
+	width:50%;
+	text-align:center;
+	color:#b2b2b2;
+}
+.insist_day{
+	height:60%;
+	font-size:40rpx;
+
+}
+.insist_days{
+	height:40%;
+	font-size:26rpx;
+}
+.sign{
+	position:relative;
+	text-align:center;
+	height:555rpx;
+	overflow:hidden;
+}
+.sign_bg image{
+	width:100%;
+	height:555rpx;
+}
+.sign_date{
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0rpx;
+}
+.date_year{
+	padding:0rpx 40rpx;
+	height:110rpx;
+	line-height:110rpx;
+	width:330rpx;
+	margin:0rpx auto;
+	color:#fff;
+
+}
+.date_year image{
+	width:11rpx;
+	height:19rpx;
+}
+.year{
+	padding:0rpx 40rpx;
+	background:#333;
+	
+}
+.year_in{
+	border-bottom:solid 1px #fff;
+}
+.sign_month{
+	padding:0rpx 16rpx;
+	background:#333;
+}
+.month_in{
+	width:100%;
+}
+.weak{
+	display:flex;
+}
+.weak_day{
+	width:14.28%;
+	height:62rpx;
+	line-height:62rpx;
+	color:#fff;
+	text-align:center;
+	align-items:center;
+
+}
+
+.sign_day{
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	font-weight:normal;
+}
+.this_day{
+	width:14.28%;
+	height:62rpx;
+	text-align:center;
+}
+.this_day view{
+	width:62rpx;
+	height:62rpx;
+	line-height:62rpx;
+	background:#bb212e;
+	border-radius:50%;
+	color:#666;
+	margin:0 auto;
+}
+.today_sign{
+	padding:0rpx 43rpx;
+	border-bottom:solid 1px #e0e0e0;
+	background:#f5f5f5;
+}
+.begin_sign{
+	height:138rpx;
+	display:flex;
+	justify-content:between;
+	align-items:center;
+	width:100%;
+}
+.sign_left{
+	width:68.5%;
+	height:80rpx;
+	text-align:right;
+}
+.sign_right{
+	width:31.5%;
+	height:80rpx;
+	color:#666;
+	line-height:80rpx;
+	text-align:right;
+}
+.sign_now{
+	width:242rpx;
+	height:80rpx;
+	border-radius:30rpx;
+	background:#00c6f7;
+	line-height:80rpx;
+	text-align:center;
+	color:#fff;
+	font-size:36rpx;
+	float:right;
+}
+.sign_days{
+	background:#fff;
+}
+.sign_daysIn{
+	padding:56rpx 32rpx;
+}
+.sign_note{
+	width:100%;
+	text-align:center;
+}
+.sign_note .text1{
+	color:#00c6f7;
+}
+.sign_note .text2{
+	margin-left:20rpx;
+}
+
+.item1{
+	width:116rpx;
+	height:116rpx;
+	border-radius:50%;
+	border:solid 1px #dcdcdc;
+	text-align:center;
+	line-height:116rpx;
+	color:#666;
+	background:#f2f2f2;
+	margin:0px auto;
+}
+.this_item{
+	border:solid 1px #00c6f7;
+	background:#e5f9fe;
+}
+.choose_day{
+	position:absolute;
+	right:15rpx;
+	top:70%;
+}
+.choose_day image{
+	width:29rpx;
+	height:29rpx;
+
+}
+.adver{
+	width:100%;
+	height:118rpx;
+	position:relative;
+}
+.adver image{
+	width:100%;
+	height:118rpx;
+}
+.adver_txt{
+	width:100%;
+	height:118rpx;
+	position:absolute;
+	left:0;
+	top:0;
+	line-height:118rpx;
+	text-align:center;
+	font-size:26rpx;
+	color:#b2b2b2;
+}
+.adver_txt text{
+	font-size:40rpx;
+}

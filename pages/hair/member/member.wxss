@@ -1,0 +1,107 @@
+/**meber.wxss**/
+page{
+	background:#f5f5f5;
+}
+.memeber{
+	padding:45rpx 20rpx;
+	background:#fff;
+}
+.memeber image{
+	width:710rpx;
+	height:270rpx;
+}
+.user_credit{
+	text-align:center;
+	padding:14rpx 0px;
+}
+.user_two{
+	background:#fff;
+	font-size:26rpx;
+	color:#333;
+	padding: 30rpx 70rpx;
+	margin:20rpx 0rpx;
+}
+.user_fill{
+	width:165rpx;
+	height:65rpx;
+	background:#fd5274;
+	border-radius:10rpx;
+	line-height:65rpx;
+	text-align:center;
+	color:#fff;
+	margin-top:20rpx;
+}
+.memeber_tlt{
+	height:95rpx;
+	line-height:95rpx;
+	text-align:center;
+	font-size:28rpx;
+	color:#666;
+	border-bottom:solid 1px #ebebeb;
+	background:#fff;
+}
+.member_cont{
+	padding:55rpx 34rpx;
+	background:#fff;
+}
+.item_bg{
+	width:90rpx;
+	height:90rpx;
+	border-radius:50%;
+	text-align:center;
+	margin:0rpx auto;
+}
+.item_bg image{
+	width:60rpx;
+	height:52rpx;
+	margin-top:19rpx;
+
+}
+.color1{
+	background:#59c2e0;
+}
+.color2{
+	background:#9db4dd;
+}
+.color3{
+	background:#ff7862;
+}
+.color4{
+	background:#84bfc3;
+}
+.meber_item{
+	text-align:center;
+	width:120rpx;
+}
+.meber_item text{
+	font-size:24rpx;
+	color:#666;
+	display:block;
+	margin-top:16rpx;
+}
+.introduction{
+	padding-left:20rpx;
+	background:#fff;
+	color:#666;
+	margin-top:20rpx;
+}
+.introduction .text1{
+	font-size:28rpx;
+	display:block;
+}
+.introduction .text2{
+	font-size:22rpx;
+	line-height:42rpx;
+	display:block;
+}
+.payment{
+	width:710rpx;
+	height:80rpx;
+	background:#fe5174;
+	font-size:30rpx;
+	line-height:80rpx;
+	text-align:center;
+	color:#fff;
+	border-radius:50rpx;
+	margin:25rpx
+}

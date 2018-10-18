@@ -1,0 +1,211 @@
+/**index.wxss**/
+@import "../../../wxParse/wxParse.wxss"; 
+.scroll-header{
+display: flex;
+white-space: nowrap; 
+}
+.scroll-header .coach_item{
+
+display: inline-block; 
+}
+
+view{
+	color:#666;
+}
+page{
+	width:100%;
+	min-height:100%;
+	background:#333;
+}
+.page-body image{
+	width:100%;
+	height:400rpx;
+}
+swiper{
+	height:400rpx;
+}
+.banner{
+	width:100%;
+	height:400rpx;
+	overflow:hidden;
+}
+.banner image{
+	width:100%;
+	height:400rpx;
+}
+#index_cont{
+	position:relative;
+	top:-40rpx;
+}
+.index_in{
+	width:100%;
+	height:408rpx;
+	background:#262626;
+	border-radius:10rpx;
+}
+.gym_intro{
+	height:196rpx;
+	width:92%;
+	display:flex;
+	align-items:center;
+	padding:0 4%;
+}
+.intro_cont{
+	height:140rpx;
+	width:100%;
+}
+.gym_name{
+	height:46rpx;
+}
+.intro_detail{
+	height:100rpx;
+}
+.name_left{
+	width:60%;
+	font-size:30rpx;
+	color:#fff;
+}
+.name_right{
+	width:40%;
+	color:#bb212e;
+	font-size:26rpx;
+	text-align:right;
+}
+.detail_left{
+	width:65%;
+	margin-right:12%;
+	font-size:24rpx;
+	color:#fff;
+	overflow:hidden;
+}
+.detail_right{
+	width:23%;
+	font-size:30rpx;
+	color:#bb212e;
+}
+.star{
+	display:flex;
+	text-align:right;
+}
+.star image{
+	width:28rpx;
+	height:28rpx;
+	margin-right:5rpx;
+}
+.star_number{
+	font-size:26rpx;
+	color:#bb212e;
+}
+.intro_img{
+	width:100%;
+	height:213rpx;
+	border-radius:0 0 5rpx 5rpx;
+}
+.intro_img image{
+	width:100%;
+	height:100%;
+}
+.index_coach{
+	width:100%;
+	height:278rpx;
+}
+.coach_icon{
+	width:5.6%;
+	height:100%;
+}
+.coach_icon image{
+	width:22rpx;
+	height:36rpx;
+}
+.coach_list{
+	width:94.4%;
+	display:flex;
+	height:100%;
+}
+.coach_item{
+	width:34%;
+	height:95.5%;
+	padding:2% 0 2.5%;
+	border-radius:15rpx;
+	background:#262626;
+	position:relative;
+	text-align:center;
+	margin-right:2.5%;
+}
+.coach_img image{
+	width:82rpx;
+	height:82rpx;
+	border-radius:50%;
+}
+.coach_name{
+	font-size:30rpx;
+
+}
+view{
+	color:#fff;
+}
+.course{
+	width:100%;
+	margin-top:40rpx;
+}
+
+.coach_cal{
+	font-size:26rpx;
+}
+.coach_add image{
+	width:38rpx;
+	height:38rpx;
+}
+.course_tlt{
+	border-bottom:solid 1px #fff;
+	color:#fff;
+	height:80rpx;
+	line-height:80rpx;
+	font-size:30rpx;
+}
+.course_list{
+	width:100%;
+	height:140rpx;
+	border-bottom:solid 1px #f2f2f2;
+	padding:40rpx 0;
+}
+.course_left{
+	width:22%;
+}
+.course_right{
+	width:78%;
+}
+.course_left image{
+	width:140rpx;
+	height:138rpx;
+	border-radius:15rpx;
+}
+.course1{
+	height:32%;
+	font-size:30rpx;
+}
+.course2{
+	height:33%;
+	font-size:24rpx;
+}
+.courde_left{
+	width:78%;
+	height:100%;
+}
+.courde_right{
+	width:22%;
+	height:50rpx;
+	border-radius:30rpx;
+	background:#262626;
+	text-align:center;
+	line-height:50rpx;
+	color:#bb212e;
+}
+.sign_up image{
+	width:28rpx;
+	height:28rpx;
+	margin-right:15rpx;
+}
+.sign_up{
+	display:flex;
+}

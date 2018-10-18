@@ -1,0 +1,95 @@
+.userComment{
+	margin-bottom:50rpx;
+}
+.comment_save{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:86rpx;
+	font-size:32rpx;
+}
+.has_send{
+	width:33.33%;
+	text-align:center;
+	color:#b2b2b2;
+	height:85rpx;
+	line-height:85rpx;
+	border-bottom:solid 1rpx #262626;
+	
+}
+.order{
+	width:100%;
+	height:214rpx;
+	position:relative;
+	border-radius:10rpx;
+	margin-top:20rpx;
+}
+.order_list {
+	height:160rpx;
+	border-bottom:solid 1px #6b6b6b;
+	padding-bottom:30rpx;
+}
+
+.order image{
+	width:100%;
+	height:100%;
+}
+#discount{
+	height:214rpx;
+	position:absolute;
+	left:0;
+	top:0;
+}
+.discount_date{
+	font-size:22rpx;
+	color:#ffff;
+	width:100%;
+	line-height:50rpx;
+}
+.discount_number{
+
+}
+.number_left{
+	width:50%;
+	font-size:100rpx;
+	color:#bb212e;
+}
+.number_left,.number_right{
+	width:50%;
+}
+.number_right .btn_discount{
+	width:132rpx;
+	height:32rpx;
+	background:#fff;
+	border-radius:10rpx;
+	line-height:32rpx;
+	text-align:center;
+	font-size:24rpx;
+	color:#fe3267;
+	margin:20rpx auto;
+}
+.number{
+	font-size:60rpx;
+	color:#fff;
+}
+.number text{
+	font-size:100rpx;
+}
+.introduct{
+	height:80rpx;
+	width:100%;
+	font-size:24rpx;
+	color:#fff;
+}
+.flexRowCenter{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+}
+.flex{
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:center;
+}

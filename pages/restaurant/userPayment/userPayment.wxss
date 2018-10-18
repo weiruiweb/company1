@@ -1,0 +1,77 @@
+/**payment.wxss**/
+page{
+	background:#f5f5f5;
+}
+.pay_money{
+	margin:20rpx 22rpx;
+	height:80rpx;
+	line-height:80rpx;
+	background:#fff;
+	border-radius:10rpx;
+	padding:0rpx 24rpx;
+}
+.pay_before{
+	font-size:28rpx;
+	color:#535353;
+	line-height:80rpx;
+	width:14.5%;
+	text-align:center;
+}
+input{
+	height:32rpx;
+	font-size:26rpx;
+	line-height:32rpx;
+	width:79.5%;
+	padding:0 3%;
+}
+.pay_money input{
+	
+}
+.pay_money image{
+	width:18rpx;
+	height:32rpx;
+	margin-top:25rpx;
+}
+.pay_discount input{
+	width:485rpx;
+}
+.pay_method{
+	background:#fff;
+	margin:20rpx;
+	border-radius:10rpx;
+	font-size:24rpx;
+}
+.pay1 image{
+	width:92rpx;
+	height:92rpx;
+	margin-right:32rpx;
+}
+.pay_txt{
+	color:#535353;
+}
+.pay1{
+	height:92rpx;
+	text-align:center;
+	width:40%;
+}
+.choose_this{
+	width:55%;
+	text-align:right
+}
+.pay1 text{
+	color:#666;
+	line-height:50rpx;
+}
+.chose_pay{
+	height:114rpx;
+	align-items:center;
+	width:100%;
+}
+.choose_this{
+	float:right;
+}
+.choose_this image{
+	width:29rpx;
+	height:28rpx;
+	margin-right:40rpx;
+}

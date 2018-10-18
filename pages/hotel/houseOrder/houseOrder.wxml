@@ -1,0 +1,93 @@
+<!--index.wxml-->
+<view class="p40">
+	<view class="house_name">{{web_skuData.title}}（¥{{web_skuData.price}}）</view>
+	<view class="house_name" style="font-size:28rpx;"><text>2018-09-19入住</text><text>2018-09-2 09:30之前离店</text><text>1天</text></view>
+</view>
+<view class="p40" id="album">
+   <view class="input_list flexRowBetween">
+   		<view class="input_before">住几间</view>
+   		<view class="house_input" style="width:52%">
+   			<input value="{{web_skuData.count}}间" disabled="disabled"></input>
+   		</view>
+		<view class="orders flexRowBetween">
+	
+		<view class="edit_number flexRowBetween">
+			<view class="minus" style="height:45rpx;font-size:50rpx;line-height:40rpx;width:30%;text-align:center;border-right:1px solid #e0e0e0" data-type="-" bindtap="counter" data-id="{{web_skuData.id}}" >-</view>
+			<input type="number" bindchange="bindManual" value="{{web_skuData.count}}" style="width:40px;text-align:center" />
+			<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuData.id}}" style="width:30%;text-align:center;height:45rpx;line-height:40rpx;border-left:1px solid #e0e0e0">+</view>
+			</view>
+		</view>
+   </view>
+    <view class="input_list flexRowBetween">
+   		<view class="input_before">手机号</view>
+   		<view class="house_input">
+   			<input value="{{web_sForm.phone}}"  data-key="phone" bindblur="changeBind"></input>
+   		</view>
+   </view>
+   <view class="input_list flexRowBetween">
+   		<view class="input_before">入住人</view>
+   		<view class="house_input">
+   			<input value="{{web_sForm.name}}"  data-key="name" bindblur="changeBind"></input>
+   		</view>
+   </view>
+   <view class="input_list flexRowBetween"  bindtap="goBuy">
+   		<view class="input_before">优惠券</view>
+   		<view class="house_input flexRowBetween">
+   			<view></view>
+   			<image src="/images_hotel/next_page.jpg"></image>
+   		</view>
+   </view>
+   <view>
+	   <view class="flexRowBetween" style="margin-top: 20rpx;width:100%;">
+	   		<view class="input_before"></view>
+	   		<view class="house_note" style="background: #fffeea;border-left:solid 4rpx #333;">
+	   			<view>
+	   			   	<view class="content ql-editor" >
+		                <import src="../../../wxParse/wxParse.wxml"/>
+		                <template is="wxParse" data="{{wxParseData:web_artData.content}}"/>
+		            </view>
+	   			</view>
+	   			
+	   		</view>
+	   </view>
+	</view>
+</view>
+<view class="confirm flexRowBetween">
+	<view class="p40 flexRowBetween">
+		<view class="confirm_left">
+			合计：¥{{web_totalPrice}}
+		</view>
+		<view class="confirm_right" bindtap="addOrder"  >
+			<view class="submit_btn">立即预订</view>
+		</view>
+	</view>
+</view>
+<view class="{{isShow?'mask':''}}"></view>
+<view class="select_discount {{isShow?'sildeIn':'slideOut'}}">
+	<view class="p40">
+		<view class="select_tlt">
+			选择优惠券
+		</view>
+		<view class="select_list flexRowBetween" data-id="0" bindtap="select_discount">
+			<view class="select_left">50元优惠卷:满500减50</view>
+			<view class="select_right">
+				<image src="{{is_discount == 0?'/images_hotel/select_a.jpg':'/images_hotel/select.jpg'}}"></image>
+			</view>
+		</view>
+		<view class="select_list flexRowBetween" data-id="1" bindtap="select_discount">
+			<view class="select_left">50元优惠卷:满500减50</view>
+			<view class="select_right">
+				<image src="{{is_discount == 1?'/images_hotel/select_a.jpg':'/images_hotel/select.jpg'}}"></image>
+			</view>
+		</view>
+
+		<view class="select_list flexRowBetween" data-id="2" bindtap="select_discount">
+			<view class="select_left">50元优惠卷:满500减50</view>
+			<view class="select_right">
+				<image src="{{is_discount == 2?'/images_hotel/select_a.jpg':'/images_hotel/select.jpg'}}"></image>
+			</view>
+		</view>
+
+	</view>
+	<view class="close" bindtap="close">关闭</view>
+</view>

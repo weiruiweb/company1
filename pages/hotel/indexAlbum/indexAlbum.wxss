@@ -1,0 +1,49 @@
+/**index.wxss**/
+@import "../../../wxParse/wxParse.wxss"; 
+view{
+	color:#666;
+}
+
+
+#album{
+	margin-top: 60rpx;
+}
+
+.tlt_txt{
+	font-size: 32rpx;
+	color:#404040;
+	text-align: center;
+}
+.bottom_line{
+	width: 50rpx;
+	height:1rpx;
+	background: #404040;
+	margin:20rpx auto;
+}
+.product{
+	flex-wrap: wrap;
+	margin-top:45rpx;
+	width:100%;
+	overflow:hidden;
+}
+.product_img{
+	width:47%;
+	height:260rpx;
+	margin-bottom: 25rpx;
+}
+.product_img image{
+	width:100%;
+	height:100%;
+}
+.flexRowCenter{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+}
+.flex{
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:center;
+}

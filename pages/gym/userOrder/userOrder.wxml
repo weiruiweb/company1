@@ -1,0 +1,36 @@
+<!--manageAddress.wxml-->
+<view class="userComment">
+	<view class="comment_save">
+		<view class="has_send" data-id="0" bindtap="has_send" style="{{currentId == 0?'color:#bb212e;border-bottom:solid 1px #bb212e':''}}"> 
+			全部
+		</view>
+		<view class="has_send" data-id="1" bindtap="has_send" style="{{currentId == 1?'color:#bb212e;border-bottom:solid 1px #bb212e':''}}"> 
+			待支付
+		</view>
+		<view class="has_send" data-id="2" bindtap="has_send" style="{{currentId == 2?'color:#bb212e;border-bottom:solid 1px #bb212e':''}}"> 
+			已支付
+		</view>
+	</view>
+</view>
+<view class="w710">
+	<view class="order">
+		<view class="w710">		
+			<view class=" order_list flexRowBetween">		
+				<view class="order_left">		
+				   <image src="/images_gym/index3.png"></image>
+				</view>
+				<view class="order_right">		
+				   <view class="order_name">格莱美舞蹈</view>
+				   <view class="order_number flexRowBetween">
+				   		<view>X1</view>
+						<view style="color:#bb212e;font-size:30rpx;">¥200</view>
+				   </view>
+				</view>
+			</view>
+			<view class="total">
+				合计: <text>¥200</text>
+			</view>
+			<view class="handle">删除订单</view>
+		</view>
+	</view>
+</view>

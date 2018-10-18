@@ -1,0 +1,161 @@
+page{
+	min-height:100%;
+	width:100%;
+	background:#f2f2f2;
+
+}
+.order_sort{
+	background:#fff;
+	height:90rpx;
+	width:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	border-bottom:solid 1px #e0e0e0;
+}
+.order_click{
+	width:25%;
+	text-align:center;
+}
+.sort_txt{
+	display:inline-block;
+	height:86rpx;
+	line-height:86rpx;
+}
+#order{
+	paddding:0rpx 20rpx;
+}
+
+.order_datas{
+	color:#e62c2c;
+}
+.order_title{
+	height:80rpx;
+	line-height:80rpx;
+	background:#fff;
+	width:92%;
+	padding:0px 4%;
+	display:flex;
+	justify-content:space-between;
+}
+.order_infor{
+	height:160rpx;
+	padding:34rpx 0;
+	border-bottom:solid 1px #e0e0e0;
+	background:#fff;
+}
+.order_item{
+	height:160rpx;	
+	width:92%;
+	padding:0px 4%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	overflow:hidden;
+	flex-wrap:wrap;
+	
+}
+.order_left{
+	width:25%;
+	text-align:center;
+	height:160rpx;
+}
+.order_left image{
+	width:148rpx;
+	height:148rpx;
+}
+
+.order_right{
+	width:74%;
+	height:160rpx;
+}
+.order_list{
+	margin-bottom:20rpx;
+}
+.orderProname{
+	color:#262626;
+	height:62.5%;
+	overflow:hidden;
+}
+.order_attr{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:37.5%;
+	overflow:hidden;
+	color:#666;
+}
+.order_number{
+	width:17%;
+	text-align:left;
+}
+.order_attrs{
+	width:55%;
+	text-align:left;
+}
+.order_credit{
+	width:28%;
+	display:flex;
+	align-items:center;
+	color:#e62c2c;
+	text-align:right;
+}
+.order_credit text,.order_credit2{
+	float:right;
+}
+.order_handle{
+background:#fff;
+	height:100rpx;
+}
+.order_del{
+
+	float:right;
+	margin-top:20rpx;
+	margin-right:40rpx;
+}
+.order_total{
+	width:35%;
+
+}
+.del_btn{
+	width:160rpx;
+	height:60rpx;
+	border:solid 1px #aeaeae;
+	border-radius:10rpx;
+	line-height:60rpx;
+	text-align:center;
+	float:right;
+	margin-left:40rpx;
+	color:#666;
+}
+.order_numbers{
+	height:66rpx;
+	line-height:66rpx;
+	background:#fff;
+	clear:both;
+	width:96%;
+	padding:0rpx 2%;
+	border-bottom:solid 1px #e0e0e0;
+}
+.order_time{
+	width:36%;
+	padding-left:4%;
+}
+.order_total{
+	width:54%;
+	font-size:28rpx;
+	color:#666;
+	text-align:right;
+	padding-right:4%;
+}
+.order_det{
+	background:#f2665f;
+	color:#fff;
+	border:solid 1px #f2665f;
+}
+.text1{
+	color:#e62c2c;
+}
+.text2{
+	color:#333;
+}

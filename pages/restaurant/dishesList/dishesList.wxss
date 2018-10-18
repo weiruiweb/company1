@@ -1,0 +1,115 @@
+page{
+	width:100%;
+	min-height:100%;
+	background:#f2f2f2;
+}
+.menus_has{
+	height:80rpx;line-height:80rpx;font-size:30rpx;color:#666;padding:0 40rpx;
+}
+.dishes_list{
+	padding:0rpx 40rpx;
+	background:#fff;}
+.dishes_item{
+	width:100%;
+	
+	padding:15rpx 0;
+}
+.dishes_left,.dishes_center{
+	width:35%;
+	height:190rpx;
+}
+.dishes_right{
+	width:30%;
+	height:190rpx;
+}
+.dishes_left image{
+	width:190rpx;
+	height:190rpx;
+}
+.avoidOverflow{
+	font-size:28rpx;
+	color:#333;
+	height:70rpx;
+	line-height:70rpx;
+}
+.min_dishes{
+	width:50rpx;
+	height:50rpx;
+	border-radius:50%;
+	line-height:46rpx;
+	text-align:center;
+	font-size:40rpx;
+	color:#666;
+	border:solid 1px #666;
+}
+.add_dishes{
+	color:#fff;
+	background:#f2665f;
+	border:none;
+	border:solid 1px #f2665f;
+}
+.add_s{
+	width:30%;
+}
+.add_centerN{
+	width:40%;
+	text-align:center;
+	height:50rpx;
+	line-height:46rpx;
+	color:#666;
+}
+.menus_up{
+	width:160rpx;
+	height:60rpx;
+	background:#f2665f;
+	border-radius:15rpx;
+	line-height:60rpx;
+	text-align:center;
+	font-size:28rpx;
+	color:#fff;
+	margin:0rpx auto;
+}
+.dishes_number{
+	height:60%;
+}
+#menus_up{
+	height:30%;
+}
+.dishes_item{
+	margin-bottom:20rpx;
+}
+.menu_totl{
+	height:100rpx;
+	background:#fff;
+	position:fixed;
+	bottom:0rpx;
+	box-shadow:5rpx 0 15rpx #f2665f;
+	padding:0rpx 5%;
+	width:90%;
+
+}
+.menu_in{
+	width:100%;
+	height:100rpx;
+}
+.menu_inL{
+	width:24%;
+	height:60rpx;
+	background:#f2665f;
+	border-radius:15rpx;
+	line-height:60rpx;
+	text-align:center;
+	color:#fff;
+	font-size:28rpx;
+}
+.menu_inC{
+	width:52%;
+	height:60rpx;
+	line-height:60rpx;
+	color:#666;
+	font-size:28rpx;
+	text-align:center;
+}
+.menu_inC text{
+	color:#f2665f;
+}

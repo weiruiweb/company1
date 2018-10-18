@@ -1,0 +1,235 @@
+<!--service wxml-->
+<view class="tab_click flexRowBetween">
+	<view class="tab_sort {{tapCurrent == 0?'this_tab':''}}" data-id="0" bindtap="tabCont">
+		美发
+	</view>
+	<view class="tab_sort {{tapCurrent == 1?'this_tab':''}}"  data-id="1"  bindtap="tabCont">
+		美容
+	</view>
+	<view class="tab_sort {{tapCurrent == 2?'this_tab':''}}"  data-id="2"  bindtap="tabCont">
+		美体
+	</view>
+</view>
+<view class="tab_cont">
+	<view class="tab_item {{tapCurrent == 0?'tab_this':''}}">
+		<view class="tab_list" bindtap="detail">	
+			<view class="tab_img">
+				<image src="/images_hair/dresser.jpg"></image>
+			</view>
+			<view class="active_info">
+				<view class="active_name">
+					剪吹限时抢购
+				</view>
+				<view class="price_time flexRowBetween">
+					<view class="price">
+						¥222.00
+					</view>
+					<view class="time flexRowBetween">
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="tab_list" bindtap="detail">	
+			<view class="tab_img">
+				<image src="/images_hair/dresser.jpg"></image>
+			</view>
+			<view class="active_info">
+				<view class="active_name">
+					剪吹限时抢购
+				</view>
+				<view class="price_time flexRowBetween">
+					<view class="price">
+						¥222.00
+					</view>
+					<view class="time flexRowBetween">
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="tab_item {{tapCurrent == 1?'tab_this':''}}">
+		<view class="tab_list" bindtap="detail">	
+			<view class="tab_img">
+				<image src="/images_hair/dresser.jpg"></image>
+			</view>
+			<view class="active_info">
+				<view class="active_name">
+					剪吹限时抢购
+				</view>
+				<view class="price_time flexRowBetween">
+					<view class="price">
+						¥222.00
+					</view>
+					<view class="time flexRowBetween">
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="tab_list" bindtap="detail">	
+			<view class="tab_img">
+				<image src="/images_hair/dresser.jpg"></image>
+			</view>
+			<view class="active_info">
+				<view class="active_name">
+					剪吹限时抢购
+				</view>
+				<view class="price_time flexRowBetween">
+					<view class="price">
+						¥222.00
+					</view>
+					<view class="time flexRowBetween">
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="tab_item {{tapCurrent == 2?'tab_this':''}}">
+		<view class="tab_list" bindtap="detail">	
+			<view class="tab_img">
+				<image src="/images_hair/dresser.jpg"></image>
+			</view>
+			<view class="active_info">
+				<view class="active_name">
+					剪吹限时抢购
+				</view>
+				<view class="price_time flexRowBetween">
+					<view class="price">
+						¥222.00
+					</view>
+					<view class="time flexRowBetween">
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="tab_list" bindtap="detail">	
+			<view class="tab_img">
+				<image src="/images_hair/dresser.jpg"></image>
+			</view>
+			<view class="active_info">
+				<view class="active_name">
+					剪吹限时抢购
+				</view>
+				<view class="price_time flexRowBetween">
+					<view class="price">
+						¥222.00
+					</view>
+					<view class="time flexRowBetween">
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="tab_list" bindtap="detail">	
+			<view class="tab_img">
+				<image src="/images_hair/dresser.jpg"></image>
+			</view>
+			<view class="active_info">
+				<view class="active_name">
+					剪吹限时抢购
+				</view>
+				<view class="price_time flexRowBetween">
+					<view class="price">
+						¥222.00
+					</view>
+					<view class="time flexRowBetween">
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>:
+						<view class="tiem_end">
+							03
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="bottom_spacing"></view>
+<view class="navbar">
+    <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Index/index">
+        <view class="nav_img">
+            <image src="/images_hair/navbar1.jpg"></image>
+        </view>
+        <view class="text">首页</view>
+    </view>
+    <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Service/service">
+        <view class="nav_img">
+            <image src="/images_hair/navbar2-a.jpg"></image>
+        </view>
+        <view class="text  this-text" style="color:#fb5676">服务</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairStyle/hairstyle">
+        <view class="nav_img">
+            <image src="/images_hair/navbar3.jpg"></image>
+        </view>
+        <view class="text">发型</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairDresser/hairDresser">
+        <view class="nav_img">
+            <image src="/images_hair/navbar4.jpg"></image>
+        </view>
+        <view class="text">技师</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/User/user">
+        <view class="nav_img">
+            <image src="/images_hair/navbar5.jpg"></image>
+        </view>
+        <view class="text">我的</view>
+    </view>
+</view>

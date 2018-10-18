@@ -1,0 +1,59 @@
+/**index.wxss**/
+
+#comment{
+	padding:0rpx 25rpx;
+}
+.orderlistShow{
+	padding:42rpx 0rpx 32rpx;
+	border-bottom:solid 1rpx #ececec;
+}
+.orderlistShow image{
+	width:160rpx;
+	height:160rpx;
+	margin-right:25rpx;}
+.order_name{width:520rpx;}
+.order_name .text1{
+	font-size:32rpx;
+}
+.orders{
+	font-size:28rpx;
+	color:#808080;
+	margin-top:90rpx;
+}
+.order_price{
+	color:#21c3d4;
+	font-size:32rpx;
+}
+.order_type{
+	width:340rpx;
+}
+.total_money{
+	font-size:28rpx;
+	color:#666;
+}
+.total_money .text2{
+	font-size:28rpx;
+	color:#21c3d4;
+	margin-left:10rpx;
+	font-weight:bold;
+}
+.write_comment{
+	margin-top:46rpx;
+}
+.write_comment text{
+	font-size:32rpx;
+	color:#333;
+}
+.write_comment textarea{
+	width:660rpx;
+	height:310rpx;
+	padding:35rpx 20rpx;
+	border-radius:10rpx;
+	background:#f2f2f2;
+	font-size:28rpx;
+	color:#999;
+	margin-top:38rpx;
+}
+.submit_info{
+	margin-top:70rpx;
+}

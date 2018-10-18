@@ -1,0 +1,106 @@
+<!--mygroup.wxml-->
+<view class="mygroup flexRowBetween">
+	<view class="group_success {{currentId == 0?'this_status':''}}" data-id="0" bindtap="order_status">
+		<text>成功</text>
+	</view>
+	<view class="group_success  {{currentId == 1?'this_status':''}}"  data-id="1" bindtap="order_status" style="border-left:solid 1rpx #e2e2e2;border-right:solid 1rpx #e2e2e2">
+		<text>等待中</text>
+		
+	</view>
+	<view class="group_success  {{currentId == 2?'this_status':''}}"  data-id="2" bindtap="order_status">
+		<text>失败</text>
+		
+	</view>
+</view>
+<view id="myGroup">
+		<view class="">
+			<view class="group_list  {{currentId == 0?'this_group':''}}">
+				<view class="flexRowBetween group_item">
+					<view class="group_info">
+						<view class="group_top">
+							<image src="/images_restaurant/circle.jpg" class="circle"></image>
+							<text class="data">2018.7.28</text>
+						</view>
+						<view class="my_name">
+							<text class="text1">我是团长</text>
+							<text class="text2">花费 220.00元</text>
+						</view>
+					</view>
+					<view class="group_status">
+						<image src="/images_restaurant/success.jpg" class="status"></image>
+					</view>
+				</view>
+				<view class="flexRowBetween group_item">
+					<view class="group_info">
+						<view class="group_top">
+							<image src="/images_restaurant/circle.jpg" class="circle"></image>
+							<text class="data">2018.7.28</text>
+						</view>
+						<text class="text1">我是团长</text>
+						<text class="text2">花费 220.00元</text>
+
+					</view>
+					<image src="/images_restaurant/success.jpg" class="status"></image>
+				</view>
+			</view>
+
+		</view>
+		<view class="">
+			<view class="group_list {{currentId == 1?'this_group':''}}">
+				<view class="flexRowBetween group_item">
+					<view class="group_info">
+						<view class="group_top">
+							<image src="/images_restaurant/circle.jpg" class="circle"></image>
+							<text class="data">2018.7.28</text>
+						</view>
+						<text class="text1">我是团长</text>
+						<text class="text2">花费 220.00元</text>
+
+					</view>
+					<image src="/images_restaurant/wait.jpg" class="status"></image>
+				</view>
+				<view class="flexRowBetween group_item">
+					<view class="group_info">
+						<view class="group_top">
+							<image src="/images_restaurant/circle.jpg" class="circle"></image>
+							<text class="data">2018.7.28</text>
+						</view>
+						<text class="text1">我是团长</text>
+						<text class="text2">花费 220.00元</text>
+
+					</view>
+					<image src="/images_restaurant/wait.jpg" class="status"></image>
+				</view>
+			</view>
+
+		</view>
+		<view class="">
+			<view class="group_list {{currentId == 2?'this_group':''}}">
+				<view class="flexRowBetween group_item">
+					<view class="group_info">
+						<view class="group_top">
+							<image src="/images_restaurant/circle.jpg" class="circle"></image>
+							<text class="data">2018.7.28</text>
+						</view>
+						<text class="text1">我是团长</text>
+						<text class="text2">花费 220.00元</text>
+
+					</view>
+					<image src="/images_restaurant/faild.jpg" class="status"></image>
+				</view>
+				<view class="flexRowBetween group_item">
+					<view class="group_info">
+						<view class="group_top">
+							<image src="/images_restaurant/circle.jpg" class="circle"></image>
+							<text class="data">2018.7.28</text>
+						</view>
+						<text class="text1">我是团长</text>
+						<text class="text2">花费 220.00元</text>
+
+					</view>
+					<image src="/images_restaurant/faild.jpg" class="status"></image>
+				</view>
+			</view>
+
+		</view>
+</view>

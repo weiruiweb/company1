@@ -1,0 +1,26 @@
+<!--userINfo.wxml-->
+<view id="credit">
+	<view class="credit_top">
+		<image src="/images_hair/credit_icon1.jpg"></image>
+		<view>
+		<text>目前积分:</text>
+		<text class="cre_number">{{web_userData.info.data[0].balance}}</text>
+		</view>
+	</view>
+	<view class="cre_detail">
+		<image src="/images_hair/credit_icon2.jpg"></image>
+		<text>消费详情</text>
+	</view>
+	<view class="credit_list flexRowBetween">
+		<view class="cre_data">
+			2015-5-3
+		</view>
+		<view class="adrees">
+			碑林区
+		</view>
+		<view class="credit_number">
+			-800
+		</view>
+	</view>
+</view>
+

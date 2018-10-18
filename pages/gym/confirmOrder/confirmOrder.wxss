@@ -1,0 +1,143 @@
+/**index.wxss**/
+@import "../../../wxParse/wxParse.wxss"; 
+#confirmOrder{
+	width:100%;
+	height:100%;
+	background:#262626;
+}
+.confirm_address{
+	background:#262626;
+
+}
+.order_list{padding:0rpx 25rpx;background:#262626;}
+.order_user{
+	padding:0px 13%;
+	font-size:32rpx;
+	color:#ccc;
+	height:90rpx;
+	line-height:90rpx;
+	width:74%;
+}
+.order_confirm .orderlistShow{
+	width:100%;
+	height:160rpx;
+	padding:42rpx 0rpx 32rpx;
+	border-bottom:solid 1rpx #ececec;
+	align-items:center;
+}
+.order_confirm image{
+	width:160rpx;
+	height:160rpx;}
+.user_address{
+	padding:0px 25rpx 30rpx;
+	border-bottom:solid 1px #ececec;
+	background:#fff;
+	background:#262626;
+}
+.user_address .address_icon{
+	width:30rpx;
+	height:31rpx;
+}
+.next_page image{
+	width:11rpx;
+	height:24rpx;
+	text-align:right
+}
+.detail_address{
+	font-size:24rpx;
+	overflow:hidden;
+	color:#ccc;
+}
+.img_left{width:26%;}
+.order_name{
+	width:74%;
+	align-items:center;
+	overflow:hidden;
+	}
+.order_name .text1{
+	font-size:28rpx;
+	color:#ccc;
+	width:100%;
+	overflow:hidden;
+}
+
+.order_price{
+	color:#bb212e;
+	font-size:32rpx;
+}
+.order_type{
+	font-size:24rpx;
+	color:#ccc;
+	line-height:50rpx;
+}
+.total_money{
+	font-size:28rpx;
+	color:#666;
+}
+.total_money .text2{
+	font-size:28rpx;
+	color:#21c3d4;
+	margin-left:10rpx;
+	font-weight:bold;
+}
+.order_number{
+	color:#6f6f6f;
+	font-size:26rpx;
+}
+.user_message{
+	background:#262626;
+	padding:52rpx 25rpx;
+	overflow:hidden;
+	border-bottom:solid 1px #ececec;
+	align-items:center;
+}
+.text1{
+	font-size:28rpx;
+	color:#ccc;}
+textarea{
+	width:580rpx;
+	height:30rpx;
+	font-size:28rpx;
+	color:#999;
+}
+.pay_footer{
+	height:90rpx;
+	border-top:solid 1px #ececec;
+	position:absolute;
+	bottom:0rpx;
+	width:100%;
+}
+.pay_order{
+
+
+}
+.total_money{	
+	color:#21c3d4;
+	font-size:28rpx;}
+.total_money .text2{
+	font-weight:bold;
+}
+.submit_order{
+	width:35%;
+	height:90rpx;
+	background:linear-gradient(to right,rgba(72,222,223,1.00),rgba(42,154,225,1.00));
+
+	font-size:28rpx;
+	line-height:90rpx;
+	text-align:center;
+	color:#fff;
+}
+
+
+.total_money .text2{margin-left:30rpx;}
+.price_note{
+
+	font-size:16rpx;
+	color:#6f6f6f;}
+textarea{
+	position:none;
+}
+.recive{
+	width:100%;
+	align-items:center;
+}

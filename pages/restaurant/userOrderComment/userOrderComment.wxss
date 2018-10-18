@@ -1,0 +1,72 @@
+page{
+	min-height:100%;
+	width:100%;
+	background:#f2f2f2;
+
+}
+.order_detail{
+	padding:0rpx 6%;
+	width:88%;
+	height:82rpx;
+	line-height:82rpx;
+	font-size:30rpx;
+	color:#333;
+	background:#f2f2f2;
+	border-bottom:solid 1px #e0e0e0;
+}
+.textarea{
+	padding:0 20rpx;
+	background:#fff;
+}
+.textarea textarea{
+	width:710rpx;
+	height:210rpx;
+	padding-top:20rpx;
+	color:#999;
+	font-size:30rpx;
+	border-bottom:solid 1px #e0e0e0;
+}
+.uploder{
+	padding:0px 20rpx 20rpx;
+	overflow:hidden;
+	background:#fff;
+}
+.uploder_all{
+	align-items:center;
+	padding:30rpx 0;
+}
+.uploder_item{
+	width:23%;
+	margin:1%;
+	height:160rpx;
+	line-height:160rpx;
+	text-align:center;
+	overflow:hidden;
+	float:left;
+}
+/***
+.uploder_item image{
+	width:90%;
+	height:90%;
+
+} ***/
+.uploader__input{
+	width:100%;
+	height:100%;
+}
+.uploader__input image{
+	width:100%;
+	height:100%;
+}
+.star_left{
+	width:23%;
+}
+.star_all{
+	width:77%;
+}
+.star_all image{
+	width:28rpx;
+	height:28rpx;
+	float:left;
+	margin-right:5rpx;
+}

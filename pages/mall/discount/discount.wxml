@@ -1,0 +1,59 @@
+<!--userINfo.wxml-->
+
+<wxs module="func" src="../../../utils/func.wxs" />
+
+<view class="discount_sort flexRowBetween">
+	<view class="discount_item {{num== 0?'discount_this':''}}" data-num="0" bindtap="menuClick" >
+		抵扣券 
+		<view class="border-short"></view>
+	</view>
+	<view class="discount_item {{num== 1?'discount_this':''}}" data-num="1" bindtap="menuClick">
+		折扣券 
+		<view class="border-short"></view>
+	</view>
+</view>
+<view class="ticket">
+	<view class="ticket_sort {{num== 0?'madeShow':''}}">
+		<block wx:for="{{web_mainData}}" wx:key="id">
+			<view class="ticket_bg">
+			   <image src="/images/discount1.png"></image>
+			   <view class="ticket_cont">
+			   		<view class="discount_left">
+			   			¥<text>{{item.discount}}</text>
+			   		</view>
+			   		<view class="discount_center">
+			   			<view class="discount_txt1">{{item.description}}</view>
+			   			<view class="discount_txt2">{{func.timestampToTime(item.deadline)}}前有效 可叠加店铺券</view>
+			   			<view class="discount_txt3">限制公众号使用</view>
+			   		</view>
+			   		<view class="discount_right" data-id="{{item.id}}" data-type="{{item.type}}" data-deadline="{{item.deadline}}" bindtap="addOrder"><view class="ac_discount" >立即领取</view></view>
+			   </view>
+			</view>
+		</block>
+	</view>
+
+	<view class="ticket_sort {{num== 1?'madeShow':''}}">
+		<block wx:for="{{web_mainData}}" wx:key="id">
+		  	<view class="ticket_bg">
+			   <image src="/images/discount3.png"></image>
+			   <view class="ticket_cont">
+			   		<view class="discount_left discount_left1" style="width:33%">
+			   			<text>{{item.discount}}</text>折
+			   		</view>
+			   		<view class="discount_center discount_center1" style="width:52.5%">
+			   			<view class="discount_txt1">
+							<view>{{item.description}}</view>
+							<view>最高可减1000元</view>
+			   			</view>
+			   			<view class="discount_txt2">
+			   				<view>{{func.timestampToTime(item.deadline)}}前限量领取</view>
+			   				<view>11.7 限服饰类部分商品</view>
+			   			</view>
+			   		</view>
+			   		<view class="discount_right" data-id="{{item.id}}" data-type="{{item.type}}" data-deadline="{{item.deadline}}" bindtap="addOrder"><view class="ac_discount" >立即领取</view></view>
+			   </view>
+			</view>
+		</block>
+	</view>
+</view>
+

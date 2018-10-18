@@ -1,0 +1,34 @@
+/**index.wxss**/
+.input_note{width:23%;
+	color:#363636;
+	font-size:32rpx;
+}
+.users_detail{
+	width:100%;
+	align-items:center;
+}
+.user_input{
+	height:90rpx;
+	line-height:90rpx;
+	border-bottom:solid 1px #e0e0e0;
+	padding:0px 25rpx;
+	align-items:center;
+	}
+.user_input input{
+	height:32rpx;
+	line-height:32rpx;
+	color:#b2b2b2;
+	font-size:30rpx;
+	width:77%;
+	align-items:center;
+}
+.user_input image{
+	width:11rpx;
+	height:20rpx;
+}
+.address_right text{color:#b2b2b2;font-size:28rpx;}
+.address_right image{margin-left:15rpx;}
+.address_set{width:200rpx;}
+.submit_info{
+	margin-top:60rpx;
+}

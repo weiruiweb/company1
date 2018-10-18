@@ -1,0 +1,111 @@
+page{
+	width:100%;
+	min-height:100%;
+	background:#f2f2f2;
+}
+.comment_save{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:86rpx;
+	font-size:32rpx;
+}
+.has_send{
+	width:50%;
+	text-align:center;
+	color:#b2b2b2;
+	height:85rpx;
+	line-height:85rpx;
+	border-bottom:solid 1rpx #262626;
+	
+}
+.order{
+	height:398rpx;
+	width:100%;
+	background:#fff;
+	border-radius:10rpx;
+	margin-top:20rpx;
+	padding-bottom:20rpx;
+}
+.order_list {
+	height:160rpx;
+	border-bottom:solid 1px #e0e0e0;
+	padding:30rpx 0;
+}
+.order_left{
+	width:30%;
+}
+.order_left image{
+	width:160rpx;
+	height:160rpx;
+}
+.order_right{
+	width:70%;
+	height:100%;
+}
+.order_name{
+	font-size:30rpx;
+	color:#262626;
+	height:50%;
+	align-items:center;
+	display:flex;
+}
+.order_number{
+	font-size:28rpx;
+	color:#808080;
+	height:30%;
+}
+.total{
+	height:100rpx;
+	border-bottom:solid 1px #b2b2b2;
+	font-size:28rpx;
+	line-height:100rpx;
+	text-align:right;
+	color:#fefefe;
+}
+.total text{
+	color:#bb212e;
+}
+.handle{
+	width:170rpx;
+	height:60rpx;
+	border-radius:30rpx;
+	text-align:center;
+	line-height:60rpx;
+	font-size:28rpx;
+	float:right;
+	margin-top:30rpx;
+	border:solid 1px #404040;
+	color:#666;
+	margin-left:30rpx;
+}
+.pay_btn{
+	background:#404040;
+	color:#fff;
+}
+.order_tlt{
+	height:78rpx;
+	width:100%;
+	border-bottom:solid 1px #e0e0e0;
+}
+.tlt_left{
+	width:50%;
+	overflow:hidden;
+	font-size:26rpx;
+	color:#666;
+}
+.tlt_right{
+	text-align:right;
+}
+.flexRowCenter{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+}
+.flex{
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:center;
+}

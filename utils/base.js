@@ -11,7 +11,7 @@ class Base{
     //http 请求类, 当noRefech为true时，不做未授权重试机制
     request(params) {
         var that = this;
-        var baseRestUrl = 'http://solelytech.iicp.net/solely/public/index.php/api/v1/';
+        var baseRestUrl = 'https://api.solelycloud.com/api/public/index.php/api/v1/';
         var url=baseRestUrl + params.url;
         
         

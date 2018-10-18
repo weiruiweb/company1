@@ -1,0 +1,30 @@
+/**index.wxss**/
+.shopping_cart{
+	
+	text-align:center;
+	margin:235rpx auto 0rpx;
+
+}
+.shopping_cart image{
+	width:214rpx;
+	height:192rpx;
+	margin-top:66rpx;
+}
+.note{
+	color:#808080;
+	font-size:32rpx;
+	margin-top:86rpx;
+	text-align:center;
+}
+.goShopping{
+	width:706rpx;
+	height:80rpx;
+	border-radius:50rpx;
+	background:#fd5274;
+	text-align:center;
+	line-height:80rpx;
+	margin:0rpx auto;
+	color:#fff;
+	font-size:36rpx;
+	margin-top:48rpx;
+}

@@ -1,0 +1,42 @@
+<!--manageAddress.wxml-->
+
+
+<view class="user_input">
+	<view class="users_detail flexRowBetween">
+		<view class="input_note">收货人:</view>
+		<input placeholder="请输入收货人" value="{{web_mainData.name}}"  data-key="name" bindblur="inputChange"></input>
+	</view>
+</view>
+<view class="user_input">
+	<view class="users_detail flexRowBetween">
+		<view class="input_note">手机号码:</view>
+		<input placeholder="请输入手机号码" style="width:64%;" value="{{web_mainData.phone}}"  data-key="phone" bindblur="inputChange"></input>
+		<view class="address_right" style="width:13%;">
+			<text>+86</text>
+			<image src="/images/next_page.jpg"></image>
+		</view>
+	</view>
+</view>
+<view class="user_input">
+	<view class="users_detail flexRowBetween" bindtap="chooseLocation" style="justify-content:left">
+
+		<text style="line-height:50px;font-size:30rpx">点击选取位置:</text>
+		<text style="line-height:50px;font-size:30rpx;color:#999">{{web_name}}</text>
+	</view>
+</view>
+
+<view style="width:100%;height:50px;margin:0 auto;line-height:50px;padding:0 3.3%;font-size:30rpx;display:flex">
+	<text style="line-height:50px;font-size:30rpx">详细地址:</text>
+	<textarea value="{{web_mainData.detail}}" style="border:1px solid #E5E5E5;height:200rpx;border-radius:15rpx;width:250px;margin:17px 10px;padding:0 20rpx;line-height:42rpx;" class='user_textarea' data-key="detail" bindinput="inputChange"></textarea>
+</view>
+<view class="user_input flexRowBetween" style="margin-top:170rpx">
+	<view class="input_note address_set">设为默认地址</view>
+	<view class="body-view">
+		<switch bindchange="switch2Change" />
+	</view>
+</view>
+
+<view class="submit_info" bindtap="submit" style="border-radius:50rpx;">
+	保存
+</view>
+

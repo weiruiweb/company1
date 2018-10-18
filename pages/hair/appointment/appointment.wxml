@@ -1,0 +1,47 @@
+<!--appointment.wxml-->
+    <view class="order_dresser flexRowBetween">
+        <view class="dresser_img">
+          <image src="{{web_mainData.mainImg[0].url}}" class=""></image>
+        </view>
+        <view class="order_right">
+          <view class="dresser_name">
+            <text class="text1">{{web_mainData.title}}</text>
+            <text class="text2">{{web_mainData.description}}</text>
+          </view>
+          <view class="star">
+            <image src="/images_hair/star.jpg"></image>
+            <image src="/images_hair/star.jpg"></image>
+            <image src="/images_hair/star.jpg"></image>
+            <image src="/images_hair/star.jpg"></image>
+            <image src="/images_hair/star.jpg"></image>
+          </view>
+        </view>
+    </view>
+    <view class="detail_comment flexRowBetween">
+      <view class="detail  {{tabCurrent == 0?'detail_select':''}}" data-current="0" bindtap="select_this">
+          <text>预约人数:</text><text>168</text>
+      </view>
+      <view class="comment {{tabCurrent == 1?'detail_select':''}}"  data-current="1" bindtap="select_this">
+        <text class="tex1">好评率</text><text class="tex2">99%</text>
+      </view>
+  </view>
+  <view class="service">
+      <image src="/images_hair/credit_icon2.jpg" class="service_icon1"></image>
+      <text>服务项目</text>
+      <image src="/images_hair/next_page.jpg" class="service_icon2"></image>
+  </view>
+  <view class="service_list flexRowBetween">
+      <text class="text1">单人自身洗剪吹一次</text>
+      <text class="text2">¥222.0</text>
+  </view>
+  <view class="service_list flexRowBetween">
+      <text class="text1">单人自身洗剪吹一次</text>
+      <text class="text2">¥222.0</text>
+  </view>
+  <view class="service_list flexRowBetween">
+      <text class="text1">单人自身洗剪吹一次</text>
+      <text class="text2">¥222.0</text>
+  </view>
+  <view class="sumbit_btn" bindtap="beginAppoint">
+      立即预约
+  </view>

@@ -12,7 +12,12 @@ App({
 },
 
   globalData: {
-    thirdapp_id:2,
+    mall_thirdapp_id:2,
+    exhibition_thirdapp_id:8,
+    hair_thirdapp_id:9,
+    hotel_thirdapp_id:10,
+    restaurant_thirdapp_id:11,
+    gym_thirdapp_id:12,
     address_id:'',
     coupon:{},
     paginate: {

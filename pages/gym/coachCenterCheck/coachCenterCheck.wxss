@@ -1,0 +1,107 @@
+
+.comment_save{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:100rpx;
+	font-size:32rpx;
+	background:#262626;
+}
+.has_send{
+	width:14.28%;
+	text-align:center;
+	color:#b2b2b2;
+	height:100rpx;
+	position:relative;
+}
+.has_bg{
+	width:100%;
+	height:100rpx;
+	position:absolute;
+	left:0;
+	top:0
+}
+.has_send image{
+	width:90rpx;
+	height:100rpx;
+}
+.order{
+	height:220rpx;
+	width:100%;
+	background:#262626;
+	border-radius:10rpx;
+	margin-top:20rpx;
+	padding:30rpx 0;
+}
+.banner_bottom{
+	height:124rpx;
+	width:100%;
+}
+.user_left{
+	width:40%;
+}
+.user_imgs{
+	width:22%;
+}
+.user_right{
+	width:38%;
+	font-size:24rpx;
+	color:#fff;
+}
+.user_img{
+	width:115rpx;
+	height:115rpx;
+	border-radius:50%;
+	overflow:hidden;
+}
+.resume{
+	color:#b2b2b2;
+	font-size:24rpx;
+}
+.plan{
+	height:350rpx;
+	width:100%;
+	background:#333;
+	border-radius:10rpx;
+	margin-top:38rpx;
+}
+.plan{
+	padding-top:20rpx;
+}
+.plan_cont .tlt1{
+	font-size:28rpx;
+	color:#e5e5e5;
+}
+.plan_cont .cont1{
+	font-size:24rpx;
+	color:#b2b2b2;
+	line-height:38rpx;
+}
+.plan_cont{
+	margin-bottom:10rpx;
+}
+.handle{
+	width:170rpx;
+	height:60rpx;
+	background:#bb212e;
+	border-radius:30rpx;
+	text-align:center;
+	line-height:60rpx;
+	font-size:28rpx;
+	color:#e5e5e5;
+	float:right;
+}
+.edit_btn{
+	width:60%;
+	height:60rpx;
+	float:right;
+	margin-top:20rpx;
+}
+.time{
+	font-size:22rpx;
+	color:#ccc;
+	height:50%;
+}
+.week{
+	height:50%;
+}

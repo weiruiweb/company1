@@ -1,0 +1,33 @@
+<!--dishesPayment.wxml-->
+<view class="dishesPayment flexRowBetween">
+	<view class="payment_left">订单：000002220</view>
+	<view class="payment_right">共4件合计：377元</view>
+</view>
+<view class="pay_tlt w750">
+	支付方式
+</view>
+<view class="w750">
+	<view class="pay_method flexRowBetween"  data-id="1" bindtap="choosePay">
+		<view class="pay_left flexRowBetween">
+			<view class="pay_icon"><image src="/images_restaurant/pay2.jpg"></image></view>
+			<text>微信支付</text>
+		</view>
+		<view class="pay_right">
+			<image src="{{isChoose ==1?'/images_restaurant/choose.png':''}}"></image>
+		</view>
+	</view>
+</view>
+<view class="w750">
+	<view class="pay_method flexRowBetween"  data-id="2" bindtap="choosePay">
+		<view class="pay_left flexRowBetween">
+			<view class="pay_icon"><image src="/images_restaurant/pay1.png"></image></view>
+			<text>微信支付</text>
+		</view>
+		<view class="pay_right">
+			<image src="{{isChoose ==2?'/images_restaurant/choose.png':''}}"></image>
+		</view>
+	</view>
+</view>
+<view class="submit_info">
+	立即付款
+</view>

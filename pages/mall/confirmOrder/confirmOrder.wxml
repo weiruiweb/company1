@@ -1,0 +1,137 @@
+<!--manageAddress.wxml-->
+<wxs module="func" src="../../../utils/func.wxs" />
+<view id="confirmOrder"  wx:if="{{web_addressData.name}}">
+	<view class="confirm_address" bindtap="intoPath" data-path="/pages/mall/manageAddress/manageAddress" >
+		<view class="order_user flexRowBetween">
+			
+				<view class="user_name" style="width:50%;text-align:left;overflow:hidden;">
+					<text class="text1">收货人:</text>
+					<text class="text1">{{web_addressData.name}}</text>
+				</view>
+				<view class="user_phone" style="width:50%;text-align:right;overflow:hidden;">
+					{{web_addressData.phone}}
+				</view>
+		</view>
+		<view class="user_address">
+			<view class="recive flexRowBetween">
+				<view class="map_icon" style="width:7%;text-align:left">
+					<image class="address_icon" src="/images/user_icon4.jpg"></image>
+				</view>
+				<view class="detail_address" style="width:86%;{{fonts[3].font}}">收货地址：{{web_addressData.province+web_addressData.city+web_addressData.country+web_addressData.detail}}</view>
+				<view class="next_page">
+					<image class="" src="/images/next_page.jpg"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="confirm"  style="display:flex;align-items:center;border-bottom:solid 1px #ececec" bindtap="intoPath" data-path="/pages/mall/manageAddress/manageAddress" wx:else>
+	<view class="order_user"  style="{{fonts[5].font}};padding:0 50rpx" >
+		<view class="order_left" >
+			请选择收货地址
+		</view>
+	</view>
+	<view class="next_page" style="text-align:center;margin-left:360rpx" >
+		<image src="/images/next_page.jpg"></image>
+	</view>
+</view>
+
+<view>
+	<view class="order_list">
+		<view class="order_confirm">
+			<block wx:for="{{web_mainData}}" wx:key="id">
+				<view class="flexRowBetween orderlistShow ">
+					<view class="img_left"><image src="{{item.product.mainImg[0].url}}"></image></view>
+					<view class="order_name">
+						<view class="text1 avoidOverflow">{{item.product.title}}</view>
+						<view class="order_type avoidOverflow">个性化定制</view>
+						<view class="orders flexRowBetween">
+							<text class="order_price">¥{{item.product.price}}</text>
+							<text class="order_number">X{{item.count}}</text>
+						</view>
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+</view>
+<view class="w710 delivery flex1 font28">
+	<view class="delivery_item flex1"  bindtap="chooseBuyWay" data-buytype="delivery">
+		<image src="{{web_buyType =='delivery'?'/images/select_active.jpg':'/images/select.png'}}"></image>
+		快递配送
+	</view>
+	<view class="delivery_item flex1"  bindtap="chooseBuyWay" data-buytype="pickself">
+		<image src="{{web_buyType =='pickself'?'/images/select_active.jpg':'/images/select.png'}}"></image>
+		上门自提
+	</view>
+</view>
+
+<block wx:for="{{web_orderData}}" wx:key="id" >
+	<view class="ticket flex" wx:if="{{item.type=='4'}}">
+	    <view class="ticket_bg">
+	        <image src="/images/discount4.png"></image>
+	        <view class="ticket_cont">
+	            <view class="discount_left discount_left1" style="width:40%">
+	                <text>{{item.products[0].snap_product.discount}}</text>折
+	            </view>
+	            <view class="discount_center discount_center1" style="width:60%">
+	                <view class="discount_txt1">
+	                    <view>{{item.products[0].snap_product.description}}</view>
+	                </view>
+	                <view class="discount_txt2">
+	                    <view>{{func.timestampToTime(item.products[0].snap_product.deadline)}}点限量领取</view>
+	                    <view>11.7 限服饰类部分商品</view>
+	                </view>
+	            </view>
+	        </view>
+	        <view class="select_discount">
+	        	<checkbox-group bindchange="checkboxChange">
+				    <checkbox value="{{item.id}}" checked="{{item.checked}}"/>{{item.value}}
+				</checkbox-group>
+	        </view>
+	    </view>
+	</view>
+
+
+
+	<view class="ticket flex"  wx:else>
+	    <view class="ticket_bg">
+	        <image src="/images/discount5.png"></image>
+	        <view class="ticket_cont">
+	            <view class="discount_left">
+	                ¥
+	                <text>{{item.products[0].snap_product.discount}}</text>
+	            </view>
+	            <view class="discount_center">
+	                <view class="discount_txt1">{{item.products[0].snap_product.description}}</view>
+	                <view class="discount_txt2">{{func.timestampToTime(item.products[0].snap_product.deadline)}}当日有效 可叠加店铺券</view>
+	                <view class="discount_txt3" style="background: #d6d6d6;color:#5d5d5d;">限制公众号使用</view>
+	            </view>
+	        </view>
+	            <view class="select_discount">
+	        	<checkbox-group bindchange="checkboxChange">
+				    <checkbox value="{{item.id}}" checked="{{item.checked}}"/>{{item.value}}
+				</checkbox-group>
+	        </view>
+	    </view>
+	</view>
+</block>
+
+
+<view style="width:100%;height:90rpx;"></view>
+<view class="pay_footer">
+	<view class="pay_order " style="display:flex;width:100%;align-items:center;">
+		<view class="total_money" style="width:70%;margin-right:5%;text-align:right;">
+			<view class="heji" style="width:100%;text-align:right;">
+				<text>合计:</text>
+				<text class="text2">¥{{web_totalPrice}}</text>
+			</view>
+			<view class="price_note" style="display:block;width:100%;text-align:right;">
+				<text style="">（实际价格，请与客服沟通）</text>
+			</view>
+		</view>
+		<view class="submit_order" bindtap="addOrder">
+			提交订单
+		</view>
+	</view>
+</view>

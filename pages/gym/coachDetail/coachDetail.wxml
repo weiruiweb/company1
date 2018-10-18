@@ -1,0 +1,119 @@
+<!--userINfor.wxml-->
+<view class="banner">
+    <image src="/images_gym/coach.jpg"></image>
+    <view class="coach_name">库里教练</view>
+
+</view>
+<view class="ader flexRowCenter">
+    <image src="/images_gym/coach_icon3.png"></image>
+    人要是不去健身，那和咸鱼有什么区别
+    <image src="/images_gym/coach_icon4.png"></image>
+</view>
+<view class="w710">
+    <view class="intro_cont">
+        <view class="w710">
+            <view class="user_tlt">
+                <view class="tlt_cont"><image src="/images_gym/user_icon6.png"></image>获奖经历</view>
+            </view>
+            <view class="intro_detail">
+                教练：内容内容内容内容内容
+            </view>
+          </view>
+      </view>
+</view>
+<view class="w710" style="margin-top: 20rpx;">
+    <view class="intro_cont" style="height:278rpx;">
+        <view class="w710">
+            <view class="user_tlt">
+                <view class="tlt_cont"><image src="/images_gym/user_icon6.png"></image>个人故事</view>
+            </view>
+            <view class="intro_detail" style="height:178rpx;">
+                教练：内容内容内容内容内容
+            </view>
+          </view>
+      </view>
+</view>
+<view class="w710">
+    <view class="kemu">选择科目</view>
+    <view class="kemu_cont flexRowBetween">
+        <view class="kemu_item {{currentId == 0?'this_item':''}}" data-id="0" bindtap="choose_this">瑜伽</view>
+        <view class="kemu_item {{currentId == 1?'this_item':''}}" data-id="1"   bindtap="choose_this">瑜伽</view>
+        <view class="kemu_item {{currentId == 2?'this_item':''}}" data-id="2" bindtap="choose_this">瑜伽</view>
+        <view class="kemu_item {{currentId == 3?'this_item':''}}" data-id="3"  bindtap="choose_this">瑜伽</view>
+    </view>
+</view>
+<view class="w710">
+    <view class="appiont">
+       <view class="w710">
+            <view class="appiont_time flexRowBetween">
+                <view class="time_item" data-id="0" bindtap="select">
+                    <view class="text1">7月24日</view>
+                    <view class="text2">星期二</view>
+                    <view class="up_down">
+                       <image  src="{{selectId == 0?'/images_gym/up_down.png':''}}"></image>
+                    </view>
+                </view>
+                <view class="time_item" data-id="1" bindtap="select">
+                    <view class="text1">7月24日</view>
+                    <view class="text2">星期二</view>
+                    <view class="up_down">
+                       <image  src="{{selectId == 1?'/images_gym/up_down.png':''}}"></image>
+                    </view>
+                </view>
+                <view class="time_item" data-id="2" bindtap="select">
+                    <view class="text1">7月24日</view>
+                    <view class="text2">星期二</view>
+                    <view class="up_down">
+                       <image  src="{{selectId == 2?'/images_gym/up_down.png':''}}"></image>
+                    </view>
+                </view>
+                <view class="time_item" data-id="3" bindtap="select">
+                    <view style="text-align:center;margin-top:20rpx;"><image src="/images_gym/date1.png"></image></view>
+                    <view class="text2">星期二</view>
+                    <view class="up_down">
+                       <image  src="{{selectId == 3?'/images_gym/up_down.png':''}}"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="select_time">
+                <view class="w710">
+                    <view class="select1">
+                        <view class="appont1 flexRowBetween">
+                            <view class="appont_left">已被预约时间</view>
+                            <view class="appont_left appont_right">
+                                <view>11：30-14：00</view>
+                                <view>11：30-14：00</view>
+                                <view>11：30-14：00</view>
+                                <view>11：30-14：00</view>
+                            </view>
+                        </view>
+                        <view class="appont1 appont2 flexRowBetween">
+                            <view class="appont_left" style="color:#bb212e;">输入预约时间</view>
+                            <view class="appont_left appont_right">
+                                <view style="margin:10rpx 0;">
+                                    <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                                    <view class="picker flexRowCenter">
+                                      <view class="w_30">起始时间:</view><view class="w_70">{{time}}</view>
+                                    </view>
+                                  </picker>
+                              </view>
+                                <view  style="margin:10rpx 0;">
+                                    <picker mode="time" value="{{time1}}" start="09:01" end="21:01" bindchange="bindTimeChange1">
+                                        <view class="picker flexRowCenter">
+                                         <view class="w_30">结束时间:</view><view class="w_70">{{time1}}</view>
+                                        </view>
+                                      </picker>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+       </view> 
+    </view>
+</view>
+<view class="w710 flexRowBetween " id="phone">
+    <view class="phone">预留电话：</view>
+    <input placeholder="请输入预留电话"></input>
+</view>
+<button class="submit_info">预约教练</button>

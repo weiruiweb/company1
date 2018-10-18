@@ -1,0 +1,97 @@
+<!--userComment.wxml-->
+<view class="comment_list">
+	<view class="comment_item flexRowBetween">
+		<view class="commet_user">
+			<image src="/images_restaurant/index_icon4.png"></image>
+		</view>
+		<view class="commet_cont">
+			<view class="user_name">
+				用户名
+			</view>
+			<view class="star flexRowBetween">
+				<view class="star_xt">打分</view>
+				<view class="star_all">
+					<image src="/images_restaurant/star.png"></image>
+					<image src="/images_restaurant/star.png"></image>
+					<image src="/images_restaurant/star.png"></image>
+					<image src="/images_restaurant/star.png"></image>
+					<image src="/images_restaurant/star.png"></image>
+				</view>
+			</view>
+		</view>
+		<view class="commet_data">
+			2018-8-8 <text>18:30</text>
+		</view>
+	</view>
+	<view class="com_content">
+			味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~
+	</view>
+	<view class="com_handle flexRowBetween">
+		<view class="look">浏览276</view>
+		<view class="com_del">删除</view>
+	</view>
+</view>
+<view class="comment_list">
+	<view class="comment_item flexRowBetween">
+		<view class="commet_user">
+			<image src="/images_restaurant/index_icon4.png"></image>
+		</view>
+		<view class="commet_cont">
+			<view class="user_name">
+				用户名
+			</view>
+			<view class="star flexRowBetween">
+				<view class="star_xt">打分</view>
+				<view class="star_all">
+					<image src="/images_restaurant/star.png"></image>
+					<image src="/images_restaurant/star.png"></image>
+					<image src="/images_restaurant/star.png"></image>
+					<image src="/images_restaurant/star.png"></image>
+					<image src="/images_restaurant/star.png"></image>
+				</view>
+			</view>
+		</view>
+		<view class="commet_data">
+			2018-8-8 <text>18:30</text>
+		</view>
+	</view>
+	<view class="com_content">
+			味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~
+	</view>
+	<view class="com_handle flexRowBetween">
+		<view class="look">浏览276</view>
+		<view class="com_del">删除</view>
+	</view>
+</view>
+<view class="comment_list">
+	<view class="comment_item flexRowBetween">
+		<view class="commet_user">
+			<image src="/images_restaurant/index_icon4.png"></image>
+		</view>
+		<view class="commet_cont">
+			<view class="user_name">
+				用户名
+			</view>
+			<view class="star flexRowBetween">
+				<view class="star_xt">打分</view>
+				<view class="star_all">
+					<image src="/images_restaurant/star.png"></image>
+					<image src="/images_restaurant/star.png"></image>
+					<image src="/images_restaurant/star.png"></image>
+					<image src="/images_restaurant/star.png"></image>
+					<image src="/images_restaurant/star.png"></image>
+				</view>
+			</view>
+		</view>
+		<view class="commet_data">
+			2018-8-8 <text>18:30</text>
+		</view>
+	</view>
+	<view class="com_content">
+			味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~味道很不错的，环境也漂亮~
+	</view>
+	<view class="com_handle flexRowBetween">
+		<view class="look">浏览276</view>
+		<view class="com_del">删除</view>
+	</view>
+</view>

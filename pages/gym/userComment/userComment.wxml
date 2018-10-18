@@ -1,0 +1,36 @@
+<!--manageAddress.wxml-->
+<view class="userComment">
+	<view class="comment_save"  >
+		<view class="has_send" data-num="1" bindtap="menuClick" style="{{num == 1?'color:#bb212e':''}};border-right:solid 1px #fff;"> 
+			已发布
+		</view>
+		<view class="will_send" data-num="0" bindtap="menuClick" style="{{num == 0?'color:#bb212e':''}}"> 
+			已保存
+		</view>
+	</view>
+</view>
+<view class="comment_cont">
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="comment_list">
+			<view class="comment_txt"  >
+				{{item.content}}
+			</view>
+			<view class="comment_img">
+				<block wx:for="{{item.mainImg}}" wx:key="id">
+            		<view class="img_list">
+              			<image src="{{item.url}}"></image>
+            		</view>
+          		</block>
+			</view>
+			<view class="comment_handle" >	
+				<view class="comment_left">
+					<view class="comment_btn" wx:if="{{item.passage1 == '0'}}" bindtap="messageUpdate" data-id="{{item.id}}">发布</view>
+					<view class="comment_btn comment_btn1" bindtap="messageDelete" data-id="{{item.id}}">删除</view>
+				</view>
+				<view class="comment_right" >
+					{{item.create_time}}
+				</view>
+			</view>
+		</view>
+	</block>
+</view>

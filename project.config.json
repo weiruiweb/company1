@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 19,
+			"current": 24,
 			"list": [
 				{
 					"id": 0,
@@ -152,7 +152,37 @@
 				{
 					"id": -1,
 					"name": "我的优惠券",
-					"pathName": "pages/userDiscount/userDiscount"
+					"pathName": "pages/userDiscount/userDiscount",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/exhibition/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "美发首页",
+					"pathName": "pages/hair/Index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "酒店首页",
+					"pathName": "pages/hotel/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商城首页",
+					"pathName": "pages/mall/Index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "美发首页",
+					"pathName": "pages/hair/Index/index"
 				}
 			]
 		}

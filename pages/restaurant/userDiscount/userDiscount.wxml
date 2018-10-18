@@ -1,0 +1,29 @@
+<!--userDiscount.wxml-->
+<view class="userDiscount">
+	<view class="top_txt" style="font-size:30rpx;color:#666;">
+		未使用
+	</view>
+	<block wx:for="{{web_mainData}}" wx:key="id">
+	<view class="discount_item">
+		<view  style="font-size:24rpx;color:#666;line-height:86rpx;">领取时间：{{item.create_time}}</view>
+		<view class="discount_bg">
+			<view class="discout_img">	
+				<image src="{{item.products[0].snap_product.mainImg[0].url}}"></image>
+			</view>
+			<view class="discount_money flexRowBetween">
+				<view class="discout_left">
+					{{item.products[0].snap_product.title}}
+				</view>
+				<view class="discout_right">
+					<view class="discount_top" >
+						{{item.products[0].snap_product.description}}
+					</view>
+					<view class="discount_bottom">
+						已领取
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+   	</block>
+</view>

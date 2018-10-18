@@ -1,0 +1,20 @@
+/**album.wxss**/
+.use_diacount{
+	font-size:30rpx;
+	color:#666;
+	height:90rpx;
+	line-height:90rpx;
+	padding-left:56rpx;
+}
+.discout_card{
+	padding-left:56rpx;
+}
+.discout_card .date{
+	font-size:20rpx;
+	height:66rpx;
+	line-height:66rpx;
+}
+.discout_card image{
+	width:562rpx;
+	height:228rpx;
+}

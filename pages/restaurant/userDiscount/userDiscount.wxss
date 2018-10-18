@@ -1,0 +1,44 @@
+.userDiscount{
+	padding:32px 64rpx;
+}
+.discount_bg{
+	position:relative;
+}
+.discout_img image{
+	width:563rpx;
+	height:224rpx;
+}
+.discount_money{
+	position:absolute;
+	top:0px;
+	height:224rpx;
+	width:100%;
+}
+.discout_left{
+	width:50%;
+	height:224rpx;
+	line-height:224rpx;
+	font-size:80rpx;
+	color:#fff;
+	text-align:center;
+}
+.discout_right{
+	width:50%;
+	height:160rpx;
+}
+.discount_top{
+	color:#fff;
+	font-size:36rpx;
+	height:40%;
+}
+.discount_bottom{
+	width:176rpx;
+	height:60rpx;
+	border-radius:20rpx;
+	background:#fffae3;
+	color:#f2665f;
+	font-size:30rpx;
+	line-height:60rpx;
+	text-align:center;
+
+}

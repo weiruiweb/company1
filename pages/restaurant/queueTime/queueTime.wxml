@@ -1,0 +1,76 @@
+<!--queueTime.wxml-->
+<view class="w750">
+	<view class="queueTime">
+		<view class="queue_list flexRowBetween">
+			<view class="input_before">当前排号:</view>
+			<view class="queue_input">
+				20号
+			</view>
+		</view>
+		<view class="queue_list flexRowBetween">
+			<view class="input_before">你的号码:</view>
+			<view class="queue_input">
+				<text>23</text>号
+			</view>
+		</view>
+		<view class="queue_list flexRowBetween">
+			<view class="input_before">等待时间:</view>
+			<view class="queue_input">
+				<text>23</text>分钟
+			</view>
+		</view>
+		<view class="queue_list flexRowBetween">
+			<view class="queue_input">
+				领取优惠券
+			</view>
+			<view class="input_before" style="text-align:right;">
+				<image src="/images_restaurant/next_page.jpg"></image>
+			</view>
+		</view>
+	</view>
+	<view class="discout flexRowBetween">
+		<view class="discount_item">
+			<view class="discount_bg">
+				<view class="discout_img">	
+					<image src="/images_restaurant/discont.jpg"></image>
+				</view>
+				<view class="discount_money flexRowBetween">
+					<view class="discout_left">
+						10
+					</view>
+					<view class="discout_right">
+						<view class="discount_top" >
+							满88元使用
+						</view>
+						<view class="discount_bottom">
+							立即领取
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="discount_space"></view>
+		<view class="discount_item">
+			<view class="discount_bg">
+				<view class="discout_img">	
+					<image src="/images_restaurant/discont.jpg"></image>
+				</view>
+				<view class="discount_money flexRowBetween">
+					<view class="discout_left">
+						10
+					</view>
+					<view class="discout_right">
+						<view class="discount_top" >
+							满88元使用
+						</view>
+						<view class="discount_bottom">
+							立即领取
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+

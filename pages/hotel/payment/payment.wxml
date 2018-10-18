@@ -1,0 +1,18 @@
+<!--payment.wxml-->
+<view class="pay_money">
+    <view class="pay_before">
+      消费金额
+    </view>
+    <input placeholder="请输入消费金额"></input>
+</view>
+<view class="pay_method flex">
+  <view class="pay_txt">
+    付款方式
+  </view>
+  <view class="chose_pay">
+    <view class="pay1">
+        <image src="/images_hotel/pay2.jpg"></image>
+        <text class="text1">微信支付</text>
+    </view>
+  </view>
+</view>

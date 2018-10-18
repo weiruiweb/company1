@@ -1,0 +1,214 @@
+<!--detail.wxml-->
+
+<wxs module="func" src="../../../utils/func.wxs" />
+ 
+
+
+<view id="details">
+<view class="banner">
+	<image src="/images/detail.jpg"></image>
+</view>
+<view class="detail">
+	<view class="product_top">
+		<view class="name_share flexRowBetween" style="align-items:center;">
+			<view class="product_name avoidOverflow" style="width:80%;">
+				{{web_mainData.title}}
+			</view>
+			<button style="width:20%;text-align:right;opacity:0" bindtap="onShareAppMessage"  open-type="share">
+				<image src="/images/share.jpg"></image>
+			</button>
+		</view>
+		<view class="guarantee flexRowBetween">
+			<text>【{{web_mainData.passage1}}】</text><text>【{{web_mainData.passage2}}】</text>
+		</view>
+		<view class="price_sale flexRowBetween">
+			<view class="price">
+				￥{{web_mainData.price}}元
+			</view>
+			<view class="sale">
+				销量2888笔
+			</view>
+		</view>
+	</view>
+	<view class="choose flexRowBetween" bindtap="selectModel">
+		<view class="choose_left flexRowBetween" style="width:80%;overflow:hidden;">
+			<text class="text1" style="{{fonts[2].font}}">请选择规格</text>
+
+		</view>
+		<view class="next_page" style="width:20%;text-align:right;">	
+			<image src="/images/next_page.jpg"></image>
+		</view>
+	</view>
+	<view class="detail_comment flexRowBetween">
+		<view class="detail  {{tabCurrent == 0?'detail_select':''}}" data-current="0" bindtap="select_this">
+			详情
+		</view>
+		<view class="comment {{tabCurrent == 1?'detail_select':''}}"  data-current="1" bindtap="select_this">
+			评价
+		</view>
+	</view>
+	<view class="detail_show">
+		<view id="detail" style="{{tabCurrent == 0?'display:block':'display:none'}}">
+			<view class="content ql-editor" >
+                <import src="../../wxParse/wxParse.wxml"/>
+                <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+            </view> 
+		</view>
+		<view id="comment" style="{{tabCurrent == 1?'display:block':'display:none'}}">
+			<view class="good_com flexRowBetween">
+				<view class="comment_number">
+					评价(120)
+				</view>
+				<view class="good_percent">
+					<text>好评率</text>
+					<text class="percent">99%</text>
+					<image src="/images/next_page.jpg"></image>
+				</view>
+			</view>
+			<view class="comment_list ">
+				<view class="flexRowBetween" style="align-items:center;">
+					<view class="comment_user" style="display:flex;align-items:center;">
+						<view class="user_img">
+							<image src="/images/user1.jpg"></image>
+						</view>
+						<view class="txts" style="height:58rpx;">
+							<view class="text1">米桃子</view>
+							<view class="text2">2015.3.2</view>
+						</view>
+					</view>
+					<view class="star flexRowBetween">
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+					</view>
+				</view>
+				<view class="comment_cont">
+					很满意的一次购物很满意的一次购物很满意的一次购物
+					很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物
+				</view>
+			</view>
+			<view class="comment_list ">
+				<view class="flexRowBetween"  style="align-items:center;">
+					<view class="comment_user" style="display:flex;align-items:center;">
+						<view class="user_img">
+							<image src="/images/user1.jpg"></image>
+						</view>
+						<view class="txts" style="height:58rpx;">
+							<view class="text1">米桃子</view>
+							<view class="text2">2015.3.2</view>
+						</view>
+					</view>
+					<view class="star flexRowBetween">
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+					</view>
+				</view>
+				<view class="comment_cont">
+					很满意的一次购物很满意的一次购物很满意的一次购物
+				</view>
+			</view>
+			<view class="comment_list ">
+				<view class="flexRowBetween"  style="align-items:center;">
+					<view class="comment_user" style="display:flex;align-items:center;">
+						<view class="user_img">
+							<image src="/images/user1.jpg"></image>
+						</view>
+						<view class="txts" style="height:58rpx;">
+							<view class="text1">米桃子</view>
+							<view class="text2">2015.3.2</view>
+						</view>
+					</view>
+					<view class="star flexRowBetween">
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+					</view>
+				</view>
+				<view class="comment_cont">
+					很满意的一次购物很满意的一次购物很满意的一次购物
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="{{isShow?'mask':''}}"></view>
+
+</view>
+<view id="buy">
+	<view class="buy_click">
+		<view class="consult">
+			<image src="/images/kefu1.png"></image>
+			<view class="text1">客服</view>
+		</view>
+		<view class="consult collect" bindtap="collect">
+			<image src="{{url}}"></image>
+			<view class="text1">收藏</view>
+		</view>
+		<view class="go_buy flexRowBetween" >
+			<view class="shoppingCart" bindtap="selectModel" data-type="addCart">
+				加入购物车
+			</view>
+			<view class="go_pay" bindtap="selectModel" data-type="buy">
+				立即购买
+			</view>
+		</view>
+	</view>
+</view>
+<view id="choose" class="{{isShow?'sildeIn':'slideOut'}}">
+	<view style="padding:0 2.5%">
+		<view class="flexRowBetween pricity">
+			<view class="choose_pro">
+				<image src="{{web_skuData.mainImg[0].url}}"></image>
+			</view>
+			<view class="product_txt">
+				<view class="pro_name">{{web_skuData.title}}</view>
+				<view class="pro_type">
+					个性化定制
+				</view>
+				<view class="price_choose">
+				￥{{web_totalPrice?web_totalPrice:web_skuData.price}}
+				</view>
+			</view>
+			<view class="close" bindtap="close">
+			<image src="/images/close.jpg"></image>
+			</view>
+		</view>
+		<block wx:for="{{web_labelData}}" wx:key="id" wx:for-item="cc_item">
+			<view id="type" class="flexRowBetween">
+				<view class="pro_type"  >	
+					{{cc_item.title}}
+				</view>
+				<block wx:for="{{web_labelData[index].child}}" wx:key="id" wx:for-item="c_item">
+					<view class="pro_types" data-id="{{c_item.id}}" data-parentid="{{cc_item.id}}"  bindtap="{{func.inArray(c_item.id,web_choose_sku_item)!=-1?'chooseSku':''}}" style="{{func.inArray(c_item.id,web_choose_sku_item)==-1?'border:1px dashed  #e5e5e5;color:#e5e5e5;':(func.inArray(c_item.id,web_sku_item)!=-1?'border:1px solid #21c3d4;color:#21c3d4;':'')}}">
+						{{c_item.title}}
+					</view>
+				</block>
+			</view>
+		</block>
+		<view class="choose_number flexRowBetween">
+			<view class="number_txt">
+				数量
+			</view>
+			<view class="edit_number flexRowBetween">
+				<view class="minus" style="line-height:45rpx;" data-type="-" bindtap="counter" data-id="{{web_skuData.id}}">-</view>
+				<input class="number" type="number" bindchange="bindManual" value="{{web_count}}" />
+				<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuData.id}}">+</view>
+			</view>
+		</view>
+		
+	</view>	
+	<view bindtap="{{web_buttonType=='buy'?'goBuy':'addCart'}}">
+		<view class="shoppingCart" style="width:100%;height:80rpx;line-height:80rpx;color:#fff">
+			确    认
+		</view>
+	</view>
+</view>
+
+

@@ -1,0 +1,145 @@
+<!--userOrder.wxml-->
+
+<view id="order">
+  <view class="order_list">
+    <view class="order_tlt">
+      <view class="order_title">
+        <view class="order_data" style="{{fonts[3].font}}">
+          订单号:0212315 <text class="time" style="margin-left:20rpx;color:#666;">2018-2-18</text>
+        </view>
+        <view class="order_datas" style="{{fonts[2].font}}">
+          正在制作中
+        </view>
+      </view>
+    </view>
+    <view class="order_infor">
+      <view class="order_item flexRowBetween">
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+      </view>
+    </view>
+    <view class="order_numbers flexRowBetween">
+      <view class="order_time" style="color:#666;font-size:24rpx;">
+        提交订单已：10分钟
+      </view>
+      <view class="order_total">
+      <text style="margin-right:20rpx;">共8件</text>合计：<text style="color:#f2665f;">688元</text>
+      </view>
+    </view>
+    <view class="order_handle">
+      <view class="order_del">
+          <view class="del_btn order_det" style="{{fonts[3].font}}" bindtap="takeDeatil">外卖订单</view>
+          <view class="del_btn order_det" style="{{fonts[3].font}}" bindtap="userDeatil">订单详情</view>
+          <view class="del_btn" style="{{fonts[3].font}}">取消订单</view>
+      </view>
+    
+    </view>
+  </view>
+  <view class="order_list">
+    <view class="order_tlt">
+      <view class="order_title">
+        <view class="order_data" style="{{fonts[3].font}}">
+          订单号:0212315 <text class="time" style="margin-left:20rpx;color:#666;">2018-2-18</text>
+        </view>
+        <view class="order_datas" style="{{fonts[2].font}}">
+          正在制作中
+        </view>
+      </view>
+    </view>
+    <view class="order_infor">
+      <view class="order_item flexRowBetween">
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+      </view>
+    </view>
+    <view class="order_numbers flexRowBetween">
+      <view class="order_time" style="color:#666;font-size:24rpx;">
+        提交订单已：10分钟
+      </view>
+      <view class="order_total">
+      <text style="margin-right:20rpx;">共8件</text>合计：<text style="color:#f2665f;">688元</text>
+      </view>
+    </view>
+    <view class="order_handle">
+      <view class="order_del">
+          <view class="del_btn order_det" style="{{fonts[3].font}}" bindtap="userOrderComment">去评价</view>
+          <view class="del_btn order_det" style="{{fonts[3].font}}">订单详情</view>
+          <view class="del_btn " style="{{fonts[3].font}}">取消订单</view>
+
+      </view>
+    
+    </view>
+  </view>
+  <view class="order_list">
+    <view class="order_tlt">
+      <view class="order_title">
+        <view class="order_data" style="{{fonts[3].font}}">
+          订单号:0212315 <text class="time" style="margin-left:20rpx;color:#666;">2018-2-18</text>
+        </view>
+        <view class="order_datas" style="{{fonts[2].font}}">
+          正在制作中
+        </view>
+      </view>
+    </view>
+    <view class="order_infor">
+      <view class="order_item flexRowBetween">
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+        <view class="order_left">
+          <image src="/images_restaurant/product.jpg"></image>
+        </view>
+      </view>
+    </view>
+    <view class="order_numbers flexRowBetween">
+      <view class="order_time" style="color:#666;font-size:24rpx;">
+        提交订单已：10分钟
+      </view>
+      <view class="order_total">
+      <text style="margin-right:20rpx;">共8件</text>合计：<text style="color:#f2665f;">688元</text>
+      </view>
+    </view>
+    <view class="order_handle">
+      <view class="order_del">
+          <view class="del_btn order_det" style="{{fonts[3].font}}">订单详情</view>
+          <view class="del_btn" style="{{fonts[3].font}}">取消订单</view>
+      </view>
+    
+    </view>
+  </view>
+ </view>  

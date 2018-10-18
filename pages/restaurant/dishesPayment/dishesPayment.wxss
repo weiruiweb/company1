@@ -1,0 +1,47 @@
+.dishesPayment{
+	height:170rpx;
+	width:68%;
+	padding:0px 16%;
+	background:#f2665f;
+	text-align:center;
+	font-size:28rpx;
+	color:#fff;
+}
+.pay_tlt{
+	font-size:30rpx;
+	color:#333;
+	height:100rpx;
+	line-height:100rpx;
+}
+.pay_left{
+	width:35%;
+	height:76rpx;
+	font-size:30rpx;
+	color:#333;
+}
+.pay_right{
+	widht:68%;
+	padding-right:7%;
+	text-align:right;
+}
+.pay_icon image{
+	width:76rpx;
+	height:76rpx;
+	margin:0 22rpx;
+}
+.pay_method{
+	box-shadow:0 0 10rpx #666;
+	border-radius:10rpx;
+	height:114rpx;
+	align-items:center;
+}
+.pay_right image{
+	width:26rpx;
+	height:25rpx;
+}
+.pay_method{
+	margin-bottom:22rpx;
+}
+.submit_info{
+	margin-top:120rpx;
+}

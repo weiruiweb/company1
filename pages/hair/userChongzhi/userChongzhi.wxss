@@ -1,0 +1,36 @@
+/**payment.wxss**/
+page{
+	background:#f5f5f5;
+}
+.pay_money{
+	margin:20rpx 22rpx;
+	height:80rpx;
+	line-height:80rpx;
+	background:#fff;
+	border-radius:10rpx;
+	padding:0rpx 24rpx;
+}
+.pay_before{
+	font-size:26rpx;
+	color:#535353;
+	line-height:80rpx;
+	float:left;
+}
+input{
+	height:24rpx;
+	font-size:20rpx;
+	line-height:80rpx;
+	padding-top:15rpx;
+	padding-left:42rpx;
+}
+.pay_money input{
+	
+}
+.pay_money image{
+	width:18rpx;
+	height:32rpx;
+	margin-top:25rpx;
+}
+.submit_info {
+	margin-top:140rpx;
+}

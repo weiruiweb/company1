@@ -1,0 +1,10 @@
+<!--discount.wxml-->
+   <view class="use_diacount">
+     未使用
+   </view>
+   <block wx:for="{{web_mainData}}" wx:key="id">
+     <view class="discout_card">
+        <view class="date">领取时间:{{item.create_time}}</view>
+        <image src="{{item.products[0].snap_product.mainImg[0].url}}"></image>
+     </view>
+   </block>

@@ -1,0 +1,62 @@
+<!--coach.wxml-->
+<view class="w710">
+    <block wx:for="{{web_mainData}}" wx:key="id">
+        <view class="coach">
+            <view class="coach_cont flexRowBetween" bindtap="intoPath" data-path="/pages/gym/coachDetail/coachDetail?id={{item.id}}">
+                <view class="coach_img">
+                    <image src="{{item.mainImg[0].url}}"></image>
+                </view>
+                <view class="coach_left">
+                    <view class="coach_icon">
+                        <image src="/images_gym/coach2.png"></image>
+                        {{item.title}}
+                    </view>
+                    <view class="coach_course flex">
+                        <view>瑜伽</view><view>塑形</view><view>健身</view>
+                    </view>
+                </view>
+                <view class="coach_right">
+                    <image src="/images_gym/coach1.png"></image>
+                </view>
+            </view>
+        </view>
+    </block> 
+</view>
+<view class="solely" style="font-size:20rpx;color:#666;text-align:center;">
+  技术支持:西安纯粹科技有限公司
+</view>
+<view style="height:120rpx;width:100%;">
+</view>
+<view class="navbar">
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/index/index">
+        <view class="nav_img">
+          <image src="/images_gym/navbar1.png" style="width:64rpx;height:54rpx;"></image>
+        </view>
+        <view class="text" style="font-size:26rpx;">健身房</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/course/course">
+        <view class="nav_img">
+           <image src="/images_gym/navbar2.png" style="width:64rpx;height:54rpx;"></image>
+        </view>
+        <view class="text" style="font-size:26rpx;">分类</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/send/send">
+        <view class="nav_img">
+           <image src="/images_gym/navbar3.png" style="width:64rpx;height:54rpx;"></image>
+        </view>
+        <view class="text" style="font-size:26rpx;">发布</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/coach/coach">
+        <view class="nav_img">
+           <image src="/images_gym/navbar4-a.png" style="width:64rpx;height:54rpx;"></image>
+        </view>
+        <view class="text  this-text" style="font-size:26rpx;">教练</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/user/user">
+        <view class="nav_img">
+            <image src="/images_gym/navbar5.png" style="width:64rpx;height:54rpx;"></image>
+        </view>
+        <view class="text" style="font-size:26rpx;">我的</view>
+    </view>
+</view>
+

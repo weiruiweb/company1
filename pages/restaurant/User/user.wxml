@@ -1,0 +1,120 @@
+<!--User.wxml-->
+
+<view class="users">
+	<view class="user_top flexRowBetween">
+		<view class="user_Left">
+			<view class="user_img">
+				<open-data type="userAvatarUrl"></open-data>
+			</view>
+		</view>
+		 <view class="user_word">
+		 	<view class="user_name"><open-data type="userNickName" lang="zh_CN"></open-data></view>
+		 	<view class="phone">158767678</view>
+		 </view>
+
+	</view>
+</view>
+<view id="user">
+	<view class="process flexRowBetween">
+		<view class="process_left">
+			<view class="procees">
+				<view style="font-size:34rpx;color:#333;">
+					0
+				</view>
+				<view style="font-size:34rpx;color:#333">
+					我的余额
+				</view>
+			</view>
+		</view>
+		<view class="process_right flexRowBetween">
+			<view id="menus_up">
+				<view class="menus_up" bindtap="intoPath"  data-path="/pages/restaurant/userPayment/userPayment">
+					买单
+				</view>
+			</view>
+			<view id="menus_up">
+				<view class="menus_up" bindtap="intoPath"  data-path="/pages/restaurant/userChongzhi/userChongzhi">
+					去充值
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="user_all">
+		<view class="user_infor flexRowBetween"  bindtap="intoPath"  data-path="/pages/restaurant/userGroup/userGroup">
+			<view class="user_left flexRowBetween">
+				<image src="/images_restaurant/user_icon2.png"></image>
+				<text>我的团购</text>
+			</view>
+			<view class="next_page">
+				<image src="/images_restaurant/next_page.jpg"></image>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="intoPath"  data-path="/pages/restaurant/userDiscount/userDiscount">
+			<view class="user_left flexRowBetween">
+				<image src="/images_restaurant/user_icon3.png"></image>
+				<text>我的优惠券</text>
+			</view>
+			<view class="next_page">
+				<image src="/images_restaurant/next_page.jpg"></image>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="intoPath"  data-path="/pages/restaurant/userAddress/userAddress">
+			<view class="user_left flexRowBetween">
+				<image src="/images_restaurant/user_icon4.png"></image>
+				<text>收货地址</text>
+			</view>
+			<view class="next_page">
+				<image src="/images_restaurant/next_page.jpg"></image>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="intoPath"  data-path="/pages/restaurant/userOrder/userOrder">
+			<view class="user_left flexRowBetween">
+				<image src="/images_restaurant/user_icon5.png"></image>
+				<text>我的订单 </text>
+			</view>
+			<view class="next_page">
+				<image src="/images_restaurant/next_page.jpg"></image>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="intoPath"  data-path="/pages/restaurant/userComment/userComment">
+			<view class="user_left flexRowBetween">
+				<image src="/images_restaurant/user_icon6.png"></image>
+				<text>我的点评</text>
+			</view>
+			<view class="next_page">
+				<image src="/images_restaurant/next_page.jpg"></image>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="intoPath"  data-path="/pages/restaurant/userTake/userTake">
+			<view class="user_left flexRowBetween">
+				<image src="/images_restaurant/user_icon6.png"></image>
+				<text>我的外卖</text>
+			</view>
+			<view class="next_page">
+				<image src="/images_restaurant/next_page.jpg"></image>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="space_bottom" style="height:300rpx;">
+</view>
+<view class="navbar">
+      <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Index/index">
+          <view class="nav_img">
+            <image src="/images_restaurant/navbar1.png" style="width:46rpx;height:50rpx;"></image>
+          </view>
+          <view class="text" style="{{fonts[2].font}}">首页</view>
+      </view>
+    <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Dishes/dishes">
+        <view class="nav_img">
+           <image src="/images_restaurant/navbar2.png" style="width:46rpx;height:50rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">点菜</view>
+    </view>
+    <view class="navbar_item"  >
+        <view class="nav_img">
+            <image src="/images_restaurant/navbar3-a.png" style="width:46rpx;height:50rpx;"></image>
+        </view>
+        <view class="text this-text" style="{{fonts[2].font}}"  style="color:#f2665f">我的</view>
+    </view>
+</view>

@@ -1,0 +1,29 @@
+<!--navbar.wxml-->
+<template name="navbar">
+  <view class="navbar">
+      <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/index/index">
+          <view class="nav_img">
+            <image src="{{img1 == 0?'/images_exhibition/navbar1-a.png':'/images_exhibition/navbar1.png'}}"></image>
+          </view>
+          <view class="text this-text1">首页</view>
+      </view>
+      <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/index1/index1">
+          <view class="nav_img">
+             <image src="{{img2 == 1?'/images_exhibition/navbar2-a.png':'/images_exhibition/navbar2.png'}}"></image>
+          </view>
+          <view class="text  this-text2">公司业务</view>
+      </view>
+      <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/index2/index2">
+          <view class="nav_img">
+             <image src="{{img3 == 3?'/images_exhibition/navbar3-a.png':'/images_exhibition/navbar3.png'}}"></image>
+          </view>
+          <view class="text  this-text3">公司动态</view>
+      </view>
+      <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/index3/index3">
+          <view class="nav_img">
+              <image src="{{img4 == 4?'/images_exhibition/navbar4-a.png':'/images_exhibition/navbar4.png'}}"></image>
+          </view>
+          <view class="text  this-text4">联系我们</view>
+      </view>
+  </view>
+</template>

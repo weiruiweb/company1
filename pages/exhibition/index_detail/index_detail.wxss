@@ -1,0 +1,26 @@
+/**index.wxss**/
+
+@import "../../../wxParse/wxParse.wxss"; 
+.product_top{
+	margin-top:30rpx;
+}
+.product_top image{
+	width:36rpx;
+	height:34rpx;
+}
+.product_name>view{
+	width:80rpx;
+	height:40rpx;
+	background:#d3f3f6;
+	text-align:center;
+	line-height:40rpx;
+	margin-right:16rpx;
+}
+.conts{
+	text-indent:60rpx;
+	line-height:40rpx;
+	margin-top:30rpx;
+}
+.index_img{
+	margin:20rpx 0;
+}

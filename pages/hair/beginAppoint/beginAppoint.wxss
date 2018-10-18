@@ -1,0 +1,197 @@
+/**appointment.wxss**/
+page{
+	background:#f5f5f5;
+}
+.shore_choose{
+	height:80rpx;
+	margin:18rpx 25rpx;
+	border-radius:10rpx;
+	line-height:80rpx;
+	font-size:26rpx;
+	background:#fff;
+	padding:0rpx 22rpx;
+	color:#333;
+}
+.shore_choose .txt{
+	width:22%;
+	margin-right:3%;
+}
+.shore_choose .tex1{
+
+
+}
+.choose_line{
+	width:100%;
+}
+.shore_choose image{
+	width:18rpx;
+	height:32rpx;
+	float:right;
+	margin-top:26rpx;
+}
+.shore_choose .text2{
+	float:right;
+	margin-right:28rpx;
+}
+.shore_choose .txt1{
+		width:20%;
+	margin-left:5%;
+	display:flex;
+
+	height:60rpx;
+	border-radius:10rpx;
+	line-height:60rpx;
+	text-align:center;
+	font-size:22rpx;
+	color:#999;
+	background:#dcdcdc;
+	display:inline-block;
+
+}
+.shore_choose  .this_item{
+	background:#fe5174;
+	color:#fff;
+}
+.shore_choose .txt{
+	margin-right:30rpx;
+}
+.input_before{
+	width:21%;
+}
+.shore_choose .input1{
+	width:79%;
+	margin-top:15rpx;
+	height:30rpx;
+	line-height:30rpx;
+}
+.edit_number{
+	width:166rpx;
+	height:50rpx;
+	line-height:52rpx;
+	border:solid 1px #e5e5e5;
+	font-size:20rpx;
+	margin-top:15rpx;
+}
+.edit_number .minus,.edit_number .add{
+	width:50rpx;
+	text-align:center;
+	color:#aeaeae;
+	font-size:40rpx;
+	border-right:solid 1px #e5e5e5; 
+	background:#e8e9e9;
+}
+.shore_choose .input2{
+	width:80%;
+	margin-top:15rpx;
+}
+#data{
+	padding:20rpx;
+	margin:20rpx;
+	background:#fd5274;
+	overflow:hidden;
+}
+.data_all{
+	padding:0rpx 54rpx;
+	color:#fff;
+}
+.data_all text{
+	display:block;
+	text-align:center;
+}
+.date1 .text1{
+	font-size:24rpx;
+
+}
+.date1{
+	margin-top:10rpx;
+	text-align:center;
+}
+.date1 .text2{
+	font-size:20rpx;
+	line-height:40rpx;
+}
+.date_other image{
+	width:40rpx;
+	height:40rpx;
+}
+.date_other{
+	text-align:center;
+}
+.date_other .text1{
+	font-size:20rpx;
+}
+.data_choose{
+	padding:15rpx 0rpx 70rpx;
+	background:#fff;
+	overflow:hidden;
+	width:100%;
+	display:flex;
+	justify-content:center;
+}
+.data_row{
+	display:flex;
+	flex-wrap:wrap;
+}
+.data_choose .text1{
+	margin-top:70rpx;
+	width:25%;
+	font-size:22rpx;
+	color:#fd5274;
+	text-align:center;
+	justify-content:space-between;
+	
+}
+.data_choose .text2{
+	margin-top:70rpx;
+	width:25%;
+	font-size:22rpx;
+	color:#fd5274;
+	text-align:center;
+	justify-content:space-between;
+	color:#666;
+
+	
+}
+.date1 image{
+	width:50rpx;
+	height:22rpx;
+	margin:0rpx auto;
+}
+.data_choose{
+	position:relative;
+	bottom:10rpx;
+}
+.data_choose{
+	display:none
+}
+.begin_left text{
+	float:left;
+}
+.begin_left .text1{
+	font-size:28rpx;
+	color:#666;
+}
+.begin_left .text2{
+	font-size:24rpx;
+	color:#fd5274;
+	margin-left:10rpx;
+}
+.begin_left{
+	height:80rpx;
+	line-height:80rpx;
+}
+.begin_right{
+	width:355rpx;
+	height:80rpx;
+	color:#fff;
+	font-size:30rpx;
+	text-align:center;
+	line-height:80rpx;
+	border-radius:50rpx;
+	background:#fd5274;
+}
+#begin_appoint{
+	padding:0rpx 22rpx;
+	margin-top:32rpx;
+	margin-bottom:32rpx;
+}

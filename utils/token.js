@@ -21,6 +21,7 @@ class Token {
 
     getUserInfo(params,callback){
         var self = this;
+
         var wxUserInfo = {};
         if(wx.canIUse('button.open-type.getUserInfo')){
             wx.getSetting({
@@ -62,11 +63,13 @@ class Token {
 
     getTokenFromServer(data,params,callback) {
         var self  = this;
+        console.log(params)
         wx.login({
             success: function (res) {
                 console.log(res)
                 var postData = {};
-                postData.thirdapp_id = getApp().globalData.thirdapp_id;
+                postData.thirdapp_id = getApp().globalData[params+'_'+'thirdapp_id'];  
+                
                 postData.code = res.code;
                 if(data.nickName&&data.avatarUrl){
                     postData.nickname = data.nickName;
@@ -80,17 +83,17 @@ class Token {
                 if(wx.getStorageSync('openidP')){
                     postData.openid = wx.getStorageSync('openidP');
                 };
-
+                console.log(postData)
                 wx.request({
-                    url: 'http://solelytech.iicp.net/solely/public/index.php/api/v1/Base/ProgrameToken/get',
+                    url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/ProgrameToken/get',
                     method:'POST',
                     data:postData,
                     success:function(res){
                         console.log(res)
                         if(res.data&&res.data.solely_code==100000){
-                            wx.setStorageSync('info',res.data.info);
-                            wx.setStorageSync('token', res.data.token);
-                            wx.setStorageSync('openid', res.data.openid);
+                            wx.setStorageSync(params+'_'+'info',res.data.info);
+                            wx.setStorageSync(params+'_'+'token', res.data.token);
+                            wx.setStorageSync(params+'_'+'openid', res.data.openid);
                             if(params&&callback){
                                 params.data.token = res.data.token;
                                 callback && callback(params);
@@ -122,7 +125,7 @@ class Token {
                 password:wx.getStorageSync('login').password,
             }
             wx.request({
-                url: 'http://solelytech.iicp.net/solely/public/index.php/api/v1/Func/Common/loginByUp',
+                url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Func/Common/loginByUp',
                 method:'POST',
                 data:postData,
                 success:function(res){

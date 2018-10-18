@@ -1,0 +1,131 @@
+<!--index.wxml-->
+
+<swiper  class="swiper-block"  previous-margin="90rpx" next-margin="90rpx" current="0"  autoplay="{{autoplay}}"
+        interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange" circular="{{circular}}">
+
+    <block wx:for="{{web_sliderUrl}}" wx:index="{{index}}">
+        <swiper-item class="swiper-item">
+            <image mode="aspectFill" src="{{item.url}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}"/>
+        </swiper-item>
+    </block>
+</swiper>
+
+<view class="module">
+  <view class="module-item" bindtap="intoPath" data-path="/pages/restaurant/Dishes/dishes">
+     <view class="module_img">
+        <image src="/images_restaurant/index_icon1.png"></image>
+     </view>
+     <view class="module_txt"  style="{{fonts[3].font}}">
+        推荐
+     </view>
+
+  </view>
+  <view class="module-item" bindtap="intoPath"  data-path="/pages/restaurant/Dishes/dishes">
+     <view class="module_img">
+        <image src="/images_restaurant/index_icon2.png"></image>
+     </view>
+     <view class="module_txt"  style="{{fonts[3].font}}">
+        凉菜
+     </view>
+
+  </view>
+  <view class="module-item" bindtap="intoPath"  data-path="/pages/restaurant/Dishes/dishes">
+     <view class="module_img">
+        <image src="/images_restaurant/index_icon3.png"></image>
+     </view>
+     <view class="module_txt"  style="{{fonts[3].font}}">
+        热菜
+     </view>
+  </view>
+  <view class="module-item" bindtap="intoPath"  data-path="/pages/restaurant/queue/queue">
+     <view class="module_img">
+        <image src="/images_restaurant/index_icon4.png"></image>
+     </view>
+     <view class="module_txt"  style="{{fonts[3].font}}">
+        排队
+     </view>
+
+  </view>
+</view>
+<view class="w750 activty">
+  <view class="w710 flexRowBetween">
+    <view class="activty_left flexRowCenter" bindtap="intoPath"  data-path="/pages/restaurant/group/group">
+      <view class="left_txt">
+        <view class="left_txt1" style="{{fonts[4].font}};color:#333;">团购活动</view>
+        <view class="left_txt2" style="{{fonts[3].font}};color:#666;">优惠多多</view>
+        <view class="left_txt3" style="{{fonts[2].font}};color:#f2665f;">抢到就是赚到</view>
+      </view> 
+      <view class="right_img">
+        <image src="/images_restaurant/index1.png"/>
+      </view>
+    </view>
+    <view class="space1">
+    </view>
+    <view class="activty_right flexRowCenter" bindtap="intoPath"  data-path="/pages/restaurant/discount/discount">
+      <view class="left_txt">
+        <view class="left_txt1" style="{{fonts[4].font}};color:#333;">优惠券</view>
+        <view class="left_txt2" style="{{fonts[3].font}};color:#666;">限时抢购</view>
+        <view class="left_txt3" style="{{fonts[2].font}};color:#f2665f;">优惠多福利多</view>
+      </view> 
+      <view class="right_img">
+        <image src="/images_restaurant/index2.png"/>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class="index_tlt">
+    <view class="tlt_img">
+      <image src="/images_restaurant/index_tlt.png"></image>
+    </view>
+    <view class="tlt_txt"  style="{{fonts[4].font}};color:#fff;">
+      特色推荐
+    </view>
+</view>
+<view class="recommend w750">
+<block wx:for="{{web_mainData}}" wx:key="id">
+  <view class="w710 recommend_list ">
+    <view bindtap="intoPath" data-path="/pages/restaurant/dishes1/dishes1">
+      <view class="recommend_img">
+        <image src="{{item.mainImg[0].url}}"/>
+      </view>
+      <view class="dishes_info flexRowCenter">
+        <view class="dishes_left">
+          <view class="avoidOverflow" style="{{fonts[4].font}};color:#333;height:55%;">
+              {{item.title}}
+          </view>
+          <view class="avoidOverflow " style="{{fonts[2].font}};color:#999;height:45%;">
+              马来西亚风味，口感十足
+          </view>
+        </view>
+        <view class="dishes_right" style="{{fonts[5].font}};">
+          新品鲜尝8.8折
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+</view>
+<view class="space_bottom" style="height:300rpx;">
+</view>
+
+<view class="navbar">
+      <view class="navbar_item" >
+          <view class="nav_img">
+            <image src="/images_restaurant/navbar1-a.png" style="width:46rpx;height:50rpx;"></image>
+          </view>
+          <view class="text this-text" style="{{fonts[2].font}}"  style="color:#f2665f">首页</view>
+      </view>
+    <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Dishes/dishes">
+        <view class="nav_img">
+           <image src="/images_restaurant/navbar2.png" style="width:46rpx;height:50rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">点菜</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect"  data-path="/pages/restaurant/User/user">
+        <view class="nav_img">
+            <image src="/images_restaurant/navbar3.png" style="width:46rpx;height:50rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">我的</view>
+    </view>
+</view>

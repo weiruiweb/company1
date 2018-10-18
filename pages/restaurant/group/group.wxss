@@ -1,0 +1,290 @@
+/**grounp.wxss**/
+page{background:#f5f5f5;}
+.tab_click{
+	padding:0rpx 60rpx;
+	height:75rpx;
+	line-height:75rpx;
+	font-size:30rpx;
+	background:#fff;
+	padding-bottom:15rpx;
+}
+.this_tab{
+	width:125rpx;
+	color:#f2665f;
+	border-bottom:solid 1px #f2665f;
+	margin:0rpx auto;
+}
+.tab_sort{
+	width:50%;
+	text-align:center;
+}
+.tabs{
+	width:125rpx;
+	margin:0rpx auto;
+}
+.tab_cont{
+	margin:0rpx 25rpx;
+}
+.tab_list{
+	background:#fff;
+	border-radius:20rpx;
+	padding:4%;
+	margin-top:15rpx;
+	position:relative;
+	width:92%;
+}
+
+.tab_list image{
+	width:233rpx;
+	height:251rpx;}
+.active_name{
+	font-size:30rpx;
+}
+.tiem_end{
+	width:38rpx;
+	height:30rpx;
+	border-radius:10rpx;
+	color:#fff;
+	text-align:center;
+	line-height:30rpx;
+	background:#f2665f;
+	font-size:18rpx;
+
+}
+.time{
+	height:30rpx;
+	line-height:30rpx;
+	font-size:18rpx;
+	color:#898989;
+	width:250rpx;
+}
+.price{
+	font-size:22rpx;
+	color:#f2665f;
+}
+.tab_item{
+	display:none;
+	width:100%;}
+.tab_this{display:block;}
+.end_time{
+	font-size:20rpx;
+	color:#656565;
+}
+
+.grou_click{
+	width:282rpx;
+	height:77rpx;
+	border-radius:10rpx;
+	background:#f2665f;
+	color:#fff;
+	text-align:center;
+	line-height:77rpx;
+	font-size:34rpx;
+}
+.has_group{
+	font-size:18rpx;
+	color:#524c4f;
+	margin-top:45rpx;
+}
+.group_together{
+	width:162rpx;
+}
+.need_person{
+	font-size:20rpx;
+	margin-top:5rpx;
+}
+.need_person text{
+	color:#f2665f;
+}
+.time1{
+	width:202rpx;
+	margin-top:16rpx;
+}
+.limit_time{
+	height:90rpx;
+	width:138rpx;
+	overflow:hidden;
+	position:absolute;
+	right:0rpx;
+	top:0rpx;
+
+}
+.limit_time image{
+	width:136rpx;
+	height:92rpx;
+}
+/****
+.time_wrap{
+	width:198rpx;
+	height:30rpx;
+	position:absolute;
+	top:0rpx;
+	bottom:45rpx;
+	background:#f2665f;
+	padding:8rpx 0rpx;	
+	text-align:center;
+	transform-origin:center center;
+	transform:rotate(45deg);
+	overflow:hidden;
+}  ***/
+.time2{
+	border-top:solid 1px #fff;
+	border-bottom:solid 1px #fff;
+	color:#fff;
+	font-size:18rpx;
+	marign-left:80rpx;
+}
+.begin_group{
+	width:604rpx;
+	height:650rpx;
+	border-radius:10rpx;
+	background:#fff;
+	position:absolute;
+	left:73rpx;
+	top:360rpx;
+	box-shadow:0rpx 0rpx 10rpx #999;
+	display:none;
+	transition:0.5s ease-in-out;
+}
+.group_show{
+	display:block;
+}
+.group_wrap{
+	position:relative;
+	text-align:center;
+}
+.close{
+	width:34rpx;
+	height:34rpx;
+	position:absolute;
+	top:-13rpx;
+	right:-13rpx;
+}
+.mask{
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.4);
+	position:absolute;
+	left:0rpx;
+	top:0rpx;
+	transition:0.5s ease-in-out;
+}
+.group_wrap .text1{
+	font-size:34rpx;
+	color:#333;
+	padding-top:50rpx;
+	display:block;
+}
+.group_wrap .text{
+	font-size:28rpx;
+}
+.group_number{
+	color:#f2665f;
+}
+.group_all{
+	padding:0rpx 110rpx;
+	margin-top:40rpx;
+}
+.group_person{
+	width:102rpx;
+	height:102rpx;
+	border-radius:50%;
+	border:dashed 3rpx #bfbfbf;
+	font-size:68rpx;
+	color:#b2b2b2;
+	line-height:102rpx;
+	text-align:center;
+	overflow:hidden;
+}
+.group_person image{
+	width:102rpx;
+	height:102rpx;
+	border-radius:50%;
+}
+.this_person{
+	border:solid 3rpx #f2665f;
+	border-radius:50%;
+	overflow:hidden;
+}
+.this_person image{
+	width:102rpx;
+	height:102rpx;
+	border-radius:50%;
+	overflow:hidden;
+}
+.share{
+	margin-top:50rpx;
+	text-align:center;
+	}
+.share_method{
+	font-size:36rpx;
+	color:#333;
+	margin:50rpx 0rpx 0rpx;
+	
+}
+.three_share{
+	padding:50rpx 150rpx 30rpx;
+}
+.bg_img{
+	width:56rpx;
+	height:56rpx;
+	border-radius:50%;
+	background:#999;
+}
+.three_share image{
+	width:40rpx;
+	height:32rpx;
+	margin-top:5rpx;
+}
+.send_share{
+	width:520rpx;
+	height:76rpx;
+	border-radius:10rpx;
+	background:#f2665f;
+	margin:0rpx auto;
+	font-size:30rpx;
+	color:#fff;
+	line-height:76rpx;
+}
+.this_bg{
+	background:#f2665f;
+}
+.group_shows{
+	display:block;
+}
+.group_shows{
+	height:475rpx;
+}
+.group_shows .group_all{
+	padding:0rpx 185rpx;
+	margin-bottom:50rpx;
+}
+.tuan_list{
+	width:42%;
+	height:252rpx;
+	overflow:hidden;
+}
+
+.active_info{
+	width:58%;
+	height:252rpx;
+	overflow:hidden;
+	align-items:center;
+}
+.active_info1{
+	height:230rpx;
+	align-items:center;
+	width:100%;
+}
+.tuan_cont {
+	width:100%;
+	height:252rpx;
+}
+.grounp_left{
+	width:45%;
+	text-align:left;
+}
+.grounp_right{
+	width:55%;
+	overflow:hidden;
+}

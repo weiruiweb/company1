@@ -1,0 +1,69 @@
+/**index.wxss**/
+page{background:#f5f5f5;}
+.tab_click{
+	padding:0rpx 60rpx;
+	height:75rpx;
+	line-height:75rpx;
+	font-size:20rpx;
+	background:#fff;
+	padding-bottom:15rpx;
+}
+.this_tab{
+	color:#f55e81;
+	border-bottom:solid 1px #f55e81;
+}
+
+.tab_cont{
+	margin:0rpx 25rpx;
+}
+.tab_list{
+	background:#fff;
+	border-radius:20rpx;
+	padding:38rpx 0rpx 38rpx 0rpx;
+	margin-top:15rpx;
+	width:100%;
+	display:flex;
+	justify-content:center;
+}
+.tab_img{
+	width:40%;
+	text-align:center;
+	overflow:hidden;
+}
+.tab_list image{
+	width:210rpx;
+	height:210rpx;}
+.active_name{
+	font-size:30rpx;
+}
+.active_info{
+	width:50%;
+	margin-top:28rpx;
+	overflow:hidden;
+	padding-right:10%;
+}
+.price_time{margin-top:98rpx;}
+.tiem_end{
+	width:38rpx;
+	height:30rpx;
+	border-radius:10rpx;
+	color:#fff;
+	text-align:center;
+	line-height:30rpx;
+	background:#898989;
+	font-size:18rpx;
+
+}
+.time{
+	height:30rpx;
+	line-height:30rpx;
+	font-size:18rpx;
+	color:#898989;
+	width:135rpx;
+}
+.price{
+	font-size:22rpx;
+	color:#f55d83;
+}
+.tab_item{display:none}
+.tab_this{display:block;}

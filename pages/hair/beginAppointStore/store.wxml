@@ -1,0 +1,59 @@
+<!--store.wxml-->
+<view class="store_list flexRowBetween">
+    <view class="store_info ">
+      <view class="store_name">
+          高新1号店
+      </view>
+      <view class="store_address">
+          陕西省西安市市雁塔区
+      </view>
+      <view class="store_phone">
+          电话：16346574668
+      </view>
+    </view>
+    <view class="store_right">
+      <image src="/images_hair/stores1.jpg" bindtap="map"></image>
+      <view class="store_phone distance">
+          0.6km
+      </view>
+    </view>
+</view>
+<view class="store_list flexRowBetween">
+    <view class="store_info ">
+      <view class="store_name">
+          高新1号店
+      </view>
+      <view class="store_address">
+          陕西省西安市市雁塔区
+      </view>
+      <view class="store_phone">
+          电话：16346574668
+      </view>
+    </view>
+    <view class="store_right">
+      <image src="/images_hair/stores1.jpg" bindtap="map"></image>
+      <view class="store_phone distance">
+          0.6km
+      </view>
+    </view>
+</view>
+<view class="store_list flexRowBetween">
+    <view class="store_info ">
+      <view class="store_name">
+          高新1号店
+      </view>
+      <view class="store_address">
+          陕西省西安市市雁塔区
+      </view>
+      <view class="store_phone">
+          电话：16346574668
+      </view>
+    </view>
+    <view class="store_right">
+      <image src="/images_hair/stores1.jpg" bindtap="map"></image>
+      <view class="store_phone distance">
+          0.6km
+      </view>
+    </view>
+</view>
+   

@@ -1,0 +1,55 @@
+<!--memeber.wxml-->
+<view class="memeber">
+	<image src="/images_hair/card1.jpg"></image>
+</view>
+<view class="user_two flexRowBetween">
+	<view class="user_credit user_collect">
+			<view class="collect_number">0</view>
+			<view class="collect_txt">我的余额</view>
+	</view>
+	<view class="user_fill" bindtap="top_in">
+			去充值
+	</view>
+</view>
+<view class="memeber_tlt">
+	会员权益
+</view>
+<view class="member_cont flexRowBetween">
+	<view class="meber_item">
+		<view class="item_bg color1">
+			<image src="/images_hair/meber_icon1.jpg"></image>
+			
+		</view>
+		<text>打9折</text>
+	</view>
+	<view class="meber_item">
+		<view class="item_bg color2">
+			<image src="/images_hair/meber_icon2.jpg"></image>
+		</view>
+		<text>包邮</text>
+	</view>
+	<view class="meber_item">
+		<view class="item_bg color3">
+			<image src="/images_hair/meber_icon3.jpg"></image>
+			
+		</view>
+		<text>优惠券</text>
+	</view>
+	<view class="meber_item">
+		<view class="item_bg color4">
+			<image src="/images_hair/meber_icon4.jpg"></image>
+			
+		</view>
+		<text>开卡送积分</text>
+	</view>
+
+</view>
+<view class="introduction">
+	<text class="text1">使用须知</text>
+	<text class="text2">1.这里是会员卡使用须知。 </text>
+	<text class="text2">2.这里是会员卡使用须知。</text>
+	<text class="text2">会员卡解释权归商家所有。</text>
+</view>
+<view class="payment" bindtap="payment">
+	立即使用
+</view>

@@ -1,0 +1,44 @@
+<!--manageAddress.wxml-->
+<view id="address">
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="address_item" bindtap="choose" data-id="{{item.id}}">
+			<view class="address_left flexRowBetween">
+				<view class="text1">
+					{{item.name}}
+				</view>
+				<view class="address_right">
+				{{item.phone}}
+				</view>
+			</view>
+			<view class="text1 text_other avoidOverflow">
+					{{item.province+item.city+item.country+item.detail}}
+				
+			</view>
+		</view>
+		<view>
+			
+		</view>
+		<view class="address_set flexRowBetween">
+			<view class="default"  bindtap="{{item.isdefault=='0'?'updateAddress':''}}" data-id="{{item.id}}">
+				<image src="{{item.isdefault=='0'?'/images_restaurant/select.png':'/images_restaurant/select_active.jpg'}}"></image>
+				<text>{{item.isdefault=='0'?'设为默认地址':'默认地址'}}</text>
+			</view>
+			<view class="edit" data-path="/pages/restaurant/userAddressNew/userAddressNew?id={{item.id}}" bindtap="intoPath">
+				<image src="/images_restaurant/edit.jpg"></image>
+				<text>编辑</text>
+			</view>
+			<view class="edit delete" data-id="{{item.id}}" bindtap="deleteAddress">
+				<image src="/images_restaurant/del.jpg"></image>
+				<text>删除</text>
+			</view>
+		</view>
+	</block>
+</view>
+
+
+<view class="btn">
+	<view class="submit_info" bindtap="intoPath" data-path="/pages/restaurant/userAddressNew/userAddressNew" >
+		添加新地址
+	</view>
+</view>
+

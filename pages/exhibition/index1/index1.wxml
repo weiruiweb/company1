@@ -1,0 +1,98 @@
+<view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{intervalOne}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+        <block wx:for="{{web_labelUrl}}" wx:key="id">
+            <swiper-item>
+                <image src="{{item.url}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<view class="big_title flexRowBetween">
+    <view class="tlt_left"></view>
+    <view class="tlt_center font32 color3">公司业务</view>
+    <view class="tlt_left"></view>
+</view>
+
+    <block wx:for="{{web_mainData}}" wx:key="id">
+        <view class="product flexRowBetween w710" bindtap="intoPath" data-path="/pages/exhibition/index_detail/index_detail?id={{item.id}}">
+            <view class="product_box flexRowBetween">
+                <view class="product_left">
+                    <image src="{{item.mainImg[0].url}}"></image>
+                </view>
+                <view class="product_right flexRowBetween">
+                    <view class="product_detail">
+                        <view class="font32 color3 product_top">{{item.title}}</view>
+                        <view class="font28 color6 flexRowBetween  product_top">
+                            <view class="product_name">{{item.description}}</view>
+                            <view class="font24 color9">{{item.create_time}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+
+
+
+<view class="solely font22" style="text-align:center;">
+  技术支持:西安纯粹科技有限公司
+</view>
+<view style="height:120rpx;width:100%;">
+</view>
+<view class="navbar">
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index/index">
+        <view class="nav_img">
+          <image src="/images_exhibition/navbar1-a.png"></image>
+        </view>
+        <view class="text this-text">首页</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index1/index1">
+        <view class="nav_img">
+           <image src="/images_exhibition/navbar2.png"></image>
+        </view>
+        <view class="text">公司业务</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index2/index2">
+        <view class="nav_img">
+           <image src="/images_exhibition/navbar3.png"></image>
+        </view>
+        <view class="text">公司动态</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index3/index3">
+        <view class="nav_img">
+            <image src="/images_exhibition/navbar4.png"></image>
+        </view>
+        <view class="text">联系我们</view>
+    </view>
+</view>
+<!-- <import src="../../nav/nav.wxml" />
+<template is="navbar"/> -->
+
+
+<view class="navbar">
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index/index">
+        <view class="nav_img">
+          <image src="/images_exhibition/navbar1.png"></image>
+        </view>
+        <view class="text">首页</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index1/index1">
+        <view class="nav_img">
+           <image src="/images_exhibition/navbar2-a.png"></image>
+        </view>
+        <view class="text this-text">公司业务</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index2/index2">
+        <view class="nav_img">
+           <image src="/images_exhibition/navbar3.png"></image>
+        </view>
+        <view class="text">公司动态</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index3/index3">
+        <view class="nav_img">
+            <image src="/images_exhibition/navbar4.png"></image>
+        </view>
+        <view class="text">联系我们</view>
+    </view>
+</view>
+

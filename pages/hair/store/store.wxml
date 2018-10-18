@@ -1,0 +1,22 @@
+<!--store.wxml-->
+<block wx:for="{{web_mainData}}" wx:key="id">
+  <view class="store_list flexRowBetween">
+      <view class="store_info ">
+        <view class="store_name">
+            {{item.title}}
+        </view>
+        <view class="store_address">
+            {{item.description}}
+        </view>
+        <view class="store_phone">
+            电话：{{item.contactPhone}}
+        </view>
+      </view>
+      <view class="store_right">
+        <image src="/images_hair/stores1.png" bindtap="map"></image>
+        <view class="store_phone distance">
+            0.6km
+        </view>
+      </view>
+  </view>
+</block>

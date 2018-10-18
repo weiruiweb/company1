@@ -1,0 +1,93 @@
+page{
+	width:100%;
+	min-height:100%;
+	background:#f2f2f2;
+}
+.comment_list{
+	align-items:center;
+	padding:0rpx 2.5%;
+	width:95%;
+	overflow:hidden;
+	background:#fff;
+	margin-bottom:20rpx;
+}
+.comment_item{
+	height:112rpx;
+	width:100%;
+}
+.commet_user{
+	width:14.5%;
+	text-align:center;
+	height:70rpx;
+}
+.commet_user image{
+	width:70rpx;
+	height:70rpx;
+}
+.commet_cont{
+	width:50%;
+	padding-right:5%;
+	height:70rpx;
+	font-size:24rpx;
+}
+.user_name{
+	color:#4c4c4c;
+	height:40%;
+}
+.star_xt{
+	float:left;
+	color:#4c4c4c;
+	margin-right:20rpx;
+}
+.commet_data{
+	width:29.5%;
+	height:70rpx;
+	font-size:24rpx;
+	color:#666;
+	line-height:70rpx;
+}
+.star{
+	height:60%;
+	align-items:center;
+	width:56%;
+}
+.star_all{
+	height:24rpx;
+	line-height:24rpx;
+	align-items:center;
+}
+.star_all image{
+	width:22rpx;
+	height:22rpx;
+	margin-right:5rpx;
+	float:left;
+}
+.com_content{
+	width:85%;
+	padding-left:15%;
+	color:#262626;
+	font-size:26rpx;
+}
+.com_handle{
+	height:95rpx;
+	width:85%;
+	padding-left:15%;
+	border-top:solid 1px #e0e0e0;
+	margin-top:20rpx;
+}
+.look{
+	height:48rpx;
+	line-height:48rpx;
+	font-size:26rpx;
+	color:#666;
+}
+.com_del{
+	width:140rpx;
+	height:48rpx;
+	border:solid 1px #f2665f;
+	border-radius:15rpx;
+	color:#f2665f;
+	text-align:center;
+	line-height:48rpx;
+	font-size:26rpx;
+}

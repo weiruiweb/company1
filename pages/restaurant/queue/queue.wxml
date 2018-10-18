@@ -1,0 +1,80 @@
+<!--queue.wxml-->
+<view class="w750">
+
+	<view class="queue">
+		<view class="flexRowBetween">
+			<view class="input_before">就餐人数:</view>
+			<view class="queue_input">
+				<input placeholder="请选择就餐人数"></input>
+			</view>
+		</view>
+	</view>
+	<view class="phone_txt">
+		填写手机号码可接收短信提醒
+	</view>
+	<view class="queue">
+		<view class="flexRowBetween">
+			<view class="input_before">手机号码:</view>
+			<view class="queue_input">
+				<input placeholder="请输入手机号码"></input>
+			</view>
+		</view>
+	</view>
+	<view class="queue" style="margin-top:38rpx;">
+		<view class="flexRowBetween">
+			<view class="input_before" style="width:95%;">领取优惠券</view>
+			<view class="input_up" style="width:5%;">
+				<image src="/images_restaurant/next_page.jpg"></image>
+			</view>
+		</view>
+	</view>
+	<view class="discout flexRowBetween">
+		<view class="discount_item">
+			<view class="discount_bg">
+				<view class="discout_img">	
+					<image src="/images_restaurant/discont.jpg"></image>
+				</view>
+				<view class="discount_money flexRowBetween">
+					<view class="discout_left">
+						10
+					</view>
+					<view class="discout_right">
+						<view class="discount_top" >
+							满88元使用
+						</view>
+						<view class="discount_bottom">
+							立即领取
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="discount_space"></view>
+		<view class="discount_item">
+			<view class="discount_bg">
+				<view class="discout_img">	
+					<image src="/images_restaurant/discont.jpg"></image>
+				</view>
+				<view class="discount_money flexRowBetween">
+					<view class="discout_left">
+						10
+					</view>
+					<view class="discout_right">
+						<view class="discount_top" >
+							满88元使用
+						</view>
+						<view class="discount_bottom">
+							立即领取
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="queqe_btn" bindtap="intoPath" data-path="/pages/restaurant/queueTime/queueTime">
+	<image src="/images_restaurant/queqe.png"></image>
+	<view class="queqe_txt">
+		立即排队
+	</view>
+</view>

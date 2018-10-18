@@ -1,0 +1,23 @@
+<!--index.wxml-->
+
+<view class="w710">
+  <view class="weight flexRowBetween">
+    <view class="weight_left">
+      <input placeholder="请输入体重"></input>
+    </view>
+    <view class="weight_right">
+      确认
+    </view>
+  </view>
+  <view class="user_tlt">
+      <view class="tlt_cont">我的体重</view>
+  </view>
+  <line-chart id="line-chart" canvasData="{{lineCanvasData}}" />
+  <view class="weight_tlt">
+      <image src="/images/weight.png"></image>
+      健康范围 50-52kg
+  </view>
+   <view class="user_tlt">
+      <view class="tlt_cont">我的体重</view>
+  </view>
+</view>

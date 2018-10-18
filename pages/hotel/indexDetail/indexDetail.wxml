@@ -1,0 +1,131 @@
+<!--index.wxml-->
+<view class="banner">
+    <image src="/images_hotel/banner.png"></image>
+</view>
+<view class="p40" id="album">
+  <view class="address flexRowBetween">
+  	<view class="address_left">
+	  	<view class="address_list">
+	  		地址: 地址地址地址地址地址地址
+	  	</view>
+	  	<view class="address_list">
+	  		商圈: 地址地址地址地址地址地址
+	  	</view>
+	  	<view class="address_list">
+	  		电话: 1888888888
+	  	</view>
+	</view>
+	<view class="address_right">
+	<view class="phone">
+		<image src="/images_hotel/phone.png"></image>
+	</view>
+	</view>
+  </view>
+</view>
+<view class="house_time">
+	<view class="p40 flexRowBetween">
+		<view class="house_left flex">
+			<view class="text1">入住 <text>09-19</text></view>
+			<view class="text1">离店 <text>09-20</text></view>
+		</view>
+		<view class="house_right">
+			共1晚
+		</view>
+	</view>
+</view>
+<view class="house_time flexRowBetween">
+	<view class="p40 flexRowBetween">
+		<block wx:for="{{web_mainData.sku}}" wx:key="id">
+		<view class="select flexRowCenter" data-num="{{item.id}}" bindtap="menuClick">
+			<image src="{{web_num == item.id?'/images_hotel/select_a.jpg':'/images_hotel/select.jpg'}}"></image>
+			{{item.title}}
+		</view>
+		</block>
+	</view>
+</view>
+<view class="p40">
+	<view class="house_list"  bindtap="show">
+			<view class="house_img">
+				<image src="{{web_skuData.mainImg[0].url}}"></image>
+			</view>
+			<view class="w710">
+				<view class="house_detail flexRowBetween" style="border-bottom:solid 1px #e0e0e0;">
+					<view class="text">{{web_skuData.title}}</view>
+					<view class="text" style="font-size:26rpx; text-align: right;">VIP价最低至:{{web_skuData.price}}</view>
+				</view>
+				<view class="house_detail flexRowBetween">
+					<view class="text">9-19</view>
+					<view class="text" style="font-size:26rpx; text-align: right;">剩余2间</view>
+				</view>
+			</view>
+	</view>
+</view>
+<view class="{{isShow?'mask':''}}"></view>
+<view class="house_show {{isShow?'sildeIn':'slideOut'}}" >
+	<view class="house_detail " id="close" bindtap="close">
+		<view class="p40 flexRowBetween" style="line-height: 76rpx;">
+			<view class="text" style="color:#fff;font-size:30rpx;">{{web_skuData.title}}</view>
+			<image src="/images_hotel/close.png"></image>
+		</view>
+	</view>
+	<view class="banner1">
+	    <image src="{{web_skuData.mainImg[0].url}}"></image>
+	</view>
+	<view class="condition">
+		<view class="p40 flex" style="height: 72rpx;">
+			<view class="condition_item">
+				<image src="/images_hotel/house1.png"></image>
+				Wi-Fi
+			</view>
+			<view class="condition_item">
+				<image src="/images_hotel/house2.png"></image>
+				沐浴
+			</view>
+			<view class="condition_item">
+				<image src="/images_hotel/house3.png"></image>
+				空调
+			</view>
+			<view class="condition_item">
+				<image src="/images_hotel/house4.png"></image>
+				电视
+			</view>
+		</view>
+	</view>
+	<view class="p40">
+		<view class="condition_list" bindtap="intoPath"  data-path="/pages/hotel/houseDetail/houseDetail">
+			<view class="w710 ">
+				<view class="condition_line flexRowBetween">
+					<view class="condition_img"><image src="/images_hotel/house5.png"></image></view>
+					<view class="condition_deatil flexRowBetween" style="width:82%;">
+						<view class="text">名称名名称名称名称名称名称名称名称名称名称名称名称名称名称名称名称名称</view>
+					</view>
+				</view>
+				<view class="condition_line flexRowBetween">
+					<view class="condition_img"><image src="/images_hotel/house5.png"></image></view>
+					<view class="condition_deatil flexRowBetween" style="width:82%;">
+						<view class="text">名称名名称名称名称名称名称名称名称名称名称名称名称名称名称名称名称名称</view>
+					</view>
+				</view>
+				<view class="condition_line flexRowBetween">
+					<view class="condition_img"><image src="/images_hotel/house5.png"></image></view>
+					<view class="condition_deatil flexRowBetween" style="width:82%;">
+						<view class="text">名称名名称名称名称名称名称名称名称名称名称名称名称名称名称名称名称名称</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view style="height:110rpx;width:100%;"></view>
+	<view class="confirm flexRowBetween">
+		<view class="p40 flexRowBetween">
+			<view class="confirm_left">
+				合计：{{web_skuData.price}}
+			</view>
+			<view class="confirm_right" bindtap="intoPath"  data-path="/pages/hotel/houseOrder/houseOrder?id={{web_skuData.id}}">
+				<view class="submit_btn">提交订单</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+

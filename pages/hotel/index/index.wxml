@@ -1,0 +1,136 @@
+<!--index.wxml-->
+<view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:370rpx">
+        <block wx:for="{{web_sliderUrl}}" wx:key="id">
+            <swiper-item>
+                <image src="{{item.url}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<view class="p40">
+    <view class="index_cont">
+        <view class="index_top">
+          <view class="index_address flexRowBetween">
+              <view class="address address_item flexRowCenter">
+
+                  <view class="address_icon"><image src="/images_hotel/index_icon1.png"></image></view>
+                  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" >
+                    <view class="city avoidOverflow">西安市</view>
+                  </picker>
+                  <view  class="address_icon"><image src="/images_hotel/up_down.png"></image></view>
+              </view>
+              <view class="address address_item1 flexRowCenter">
+                  <view  class="address_icon"><image src="/images_hotel/index_icon2.png"></image></view>
+                  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" >
+                  <view class="city avoidOverflow">钟楼东大街店</view>
+                  </picker>
+                  <view  class="address_icon"><image src="/images_hotel/up_down.png"></image></view>
+              </view>
+              <view class="address_item2 flexRowBetween">
+                <view class="location">
+                  <view class="img1"><image src="/images_hotel/index_icon3.png"></image></view>
+                  <view class="text">我的位置</view>
+                </view>
+              </view>
+          </view>
+          <view class="index_address flexRowBetween">
+              <view class="address_item3 flexRowBetween">
+                   <view><image src="/images_hotel/index_icon4.png"></image></view>
+                  <view class="date">
+                    <view>09月</view>
+                    <view>周三</view>
+                  </view>
+                  <view class="day">19</view>
+              </view>
+              <view class="address_item3 flexRowBetween">
+                  <view>—</view>
+                  <view class="date">
+                    <view>09月</view>
+                    <view>周三</view>
+                  </view>
+                  <view  class="day">19</view>
+              </view>
+              <view class="address_item2">
+                <view class="location" style="line-height: 56rpx;">
+                  <view class="text text1">住1晚</view>
+                </view>
+              </view>
+          </view>
+        </view>
+        <view class="index_bottom" bindtap="intoPath"  data-path="/pages/hotel/indexDetail/indexDetail?id={{web_mainData.id}}">
+          <view class="order">预定房间</view>
+        </view>
+    </view>
+</view>
+<view class="p40" id="album">
+  <view class="title">
+    <view class="tlt_txt">门店相册</view>
+    <view class="bottom_line"></view>
+  </view>
+  <view class="product flexRowBetween">
+      <block wx:for="{{web_mainData.mainImg}}" wx:key="id">
+        <view class="product_img">
+          <image src="{{item.url}}"></image>
+        </view>
+      </block>
+  </view>
+  <view class="store">
+    <view class="title">
+      <view class="tlt_txt">门店介绍</view>
+      <view class="bottom_line"></view>
+    </view>
+    <view class="store_intro"><view class="content ql-editor">
+            <import src="../../../wxParse/wxParse.wxml"/>
+            <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+        </view></view>
+  </view>
+  <view class="contact">
+    <view class="title">
+      <view class="tlt_txt">联系信息</view>
+      <view class="bottom_line"></view>
+    </view>
+    <view class="contact_cont flexRowBetween">
+        <view class="contact_left">
+            <view class="contact_list flex">
+                <image src="/images_hotel/index_icon5.png"></image> 山居君
+            </view>
+            <view class="contact_list flex">
+                <image src="/images_hotel/index_icon6.png"></image> 16546546 <view class="copy" style="margin-left: 20rpx;">复制链接</view>
+            </view>
+            <view class="contact_list flex">
+                <image src="/images_hotel/index_icon7.png"></image><view class="copy">1222522565（订房）</view>
+            </view>
+            <view class="contact_list flex">
+                <image src="/images_hotel/index_icon8.png"></image><view class="copy">1222522565</view>
+            </view>
+        </view>
+        <view class="contact_left contact_right">
+            <image src="/images_hotel/qcored.png"></image>
+            <view>客服二维码</view>
+        </view>
+    </view>
+  </view>
+</view>
+<view class="kefu">
+  <image src="/images_hotel/kefu.png"></image>
+</view>
+<view class="solely" style="font-size:20rpx;color:#666;text-align:center;">
+  技术支持:西安纯粹科技有限公司
+</view>
+<view style="height:120rpx;width:100%;">
+</view>
+<view class="navbar">
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/hotel/index/index">
+        <view class="nav_img">
+          <image src="/images_hotel/navbar1_a.png" style="width:42rpx;height:46rpx;"></image>
+        </view>
+        <view class="text this-text" style="{{fonts[2].font}}">预定</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/hotel/user/user">
+        <view class="nav_img">
+            <image src="/images_hotel/navbar2.png" style="width:42rpx;height:46rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">我的</view>
+    </view>
+</view>

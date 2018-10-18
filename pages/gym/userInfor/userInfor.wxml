@@ -1,0 +1,76 @@
+<!--userINfor.wxml-->
+<view class="w710">
+    <view style="width:100%;background:#262626;border-radius: 10rpx;margin-top: 20rpx;">
+
+        <view class="w710">
+          <view class="user_tlt">
+            <view class="tlt_cont">我的资料</view>
+        </view>
+            <view class="infor_list flexRowBetween">
+                <view class="infor_left">
+                    性别:
+                </view>
+                <view class="infor_center flexRowBetween" style="width:30%;">
+                    <view class="gender" data-value="1" data-key="gender" bindtap="changeBind">
+                        <image src="{{web_sForm.gender=='1'?'/images_gym/select_a.png':'/images_gym/select.png'}}"></image>男
+                    </view>
+                    <view class="gender" data-value="0" data-key="gender" bindtap="changeBind">
+                         <image src="{{web_sForm.gender=='0'?'/images_gym/select_a.png':'/images_gym/select.png'}}"></image>女
+                    </view>
+                </view>
+               
+            </view>
+            <view class="infor_list flexRowBetween">
+                <view class="infor_left">
+                    身高:
+                </view>
+                <view class="infor_center">
+                    <input placeholder="请输入身高" data-key="email" bindblur="changeBind" value="{{web_sForm.email}}"></input>
+                </view>
+                <view class="infor_right">
+                    <image src="/images_gym/next_page.png"></image>
+                </view>
+            </view>
+            <view class="infor_list flexRowBetween">
+                <view class="infor_left">
+                    体重:
+                </view>
+                <view class="infor_center">
+                    <input placeholder="请输入体重" data-key="address" bindblur="changeBind" value="{{web_sForm.address}}"></input>
+                </view>
+                <view class="infor_right">
+                    <image src="/images_gym/next_page.png"></image>
+                </view>
+            </view>
+            <view class="infor_list flexRowBetween">
+                <view class="infor_left">
+                    生日:
+                </view>
+                <view class="infor_center">
+                  <picker mode="date" value="{{web_sForm.passage1}}" start="1970-09-01" end="2050-09-01" bindchange="bindDateChange">
+                    <view class="picker">
+                      <input placeholder="请输入出生日期" value="{{web_sForm.passage1}}" style="width:100%;"></input> 
+                    </view>
+                  </picker>
+                </view>
+                <view class="infor_right">
+                    <image src="/images_gym/next_page.png"></image>
+                </view>
+            </view>
+             <view class="infor_list flexRowBetween" style="border:none;">
+                <view class="infor_left">
+                    电话:
+                </view>
+                <view class="infor_center">
+                    <input placeholder="请输入电话" data-key="phone" bindblur="changeBind" value="{{web_sForm.phone}}"></input>
+                </view>
+                <view class="infor_right">
+                    <image src="/images_gym/next_page.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<button class="submit_info" open-type="getUserInfo" bindgetuserinfo="submit" style="border-radius:50rpx;">
+    保存
+    </button>

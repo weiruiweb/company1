@@ -1,0 +1,118 @@
+<!--send.wxml-->
+<view class="send_bg">
+  <image src="/images_restaurant/send_bg.png">
+  </image>
+</view>
+<view class="send_cont">
+  <view class="send_content">
+    <view class="send_btn" style="{{fonts[3].font}}" bindtap="sendInformation">
+      编写发布
+    </view>
+  </view>
+</view>
+<view id="send">
+<view class="serder">
+    <view class="send_user">
+      <view class="sender_left" style="{{fonts[3].font}}">
+          <image src="/images_restaurant/index_icon1.png"></image>
+          <view class="sender_name">  
+            用户名
+          </view>
+           <view class="sender_bank" style="{{fonts[0].font}}">  
+            VIP
+          </view>
+      </view>
+      <view class="send_time" style="{{fonts[3].font}}">2018-9-8</view>
+    </view>
+    <view class="send_desp" style="{{fonts[3].font}}">
+      内容内容内，容内容内容内容内容内容，内容内容内容内容内容。内容内容内容内容内，容内容内容内。
+    </view>
+    <view class="send_image">
+        <view class="send_imageItem">
+          <image src="/images_restaurant/product.png"></image>
+        </view>
+         <view class="send_imageItem">
+          <image src="/images_restaurant/product.png"></image>
+        </view>
+         <view class="send_imageItem">
+          <image src="/images_restaurant/product.png"></image>
+        </view>
+    </view>
+    <view class="great" style="{{isTrue?'':'background:#00c6f7'}}" bindtap="great">
+        <view class="great_img">
+          <image src="{{isTrue?'/images_restaurant/great.png':'/images_restaurant/great_a.png'}}" ></image>
+        </view>
+        <view class="great_txt" style="{{fonts[2].font}};{{isTrue?'':'color:#fff'}}">
+          点赞
+        </view>
+    </view>
+</view>
+<view class="serder">
+    <view class="send_user">
+      <view class="sender_left" style="{{fonts[3].font}}">
+          <image src="/images_restaurant/index_icon1.png"></image>
+          <view class="sender_name">  
+            用户名
+          </view>
+           <view class="sender_bank" style="{{fonts[0].font}}">  
+            VIP
+          </view>
+      </view>
+      <view class="send_time" style="{{fonts[3].font}}">2018-9-8</view>
+    </view>
+    <view class="send_desp" style="{{fonts[3].font}}">
+      内容内容内，容内容内容内容内容内容，内容内容内容内容内容。内容内容内容内容内，容内容内容内。
+    </view>
+    <view class="send_image">
+        <view class="send_imageItem">
+          <image src="/images_restaurant/product.png"></image>
+        </view>
+         <view class="send_imageItem">
+          <image src="/images_restaurant/product.png"></image>
+        </view>
+         <view class="send_imageItem">
+          <image src="/images_restaurant/product.png"></image>
+        </view>
+    </view>
+    <view class="great" style="{{isTrue?'':'background:#00c6f7'}}" bindtap="great">
+        <view class="great_img">
+          <image src="{{isTrue?'/images_restaurant/great.png':'/images_restaurant/great_a.png'}}" ></image>
+        </view>
+        <view class="great_txt" style="{{fonts[2].font}};{{isTrue?'':'color:#fff'}}">
+          点赞
+        </view>
+    </view>
+</view>
+</view>
+<view id="send_button"  bindtap="sendInformation">
+  <view id="send_img"><image src="/images_restaurant/send_icon.png"></image></view>
+  <view id="sent_txt" style="{{fonts[2].font}}">编写发布</view>
+</view>
+<view class="navbar">
+    
+      <view class="navbar_item" bindtap="index">
+      
+          <view class="nav_img">
+            <image src="/images_restaurant/navbar1.png" style="width:42rpx;height:42rpx;"></image>
+          </view>
+          <view class="text " style="{{fonts[2].font}}">首页</view>
+
+      </view>
+    
+    <view class="navbar_item" bindtap="sort">
+        <view class="nav_img">
+           <image src="/images_restaurant/navbar2-a.png" style="width:42rpx;height:42rpx;"></image>
+        </view>
+        <view class="text this-text" style="{{fonts[2].font}}">发布</view>
+    
+    </view>
+  
+    <view class="navbar_item"  bindtap="User">
+   
+        <view class="nav_img">
+            <image src="/images_restaurant/navbar4.png" style="width:42rpx;height:42rpx;"></image>
+        </view>
+        <view class="text " style="{{fonts[2].font}}">我的</view>
+
+    </view>
+</view>

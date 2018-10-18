@@ -1,0 +1,67 @@
+/**index.wxss**/
+
+@import "../../../wxParse/wxParse.wxss"; 
+view {
+    color: #ccc;
+}
+
+page {
+    width: 100%;
+    min-height: 100%;
+    background: #333;
+}
+.weight{
+    height:80rpx;
+    line-height:80rpx;
+    margin-top:38rpx;
+}
+.weight_left{
+    width:66%;
+    background:#262626;
+    border-radius:10rpx 0 0 10rpx;
+    height:80rpx;
+    font-size:28rpx;
+    line-height:80rpx;
+    padding:0 2%;
+}
+.weight_left input{
+    line-height:80rpx;
+    height:80rpx;
+}
+.weight_right{
+    width:30%;
+    background:#bb212e;
+    font-size:28rpx;
+    color:#fff;
+    text-align:center; 
+}
+.user_tlt{
+    height:88rpx;
+    width:100%;
+    align-items:center;
+    display:flex;
+}
+.tlt_cont{
+    height:36rpx;
+    padding-left:16rpx;
+    border-left:solid 2px #bb212e;
+    font-size:30rpx;
+    color:#b2b2b2;
+    line-height:36rpx;
+}
+.weight_tlt{
+    height:90rpx;
+    font-size:30rpx;
+    color:#fff;
+    width:100%;
+    display:flex;
+    align-items:cneter;
+}
+.weight_tlt image{
+    width:44rpx;
+    height:44rpx;
+    margin-right:20rpx;
+}
+.weight_tlt{
+    
+}

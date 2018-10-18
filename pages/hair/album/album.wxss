@@ -1,0 +1,16 @@
+/**album.wxss**/
+.free-WaterfallFlow{
+  width:96%;
+  padding:0px 2%;
+  column-gap:15rpx;
+  column-count:3;/*column-count 属性规定元素应该被分隔的列数：*/
+}
+.free-WaterfallFlow .flex-wrap{
+  display: inline-block;
+  width:100%;
+  margin-bottom:5rpx;
+  text-align: center;
+}
+.flex-wrap image{
+ width:100%;
+}

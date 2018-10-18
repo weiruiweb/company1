@@ -1,0 +1,30 @@
+<!--login.wxml-->
+<view class="login">
+  <view style="text-align:center;width:100%;">
+  <view class="user_img">
+      <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view style="font-size:26rpx;color:#e5e5e5;display: block;line-height: 90rpx;">教练名</view>
+</view>
+</view>
+<view id="login">
+  <view class="login_input flexRowBetween">
+    <view class="input_img">
+      <image src="/images_gym/login_phone.png"></image>
+    </view>
+     <view class="input_in">
+      <input placeholder="请输入账号" data-key="login_name" bindinput="bindInputChange"></input>
+    </view>
+  </view>
+  <view class="login_input flexRowBetween">
+    <view class="input_img">
+      <image src="/images_gym/login_pass.png"></image>
+    </view>
+     <view class="input_in">
+      <input placeholder="请输入验证码" placeholder="请输入密码" data-key="password" bindinput="bindInputChange"></input>
+    </view>
+  </view>
+</view>
+<button class="submit_info" style="width:93%;margin-top:160rpx;" bindtap="submit">
+  登录
+</button>

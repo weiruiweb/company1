@@ -1,0 +1,117 @@
+<!--logs.wxml-->
+<view class="user_banner">
+	<view id="user_info">
+		<view class="user_img">
+			<open-data type="userAvatarUrl" class="user_pho"></open-data>
+		</view>
+		<view class="user_name">
+			<open-data type="userNickName" lang="zh_CN"></open-data>
+		</view>
+		<view class="member_bank">
+			<text>大众会员</text><text> 15165665</text>
+		</view>
+	</view>
+	<view class="cre_wrap">
+		<view class="credit">
+			<view class="cre_img">
+				<image src="/images_hair/user_icon1.jpg"></image>
+			</view>
+			<text>大众会员</text>
+		</view>
+	</view>
+</view>
+<view id="user">
+	<view class="user_two flexRowBetween">
+		<view class="user_credit user_collect">
+			<view class="collect_number">{{web_userData.score?web_userData.score:'网络故障'}}</view>
+			<view class="collect_txt">我的余额</view>
+		</view>
+		<view class="user_fill" bindtap="top_in">
+			去充值
+		</view>
+	</view>
+	
+	<view class="user_all">
+		<view class="user_infor flexRowBetween"  bindtap="userInfo">
+			<view class="user_left flexRowBetween">
+				<image src="/images_hair/user_icon2.jpg"></image>
+				<text>会员卡</text>
+			</view>
+			<view class="next_page">
+				<image src="/images_hair/next_page.jpg"></image>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="consume">
+			<view class="user_left flexRowBetween">
+				<image src="/images_hair/user_icon3.jpg"></image>
+				<text>消费记录</text>
+			</view>
+			<view class="next_page">
+				<image src="/images_hair/next_page.jpg"></image>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="address">
+			<view class="user_left flexRowBetween">
+				<image src="/images_hair/user_icon4.jpg"></image>
+				<text>我的相册</text>
+			</view>
+			<view class="next_page">
+				<image src="/images_hair/next_page.jpg"></image>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="mygroup">
+			<view class="user_left flexRowBetween">
+				<image src="/images_hair/user_icon5.jpg"></image>
+				<text>我的团购</text>
+			</view>
+			<view class="next_page">
+				<image src="/images_hair/next_page.jpg"></image>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="discount">
+			<view class="user_left flexRowBetween">
+				<image src="/images_hair/user_icon6.jpg"></image>
+				<text>我的优惠卷</text>
+			</view>
+			<view class="next_page">
+				<image src="/images_hair/next_page.jpg"></image>
+			</view>
+		</view>
+	</view>
+	<view class="payment" bindtap="payment">
+		立即支付
+	</view>
+</view>
+<view class="bottom_spacing"></view>
+<view class="navbar">
+    <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Index/index">
+        <view class="nav_img">
+            <image src="/images_hair/navbar1.jpg"></image>
+        </view>
+        <view class="text">首页</view>
+    </view>
+    <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Service/service">
+        <view class="nav_img">
+            <image src="/images_hair/navbar2.jpg"></image>
+        </view>
+        <view class="text">服务</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairStyle/hairstyle">
+        <view class="nav_img">
+            <image src="/images_hair/navbar3.jpg"></image>
+        </view>
+        <view class="text">发型</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairDresser/hairDresser">
+        <view class="nav_img">
+            <image src="/images_hair/navbar4.jpg"></image>
+        </view>
+        <view class="text">技师</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/User/user">
+        <view class="nav_img">
+            <image src="/images_hair/navbar5-a.jpg"></image>
+        </view>
+        <view class="text  this-text" style="color:#fb5676">我的</view>
+    </view>
+</view>

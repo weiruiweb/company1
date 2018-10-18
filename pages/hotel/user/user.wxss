@@ -1,0 +1,108 @@
+/**index.wxss**/
+
+@import "../../../wxParse/wxParse.wxss"; 
+view{
+	color:#fff;
+}
+.banner{
+	width:100%;
+	height:314rpx;
+	overflow:hidden;
+	position:relative;
+}
+.banner image{
+	width:100%;
+	height:314rpx;
+}
+.resume{
+	font-size:24rpx;
+	color:#fff;
+	margin-top:10rpx;
+}
+.banner_bottom{
+	height:314rpx;
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+}
+.banner_img{
+	width:30%;
+}
+.user_left{
+	width:48%;
+}
+.user_right{
+	width:22%;
+}
+.user_img{
+	width:150rpx;
+	height:150rpx;
+	border-radius:50%;
+	overflow:hidden;
+}
+.resume{
+	width:138rpx;
+	height:60rpx;
+	text-align:center;
+	line-height:60rpx;
+	font-size:30rpx;
+	color:#fff;
+	background:#3a3a3a;
+	border-radius:10rpx;
+}
+.banner_in{
+height:100%;
+	width:86%;
+	margin:0 auto;
+}
+.member{
+	height:60rpx;
+	margin-top: 10rpx;
+}
+.member image{
+	width:38rpx;
+	height:40rpx;
+	margin-right: 16rpx;
+}
+.sort{
+	width:100%;
+	height:178rpx;
+	box-shadow: 0 0 20rpx #f2f2f2;
+	margin-top:30rpx;
+	background: #fff;
+
+}
+.sort_cont{
+	width:100%;
+}
+.sort_item{
+	width:33.33%;
+	height: 100%;
+	text-align:center;
+}
+.sort_item image{
+	width:42rpx;
+	height:42rpx;
+}
+.sort_txt{
+	font-size: 30rpx;
+	color:#999;
+}
+.thread{
+	width:1rpx;
+	height:80rpx;
+	background: #e0e0e0;
+}
+.flexRowCenter{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+}
+.flex{
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:center;
+}

@@ -1,0 +1,68 @@
+/**index.wxss**/
+
+@import "../../../wxParse/wxParse.wxss"; 
+
+page{
+	width:100%;
+	min-height:100%;
+	background:#333;
+}
+.coach{
+	height:200rpx;
+	background:#262626;
+	border-radius:15rpx;
+	display:flex;
+	align-items:center;
+	width:94.8%;
+	padding:0 2.6%;
+	margin-top:20rpx;
+}
+.coach_cont{
+	height:130rpx;
+	width:100%;
+}
+.coach_img{
+	width:23%;
+	height:130rpx;
+}
+.coach_left{
+	width:67%;
+	height:100%;
+	font-size:32rpx;
+	align-items:center;
+}
+.coach_right{
+	width:10%;
+}
+.coach_img image{
+	width:130rpx;
+	height:130rpx;
+}
+.coach_icon{
+	height:50%;
+	color:#f2f2f2;
+}
+.coach_icon image{
+	width:32rpx;
+	height:26rpx;
+}
+.coach_course {
+	height:50%;
+}
+.coach_course view{
+	width:86rpx;
+	height:36rpx;
+	border-radius:20rpx;
+	border:solid 1px #ccc;
+	text-align:center;
+	line-height:36rpx;
+	color:#f2f2f2;
+	font-size:24rpx;
+}
+.coach_right{
+	text-align:right;
+}
+.coach_right image{
+	width:38rpx;
+	height:38rpx;
+}

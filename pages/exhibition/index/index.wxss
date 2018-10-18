@@ -1,0 +1,158 @@
+/**index.wxss**/
+@import "../../../wxParse/wxParse.wxss"; 
+view{
+	color:#666;
+}
+.menu{
+	width:100%;
+	flex-wrap:wrap;
+	margin-top:10rpx;
+}
+.menu_item{
+	width:25%;
+	text-align:center;
+	height:132rpx;
+	display:flex;
+	flex-flow: row wrap;
+	align-content:space-between;
+	margin-top:38rpx;
+}
+.menu_item image{
+	width:68rpx;
+	height:60rpx;
+}
+.menu_item view{
+	text-align:center;
+	width:100%;
+}
+/*********跑马灯效果***********/
+#marquee{
+  width: 100%;
+  height: 72rpx;
+}
+.horn{
+	width:10%;
+	height:100%;
+	display:flex;
+	align-items:center;
+}
+.horn image{
+	width:34rpx;
+	height:34rpx;
+}
+.marquee_right{
+	width:90%;
+	height:100%;
+	overflow:hidden;
+}
+.marquee_box {
+  width: 100%;
+  height:100%;
+  position: relative;
+}
+.marquee_text {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+}
+.marquee_box .title {
+  padding: 10rpx 20rpx;
+  margin: 0 0 20rpx 0;
+  border-left: 10rpx solid #ccc;
+  font-size: 30rpx;
+  background: #ececec;
+}
+.marquee_panel {
+  margin: 20rpx 20rpx 20rpx 0;
+  border-left: 10rpx solid #ccc;
+  font-size: 26rpx;
+}
+.marquee_panel>view {
+  padding: 30rpx;
+  background: #ececec;
+  border-radius: 0 20rpx 20rpx 0;
+}
+.bg_img{
+	height:100%;
+}
+.bg_img image{
+	width:346rpx;
+	height:180rpx;
+	border:10rpx;
+}
+.bg{
+	height:200rpx;
+}
+.product{
+	height:296rpx;
+	border:none;
+}
+.product_left{
+	width:49%;
+	height:296rpx;
+	position:relative;
+	overflow:hidden;
+}
+.product_left image{
+	width:100%;
+	height:100%;
+}
+.product_top image{
+	width:100%;
+	height:100%;
+}
+.product_top{
+	height:48%;
+	width:100%;
+	position:relative;
+}
+.product_top .product_cont{
+	height:100%;
+}
+.product_cont{
+	width:100%;
+	height:296rpx;
+	position:absolute;
+	top:0;
+	left:0;
+	text-align:center;
+}
+.product_tlt {
+	width:100%;
+}
+.product_cont .product_tlt image{
+	width:40rpx;
+	height:40rpx;
+	margin-right:10rpx;
+}
+.pro_vertical{
+	width:100%;
+	height:80rpx;
+}
+.product_all{
+	width:100%;
+	height:292rpx;
+	position:relative;
+	margin-top:2%;
+}
+.product_all image{
+	width:100%;
+	height:100%;
+}
+.case_box{
+	flex-wrap:wrap;
+}
+.case_item{
+	width:48.5%;
+	height:276rpx;
+}
+.case_item image{
+	width:100%;
+	height:200rpx;
+}
+.case_item>view{
+	width:100%;
+	height:76rpx;
+	line-height:76rpx;
+	text-align:center;
+}

@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="w710" id="index_cont">
+      <view class="intro_detail">
+          <view class="w710">
+            <view style="height:50rpx;line-height: 50rpx;color:#ccc;font-size:32rpx;">{{web_artData.title}}</view>
+            <view>
+              <view class="content ql-editor">
+                  <import src="../../../wxParse/wxParse.wxml"/>
+                  <template is="wxParse" data="{{wxParseData:web_artData.content}}"/>
+              </view>
+            </view>
+        </view>
+    </view>
+</view>

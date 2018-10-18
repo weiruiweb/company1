@@ -1,0 +1,85 @@
+<!--userINfor.wxml-->
+<view class="w710">
+     <view class="user_tlt">
+    <view class="tlt_cont"><image src="/images_gym/user_icon6.png"></image>订单确认</view>
+    </view>
+    <view style="width:100%;background:#262626;border-radius: 10rpx;margin-top: 20rpx;">
+        <view class="w710">
+         
+            <view class="infor_list flexRowBetween">
+                <view class="infor_left">
+                    门店名称:
+                </view>
+                <view class="infor_center">
+                   门店名称
+                </view>
+            </view>
+            <view class="infor_list flexRowBetween">
+                <view class="infor_left">
+                    课程名称
+                </view>
+                <view class="infor_center">
+                   课程名称
+                </view>
+            </view>
+            <view class="infor_list flexRowBetween">
+                <view class="infor_left">
+                    上课时间:
+                </view>
+                <view class="infor_center">
+                    08月23日 星期三 19:00-21:00
+                </view>
+            </view>
+           <view class="infor_list flexRowBetween">
+                <view class="infor_left">
+                    授课教练:
+                </view>
+                <view class="infor_center">
+                   Aillxa
+                </view>
+            </view>
+             <view class="infor_list flexRowBetween" style="border:none;">
+                <view class="infor_left">
+                    人数:
+                </view>
+                <view class="infor_center flexRowBetween" style="width:30%;">
+                    <view class="mins"><image src="/images_gym/confirm1.png"></image></view>
+                    <view class="number">1</view>
+                    <view class="add"><image src="/images_gym/confirm2.png"></image></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="width:100%;background:#262626;border-radius: 10rpx;margin-top: 20rpx;">
+        <view class="w710">
+            <view class="infor_list flexRowBetween">
+                <view class="infor_left">
+                    课程单价:
+                </view>
+                <view class="infor_center">
+                    ¥200
+                </view>
+            </view>
+           <view class="infor_list flexRowBetween">
+                <view class="infor_left">
+                    小计:
+                </view>
+                <view class="infor_center">
+                    ¥200
+                </view>
+            </view>
+             <view class="infor_list flexRowBetween" style="border:none;"  bindtap="intoPath" data-path="/pages/gym/userDiscount/userDiscount">
+                <view class="infor_left">
+                    优惠卷:
+                </view>
+                <view class="infor_center">
+                    暂无可用
+                </view>
+                <view class="infor_right">
+                    <image src="/images_gym/next_page.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<button class="submit_info"  bindtap="intoPathRedi" data-path="/pages/gym/user/user"> 提交订单,微信支付 </button>

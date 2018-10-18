@@ -1,0 +1,139 @@
+/**sign.wxss**/
+#sign_top{
+	position:relative;
+}
+#sign_top .sign_banner{
+	width:100%;
+	height:312rpx;
+}
+.has_sign{
+	width:130rpx;
+	height:130rpx;
+	border-radius:50%;
+	border:solid 2px #7e9acc;
+	background:linear-gradient(135deg,rgba(146,282,223,1.00),rgba(142,169,215,1.00),rgba(142,169,215,1.00));
+	position:absolute;
+	left:305rpx;
+	top:18rpx;
+}
+.sign_credit{
+	position:absolute;
+	right:52rpx;
+	top:25rpx;
+	color:#fff;
+}
+.sign_credit{
+	width:95rpx;
+	text-align:center;
+
+}
+.sign_credit .text1{font-size:24rpx;}
+.sign_credit .text2{font-size:26rpx;font-weight:blod;}
+.has_sign{
+	text-align:center;
+}
+.sign_in{
+	width:94rpx;
+	text-align:center;
+	margin:34rpx 0px 0px 18rpx;}
+.has_sign .text1{
+	font-size:26rpx;
+	font-weight:bold;
+	border-bottom:solid 1px #fff;
+	color:#fff;
+}
+.has_sign .text2{
+	font-size:24rpx;
+	color:#fff;
+}
+.great_txt{
+	height:112rpx;
+	line-height:112rpx;
+	text-align:center;
+	font-size:28rpx;
+	color:#222;
+}
+.great{
+	padding:0px 25rpx;
+	overflow:hidden;
+}
+.great_item{
+	width:320rpx;
+	height:auto;
+	margin:0rpx 17rpx;
+	float:left;
+	text-align:center;
+	margin-bottom:45rpx;
+}
+
+.great_item image{
+	width:320rpx;
+	height:320rpx;
+	border-radius:10rpx;
+}
+.great_item text{
+	font-size:24rpx;
+	color:#333;
+}
+
+.sign1{
+	width:21rpx;
+	height:21rpx;
+}
+.sign2{
+	width:19rpx;
+	height:19rpx;
+}
+.sign3{
+	width:19rpx;
+	height:19rpx;
+}
+.sign_jion{
+	width:84rpx;
+	height:4rpx;
+	background:#fff;
+	margin-top:8rpx;
+}
+.sign_progress{
+	position:absolute;
+	bottom:60rpx;
+	padding:0rpx 57rpx;
+}
+.sign_day{
+	position:absolute;
+	bottom:36rpx;
+	padding:0rpx 50rpx;
+}
+.sign_day1{
+	font-size:18rpx;
+	color:#fff;
+	margin-right:68rpx;
+}
+.sign_end{
+	margin-right:0rpx;
+}
+.sign4{
+	width:41rpx;
+	height:47rpx;
+}
+.current_day{
+	position:relative;
+	bottom:50rpx;
+	left:-17rpx;
+}
+.current_credit{
+	position:absolute;
+	top:0rpx;
+}
+.current_day .sign3{
+	position:absolute;
+	top:50rpx;
+	left:10rpx;
+}
+.current_credit text{
+position:absolute;
+top:6rpx;
+left:0rpx;
+	font-size:18rpx;
+	color:#fff;
+}

@@ -1,0 +1,143 @@
+/**appointment.wxss**/
+page{
+	background:#f5f5f5;
+}
+.order_dresser{
+	padding:30rpx 0rpx;
+	overflow:hidden;
+	margin-bottom:30rpx;
+	background:#fff;
+	height:210rpx;
+}
+.dresser_img{
+	width:44%;
+	text-align:center;
+	height:210rpx;
+	height:210rpx;
+	overflow:hiddden;
+
+}
+.order_right{
+	width:66%;
+	height:100%;
+	overflow:hidden;
+}
+.dresser_img image{
+	width:210rpx;
+	height:210rpx;
+}
+.dresser_name{
+	font-size:30rpx;
+	margin-top:35rpx;
+}
+.dresser_name .text2{margin-left:20rpx;}
+.star{
+	margin-top:80rpx;
+}
+.star image{
+	width:30rpx;
+	height:30rpx;
+	float:left;
+	margin-right:15rpx;
+
+}
+.detail_comment{
+	font-size:24rpx;
+	color:#a1a1a1;
+	height:78rpx;
+	line-height:78rpx;
+	border-top:solid 1px #ececec;
+	border-bottom:solid 1px #ececec;
+	clear:both;
+	margin-top:30rpx;
+	background:#fff;
+}
+.detail_select{
+	color:#fd5274;
+}
+.detail_comment .detail{
+	width:50%;
+	text-align:center;}
+.comment{
+	border-left:solid 1px #ececec;
+	width:50%;text-align:center;}
+#detail image{
+	width:550rpx;
+	height:354rpx;
+	margin:60rpx auto 40rpx auto;
+}
+#detail{
+	text-align:center;
+}
+.good_percent image{
+	width:11rpx;
+	height:20rpx;
+}
+.detail text{
+	color:#9c9c9c;
+	font-size:24rpx;
+}
+.comment tex1{
+	color:#333;
+}
+.comment .tex2{
+	color:#ff9600;
+	margin-left:10rpx;
+}
+.service{
+	height:100rpx;
+	line-height:100rpx;
+	padding:0rpx 48rpx;
+	border-bottom:solid 1px #ccc;
+	background:#fff;
+}
+.service_icon1{
+	width:34rpx;
+	height:30rpx;
+	margin-right:24rpx;
+	margin-top:3rpx;
+
+}
+.service text{
+	font-size:28rpx;
+}
+.service .service_icon2{
+	float:right;
+	width:11rpx;
+	height:20rpx;
+	margin-top:40rpx;
+}
+.service_list{
+	padding:0rpx 90rpx 0rpx 48rpx;
+	height:90rpx;
+	border-bottom:solid 1px #ccc;
+	line-height:90rpx;
+	background:#fff;
+}
+.service_list{
+	font-size:28rpx;
+}
+.service_list .text1{
+	color:#666;
+}
+.service_list .text2{
+	color:#fd5274;
+}
+.sumbit_btn{
+	width:355rpx;
+	height:80rpx;
+	border-radius:50rpx;
+	text-align:center;
+	line-height:80rpx;
+	color:#fff;
+	text-align:center;
+	font-size:28rpx;
+	background:#fd5274;
+	margin:140rpx auto 0rpx;
+
+}
+.flexRowBetween {
+
+align-items:stretch;
+
+}

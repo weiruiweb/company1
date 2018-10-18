@@ -1,0 +1,34 @@
+/**about.wxss**/
+@import "../../../wxParse/wxParse.wxss"; 
+.about_banner image{
+	width:100%;
+	height:438rpx;
+}
+.introduce{
+	font-size:28rpx;
+	color:#666;
+}
+#about{
+	padding:42rpx 32rpx;
+	margin:0rpx 42rpx;
+	position:relative;
+	top:-40rpx;
+	background:#fff;
+	border-radius:20rpx;
+	box-shadow:0rpx 0rpx 10rpx #666;
+}
+.intro_tlt{
+	text-align:center;
+	font-size:34rpx;
+	color:#333;
+	margin-bottom:15rpx;
+}
+.case{
+	text-align:center;
+	padding:36rpx 0rpx 39rpx;
+}
+.case image{
+	width:531rpx;
+	height:706rpx;
+	margin:0rpx auto;
+}

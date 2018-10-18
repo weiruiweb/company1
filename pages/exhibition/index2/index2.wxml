@@ -1,0 +1,57 @@
+<!--index2.wxml-->
+<view class="banner">
+    <image src="{{web_labelUrl}}"></image>
+</view>
+<view class="tab font30 flexRowBetween">
+    <block wx:for="{{web_labelData}}" wx:key="id">
+        <view data-num="{{item.id}}" class="tab_item {{web_num==item.id?'tab_this':''}}" bindtap="menuClick" style="width:{{web_viewWidth}}">{{item.title}}</view>
+    </block>
+</view>
+<block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="product flexRowBetween w710" bindtap="intoPath" data-path="/pages/exhibition/index_detail/index_detail?id={{item.id}}">
+        <view class="product_box flexRowBetween">
+            <view class="product_left">
+                <image src="{{item.mainImg[0].url}}"></image>
+            </view>
+            <view class="product_right flexRowBetween">
+                <view class="product_detail">
+                    <view class="font32 color3 product_top">{{item.title}}</view>
+                    <view class="font28 color6 flexRowBetween  product_top">
+                        <view class="product_name">{{item.description}}</view>
+                        <view class="font24 color9">{{item.create_time}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+
+<view class="navbar">
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index/index">
+        <view class="nav_img">
+          <image src="/images_exhibition/navbar1.png"></image>
+        </view>
+        <view class="text">首页</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index1/index1">
+        <view class="nav_img">
+           <image src="/images_exhibition/navbar2.png"></image>
+        </view>
+        <view class="text">公司业务</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index2/index2">
+        <view class="nav_img">
+           <image src="/images_exhibition/navbar3-a.png"></image>
+        </view>
+        <view class="text this-text">公司动态</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index3/index3">
+        <view class="nav_img">
+            <image src="/images_exhibition/navbar4.png"></image>
+        </view>
+        <view class="text">联系我们</view>
+    </view>
+</view>
+
+
+

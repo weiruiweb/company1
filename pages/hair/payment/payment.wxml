@@ -1,0 +1,30 @@
+<!--payment.wxml-->
+    <view class="pay_money">
+        <view class="pay_before">
+          消费金额
+        </view>
+        <input placeholder="请输入消费金额"></input>
+    </view>
+    <view class="pay_money pay_discount flexRowBetween" bindtap="discount">
+        <view class="pay_before">
+          优惠券
+        </view>
+        <input placeholder="请选择优惠劵"></input>
+        <image src="/images_hair/next_page.jpg"></image>
+    </view>
+    <view class="pay_method flexRowBetween">
+      <view class="pay_txt">
+        付款方式
+      </view>
+      <view class="chose_pay flexRowBetween">
+          <view class="pay1">
+              <image src="/images_hair/pay1.jpg"></image>
+              <text class="text1">余额支付</text>
+          </view>
+          <view class="pay1">
+              <image src="/images_hair/pay2.jpg"></image>
+              <text class="text1">微信支付</text>
+          </view>
+          
+      </view>
+    </view>

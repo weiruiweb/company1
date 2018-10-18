@@ -1,0 +1,79 @@
+<!--course.wxml-->
+<block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="w710">
+        <view class="send_list">
+            <view class="sender flexRowBetween">
+                <view class="sender_img">
+                    <image src="{{item.userInfo.headImgUrl}}"></image>
+                </view>
+                <view class="sender_left flex">
+                    <view>{{item.userInfo.nickname}}</view>
+                    <view class="vip">VIP</view>
+                </view>
+                <view class="sender_right">
+                    {{item.create_time}}
+                </view>
+            </view>
+            <view class="send_deatil">发布发布发布发布发布发布发布发布发布发布发布发布发布发布发布</view>
+            <view class="send_img flexRowBetween">
+                <block wx:for="{{item.mainImg}}" wx:key="id" wx:for-item="c_item" wx:for-index="c_index">
+                    <image src="{{c_item.url}}" bindtap="previewImage" data-url="{{c_item.url}}" data-index="{{index}}"></image>
+                </block>    
+            </view>
+            <view class="great flexRowCenter">
+                <button class="great"  open-type="getUserInfo" bindgetuserinfo="submit" data-index="{{index}}"  data-id="{{item.id}}" data-log_id="{{item.isPraise.id?item.isPraise.id:''}}">
+                    <view class="great_img ">
+                      <image src="{{item.isPraise.id?'/images_gym/great_a.png':'/images_gym/great.png'}}" ></image>
+                      <text >点赞{{item.praiseCount.totalCount}}</text>
+                    </view>
+                </button>
+                
+            </view>
+        </view>
+    </view>
+</block>
+
+<view class="send_btn" bindtap="intoPath"  data-path="/pages/gym/sendInformation/sendInformation">
+    <view class="btn_img"><image src="/images_gym/send_btn.png"></image></view>
+    编辑发布
+</view>
+<view class="solely" style="font-size:20rpx;color:#666;text-align:center;">
+  技术支持:西安纯粹科技有限公司
+</view>
+<view style="height:120rpx;width:100%;">
+</view>
+<view class="navbar">
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/index/index">
+        <view class="nav_img">
+          <image src="/images_gym/navbar1.png" style="width:64rpx;height:54rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">健身房</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/course/course">
+        <view class="nav_img">
+           <image src="/images_gym/navbar2.png" style="width:64rpx;height:54rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">分类</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/send/send">
+        <view class="nav_img">
+           <image src="/images_gym/navbar3-a.png" style="width:64rpx;height:54rpx;"></image>
+        </view>
+        <view class="text  this-text" style="{{fonts[2].font}}">发布</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/coach/coach">
+        <view class="nav_img">
+           <image src="/images_gym/navbar4.png" style="width:64rpx;height:54rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">教练</view>
+    </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/user/user">
+        <view class="nav_img">
+            <image src="/images_gym/navbar5.png" style="width:64rpx;height:54rpx;"></image>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">我的</view>
+    </view>
+</view>
+
+
+

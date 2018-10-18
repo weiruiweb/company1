@@ -1,0 +1,52 @@
+<!--gairDress.wxml-->
+<view id="dresser">
+    <block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="dresser_item">
+        <image src="{{item.mainImg[0].url}}"></image>
+        <view class="text">
+          <text class="text1">{{item.title}}</text><text class="text1 text2">{{item.description}}</text>
+        </view>
+        <view class="dresser_intro">
+        	从事美发行业20年，擅长女士卷发，染发，烫发
+        </view>
+        <text class="number">160人预约过</text>
+        <view class="order" bindtap="intoPath" data-path="/pages/hair/appointment/appointment?id={{item.id}}">
+          预约TA
+        </view>
+    </view>
+    </block>
+</view>
+
+<view class="bottom_spacing"></view>
+<view class="navbar">
+    <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Index/index">
+        <view class="nav_img">
+            <image src="/images_hair/navbar1.jpg"></image>
+        </view>
+        <view class="text">首页</view>
+    </view>
+    <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Service/service">
+        <view class="nav_img">
+            <image src="/images_hair/navbar2.jpg"></image>
+        </view>
+        <view class="text">服务</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairStyle/hairstyle">
+        <view class="nav_img">
+            <image src="/images_hair/navbar3.jpg"></image>
+        </view>
+        <view class="text">发型</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairDresser/hairDresser">
+        <view class="nav_img">
+            <image src="/images_hair/navbar4-a.jpg"></image>
+        </view>
+        <view class="text this-text" style="color:#fb5676">技师</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/User/user">
+        <view class="nav_img">
+            <image src="/images_hair/navbar5.jpg"></image>
+        </view>
+        <view class="text">我的</view>
+    </view>
+</view>

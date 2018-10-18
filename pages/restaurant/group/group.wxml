@@ -1,0 +1,256 @@
+<!--group.wxml-->
+<view class="tab_click flexRowBetween">
+	<view class="tab_sort " data-id="0" bindtap="tabCont">
+		<view class="tabs {{tapCurrent == 0?'this_tab':''}}">我是团长</view>
+	</view>
+	<view class="tab_sort"  data-id="1"  bindtap="tabCont">
+		<view class="tabs {{tapCurrent == 1?'this_tab':''}}">我要参团</view>
+	</view>
+</view>
+<view class="tab_cont">
+	<view class="tab_item {{tapCurrent == 0?'tab_this':''}}">
+		<view class="tab_list flexRowBetween">	
+			<view class="tuan_list">
+				<image src="/images_restaurant/tuan1.jpg"></image>
+			</view>
+			<view class="active_info flexRowBetween">
+				<view class="active_info1">
+					<view class="active_name" style="height:30%;">
+						剪吹限时抢购
+					</view>
+					<view class="price_time"  style="height:35%;">
+						<view class="price">
+							¥222.00
+						</view>
+						<view class="time flexRowBetween">
+							<view class="end_time">活动倒计时</view>
+							<view class="tiem_end">
+								03
+							</view>:
+							<view class="tiem_end">
+								03
+							</view>:
+							<view class="tiem_end">
+								03
+							</view>
+						</view>
+					</view>
+					<view class="send_group flexRowBetween" style="height:35%">
+						<view class="grou_click"   bindtap="send_order">发起拼团</view>
+						<view class="has_group">3人已团</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="tab_list flexRowBetween">	
+			<view class="tuan_list">
+				<image src="/images_restaurant/tuan1.jpg"></image>
+			</view>
+			<view class="active_info flexRowBetween">
+				<view class="active_info1">
+					<view class="active_name" style="height:30%;">
+						剪吹限时抢购
+					</view>
+					<view class="price_time"  style="height:35%;">
+						<view class="price">
+							¥222.00
+						</view>
+						<view class="time flexRowBetween">
+							<view class="end_time">活动倒计时</view>
+							<view class="tiem_end">
+								03
+							</view>:
+							<view class="tiem_end">
+								03
+							</view>:
+							<view class="tiem_end">
+								03
+							</view>
+						</view>
+					</view>
+					<view class="send_group flexRowBetween" style="height:35%">
+						<view class="grou_click"   bindtap="send_order">发起拼团</view>
+						<view class="has_group">3人已团</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="tab_list flexRowBetween">	
+			<view class="tuan_list">
+				<image src="/images_restaurant/tuan1.jpg"></image>
+			</view>
+			<view class="active_info flexRowBetween">
+				<view class="active_info1">
+					<view class="active_name" style="height:30%;">
+						剪吹限时抢购
+					</view>
+					<view class="price_time"  style="height:35%;">
+						<view class="price">
+							¥222.00
+						</view>
+						<view class="time flexRowBetween">
+							<view class="end_time">活动倒计时</view>
+							<view class="tiem_end">
+								03
+							</view>:
+							<view class="tiem_end">
+								03
+							</view>:
+							<view class="tiem_end">
+								03
+							</view>
+						</view>
+					</view>
+					<view class="send_group flexRowBetween" style="height:35%">
+						<view class="grou_click"   bindtap="send_order">发起拼团</view>
+						<view class="has_group">3人已团</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="tab_item {{tapCurrent == 1?'tab_this':''}}">
+		<view class="tab_list flexRowBetween">
+			<view class="limit_time">
+				<image src="/images_restaurant/group_icon5.png"></image>
+			</view>
+			<view class="tuan_cont flexRowBetween">
+				<view class="tuan_list">
+					<image src="/images_restaurant/tuan1.jpg"></image>
+				</view>
+				<view class="active_info flexRowBetween">
+					<view class="active_info1">
+						<view class="active_name" style="height:30%;">
+							剪吹限时抢购
+						</view>
+						<view class="price_time"  style="height:30%;">
+							<view class="price">
+								¥222.00
+							</view>
+							
+						</view>
+						<view class="send_group flexRowBetween"  style="height:40%;">
+							<view class="grounp_left">
+								<view class="grou_click group_together" bindtap="send_order1">去拼单</view>
+							</view>
+							<view class="grounp_right">
+								<view class="need_person">还差<text>1人</text>拼团成功</view>
+								<view class="time time1 flexRowBetween">
+									<view class="end_time">倒计时</view>
+									<view class="tiem_end">
+										03
+									</view>:
+									<view class="tiem_end">
+										03
+									</view>:
+									<view class="tiem_end">
+										03
+									</view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>	
+		<view class="tab_list flexRowBetween">
+			<view class="limit_time">
+				<image src="/images_restaurant/group_icon5.png"></image>
+			</view>
+			<view class="tuan_cont flexRowBetween">
+				<view class="tuan_list">
+					<image src="/images_restaurant/tuan1.jpg"></image>
+				</view>
+				<view class="active_info flexRowBetween">
+					<view class="active_info1">
+						<view class="active_name" style="height:30%;">
+							剪吹限时抢购
+						</view>
+						<view class="price_time"  style="height:30%;">
+							<view class="price">
+								¥222.00
+							</view>
+							
+						</view>
+						<view class="send_group flexRowBetween"  style="height:40%;">
+							<view class="grounp_left">
+								<view class="grou_click group_together" bindtap="send_order1">去拼单</view>
+							</view>
+							<view class="grounp_right">
+								<view class="need_person">还差<text>1人</text>拼团成功</view>
+								<view class="time time1 flexRowBetween">
+									<view class="end_time">倒计时</view>
+									<view class="tiem_end">
+										03
+									</view>:
+									<view class="tiem_end">
+										03
+									</view>:
+									<view class="tiem_end">
+										03
+									</view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>	
+	</view>
+	
+</view>
+<view class="{{isShow?'mask':''}} {{isShows?'mask':''}}">
+
+</view>
+<view class="begin_group {{isShow?'group_show':''}}">
+	<view class="group_wrap">
+		<image class="close" src="/images_restaurant/close_icon.png" bindtap="close"></image>
+		<text class="text1">发起拼团</text>
+		<text class="text">邀请<text class="group_number">2</text>人即可组团成功，23:49:07后结束</text>
+		<view class="group_all flexRowBetween">
+			<view class="group_person this_person">
+				<image src="/images_restaurant/dresser.jpg"></image>
+
+			</view>
+			<view class="group_person">
+				?
+			</view>
+			<view class="group_person">
+				
+				?
+			</view>
+		</view>
+		<view class="share">
+			<view class="share_method">
+				选择分享方式
+			</view>
+			<view class="three_share flexRowBetween">
+				<view class="bg_img {{this_item ==0?'this_bg':''}}" bindtap="this_bg" data-current="0"><image src="/images_restaurant/share1.png"></image></view>
+				<view class="bg_img {{this_item ==1?'this_bg':''}}" bindtap="this_bg"  data-current="1"><image src="/images_restaurant/share2.png"></image></view>
+				<view class="bg_img {{this_item ==2?'this_bg':''}}" bindtap="this_bg"  data-current="2"><image src="/images_restaurant/share3.png"></image></view>
+			</view>
+		</view>
+		<view class="send_share">
+			去分享
+		</view>
+	</view>
+</view>
+<view class="begin_group {{isShows?'group_shows':''}}">
+	<view class="group_wrap">
+		<image class="close" src="/images_restaurant/close_icon.png" bindtap="closed"></image>
+		<text class="text1">发起拼团</text>
+		<text class="text">邀请<text class="group_number">2</text>人即可组团成功，23:49:07后结束</text>
+		<view class="group_all flexRowBetween">
+			<view class="group_person this_person">
+				<image src="/images_restaurant/dresser.jpg"></image>
+
+			</view>
+			<view class="group_person">
+				?
+			</view>
+		</view>
+		<view class="send_share">
+			去分享
+		</view>
+	</view>
+</view>

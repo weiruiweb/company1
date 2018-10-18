@@ -1,0 +1,19 @@
+<!--index.wxml-->
+
+<view class="p40" id="album">
+  <view class="product flexRowBetween">
+      <view class="product_img">
+        <image src="/images_hotel/product.png"></image>
+      </view>
+      <view class="product_img">
+        <image src="/images_hotel/product.png"></image>
+      </view>
+      <view class="product_img">
+        <image src="/images_hotel/product.png"></image>
+      </view>
+      <view class="product_img">
+        <image src="/images_hotel/product.png"></image>
+      </view>
+  </view>
+</view>
+

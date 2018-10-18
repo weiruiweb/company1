@@ -1,0 +1,24 @@
+<!--album.wxml-->
+    <view class="free-WaterfallFlow">
+      <block>
+        <view class="flex-wrap" wx:for="{{images}}" wx:key='{{index}}' 
+        wx:if="{{index%2 == 1}}">
+          <image mode="widthFix" src="{{item.src}}"></image>
+        
+        </view>
+      </block>
+      <block>
+        <view class="flex-wrap" wx:for="{{images}}" wx:key='{{index}}'
+        wx:if="{{index%2== 0 && index%3 != 0}}">
+          <image mode="widthFix" src="{{item.src}}"></image>
+          
+        </view>
+      </block>
+      <block>
+        <view class="flex-wrap" wx:for="{{images}}" wx:key='{{index}}'
+        wx:if="{{index%3 == 0 && index%2 == 0}}">
+          <image mode="widthFix" src="{{item.src}}"></image>
+        
+        </view>
+      </block>
+    </view>

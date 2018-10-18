@@ -1,0 +1,103 @@
+<!--comfirm.wxml-->
+<view class="users">
+	<view class="user_banner">
+		<image src="/images_restaurant/comfirm.png"></image>
+	</view>
+	<view class="user_top">
+		<view class="flexRowBetween">
+			<view class="user_Left">
+				<view class="user_img">
+					<open-data type="userAvatarUrl"></open-data>
+				</view>
+			</view>
+			 <view class="user_word ">
+			 	<view class="user_name flexRowBetween">
+			 		<view class="name_img"><image src="/images_restaurant/table_icon.png"></image></view>
+			 		<view class="number">
+			 			<text>桌号</text><text>A区11桌</text>
+			 		</view>
+			 	</view>
+			 	<view class="phone">
+			 		<text>4份共392元 </text><text> 可用优惠券:20元</text>
+			 	</view>
+
+			 </view>
+		</view>
+		<view class="member">会员11</view>
+	</view>
+</view>
+<view class="order_all flexRowBetween">
+	<view class="txt_left flexRowBetween" style="width:100%;">
+		<view class="txt1">备注</view>
+		<view class="txt2" style="padding-left:0;width:80%;">微辣</view>
+	</view>
+
+</view>
+<view class="order_all flexRowBetween">
+	<view class="txt_left flexRowBetween">
+		<view class="txt1" style="width:36%;">优惠券</view>
+		<view class="txt2">优惠20元</view>
+	</view>
+	<view class="txt_right">
+		<image src="/images_restaurant/next_page.jpg"></image>
+	</view>
+</view>
+
+<view class="order_cont">
+	<view class="order_tlt">
+		已点商品（4）
+	</view>
+</view>
+<view class="order_list">
+	<view class="oreder_detail flexRowCenter">
+		<view class="order_name avoidOverflow">
+			温蟹温蟹
+		</view>
+		<view class="order_number">
+			<text>x1</text><text>168元</text>
+		</view>
+	</view>
+	<view class="oreder_detail flexRowCenter">
+		<view class="order_name avoidOverflow">
+			温蟹温蟹
+		</view>
+		<view class="order_number">
+			<text>x1</text><text>168元</text>
+		</view>
+	</view>
+	<view class="oreder_detail flexRowCenter">
+		<view class="order_name avoidOverflow">
+			温蟹温蟹
+		</view>
+		<view class="order_number">
+			<text>x1</text><text>168元</text>
+		</view>
+	</view>
+</view>
+<view class="discont flexRowBetween">
+	<view class="discont_left">优惠券</view>
+	<view class="discont_left">-20</view>
+</view>
+<view class="total_money">
+	<view class="total_txt1">总价：397</view>
+	<view class="total_txt2"><text class="text1">节省20元</text><text class="text2">实付：377</text></view>
+</view>
+<view id="menus">
+	<view class="has_menus flexRowCenter">
+		<view class="menus_icon">
+			<image src="/images_restaurant/dian.png"></image>
+			 <view class="cart_number">
+	            <view class="fiexd-cart" style="">
+	                <view style="color:#fff;font-size:16rpx;">8</view>
+	            </view>
+	        </view>
+		</view>
+		<view class="menus_number">
+			<text class="text1" style="{{fonts[5].font}};color:#666;">已点:</text>
+			<text class="text2"  style="{{fonts[5].font}};color:#f2665f;">266元</text>
+		</view>
+		<view id="has_menus" bindtap="intoPath"  data-path="/pages/restaurant/dishesPayment/dishesPayment">
+			<view class="menus_click">付款</view>
+		</view>
+	</view>
+</view>

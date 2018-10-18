@@ -1,0 +1,49 @@
+<!--manageAddress.wxml-->
+<view class="userComment">
+	<view class="comment_save">
+		<view class="has_send" data-id="0" bindtap="has_send" > 
+			<text style="{{currentId == 0?'color:#bb212e;border-bottom:solid 1px #bb212e':''}}">专属学员</text>
+		</view>
+		<view class="has_send" data-id="1" bindtap="has_send"> 
+			<text style="{{currentId == 1?'color:#bb212e;border-bottom:solid 1px #bb212e':''}}">公告学员</text>
+		</view>
+	</view>
+</view>
+<view class="w710">
+	<view class="order">
+		<view class="w710">		
+			<view class="banner_bottom flexRowBetween">
+				 <view class="user_imgs">
+				    <view class="user_img">
+				          <open-data type="userAvatarUrl"></open-data>
+				    </view>
+			    </view>
+			    <view class="user_left">
+			      <view style="font-size:32rpx;color:#fff;">
+			        会员名称
+			      </view>
+			      <view class="resume" >教练: sina</view>
+			    </view>
+			    <view class="user_right">
+			      领取
+			    </view>
+			</view>
+			<view class="banner_bottom flexRowBetween">
+				 <view class="user_imgs">
+				    <view class="user_img">
+				          <open-data type="userAvatarUrl"></open-data>
+				    </view>
+			    </view>
+			    <view class="user_left">
+			      <view style="font-size:32rpx;color:#fff;">
+			        会员名称
+			      </view>
+			      <view class="resume" >教练: sina</view>
+			    </view>
+			    <view class="user_right">
+			      领取
+			    </view>
+			</view>
+		</view>
+	</view>
+</view>

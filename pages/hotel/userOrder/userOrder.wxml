@@ -1,0 +1,40 @@
+<!--manageAddress.wxml-->
+<view class="userComment">
+	<view class="comment_save">
+		<view class="has_send" data-num="1" bindtap="menuClick" style="{{num ==1 ?'background:#404040':''}}"> 
+			待支付
+		</view>
+		<view class="has_send" data-num="2" bindtap="menuClick" style="{{num ==2?'background:#404040':''}}"> 
+			已支付
+		</view>
+	</view>
+</view>
+<view class="w710">
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="order">
+			<view class="w710">	
+				<view class="order_tlt flexRowBetween">
+					<view class="tlt_left">订单编号：{{item.order_no}}</view>
+					<view class="tlt_left tlt_right">{{item.create_time}}</view>
+				</view>
+				<view class=" order_list flexRowBetween">		
+					<view class="order_left">		
+					   <image src="{{item.products[0].snap_product.mainImg[0].url}}"></image>
+					</view>
+					<view class="order_right">		
+					   <view class="order_name">{{item.products[0].snap_product.title}}</view>
+					   <view class="order_number flexRowBetween">
+					   		<view>{{item.count}}晚 9.19 -9.20</view>
+							<view>¥{{item.price}}</view>
+					   </view>
+					</view>
+				</view>
+				<view class="pay">
+					<view class="handle" data-id="{{item.id}}" bindtap='deleteOrder' wx:if="{{item.pay_status == '0'}}">删除订单</view>
+					<view class="handle pay_btn" data-id="{{item.id}}" data-price="{{item.price}}" bindtap="pay" wx:if="{{item.pay_status == '0'&&item.order_step=='0'}}">支付</view>
+				
+				</view>
+			</view>
+		</view>
+	</block>
+</view>

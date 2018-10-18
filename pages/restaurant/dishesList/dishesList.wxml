@@ -1,0 +1,109 @@
+<!--dishesList.wxml-->
+<view class="dishesList">
+		<view class="menus_has" style="" >	
+			热菜<text>（4）</text>
+		</view>
+		<block wx:for="{{web_mainData}}" wx:key="id" >
+		<view class="dishes_list">
+			<view class="dishes_item flexRowCenter1">
+				<view class="dishes_left">
+					<image src="{{item.mainImg[0].url}}"></image>
+				</view>
+				<view class="dishes_center">
+					<view class="avoidOverflow">{{item.title}}</view>
+					<view class="" style="color:#f2665f;font-size:30rpx;">{{item.price}}元</view>
+				</view>
+
+				<view class="dishes_right">
+					<view class="dishes_number flexRowCenter">
+						<view class="add_s">
+							<view class="min_dishes" style="font-size:70rpx;line-height:34rpx;" data-index="{{index}}" data-type="-" bindtap="counter">-</view>
+						</view>
+						<input class="number" type="number" bindchange="bindManual" value="{{item.count}}" style="text-align:center"/>
+						<view class="add_s">
+							<view class="min_dishes add_dishes "  data-index="{{index}}" data-type="+" bindtap="counter">+</view>
+						</view>
+					</view>
+					<view id="menus_up">
+						<view class="menus_up">
+							下单
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		</block>
+		
+		<view class="menus_has" style="" >	
+			凉菜<text>（4）</text>
+		</view>
+		<view class="dishes_list">
+			<view class="dishes_item flexRowCenter1">
+				<view class="dishes_left">
+					<image src="/images_restaurant/dishes1.jpg"></image>
+				</view>
+				<view class="dishes_center">
+					<view class="avoidOverflow">大闸蟹</view>
+					<view class="" style="color:#f2665f;font-size:30rpx;">168元</view>
+				</view>
+
+				<view class="dishes_right">
+					<view class="dishes_number flexRowCenter">
+						<view class="add_s">
+							<view class="min_dishes" style="font-size:70rpx;line-height:34rpx;">-</view>
+						</view>
+						<view class="add_centerN" >1</view>
+						<view class="add_s">
+							<view class="min_dishes add_dishes ">+</view>
+						</view>
+					</view>
+					<view id="menus_up">
+						<view class="menus_up">
+							下单
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="dishes_list">
+			<view class="dishes_item flexRowCenter1">
+				<view class="dishes_left">
+					<image src="/images_restaurant/dishes1.jpg"></image>
+				</view>
+				<view class="dishes_center">
+					<view class="avoidOverflow">大闸蟹</view>
+					<view class="" style="color:#f2665f;font-size:30rpx;">168元</view>
+				</view>
+
+				<view class="dishes_right">
+					<view class="dishes_number flexRowCenter">
+						<view class="add_s">
+							<view class="min_dishes" style="font-size:70rpx;line-height:34rpx;">-</view>
+						</view>
+						<view class="add_centerN" >1</view>
+						<view class="add_s">
+							<view class="min_dishes add_dishes ">+</view>
+						</view>
+					</view>
+					<view id="menus_up">
+						<view class="menus_up">
+							下单
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+</view>
+<view class="menu_totl ">
+	<view class="menu_in flexRowCenter">
+		<view class="menu_inL" bindtap="intoPath" data-path="/pages/restaurant/Dishes/dishes">
+			加菜
+		</view>
+		<view class="menu_inC">
+			{{web_cartTotalCounts}}份共<text>{{web_totalPrice}}元</text>
+		</view>
+		<view class="menu_inL menu_inR" bindtap="intoPath" data-path="/pages/restaurant/dishesComfirm/dishesComfirm">
+			全部下单
+		</view>
+	</view>
+</view>

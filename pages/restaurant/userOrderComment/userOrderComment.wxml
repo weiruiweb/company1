@@ -1,0 +1,54 @@
+<!--userOrder.wxml-->
+<view class="order_detail flexRowBetween">
+  <view class="order_detailL">订单：0000211  <text>2018-08-01</text></view>
+  <view class="order_detailR">会员名111</view>
+</view>
+<view class="textarea">
+  <textarea  type="" placeholder="请输入要发布的内容..." style="{{fonts[3].font}}">
+  </textarea>
+</view>
+<view class="uploder">
+    <view class="uploder_all">
+         <block wx:for-items="{{files}}" wx:key="{{index}}">
+            <view class="uploder_item" bindtap="previewImage" id="{{item}}">
+                 <view class="uploader__input">
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                 </view>
+           </view>
+          </block>
+
+        <view class="uploder_item" >
+          <view class="uploader__input" bindtap="chooseImage">
+           <image src="/images_restaurant/photo.jpg"></image>
+          </view>
+        </view>
+    </view>
+</view>
+
+<view class="order_detail flexRowBetween">
+  <view class="star_left">服务评价</view>
+  <view class="star_all">
+          <image src="/images_restaurant/star.png"></image>
+          <image src="/images_restaurant/star.png"></image>
+          <image src="/images_restaurant/star.png"></image>
+          <image src="/images_restaurant/star.png"></image>
+          <image src="/images_restaurant/star.png"></image>
+        </view>
+</view>
+<view class="order_detail" style="height:110rpx;font-size:24rpx;">
+  服务周全！
+</view>
+
+<view class="order_detail flexRowBetween">
+  <view class="star_left">口味评价</view>
+  <view class="star_all">
+          <image src="/images_restaurant/star.png"></image>
+          <image src="/images_restaurant/star.png"></image>
+          <image src="/images_restaurant/star.png"></image>
+          <image src="/images_restaurant/star_a.png"></image>
+          <image src="/images_restaurant/star_a.png"></image>
+        </view>
+</view>
+<view class="order_detail" style="height:110rpx;font-size:24rpx;">
+  口感细腻，口味清爽，味道不错，有图有真相，嘻嘻！！
+</view>

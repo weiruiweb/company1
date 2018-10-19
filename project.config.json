@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 24,
+			"current": 26,
 			"list": [
 				{
 					"id": 0,
@@ -182,7 +182,19 @@
 				{
 					"id": -1,
 					"name": "美发首页",
-					"pathName": "pages/hair/Index/index"
+					"pathName": "pages/hair/Index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mall/gongzhonghao/gongzhonghao",
+					"pathName": "pages/mall/gongzhonghao/gongzhonghao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mall/gongzhonghao/gongzhonghao",
+					"pathName": "pages/mall/Sort/sort"
 				}
 			]
 		}

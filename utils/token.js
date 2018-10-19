@@ -15,7 +15,6 @@ class Token {
         if (!token) {
             this.getUserInfo();
         };
-            
     }
 
 
@@ -63,7 +62,7 @@ class Token {
 
     getTokenFromServer(data,params,callback) {
         var self  = this;
-        console.log(params)
+        console.log('params',params)
         wx.login({
             success: function (res) {
                 console.log(res)

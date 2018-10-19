@@ -7,6 +7,7 @@ const token = new Token();
 
 
 Page({
+  
   data: {
     labelData:[],
     mainData:[],
@@ -30,7 +31,7 @@ Page({
       fonts:app.globalData.font
     });
     self.data.id=options.id
-    self.data.paginate = api.cloneForm(getApp().globalData.mall_paginate);
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getLabelData();
     self.setData({
       web_index:self.data.index,

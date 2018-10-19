@@ -234,11 +234,11 @@ Page({
       searchItem:{
         id:order_id
       },
-      score:self.data.totalPrice.toFixed(2),
-      coupon:{
+      wxPay:self.data.totalPrice.toFixed(2),
+      /*coupon:{
         coupon_no:self.data.couponData[0].order_no,
         price:self.data.couponPrice.toFixed(2)
-      },
+      },*/
       wxPayStatus:0
     };
     const callback = (res)=>{

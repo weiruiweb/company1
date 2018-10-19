@@ -17,7 +17,7 @@ Page({
     self.data.name = options.name;
     if(!wx.getStorageSync('mall_token')){
       var token = new Token();
-      token.getUserInfo(data,self.data.name);
+      token.getUserInfo(self.data.name);
     };
     self.setData({
       isHidden: false,

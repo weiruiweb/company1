@@ -120,3 +120,6 @@ page{
 	color:#222;
 
 }
+.nav_img{
+	margin:0 auto 10rpx auto;
+}

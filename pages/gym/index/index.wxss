@@ -209,3 +209,18 @@ view{
 .sign_up{
 	display:flex;
 }
+.star_item{
+	width:28rpx;
+	height:28rpx;
+}
+.navbar .this-text{
+	color:#bb212e;
+}
+.nav_img{
+	width:64rpx;
+	height:54rpx;
+	margin:0 auto;
+}
+.navbar{
+	box-shadow:5rpx 0 15rpx #f35c59;
+}

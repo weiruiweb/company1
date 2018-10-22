@@ -23,7 +23,7 @@ Page({
     duration: 1000,
     mainData:[],
     complete_api:[],
-
+    img:"background:url('/images/website.png')",
   },
   //事件处理函数
  

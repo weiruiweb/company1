@@ -104,4 +104,7 @@ page{
 	top:0;
 	left:0;
 }
-
+.next_page{
+	width:12rpx;
+	height:20rpx;
+}

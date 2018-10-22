@@ -41,7 +41,7 @@ input{
 	border-radius:10rpx;
 	font-size:24rpx;
 }
-.pay1 image{
+.pay1{
 	width:92rpx;
 	height:92rpx;
 }

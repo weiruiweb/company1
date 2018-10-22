@@ -10,12 +10,12 @@
 			</view>
 			<view class="star flexRowBetween">
 				<view class="star_xt">打分</view>
-				<view class="star_all">
-					<image src="/images_restaurant/star.png"></image>
-					<image src="/images_restaurant/star.png"></image>
-					<image src="/images_restaurant/star.png"></image>
-					<image src="/images_restaurant/star.png"></image>
-					<image src="/images_restaurant/star.png"></image>
+				<view class="star_all flex">
+					<view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+        <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-182px -384px"></view>
 				</view>
 			</view>
 		</view>
@@ -42,12 +42,12 @@
 			</view>
 			<view class="star flexRowBetween">
 				<view class="star_xt">打分</view>
-				<view class="star_all">
-					<image src="/images_restaurant/star.png"></image>
-					<image src="/images_restaurant/star.png"></image>
-					<image src="/images_restaurant/star.png"></image>
-					<image src="/images_restaurant/star.png"></image>
-					<image src="/images_restaurant/star.png"></image>
+				<view class="star_all flex">
+					<view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+        <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-182px -384px"></view>
 				</view>
 			</view>
 		</view>
@@ -74,12 +74,12 @@
 			</view>
 			<view class="star flexRowBetween">
 				<view class="star_xt">打分</view>
-				<view class="star_all">
-					<image src="/images_restaurant/star.png"></image>
-					<image src="/images_restaurant/star.png"></image>
-					<image src="/images_restaurant/star.png"></image>
-					<image src="/images_restaurant/star.png"></image>
-					<image src="/images_restaurant/star.png"></image>
+				<view class="star_all flex">
+					<view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+        <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-182px -384px"></view>
 				</view>
 			</view>
 		</view>

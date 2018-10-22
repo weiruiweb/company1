@@ -9,6 +9,7 @@ Page({
   data: {
     currentId:0,
     selectId:0,
+    img:"background:url('/images/gym.png')",
   },
 
   onLoad(options) {

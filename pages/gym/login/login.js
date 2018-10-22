@@ -8,7 +8,7 @@ var token = new Token();
 Page({
 
   data: {
-
+    img:"background:url('/images/gym.png')",
     sForm:{
       login_name:'',
       password:''

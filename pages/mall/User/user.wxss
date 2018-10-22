@@ -133,3 +133,21 @@ line-height:42rpx;
 	background:#fff;
 	margin-top:12rpx;
 }
+.nav_img{
+	margin:0 auto 10rpx auto;
+}
+.user_icon{
+	width:32rpx;
+	height:32rpx;
+	margin-right:6rpx;
+}
+.user_icon1{
+	width:12rpx;
+	height:20rpx;
+	margin-left:10rpx;
+}
+.user_icon3{
+	width:50rpx;
+	height:44rpx;
+	margin:0 auto 10rpx auto;
+}

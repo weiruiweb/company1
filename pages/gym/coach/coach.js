@@ -7,7 +7,8 @@ const token = new Token();
 Page({
   data: {
     mainData:[],
-    complete_api:[]
+    complete_api:[],
+    img:"background:url('/images/gym.png')",
   },
   //事件处理函数
 

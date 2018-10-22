@@ -6,13 +6,13 @@ view{
 }
 .banner{
 	width:100%;
-	height:314rpx;
+	height:300rpx;
 	overflow:hidden;
 	position:relative;
 }
 .banner image{
 	width:100%;
-	height:314rpx;
+	height:300rpx;
 }
 .resume{
 	font-size:24rpx;
@@ -105,4 +105,17 @@ height:100%;
 	flex-direction:row;
 	justify-content:flex-start;
 	align-items:center;
+}
+.nav_img{
+	width:42rpx;
+	height:46rpx;
+	margin:0 auto 10rpx auto;
+}
+.navbar .this-text{
+	color:#333;
+}
+.sort_icon{
+	width:42rpx;
+	height:42rpx;
+	margin:0 auto;
 }

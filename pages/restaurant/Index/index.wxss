@@ -224,5 +224,16 @@ swiper{
   transition:all .2s ease-in 0s;
   z-index: 20; 
 }
-
-
+.module_icon{
+	width:110rpx;
+	height:110rpx;
+	margin:0 auto;
+}
+.nav_img{
+	width:44rpx;
+	height:42rpx;
+	margin:0 auto 10rpx auto;
+}
+.navbar .this-text{
+	color:#f2665f;
+}

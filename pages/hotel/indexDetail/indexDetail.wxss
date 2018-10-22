@@ -215,4 +215,8 @@ view{
 	justify-content:flex-start;
 	align-items:center;
 }
-
+.phone_cont{
+	width:32rpx;
+	height:32rpx;
+	margin:0 auto;
+}

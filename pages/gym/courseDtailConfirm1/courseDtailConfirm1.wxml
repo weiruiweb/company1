@@ -1,7 +1,9 @@
-<!--userINfor.wxml-->
+
 <view class="w710">
      <view class="user_tlt">
-    <view class="tlt_cont"><image src="/images_gym/user_icon6.png"></image>订单确认</view>
+    <view class="tlt_cont">
+        <view style="width:30rpx;height:30rpx;{{img}};background-position: -194px -68px">
+        </view>订单确认</view>
     </view>
     <view style="width:100%;background:#262626;border-radius: 10rpx;margin-top: 20rpx;">
         <view class="w710">
@@ -18,9 +20,13 @@
                     数量:
                 </view>
                  <view class="infor_center flexRowBetween" style="width:30%;">
-                    <view class="mins"><image src="/images_gym/confirm1.png"></image></view>
+                    <view class="mins">
+                        <view style="width:60rpx;height: 60rpx;{{img}};background-position:-60px 0;"></view>
+                    </view>
                     <view class="number">1</view>
-                    <view class="add"><image src="/images_gym/confirm2.png"></image></view>
+                    <view class="add">
+                        <view style="width:60rpx;height: 60rpx;{{img}};background-position:0px 0;"></view>
+                    </view>
                 </view>
             </view>
              <view class="infor_list flexRowBetween"  bindtap="intoPath" data-path="/pages/gym/userDiscount/userDiscount">

@@ -49,7 +49,7 @@ page{
 .star{
 	height:60%;
 	align-items:center;
-	width:56%;
+	width:80%;
 }
 .star_all{
 	height:24rpx;

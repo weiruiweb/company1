@@ -7,6 +7,7 @@ const token = new Token();
 
 Page({
   data: {
+    img:"background:url('/images/gym.png')",
   },
 
   onLoad(options) {

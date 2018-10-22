@@ -15,3 +15,8 @@
 	color:#21c3d4;
 	border-bottom:solid 1px #21c3d4;
 }
+.nav_img{
+	width:46rpx;
+	height:46rpx;
+	margin:0 auto;
+}

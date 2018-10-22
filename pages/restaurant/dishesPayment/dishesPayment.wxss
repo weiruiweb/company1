@@ -15,7 +15,7 @@
 }
 .pay_left{
 	width:35%;
-	height:76rpx;
+	height:90rpx;
 	font-size:30rpx;
 	color:#333;
 }
@@ -23,11 +23,6 @@
 	widht:68%;
 	padding-right:7%;
 	text-align:right;
-}
-.pay_icon image{
-	width:76rpx;
-	height:76rpx;
-	margin:0 22rpx;
 }
 .pay_method{
 	box-shadow:0 0 10rpx #666;
@@ -44,4 +39,19 @@
 }
 .submit_info{
 	margin-top:120rpx;
+}
+.pay_img{
+	width:90rpx;
+	height:90rpx;
+	margin:0 auto;
+}
+.pay_icon{
+	width:90rpx;
+	height:90rpx;
+	margin:0 auto;
+}
+.choose{
+	width:50rpx;
+	height:50rpx;
+	background-position: -320px -168px;
 }

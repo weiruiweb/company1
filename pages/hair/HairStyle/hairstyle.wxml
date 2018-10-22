@@ -54,33 +54,23 @@
 <view class="bottom_spacing"></view>
 <view class="navbar">
     <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Index/index">
-        <view class="nav_img">
-            <image src="/images_hair/navbar1.jpg"></image>
-        </view>
+        <view class="nav_img" style="{{img}};background-position: -54px -160px;"></view>
         <view class="text">首页</view>
     </view>
     <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Service/service">
-        <view class="nav_img">
-            <image src="/images_hair/navbar2.jpg"></image>
-        </view>
+        <view class="nav_img"  style="{{img}};background-position: -108px -160px;"></view>
         <view class="text">服务</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairStyle/hairstyle">
-        <view class="nav_img">
-            <image src="/images_hair/navbar3-a.jpg" ></image>
-        </view>
-        <view class="text this-text" style="color:#fb5676">发型</view>
+        <view class="nav_img"  style="{{img}};background-position: -26px -160px;"></view>
+        <view class="text"  style="color:#fb5676">发型</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairDresser/hairDresser">
-        <view class="nav_img">
-            <image src="/images_hair/navbar4.jpg"></image>
-        </view>
+        <view class="nav_img"  style="{{img}};background-position: -216px -160px;"></view>
         <view class="text">技师</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/User/user">
-        <view class="nav_img">
-            <image src="/images_hair/navbar5.jpg"></image>
-        </view>
+        <view class="nav_img"  style="{{img}};background-position: -162px -160px;"></view>
         <view class="text">我的</view>
     </view>
 </view>

@@ -1,14 +1,14 @@
 <!--login.wxml-->
 <view id="credit">
   <view class="credit_top">
-    <image src="/images_hotel/credit_icon1.jpg"></image>
+    <view style="width:88rpx;height:102rpx;{{img}};background-position: -75px -73px;margin:80rpx auto 20rpx;"></view>
     <view>
     <text>目前余额:</text>
     <text class="cre_number">600</text>
     </view>
   </view>
   <view class="cre_detail flex">
-    <image src="/images_hotel/incom_icon1.jpg"></image>
+    <view style="width:32rpx;height:32rpx;{{img}};background-position: -20px -0px;margin-right:20rpx;"></view>
     <text>消费详情</text>
   </view>
   <view class="credit_list flexRowBetween">

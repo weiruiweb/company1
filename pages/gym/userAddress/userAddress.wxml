@@ -16,15 +16,15 @@
 		</view>
 		<view class="address_set flexRowBetween">
 			<view class="default"  bindtap="{{item.isdefault=='0'?'updateAddress':''}}" data-id="{{item.id}}">
-				<image src="{{item.isdefault=='0'?'/images_gym/select.png':'/images_gym/select_a.png'}}"></image>
+				<view style="{{img}}" class="{{item.isdefault=='0'?'select':'select1'}}"></view>
 				<text>{{item.isdefault=='0'?'设为默认地址':'默认地址'}}</text>
 			</view>
 			<view class="edit" data-path="/pages/gym/userAddressNew/userAddressNew?id={{item.id}}" bindtap="intoPath">
-				<image src="/images_gym/edit.jpg"></image>
+				<view style="width:26rpx;height:26rpx;{{img}};background-position: -319px -36px;"></view>
 				<text>编辑</text>
 			</view>
 			<view class="edit delete" data-id="{{item.id}}" bindtap="deleteAddress">
-				<image src="/images_gym/del.jpg"></image>
+				<view style="width:26rpx;height:26rpx;{{img}};background-position: -302px -36px;"></view>
 				<text>删除</text>
 			</view>
 		</view>

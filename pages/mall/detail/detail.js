@@ -24,6 +24,7 @@ Page({
     choose_sku_item:[],
     buttonType:'',
     buttonClicked:true,
+    img:"background:url('/images/small.png')",
   },
   
   onLoad(options){

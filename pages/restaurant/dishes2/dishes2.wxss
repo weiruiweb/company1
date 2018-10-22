@@ -46,7 +46,7 @@ page{
 }
 .comment_star{
 	height:50rpx;
-	width:62%;	
+	width:75%;	
 }
 .sta_list image{
 	width:29rpx;
@@ -248,7 +248,7 @@ page{
 .star{
 	height:60%;
 	align-items:center;
-	width:56%;
+	width:80%;
 }
 .star_all{
 	height:24rpx;

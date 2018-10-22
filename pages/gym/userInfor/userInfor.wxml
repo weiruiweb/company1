@@ -28,7 +28,7 @@
                     <input placeholder="请输入身高" data-key="email" bindblur="changeBind" value="{{web_sForm.email}}"></input>
                 </view>
                 <view class="infor_right">
-                    <image src="/images_gym/next_page.png"></image>
+                    <view style="width:14rpx;height:20rpx;background-position:-85px -100px;{{img}}"></view>
                 </view>
             </view>
             <view class="infor_list flexRowBetween">
@@ -39,7 +39,7 @@
                     <input placeholder="请输入体重" data-key="address" bindblur="changeBind" value="{{web_sForm.address}}"></input>
                 </view>
                 <view class="infor_right">
-                    <image src="/images_gym/next_page.png"></image>
+                    <view style="width:14rpx;height:20rpx;background-position:-85px -100px;{{img}}"></view>
                 </view>
             </view>
             <view class="infor_list flexRowBetween">
@@ -54,7 +54,7 @@
                   </picker>
                 </view>
                 <view class="infor_right">
-                    <image src="/images_gym/next_page.png"></image>
+                    <view style="width:14rpx;height:20rpx;background-position:-85px -100px;{{img}}"></view>
                 </view>
             </view>
              <view class="infor_list flexRowBetween" style="border:none;">
@@ -65,7 +65,7 @@
                     <input placeholder="请输入电话" data-key="phone" bindblur="changeBind" value="{{web_sForm.phone}}"></input>
                 </view>
                 <view class="infor_right">
-                    <image src="/images_gym/next_page.png"></image>
+                    <view style="width:14rpx;height:20rpx;background-position:-25px -50px;{{img}}"></view>
                 </view>
             </view>
         </view>

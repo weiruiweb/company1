@@ -11,8 +11,7 @@
   </view>
   <view class="chose_pay">
     <view class="pay1">
-        <image src="/images_hotel/pay2.jpg"></image>
-        <text class="text1">微信支付</text>
+        <view style="width: 92rpx;height:92rpx;{{img}};background-position: -273px -25px;margin-left: 20rpx;"></view>
     </view>
   </view>
 </view>

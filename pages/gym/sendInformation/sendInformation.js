@@ -13,6 +13,7 @@ Page({
       type:3,
       mainImg:[]
     },
+    img:"background:url('/images/gym.png')",
   },
   
   onLoad(){

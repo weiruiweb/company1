@@ -13,6 +13,7 @@ Page({
     index:0,
     currentId:72,
     isLoadAll:false,
+    img:"background:url('/images/hair.png')",
   },
   
   onLoad(options) {

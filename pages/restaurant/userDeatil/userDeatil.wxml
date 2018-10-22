@@ -2,13 +2,13 @@
 <view class="userTop">
 	<view class="user_process flexRowBetween">
 		<view class="user_pro">
-			<image src="/images_restaurant/pro1.png"></image>
+			<view style="width:106rpx;height:104rpx;{{img}};background-position:-58px -413px"></view>
 		</view>
 		<view class="user_center">
 			
 		</view>
 		<view class="user_pro">
-			<image src="/images_restaurant/pro2.png"></image>
+			<view style="width:106rpx;height:104rpx;{{img}};background-position:0px -413px"></view>
 		</view>
 	</view>
 	<view class="user_txt flexRowBetween">

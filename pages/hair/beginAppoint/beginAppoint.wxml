@@ -4,18 +4,16 @@
      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" style="width:100%;">
         <view class="picker flexRowBetween">
          <input class="input2" placeholder="高新3号店" value="{{array[index]}}"></input>
-          <image src="/images_hair/next_page.jpg"></image>
+          <view style="width:18rpx;height:32rpx;{{img}};background-position: -262px 0;"></view>
         </view>
   </picker>
     
 </view>
 <view class="shore_choose ">
-    
-   
     <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" style="width:100%;">
     <view class="picker flexRowBetween"> 
     <input class="input2" placeholder="技术总监  梁家辉" value="{{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}"></input>
-    <image src="/images_hair/next_page.jpg"></image> 
+    <view style="width:18rpx;height:32rpx;{{img}};background-position: -262px 0;"></view>
     </view>
   </picker>
 </view>
@@ -43,7 +41,7 @@
     <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}"  style="width:75%;overflow:hidden;">
         <view class="picker flexRowBetween">
          <input class="input2" style="text-align:right" placeholder="90分钟" value="{{array1[index]}}"></input>
-          <image src="/images_hair/next_page.jpg"></image>
+          <view style="width:18rpx;height:32rpx;{{img}};background-position: -262px 0;"></view>
         </view>
   </picker>
   </view>
@@ -53,23 +51,22 @@
       <view class="date1" data-current="0" bindtap="changeData">
          <text class="text1">7月24日</text>
          <text class="text2">星期二</text>
-         <image src="{{tabCurrent == 0?'/images_hair/up_icon.png':''}}"></image>
+         <image src="{{tabCurrent == 0?'/images/up_icon.png':''}}"></image>
       </view>
       <view class="date1"  data-current="1" bindtap="changeData">
          <text class="text1">7月25日</text>
          <text class="text2">星期三</text>
-         <image src="{{tabCurrent == 1?'/images_hair/up_icon.png':''}}"></image>
+         <image src="{{tabCurrent == 1?'/images/up_icon.png':''}}"></image>
       </view>
       <view class="date1"  data-current="2" bindtap="changeData">
          <text class="text1">7月26日</text>
          <text class="text2">星期四</text>
-         <image src="{{tabCurrent == 2?'/images_hair/up_icon.png':''}}"></image>
+         <image src="{{tabCurrent == 2?'/images/up_icon.png':''}}"></image>
       </view>
       <view class="date_other"  data-current="3" bindtap="changeData">
-         <image src="/images_hair/data.png">
-         </image>
+         <view style="width:40rpx;height:40rpx;{{img}};background-position:-147px 0;margin:0 auto;"></view>
          <text class="text1">其他日期</text>
-
+          <image src="{{tabCurrent == 3?'/images/up_icon.png':''}};width:50rpx;height:22rpx;"></image>
       </view>
     </view>
 
@@ -118,7 +115,6 @@
          <view class="data_row">
             <view class="text1">
                 <text> 10:00</text>
-           
             </view>
             <view class="text1">
             <text> 10:00</text>
@@ -197,7 +193,6 @@
        <view class="data_row">
             <view class="text1">
                 <text> 10:00</text>
-           
             </view>
             <view class="text1">
             <text> 10:00</text>
@@ -232,7 +227,6 @@
             <view class="text2">
             <text> 15:00</text>
             </view>
-
         </view>
     </view>
 </view>

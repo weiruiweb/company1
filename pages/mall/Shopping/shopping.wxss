@@ -233,3 +233,6 @@
 	font-size:36rpx;
 	margin-top:48rpx;
 }
+.nav_img{
+	margin:0 auto 10rpx auto;
+}

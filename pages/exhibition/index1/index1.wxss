@@ -4,3 +4,8 @@
 view{
 	
 }
+.nav_img{
+	width:46rpx;
+	height:46rpx;
+	margin:0 auto;
+}

@@ -18,32 +18,32 @@ Page({
       [
         {
           id: 0,
-          name: '无脊柱动物'
+          name: '高新3号店'
         },
         {
           id: 1,
-          name: '脊柱动物'
+          name: '高新1号店'
         }
       ], [
         {
           id: 0,
-          name: '扁性动物'
+          name: '高新1号店'
         },
         {
           id: 1,
-          name: '线形动物'
+          name: '高新1号店'
         },
         {
           id: 2,
-          name: '环节动物'
+          name: '高新1号店'
         },
         {
           id: 3,
-          name: '软体动物'
+          name: '高新1号店'
         },
         {
           id: 3,
-          name: '节肢动物'
+          name: '高新1号店'
         }
       ], [
         {
@@ -52,10 +52,11 @@ Page({
         },
         {
           id: 1,
-          name: '吸血虫'
+          name: '高新1号店'
         }
       ]
     ],
+    img:"background:url('/images/hair.png')",
   },
   
   onLoad: function () {

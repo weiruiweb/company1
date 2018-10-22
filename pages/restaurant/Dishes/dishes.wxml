@@ -1,6 +1,6 @@
 <!--dishes.wxml-->
 <view class="w750 menu_click" bindtap="menu_click">
-	<image src="/images_restaurant/sort.jpg"/>
+	<view style="width:42rpx;height:36rpx;margin:30rpx;{{img}};background-position:-166px -470px"></view>
 </view>
 <view class="">
 </view>
@@ -25,11 +25,11 @@
 		        <view class="avoidOverflow comment_star flexRowBetween">
 		           <text style="{{fonts[3].font}};color:#666;"> 综合评分：</text>
 		           <view class="sta_list flexRowBetween">
-		              <image src="/images_restaurant/star.png"/>
-		              <image src="/images_restaurant/star.png"/>
-		              <image src="/images_restaurant/star.png"/>
-		              <image src="/images_restaurant/star.png"/>
-		              <image src="/images_restaurant/star_a.png"/>
+		              <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		             <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		             <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		             <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		              <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-182px -384px"></view>
 		           </view>
 		        </view>
 		      </view>
@@ -52,7 +52,7 @@
 <view id="menus">
 	<view class="has_menus flexRowCenter">
 		<view class="menus_icon">
-			<image src="/images_restaurant/dian.png"></image>
+			<view style="width:46rpx;height:46rpx;margin:0 auto;{{img}};background-position:-123px -384px"></view>
 			 <view class="cart_number" bindtap="onCartTap">
 	            <view class="fiexd-cart {{isShake?'animate':''}}" style="">
 	                <view style="color:#fff;font-size:16rpx;">{{web_cartTotalCounts}}</view>
@@ -64,35 +64,35 @@
 			<text class="text2"  style="{{fonts[5].font}};color:#f2665f;">{{web_totalPrice}}元</text>
 		</view>
 		<view id="has_menus" bindtap="intoPath"  data-path="/pages/restaurant/dishesList/dishesList">
-			<view class="menus_click">	已点菜品</view>
+			<view class="menus_click">已点菜品</view>
 		</view>
 	</view>
 </view>
 <view class="qcored" style="{{isShow?'display:none':''}}">
   <view class="qcored_cont">
-    <view class="close" bindtap="close"> 
-      <image src="/images_restaurant/close_icon.png"></image>
+    <view class="close" bindtap="close" style="position: absolute;top:-36rpx;right: -36rpx;"> 
+      <view style="width:72rpx;height:72rpx;{{img}};background-position:-317px -184px"></view>
     </view>
     <view style="{{fonts[5].font}};color:#666;height:80rpx;line-height:80rpx;">
     		外卖
     </view>
-    <view class="waimai">
-    		<image src="/images_restaurant/motorcycle.png" style="width:55rpx;height:41rpx;"></image>
+    <view class="waimai flex">
+    	<view style="width:56rpx;height:42rpx;margin:0 auto;{{img}};background-position:-30px -382px"></view>
     </view>
     <view style="{{fonts[5].font}};color:#666;height:80rpx;line-height:80rpx;">
     		堂食
     </view>
     <view class="dining flexRowCenter" style="{{fonts[5].font}}">
 		<view class="dining_left ">
-			<view class="flexRowBetween" style="width:70%;margin:0 auto;color:#fff;">
-				<image src="/images_restaurant/menu_icon1.png" style="width:49rpx;height:50rpx;"></image>
+			<view class="flexRowBetween" style="width:68%;margin:0 auto;color:#fff;">
+				<view style="width:50rpx;height:50rpx;margin:0 auto;{{img}};background-position:-62px -382px"></view>
 				<text >输入桌号</text>
 			</view>
 		</view>
 		<view class="scer"></view>
 		<view class="dining_right ">
-			<view class="flexRowBetween" style="width:62%;margin:0 auto;color:#fff;">
-			<image src="/images_restaurant/menu_icon2.png" style="width:49rpx;height:50rpx;"></image>
+			<view class="flexRowCenter" style="width:54%;margin:0 auto;color:#fff;">
+			<view style="width:52rpx;height:52rpx;margin:0 auto;{{img}};background-position:-0px -382px"></view>
 			<text>扫码</text>
 			</view>
 		</view>
@@ -101,21 +101,18 @@
 </view>
 <view class="navbar">
       <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Index/index">
-          <view class="nav_img">
-            <image src="/images_restaurant/navbar1.png" style="width:46rpx;height:50rpx;"></image>
+          <view class="nav_img" style="{{img}};background-position: -1px -470px;">
           </view>
-          <view class="text" style="{{fonts[2].font}}" >首页</view>
+          <view class="text" style="{{fonts[2].font}}">首页</view>
       </view>
-    <view class="navbar_item">
-        <view class="nav_img">
-           <image src="/images_restaurant/navbar2-a.png" style="width:46rpx;height:50rpx;"></image>
-        </view>
-        <view class="text this-text" style="{{fonts[2].font}}" style="color:#f2665f">点菜</view>
+    <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Dishes/dishes">
+        <view class="nav_img" style="{{img}};background-position: -83px -470px;">
+          </view>
+        <view class="text this-text" style="{{fonts[2].font}}">点菜</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect"  data-path="/pages/restaurant/User/user">
-        <view class="nav_img">
-            <image src="/images_restaurant/navbar3.png" style="width:46rpx;height:50rpx;"></image>
-        </view>
+        <view class="nav_img" style="{{img}};background-position: -109px -470px;">
+          </view>
         <view class="text" style="{{fonts[2].font}}">我的</view>
     </view>
 </view>

@@ -9,13 +9,13 @@
 	<image src="/images/detail.jpg"></image>
 </view>
 <view class="detail">
-	<view class="product_top">
+	<view class="product_top w710">
 		<view class="name_share flexRowBetween" style="align-items:center;">
 			<view class="product_name avoidOverflow" style="width:80%;">
 				{{web_mainData.title}}
 			</view>
 			<button style="width:20%;text-align:right;opacity:0" bindtap="onShareAppMessage"  open-type="share">
-				<image src="/images/share.jpg"></image>
+				<view style="width:32rpx;height:32rpx;{{img}};background-position: -240px -48rpx;"></view>
 			</button>
 		</view>
 		<view class="guarantee flexRowBetween">
@@ -36,7 +36,7 @@
 
 		</view>
 		<view class="next_page" style="width:20%;text-align:right;">	
-			<image src="/images/next_page.jpg"></image>
+			<view class="user_icon1" style="{{img}};background-position: -330px -22px;"></view>
 		</view>
 	</view>
 	<view class="detail_comment flexRowBetween">
@@ -144,11 +144,11 @@
 <view id="buy">
 	<view class="buy_click">
 		<view class="consult">
-			<image src="/images/kefu1.png"></image>
+			<view style="width:38rpx;height:38rpx;margin:0 auto;{{img}};background-position: 1px -144rpx;"></view>
 			<view class="text1">客服</view>
 		</view>
 		<view class="consult collect" bindtap="collect">
-			<image src="{{url}}"></image>
+			<view style="width:36rpx;height:36rpx;margin:0 auto;{{img}};background-position: -244px 0rpx;"></view>
 			<view class="text1">收藏</view>
 		</view>
 		<view class="go_buy flexRowBetween" >

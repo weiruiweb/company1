@@ -155,3 +155,6 @@ view{
 	height:0;
 
 }
+.minus,.add{
+	background:#262626;
+}

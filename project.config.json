@@ -33,128 +33,8 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 26,
+			"current": 25,
 			"list": [
-				{
-					"id": 0,
-					"name": "shopping",
-					"pathName": "pages/Shopping/shopping",
-					"query": ""
-				},
-				{
-					"id": 1,
-					"name": "order",
-					"pathName": "pages/order/order",
-					"query": ""
-				},
-				{
-					"id": 2,
-					"name": "user",
-					"pathName": "pages/User/user",
-					"query": ""
-				},
-				{
-					"id": 3,
-					"name": "1",
-					"pathName": "pages/detail/detail",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "index",
-					"pathName": "pages/Index/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "1",
-					"pathName": "pages/confirmOrder/confirmOrder",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "1",
-					"pathName": "pages/userInfo/userInfo",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "manne",
-					"pathName": "pages/manageAddress/manageAddress",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "sort",
-					"pathName": "pages/Sort/sort",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "datai",
-					"pathName": "pages/detail/detail",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "conf",
-					"pathName": "pages/confirmOrder/confirmOrder",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "userinfo",
-					"pathName": "pages/userInfo/userInfo",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "gg",
-					"pathName": "pages/gongzhonghao/gongzhonghao",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "地址",
-					"pathName": "pages/manageAddress/manageAddress",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "订单",
-					"pathName": "pages/order/order",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "评论",
-					"pathName": "pages/commentOrder/commentOrder",
-					"query": ""
-				},
-				{
-					"id": 16,
-					"name": "detail",
-					"pathName": "pages/detail/detail",
-					"query": "id=2"
-				},
-				{
-					"id": -1,
-					"name": "确认订单",
-					"pathName": "pages/confirmOrder/confirmOrder",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "自提",
-					"pathName": "pages/confirmOrderSince/confirmOrderSince",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "我的优惠券",
-					"pathName": "pages/userDiscount/userDiscount",
-					"query": ""
-				},
 				{
 					"id": -1,
 					"name": "首页",
@@ -194,7 +74,121 @@
 				{
 					"id": -1,
 					"name": "mall/gongzhonghao/gongzhonghao",
-					"pathName": "pages/mall/Sort/sort"
+					"pathName": "pages/mall/Sort/sort",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商城首页",
+					"pathName": "pages/mall/Index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "餐饮",
+					"pathName": "pages/restaurant/Index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "餐饮带",
+					"pathName": "pages/restaurant/Dishes/dishes",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "餐饮我的",
+					"pathName": "pages/restaurant/User/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "餐饮我的",
+					"pathName": "pages/restaurant/dishes1/dishes1",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "222",
+					"pathName": "pages/restaurant/dishes2/dishes2",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "222",
+					"pathName": "pages/restaurant/discount/discount",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "支付",
+					"pathName": "pages/restaurant/dishesPayment/dishesPayment",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "支付",
+					"pathName": "pages/restaurant/dishesList/dishesList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "支付",
+					"pathName": "pages/classify/classify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "酒店",
+					"pathName": "pages/hotel/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "酒店",
+					"pathName": "pages/classify/classify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "酒店",
+					"pathName": "pages/classify/classify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/hair/User/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/hair/appointment/appointment",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "所有",
+					"pathName": "pages/classify/classify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "健身小程序",
+					"pathName": "pages/gym/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "健身小程序我的",
+					"pathName": "pages/gym/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "健身小程序我的",
+					"pathName": "pages/gym/coachCenter/coachCenter"
 				}
 			]
 		}

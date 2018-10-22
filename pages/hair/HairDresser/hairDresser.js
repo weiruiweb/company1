@@ -8,7 +8,8 @@ Page({
 
     mainData:[],
     isLoadAll:false,
-    complete_api:[]
+    complete_api:[],
+    img:"background:url('/images/hair.png')",
   },
 
 

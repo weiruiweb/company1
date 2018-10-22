@@ -18,7 +18,7 @@
 <view  class="module">
     <view class="module_item" bindtap="sign">
       <view class="item_top">
-       <image style="width:84rpx;height:84rpx" src="/images/index_icon1.png"></image>
+          <view id="menu_icon1" style="{{img}};background-position: -169rpx 0rpx;"></view>
       </view>
       <view  class="text" style="{{fonts[3].font}}">
         积分签到
@@ -26,7 +26,7 @@
     </view>
     <view class="module_item" bindtap="discount">
       <view class="item_top">
-       <image style="width:84rpx;height:84rpx" src="/images/index_icon2.png"></image>
+       <view id="menu_icon1" style="{{img}};background-position: -86rpx 0rpx;"></view>
       </view>
       <view  class="text" style="{{fonts[3].font}}">
         优惠券
@@ -34,7 +34,7 @@
     </view>
     <view class="module_item"  bindtap="about">
       <view class="item_top">
-       <image style="width:84rpx;height:84rpx" src="/images/index_icon3.png"></image>
+       <view id="menu_icon1" style="{{img}};background-position: -2rpx 0rpx;"></view>
       </view>
       <view  class="text" style="{{fonts[3].font}}">
         关于我们
@@ -42,57 +42,17 @@
     </view>
     <view class="module_item"  bindtap="discount">
       <view class="item_top">
-       <image style="width:84rpx;height:84rpx" src="/images/index_icon4.png"></image>
+       <view id="menu_icon1" style="{{img}};background-position: -256rpx 0rpx;"></view>
       </view>
       <view  class="text" style="{{fonts[3].font}}">
         联系我们
       </view>
     </view>
   </view>
-<!--
-  <view style=width:100%;height:140rpx;display:flex;">
-    <view style="width:25%;text-align:center;">
-      <view style="width:100%;height:60%">
-        <span><image style="width:84rpx;height:84rpx" src="/images/index_icon1.png"></image></span>
-      </view>
-      <view style="width:100%;">
-        test
-      </view>
-    </view>
-    <view style="width:25%;text-align:center;">
-      <view style="width:100%;height:50%">
-        <span><image style="width:84rpx;height:84rpx" src="/images/index_icon2.png"></image></span>
-      </view>
-      <view style="width:100%;">
-        test
-      </view>
-    </view>
-    <view style="width:25%;text-align:center;">
-      <view style="width:100%;height:50%">
-        <span><image style="width:84rpx;height:84rpx" src="/images/index_icon3.png"></image></span>
-      </view>
-      <view style="width:100%;">
-        test
-      </view>
-    </view>
-    <view style="width:25%;text-align:center;">
-      <view style="width:100%;height:50%">
-        <span><image style="width:84rpx;height:84rpx" src="/images/index_icon4.png"></image></span>
-      </view>
-      <view style="width:100%;">
-        test
-      </view>
-    </view>
-  </view>
--->
-
 <view class="service">
-  <view class="service_tlt">
-    <image src="/images/tlt_bg_03.jpg"></image>
+  <view class="service_tlt" style="width:154rpx;height:40rpx;{{img}};background-position: -396rpx -148rpx;">
     <text class="text1">服务类别</text>
   </view>
-
-  
   <view class="service_cont" data-path="/pages/mall/Sort/sort" bindtap="intoPathRedi">
     <view class="service_left">
       <view class="service_leftT">
@@ -112,7 +72,7 @@
           </view>
 
           <view class="serviceTright">
-            <image class="" src="/images/sort_img2.jpg"></image>
+            <view id="menu_icon2" style="{{img}};background-position: -240rpx -200rpx;width:140rpx;height:104rpx;"></view>
           </view>
         </view>
       </view>
@@ -123,23 +83,21 @@
               <text class="text2"  style="{{fonts[1].font}}">管理更方便</text>
             </view>
           <view class="serviceBright">
-            <image class="" src="/images/sort_img3.jpg"></image>
+             <view id="menu_icon2" style="{{img}};background-position: -110rpx -200rpx;width:120rpx;height:120rpx;"></view>
           </view>
         </view>
       </view>
     </view>
   </view>
 </view>
-<view class="solely_more" bindtap="about">
-  <image src="/images/more_bg.jpg"></image>
+<view class="solely_more" bindtap="about" style="width:100%;height:264rpx;{{img}};background-position: 0rpx -346rpx;">
   <view class="company_name">
     <text>纯粹科技</text>
     <view class="more">了解更多 ></view>
   </view>
 </view>
 <view class="case">
-  <view class="service_tlt">
-    <image src="/images/tlt_bg_03.jpg"></image>
+  <view class="service_tlt" style="width:154rpx;height:40rpx;{{img}};background-position: -396rpx -148rpx;">
     <text class="text1">案例展示</text>
   </view>
   <block wx:for="{{web_caseData}}" wx:key="id">
@@ -178,38 +136,24 @@
 </view>
 
 <view class="navbar">
-    
       <view class="navbar_item" bindtap="index">
-      
-          <view class="nav_img">
-            <image src="/images/navbar1-a.png" style="width:42rpx;height:42rpx;"></image>
+          <view class="nav_img" style="{{img}};width:44rpx;height:42rpx;background-position: 1px -94rpx;">
           </view>
           <view class="text this-text" style="{{fonts[2].font}}">首页</view>
-
       </view>
-    
     <view class="navbar_item" bindtap="sort">
-   
-        <view class="nav_img">
-           <image src="/images/navbar2.png" style="width:42rpx;height:42rpx;"></image>
+        <view class="nav_img" style="{{img}};width:44rpx;height:42rpx;background-position: -138rpx -94rpx;">
         </view>
         <view class="text" style="{{fonts[2].font}}">分类</view>
-    
     </view>
     <view class="navbar_item"  bindtap="shopping">
-   
-        <view class="nav_img">
-            <image src="/images/navbar3.png" style="width:42rpx;height:42rpx;"></image>
+        <view class="nav_img" style="{{img}};width:42rpx;height:42rpx;background-position: -240rpx -94rpx;">
         </view>
         <view class="text" style="{{fonts[2].font}}">购物车</view>
-
     </view>
     <view class="navbar_item"  bindtap="User">
-   
-        <view class="nav_img">
-            <image src="/images/navbar4.png" style="width:42rpx;height:42rpx;"></image>
+        <view class="nav_img" style="{{img}};width:42rpx;height:42rpx;background-position: -330rpx -94rpx;">
         </view>
         <view class="text" style="{{fonts[2].font}}">我的</view>
-
     </view>
 </view>

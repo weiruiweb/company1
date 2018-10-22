@@ -14,9 +14,8 @@ Page({
       passage1:'',
       address:''  
     },
-
     mainData:{},
-    
+    img:"background:url('/images/gym.png')",
   },
 
 

@@ -1,6 +1,5 @@
 <!--user.wxml-->
-<view class="banner">
-  <image src="/images_hotel/user_banner.jpg"></image>
+<view class="banner" style="width:100;{{img}};background-position: 0 -146px;">
   <view class="banner_bottom ">
     <view class="banner_in flexRowBetween">
         <view class="banner_img">
@@ -13,7 +12,7 @@
             <span><open-data  type="userNickName" ></open-data></span>
           </view>
           <view class="member flex" >
-             <image src="/images_hotel/user_icon.png"></image>¥{{web_mainData.info.balance}}
+             <view style="width:38rpx;height:40rpx;{{img}};background-position: -98px -26px;"></view>¥{{web_mainData.info.balance}}
             </view>
         </view>
         <view class="user_right"  bindtap="intoPath"  data-path="/pages/hotel/sign/sign">
@@ -28,9 +27,7 @@
 <view class="sort flexRowBetween">
     <view class="sort_cont flexRowBetween">    
         <view class="sort_item"  bindtap="intoPath"  data-path="/pages/hotel/userOrder/userOrder">
-            <view class="sort_icon">
-                <image src="/images_hotel/user_icon1.png"></image>
-            </view>
+            <view class="sort_icon" style="{{img}};background-position: -266px 0"></view>
             <view class="sort_txt">
                订单
             </view>
@@ -38,9 +35,7 @@
         <view class="sort_item flexRowBetween"  bindtap="intoPath"  data-path="/pages/hotel/userRecord/userRecord">
             <view class="thread"></view>
             <view>
-                <view class="sort_icon">
-                    <image src="/images_hotel/user_icon2.png"></image>
-                </view>
+                <view class="sort_icon" style="{{img}};background-position: -312px 0"></view>
                 <view class="sort_txt">
                    消费记录
                 </view>
@@ -48,26 +43,20 @@
             <view class="thread"></view>
         </view>
         <view class="sort_item" bindtap="intoPath"  data-path="/pages/hotel/userDiscount/userDiscount">
-            <view class="sort_icon">
-                <image src="/images_hotel/user_icon3.png"></image>
-            </view>
+            <view class="sort_icon" style="{{img}};background-position: -290px 0"></view>
             <view class="sort_txt">
                优惠券
             </view>
         </view>
     </view>
 </view>
- <view class="navbar">
+<view class="navbar">
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/hotel/index/index">
-        <view class="nav_img">
-          <image src="/images_hotel/navbar1.png" style="width:44rpx;height:44rpx;"></image>
-        </view>
-        <view class="text this-text" style="{{fonts[2].font}}">预定</view>
+        <view class="nav_img" style="{{img}};background-position:-0px -25px;"></view>
+        <view class="text" style="{{fonts[2].font}}">预定</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/hotel/user/user">
-        <view class="nav_img">
-            <image src="/images_hotel/navbar2_a.png" style="width:44rpx;height:44rpx;"></image>
-        </view>
-        <view class="text" style="{{fonts[2].font}}">我的</view>
+        <view class="nav_img" style="{{img}};background-position:-74px -25px;"></view>
+        <view class="text this-text" style="{{fonts[2].font}}">我的</view>
     </view>
 </view>

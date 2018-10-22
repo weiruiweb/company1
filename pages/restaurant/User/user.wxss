@@ -204,3 +204,20 @@ border-radius:50%;}
 	flex-direction:row;
 	align-items:center;
 }
+.user_icon{
+	width:30rpx;
+	height:30rpx;
+	margin-right:10rpx;
+}
+.next_page{
+	width:12rpx;
+	height:20rpx;
+}
+.nav_img{
+	width:44rpx;
+	height:42rpx;
+	margin:0 auto 10rpx auto;
+}
+.navbar .this-text{
+	color:#f2665f;
+}

@@ -57,6 +57,7 @@ page{
 	border-radius:50rpx;
 	background:#666;
 	text-align:center;
+	color:#fff;
 }
 .fabu_right{
 	width:40%;

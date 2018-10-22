@@ -27,7 +27,7 @@
 						</view>
 					</view>
 					<view class="group_status">
-						<image src="/images_restaurant/success.jpg" class="status"></image>
+						<view style="{{img}};width:168rpx;height:146rpx;background-position:-100px -520px;float: right;"></view>
 					</view>
 				</view>
 				<view class="flexRowBetween group_item">
@@ -40,7 +40,9 @@
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<image src="/images_restaurant/success.jpg" class="status"></image>
+					<view class="group_status">
+						<view style="{{img}};width:168rpx;height:146rpx;background-position:-100px -520px;float: right;"></view>
+					</view>
 				</view>
 			</view>
 
@@ -57,7 +59,7 @@
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<image src="/images_restaurant/wait.jpg" class="status"></image>
+					<view style="{{img}};width:168rpx;height:146rpx;background-position:0px -520px;float: right;"></view>
 				</view>
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
@@ -69,7 +71,7 @@
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<image src="/images_restaurant/wait.jpg" class="status"></image>
+					<view style="{{img}};width:168rpx;height:146rpx;background-position:0px -520px;float: right;"></view>
 				</view>
 			</view>
 
@@ -86,7 +88,7 @@
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<image src="/images_restaurant/faild.jpg" class="status"></image>
+					<view style="{{img}};width:168rpx;height:146rpx;background-position:0px -234px;float: right;"></view>
 				</view>
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
@@ -98,7 +100,7 @@
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<image src="/images_restaurant/faild.jpg" class="status"></image>
+					<view style="{{img}};width:168rpx;height:146rpx;background-position:0px -520px;float: right;"></view>
 				</view>
 			</view>
 

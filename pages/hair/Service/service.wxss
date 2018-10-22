@@ -4,7 +4,7 @@ page{background:#f5f5f5;}
 	padding:0rpx 60rpx;
 	height:75rpx;
 	line-height:75rpx;
-	font-size:20rpx;
+	font-size:32rpx;
 	background:#fff;
 	padding-bottom:15rpx;
 }
@@ -67,3 +67,8 @@ page{background:#f5f5f5;}
 }
 .tab_item{display:none}
 .tab_this{display:block;}
+.nav_img{
+	width:42rpx;
+	height:46rpx;
+	margin:0 auto 10rpx auto;
+}

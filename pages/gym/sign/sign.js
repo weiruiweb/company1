@@ -10,7 +10,6 @@ Page({
   data: {
     isShow:false,
     logData:[],
-
     seriesRewardData:[],
     computeData:[],
     rewardScore:'',
@@ -18,7 +17,8 @@ Page({
       thirdapp_id:'59',
       type:3
     },
-    isSign:false
+    isSign:false,
+    img:"background:url('/images/gym.png')",
   },
 
 

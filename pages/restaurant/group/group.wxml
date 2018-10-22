@@ -111,8 +111,7 @@
 	</view>
 	<view class="tab_item {{tapCurrent == 1?'tab_this':''}}">
 		<view class="tab_list flexRowBetween">
-			<view class="limit_time">
-				<image src="/images_restaurant/group_icon5.png"></image>
+			<view class="limit_time" style="{{img}};background-position: -288px -120px;">
 			</view>
 			<view class="tuan_cont flexRowBetween">
 				<view class="tuan_list">
@@ -154,8 +153,7 @@
 			</view>
 		</view>	
 		<view class="tab_list flexRowBetween">
-			<view class="limit_time">
-				<image src="/images_restaurant/group_icon5.png"></image>
+			<view class="limit_time" style="{{img}};background-position: -288px -120px;">
 			</view>
 			<view class="tuan_cont flexRowBetween">
 				<view class="tuan_list">

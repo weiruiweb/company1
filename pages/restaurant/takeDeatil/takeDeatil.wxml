@@ -3,25 +3,25 @@
 	<view class="takeOut">
 		<view class="user_process flexRowBetween">
 			<view class="user_pro">
-				<image src="/images_restaurant/pro4.png"></image>
+				<view style="width:84rpx;height:80rpx;{{img}};background-position: -169px -412px;"></view>
 			</view>
 			<view class="user_center">
 				
 			</view>
 			<view class="user_pro">
-				<image src="/images_restaurant/take2.png"></image>
+				<view style="width:84rpx;height:80rpx;{{img}};background-position: -214px -412px;"></view>
 			</view>
 			<view class="user_center">
 				
 			</view>
 			<view class="user_pro">
-				<image src="/images_restaurant/take3.png"></image>
+				<view style="width:84rpx;height:80rpx;{{img}};background-position: -258px -412px;"></view>
 			</view>
 			<view class="user_center">
 				
 			</view>
 			<view class="user_pro">
-				<image src="/images_restaurant/take4.png"></image>
+				<view style="width:84rpx;height:80rpx;{{img}};background-position: -302px -412px;"></view>
 			</view>
 		</view>
 		<view class="user_txt flexRowBetween">
@@ -42,11 +42,13 @@
 </view>
 <view class="take_user">
 	<view class="take_name flexRowBetween">
-		<view class="take_left"><image src="/images_restaurant/take5.jpg"></image></view>
+		<view class="take_left"><view style="width:40rpx;height:32rpx;{{img}};background-position: -192px -470px;"></view></view>
 		<view class="take_right"><text>收货人：姓名</text></view>
 	</view>
 	<view class="take_name flexRowBetween">
-		<view class="take_left"><image src="/images_restaurant/take6.jpg"></image></view>
+		<view class="take_left">
+			<view style="width:40rpx;height:32rpx;{{img}};background-position: -218px -470px;"></view>
+		</view>
 		<view class="take_right"><text>雁塔区高新大都荟A座2007</text></view>
 	</view>
 </view>

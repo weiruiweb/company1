@@ -14,11 +14,11 @@
 	<view class="user_address">
 		<view class="recive flexRowBetween">
 			<view class="map_icon" style="width:7%;text-align:left">
-				<image class="address_icon" src="/images_gym/confirm_icon4.png"></image>
+				<view style="width:30rpx;height:30rpx;{{img}};background-position:-174px 0px;"></view>
 			</view>
 			<view class="detail_address" style="width:86%;font-size:28rpx;">收货地址：陕西省西安市高新大都荟</view>
 			<view class="next_page">
-				<image class="" src="/images_gym/next_page.jpg"></image>
+				<image class="" src="/images_gym/next_page.png"></image>
 			</view>
 		</view>
 	</view>

@@ -14,7 +14,7 @@ Page({
       currentTabsIndex:0,
       cartTotalCounts:0,
       isShow:false,
-
+      img:"background:url('/images/restaurant.png')",
   },
   /*添加到购物车*/
     onAddingToCartTap:function(events){

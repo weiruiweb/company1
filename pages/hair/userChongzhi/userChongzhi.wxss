@@ -33,4 +33,6 @@ input{
 }
 .submit_info {
 	margin-top:140rpx;
+	background:#ff5176;
+	width:700rpx;
 }

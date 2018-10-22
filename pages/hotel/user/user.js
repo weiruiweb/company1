@@ -6,7 +6,7 @@ const token = new Token();
 
 Page({
   data: {
- 
+    img:"background:url('/images/hotel.png')",
   },
   //事件处理函数
 

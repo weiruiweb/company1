@@ -17,6 +17,7 @@ Page({
       detail:'',
     },
     id:'',
+    img:"background:url('/images/gym.png')",
   },
 
   onLoad(options) {

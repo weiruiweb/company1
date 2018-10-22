@@ -1,7 +1,7 @@
 <!--sign.wxml-->
 <wxs module="func" src="../../../utils/func.wxs"   />
 <view class="sign_banner">
-	<image src="/images_gym/sign.jpg"></image>
+	<view style="width:100%;height:504rpx;{{img}};background-position: 0 -708px;"></view>
 	<view class="sign_cont">
 		<view id="sign">
 			<view class="sign_btn">今日签到</view>
@@ -29,7 +29,7 @@
 	</view>
 </view>
 <view class="adver">
-	<image src="/images_gym/sign1.jpg"></image>
+	<view style="width:100%;height:118rpx;{{img}};background-position:0 -966px;"></view>
 	<view class="adver_txt">  <text>“</text>不去健身，那和咸鱼有什么区别 <text>”</text> </view>
 </view>
 <view class="sign">
@@ -37,9 +37,13 @@
 		<view class="year">
 			<view class="year_in">
 				<view class="date_year flexRowBetween"  style="font-size:28rpx;">
-					<view bindtap="changeMonth" data-type="mins" style="width:50rpx">  <image src="/images_gym/left.png"></image> </view>
+					<view bindtap="changeMonth" data-type="mins" style="width:50rpx">
+					 <view style="width:12rpx;height:30rpx;{{img}};background-position:-348px 0;"></view>
+					</view>
 					<view> {{web_year}}年{{web_month}}月</view>
-					<view bindtap="changeMonth" data-type="add" style="width:50rpx">  <image src="/images_gym/right.png"></image> </view>
+					<view bindtap="changeMonth" data-type="add" style="width:50rpx">
+					  <view style="width:12rpx;height:30rpx;{{img}};background-position:-359px 0;"></view>
+					</view>
 				</view>
 			</view>
 		</view>

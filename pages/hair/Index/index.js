@@ -14,7 +14,8 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 1000,
-    buttonClicked:true
+    buttonClicked:true,
+    img:"background:url('/images/hair.png')",
   },
 
   onLoad(options) {

@@ -8,7 +8,8 @@ Page({
   data: {
 
     tabCurrent:0,
-    mainData:[]
+    mainData:[],
+    img:"background:url('/images/hair.png')",
   },
   
   onLoad(options) {

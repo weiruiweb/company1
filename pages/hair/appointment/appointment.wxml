@@ -8,12 +8,12 @@
             <text class="text1">{{web_mainData.title}}</text>
             <text class="text2">{{web_mainData.description}}</text>
           </view>
-          <view class="star">
-            <image src="/images_hair/star.jpg"></image>
-            <image src="/images_hair/star.jpg"></image>
-            <image src="/images_hair/star.jpg"></image>
-            <image src="/images_hair/star.jpg"></image>
-            <image src="/images_hair/star.jpg"></image>
+          <view class="star flex">
+            <view class="star_icon" style="{{img}};background-position: -274px 0;"></view>
+            <view class="star_icon" style="{{img}};background-position: -274px 0;"></view>
+            <view class="star_icon" style="{{img}};background-position: -274px 0;"></view>
+            <view class="star_icon" style="{{img}};background-position: -274px 0;"></view>
+            <view class="star_icon" style="{{img}};background-position: -274px 0;"></view>
           </view>
         </view>
     </view>
@@ -25,10 +25,10 @@
         <text class="tex1">好评率</text><text class="tex2">99%</text>
       </view>
   </view>
-  <view class="service">
-      <image src="/images_hair/credit_icon2.jpg" class="service_icon1"></image>
-      <text>服务项目</text>
-      <image src="/images_hair/next_page.jpg" class="service_icon2"></image>
+  <view class="service flex">
+      <view style="width:34rpx;height:30rpx;{{img}};background-position: -35px 0;"></view>
+      <view style="width: 80%;text-align: left;"><text>服务项目</text></view>
+      <view style="width:18rpx;height:32rpx;{{img}};background-position: -262px 0;"></view>
   </view>
   <view class="service_list flexRowBetween">
       <text class="text1">单人自身洗剪吹一次</text>

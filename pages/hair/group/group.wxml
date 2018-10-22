@@ -10,7 +10,7 @@
 <view class="tab_cont">
 	<view class="tab_item {{tapCurrent == 0?'tab_this':''}}">
 		<block wx:for="{{web_mainData}}" wx:key="id">
-			<view class="tab_list flexRowBetween">	
+			<view class="tab_list flexRowBetween">
 				<image src="{{item.mainImg[0].url}}"></image>
 				<view class="active_info">
 					<view class="active_name">
@@ -121,7 +121,7 @@
 </view>
 <view class="begin_group {{isShow?'group_show':''}}">
 	<view class="group_wrap">
-		<image class="close" src="/images_hair/close.png" bindtap="close"></image>
+		<view bindtap="close" style="{{img}};background-position: -97px 0px;" class="close"></view>
 		<text class="text1">发起拼团</text>
 		<text class="text">邀请<text class="group_number">2</text>人即可组团成功，23:49:07后结束</text>
 		<view class="group_all flexRowBetween">
@@ -142,9 +142,15 @@
 				选择分享方式
 			</view>
 			<view class="three_share flexRowBetween">
-				<view class="bg_img {{this_item ==0?'this_bg':''}}" bindtap="this_bg" data-current="0"><image src="/images_hair/share1.png"></image></view>
-				<view class="bg_img {{this_item ==1?'this_bg':''}}" bindtap="this_bg"  data-current="1"><image src="/images_hair/share2.png"></image></view>
-				<view class="bg_img {{this_item ==2?'this_bg':''}}" bindtap="this_bg"  data-current="2"><image src="/images_hair/share3.png"></image></view>
+				<view class="bg_img {{this_item ==0?'this_bg':''}};flex" bindtap="this_bg" data-current="0">
+					<view class="share_img" style="{{img}};background-position: -304px -160px;"></view>
+				</view>
+				<view class="bg_img {{this_item ==1?'this_bg':''}};flex" bindtap="this_bg"  data-current="1">
+					<view class="share_img" style="{{img}};background-position: -329px -160px;"></view>
+				</view>
+				<view class="bg_img {{this_item ==2?'this_bg':''}};flex" bindtap="this_bg"  data-current="2">
+					<view class="share_img" style="{{img}};background-position: -349px -160px;"></view>
+				</view>
 			</view>
 		</view>
 		<view class="send_share">
@@ -154,13 +160,12 @@
 </view>
 <view class="begin_group {{isShows?'group_shows':''}}">
 	<view class="group_wrap">
-		<image class="close" src="/images_hair/close.png" bindtap="closed"></image>
+		<view bindtap="close" style="{{img}};background-position: -97px 0px;" class="close"></view>
 		<text class="text1">参与拼团</text>
 		<text class="text">邀请<text class="group_number">2</text>人即可组团成功，23:49:07后结束</text>
 		<view class="group_all flexRowBetween">
 			<view class="group_person this_person">
 				<image src="/images_hair/dresser.jpg"></image>
-
 			</view>
 			<view class="group_person">
 				?

@@ -105,3 +105,11 @@
 .week{
 	height:50%;
 }
+.select{
+	width:90rpx;
+	height:100%;
+	background-position: -244px -100px;
+}
+.select1{
+	background:none;
+}

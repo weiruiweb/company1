@@ -13,7 +13,7 @@
 	
 		<view class="edit_number flexRowBetween">
 			<view class="minus" style="height:45rpx;font-size:50rpx;line-height:40rpx;width:30%;text-align:center;border-right:1px solid #e0e0e0" data-type="-" bindtap="counter" data-id="{{web_skuData.id}}" >-</view>
-			<input type="number" bindchange="bindManual" value="{{web_skuData.count}}" style="width:40px;text-align:center" />
+			<input type="number" bindchange="bindManual" value="{{web_skuData.count}}" style="width:40px;text-align:center;background:#fff;color:#262626;" />
 			<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuData.id}}" style="width:30%;text-align:center;height:45rpx;line-height:40rpx;border-left:1px solid #e0e0e0">+</view>
 			</view>
 		</view>

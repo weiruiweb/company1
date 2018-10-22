@@ -58,3 +58,8 @@ page{
 	height:58rpx;
 	overflow:hidden;
 }
+.nav_img{
+	width:42rpx;
+	height:46rpx;
+	margin:0 auto 10rpx auto;
+}

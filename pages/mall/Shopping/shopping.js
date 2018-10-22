@@ -23,7 +23,8 @@ Page({
     mainData:[],
     products:[],
     totalPrice:0,
-    isChooseAll:''
+    isChooseAll:'',
+    img:"background:url('/images/small.png')",
   },
   
   onLoad() {

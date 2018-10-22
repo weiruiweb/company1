@@ -14,6 +14,7 @@
       </view>
       <view class="store_right">
         <image src="/images_hair/stores1.png" bindtap="map"></image>
+        <view style="width:50rpx;height:44rpx;{{img}};background-position:-197px 160px"></view>
         <view class="store_phone distance">
             0.6km
         </view>

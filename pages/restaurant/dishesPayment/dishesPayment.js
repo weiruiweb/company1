@@ -7,7 +7,8 @@ const token = new Token();
 
 Page({
   data: {
-    isChoose:1
+    isChoose:1,
+    img:"background:url('/images/restaurant.png')",
   },
   onLoad: function () {
     this.setData({

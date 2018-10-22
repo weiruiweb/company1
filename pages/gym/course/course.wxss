@@ -225,3 +225,17 @@ page{
 	color:#bb212e;
 	padding:0 3%;
 }
+.navbar .this-text{
+	color:#bb212e;
+}
+.nav_img{
+	width:64rpx;
+	height:54rpx;
+	margin:0 auto;
+}
+.navbar{
+	box-shadow:5rpx 0 15rpx #f35c59;
+}
+.navbar{
+	box-shadow:5rpx 0 15rpx #f35c59;
+}

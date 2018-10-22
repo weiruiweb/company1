@@ -48,13 +48,9 @@ page{
 	line-height:88rpx;
 	padding:0rpx 55rpx;
 }
-
-.near image{
-	width:85rpx;
-	height:55rpx;
-	position:absolute;
-	left:0rpx;
-	top:0rpx;
+.near{
+	width:84rpx;
+	height:54rpx;
 }
 .store_text1{
 	font-size:28rpx;
@@ -86,9 +82,10 @@ page{
 	width:10%;
 	text-align:right;
 }
-.map image{
-	width:35rpx;
-	height:32rpx;
+.map_img{
+	width:36rpx;
+	height: 32rpx;
+	margin:0 auto;
 }
 /**优惠店**/
 .discont_tlt{
@@ -177,4 +174,14 @@ width:98%;
 .dresser_list{
 	overflow:hidden;
 
+}
+.module_bg{
+	width:84rpx;
+	height:84rpx;
+	margin:0 auto;
+}
+.nav_img{
+	width:46rpx;
+	height:46rpx;
+	margin:0 auto 10rpx auto;
 }

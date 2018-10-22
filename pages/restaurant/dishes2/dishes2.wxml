@@ -12,11 +12,11 @@
 	        <view class="avoidOverflow comment_star flexRowBetween">
 	           <text style="{{fonts[3].font}};color:#666;"> 综合评分：</text>
 	           <view class="sta_list flexRowBetween">
-	              <image src="/images_restaurant/star.png"/>
-	              <image src="/images_restaurant/star.png"/>
-	              <image src="/images_restaurant/star.png"/>
-	              <image src="/images_restaurant/star.png"/>
-	              <image src="/images_restaurant/star_a.png"/>
+	              <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		             <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		             <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		             <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		              <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-182px -384px"></view>
 	           </view>
 	        </view>
 	      </view>
@@ -56,12 +56,12 @@
 				</view>
 				<view class="star flexRowBetween">
 					<view class="star_xt">打分</view>
-					<view class="star_all">
-						<image src="/images_restaurant/star.png"></image>
-						<image src="/images_restaurant/star.png"></image>
-						<image src="/images_restaurant/star.png"></image>
-						<image src="/images_restaurant/star.png"></image>
-						<image src="/images_restaurant/star.png"></image>
+					<view class="star_all flex">
+						<view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		             <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		             <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		             <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		              <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-182px -384px"></view>
 					</view>
 				</view>
 			</view>
@@ -76,7 +76,7 @@
 	<view class="comment_list">
 		<view class="comment_item flexRowBetween">
 			<view class="commet_user">
-				<image src="/images_restaurant/index_icon4.png"></image>
+				<view style="width:70rpx;height:70rpx;{{img}};background-position:-100px -235px"></view>
 			</view>
 			<view class="commet_cont">
 				<view class="user_name">
@@ -84,12 +84,12 @@
 				</view>
 				<view class="star flexRowBetween">
 					<view class="star_xt">打分</view>
-					<view class="star_all">
-						<image src="/images_restaurant/star.png"></image>
-						<image src="/images_restaurant/star.png"></image>
-						<image src="/images_restaurant/star.png"></image>
-						<image src="/images_restaurant/star.png"></image>
-						<image src="/images_restaurant/star.png"></image>
+					<view class="star_all flex">
+						<view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		             <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		             <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		             <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+		              <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-182px -384px"></view>
 					</view>
 				</view>
 			</view>
@@ -107,7 +107,7 @@
 <view id="menus">
 	<view class="has_menus flexRowCenter">
 		<view class="menus_icon">
-			<image src="/images_restaurant/dian.png"></image>
+			<view style="width:46rpx;height:46rpx;margin:0 auto;{{img}};background-position:-123px -384px"></view>
 			 <view class="cart_number" bindtap="onCartTap">
 	            <view class="fiexd-cart {{isShake?'animate':''}}" style="">
 	                <view style="color:#fff;font-size:16rpx;">{{cartTotalCounts}}</view>

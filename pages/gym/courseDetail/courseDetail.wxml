@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="banner">
-    <image src="/images_gym/banner.png"></image>
+    <view style="width:100%;height: 214rpx;{{img}};background-position: 0 -598px"></view>
 </view>
 <view class="w710" id="index_cont">
   <view class="user_img">
@@ -12,8 +12,10 @@
         <view class="gym_name">
         <view class="user_tlt flex">
             <view class="tlt_cont">格莱美舞蹈</view>
-            <view class="mark"><image src="/images_gym/detail_icon1.png"></image>2h</view>
-            <view class="mark"><image src="/images_gym/index_icon4.png"></image>79°</view>
+            <view class="mark">
+              <view style="width:28rpx;height:28rpx;{{img}};background-position:-333px 0"></view>2h</view>
+            <view class="mark">
+              <view style="width:28rpx;height:28rpx;{{img}};background-position:-267px 0"></view>79°</view>
         </view>
         </view>
         <view class="intro_detail">

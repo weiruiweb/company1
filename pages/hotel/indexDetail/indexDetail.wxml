@@ -16,8 +16,8 @@
 	  	</view>
 	</view>
 	<view class="address_right">
-	<view class="phone">
-		<image src="/images_hotel/phone.png"></image>
+	<view class="phone flex">
+		<view class="phone_cont" style="{{img}};background-position:-337px 0;"></view>
 	</view>
 	</view>
   </view>
@@ -62,10 +62,10 @@
 </view>
 <view class="{{isShow?'mask':''}}"></view>
 <view class="house_show {{isShow?'sildeIn':'slideOut'}}" >
-	<view class="house_detail " id="close" bindtap="close">
+	<view class="house_detail flex" id="close" bindtap="close">
 		<view class="p40 flexRowBetween" style="line-height: 76rpx;">
 			<view class="text" style="color:#fff;font-size:30rpx;">{{web_skuData.title}}</view>
-			<image src="/images_hotel/close.png"></image>
+			<view style="width: 32rpx;height:32rpx;{{img}};background-position: -136px 0"></view>
 		</view>
 	</view>
 	<view class="banner1">

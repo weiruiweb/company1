@@ -100,10 +100,8 @@ page{
 }
 .date1 .text1{
 	font-size:24rpx;
-
 }
 .date1{
-	margin-top:10rpx;
 	text-align:center;
 }
 .date1 .text2{

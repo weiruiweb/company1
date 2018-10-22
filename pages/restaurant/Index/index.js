@@ -17,7 +17,8 @@ Page({
     nextMargin: 0,
     currentId:0,
     complete_api:[],
-    mainData:[]
+    mainData:[],
+    img:"background:url('/images/restaurant.png')",
   },
   //事件处理函数
  

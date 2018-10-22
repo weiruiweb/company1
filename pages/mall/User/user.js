@@ -7,7 +7,7 @@ const token = new Token();
 
 Page({
   data: {
-
+    img:"background:url('/images/small.png')",
     userData:[],
 
   },

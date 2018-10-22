@@ -73,5 +73,16 @@ page{
 }
 .submit_info{
 	margin:0 auto;
-
+	background:#bb212e;
+	width:700rpx;
+}
+.select{
+	width:30rpx;
+	height:30rpx;
+	background-position:-37px -68px
+}
+.select1{
+	width:30rpx;
+	height:30rpx;
+	background-position:-56px -68px;
 }

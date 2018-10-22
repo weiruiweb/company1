@@ -12,28 +12,26 @@
          <block wx:for-items="{{files}}" wx:key="{{index}}">
             <view class="uploder_item" bindtap="previewImage" id="{{item}}">
                  <view class="uploader__input">
-                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                    
                  </view>
            </view>
           </block>
-
         <view class="uploder_item" >
-          <view class="uploader__input" bindtap="chooseImage">
-           <image src="/images_restaurant/photo.jpg"></image>
+          <view class="uploader__input" bindtap="chooseImage"  style="{{img}};background-position: -196px -520px;">
           </view>
         </view>
     </view>
 </view>
 
-<view class="order_detail flexRowBetween">
+<view class="order_detail flex">
   <view class="star_left">服务评价</view>
-  <view class="star_all">
-          <image src="/images_restaurant/star.png"></image>
-          <image src="/images_restaurant/star.png"></image>
-          <image src="/images_restaurant/star.png"></image>
-          <image src="/images_restaurant/star.png"></image>
-          <image src="/images_restaurant/star.png"></image>
-        </view>
+  <view class="star_all flex" style="width:32%;">
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+       <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-200px -384px"></view>
+        <view style="width:30rpx;height:30rpx;margin-right:10rpx;{{img}};background-position:-182px -384px"></view>
+  </view>
 </view>
 <view class="order_detail" style="height:110rpx;font-size:24rpx;">
   服务周全！

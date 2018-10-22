@@ -12,13 +12,13 @@
       <view class="sort_item"  data-id="0"  bindtap="changeSort">
           <view class="sort_in  flexRowCenter" style="border-right:solid 2px #000;">
               <view class="text1  {{is_choose == 0?'choose_this':''}}">全部分类</view>
-              <image src="/images_gym/up_icon.png"></image>
+              <view style="width:18rpx;height: 12rpx;{{img}};background-position: -357px -68px"></view>
           </view>
       </view>
       <view class="sort_item"  data-id="1"  bindtap="changeSort">
           <view class="sort_in flexRowCenter">
               <view class="text1  {{is_choose == 1?'choose_this':''}}">全部时段</view>
-              <image src="/images_gym/up_icon.png"></image>
+              <view style="width:18rpx;height: 12rpx;{{img}};background-position: -357px -68px"></view>
           </view>
       </view>
     </view>
@@ -87,33 +87,23 @@
 </view>
 <view class="navbar">
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/index/index">
-        <view class="nav_img">
-          <image src="/images_gym/navbar1.png" style="width:65rpx;height:55rpx;"></image>
-        </view>
+        <view class="nav_img" style="{{img}};background-position:-37px -38px;"></view>
         <view class="text" style="{{fonts[2].font}}">健身房</view>
     </view>
-    <view class="navbar_item" >
-        <view class="nav_img">
-           <image src="/images_gym/navbar2-a.png" style="width:65rpx;height:55rpx;"></image>
-        </view>
+    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/course/course">
+        <view class="nav_img" style="{{img}};background-position:-71px -34px;"></view>
         <view class="text this-text" style="{{fonts[2].font}}">分类</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/send/send">
-        <view class="nav_img">
-           <image src="/images_gym/navbar3.png" style="width:65rpx;height:55rpx;"></image>
-        </view>
-        <view class="text" style="{{fonts[2].font}}">发布</view>
+      <view class="nav_img" style="{{img}};background-position:-126px -34px;"></view>
+      <view class="text" style="{{fonts[2].font}}">发布</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/coach/coach">
-        <view class="nav_img">
-           <image src="/images_gym/navbar4.png" style="width:65rpx;height:55rpx;"></image>
-        </view>
+        <view class="nav_img" style="{{img}};background-position:-184px -34px;"></view>
         <view class="text" style="{{fonts[2].font}}">教练</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/user/user">
-        <view class="nav_img">
-            <image src="/images_gym/navbar5.png" style="width:65rpx;height:55rpx;"></image>
-        </view>
+        <view class="nav_img" style="{{img}};background-position:-239px -34px;"></view>
         <view class="text" style="{{fonts[2].font}}">我的</view>
     </view>
 </view>

@@ -24,15 +24,14 @@
 		<view class="flexRowBetween">
 			<view class="input_before" style="width:95%;">领取优惠券</view>
 			<view class="input_up" style="width:5%;">
-				<image src="/images_restaurant/next_page.jpg"></image>
+				<view class="next_page" style="{{img}};background-position:-152px -383px;float: right;"></view>
 			</view>
 		</view>
 	</view>
 	<view class="discout flexRowBetween">
 		<view class="discount_item">
 			<view class="discount_bg">
-				<view class="discout_img">	
-					<image src="/images_restaurant/discont.jpg"></image>
+				<view class="discout_img" style="width:360rpx;height:148rpx;{{img}};background-position:0 -118px;">	
 				</view>
 				<view class="discount_money flexRowBetween">
 					<view class="discout_left">
@@ -52,8 +51,7 @@
 		<view class="discount_space"></view>
 		<view class="discount_item">
 			<view class="discount_bg">
-				<view class="discout_img">	
-					<image src="/images_restaurant/discont.jpg"></image>
+				<view class="discout_img" style="width:360rpx;height:148rpx;{{img}};background-position:0 -118px;">	
 				</view>
 				<view class="discount_money flexRowBetween">
 					<view class="discout_left">
@@ -73,8 +71,7 @@
 	</view>
 </view>
 <view class="queqe_btn" bindtap="intoPath" data-path="/pages/restaurant/queueTime/queueTime">
-	<image src="/images_restaurant/queqe.png"></image>
-	<view class="queqe_txt">
+	<view class="queqe_txt" style="{{img}};background-position:0 -600px;">
 		立即排队
 	</view>
 </view>

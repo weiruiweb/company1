@@ -12,6 +12,7 @@ Page({
     isShow:false,
     isShows:false,
     this_item:0,
+    img:"background:url('/images/hair.png')",
   },
   
   onLoad() {

@@ -61,3 +61,7 @@ page{
 .group_top{
 	margin:15rpx 0rpx;
 }
+.success{
+	width:186rpx;
+	height:146rpx;
+}

@@ -250,3 +250,7 @@ page{background:#f5f5f5;}
 	padding:0rpx 185rpx;
 	margin-bottom:50rpx;
 }
+.share_img{
+	width:40rpx;
+	height:32rpx;
+}

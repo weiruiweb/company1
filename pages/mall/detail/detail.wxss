@@ -8,7 +8,7 @@
 	font-size:32rpx;
 }
 .product_top{
-	padding:20rpx 35rpx 35rpx;
+	padding:20rpx 0rpx 35rpx 0;
 	border-bottom:solid 1px #ececec;
 }
 .name_share image{

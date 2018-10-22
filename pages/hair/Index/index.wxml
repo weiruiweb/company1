@@ -11,36 +11,31 @@
 <view class="module flexRowBetween" >
   <view class="module_item" bindtap="HairDresser">
     <view class="module_icon module1">
-      <image src="/images_hair/index_icon1.jpg" class="firstImg"></image>
-
+      <view class="module_bg" style="{{img}};background-position:-140px -35px;"></view>
     </view>
     <text>预约技师</text>
   </view>
   <view class="module_item" bindtap="shoppingEmpty">
     <view class="module_icon module2">
-      <image src="/images_hair/index_icon2.jpg" class="firstImg"></image>
-
+      <view class="module_bg" style="{{img}};background-position:-94px -35px;"></view>
     </view>
     <text>会员权益</text>
   </view>
   <view class="module_item" bindtap="group">
     <view class="module_icon module3">
-      <image src="/images_hair/index_icon3.jpg" class="firstImg"></image>
-
+      <view class="module_bg" style="{{img}};background-position:-47px -35px;"></view>
     </view>
     <text>团购活动</text>
   </view>
   <view class="module_item" bindtap="about">
     <view class="module_icon module4">
-      <image src="/images_hair/index_icon4.jpg" class="firstImg"></image>
-
+      <view class="module_bg" style="{{img}};background-position:-0px -35px;"></view>
     </view>
     <text>关于我们</text>
   </view>
   <view class="module_item">
    <view class="module_icon module5">
-      <image src="/images_hair/index_icon5.jpg" class="firstImg"></image>
-
+      <view class="module_bg" style="{{img}};background-position:-188px -35px;"></view>
     </view>
     <text>联系我们</text>
   </view>
@@ -50,13 +45,12 @@
   <view class="store_text1" >
     门店
   </view>
-  <view class="near" bindtap="store">
-    <image src="/images_hair/stores_icon.jpg"></image>
+  <view class="near" bindtap="store" style="{{img}};background-position:-83px -197px;">
     <view class="text1">最近</view>
   </view>
   <text class="store_active">高新一号店，会员优惠日充200送200~</text>
   <view class="map" bindtap="map"> 
-    <image src="/images_hair/stores1.jpg"></image>
+    <view class="map_img" style="{{img}};background-position:-190px -197px;"></view>
   </view>
 </view>
 <view class="discont">
@@ -99,33 +93,23 @@
 <view class="bottom_spacing"></view>
 <view class="navbar">
     <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Index/index">
-        <view class="nav_img">
-            <image src="/images_hair/navbar1-a.jpg"></image>
-        </view>
+        <view class="nav_img" style="{{img}};background-position: -81px -160px;"></view>
         <view class="text  this-text" style="color:#fb5676">首页</view>
     </view>
     <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Service/service">
-        <view class="nav_img">
-            <image src="/images_hair/navbar2.jpg"></image>
-        </view>
+        <view class="nav_img"  style="{{img}};background-position: -108px -160px;"></view>
         <view class="text">服务</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairStyle/hairstyle">
-        <view class="nav_img">
-            <image src="/images_hair/navbar3.jpg"></image>
-        </view>
+        <view class="nav_img"  style="{{img}};background-position: -0px -160px;"></view>
         <view class="text">发型</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairDresser/hairDresser">
-        <view class="nav_img">
-            <image src="/images_hair/navbar4.jpg"></image>
-        </view>
+        <view class="nav_img"  style="{{img}};background-position: -216px -160px;"></view>
         <view class="text">技师</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/User/user">
-        <view class="nav_img">
-            <image src="/images_hair/navbar5.jpg"></image>
-        </view>
+        <view class="nav_img"  style="{{img}};background-position: -162px -160px;"></view>
         <view class="text">我的</view>
     </view>
 </view>

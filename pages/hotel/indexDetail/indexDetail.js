@@ -8,7 +8,8 @@ Page({
     num:'',
     isShow:false,
     complete_api:[],
-    searchItem:{}
+    searchItem:{},
+    img:"background:url('/images/hotel.png')",
   },
   //事件处理函数
 

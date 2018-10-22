@@ -55,12 +55,12 @@
 	height:296rpx;
 }
 .dishes_left{
-	width:68%;
+	width:78%;
 	height:90rpx;
 	overflow:hidden;
 }
 .dishes_right{
-	width:32%;
+	width:22%;
 	height:90rpx;
 	line-height:90rpx;
 	text-align:right;
@@ -72,7 +72,7 @@
 }
 .comment_star{
 	height:50rpx;
-	width:62%;	
+	width:75%;	
 }
 .sta_list image{
 	width:29rpx;
@@ -193,7 +193,7 @@
 }
 .cart_number{
 	position:absolute;
-	right:0rpx;
+	right:6rpx;
 	top:0rpx;
 	height:0rpx;
 	z-index:;
@@ -251,4 +251,12 @@
 }
 .scer{
 	width:1%;
+}
+.nav_img{
+	width:44rpx;
+	height:42rpx;
+	margin:0 auto 10rpx auto;
+}
+.navbar .this-text{
+	color:#f2665f;
 }

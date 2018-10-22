@@ -20,6 +20,7 @@ Page({
     autoplay: true,
     intervalOne:2000,
     duration: 1000,
+    img:"background:url('/images/website.png')",
   },
 
 

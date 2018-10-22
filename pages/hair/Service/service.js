@@ -7,7 +7,7 @@ const token = new Token();
 Page({
   data: {
     tapCurrent:0,
-
+    img:"background:url('/images/hair.png')",
   },
   
   onLoad: function () {

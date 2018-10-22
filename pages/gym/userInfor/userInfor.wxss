@@ -76,3 +76,8 @@ page{
 	align-items:center;
 	width:50%;
 }
+.submit_info{
+	margin:0 auto;
+	background:#bb212e;
+	width:700rpx;
+}

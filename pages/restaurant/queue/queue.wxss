@@ -92,13 +92,17 @@
 	height:269rpx;
 }
 .queqe_txt{
-	width:259rpx;
-	height:269rpx;
+	width:260rpx;
+	height:260rpx;
+	line-height:260rpx;
 	position:absolute;
-	line-height:269rpx;
 	text-align:center;
-	font-size:24rpx;
+	font-size:28rpx;
 	color:#fff;
 	top:0;
 	left:0;
+}
+.next_page{
+	width:12rpx;
+	height:20rpx;
 }

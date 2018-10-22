@@ -15,7 +15,8 @@ Page({
     interval: 3000,
     duration: 1000,
     buttonClicked:true,
-    classData:[]
+    classData:[],
+    img:"background:url('/images/gym.png')",
   },
 
   onLoad(options) {

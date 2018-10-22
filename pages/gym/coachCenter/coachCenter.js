@@ -7,13 +7,8 @@ const token = new Token();
 
 Page({
   data: {
- 
+    img:"background:url('/images/gym.png')",
   },
-  //事件处理函数
-  preventTouchMove:function(e) {
-
-  },
-
   onLoad(options){
 
   },

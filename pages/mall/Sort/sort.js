@@ -14,7 +14,8 @@ Page({
     isLoadAll:false,
     sForm:{
       item:''
-    }
+    },
+    img:"background:url('/images/small.png')",
   },
   
   onLoad() {

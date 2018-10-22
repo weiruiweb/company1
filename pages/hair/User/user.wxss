@@ -96,18 +96,21 @@ text-align:center;
 	margin-top:28rpx;
 	right:0rpx;
 	width:172rpx;
-
 	height:55rpx;
 	border-radius:30rpx 0rpx 0rpx 30rpx;
 	overflow:hidden;
 }
 .cre_img{
 	padding-top:5rpx;
-	float:left;
+	margin-right:10rpx;
+}
+.cre_img1{
+	width:30rpx;
+	height:30rpx;
+
 }
 .credit{
-	padding-left:20rpx;
-		background:#fff;
+	background:#fff;
 	font-size:26rpx;
 	color:#fc5050;	
 }
@@ -122,8 +125,13 @@ text-align:center;
 	line-height:80rpx;
 	margin:38rpx 22rpx;
 }
-.flexRowBetween {
-
-align-items:stretch;
-
+.nav_img{
+	width:42rpx;
+	height:46rpx;
+	margin:0 auto 10rpx auto;
+}
+.user_icon{
+	width:30rpx;
+	height:32rpx;
+	margin-right:10rpx;
 }

@@ -7,7 +7,7 @@ const token = new Token();
 
 Page({
   data: {
-    
+    img:"background:url('/images/restaurant.png')",
   },
   onLoad: function () {
     this.setData({

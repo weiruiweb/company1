@@ -10,9 +10,9 @@
 	<view class="users_detail flexRowBetween">
 		<view class="input_note">手机号码:</view>
 		<input placeholder="请输入手机号码" style="width:64%;" value="{{web_mainData.phone}}"  data-key="phone" bindblur="inputChange"></input>
-		<view class="address_right" style="width:13%;">
+		<view class="address_right flex" style="width:13%;">
 			<text>+86</text>
-			<image src="/images_gym/next_page.png"></image>
+			<view style="width:12rpx;height:20rpx;{{img}};background-position:-359px 0px;margin-left: 20rpx;"></view>
 		</view>
 	</view>
 </view>

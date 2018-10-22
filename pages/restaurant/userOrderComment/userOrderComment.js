@@ -7,7 +7,8 @@ Page({
   data: {
    isTrue:true,
    currentId:0,
-   files: []
+   files: [],
+   img:"background:url('/images/restaurant.png')",
   },
   onLoad: function () {
    this.setData({

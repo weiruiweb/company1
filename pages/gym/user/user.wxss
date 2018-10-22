@@ -190,4 +190,19 @@ page{
 }
 .user_line{
 	border-bottom:solid 1rpx #b2b2b2;
+}.navbar .this-text{
+	color:#bb212e;
+}
+.nav_img{
+	width:64rpx;
+	height:54rpx;
+	margin:0 auto;
+}
+.navbar{
+	box-shadow:5rpx 0 15rpx #f35c59;
+}
+.user_icon{
+	width:36rpx;
+	height:36rpx;
+	margin-right:10rpx;
 }

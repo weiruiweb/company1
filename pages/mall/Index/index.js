@@ -7,8 +7,8 @@ const token = new Token();
 
 Page({
   data: {
-     caseData:[]
-
+     caseData:[],
+     img:"background:url('/images/small.png')"
   },
  
   onLoad(options) {

@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-  
+    img:"background:url('/images/hotel.png')",
   },
   
   onLoad: function () {

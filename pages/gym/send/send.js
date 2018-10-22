@@ -14,7 +14,8 @@ Page({
       thirdapp_id:'12',
       type:4
     },
-    id:''
+    id:'',
+    img:"background:url('/images/gym.png')",
   },
 
 

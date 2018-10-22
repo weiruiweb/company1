@@ -2,49 +2,49 @@
 <view class="userComment">
 	<view class="comment_save">
 		<view class="has_send" data-id="0" bindtap="has_send" > 
-			<image src="{{currentId == 0?'/images_gym/check.png':''}}"></image>
+			<image src="{{currentId == 0?'/images/check.png':''}}"></image>
 			<view class="has_bg">
 				<view class="week" style="{{currentId == 0?'line-height: normal;':'line-height:100rpx;'}}">一</view>
 				<view class="time" style="{{currentId == 0?'display: block':'display:none'}}">08.23</view>
 			</view>
 		</view>
 		<view class="has_send" data-id="1" bindtap="has_send"> 
-			<image src="{{currentId == 1?'/images_gym/check.png':''}}"></image>
+			<image src="{{currentId == 1?'/images/check.png':''}}"></image>
 			<view class="has_bg">
 				<view class="week" style="{{currentId == 1?'line-height: normal;':'line-height:100rpx;'}}">二</view>
 				<view class="time" style="{{currentId == 1?'display: block':'display:none'}}">08.23</view>
 			</view>
 		</view>
 		<view class="has_send" data-id="2" bindtap="has_send"> 
-			<image src="{{currentId == 2?'/images_gym/check.png':''}}"></image>
+			<image src="{{currentId == 2?'/images/check.png':''}}"></image>
 			<view class="has_bg">
 				<view class="week" style="{{currentId == 2?'line-height: normal;':'line-height:100rpx;'}}">三</view>
 				<view class="time" style="{{currentId == 2?'display: block':'display:none'}}">08.23</view>
 			</view>
 		</view>
 		<view class="has_send" data-id="3" bindtap="has_send"> 
-			<image src="{{currentId == 3?'/images_gym/check.png':''}}"></image>
+			<image src="{{currentId == 3?'/images/check.png':''}}"></image>
 			<view class="has_bg">
 				<view class="week" style="{{currentId == 3?'line-height: normal;':'line-height:100rpx;'}}">四</view>
 				<view class="time" style="{{currentId == 3?'display: block':'display:none'}}">08.23</view>
 			</view>
 		</view>
 		<view class="has_send" data-id="4" bindtap="has_send"> 
-			<image src="{{currentId == 4?'/images_gym/check.png':''}}"></image>
+			<image src="{{currentId == 4?'/images/check.png':''}}"></image>
 			<view class="has_bg">
 				<view class="week" style="{{currentId == 4?'line-height: normal;':'line-height:100rpx;'}}">五</view>
 				<view class="time" style="{{currentId == 4?'display: block':'display:none'}}">08.23</view>
 			</view>
 		</view>
 		<view class="has_send" data-id="5" bindtap="has_send"> 
-			<image src="{{currentId == 5?'/images_gym/check.png':''}}"></image>
+			<image src="{{currentId == 5?'/images/check.png':''}}"></image>
 			<view class="has_bg">
 				<view class="week" style="{{currentId == 5?'line-height: normal;':'line-height:100rpx;'}}">六</view>
 				<view class="time" style="{{currentId == 5?'display: block':'display:none'}}">08.23</view>
 			</view>
 		</view>
 		<view class="has_send" data-id="6" bindtap="has_send"> 
-			<image src="{{currentId == 6?'/images_gym/check.png':''}}"></image>
+			<image src="{{currentId == 6?'/images/check.png':''}}"></image>
 			<view class="has_bg">
 				<view class="week" style="{{currentId == 6?'line-height: normal;':'line-height:100rpx;'}}">日</view>
 				<view class="time" style="{{currentId == 6?'display: block':'display:none'}}">08.23</view>

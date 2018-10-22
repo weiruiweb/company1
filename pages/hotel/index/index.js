@@ -14,7 +14,8 @@ Page({
     duration: 1000,
     buttonClicked:true,
     mainData:[],
-    complete_api:[]
+    complete_api:[],
+    img:"background:url('/images/hotel.png')",
   },
   //事件处理函数
  

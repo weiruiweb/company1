@@ -17,6 +17,43 @@ class Token {
         };
     }
 
+    getMallToken(params) { 
+        var mall_token = wx.getStorageSync('mall_token');
+        var params ='mall'
+        this.getUserInfo(params);
+  
+    }    
+
+    getExhibitionToken(params) { 
+        var exhibition_token = wx.getStorageSync('exhibition_token');
+        var params ='exhibition'
+        this.getUserInfo(params);
+    }    
+
+    getGymToken(params) { 
+        var gym_token = wx.getStorageSync('gym_token');
+        var params ='gym'
+        this.getUserInfo(params);
+    }    
+
+    getHairToken(params) { 
+        var hair_token = wx.getStorageSync('hair_token');
+        var params ='hair'
+        this.getUserInfo(params);
+    }    
+
+    getHotelToken(params) { 
+        var hotel_token = wx.getStorageSync('hotel_token');
+        var params ='hotel'
+        this.getUserInfo(params);
+    } 
+
+    getRestaurantToken(params) { 
+        var restaurant_token = wx.getStorageSync('restaurant_token');
+        var params ='restaurant'
+        this.getUserInfo(params);
+    }
+
 
     getUserInfo(params,callback){
         var self = this;
@@ -63,6 +100,7 @@ class Token {
     getTokenFromServer(data,params,callback) {
         var self  = this;
         console.log('params',params)
+        console.log('data',params)
         wx.login({
             success: function (res) {
                 console.log(res)

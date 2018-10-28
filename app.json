@@ -8,6 +8,7 @@
     "pages/mall/userDiscount/userDiscount",
     "pages/mall/userInfo/userInfo",
     "pages/mall/discount/discount",
+    "pages/mall/userGroup/userGroup",
     "pages/mall/manageAddress/manageAddress",
     "pages/mall/newAddress/newAddress",
     "pages/mall/order/order",

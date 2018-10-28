@@ -18,7 +18,7 @@
 			 		</view>
 			 	</view>
 			 	<view class="phone">
-			 		<text>4份共392元 </text><text> 可用优惠券:20元</text>
+			 		<text>{{web_cartTotalCounts}}份共{{web_totalPrice}}元 </text><text> 可用优惠券:20元</text>
 			 	</view>
 
 			 </view>
@@ -49,30 +49,16 @@
 	</view>
 </view>
 <view class="order_list">
+<block wx:for="{{web_mainData}}" wx:key="id" >
 	<view class="oreder_detail flexRowCenter">
 		<view class="order_name avoidOverflow">
-			温蟹温蟹
+			{{item.title}}
 		</view>
 		<view class="order_number">
-			<text>x1</text><text>168元</text>
+			<text>x{{item.count}}</text><text>{{item.price}}元</text>
 		</view>
 	</view>
-	<view class="oreder_detail flexRowCenter">
-		<view class="order_name avoidOverflow">
-			温蟹温蟹
-		</view>
-		<view class="order_number">
-			<text>x1</text><text>168元</text>
-		</view>
-	</view>
-	<view class="oreder_detail flexRowCenter">
-		<view class="order_name avoidOverflow">
-			温蟹温蟹
-		</view>
-		<view class="order_number">
-			<text>x1</text><text>168元</text>
-		</view>
-	</view>
+</block>
 </view>
 <view class="discont flexRowBetween">
 	<view class="discont_left">优惠券</view>
@@ -96,7 +82,7 @@
 			<text class="text1" style="{{fonts[5].font}};color:#666;">已点:</text>
 			<text class="text2"  style="{{fonts[5].font}};color:#f2665f;">266元</text>
 		</view>
-		<view id="has_menus" bindtap="intoPath"  data-path="/pages/restaurant/dishesPayment/dishesPayment">
+		<view id="has_menus" bindtap="addOrder">
 			<view class="menus_click">付款</view>
 		</view>
 	</view>

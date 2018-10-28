@@ -201,9 +201,9 @@ Page({
   distributionGet(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('token');
+    postData.token = wx.getStorageSync('mall_token');
     postData.searchItem = {
-      child_no:wx.getStorageSync('info').user_no
+      child_no:wx.getStorageSync('mall_info').user_no
     }
     const callback = (res)=>{
       self.data.distributionData = res;
@@ -219,7 +219,7 @@ Page({
 
   submit(){
     const self = this;  
-    if(wx.getStorageSync('info').info.length<=0){
+    if(wx.getStorageSync('mall_info').info.length<=0){
       api.showToast('请补全信息','fail');
       setTimeout(function(){
       api.pathTo('/pages/userComplete/userComplete','redi');
@@ -227,7 +227,7 @@ Page({
     }else{
       if(self.data.todayData){
         if(self.data.todayData.length>0){
-          api.showToast('今日已签到','fail');
+          api.showToast('今日已签到','none');
         }else{
           wx.showLoading();
           const callback = (user,res) =>{
@@ -249,7 +249,7 @@ Page({
   getMainData(maxNum){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('token');
+    postData.token = wx.getStorageSync('mall_token');
     postData.searchItem = api.cloneForm(self.data.searchItem);
     postData.searchItem.create_time = ['between',
       [    
@@ -327,7 +327,7 @@ Page({
   checkToday(c_callback){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('token');
+    postData.token = wx.getStorageSync('mall_token');
     postData.searchItem = api.cloneForm(self.data.searchItem);
     postData.searchItem.create_time = ['between',[new Date(new Date().setHours(0, 0, 0, 0)) / 1000,new Date(new Date().setHours(0, 0, 0, 0)) / 1000 + 24 * 60 * 60-1]]
     const callback = (res)=>{
@@ -362,17 +362,16 @@ Page({
     const self = this;
     const postData = {};
     postData.searchItem = {
-      menu_id:'390',
-      thirdapp_id:'59'
+      id:28,
+      thirdapp_id:getApp().globalData.mall_thirdapp_id,
     };
     const callback = (res)=>{
-      self.data.levelTwo = res.info.data[0].description;
-      self.data.levelOne = res.info.data[0].small_title;
+      
       self.data.artData = res.info.data[0];
       self.data.seriesRewardData = {};
-      for (var i = 0; i < res.info.data[0].keywords.split(',').length; i++) {
-        var c_num = res.info.data[0].keywords.split(',')[i].split(':')[0];
-        self.data.seriesRewardData[c_num] = res.info.data[0].keywords.split(',')[i].split(':')[1]
+      for (var i = 0; i < res.info.data[0].contactPhone.split(',').length; i++) {
+        var c_num = res.info.data[0].contactPhone.split(',')[i].split(':')[0];
+        self.data.seriesRewardData[c_num] = res.info.data[0].contactPhone.split(',')[i].split(':')[1]
       };
       wx.hideLoading();
       self.data.artData.content = api.wxParseReturn(res.info.data[0].content).nodes;

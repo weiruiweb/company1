@@ -61,7 +61,7 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('token');
+    postData.token = wx.getStorageSync('mall_token');
     console.log(self.data.searchItem);
     postData.searchItem = api.cloneForm(self.data.searchItem);
     if(res){

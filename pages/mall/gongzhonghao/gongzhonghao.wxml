@@ -30,24 +30,24 @@
 	</view>
 	<view class="made_cont" style="width:100%;">	
 		<view class="product_sort flexRowBetween">
-			<view class="product_item {{changeCurrent == 0?'changeColor':''}}" data-current="0" bindtap="changeImage">
+			<view data-num="1" class="product_item {{_num==1?'changeColor':''}}" data-sortby="multi" bindtap="changeSort">
 				<text>综合</text>
-				<image src="{{changeCurrent == 0?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
+				<image src="{{_num == 0?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
 			</view>
-			<view class="product_item {{changeCurrent == 1?'changeColor':''}}"  data-current="1" bindtap="changeImage">
+			<view data-num="2" class="product_item {{_num==2?'changeColor':''}}" data-sortby="multi" bindtap="changeSort">
 				
 				<text>销量</text>
-				<image src="{{changeCurrent == 1?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
+				<image src="{{_num == 1?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
 			</view>
-			<view class="product_item {{changeCurrent == 2?'changeColor':''}}"  data-current="2" bindtap="changeImage">
+			<view data-num="3" class="product_item {{_num==3?'changeColor':''}}" data-sortby="multi" bindtap="changeSort">
 				
 				<text>新品</text>
-				<image src="{{changeCurrent == 2?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
+				<image src="{{_num == 2?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
 			</view>
-			<view class="product_item {{changeCurrent == 3?'changeColor':''}}"  data-current="3" bindtap="changeImage">
+			<view data-num="4" class="product_item {{_num==4?'changeColor':''}}" data-sortby="price" bindtap="changeSort">
 				
 				<text>价格</text>
-				<image src="{{changeCurrent == 3?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
+				<image src="{{_num == 3?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
 			</view>
 		</view>
 

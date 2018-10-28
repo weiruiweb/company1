@@ -1,204 +1,42 @@
 <!--service wxml-->
 <view class="tab_click flexRowBetween">
-	<view class="tab_sort {{tapCurrent == 0?'this_tab':''}}" data-id="0" bindtap="tabCont">
-		美发
-	</view>
-	<view class="tab_sort {{tapCurrent == 1?'this_tab':''}}"  data-id="1"  bindtap="tabCont">
-		美容
-	</view>
-	<view class="tab_sort {{tapCurrent == 2?'this_tab':''}}"  data-id="2"  bindtap="tabCont">
-		美体
-	</view>
+	<block wx:for="{{web_labelData}}" wx:key="id">
+		<view class="tab_sort {{web_num == item.id?'this_tab':''}}" data-num="{{item.id}}" bindtap="menuClick">
+			{{item.title}}
+		</view>
+	</block>
 </view>
 <view class="tab_cont">
-	<view class="tab_item {{tapCurrent == 0?'tab_this':''}}">
-		<view class="tab_list" bindtap="detail">	
-			<view class="tab_img">
-				<image src="/images_hair/dresser.jpg"></image>
-			</view>
-			<view class="active_info">
-				<view class="active_name">
-					剪吹限时抢购
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="tab_item tab_this">
+			<view class="tab_list" bindtap="intoPath" data-path="/pages/hair/detail/detail?id={{item.id}}">	
+				<view class="tab_img">
+					<image src="{{item.mainImg[0].url}}"></image>
 				</view>
-				<view class="price_time flexRowBetween">
-					<view class="price">
-						¥222.00
+				<view class="active_info">
+					<view class="active_name">
+						{{item.title}}
 					</view>
-					<view class="time flexRowBetween">
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
+					<view class="price_time flexRowBetween">
+						<view class="price">
+							¥{{item.price}}
+						</view>
+						<view class="time flexRowBetween">
+							<view class="tiem_end">
+								03
+							</view>:
+							<view class="tiem_end">
+								03
+							</view>:
+							<view class="tiem_end">
+								03
+							</view>
 						</view>
 					</view>
 				</view>
 			</view>
 		</view>
-		<view class="tab_list" bindtap="detail">	
-			<view class="tab_img">
-				<image src="/images_hair/dresser.jpg"></image>
-			</view>
-			<view class="active_info">
-				<view class="active_name">
-					剪吹限时抢购
-				</view>
-				<view class="price_time flexRowBetween">
-					<view class="price">
-						¥222.00
-					</view>
-					<view class="time flexRowBetween">
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-	</view>
-	<view class="tab_item {{tapCurrent == 1?'tab_this':''}}">
-		<view class="tab_list" bindtap="detail">	
-			<view class="tab_img">
-				<image src="/images_hair/dresser.jpg"></image>
-			</view>
-			<view class="active_info">
-				<view class="active_name">
-					剪吹限时抢购
-				</view>
-				<view class="price_time flexRowBetween">
-					<view class="price">
-						¥222.00
-					</view>
-					<view class="time flexRowBetween">
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="tab_list" bindtap="detail">	
-			<view class="tab_img">
-				<image src="/images_hair/dresser.jpg"></image>
-			</view>
-			<view class="active_info">
-				<view class="active_name">
-					剪吹限时抢购
-				</view>
-				<view class="price_time flexRowBetween">
-					<view class="price">
-						¥222.00
-					</view>
-					<view class="time flexRowBetween">
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-	</view>
-	<view class="tab_item {{tapCurrent == 2?'tab_this':''}}">
-		<view class="tab_list" bindtap="detail">	
-			<view class="tab_img">
-				<image src="/images_hair/dresser.jpg"></image>
-			</view>
-			<view class="active_info">
-				<view class="active_name">
-					剪吹限时抢购
-				</view>
-				<view class="price_time flexRowBetween">
-					<view class="price">
-						¥222.00
-					</view>
-					<view class="time flexRowBetween">
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="tab_list" bindtap="detail">	
-			<view class="tab_img">
-				<image src="/images_hair/dresser.jpg"></image>
-			</view>
-			<view class="active_info">
-				<view class="active_name">
-					剪吹限时抢购
-				</view>
-				<view class="price_time flexRowBetween">
-					<view class="price">
-						¥222.00
-					</view>
-					<view class="time flexRowBetween">
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="tab_list" bindtap="detail">	
-			<view class="tab_img">
-				<image src="/images_hair/dresser.jpg"></image>
-			</view>
-			<view class="active_info">
-				<view class="active_name">
-					剪吹限时抢购
-				</view>
-				<view class="price_time flexRowBetween">
-					<view class="price">
-						¥222.00
-					</view>
-					<view class="time flexRowBetween">
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>:
-						<view class="tiem_end">
-							03
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-	</view>
+	</block>
 </view>
 <view class="bottom_spacing"></view>
 <view class="navbar">

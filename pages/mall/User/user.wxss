@@ -18,7 +18,7 @@
 }
 .user_word{
 	width:40%;
-	height:80rpx;
+
 }
 .user_name{
 	font-size:34rpx;

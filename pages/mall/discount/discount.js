@@ -69,7 +69,7 @@ Page({
     var type = api.getDataSet(e,'type');
     var deadline = api.getDataSet(e,'deadline');
     const postData = {
-      token:wx.getStorageSync('token'),
+      token:wx.getStorageSync('mall_token'),
       product:[
         {id:id,count:1}
       ],
@@ -79,7 +79,7 @@ Page({
     };
     const callback = (res)=>{
       if(res&&res.solely_code==100000){
-        api.showToast('领取成功！','neone')
+        api.showToast('领取成功！','none')
         self.data.buttonClicked = false;    
       }; 
     };

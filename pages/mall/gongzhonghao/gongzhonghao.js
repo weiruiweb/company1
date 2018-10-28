@@ -9,6 +9,7 @@ const token = new Token();
 Page({
   
   data: {
+    _num:0,
     labelData:[],
     mainData:[],
     index:0,
@@ -18,6 +19,10 @@ Page({
       item:''
     },
     isShow:false,
+    sort:{
+      sortby:'',
+      sort:''
+    },
   },
   
   onLoad(options) {
@@ -67,7 +72,7 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      thirdapp_id:getApp().globalData.thirdapp_id
+      thirdapp_id:getApp().globalData.mall_thirdapp_id
     };
     if(self.data.id){
       postData.searchItem.category_id = self.data.id
@@ -103,7 +108,7 @@ Page({
     const self = this;
     const postData = {};
     postData.searchItem = {
-      thirdapp_id:getApp().globalData.thirdapp_id,
+      thirdapp_id:getApp().globalData.mall_thirdapp_id,
       type:3
     };
     postData.order = {
@@ -124,6 +129,39 @@ Page({
       self.getMainData();
     };
     api.labelGet(postData,callback);   
+  },
+
+  changeSort(e){
+    const self = this;
+    self.setData({
+      buttonClicked: true
+    });
+    const sortby = api.getDataSet(e,'sortby');
+    if(self.data.sort.sortby == sortby){
+      if(self.data.sort.sort == 'asc'){
+        self.data.sort.sort = 'desc'
+      }else if(self.data.sort.sort == 'desc'){
+        self.data.sort.sort = 'normal'
+      }else if(self.data.sort.sort == 'normal'){
+        self.data.sort.sort = 'asc'
+      }
+    }else{
+      self.data.sort.sortby = sortby;
+      self.data.sort.sort = 'asc';
+    };
+    self.setData({
+      web_sort:self.data.sort
+    });
+    
+    if(self.data.sort.sort == 'normal'){
+      self.data.sort = {}
+    };
+    setTimeout(function(){
+      self.setData({
+        buttonClicked: false
+      })
+    }, 1000);
+    self.getMainData(true);
   },
 
 

@@ -51,7 +51,7 @@ Page({
   getUserInfoData(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.userData = res;
@@ -74,7 +74,7 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     postData.searchItem = api.cloneForm(self.data.searchItem)
     postData.order = {
       create_time:'desc',

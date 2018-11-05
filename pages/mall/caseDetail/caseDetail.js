@@ -20,10 +20,7 @@ Page({
   onLoad(options){
     const self = this;
     wx.showLoading();
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
+    
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.data.id = options.id;
     self.getMainData();

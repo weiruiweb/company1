@@ -45,6 +45,7 @@ class Api extends Base{
         var allParams ={
             url:'Common/Label/get',
             type:'post',
+            noToken:true,
             data:param,
             sCallback: function(data) {
                 callback && callback(data);
@@ -485,6 +486,7 @@ class Api extends Base{
             url:'Common/Product/get',
             type:'post',
             data:param,
+            noToken:true,
             sCallback: function(data) {
                 callback && callback(data);
             }
@@ -548,6 +550,7 @@ class Api extends Base{
             url:'Common/Sku/get',
             type:'post',
             data:param,
+            noToken:true,
             sCallback: function(data) {
                 callback && callback(data);
             }
@@ -588,6 +591,7 @@ class Api extends Base{
             url:'Common/Article/get',
             type:'post',
             data:param,
+            noToken:true,
             sCallback: function(data) {
                 callback && callback(data);
             }

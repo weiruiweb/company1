@@ -24,10 +24,7 @@ Page({
 
   onLoad(){
     const self = this;
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
+    
     self.setData({
       fonts:getApp().globalData.font
     });   
@@ -129,7 +126,7 @@ Page({
       title:'签到成功'
     };
 
-    postData.token = wx.getStorageSync('mall_token'); 
+    postData.tokenFuncName = 'getMallToken';
     postData.saveAfter = [];
     if(self.data.distributionData.info.data.length>0){
       var transitionArray = self.data.distributionData.info.data;
@@ -201,7 +198,7 @@ Page({
   distributionGet(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     postData.searchItem = {
       child_no:wx.getStorageSync('mall_info').user_no
     }
@@ -249,7 +246,7 @@ Page({
   getMainData(maxNum){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     postData.searchItem = api.cloneForm(self.data.searchItem);
     postData.searchItem.create_time = ['between',
       [    
@@ -277,7 +274,7 @@ Page({
     const self = this;
     
     const postData = {};
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     postData.searchItem = api.cloneForm(self.data.searchItem);
     postData.searchItem.create_time = ['between',self.data.monthArray];   
     postData.order={
@@ -327,7 +324,7 @@ Page({
   checkToday(c_callback){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     postData.searchItem = api.cloneForm(self.data.searchItem);
     postData.searchItem.create_time = ['between',[new Date(new Date().setHours(0, 0, 0, 0)) / 1000,new Date(new Date().setHours(0, 0, 0, 0)) / 1000 + 24 * 60 * 60-1]]
     const callback = (res)=>{

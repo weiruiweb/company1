@@ -15,10 +15,7 @@ Page({
     const self = this;
     wx.showLoading();
     self.data.name = options.name;
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getMallToken();
-    };
+    
     self.setData({
       isHidden: false,
       fonts:app.globalData.font
@@ -46,13 +43,7 @@ Page({
       }   
       token.getMallToken();
       console.log('getToken',sceneNew)
-    }else{
-      if(!wx.getStorageSync('mall_token')){
-        var token = new Token();
-        token.getMallToken();
-        console.log('getToken')
-      };
-    }; 
+    };
   },
 
   getCaseData(){

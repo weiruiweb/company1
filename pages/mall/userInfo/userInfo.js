@@ -20,20 +20,19 @@ Page({
 
 
   onLoad(){
+    
     const self = this;
     wx.showLoading();
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
+    
     self.userInfoGet();
+
   },
 
 
   userInfoGet(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     const callback = (res)=>{
       console.log(res)
       self.data.mainData = res;
@@ -72,13 +71,13 @@ Page({
 
 
   userInfoUpdate(){
+
     const self = this;
     const postData = {};
     postData.token = wx.getStorageSync('mall_token');
     postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
     const callback = (data)=>{
-      
       if(data.solely_code==100000){
         api.showToast('完善成功','none')
       }else{
@@ -87,10 +86,12 @@ Page({
       wx.hideLoading();
     };
     api.userInfoUpdate(postData,callback);
+
   },
   
 
   userInfoAdd(){
+
     const self = this;
     const postData = {};
     postData.token = wx.getStorageSync('mall_token');
@@ -105,6 +106,7 @@ Page({
       wx.hideLoading();
     };
     api.userInfoAdd(postData,callback);
+
   },
   
 

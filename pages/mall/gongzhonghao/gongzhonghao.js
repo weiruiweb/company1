@@ -28,10 +28,7 @@ Page({
   onLoad(options) {
     const self = this;
     wx.showLoading();
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
+
     this.setData({
       fonts:app.globalData.font
     });

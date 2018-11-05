@@ -36,10 +36,7 @@ Page({
   onLoad() {
     const self = this;
     wx.showLoading();
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
+    
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.setData({
       fonts:app.globalData.font,
@@ -60,15 +57,20 @@ Page({
       self.data.searchItem.isdefault = 1;
     };
     self.data.mainData = api.jsonToArray(wx.getStorageSync('payPro'),'unshift');
-    wx.removeStorageSync('payPro');
+    
     for (var i = 0; i < self.data.mainData.length; i++) {
       self.data.idData.push(self.data.mainData[i].id)
-    }
+    };
     self.getMainData();
-    
     console.log(self.data.idData)
     self.getAddressData();
   },
+
+  onUnload(){
+    const self = this;
+    wx.removeStorageSync('payPro');
+  },
+
 
   getOrderData(isNew){
     const self = this;
@@ -77,7 +79,7 @@ Page({
     }
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     postData.searchItem = {
       thirdapp_id:getApp().globalData.thirdapp_id,
       user_no:wx.getStorageSync('mall_info').user_no,
@@ -112,7 +114,7 @@ Page({
     }
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('token');
+    postData.tokenFuncName = 'getMallToken';
     postData.searchItem = api.cloneForm(self.data.searchItemTwo)
     const callback = (res)=>{
       if(res.info.data.length>0){
@@ -161,8 +163,8 @@ Page({
   getAddressData(){
     const self = this;
     const postData = {}
-    postData.token = wx.getStorageSync('mall_token');
-    postData.searchItem = api.cloneForm(self.data.searchItem);
+    postData.tokenFuncName = 'getMallToken';
+    postData.searchItem = {isdefault:1};
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.addressData = res.info.data[0]; 
@@ -190,11 +192,10 @@ Page({
     }else if(!self.data.order_id){
       self.data.buttonClicked = true;
       const postData = {
-        token:wx.getStorageSync('mall_token'),
+        tokenFuncName : 'getMallToken',
         sku:self.data.mainData,
         pay:{
           wxPay:self.data.totalPrice.toFixed(2),
-          
         },
         type:1
       };
@@ -231,7 +232,7 @@ Page({
     const self = this;
     var order_id = self.data.order_id;
     const postData = {
-      token:wx.getStorageSync('mall_token'),
+      tokenFuncName : 'getMallToken',
       searchItem:{
         id:order_id
       },

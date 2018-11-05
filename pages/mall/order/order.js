@@ -19,10 +19,7 @@ Page({
 
   onLoad(options){
     const self = this;
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
+    
     if(options.num){
       self.changeSearch(options.num)
     }
@@ -41,7 +38,7 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     postData.searchItem = api.cloneForm(self.data.searchItem)
     postData.order = {
       create_time:'desc'
@@ -69,7 +66,7 @@ Page({
   deleteOrder(e){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     postData.searchItem = {};
     postData.searchItem.id = api.getDataSet(e,'id');
     const callback  = res=>{
@@ -82,7 +79,7 @@ Page({
   orderUpdate(e){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     postData.data ={
       transport_status:2,
       order_step:3
@@ -103,7 +100,7 @@ Page({
     var id = api.getDataSet(e,'id');
     var score = api.getDataSet(e,'score')
     const postData = {
-      token:wx.getStorageSync('mall_token'),
+      tokenFuncName :'getMallToken',
       searchItem:{
         id:id
       },

@@ -11,10 +11,18 @@ class Base{
     //http 请求类, 当noRefech为true时，不做未授权重试机制
     request(params) {
         var that = this;
+        getApp().globalData.buttonClick = true;
         var baseRestUrl = 'https://api.solelycloud.com/api/public/index.php/api/v1/';
         var url=baseRestUrl + params.url;
-        
-        
+        const callback = (res)=>{
+            that.request(params);
+        };
+
+        if(params.data.tokenFuncName){
+            console.log('params.data.token');
+            params.data.token = token[params.data.tokenFuncName](callback);
+            console.log('params.data.token',params.data.token);
+        };
         
         wx.request({
             url: url,
@@ -29,20 +37,24 @@ class Base{
                 // 异常不要返回到回调中，就在request中处理，记录日志并showToast一个统一的错误即可
                 var code = res.data.solely_code;
                 if (res.data.solely_code == '200000') {
-                    var pages = getCurrentPages()    //获取加载的页面
+
+                    token[params.data.tokenFuncName](callback,{refreshToken:true});
+
+
+                    /*var pages = getCurrentPages()    //获取加载的页面
                     var currentPage = pages[pages.length-1]    //获取当前页面的对象
                     var pages = currentPage.route;
                     console.log(pages);
                     var pagesArray = pages.split('/');
                     console.log(pagesArray)
-                    const callback = (data)=>{
-                        that.request(data);
-                    };
+                    
                     if(wx.getStorageSync('threeToken')&&params.data.token == wx.getStorageSync('threeToken')){
                         that.logOff();
                     }else{
+                        console.log('pagesArray',pagesArray);
                         if(pagesArray[1]=='mall'){
-                            token.getMallToken(params,callback);      
+                            
+                            token.getMallToken('mall',callback);      
                         }else if(pagesArray[1]=='exhibition'){
                             token.getExhibitionToken(params,callback); 
                         }else if(pagesArray[1]=='gym'){
@@ -54,10 +66,11 @@ class Base{
                         }else if(pagesArray[1]=='restaurant'){
                             token.getRestaurantToken(params,callback);
                         }
-                    };
+                    };*/
                 } else {
                     params.sCallback && params.sCallback(res.data);
-                }
+                };
+                getApp().globalData.buttonClick = false;
             },
             fail: function (err) {
                 console.log(err)
@@ -70,6 +83,7 @@ class Base{
                     duration:2000,
                     mask:true,
                 });
+                getApp().globalData.buttonClick = false;
             }
         });
 

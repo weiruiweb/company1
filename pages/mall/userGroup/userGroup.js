@@ -33,7 +33,7 @@ Page({
       const callback = (res)=>{
         self.getMainData(false,res)
       };
-      token.getUserInfo({},callback);
+      token.getMallToken(callback,{refreshToken:true});
     };
     self.setData({
       fonts:app.globalData.font
@@ -61,12 +61,11 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     console.log(self.data.searchItem);
     postData.searchItem = api.cloneForm(self.data.searchItem);
     if(res){
       postData.searchItem.parent_no = res.data.info.user_no;
-      postData.token = res.data.token;
     };
     postData.order = {
       create_time:'desc'

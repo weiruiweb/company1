@@ -9,7 +9,6 @@ Page({
   data: {
     img:"background:url('/images/small.png')",
     userData:[],
-
   },
 
   
@@ -23,7 +22,6 @@ Page({
     self.setData({
      fonts:app.globalData.font
     });
-    
     if(options.scene){
       var scene = decodeURIComponent(options.scene)
     };
@@ -32,11 +30,9 @@ Page({
     };
     if(scene){
       var token = new Token({parent_no:scene});
-      
-    }else{
-      var token = new Token();
+      token.getMallToken(false);
     };
-    token.getMallToken();
+    
   },
 
   onShow(){
@@ -52,7 +48,7 @@ Page({
   getUserInfoData(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     const callback = (res)=>{
       if(res.solely_code==100000){
         if(res.info.data.length>0){
@@ -63,9 +59,7 @@ Page({
         });  
       }else{
         api.showToast('网络故障','none')
-      }
-      
-     
+      };
       wx.hideLoading();
     };
     api.userInfoGet(postData,callback);   

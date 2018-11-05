@@ -32,10 +32,7 @@ Page({
     console.log(self.data.skuData);
     
     wx.showLoading();
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
+
     self.setData({
       fonts:app.globalData.font,
       web_count:self.data.count
@@ -146,7 +143,7 @@ Page({
         web_sku_item:self.data.sku_item,
         web_choose_sku_item:self.data.choose_sku_item,
       });
-      console.log('self.data.labelData',self.data.labelData)
+      console.log('self.data.labelData',self.data.web_mainData)
       self.checkLoadComplete();
     };
     api.productGet(postData,callback);

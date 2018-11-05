@@ -29,10 +29,7 @@ Page({
   
   onLoad() {
     const self = this;
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
+    
     console.log(this.data.windowHeight)
     this.setData({
       fonts:app.globalData.font

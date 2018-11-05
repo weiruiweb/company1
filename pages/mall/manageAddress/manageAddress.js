@@ -20,10 +20,7 @@ Page({
   onLoad(){
     const self = this;
     wx.showLoading();
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
+    
     self.setData({
       fonts:app.globalData.font
     });
@@ -43,7 +40,7 @@ Page({
     }
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     const callback = (res)=>{
       console.log(res);
       if(res.info.data.length>0){
@@ -89,7 +86,7 @@ Page({
     const postData = {};
     postData.searchItem = {};
     postData.searchItem.id = api.getDataSet(e,'id');
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     const callback = (res)=>{
       const resType = api.dealRes(res);
       if(resType){
@@ -104,7 +101,7 @@ Page({
   updateAddress(e){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     postData.searchItem = {};
     postData.searchItem.id = api.getDataSet(e,'id');
     postData.data = {

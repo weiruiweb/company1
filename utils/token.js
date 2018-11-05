@@ -17,11 +17,18 @@ class Token {
         };
     }
 
-    getMallToken(params) { 
-        var mall_token = wx.getStorageSync('mall_token');
-        var params ='mall'
-        this.getUserInfo(params);
-  
+    getMallToken(callback,postData) { 
+
+        if((postData&&postData.refreshToken)||!wx.getStorageSync('mall_token')){
+            var params = {
+                token_name:'mall_token',
+                info_name:'mall_info',
+                thirdapp_id:2
+            };
+            this.getUserInfo(params,callback);
+        }else{
+            return wx.getStorageSync('mall_token');
+        }
     }    
 
     getExhibitionToken(params) { 
@@ -54,10 +61,8 @@ class Token {
         this.getUserInfo(params);
     }
 
-
     getUserInfo(params,callback){
         var self = this;
-
         var wxUserInfo = {};
         if(wx.canIUse('button.open-type.getUserInfo')){
             wx.getSetting({
@@ -66,12 +71,12 @@ class Token {
                         wx.getUserInfo({
                             success: function(res) {                  
                                 wxUserInfo = res.userInfo;
-                            self.getTokenFromServer(wxUserInfo,params,callback);                              
+                                self.getTokenFromServer(wxUserInfo,params,callback);                              
                             }
                         });
                     }else{
                         self.getTokenFromServer(wxUserInfo,params,callback);                        
-                    }
+                    };
                 },
                 fail: res=>{
                     wx.showToast({
@@ -95,23 +100,21 @@ class Token {
         console.log(wxUserInfo)
     }
 
-    
 
-    getTokenFromServer(data,params,callback) {
+    getTokenFromServer(wxUserInfo,params,callback) {
         var self  = this;
-        console.log('params',params)
-        console.log('data',params)
+        console.log('params',params);
+        console.log('wxUserInfo',params);
         wx.login({
             success: function (res) {
                 console.log(res)
                 var postData = {};
-                postData.thirdapp_id = getApp().globalData[params+'_'+'thirdapp_id'];  
+                postData.thirdapp_id = params.thirdapp_id;  
                 
                 postData.code = res.code;
-                if(data.nickName&&data.avatarUrl){
-                    postData.nickname = data.nickName;
-                    postData.headImgUrl = data.avatarUrl;
-
+                if(wxUserInfo.nickName&&wxUserInfo.avatarUrl){
+                    postData.nickname = wxUserInfo.nickName;
+                    postData.headImgUrl = wxUserInfo.avatarUrl;
                 };
                 if(self.g_params&&self.g_params.parent_no){
                     postData.parent_no = self.g_params.parent_no;
@@ -128,12 +131,11 @@ class Token {
                     success:function(res){
                         console.log(res)
                         if(res.data&&res.data.solely_code==100000){
-                            wx.setStorageSync(params+'_'+'info',res.data.info);
-                            wx.setStorageSync(params+'_'+'token', res.data.token);
-                            wx.setStorageSync(params+'_'+'openid', res.data.openid);
-                            if(params&&callback){
-                                params.data.token = res.data.token;
-                                callback && callback(params);
+                            wx.setStorageSync(params.info_name,res.data.info);
+                            wx.setStorageSync(params.token_name, res.data.token);
+                            
+                            if(callback){
+                                callback && callback(res.data.token);
                             }      
                         }else{
                             wx.showToast({

@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 25,
+			"current": 26,
 			"list": [
 				{
 					"id": -1,
@@ -188,7 +188,13 @@
 				{
 					"id": -1,
 					"name": "健身小程序我的",
-					"pathName": "pages/gym/coachCenter/coachCenter"
+					"pathName": "pages/gym/coachCenter/coachCenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商城我的信息",
+					"pathName": "pages/mall/userInfo/userInfo"
 				}
 			]
 		}

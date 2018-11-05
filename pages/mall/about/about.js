@@ -14,17 +14,15 @@ Page({
   },
  
   onLoad() {
+    
     const self = this;
     wx.showLoading();
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
     self.setData({
       fonts:app.globalData.font
     });
     self.getAboutData();
     self.getNewsData()
+
   },
 
   getNewsData(){

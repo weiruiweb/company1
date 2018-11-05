@@ -19,6 +19,7 @@ App({
     restaurant_thirdapp_id:11,
     gym_thirdapp_id:12,
     address_id:'',
+    buttonClick:false,
     coupon:{},
     paginate: {
         count: 0,

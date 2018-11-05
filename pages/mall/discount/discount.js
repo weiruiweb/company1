@@ -20,10 +20,6 @@ Page({
   onLoad() {
     const self = this;
     wx.showLoading();
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData()
   },
@@ -69,7 +65,7 @@ Page({
     var type = api.getDataSet(e,'type');
     var deadline = api.getDataSet(e,'deadline');
     const postData = {
-      token:wx.getStorageSync('mall_token'),
+      tokenFuncName : 'getMallToken',
       product:[
         {id:id,count:1}
       ],

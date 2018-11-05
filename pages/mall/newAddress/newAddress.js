@@ -21,10 +21,6 @@ Page({
 
   onLoad(options) {
     const self=this;
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
     self.setData({
       fonts:app.globalData.font
     });
@@ -87,7 +83,7 @@ Page({
   addressUpdate(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     postData.searchItem = {};
     postData.searchItem.id = self.data.id;
     postData.data = {};
@@ -103,7 +99,7 @@ Page({
   addressAdd(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
     const callback = (data)=>{

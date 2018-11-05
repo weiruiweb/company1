@@ -131,6 +131,7 @@
 		</view>
 	</view>
 </view>
+
 <view id="choose" class="{{isShow?'sildeIn':'slideOut'}}">
 	<view class="flexRowBetween pricity">
 		<view class="choose_pro">

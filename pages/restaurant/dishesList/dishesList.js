@@ -43,6 +43,8 @@ Page({
     self.countTotalPrice();
   },
 
+  
+
   bindManual(e) {
     const self = this;
     var count = e.detail.value;

@@ -180,6 +180,7 @@ Page({
 
   addOrder(){
     const self = this;
+    console.log(self.data.complete_api)
     if(self.data.buttonClicked){
       api.showToast('数据有误请稍等','none');
       setTimeout(function(){
@@ -192,7 +193,7 @@ Page({
         token:wx.getStorageSync('mall_token'),
         sku:self.data.mainData,
         pay:{
-          score:self.data.totalPrice.toFixed(2),
+          wxPay:self.data.totalPrice.toFixed(2),
           
         },
         type:1
@@ -243,11 +244,15 @@ Page({
     };
     const callback = (res)=>{
       wx.hideLoading();
-      api.showToast('订单已兑换','none')
       if(res.solely_code==100000){
-        setTimeout(function(){
-          api.pathTo('/pages/mall/userOrder/userOrder','redi');
-        },800) 
+         const payCallback=(payData)=>{
+          if(payData==1){
+            setTimeout(function(){
+              api.pathTo('/pages/mall/order/order','redi');
+            },800)  
+          };   
+        };
+        api.realPay(res.info,payCallback);   
       }else{
         api.showToast('支付失败','none')
       }

@@ -31,7 +31,7 @@
 	</block>
 </view>
 
-<view class="submit_info"bindtap="intoPath" data-path="/pages/mall/newAddress/newAddress" style="border-radius:50rpx;">
+<view class="submit_info" bindtap="intoPath" data-path="/pages/mall/newAddress/newAddress" style="border-radius:50rpx;">
 	添加新地址
 </view>
 

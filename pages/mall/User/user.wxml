@@ -7,9 +7,8 @@
 					<open-data type="userAvatarUrl"></open-data>
 				</view>
 			</view>
-			 <view class="user_word">
+			 <view class="user_word" style="height:0">
 			 	<view class="user_name"><open-data type="userNickName" lang="zh_CN"></open-data></view>
-			 	<view class="phone">158767678</view>
 			 </view>
 			 <view style="width:15%;">
 		    	<view class="sign_up">
@@ -25,7 +24,7 @@
 <view id="user">
 	<view class="user_two flexRowBetween">
 		<view class="user_credit user_collect" style="{{fonts[3].font}}" bindtap="intoPath" data-path="/pages/mall/collectData/collectData">
-			<view class="collect_number">{{web_collectData?web_collectData:'网络故障'}}</view>
+			<view class="collect_number">{{web_collectData?web_collectData:'0'}}</view>
 			<view class="collect_txt">我的收藏</view>
 		</view>
 		<view class="user_credit"  style="{{fonts[3].font}}" bindtap="intoPath" data-path="/pages/mall/userCredit/userCredit">

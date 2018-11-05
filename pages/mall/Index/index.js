@@ -17,7 +17,7 @@ Page({
     self.data.name = options.name;
     if(!wx.getStorageSync('mall_token')){
       var token = new Token();
-      token.getUserInfo(self.data.name);
+      token.getMallToken();
     };
     self.setData({
       isHidden: false,
@@ -44,12 +44,12 @@ Page({
       }else{
         var token = new Token({passage1:sceneNew}); 
       }   
-      token.getUserInfo();
+      token.getMallToken();
       console.log('getToken',sceneNew)
     }else{
       if(!wx.getStorageSync('mall_token')){
         var token = new Token();
-        token.getUserInfo();
+        token.getMallToken();
         console.log('getToken')
       };
     }; 

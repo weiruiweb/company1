@@ -8,9 +8,40 @@ Page({
     isChoose:1,
   },
   
-  onLoad: function () {
-   
+  onLoad: function (options) {
+    const self = this;
+    console.log(options)
   },
+
+  pay(order_id){
+    const self = this;
+    const postData = {
+      token:wx.getStorageSync('hotel_token'),
+      searchItem:{
+        id:order_id
+      },
+      wxPay:self.data.totalPrice.toFixed(2),
+      wxPayStatus:0
+    };
+    const callback = (res)=>{
+      wx.hideLoading();
+       if(res.solely_code==100000){
+         const payCallback=(payData)=>{
+          if(payData==1){
+            setTimeout(function(){
+              api.pathTo('/pages/restaurent/userOrder/userOrder','redi');
+            },800)  
+          };   
+        };
+        api.realPay(res.info,payCallback); 
+      }else{
+        api.showToast('网络故障','none')
+      };
+    };
+    api.pay(postData,callback);
+  },
+
+
    bindDateChange: function(e) {
     this.setData({
       date: e.detail.value

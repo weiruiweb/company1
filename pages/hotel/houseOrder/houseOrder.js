@@ -120,7 +120,7 @@ Page({
         sku:[
           {id:self.data.skuData.id,count:self.data.skuData.count}
         ],
-        pay:{balance:self.data.totalPrice.toFixed(2)},
+        pay:{wxPay:self.data.totalPrice.toFixed(2)},
         type:1,
         snap_address:self.data.submitData
       };
@@ -144,23 +144,26 @@ Page({
     self.setData({
       buttonClicked: true
     })
-    var order_id = self.data.order_id;
+    
     const postData = {
       token:wx.getStorageSync('hotel_token'),
       searchItem:{
         id:order_id
       },
-      balance:self.data.totalPrice.toFixed(2),
+      wxPay:self.data.totalPrice.toFixed(2),
+      wxPayStatus:0
     };
     const callback = (res)=>{
       wx.hideLoading();
-      if(res.solely_code==100000){
-        api.showToast('支付成功','none');
-        setTimeout(function(){
-          wx.navigateBack({
-            delta: 1
-          });
-        },800);   
+       if(res.solely_code==100000){
+         const payCallback=(payData)=>{
+          if(payData==1){
+            setTimeout(function(){
+              api.pathTo('/pages/hotel/userOrder/userOrder','redi');
+            },800)  
+          };   
+        };
+        api.realPay(res.info,payCallback); 
       }else{
         api.showToast('网络故障','none')
         self.setData({

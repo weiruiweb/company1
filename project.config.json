@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 26,
+			"current": 29,
 			"list": [
 				{
 					"id": -1,
@@ -192,9 +192,27 @@
 					"query": ""
 				},
 				{
+					"id": 26,
+					"name": "商品详情",
+					"pathName": "pages/mall/detail/detail",
+					"query": ""
+				},
+				{
 					"id": -1,
-					"name": "商城我的信息",
-					"pathName": "pages/mall/userInfo/userInfo"
+					"name": "商品分类",
+					"pathName": "pages/mall/Sort/sort",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "确认收货",
+					"pathName": "pages/mall/confirmOrder/confirmOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "确认收货",
+					"pathName": "pages/mall/User/user"
 				}
 			]
 		}

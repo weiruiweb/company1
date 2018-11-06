@@ -1,17 +1,15 @@
 <!--userINfo.wxml-->
 <view class="about_banner">
-	<image src="{{web_aboutData.mainImg[0].url}}"></image>
+	<image src="{{web_aboutData.bannerImg[0].url}}"></image>
 </view>
 <view id="about">
 	<view class="introduce" style="{{fonts[4].font}}">
 		{{web_aboutData.description}}
 	</view>
 </view>
-<view class="service_tlt">
-    <image src="/images/tlt_bg_03.jpg"></image>
-    <text class="text1">新闻资讯</text>
-</view>
-
+<view class="service_tlt scale1" style="width:154px;height:40px;{{img}};background-position: -396px -148px;">
+    <text class="text1">服务类别</text>
+ </view>
 <view id="news_cont">
 	<block wx:for="{{web_newsData}}" wx:key="id">
 		<view class="news_list">

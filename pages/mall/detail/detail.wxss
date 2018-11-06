@@ -14,7 +14,11 @@
 .name_share image{
 	width:35rpx;
 	height:35rpx;
-
+}
+.user_icon1{
+	width:12px;
+	height:20px;
+	float:right;
 }
 .name_share{
 	height:40rpx;
@@ -44,6 +48,7 @@
 	height:64rpx;
 	line-height:64rpx;
 	border-bottom:solid 1px #ececec;
+	border-top:solid 1px #ececec;
 }
 .choose_left text{
 	font-size:22rpx;
@@ -58,6 +63,9 @@
 	color:#262626;
 	height:62rpx;
 	line-height:62rpx;}
+.detail{
+	width:100%;
+}
 .detail_comment{
 	font-size:24rpx;
 	color:#a1a1a1;
@@ -103,6 +111,10 @@
 }
 .user_img{
 	height:68rpx;
+	width:68rpx;
+	border-radius:50%;
+	overflow:hidden;
+	margin-right:10rpx;
 }
 .comment_list{
 	padding:22rpx 35rpx 14rpx;
@@ -228,6 +240,7 @@
 }
 .close{
 	width:10%;
+	height:100%;
 	text-align:right;
 }
 .close image{
@@ -285,17 +298,18 @@
 	font-size:20rpx;
 }
 .edit_number .minus,.edit_number .add{
-	width:50rpx;
+	width:30%;
 	text-align:center;
 	color:#aeaeae;
 	font-size:40rpx;
-	border-right:solid 1px #e5e5e5; 
 	background:#e8e9e9;
+	height:100%;
 }
 .number{
 	width:72rpx;
 	text-align:center;
 	color:#878787;
+	border-left:solid 1px #e5e5e5;
 	border-right:solid 1px #e5e5e5; 
 	}
 .video{
@@ -314,4 +328,9 @@ video{
 	position:absolute;
 	top:0rpx;
 	left:0rpx;
+}
+.star_icon{
+	width:16px;
+	height:16px;
+	background-position:-544px -94px
 }

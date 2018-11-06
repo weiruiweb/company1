@@ -18,7 +18,7 @@
 	justify-content:center;
 }
 .avoidOverflow{
-	overflow-x:hidden;
+	overflow:hidden;
 	text-overflow:ellipsis;
 	white-space:nowrap;
 }
@@ -106,7 +106,7 @@ border-radius:10rpx;margin-top:260rpx;}
 	align-items:center;
 }
 .navbar_item{
-
+	height:100%;
 	width:25%;
 	text-align:center;
 
@@ -360,4 +360,20 @@ page{
 .padding30{
 	padding:0rpx 4%;
 	width:92%;
+}
+.scale{
+	transform: scale(0.5,0.5);
+	transform-origin:top center
+}
+.scale1{
+	transform: scale(0.5,0.5);
+	transform-origin:top left
+}
+.scale2{
+	transform: scale(0.5,0.5);
+	transform-origin:center center;
+}
+.scale3{
+	transform: scale(0.3,0.3);
+	transform-origin:center center
 }

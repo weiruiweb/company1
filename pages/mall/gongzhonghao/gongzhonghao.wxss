@@ -17,6 +17,7 @@
 	width:10%;
 	position:relative;
 	bottom:12rpx;
+	text-align:center;
 }
 .sort_all .sort_txt{
 	font-size:18rpx;
@@ -135,7 +136,7 @@
 }
 .shopping_name text{
 	display:block;
-	height:33.33%;
+	height:30%;
 	align-items:center;
 }
 .shopping_name .text1{
@@ -249,4 +250,8 @@
 	font-size:24rpx;
 	color:#222;
 
+}
+.order_des{
+	width:30px;
+	height:30px;
 }

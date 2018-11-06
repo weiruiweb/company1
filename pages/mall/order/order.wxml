@@ -1,4 +1,4 @@
-`<!--manageAddress.wxml-->
+<!--manageAddress.wxml-->
 <view class="order_sort flexRowBetween">
 	<view class="order_item {{num ==0?'order_this':''}}" data-num="0" bindtap="menuClick">
 		全部

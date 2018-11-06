@@ -29,7 +29,12 @@
 .address_right text{color:#b2b2b2;font-size:28rpx;}
 .address_right image{margin-left:15rpx;}
 .address_set{width:200rpx;}
-.submit_info{
+.address_btn{
+	width: 100%;
 	position:absolute;
 	bottom:280rpx;
+}
+.submit_info{
+	width:700rpx;
+	margin:0 auto;
 }

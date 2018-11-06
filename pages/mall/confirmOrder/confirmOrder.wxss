@@ -34,9 +34,9 @@
 	width:30rpx;
 	height:31rpx;
 }
-.next_page image{
-	width:11rpx;
-	height:24rpx;
+.next_page{
+	width:12px;
+	height:20px;
 	text-align:right
 }
 .detail_address{
@@ -152,6 +152,9 @@ textarea{
 .send image{
 	width:12rpx;
 	height:24rpx;
+}
+.delivery {
+	margin-top:30rpx;
 }
 .delivery_item image{
 	width:30rpx;

@@ -16,7 +16,7 @@
 		    	</view>
 		    </view>
 	    	<view class="consult" style="width:15%;" >
-				<view style="width:38rpx;height:38rpx;margin:0 auto;{{img}};background-position: 1px -144rpx;"></view>
+				<view class="scale" style="width:38px;height:38px;margin:0 auto;{{img}};background-position:1px -147px;"></view>
 	    	</view>
 		</view>
 
@@ -35,7 +35,7 @@
 	<view class="order" bindtap="intoPath" data-path="/pages/mall/order/order">
 		<view class="user_order flexRowBetween">
 			<view class="order_left flexRowBetween">
-				<view class="user_icon" style="{{img}};background-position: -180px -148rpx;"></view>
+				<view class="user_icon scale2" style="{{img}};background-position: -360px -146px;"></view>
 				<view class="my_order">我的订单</view>
 			</view>
 			
@@ -43,67 +43,67 @@
 				<view style="fonts[2].font">
 					查看订单
 				</view>
-				<view class="user_icon1" style="{{img}};background-position: -330px -22px;"></view>
+				<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;"></view>
 			</view>
 		</view>
 	</view>
 	<view class="process flexRowBetween">
 		<view class="peocess_item item_other" bindtap="order">
-			<view class="user_icon3" style="{{img}};background-position: -83px -144rpx;"></view>
+			<view class="user_icon3 scale2" style="{{img}};background-position: -122px -146px;width:46px;"></view>
 			<text>待付款</text>
 		</view>
 		<view class="peocess_item">
-			<view class="user_icon3" style="width:46rpx;{{img}};background-position: -61px -144rpx;"></view>
+			<view class="user_icon3 scale2" style="{{img}};background-position: -168px -146px;"></view>
 			<text>待发货</text>
 		</view>
 		<view class="peocess_item">
-			<view class="user_icon3" style="width:46rpx;{{img}};background-position: -39px -144rpx;"></view>
+			<view class="user_icon3 scale2" style="width:46px;{{img}};background-position: -78px -144px;"></view>
 			<text>待收货</text>
 		</view>
 		<view class="peocess_item">
-			<view class="user_icon3" style="width:46rpx;{{img}};background-position: -16px -144rpx;"></view>
+			<view class="user_icon3 scale2" style="width:46px;{{img}};background-position: -32px -144px;"></view>
 			<text>待评价</text>
 		</view>
 		<view class="peocess_item">
-			<view class="user_icon3" style="width:46rpx;{{img}};background-position: -110px -144rpx;"></view>
+			<view class="user_icon3 scale2" style="width:46px;{{img}};background-position: -218px -144px;"></view>
 			<text>退换货</text>
 		</view>
 	</view>
 	<view class="user_all" style="margin-bottom:120rpx">
 		<view class="user_infor flexRowBetween"  bindtap="intoPath" data-path="/pages/mall/userInfo/userInfo">
 			<view class="user_left flexRowBetween">
-				<view class="user_icon" style="{{img}};background-position: -164px -148rpx;"></view>
+				<view class="user_icon scale2" style="{{img}};background-position: -328px -148px;"></view>
 				<text>我的信息</text>
 			</view>
 			<view class="next_page">
-				<view class="user_icon1" style="{{img}};background-position: -330px -22px;"></view>
+				<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;"></view>
 			</view>
 		</view>
 		<view class="user_infor flexRowBetween"  bindtap="intoPath" data-path="/pages/mall/userGroup/userGroup">
 			<view class="user_left flexRowBetween">
-				<view class="user_icon" style="{{img}};background-position: -180px -148rpx;"></view>
+				<view class="user_icon scale2" style="{{img}};background-position: -268px -148px;"></view>
 				<text>我的团队</text>
 			</view>
 			<view class="next_page">
-				<view class="user_icon1" style="{{img}};background-position: -330px -22px;"></view>
+				<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;"></view>
 			</view>
 		</view>
 		<view class="user_infor flexRowBetween" bindtap="intoPath" data-path="/pages/mall/userDiscount/userDiscount">
 			<view class="user_left flexRowBetween">
-				<view class="user_icon" style="{{img}};background-position: -134px -148rpx;"></view>
+				<view class="user_icon scale2" style="{{img}};background-position: -268px -148px;"></view>
 				<text>我的优惠劵</text>
 			</view>
 			<view class="next_page">
-				<view class="user_icon1" style="{{img}};background-position: -330px -22px;"></view>
+				<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;"></view>
 			</view>
 		</view>
 		<view class="user_infor flexRowBetween" bindtap="intoPath" data-path="/pages/mall/manageAddress/manageAddress">
 			<view class="user_left flexRowBetween">
-				<view class="user_icon" style="{{img}};background-position: -149px -148rpx;"></view>
+				<view class="user_icon scale2" style="{{img}};background-position: -298px -148px;"></view>
 				<text>我的地址</text>
 			</view>
 			<view class="next_page">
-				<view class="user_icon1" style="{{img}};background-position: -330px -22px;"></view>
+				<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;"></view>
 			</view>
 		</view>
 	</view>
@@ -111,23 +111,31 @@
 
 <view class="navbar">
       <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pages/mall/Index/index">
-          <view class="nav_img" style="{{img}};width:44rpx;height:42rpx;background-position: -21px -94rpx;">
+         <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
+          <view class="nav_img scale2" style="{{img}};width:44px;height:42px;background-position: -138px -94px;">
           </view>
-          <view class="text" style="{{fonts[2].font}}">首页</view>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">首页</view>
       </view>
     <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/mall/Sort/sort">
-        <view class="nav_img" style="{{img}};width:44rpx;height:42rpx;background-position: -138rpx -94rpx;">
+        <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
+          <view class="nav_img scale2" style="{{img}};width:44px;height:42px;background-position: -42px -94px;">
+          </view>
         </view>
-        <view class="text" style="{{fonts[2].font}}">分类</view>
+      <view class="text" style="{{fonts[2].font}}">分类</view>
     </view>
     <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/mall/Shopping/shopping">
-        <view class="nav_img" style="{{img}};width:42rpx;height:42rpx;background-position: -240rpx -94rpx;">
+         <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
+          <view class="nav_img scale2" style="{{img}};width:44px;height:42px;background-position: -238px -94px;">
+          </view>
         </view>
         <view class="text" style="{{fonts[2].font}}">购物车</view>
     </view>
     <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/mall/User/user">
-        <view class="nav_img" style="{{img}};width:42rpx;height:42rpx;background-position: -288rpx -94rpx;">
+        <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
+        <view class="nav_img scale2" style="{{img}};width:42px;height:42px;background-position: -288px -94px;">
         </view>
-        <view class="text this-text" style="{{fonts[2].font}}">我的</view>
+      </view>
+      <view class="text this-text" style="{{fonts[2].font}};">我的</view>
     </view>
 </view>

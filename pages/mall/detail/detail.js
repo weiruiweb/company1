@@ -16,8 +16,7 @@ Page({
     labelData:[],
     complete_api:[],
     keys:[],
-    values:[],
-    skuData:{},
+    values:[],    skuData:{},
     count:1,
     id:'',
     sku_item:[],
@@ -29,7 +28,7 @@ Page({
   
   onLoad(options){
     const self = this;
-    console.log(self.data.skuData);
+    console.log(11,options);
     
     wx.showLoading();
 
@@ -38,7 +37,8 @@ Page({
       web_count:self.data.count
     });
     if(options.id){
-      self.data.id = options.id
+      self.data.id = options.id;
+      console.log(12,self.data.id)
     };
     self.getMainData();
     
@@ -87,6 +87,7 @@ Page({
     postData.searchItem = {
       thirdapp_id:getApp().globalData.mall_thirdapp_id,
     };
+    console.log(13,self.data.id);
     postData.getBefore={
       sku:{
         tableName:'sku',
@@ -180,9 +181,6 @@ Page({
       web_count:count
     });
   },
-
-
-
   countTotalPrice(){  
     const self = this;
     var totalPrice = 0;
@@ -192,9 +190,6 @@ Page({
       web_totalPrice:self.data.totalPrice.toFixed(2)
     });
   },
-
-  
-
   selectModel(e){
     const self = this;
     if(self.data.buttonClicked){
@@ -242,9 +237,6 @@ Page({
     }
 
   },
-
-
-
   chooseSku(e){
     const self = this;
     if(self.data.buttonClicked){
@@ -370,6 +362,13 @@ Page({
     self.setData({
       isShow:false
     })
+  },
+  select_this(e){
+    const self = this;
+    self.setData({
+      tabCurrent:e.currentTarget.dataset.current
+    })
+    console.log(self.data.tabCurrent)
   },
 
 })

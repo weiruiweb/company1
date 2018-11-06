@@ -65,3 +65,34 @@
         <view class="text" style="{{fonts[2].font}}">我的</view>
     </view>
 </view>
+
+<view class="navbar">
+      <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/mall/Index/index">
+        <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
+          <view class="nav_img scale2" style="{{img}};width:44px;height:42px;background-position: -138px -94px;">
+          </view>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">首页</view>
+      </view>
+    <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/mall/Sort/sort">
+      <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
+        <view class="nav_img scale2" style="{{img}};width:44px;height:42px;background-position: 2px -94px;">
+        </view>
+      </view>
+      <view class="text this-text" style="{{fonts[2].font}}">分类</view>
+    </view>
+    <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pages/mall/Shopping/shopping">
+      <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
+        <view class="nav_img scale2" style="{{img}};width:42px;height:42px;background-position: -240px -94px;">
+        </view>
+      </view>
+      <view class="text" style="{{fonts[2].font}}">购物车</view>
+    </view>
+    <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/mall/User/user">
+      <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
+        <view class="nav_img scale2" style="{{img}};width:42px;height:42px;background-position: -330px -94px;">
+        </view>
+      </view>
+        <view class="text" style="{{fonts[2].font}};">我的</view>
+    </view>
+</view>

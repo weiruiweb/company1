@@ -3,14 +3,14 @@
 <view id="sort">
 <view class="search">
 	<view class="sort_all" bindtap="sort_show">
-		<image src="/images/sort.jpg"></image>
+		<view class="scale2" style="width:32px;height:22px;{{img}};background-position:-394px 0;margin:0 auto;"></view>
 		<view class="sort_txt">分类</view>
 	</view>
 	
 	<input placeholder="搜索商品名称"></input>
 </view>
 <view class="made_product flexRowBetween">
-	<view class="{{isShow?'mask':''}}">
+	<view class="{{isShow?'mask':''}}" bindtap="mask">
 	</view>
 	<view class="made_sort {{isShow?'sildeIn':'slideOut'}}" >
 		<block wx:for="{{web_labelData}}" wx:key="id">
@@ -30,24 +30,21 @@
 	</view>
 	<view class="made_cont" style="width:100%;">	
 		<view class="product_sort flexRowBetween">
-			<view data-num="1" class="product_item {{_num==1?'changeColor':''}}" data-sortby="multi" bindtap="changeSort">
+			<view data-num="0" class="product_item {{_num==0?'changeColor':''}} flex" data-sortby="multi" bindtap="changeSort">
 				<text>综合</text>
-				<image src="{{_num == 0?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
+				<view class="order_des scale2" style="{{img}};{{_num == 0?'background-position: -596px -46px;':'background-position: -566px -46px;'}}"></view>
 			</view>
-			<view data-num="2" class="product_item {{_num==2?'changeColor':''}}" data-sortby="multi" bindtap="changeSort">
-				
+			<view data-num="2" class="product_item flex {{_num==2?'changeColor':''}}" data-sortby="multi" bindtap="changeSort">
 				<text>销量</text>
-				<image src="{{_num == 1?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
+				<view class="order_des scale2" style="{{img}};{{_num == 2?'background-position: -596px -46px;':'background-position: -566px -46px;'}}"></view>
 			</view>
-			<view data-num="3" class="product_item {{_num==3?'changeColor':''}}" data-sortby="multi" bindtap="changeSort">
-				
+			<view data-num="3" class="product_item flex {{_num==3?'changeColor':''}}" data-sortby="multi" bindtap="changeSort">
 				<text>新品</text>
-				<image src="{{_num == 2?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
+				<view class="order_des scale2" style="{{img}};{{_num == 3?'background-position: -596px -46px':'background-position: -566px -46px'}}"></view>
 			</view>
-			<view data-num="4" class="product_item {{_num==4?'changeColor':''}}" data-sortby="price" bindtap="changeSort">
-				
+			<view data-num="4" class="product_item flex {{_num==4?'changeColor':''}}" data-sortby="price" bindtap="changeSort">
 				<text>价格</text>
-				<image src="{{_num == 3?'/images/des_icon1.jpg':'/images/des_icon2.jpg'}}"></image>
+				<view class="order_des scale2" style="{{img}};{{_num == 4?'background-position: -596px -46px':'background-position: -566px -46px'}}"></view>
 			</view>
 		</view>
 
@@ -59,13 +56,13 @@
 					</view>
 					<view class="shopping_name">
 						<text class="text1">{{item.title}}</text>
-						<text class="text2">个性化定制</text>
+						<text class="text2">{{item.id}}</text>
 						
-						<view class="flexRowBetween" style="align-items:center;">
-							<view style="width:65%;"><text class="price">¥{{item.price}}</text></view>
-							<view class="edit_number" style="display:flex;align-items:center;">
+						<view class="flexRowBetween" style="align-items:center;height:30%;">
+							<view style="width:55%;"><text class="price">¥{{item.price}}</text></view>
+							<view class="edit_number" style="width:45%;display:flex;align-items:center;">
 								<view class="text" >4999件已售</view>
-								<image src="/images/shopCart.jpg"></image>
+								<view class="scale3" style="{{img}};width:44px;height:42px;background-position: -238px -94px;"></view>
 							</view>
 						</view>
 					</view>	

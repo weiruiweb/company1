@@ -18,7 +18,7 @@
 <view  class="module">
     <view class="module_item" bindtap="sign">
       <view class="item_top">
-          <view id="menu_icon1" style="{{img}};background-position: -169rpx 0rpx;"></view>
+          <view class="menu_icon1 scale" style="{{img}};background-position:-171px 0;"></view>
       </view>
       <view  class="text" style="{{fonts[3].font}}">
         积分签到
@@ -26,7 +26,7 @@
     </view>
     <view class="module_item" bindtap="discount">
       <view class="item_top">
-       <view id="menu_icon1" style="{{img}};background-position: -86rpx 0rpx;"></view>
+       <view class="menu_icon1 scale" style="{{img}};background-position: -86px 0rpx;"></view>
       </view>
       <view  class="text" style="{{fonts[3].font}}">
         优惠券
@@ -34,7 +34,7 @@
     </view>
     <view class="module_item"  bindtap="about">
       <view class="item_top">
-       <view id="menu_icon1" style="{{img}};background-position: -2rpx 0rpx;"></view>
+       <view class="menu_icon1 scale" style="{{img}};background-position: 0px 0rpx;"></view>
       </view>
       <view  class="text" style="{{fonts[3].font}}">
         关于我们
@@ -42,7 +42,7 @@
     </view>
     <view class="module_item"  bindtap="discount">
       <view class="item_top">
-       <view id="menu_icon1" style="{{img}};background-position: -256rpx 0rpx;"></view>
+       <view class="menu_icon1 scale" style="{{img}};background-position: -256px 0rpx;"></view>
       </view>
       <view  class="text" style="{{fonts[3].font}}">
         联系我们
@@ -50,7 +50,7 @@
     </view>
   </view>
 <view class="service">
-  <view class="service_tlt" style="width:154rpx;height:40rpx;{{img}};background-position: -396rpx -148rpx;">
+  <view class="service_tlt scale1" style="width:154px;height:40px;{{img}};background-position: -396px -148px;">
     <text class="text1">服务类别</text>
   </view>
   <view class="service_cont" data-path="/pages/mall/Sort/sort" bindtap="intoPathRedi">
@@ -66,38 +66,42 @@
     <view class="service_right" data-path="/pages/mall/Sort/sort" bindtap="intoPathRedi">
       <view class="service_rightT">
           <view class="service_top  flexRowBetween">
-          <view class="serviceTLeft">
-            <text class="text1">网站</text>
-            <text class="text2"  style="{{fonts[1].font}}">浏览更方便</text>
+          <view class="serviceTLeft flex">
+            <view>
+              <text class="text1">网站</text>
+              <text class="text2"  style="{{fonts[1].font}}">浏览更方便</text>
+            </view>
           </view>
 
           <view class="serviceTright">
-            <view id="menu_icon2" style="{{img}};background-position: -240rpx -200rpx;width:140rpx;height:104rpx;"></view>
+            <view id="menu_icon2" class="scale1" style="{{img}};background-position: -240px -200px;width:140px;height:104px;margin:30rpx 40rpx;"></view>
           </view>
         </view>
       </view>
       <view class="service_rightB" data-path="/pages/mall/Sort/sort" bindtap="intoPathRedi">
           <view class="service_bottom  flexRowBetween">
-          <view class="serviceBLeft">
+          <view class="serviceBLeft flex">
+            <view style="text-align: center;">
               <text class="text1">公众号</text>
               <text class="text2"  style="{{fonts[1].font}}">管理更方便</text>
             </view>
+            </view>
           <view class="serviceBright">
-             <view id="menu_icon2" style="{{img}};background-position: -110rpx -200rpx;width:120rpx;height:120rpx;"></view>
+             <view id="menu_icon2" class="scale1" style="{{img}};background-position: -110px -200px;width:120px;height:120px;margin:20rpx 40rpx;"></view>
           </view>
         </view>
       </view>
     </view>
   </view>
 </view>
-<view class="solely_more" bindtap="about" style="width:100%;height:264rpx;{{img}};background-position: 0rpx -346rpx;">
+<view class="solely_more" bindtap="about" style="width:100%;height:132px;{{img}};background-position: 0px -336px;">
   <view class="company_name">
     <text>纯粹科技</text>
     <view class="more">了解更多 ></view>
   </view>
 </view>
 <view class="case">
-  <view class="service_tlt" style="width:154rpx;height:40rpx;{{img}};background-position: -396rpx -148rpx;">
+  <view class="service_tlt scale1" style="width:154px;height:40px;{{img}};background-position: -396px -148px;">
     <text class="text1">案例展示</text>
   </view>
   <block wx:for="{{web_caseData}}" wx:key="id">
@@ -117,7 +121,6 @@
             </view>
           </view>
       </view>
-
       <view class="case_bottom flexRowBetween" bindtap="intoPath" data-path="/pages/mall/caseDetail/caseDetail?id={{item.id}}" wx:else>
         <view class="case_right">
             <view class="right_in">
@@ -137,23 +140,31 @@
 
 <view class="navbar">
       <view class="navbar_item" bindtap="index">
-          <view class="nav_img" style="{{img}};width:44rpx;height:42rpx;background-position: 1px -94rpx;">
-          </view>
-          <view class="text this-text" style="{{fonts[2].font}}">首页</view>
+        <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
+        <view class="nav_img scale2" style="{{img}};width:44px;height:42px;background-position: -90px -94px;">
+        </view>
+      </view>
+        <view class="text this-text" style="{{fonts[2].font}}">首页</view>
       </view>
     <view class="navbar_item" bindtap="sort">
-        <view class="nav_img" style="{{img}};width:44rpx;height:42rpx;background-position: -138rpx -94rpx;">
+      <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
+          <view class="nav_img scale2" style="{{img}};width:44px;height:42px;background-position: -42px -94px;">
+          </view>
         </view>
-        <view class="text" style="{{fonts[2].font}}">分类</view>
+      <view class="text" style="{{fonts[2].font}}">分类</view>
     </view>
     <view class="navbar_item"  bindtap="shopping">
-        <view class="nav_img" style="{{img}};width:42rpx;height:42rpx;background-position: -240rpx -94rpx;">
+      <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
+        <view class="nav_img scale2" style="{{img}};width:42px;height:42px;background-position: -240px -94px;">
         </view>
-        <view class="text" style="{{fonts[2].font}}">购物车</view>
+      </view>
+      <view class="text" style="{{fonts[2].font}}">购物车</view>
     </view>
     <view class="navbar_item"  bindtap="User">
-        <view class="nav_img" style="{{img}};width:42rpx;height:42rpx;background-position: -330rpx -94rpx;">
+      <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
+        <view class="nav_img scale2" style="{{img}};width:42px;height:42px;background-position: -330px -94px;">
         </view>
-        <view class="text" style="{{fonts[2].font}}">我的</view>
+      </view>
+      <view class="text" style="{{fonts[2].font}};">我的</view>
     </view>
 </view>

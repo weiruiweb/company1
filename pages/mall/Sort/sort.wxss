@@ -33,7 +33,6 @@ page{
 	background:#fff;}
 .madeSort{
 	height:auto;
-	padding-bottom:12rpx;
 	}
 .left_bar{
 	width:100%;

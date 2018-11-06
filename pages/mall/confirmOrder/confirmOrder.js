@@ -31,6 +31,7 @@ Page({
     order_id:'',
     complete_api:[],
     buyType:'delivery',
+    img:"background:url('/images/small.png')",
   },
 
   onLoad() {

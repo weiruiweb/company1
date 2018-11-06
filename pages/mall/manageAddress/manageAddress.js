@@ -11,7 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    img:"background:url('/images/small.png')",
     mainData:[],
     isLoadAll:false,
 

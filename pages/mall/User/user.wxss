@@ -137,17 +137,17 @@ line-height:42rpx;
 	margin:0 auto 10rpx auto;
 }
 .user_icon{
-	width:32rpx;
-	height:32rpx;
+	width:32px;
+	height:32px;
 	margin-right:6rpx;
 }
 .user_icon1{
-	width:12rpx;
-	height:20rpx;
+	width:12px;
+	height:20px;
 	margin-left:10rpx;
 }
 .user_icon3{
-	width:50rpx;
-	height:44rpx;
+	width:50px;
+	height:44px;
 	margin:0 auto 10rpx auto;
 }

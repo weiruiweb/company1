@@ -23,6 +23,7 @@ Page({
       sortby:'',
       sort:''
     },
+    img:"background:url('/images/small.png')",
   },
   
   onLoad(options) {
@@ -131,7 +132,8 @@ Page({
   changeSort(e){
     const self = this;
     self.setData({
-      buttonClicked: true
+      buttonClicked: true,
+      _num:e.currentTarget.dataset.num
     });
     const sortby = api.getDataSet(e,'sortby');
     if(self.data.sort.sortby == sortby){
@@ -178,6 +180,10 @@ Page({
       isShow:isShow
     })
   },
-
+  mask(e){
+    this.setData({
+      isShow:false
+    })
+  }
 })
 

@@ -46,8 +46,12 @@
 .edit{color:#7d7d7d;width:15%;display:flex;
 	align-items:center;}
 .de_color{color:#7d7d7d}
-.submit_info{
-margin-top:0rpx;
+.address_btn{
+	width: 100%;
 	position:absolute;
 	bottom:120rpx;
+}
+.submit_info{
+	width:700rpx;
+	margin:0 auto;
 }

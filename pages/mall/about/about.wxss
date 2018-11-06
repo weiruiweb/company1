@@ -36,8 +36,12 @@
 	position:absolute;
 	left:24rpx;
 	top:0rpx;
-	font-size:30rpx;
+	font-size:48rpx;
 	color:#fff;
+	width:154px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
 	}
 .news_list{
 	padding:32rpx 25rpx 28rpx;

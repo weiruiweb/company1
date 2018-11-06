@@ -18,7 +18,8 @@ Page({
       thirdapp_id:'2',
       type:3
     },
-    isSign:false
+    isSign:false,
+    img:"background:url('/images/small.png')"
   },
 
 

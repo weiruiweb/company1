@@ -1,21 +1,17 @@
 <!--detail.wxml-->
-
 <wxs module="func" src="../../../utils/func.wxs" />
- 
-
-
 <view id="details">
 <view class="banner">
-	<image src="/images/detail.jpg"></image>
+	<image src="{{web_mainData.mainImg[0].url}}"></image>
 </view>
 <view class="detail">
-	<view class="product_top w710">
+	<view class="w710" style="padding:10rpx 2.6%;">
 		<view class="name_share flexRowBetween" style="align-items:center;">
 			<view class="product_name avoidOverflow" style="width:80%;">
 				{{web_mainData.title}}
 			</view>
-			<button style="width:20%;text-align:right;opacity:0" bindtap="onShareAppMessage"  open-type="share">
-				<view style="width:32rpx;height:32rpx;{{img}};background-position: -240px -48rpx;"></view>
+			<button class="scale2" bindtap="onShareAppMessage"  open-type="share" >
+				<view style="width:32px;height:32px;border:none;{{img}};background-position: -482px -94px;"></view>
 			</button>
 		</view>
 		<view class="guarantee flexRowBetween">
@@ -36,7 +32,7 @@
 
 		</view>
 		<view class="next_page" style="width:20%;text-align:right;">	
-			<view class="user_icon1" style="{{img}};background-position: -330px -22px;"></view>
+			<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;"></view>
 		</view>
 	</view>
 	<view class="detail_comment flexRowBetween">
@@ -62,14 +58,13 @@
 				<view class="good_percent">
 					<text>好评率</text>
 					<text class="percent">99%</text>
-					<image src="/images/next_page.jpg"></image>
 				</view>
 			</view>
 			<view class="comment_list ">
 				<view class="flexRowBetween" style="align-items:center;">
 					<view class="comment_user" style="display:flex;align-items:center;">
 						<view class="user_img">
-							<image src="/images/user1.jpg"></image>
+							<open-data type="userAvatarUrl"></open-data>
 						</view>
 						<view class="txts" style="height:58rpx;">
 							<view class="text1">米桃子</view>
@@ -93,7 +88,7 @@
 				<view class="flexRowBetween"  style="align-items:center;">
 					<view class="comment_user" style="display:flex;align-items:center;">
 						<view class="user_img">
-							<image src="/images/user1.jpg"></image>
+							<open-data type="userAvatarUrl"></open-data>
 						</view>
 						<view class="txts" style="height:58rpx;">
 							<view class="text1">米桃子</view>
@@ -116,7 +111,7 @@
 				<view class="flexRowBetween"  style="align-items:center;">
 					<view class="comment_user" style="display:flex;align-items:center;">
 						<view class="user_img">
-							<image src="/images/user1.jpg"></image>
+							
 						</view>
 						<view class="txts" style="height:58rpx;">
 							<view class="text1">米桃子</view>
@@ -124,11 +119,11 @@
 						</view>
 					</view>
 					<view class="star flexRowBetween">
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
+						<view class="star_icon scale2" style="{{img}}"></view>
+						<view class="star_icon scale2" style="{{img}}"></view>
+						<view class="star_icon scale2" style="{{img}}"></view>
+						<view class="star_icon scale2" style="{{img}}"></view>
+						<view class="star_icon scale2" style="{{img}}"></view>
 					</view>
 				</view>
 				<view class="comment_cont">
@@ -144,18 +139,18 @@
 <view id="buy">
 	<view class="buy_click">
 		<view class="consult">
-			<view style="width:38rpx;height:38rpx;margin:0 auto;{{img}};background-position: 1px -144rpx;"></view>
+			<view class="scale2" style="width:38px;height:38px;margin:0 auto;{{img}};background-position: -352px 0;"></view>
 			<view class="text1">客服</view>
 		</view>
 		<view class="consult collect" bindtap="collect">
-			<view style="width:36rpx;height:36rpx;margin:0 auto;{{img}};background-position: -244px 0rpx;"></view>
+			<view class="scale2" style="width:36px;height:36px;margin:0 auto;{{img}};background-position: -524px 0;"></view>
 			<view class="text1">收藏</view>
 		</view>
 		<view class="go_buy flexRowBetween" >
-			<view class="shoppingCart" bindtap="selectModel" data-type="addCart">
+			<view class="shoppingCart color1" bindtap="selectModel" data-type="addCart">
 				加入购物车
 			</view>
-			<view class="go_pay" bindtap="selectModel" data-type="buy">
+			<view class="go_pay  color1" bindtap="selectModel" data-type="buy">
 				立即购买
 			</view>
 		</view>
@@ -177,7 +172,7 @@
 				</view>
 			</view>
 			<view class="close" bindtap="close">
-			<image src="/images/close.jpg"></image>
+			<view class="scale2" style="width:36px;height:36px;{{img}};background-position: -594px 0;"></view>
 			</view>
 		</view>
 		<block wx:for="{{web_labelData}}" wx:key="id" >

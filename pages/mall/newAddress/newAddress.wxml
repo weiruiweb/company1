@@ -36,8 +36,9 @@
 		<switch bindchange="switch2Change" />
 	</view>
 </view>
-
-<view class="submit_info" bindtap="submit">
-	保存
+<view class="address_btn">
+	<view class="submit_info" bindtap="submit">
+		保存
+	</view>
 </view>
 

@@ -7,10 +7,10 @@ const token = new Token();
 
 Page({
   data:{
-
      aboutData:[],
      newsData:[],
-     complete_api:[]
+     complete_api:[],
+     img:"background:url('/images/small.png')"
   },
  
   onLoad() {

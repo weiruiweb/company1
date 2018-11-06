@@ -50,6 +50,9 @@ page{
 }
 .tlt_left{
 	color:#666;
+	width:60%;
+	height:100%;
+	background:none;
 }
 .handle{
 	background:#fff;overflow:hidden;padding-bottom:30rpx;

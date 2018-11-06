@@ -255,6 +255,10 @@
 	text-align:center;
 	line-height:70rpx;
 }
+.serviceBLeft,.serviceBright{
+	width:50%;
+	height:100%;
+}
 /********************服务类别*************************/
 .service_tlt{
 	position:relative;
@@ -265,12 +269,12 @@
 	height:40rpx;}
 .service_tlt .text1{
 	position:absolute;
-	left:24rpx;
+	left:24px;
 	top:0rpx;
-	height:40rpx;
+	height:40px;
 	display:inline-block;
-	line-height:40rpx;
-	font-size:30rpx;
+	line-height:40px;
+	font-size:48rpx;
 	color:#fff;
 	}
 .service_cont{
@@ -282,8 +286,9 @@
 }
 .service_top{
 	background:#f5f5f5;
-	padding:0rpx 18rpx;
+	padding:0rpx 3%;
 	align-items:center;
+	width:94%;
 	height:100%;
 }
 .serviceTright{
@@ -303,9 +308,9 @@
 .service_cont .text2{
 	font-size:18rpx;
 	color:#969696;}	
-
-.service_right{
-	
+.serviceTLeft,.serviceTright{
+	width: 50%;
+	height:100%;
 }
 .serviceTLeft .text1{
 	font-size:38rpx;
@@ -427,14 +432,15 @@
 	padding:50rpx 30rpx 0rpx 20rpx;
 }
 .case_cont .text1{
-	display:block;
 	height:53%;
-	font-size:22rpx;
-	line-height:34rpx;
+	line-height:36rpx;
 	color:#323232;
-	overflow:hidden;
-	word-break: break-all;
-	text-overflow:ellipsis;
+	display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:4;
+    overflow: hidden;
+    text-overflow:ellipsis;
 	}
 .right_more{
 	margin-top:15%;
@@ -449,7 +455,9 @@
 	text-align:center;
 	color:#fff;
   	border-radius: 5rpx;}
-.case_top{margin-bottom:13rpx;}
+.case_cont{
+	margin-bottom:14rpx;
+}
 .case_top .case_left{
 	width:67%;
 	height:306rpx;
@@ -488,11 +496,10 @@
 	}
 }
 /*****************加背景***********************/
-#menu_icon1{
-	width:84rpx;
-	height:84rpx;
+.menu_icon1{
+	width:84px;
+	height:84px;
 	margin:0 auto;
-	background-position: -2rpx -2rpx;
 }
 .nav_img{
 	margin:0 auto 10rpx auto;

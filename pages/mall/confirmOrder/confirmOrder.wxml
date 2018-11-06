@@ -15,12 +15,10 @@
 		<view class="user_address">
 			<view class="recive flexRowBetween">
 				<view class="map_icon" style="width:7%;text-align:left">
-					<image class="address_icon" src="/images/user_icon4.jpg"></image>
+					<view class="scale2" style="width:30px;height:36px;{{img}};background-position: -300px -146px;"></view>
 				</view>
 				<view class="detail_address" style="width:86%;{{fonts[3].font}}">收货地址：{{web_addressData.province+web_addressData.city+web_addressData.country+web_addressData.detail}}</view>
-				<view class="next_page">
-					<image class="" src="/images/next_page.jpg"></image>
-				</view>
+				<view class="next_page scale2" style="{{img}};background-position: -658px -46px;"></view>
 			</view>
 		</view>
 	</view>
@@ -31,9 +29,7 @@
 			请选择收货地址
 		</view>
 	</view>
-	<view class="next_page" style="text-align:center;margin-left:360rpx" >
-		<image src="/images/next_page.jpg"></image>
-	</view>
+	<view class="next_page scale2" style="{{img}};background-position: -658px -46px;"></view>
 </view>
 
 <view>

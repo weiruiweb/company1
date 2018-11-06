@@ -107,3 +107,6 @@
 	width:45%;
 	margin:0 auto 10rpx auto;
 }
+.scale4{
+	transform:scaleY(0.5);
+}

@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 29,
+			"current": 30,
 			"list": [
 				{
 					"id": -1,
@@ -212,7 +212,13 @@
 				{
 					"id": -1,
 					"name": "确认收货",
-					"pathName": "pages/mall/User/user"
+					"pathName": "pages/mall/User/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "优惠券",
+					"pathName": "pages/mall/discount/discount"
 				}
 			]
 		}

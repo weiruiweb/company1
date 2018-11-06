@@ -14,7 +14,8 @@ Page({
     },
     buttonClicked:false,
     isLoadAll:false,
-    complete_api:[]
+    complete_api:[],
+    img:"background:url('/images/small.png')"
   },
   
   onLoad() {

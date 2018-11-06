@@ -8,17 +8,16 @@ const token = new Token();
 Page({
   data: {
      caseData:[],
-     img:"background:url('/images/small.png')"
   },
  
   onLoad(options) {
     const self = this;
     wx.showLoading();
     self.data.name = options.name;
-    
     self.setData({
       isHidden: false,
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img,
     });
     self.getCaseData()
 

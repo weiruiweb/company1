@@ -8,7 +8,6 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    img:"background:url('/images/small.png')"
   },
   //事件处理函数
   bindViewTap: function() {
@@ -17,7 +16,10 @@ Page({
     })
   },
   onLoad: function () {
-   
+   this.setData({
+      fonts:app.globalData.font,
+      img:app.globalData.img,
+    });
   },
   go_shopping:function(){
     wx.switchTab({

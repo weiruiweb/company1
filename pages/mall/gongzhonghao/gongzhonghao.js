@@ -23,7 +23,6 @@ Page({
       sortby:'',
       sort:''
     },
-    img:"background:url('/images/small.png')",
   },
   
   onLoad(options) {
@@ -31,7 +30,8 @@ Page({
     wx.showLoading();
 
     this.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img,
     });
     self.data.id=options.id
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);

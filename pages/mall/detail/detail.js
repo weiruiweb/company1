@@ -23,7 +23,6 @@ Page({
     choose_sku_item:[],
     buttonType:'',
     buttonClicked:true,
-    img:"background:url('/images/small.png')",
   },
   
   onLoad(options){
@@ -34,7 +33,8 @@ Page({
 
     self.setData({
       fonts:app.globalData.font,
-      web_count:self.data.count
+      img:app.globalData.img,
+      web_count:self.data.count,
     });
     if(options.id){
       self.data.id = options.id;

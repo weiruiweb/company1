@@ -18,7 +18,6 @@ Page({
     currentId:0,
     complete_api:[],
     mainData:[],
-    img:"background:url('/images/restaurant.png')",
   },
   //事件处理函数
  
@@ -33,7 +32,8 @@ Page({
       token.getUserInfo(self.data.name);
     };
     self.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img,
     })
     self.getSliderData();
     self.getMainData()

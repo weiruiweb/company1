@@ -24,7 +24,6 @@ Page({
     products:[],
     totalPrice:0,
     isChooseAll:'',
-    img:"background:url('/images/small.png')",
   },
   
   onLoad() {
@@ -32,7 +31,8 @@ Page({
     
     console.log(this.data.windowHeight)
     this.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img,
     });
     
   },

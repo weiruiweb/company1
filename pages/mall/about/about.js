@@ -10,7 +10,6 @@ Page({
      aboutData:[],
      newsData:[],
      complete_api:[],
-     img:"background:url('/images/small.png')"
   },
  
   onLoad() {
@@ -18,7 +17,8 @@ Page({
     const self = this;
     wx.showLoading();
     self.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img,
     });
     self.getAboutData();
     self.getNewsData()

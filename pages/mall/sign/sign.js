@@ -27,7 +27,8 @@ Page({
     const self = this;
     
     self.setData({
-      fonts:getApp().globalData.font
+      fonts:getApp().globalData.font,
+      img:app.globalData.img,
     });   
     self.data.year = new Date().getFullYear();
     self.data.month = new Date().getMonth()+1;

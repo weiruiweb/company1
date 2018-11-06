@@ -15,7 +15,6 @@ Page({
     sForm:{
       item:''
     },
-    img:"background:url('/images/small.png')",
   },
   
   onLoad() {
@@ -23,7 +22,8 @@ Page({
     wx.showLoading();
     
     this.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img,
     });
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getLabelData();

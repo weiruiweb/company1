@@ -7,7 +7,6 @@ const token = new Token();
 
 Page({
   data: {
-    img:"background:url('/images/small.png')",
     userData:[],
   },
 
@@ -20,7 +19,8 @@ Page({
       token.getMallToken();
     };
     self.setData({
-     fonts:app.globalData.font
+     fonts:app.globalData.font,
+     img:app.globalData.img,
     });
     if(options.scene){
       var scene = decodeURIComponent(options.scene)

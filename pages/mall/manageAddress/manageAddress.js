@@ -11,7 +11,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    img:"background:url('/images/small.png')",
     mainData:[],
     isLoadAll:false,
 
@@ -22,7 +21,8 @@ Page({
     wx.showLoading();
     
     self.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img,
     });
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
   },

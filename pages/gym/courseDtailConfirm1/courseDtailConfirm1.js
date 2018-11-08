@@ -7,11 +7,12 @@ const token = new Token();
 
 Page({
   data: {
-     img:"background:url('/images/gym.png')",
   },
 
   onLoad(options) {
-  
+    this.setData({
+      img:app.globalData.img,
+    });
   },
   intoPath(e) {
     const self = this;

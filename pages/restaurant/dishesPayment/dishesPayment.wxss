@@ -20,9 +20,9 @@
 	color:#333;
 }
 .pay_right{
-	widht:68%;
-	padding-right:7%;
-	text-align:right;
+	width:59%;
+	padding-right:8%;
+	text-align: right;
 }
 .pay_method{
 	box-shadow:0 0 10rpx #666;
@@ -39,10 +39,13 @@
 }
 .submit_info{
 	margin-top:120rpx;
+	width:700rpx;
+	background:#f86856;
+	border-radius: 20rpx;
 }
 .pay_img{
-	width:90rpx;
-	height:90rpx;
+	width:90px;
+	height:90px;
 	margin:0 auto;
 }
 .pay_icon{
@@ -54,4 +57,5 @@
 	width:50rpx;
 	height:50rpx;
 	background-position: -320px -168px;
+	float: right;
 }

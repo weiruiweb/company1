@@ -20,6 +20,12 @@ page{
 	text-align:center;
 	height:70rpx;
 }
+.user_img{
+	width:70rpx;
+	height:70rpx;
+	border-radius:50%;
+	overflow:hidden;
+}
 .commet_user image{
 	width:70rpx;
 	height:70rpx;
@@ -35,9 +41,14 @@ page{
 	height:40%;
 }
 .star_xt{
-	float:left;
 	color:#4c4c4c;
-	margin-right:20rpx;
+	width:30%;
+	height:100%;
+	margin-top:16rpx;
+}
+.star_all{
+	width:80%;
+	height:100%;
 }
 .commet_data{
 	width:29.5%;
@@ -51,17 +62,7 @@ page{
 	align-items:center;
 	width:80%;
 }
-.star_all{
-	height:24rpx;
-	line-height:24rpx;
-	align-items:center;
-}
-.star_all image{
-	width:22rpx;
-	height:22rpx;
-	margin-right:5rpx;
-	float:left;
-}
+
 .com_content{
 	width:85%;
 	padding-left:15%;
@@ -90,4 +91,9 @@ page{
 	text-align:center;
 	line-height:48rpx;
 	font-size:26rpx;
+}
+.star_item{
+	width:30px;
+	height:30px;
+	margin-right:10rpx;
 }

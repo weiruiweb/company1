@@ -13,29 +13,41 @@
         <view class="index_top">
           <view class="index_address flexRowBetween">
               <view class="address address_item flexRowCenter">
-                  <view class="address_icon"><view class="index_icon" style="height:32rpx;{{img}};background-position: 0 0"></view></view>
+                  <view class="address_icon">
+                    <view class="index_icon scale4" style="width:32px;height:32px;{{img}};background-position: 0 -2842px"></view>
+                  </view>
                   <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" >
                     <view class="city avoidOverflow">西安市</view>
                   </picker>
-                  <view  class="address_icon"><view class="index_icon" style="height:32rpx;{{img}};background-position: -138px -25px"></view></view>
+                  <view  class="address_icon scale4">
+                    <view class="index_icon" style="width:32px;height:32px;{{img}};background-position: -290px -2894px"></view>
+                  </view>
               </view>
               <view class="address address_item1 flexRowCenter">
-                  <view  class="address_icon"><view class="index_icon" style="width:34rpx;height:32rpx;{{img}};background-position: -158px 0px"></view></view>
+                  <view  class="address_icon">
+                    <view class="index_icon scale4" style="width:34px;height:32px;{{img}};background-position: -330px -2842px"></view>
+                  </view>
                   <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" >
                   <view class="city avoidOverflow">钟楼东大街店</view>
                   </picker>
-                  <view  class="address_icon"><view class="index_icon" style="width:32rpx;height:32rpx;{{img}};background-position: -138px -25px"></view></view>
+                  <view  class="address_icon">
+                    <view class="index_icon scale4" style="width:32px;height:32px;{{img}};background-position: -290px -2894px"></view>
+                  </view>
               </view>
               <view class="address_item2 flexRowBetween">
                 <view class="location">
-                  <view class="img1"><view style="width:28rpx;height:28rpx;margin:0 auto;{{img}};background-position: -196px 0px"></view></view>
+                  <view class="img1">
+                    <view class="scale" style="width:28px;height:28px;margin:0 auto;{{img}};background-position: -414px -2842px"></view>
+                  </view>
                   <view class="text">我的位置</view>
                 </view>
               </view>
           </view>
           <view class="index_address flexRowBetween">
               <view class="address_item3 flexRowBetween">
-                   <view style="width:32rpx;height:38rpx;margin:0 auto;{{img}};background-position: -176px 0px"></view>
+                <view style="width:32px;height:100%;overflow: hidden;">
+                   <view class="scale9" style="width:32px;height:38px;margin:0 auto;{{img}};background-position: -373px -2842px"></view>
+                </view>
                   <view class="date">
                     <view>09月</view>
                     <view>周三</view>
@@ -92,16 +104,16 @@
     <view class="contact_cont flexRowBetween">
         <view class="contact_left">
             <view class="contact_list flex">
-                <view class="index_icon1" style="{{img}};background-position: -215px 0px"></view> <view>山居君</view>
+                <view class="index_icon1 scale4" style="{{img}};background-position: -452px -2842px"></view> <view>山居君</view>
             </view>
             <view class="contact_list flex">
-                <view class="index_icon1" style="{{img}};background-position: -235px 0px"></view> 16546546 <view class="copy" style="margin-left: 20rpx;">复制链接</view>
+                <view class="index_icon1 scale4" style="{{img}};background-position: -494px -2842px"></view> 16546546 <view class="copy" style="margin-left: 20rpx;">复制链接</view>
             </view>
             <view class="contact_list flex">
-                <view class="index_icon1" style="{{img}};background-position: -251px 0px"></view><view class="copy">1222522565（订房）</view>
+                <view class="index_icon1 scale4" style="{{img}};background-position: -528px -2842px"></view><view class="copy">1222522565（订房）</view>
             </view>
             <view class="contact_list flex">
-                <view class="index_icon1" style="{{img}};background-position: -121px -23px"></view><view class="copy">1222522565</view>
+                <view class="index_icon1 scale4" style="width:40px;{{img}};background-position: -255px -2892px"></view><view class="copy">1222522565</view>
             </view>
         </view>
         <view class="contact_left contact_right">
@@ -111,7 +123,7 @@
     </view>
   </view>
 </view>
-<view class="kefu" style="width:150rpx;height:150rpx;{{img}};background-position: 0px -72px">
+<view class="kefu scale6" style="width:150px;height:150px;{{img}};background-position: 0px -2942px">
   
 </view>
 <view class="solely" style="font-size:20rpx;color:#666;text-align:center;">
@@ -121,11 +133,15 @@
 </view>
 <view class="navbar">
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/hotel/index/index">
-        <view class="nav_img" style="{{img}};background-position:-25px -25px;"></view>
+      <view class="nav_top">
+        <view class="nav_img scale" style="{{img}};background-position:-52px -2892px;"></view>
+      </view>
         <view class="text this-text" style="{{fonts[2].font}}">预定</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/hotel/user/user">
-        <view class="nav_img" style="{{img}};background-position:-50px -25px;"></view>
+      <view class="nav_top">
+        <view class="nav_img scale" style="{{img}};background-position:-100px -2892px;"></view>
+      </view>
         <view class="text" style="{{fonts[2].font}}">我的</view>
     </view>
 </view>

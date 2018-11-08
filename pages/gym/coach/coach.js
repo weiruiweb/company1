@@ -8,7 +8,6 @@ Page({
   data: {
     mainData:[],
     complete_api:[],
-    img:"background:url('/images/gym.png')",
   },
   //事件处理函数
 
@@ -16,7 +15,10 @@ Page({
     const self = this;
     wx.showLoading();
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
-    self.getMainData()
+    self.getMainData();
+    self.setData({
+      img:app.globalData.img,
+    });
   },
 
   intoPath(e){

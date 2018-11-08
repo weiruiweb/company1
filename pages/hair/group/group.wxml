@@ -44,12 +44,7 @@
 
 	<view class="tab_item {{tapCurrent == 1?'tab_this':''}}">
 		<view class="tab_list flexRowBetween ">
-			<view class="limit_time">
-				<view class="time_wrap">
-					<view class="time2">
-					限时抢购
-					</view>
-				</view>
+			<view class="limit_time scale8" style="{{img}};background-position: -573px -1260px;">
 			</view>
 			<image src="/images_hair/tuan1.jpg"></image>
 			<view class="active_info">
@@ -83,6 +78,8 @@
 			</view>
 		</view>
 		<view class="tab_list flexRowBetween">	
+			<view class="limit_time scale8" style="{{img}};background-position: -573px -1260px;">
+			</view>
 			<image src="/images_hair/tuan1.jpg"></image>
 			<view class="active_info">
 				<view class="active_name">
@@ -116,12 +113,14 @@
 	</view>
 	
 </view>
-<view class="{{isShow?'mask':''}} {{isShows?'mask':''}}">
+<view class="{{isShow||isShows?'mask':''}}">
 
 </view>
 <view class="begin_group {{isShow?'group_show':''}}">
 	<view class="group_wrap">
-		<view bindtap="close" style="{{img}};background-position: -97px 0px;" class="close"></view>
+		<view class="close scale2" bindtap="close" style="position: absolute;top:-15px;right: -15px;"> 
+	      <view style="width:62px;height:62px;{{img}};background-position:0px -2174px"></view>
+	    </view>
 		<text class="text1">发起拼团</text>
 		<text class="text">邀请<text class="group_number">2</text>人即可组团成功，23:49:07后结束</text>
 		<view class="group_all flexRowBetween">
@@ -142,14 +141,15 @@
 				选择分享方式
 			</view>
 			<view class="three_share flexRowBetween">
-				<view class="bg_img {{this_item ==0?'this_bg':''}};flex" bindtap="this_bg" data-current="0">
-					<view class="share_img" style="{{img}};background-position: -304px -160px;"></view>
+				<view class="bg_img {{this_item ==0?'this_bg':''}}" bindtap="this_bg" data-current="0">
+					<view class="scale1" style="width:46px;height:38px;{{img}};background-position:-478px -1898px;margin-left:6rpx;margin-top:10rpx;"></view>
 				</view>
-				<view class="bg_img {{this_item ==1?'this_bg':''}};flex" bindtap="this_bg"  data-current="1">
-					<view class="share_img" style="{{img}};background-position: -329px -160px;"></view>
+				<view class="bg_img {{this_item ==1?'this_bg':''}}" bindtap="this_bg"  data-current="1">
+					<view class="scale1" style="width:46px;height:38px;{{img}};background-position:-528px -1898px;margin-left:10rpx;margin-top:10rpx;">
+					</view>
 				</view>
-				<view class="bg_img {{this_item ==2?'this_bg':''}};flex" bindtap="this_bg"  data-current="2">
-					<view class="share_img" style="{{img}};background-position: -349px -160px;"></view>
+				<view class="bg_img {{this_item ==2?'this_bg':''}}" bindtap="this_bg"  data-current="2">
+					<view class="scale1" style="width:46px;height:38px;{{img}};background-position:-575px -1898px;margin-left:10rpx;margin-top:10rpx;"></view>
 				</view>
 			</view>
 		</view>
@@ -160,12 +160,16 @@
 </view>
 <view class="begin_group {{isShows?'group_shows':''}}">
 	<view class="group_wrap">
-		<view bindtap="close" style="{{img}};background-position: -97px 0px;" class="close"></view>
+		<view class="close scale2" bindtap="close" style="position: absolute;top:-16px;right: -16px;"> 
+	      <view style="width:62px;height:62px;{{img}};background-position:0px -2174px"></view>
+	    </view>
 		<text class="text1">参与拼团</text>
 		<text class="text">邀请<text class="group_number">2</text>人即可组团成功，23:49:07后结束</text>
 		<view class="group_all flexRowBetween">
 			<view class="group_person this_person">
-				<image src="/images_hair/dresser.jpg"></image>
+				<view class="user_img">
+					<open-data type="userAvatarUrl"></open-data>
+				</view>
 			</view>
 			<view class="group_person">
 				?

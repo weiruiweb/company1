@@ -2,7 +2,9 @@
 <view class="w710">
      <view class="user_tlt">
     <view class="tlt_cont">
-        <view style="width:30rpx;height:30rpx;{{img}};background-position: -194px -68px">
+        <view class="icon_box">
+            <view class="user_icon scale2" style="{{img}};background-position:-381px -3700px;">
+            </view>
         </view>订单确认</view>
     </view>
     <view style="width:100%;background:#262626;border-radius: 10rpx;margin-top: 20rpx;">
@@ -21,11 +23,13 @@
                 </view>
                  <view class="infor_center flexRowBetween" style="width:30%;">
                     <view class="mins">
-                        <view style="width:60rpx;height: 60rpx;{{img}};background-position:-60px 0;"></view>
+                    <view class="scale2" style="width:60px;height: 60px;{{img}};background-position:0px -3566px;">
+                    </view>
                     </view>
                     <view class="number">1</view>
                     <view class="add">
-                        <view style="width:60rpx;height: 60rpx;{{img}};background-position:0px 0;"></view>
+                        <view class="scale2" style="width:60px;height: 60px;{{img}};background-position:-70px -3566px;">
+                    </view>
                     </view>
                 </view>
             </view>
@@ -37,7 +41,9 @@
                     暂无可用
                 </view>
                 <view class="infor_right">
-                    <image src="/images_gym/next_page.png"></image>
+                    <view class="next_page">
+                        <view class="user_icon1 scale2" style="{{img}};background-position: -169px -3763px;"></view>
+                    </view>
                 </view>
             </view>
             <view class="infor_list" style="border:none;color:#fff;text-align: right;line-height: 100rpx;font-size:32rpx;" >

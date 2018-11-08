@@ -18,11 +18,17 @@
 <view class="w710">
     <view class="user">
         <view class="user_top flex user_line" bindtap="intoPath"  data-path="/pages/gym/coachCenterCheck/coachCenterCheck">
-            <view style="width:36rpx;height:36rpx; {{img}};background-position:-134px 0px;"></view>
+            <view class="icon_box">
+                <view class="user_icon scale2" style="{{img}};background-position:-312px -3566px;">
+                </view>
+            </view>
             预约订单查询
         </view>
         <view class="user_top flex"  bindtap="intoPath"  data-path="/pages/gym/userCenterStudent/userCenterStudent">
-            <view style="width:36rpx;height:36rpx;{{img}};background-position:-156px 0px;"></view>
+            <view class="icon_box">
+                <view class="user_icon scale2" style="{{img}};background-position:-267px -3566px;">
+                </view>
+            </view>
             查看学员信息
         </view>
     </view>

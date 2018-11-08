@@ -61,53 +61,6 @@
 				</view>
 			</view>
 			<view class="comment_list ">
-				<view class="flexRowBetween" style="align-items:center;">
-					<view class="comment_user" style="display:flex;align-items:center;">
-						<view class="user_img">
-							<open-data type="userAvatarUrl"></open-data>
-						</view>
-						<view class="txts" style="height:58rpx;">
-							<view class="text1">米桃子</view>
-							<view class="text2">2015.3.2</view>
-						</view>
-					</view>
-					<view class="star flexRowBetween">
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-					</view>
-				</view>
-				<view class="comment_cont">
-					很满意的一次购物很满意的一次购物很满意的一次购物
-					很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物很满意的一次购物
-				</view>
-			</view>
-			<view class="comment_list ">
-				<view class="flexRowBetween"  style="align-items:center;">
-					<view class="comment_user" style="display:flex;align-items:center;">
-						<view class="user_img">
-							<open-data type="userAvatarUrl"></open-data>
-						</view>
-						<view class="txts" style="height:58rpx;">
-							<view class="text1">米桃子</view>
-							<view class="text2">2015.3.2</view>
-						</view>
-					</view>
-					<view class="star flexRowBetween">
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-					</view>
-				</view>
-				<view class="comment_cont">
-					很满意的一次购物很满意的一次购物很满意的一次购物
-				</view>
-			</view>
-			<view class="comment_list ">
 				<view class="flexRowBetween"  style="align-items:center;">
 					<view class="comment_user" style="display:flex;align-items:center;">
 						<view class="user_img">

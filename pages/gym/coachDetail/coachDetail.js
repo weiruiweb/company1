@@ -9,11 +9,13 @@ Page({
   data: {
     currentId:0,
     selectId:0,
-    img:"background:url('/images/gym.png')",
   },
 
   onLoad(options) {
-  
+    const self = this;
+    self.setData({
+      img:app.globalData.img,
+    });
   },
   
  choose_this: function(e) {

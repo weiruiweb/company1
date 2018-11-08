@@ -192,3 +192,7 @@ page{
 .user_line{
 	border-bottom:solid 1rpx #b2b2b2;
 }
+.user_icon{
+	width:32px;
+	height:32px;
+}

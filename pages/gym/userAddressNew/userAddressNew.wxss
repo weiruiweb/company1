@@ -31,4 +31,6 @@
 .address_set{width:200rpx;}
 .submit_info{
 	margin-top:60rpx;
+	width:700rpx;
+	background:#bb212e;
 }

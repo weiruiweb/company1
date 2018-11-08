@@ -91,7 +91,7 @@ page {
 .user_img {
     position: absolute;
     right: 5%;
-    top: -30%;
+    top: -70rpx;
     width: 140rpx;
     height: 140rpx;
     border-radius: 50%;
@@ -125,4 +125,7 @@ page {
 .time text{
 	font-size:32rpx;
 	color:#bb212e;
+}
+.submit_info{
+    background:#bb212e;
 }

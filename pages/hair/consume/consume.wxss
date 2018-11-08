@@ -9,12 +9,6 @@ page{background-color:#ededed;}
 	color:#111;
 	background:#fff;
 }
-.credit_top image{
-	width:160rpx;
-	height:125rpx;
-	margin-top:106rpx;
-	margin-bottom:30rpx;
-}
 .cre_number{
 	color:#06c1ae;
 	margin-left:35rpx;
@@ -59,3 +53,12 @@ page{background-color:#ededed;}
 .credit_number	{
 	font-size:30rpx;
 	color:#06c1ae;}
+.user_icon{
+	width:32px;
+	height:33px;
+}
+.scale2{
+	width:160px;
+	height:126px;
+	margin:0 auto;
+}

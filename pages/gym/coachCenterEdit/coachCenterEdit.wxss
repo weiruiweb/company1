@@ -1,4 +1,6 @@
-
+page{
+	background:#333;
+}
 .order{
 	height:auto;
 	overflow:hidden;
@@ -57,6 +59,10 @@ textarea{
 	line-height:160rpx;
 	text-align:center;
 	overflow:hidden;
+}
+.uploder_item image{
+	width:150rpx;
+	height:150rpx;
 }
 .uploader__input{
 	width:100%;

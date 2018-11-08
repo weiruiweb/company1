@@ -1,41 +1,36 @@
 <!--index3.wxml-->
 <view class="banner">
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{web_artData.bannerImg}}" wx:key="id">
-            <swiper-item>
-                <image src="{{item.url}}"></image>
-            </swiper-item>
-        </block>
-    </swiper>
+    <image src="/images/banner.png"></image>
 </view>
 <view class="w710">
     <view class="contact_title font32 color">联系我们<text class="font22 color9">contact us</text></view>
 </view>
 <view class="w710">
-    <view class="contact_list flex font30 color6">
+    <view class="contact_list flexRowBetween font30 color6">
         <view class="input_before ">联系地址:</view>
         <view  placeholder="请输入联系地址">{{web_artData.title}}</view>
-        <view class="input_icon"><view class="user_icon" style="{{img}};background-position:-217px -35px"></view></view>
+        <view class="input_icon scale2"><view class="user_icon" style="{{img}};background-position:-567px -3507px"></view></view>
     </view>
-    <view class="contact_list flex font30 color6">
+    <view class="contact_list flexRowBetween font30 color6">
         <view class="input_before ">联系电话:</view>
         <view  placeholder="请输入联系电话">{{web_artData.contactPhone}}</view>
-        <view class="input_icon">
-            <view class="user_icon" style="{{img}};background-position:-239px -35px"></view>
+
+        <view class="input_icon scale2">
+            <view class="user_icon" style="{{img}};background-position:-432px -3507px"></view>
         </view>
     </view>
-    <view class="contact_list flex font30 color6">
+    <view class="contact_list flexRowBetween font30 color6">
         <view class="input_before ">联系QQ:</view>
         <view  placeholder="请输入联系QQ">877854886</view>
-        <view class="input_icon">
-            <view class="user_icon" style="{{img}};background-position:-262px -35px"></view>
+        <view class="input_icon scale2">
+            <view class="user_icon" style="{{img}};background-position:-523px -3507px"></view>
         </view>
     </view>
-    <view class="contact_list flex font30 color6">
+    <view class="contact_list flexRowBetween font30 color6">
         <view class="input_before ">联系邮箱:</view>
         <view  placeholder="请输入联系邮箱">{{web_artData.description}}</view>
-        <view class="input_icon">
-            <view class="user_icon" style="{{img}};background-position:-285px -35px"></view>
+        <view class="input_icon scale2">
+            <view class="user_icon" style="{{img}};background-position:-478px -3507px"></view>
         </view>
     </view>
 </view>
@@ -59,20 +54,27 @@
 <view style="height:120rpx;width:100%;"></view>
 <view class="navbar">
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index/index">
-        <view class="nav_img" style="{{img}};background-position:-26px -35px">
-        </view>
+      <view class="navbar_top">
+        <view class="nav_img scale1" style="{{img}};background-position:-55px -3507px"></view>
+      </view>
         <view class="text">首页</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index1/index1">
-        <view class="nav_img" style="{{img}};background-position:-81px -35px"></view>
+        <view class="navbar_top">
+        <view class="nav_img scale1" style="{{img}};background-position:-162px -3507px"></view>
+      </view>
         <view class="text">公司业务</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index2/index2">
-        <view class="nav_img" style="{{img}};background-position:-136px -35px"></view>
-        <view class="text">公司动态</view>
+        <view class="navbar_top">
+        <view class="nav_img scale1" style="{{img}};background-position:-272px -3507px"></view>
+      </view>
+        <view class="text this-text">公司动态</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index3/index3">
-        <view class="nav_img" style="{{img}};background-position:-162px -35px"></view>
-        <view class="text this-text">联系我们</view>
+        <view class="navbar_top">
+        <view class="nav_img scale1" style="{{img}};background-position:-323px -3507px"></view>
+      </view>
+        <view class="text">联系我们</view>
     </view>
 </view>

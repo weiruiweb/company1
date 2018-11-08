@@ -373,7 +373,27 @@ page{
 	transform: scale(0.5,0.5);
 	transform-origin:center center;
 }
-.scale3{
-	transform: scale(0.3,0.3);
-	transform-origin:center center
+.scale4{
+	transform: scale(0.5,0.5);
+	transform-origin:left center
+}
+.scale5{
+	transform: scale(0.5,0.5);
+	transform-origin:right top;
+}
+.scale6{
+	transform: scale(0.5,0.5);
+	transform-origin:right center;
+}
+.scale7{
+	transform: scale(0.5,0.5);
+	transform-origin:right bottom;
+}
+.scale8{
+	transform: scale(0.5,0.5);
+	transform-origin:right top;
+}
+.scale9{
+	transform: scale(0.5,0.5);
+	transform-origin:center bottom;
 }

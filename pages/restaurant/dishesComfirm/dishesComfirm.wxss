@@ -6,6 +6,8 @@ page{
 .users{
 	position:relative;
 	height:223rpx;
+	width:100%;
+	background:#f2665f;
 }
 .user_banner{
 	position:absolute;

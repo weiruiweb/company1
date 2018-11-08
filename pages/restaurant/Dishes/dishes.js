@@ -20,7 +20,6 @@ Page({
     num:79,
     isLoadAll:false,
     cartData:[],
-    img:"background:url('/images/restaurant.png')",
   },
   /*添加到购物车*/
     onAddingToCartTap:function(events){
@@ -79,7 +78,8 @@ Page({
       token.getUserInfo();
     };
     this.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img,
     });
     self.data.id = options.id
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
@@ -118,14 +118,6 @@ Page({
     
     self.getMainData(true);
   },
-
-
-
-
-
-
-
-
   getMainData(isNew){
     const self = this;
     if(isNew){

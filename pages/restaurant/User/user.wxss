@@ -205,19 +205,30 @@ border-radius:50%;}
 	align-items:center;
 }
 .user_icon{
-	width:30rpx;
-	height:30rpx;
+	width:30px;
+	height:32px;
 	margin-right:10rpx;
+	transform: scale(0.5,0.5);
+	transform-origin:left center
 }
 .next_page{
 	width:12rpx;
 	height:20rpx;
 }
 .nav_img{
-	width:44rpx;
-	height:42rpx;
-	margin:0 auto 10rpx auto;
+	width:44px;
+	height:44px;
+	margin:0 auto;
 }
 .navbar .this-text{
 	color:#f2665f;
+}
+.navbar_top{
+	width:100%;
+	height:52%;
+	padding-top:4%;
+}
+.navbar .text{
+	width:100%;
+	height:44%;
 }

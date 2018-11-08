@@ -12,10 +12,10 @@
                 </view>
                 <view class="infor_center flexRowBetween" style="width:30%;">
                     <view class="gender" data-value="1" data-key="gender" bindtap="changeBind">
-                        <image src="{{web_sForm.gender=='1'?'/images_gym/select_a.png':'/images_gym/select.png'}}"></image>男
+                        <image src="{{web_sForm.gender=='1'?'/images/select_gym_a.png':'/images/select.png'}}"></image>男
                     </view>
                     <view class="gender" data-value="0" data-key="gender" bindtap="changeBind">
-                         <image src="{{web_sForm.gender=='0'?'/images_gym/select_a.png':'/images_gym/select.png'}}"></image>女
+                         <image src="{{web_sForm.gender=='0'?'/images/select_gym_a.png':'/images/select.png'}}"></image>女
                     </view>
                 </view>
                

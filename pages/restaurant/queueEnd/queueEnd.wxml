@@ -1,0 +1,11 @@
+<!--queue.wxml-->
+<view class="queueEnd">
+	<view class="queqe_txt scale1" style="{{img}};background-position:-9px -1145px;">
+		立即排队
+	</view>
+</view>
+<view class="queqe_btn" bindtap="intoPath" data-path="/pages/restaurant/queueTime/queueTime">
+	<view class="queqe_txt scale1" style="{{img}};background-position:-9px -1145px;">
+		立即排队
+	</view>
+</view>

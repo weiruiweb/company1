@@ -22,7 +22,6 @@ Page({
     autoplay: true,
     intervalOne:2000,
     duration: 1000,
-    img:"background:url('/images/website.png')",
   },
     
   onLoad(){
@@ -30,7 +29,10 @@ Page({
     wx.showLoading();
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getLabelData();
-    self.getSliderData()
+    self.getSliderData();
+    self.setData({
+      img:app.globalData.img
+    });
   },
 
   getMainData(isNew){

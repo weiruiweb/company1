@@ -26,7 +26,10 @@ Page({
 
   onLoad(){
     const self = this;
-    self.getArtData()      
+    self.getArtData();
+    self.setData({
+      img:app.globalData.img
+    });     
   },
 
   getArtData(){

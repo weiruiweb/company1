@@ -7,7 +7,6 @@ const token = new Token();
 Page({
   data: {
     tapCurrent:0,
-    img:"background:url('/images/hair.png')",
     labelData:[],
     mainData:[],
     searchItem:{
@@ -22,11 +21,11 @@ Page({
     const self  = this;
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.setData({
-      web_num:self.data.searchItem.category_id
+      web_num:self.data.searchItem.category_id,
+      img:app.globalData.img
     })
     self.getLabelData();
     self.getMainData()
-    
   },
 
 

@@ -131,6 +131,7 @@ view{
 	margin-right:10rpx;
 }
 .condition_item{
+	width:20%;
 	font-size:24rpx;
 	color:#666;
 	margin-right:20rpx;
@@ -145,7 +146,8 @@ view{
 	padding:30rpx 0;
 }
 .condition_img{
-	width:18%;
+	width:12%;
+	overflow:hidden;
 }
 .condition_img image{
 	width:30rpx;
@@ -216,7 +218,23 @@ view{
 	align-items:center;
 }
 .phone_cont{
-	width:32rpx;
-	height:32rpx;
+	width:38px;
+	height:32px;
 	margin:0 auto;
+}
+.select_icon{
+	width:28px;
+	height:28px;
+}
+.condition_icon{
+	width:28px;
+	height:42px;
+
+}
+.item_icon{
+	width:30rpx;
+	height:24rpx;
+	overflow:hidden;
+	float:left;
+	margin-top:6rpx;
 }

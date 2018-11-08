@@ -15,16 +15,21 @@ swiper{
 .module{
 	width:100%;
 	display:flex;
-	padding:30rpx 0;
+	height:216rpx;
 	background:#fff
 }
 .module-item{
 	width:25%;
+	height:166rpx;
 	text-align:center;
 }
-.module_img image{
-	width:110rpx;
-	height:110rpx;
+.module_img{
+	width:100%;
+	height:70%;
+}
+.module_txt{
+	width:100%;
+	height:30%;
 }
 .note{
 	padding:0px 25rpx;
@@ -225,15 +230,24 @@ swiper{
   z-index: 20; 
 }
 .module_icon{
-	width:110rpx;
-	height:110rpx;
+	width:116px;
+	height:110px;
 	margin:0 auto;
 }
 .nav_img{
-	width:44rpx;
-	height:42rpx;
-	margin:0 auto 10rpx auto;
+	width:44px;
+	height:44px;
+	margin:0 auto;
 }
 .navbar .this-text{
 	color:#f2665f;
+}
+.navbar_top{
+	width:100%;
+	height:52%;
+	padding-top:4%;
+}
+.navbar .text{
+	width:100%;
+	height:44%;
 }

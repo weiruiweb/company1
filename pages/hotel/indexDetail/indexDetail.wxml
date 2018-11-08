@@ -17,7 +17,7 @@
 	</view>
 	<view class="address_right">
 	<view class="phone flex">
-		<view class="phone_cont" style="{{img}};background-position:-337px 0;"></view>
+		<view class="phone_cont scale2" style="{{img}};background-position:-709px -2842px;"></view>
 	</view>
 	</view>
   </view>
@@ -37,7 +37,7 @@
 	<view class="p40 flexRowBetween">
 		<block wx:for="{{web_mainData.sku}}" wx:key="id">
 		<view class="select flexRowCenter" data-num="{{item.id}}" bindtap="menuClick">
-			<image src="{{web_num == item.id?'/images_hotel/select_a.jpg':'/images_hotel/select.jpg'}}"></image>
+			<image src="{{web_num == item.id?'/images/select_hotel_a.jpg':'/images/select.png'}}"></image>
 			{{item.title}}
 		</view>
 		</block>
@@ -65,7 +65,7 @@
 	<view class="house_detail flex" id="close" bindtap="close">
 		<view class="p40 flexRowBetween" style="line-height: 76rpx;">
 			<view class="text" style="color:#fff;font-size:30rpx;">{{web_skuData.title}}</view>
-			<view style="width: 32rpx;height:32rpx;{{img}};background-position: -136px 0"></view>
+			<view class="scale2" style="width: 34px;height:34px;{{img}};background-position: -286px -2842px"></view>
 		</view>
 	</view>
 	<view class="banner1">
@@ -74,19 +74,31 @@
 	<view class="condition">
 		<view class="p40 flex" style="height: 72rpx;">
 			<view class="condition_item">
-				<image src="/images_hotel/house1.png"></image>
+				<view class="item_icon">
+					<view class="scale1 condition_icon" style="{{img}};background-position:-246px -2842px">
+					</view>
+				</view>
 				Wi-Fi
 			</view>
 			<view class="condition_item">
-				<image src="/images_hotel/house2.png"></image>
+				<view class="item_icon">
+					<view class="scale1 condition_icon" style="{{img}};background-position:-206px -2842px">
+					</view>
+				</view>
 				沐浴
 			</view>
 			<view class="condition_item">
-				<image src="/images_hotel/house3.png"></image>
+				<view class="item_icon">
+					<view class="scale1 condition_icon" style="{{img}};background-position:-165px -2842px">
+					</view>
+				</view>
 				空调
 			</view>
 			<view class="condition_item">
-				<image src="/images_hotel/house4.png"></image>
+				<view class="item_icon">
+					<view class="scale1 condition_icon" style="{{img}};background-position:-127px -2842px">
+					</view>
+				</view>
 				电视
 			</view>
 		</view>
@@ -95,19 +107,25 @@
 		<view class="condition_list" bindtap="intoPath"  data-path="/pages/hotel/houseDetail/houseDetail">
 			<view class="w710 ">
 				<view class="condition_line flexRowBetween">
-					<view class="condition_img"><image src="/images_hotel/house5.png"></image></view>
+					<view class="condition_img">
+						<view class="scale4 condition_icon" style="{{img}};background-position:-85px -2842px"></view>
+					</view>
 					<view class="condition_deatil flexRowBetween" style="width:82%;">
 						<view class="text">名称名名称名称名称名称名称名称名称名称名称名称名称名称名称名称名称名称</view>
 					</view>
 				</view>
 				<view class="condition_line flexRowBetween">
-					<view class="condition_img"><image src="/images_hotel/house5.png"></image></view>
+					<view class="condition_img">
+						<view class="scale4 condition_icon" style="{{img}};background-position:-85px -2842px"></view>
+					</view>
 					<view class="condition_deatil flexRowBetween" style="width:82%;">
 						<view class="text">名称名名称名称名称名称名称名称名称名称名称名称名称名称名称名称名称名称</view>
 					</view>
 				</view>
 				<view class="condition_line flexRowBetween">
-					<view class="condition_img"><image src="/images_hotel/house5.png"></image></view>
+					<view class="condition_img">
+						<view class="scale4 condition_icon" style="{{img}};background-position:-85px -2842px"></view>
+					</view>
 					<view class="condition_deatil flexRowBetween" style="width:82%;">
 						<view class="text">名称名名称名称名称名称名称名称名称名称名称名称名称名称名称名称名称名称</view>
 					</view>

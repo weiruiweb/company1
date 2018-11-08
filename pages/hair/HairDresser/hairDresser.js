@@ -9,7 +9,6 @@ Page({
     mainData:[],
     isLoadAll:false,
     complete_api:[],
-    img:"background:url('/images/hair.png')",
   },
 
 
@@ -18,7 +17,10 @@ Page({
     const self = this;
     wx.showLoading();
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
-    self.getMainData()
+    self.getMainData();
+     self.setData({
+      img:app.globalData.img,
+    });
   },
 
 

@@ -4,7 +4,7 @@
      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" style="width:100%;">
         <view class="picker flexRowBetween">
          <input class="input2" placeholder="高新3号店" value="{{array[index]}}"></input>
-          <view style="width:18rpx;height:32rpx;{{img}};background-position: -262px 0;"></view>
+          <view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
         </view>
   </picker>
     
@@ -13,7 +13,7 @@
     <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" style="width:100%;">
     <view class="picker flexRowBetween"> 
     <input class="input2" placeholder="技术总监  梁家辉" value="{{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}"></input>
-    <view style="width:18rpx;height:32rpx;{{img}};background-position: -262px 0;"></view>
+    <view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
     </view>
   </picker>
 </view>
@@ -41,7 +41,8 @@
     <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}"  style="width:75%;overflow:hidden;">
         <view class="picker flexRowBetween">
          <input class="input2" style="text-align:right" placeholder="90分钟" value="{{array1[index]}}"></input>
-          <view style="width:18rpx;height:32rpx;{{img}};background-position: -262px 0;"></view>
+          <view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+
         </view>
   </picker>
   </view>
@@ -64,7 +65,9 @@
          <image src="{{tabCurrent == 2?'/images/up_icon.png':''}}"></image>
       </view>
       <view class="date_other"  data-current="3" bindtap="changeData">
-         <view style="width:40rpx;height:40rpx;{{img}};background-position:-147px 0;margin:0 auto;"></view>
+        <view style="height: 40rpx;overflow: hidden;">
+         <view class="scale" style="width:40px;height:40px;{{img}};background-position:-306px -2178px;margin:0 auto;"></view>
+       </view>
          <text class="text1">其他日期</text>
           <image src="{{tabCurrent == 3?'/images/up_icon.png':''}};width:50rpx;height:22rpx;"></image>
       </view>

@@ -57,18 +57,28 @@ page{
 	color:#666;
 	width:10%;
 }
+.store_nears{
+	width:108rpx;
+	height:112rpx;
+	overflow: hidden;
+}
 .near{
 	position:relative;
-	width:14%;
-	height:55rpx;}
+	width:86px;
+	height:55px;
+	margin-left:6rpx;
+	overflow: hidden;
+}
 .near .text1{
-	width:60rpx;
-	font-size:24rpx;
+	width:100%;
+	height:55px;
+	font-size:48rpx;
 	color:#fff;
 	position:absolute;
-	left:20rpx;
-	line-height:55rpx;
+	left:0rpx;
+	line-height:55px;
 	z-index:99;
+	text-align: center;
 }
 .store_active{
 	width:66%;
@@ -83,8 +93,8 @@ page{
 	text-align:right;
 }
 .map_img{
-	width:36rpx;
-	height: 32rpx;
+	width:36px;
+	height: 32px;
 	margin:0 auto;
 }
 /**优惠店**/
@@ -176,12 +186,20 @@ width:98%;
 
 }
 .module_bg{
-	width:84rpx;
-	height:84rpx;
+	width:84px;
+	height:84px;
+	margin:0 auto;
+}
+.nav_top{
+	width:46rpx;
+	height:50%;
 	margin:0 auto;
 }
 .nav_img{
-	width:46rpx;
-	height:46rpx;
-	margin:0 auto 10rpx auto;
+	width:46px;
+	height:46px;
+	margin:14rpx auto 0rpx auto;
+}
+.navbar_item .text{
+	height:50%;
 }

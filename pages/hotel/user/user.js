@@ -6,7 +6,6 @@ const token = new Token();
 
 Page({
   data: {
-    img:"background:url('/images/hotel.png')",
   },
   //事件处理函数
 
@@ -14,6 +13,9 @@ Page({
   onLoad(options){
     const self = this;
     self.userInfoGet()
+    self.setData({
+      img:app.globalData.img,
+    });
   },
 
   userInfoGet(){

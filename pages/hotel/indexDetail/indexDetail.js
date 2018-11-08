@@ -9,7 +9,6 @@ Page({
     isShow:false,
     complete_api:[],
     searchItem:{},
-    img:"background:url('/images/hotel.png')",
   },
   //事件处理函数
 
@@ -28,6 +27,9 @@ Page({
     const self = this;
     self.data.id = options.id;
     self.getMainData()
+    self.setData({
+      img:app.globalData.img,
+    });
   },
 
   getMainData(){

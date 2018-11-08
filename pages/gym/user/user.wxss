@@ -193,16 +193,31 @@ page{
 }.navbar .this-text{
 	color:#bb212e;
 }
-.nav_img{
+.navbar .this_text{
+	color:#bb212e;
+}
+.nav_top{
 	width:64rpx;
 	height:54rpx;
+	margin:16rpx auto 0 auto;
+	overflow: hidden;
+}
+.nav_img{
+	width:64px;
+	height:54px;
 	margin:0 auto;
 }
 .navbar{
 	box-shadow:5rpx 0 15rpx #f35c59;
 }
-.user_icon{
+.icon_box{
 	width:36rpx;
 	height:36rpx;
+	overflow: hidden;
+	margin-right:10rpx;
+}
+.user_icon{
+	width:36px;
+	height:36px;
 	margin-right:10rpx;
 }

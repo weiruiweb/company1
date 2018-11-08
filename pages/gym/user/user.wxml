@@ -1,6 +1,6 @@
 <!--user.wxml-->
 <view class="banner">
-  <view style="width:100%;height:220rpx;{{img}};background-position: 0px -596px;"></view>
+  <image src="/images/user_banner.jpg"></image>
   <view class="banner_bottom flexRowBetween">
     <view class="user_img">
           <open-data type="userAvatarUrl"></open-data>
@@ -12,7 +12,7 @@
       <view class="resume" >18888888 </view>
     </view>
     <view class="user_right"  bindtap="intoPath"  data-path="/pages/gym/sign/sign">
-        <view class="sign"><view class="sign_cont">签到</view></view>
+        <view class="sign"><view class="sign_cont color1">签到</view></view>
     </view>
   </view>
 </view>
@@ -21,7 +21,7 @@
         <view class="tlt_cont">我的会员卡</view>
     </view>
     <view class="card1">
-        <view style="width: 100%;height:100%;{{img}};background-position:0 -185px;"></view>
+        <image src="/images/card_bg.jpg"></image>
         <view class="card_cont">
             <view class="cont1 flexRowBetween">
                 <view class="card_sort">年卡</view>
@@ -44,55 +44,88 @@
     </view>
     <view class="user">
         <view class="user_top flex user_line" bindtap="intoPath"  data-path="/pages/gym/userInfor/userInfor">
-            <view class="user_icon" style="{{img}};background-position:-114px -65px;"></view>
+            <view class="icon_box" style="height:30rpx;">
+                <view class="user_icon scale1" style="{{img}};background-position:-226px -3700px;">
+                </view>
+            </view>
             个人资料
         </view>
         <view class="user_top flex"  bindtap="intoPath"  data-path="/pages/gym/userFile/userFile">
-            <view class="user_icon" style="{{img}};background-position:-92px -65px;"></view>
+            <view class="icon_box">
+                <view class="user_icon scale1" style="{{img}};background-position:-185px -3700px;">
+                </view>
+            </view>
             健身档案
         </view>
     </view>
     <view class="user"   bindtap="intoPath"  data-path="/pages/gym/userAddress/userAddress">
         <view class="user_top flex user_line">
-            <view class="user_icon" style="{{img}};background-position:-134px -66px;"></view>
+            <view class="icon_box">
+                <view class="user_icon scale1" style="{{img}};background-position:-270px -3700px;">
+                </view>
+            </view>
             我的地址
         </view>
         <view class="user_top flex" bindtap="intoPath"  data-path="/pages/gym/userComment/userComment">
-            <view class="user_icon" style="{{img}};background-position:-273px -65px;"></view>
+            <view class="icon_box" style="height:30rpx;">
+                <view class="user_icon scale1" style="{{img}};background-position:-546px -3700px;">
+                </view>
+            </view>
             我的评论
         </view>
     </view>
     <view class="user1"  bindtap="intoPath"  data-path="/pages/gym/userOrder/userOrder">
         <view class="user_top flex user_line" >
-            <view class="user_icon" style="{{img}};background-position:-296px -65px;"></view>
+            <view class="icon_box" style="height:30rpx;">
+                <view class="user_icon scale1" style="{{img}};background-position:-592px -3700px;">
+                </view>
+            </view>
             我的预约
         </view>
          <view class="user_top flex user_line"  bindtap="intoPath"  data-path="/pages/gym/userOrder1/userOrder1">
-            <view class="user_icon" style="{{img}};background-position:-190px -66px;"></view>
+            <view class="icon_box">
+                <view class="user_icon scale1" style="{{img}};background-position:-381px -3700px;">
+                </view>
+            </view>
             我的订单
         </view>
         <view class="user_top flex"   bindtap="intoPath"  data-path="/pages/gym/userDiscount/userDiscount">
-            <view class="user_icon" style="{{img}};background-position:-231px -65px;"></view>
+            <view class="icon_box" style="height:30rpx;">
+                <view class="user_icon scale1" style="{{img}};background-position:-460px -3700px;">
+                </view>
+            </view>
             我的优惠券
         </view>
     </view>
     <view class="user1">
         <view class="user_top flex user_line">
-            <view class="user_icon" style="{{img}};background-position:-336px -65px;"></view>
+            <view class="icon_box">
+                <view class="user_icon scale1" style="{{img}};background-position:-673px -3700px;">
+                </view>
+            </view>
             我的课程
         </view>
          <view class="user_top flex user_line" bindtap="intoPath"  data-path="/pages/gym/userPlan/userPlan">
-            <view class="user_icon" style="{{img}};background-position:-252px -65px;"></view>
+            <view class="icon_box">
+                <view class="user_icon scale1" style="{{img}};background-position:-503px -3700px;">
+                </view>
+            </view>
             我的健身计划
         </view>
         <view class="user_top flex" bindtap="tel">
-            <view class="user_icon" style="{{img}};background-position:-209px -65px;"></view>
+            <view class="icon_box" style="height:30rpx;">
+                <view class="user_icon scale1" style="{{img}};background-position:-415px -3700px;">
+                </view>
+            </view>
             我的客服
         </view>
     </view>
     <view class="user" style="height:102rpx;"  bindtap="intoPath"  data-path="/pages/gym/login/login">
         <view class="user_top flex" style="height:100%;">
-            <view class="user_icon" style="{{img}};background-position:-316px -65px;"></view>
+            <view class="icon_box">
+                <view class="user_icon scale1" style="{{img}};background-position:-631px -3700px;">
+                </view>
+            </view>
             教练登录
         </view>
     </view>
@@ -104,23 +137,33 @@
 </view>
 <view class="navbar">
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/index/index">
-        <view class="nav_img" style="{{img}};background-position:-37px -38px;"></view>
+      <view class="nav_top">
+        <view class="nav_img scale1" style="{{img}};background-position:-72px -3632px;"></view>
+      </view>
         <view class="text" style="{{fonts[2].font}}">健身房</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/course/course">
-        <view class="nav_img" style="{{img}};background-position:-98px -34px;"></view>
+        <view class="nav_top">
+          <view class="nav_img scale1" style="{{img}};background-position:-196px -3632px;"></view>
+        </view>
         <view class="text" style="{{fonts[2].font}}">分类</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/send/send">
-      <view class="nav_img" style="{{img}};background-position:-126px -34px;"></view>
+      <view class="nav_top">
+          <view class="nav_img scale1" style="{{img}};background-position:-252px -3632px;"></view>
+        </view>
       <view class="text" style="{{fonts[2].font}}">发布</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/coach/coach">
-        <view class="nav_img" style="{{img}};background-position:-184px -34px;"></view>
+        <view class="nav_top">
+          <view class="nav_img scale1" style="{{img}};background-position:-368px -3632px;"></view>
+        </view>
         <view class="text" style="{{fonts[2].font}}">教练</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/user/user">
-        <view class="nav_img" style="{{img}};background-position:-270px -34px;"></view>
-        <view class="text this-text" style="{{fonts[2].font}}">我的</view>
+        <view class="nav_top" style="width:50rpx;">
+          <view class="nav_img scale1" style="{{img}};width:56px;background-position:-549px -3632px;"></view>
+        </view>
+        <view class="text this_text" style="{{fonts[2].font}}">我的</view>
     </view>
 </view>

@@ -11,8 +11,10 @@
         </view>
       </block>
         <view class="uploder_item" wx:if="{{web_imgData.length<3}}">
-          <view class="uploader__input" bindtap="upLoadImg" style="{{img}};background-position:-294px -100px;">
+          <view class="uploader__input" bindtap="upLoadImg">
+            <view class="scale1" style="width:160px;height:164px;{{img}};background-position:-588px -3765px"></view>
           </view>
+
         </view>
 
 
@@ -20,10 +22,10 @@
 </view>
 <view class="fabu">
   <view class="fabu_cont"  style="font-size:30rpx;">
-    <view class="fabu_left" bindtap="menuClick" data-key="passage1" data-num="0">
+    <view class="fabu_left color1" bindtap="menuClick" data-key="passage1" data-num="0">
         保存
     </view>
-    <view class="fabu_right" bindtap="menuClick" data-key="passage1" data-num="1">
+    <view class="fabu_right color1" bindtap="menuClick" data-key="passage1" data-num="1">
       发布
     </view>
   </view>

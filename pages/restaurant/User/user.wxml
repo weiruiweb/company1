@@ -42,46 +42,45 @@
 	<view class="user_all">
 		<view class="user_infor flexRowBetween"  bindtap="intoPath"  data-path="/pages/restaurant/userGroup/userGroup">
 			<view class="user_left flexRowBetween">
-				<view class="user_icon" style="{{img}};background-position:-242px -470px"></view>
+				<view class="user_icon scale4" style="{{img}};background-position:-484px -2070px"></view>
 				<text>我的团购</text>
 			</view>
-			<view class="next_page" style="{{img}};background-position:-152px -383px"></view>
+			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
 		</view>
 		<view class="user_infor flexRowBetween" bindtap="intoPath"  data-path="/pages/restaurant/userDiscount/userDiscount">
 			<view class="user_left flexRowBetween">
-				<view class="user_icon" style="{{img}};background-position:-59px -498px"></view>
-				<text>我的团购</text>
+				<view class="user_icon" style="{{img}};background-position:-118px -2129px"></view>
 				<text>我的优惠券</text>
 			</view>
-			<view class="next_page" style="{{img}};background-position:-152px -383px"></view>
+			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
 		</view>
 		<view class="user_infor flexRowBetween" bindtap="intoPath"  data-path="/pages/restaurant/userAddress/userAddress">
 			<view class="user_left flexRowBetween">
-				<view class="user_icon" style="{{img}};background-position:-0px -499px"></view>
+				<view class="user_icon" style="{{img}};background-position:0px -2129px"></view>
 				<text>收货地址</text>
 			</view>
-			<view class="next_page" style="{{img}};background-position:-152px -383px"></view>
+			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
 		</view>
 		<view class="user_infor flexRowBetween" bindtap="intoPath"  data-path="/pages/restaurant/userOrder/userOrder">
 			<view class="user_left flexRowBetween">
-				<view class="user_icon" style="{{img}};background-position:-40px -499px"></view>
+				<view class="user_icon" style="{{img}};background-position:-80px -2129px"></view>
 				<text>我的订单 </text>
 			</view>
-			<view class="next_page" style="{{img}};background-position:-152px -383px"></view>
+			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
 		</view>
 		<view class="user_infor flexRowBetween" bindtap="intoPath"  data-path="/pages/restaurant/userComment/userComment">
 			<view class="user_left flexRowBetween">
-				<view class="user_icon" style="{{img}};background-position:-20px -500px"></view>
+				<view class="user_icon" style="{{img}};background-position:-40px -2129px"></view>
 				<text>我的点评</text>
 			</view>
-			<view class="next_page" style="{{img}};background-position:-152px -383px"></view>
+			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
 		</view>
 		<view class="user_infor flexRowBetween" bindtap="intoPath"  data-path="/pages/restaurant/userTake/userTake">
 			<view class="user_left flexRowBetween">
-				<image src="/images_restaurant/user_icon6.png"></image>
+				<view class="user_icon scale4" style="{{img}};background-position:-484px -2070px"></view>
 				<text>我的外卖</text>
 			</view>
-			<view class="next_page" style="{{img}};background-position:-152px -383px"></view>
+			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
 		</view>
 	</view>
 </view>
@@ -89,18 +88,24 @@
 </view>
 <view class="navbar">
       <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Index/index">
-          <view class="nav_img" style="{{img}};background-position: -1px -470px;">
+      	<view class="navbar_top">
+          <view class="nav_img scale" style="{{img}};background-position: 0px -2070px;">
           </view>
-          <view class="text" style="{{fonts[2].font}}">首页</view>
+        </view>
+        <view class="text" style="{{fonts[2].font}}">首页</view>
       </view>
     <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Dishes/dishes">
-        <view class="nav_img" style="{{img}};background-position: -55px -470px;">
-          </view>
-        <view class="text" style="{{fonts[2].font}}">点菜</view>
+    	<view class="navbar_top">
+	        <view class="nav_img scale" style="{{img}};background-position: -110px -2070px;">
+	          </view>
+	    </view>
+	    <view class="text" style="{{fonts[2].font}}">点菜</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect"  data-path="/pages/restaurant/User/user">
-        <view class="nav_img" style="{{img}};background-position: -138px -470px;">
-          </view>
-        <view class="text this-text" style="{{fonts[2].font}}">我的</view>
+    <view class="navbar_top">
+      <view class="nav_img scale" style="{{img}};background-position: -276px -2070px;">
+      </view>
+    </view>
+    <view class="text this-text" style="{{fonts[2].font}}">我的</view>
     </view>
 </view>

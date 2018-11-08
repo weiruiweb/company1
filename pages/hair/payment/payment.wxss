@@ -42,8 +42,8 @@ input{
 	font-size:24rpx;
 }
 .pay1{
-	width:92rpx;
-	height:92rpx;
+	width:92px;
+	height:92px;
 }
 .pay_txt{
 	color:#535353;
@@ -55,6 +55,10 @@ input{
 	display:block;
 	color:#666;
 	line-height:50rpx;
+	
+}
+.chose_pay .text1{
+	margin-top:30rpx;
 }
 .chose_pay{
 	width:318rpx;

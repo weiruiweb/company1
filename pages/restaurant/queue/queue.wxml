@@ -5,11 +5,11 @@
 		<view class="flexRowBetween">
 			<view class="input_before">就餐人数:</view>
 			<view class="queue_input">
-				<input placeholder="请选择就餐人数"></input>
+				<input placeholder="请输入就餐人数"></input>
 			</view>
 		</view>
 	</view>
-	<view class="phone_txt">
+	<view class="queue phone_txt">
 		填写手机号码可接收短信提醒
 	</view>
 	<view class="queue">
@@ -24,7 +24,8 @@
 		<view class="flexRowBetween">
 			<view class="input_before" style="width:95%;">领取优惠券</view>
 			<view class="input_up" style="width:5%;">
-				<view class="next_page" style="{{img}};background-position:-152px -383px;float: right;"></view>
+				<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px">
+				</view>
 			</view>
 		</view>
 	</view>
@@ -71,7 +72,7 @@
 	</view>
 </view>
 <view class="queqe_btn" bindtap="intoPath" data-path="/pages/restaurant/queueTime/queueTime">
-	<view class="queqe_txt" style="{{img}};background-position:0 -600px;">
+	<view class="queqe_txt scale1" style="{{img}};background-position:-9px -1145px;">
 		立即排队
 	</view>
 </view>

@@ -74,3 +74,9 @@ page{
 .my_name{
 	height:40%;
 }
+.circle{
+	color:#f2665f;
+	font-size:30rpx;
+	margin-right:10rpx;
+	height:100%;
+}

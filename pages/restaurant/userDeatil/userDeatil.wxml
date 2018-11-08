@@ -2,13 +2,13 @@
 <view class="userTop">
 	<view class="user_process flexRowBetween">
 		<view class="user_pro">
-			<view style="width:106rpx;height:104rpx;{{img}};background-position:-58px -413px"></view>
+			<view class="scale1" style="width:104px;height:104px;{{img}};background-position:-116px -1958px"></view>
 		</view>
 		<view class="user_center">
 			
 		</view>
 		<view class="user_pro">
-			<view style="width:106rpx;height:104rpx;{{img}};background-position:0px -413px"></view>
+			<view class="scale1" style="width:106px;height:104px;{{img}};background-position:0px -1958px"></view>
 		</view>
 	</view>
 	<view class="user_txt flexRowBetween">

@@ -37,7 +37,9 @@ Page({
       
     }),
     self.getComputeData();
-    
+    self.setData({
+      img:app.globalData.img,
+    });
   },
 
 

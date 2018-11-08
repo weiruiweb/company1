@@ -138,6 +138,10 @@ page{
 
 }
 .star_icon{
-	width:26rpx;
-	height:26rpx;
+	width:26px;
+	height:26px;
+}
+.user_icon{
+	width:32px;
+	height:34px;
 }

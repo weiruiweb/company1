@@ -124,8 +124,19 @@
 	width:46%;
 	margin:2%;
 }
+.nav_top{
+	width:46rpx;
+	height:50%;
+	margin:0 auto;
+}
 .nav_img{
-	width:42rpx;
-	height:46rpx;
-	margin:0 auto 10rpx auto;
+	width:46px;
+	height:46px;
+	margin:14rpx auto 0rpx auto;
+}
+.navbar_item .text{
+	height:50%;
+}
+.navbar .this-text{
+	color:#fb5676;
 }

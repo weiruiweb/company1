@@ -84,7 +84,7 @@
 </view>
 <view class="flexRowBetween product"  bindtap="intoPath" data-path="/pages/exhibition/index_detail/index_detail">
    <view class="product_left">
-      <image src="/images_exhibition/index5.jpg"></image>
+      <image src="/images/index5.jpg"></image>
       <view class="product_cont flexRowBetween">
         <view class="pro_vertical">
           <view class="product_tlt font30 color1 flexCenter">
@@ -97,7 +97,7 @@
     </view>
    <view class="product_left">
      <view class="product_top" style="margin-bottom:2%;">
-        <image src="/images_exhibition/index6.jpg"></image>
+        <image src="/images/index6.jpg"></image>
         <view class="product_cont flex">
           <view class="pro_vertical">
             <view class="product_tlt font30 color1 flexCenter">
@@ -109,7 +109,7 @@
         </view>
      </view>
      <view class="product_top" style="padding-top:2%;">
-        <image src="/images_exhibition/index7.jpg"></image>
+        <image src="/images/index7.jpg"></image>
         <view class="product_cont flex">
           <view class="pro_vertical">
             <view class="product_tlt font30 color1 flexCenter">
@@ -123,7 +123,7 @@
    </view> 
 </view>
 <view class="product_all">
-    <image src="/images_exhibition/index7.jpg"></image>
+    <image src="/images/index7.jpg"></image>
     <view class="product_cont flexRowBetween">
       <view class="pro_vertical">
         <view class="product_tlt font30 color1 flexCenter">
@@ -142,7 +142,6 @@
   </view>
 
   <view class="w710 flexRowBetween case_box font28 color6">
-
    
     <block wx:for="{{web_mainData}}" wx:key="id">
       <view class="case_item">

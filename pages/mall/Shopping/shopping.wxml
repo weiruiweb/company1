@@ -74,7 +74,7 @@
     </view>
     <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/mall/Shopping/shopping">
          <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
-          <view class="nav_img scale2" style="{{img}};width:44px;height:42px;background-position: -190px -94px;">
+          <view class="nav_img scale2" style="{{img}};width:46px;height:42px;background-position: -190px -94px;">
           </view>
         </view>
         <view class="text this-text" style="{{fonts[2].font}}">购物车</view>

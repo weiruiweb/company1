@@ -1,8 +1,23 @@
 <!--detail.wxml-->
 <wxs module="func" src="../../../utils/func.wxs" />
 <view id="details">
-<view class="banner">
+<!-- <view class="banner">
 	<image src="{{web_mainData.mainImg[0].url}}"></image>
+</view> -->
+<view class="banner">
+	<view class="page-body">
+	    <view class="page-section page-section-spacing swiper">
+	      <swiper
+	        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+	        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+	        <block wx:for="{{web_mainData.mainImg}}" wx:index="{{index}}" wx:key="id">
+	          <swiper-item>
+	            <image src="{{item.url}}"></image>
+	          </swiper-item>
+	        </block>
+	      </swiper>
+	    </view>
+	</view>
 </view>
 <view class="detail">
 	<view class="w710" style="padding:10rpx 2.6%;">
@@ -72,11 +87,11 @@
 						</view>
 					</view>
 					<view class="star flexRowBetween">
-						<view class="star_icon scale2" style="{{img}}"></view>
-						<view class="star_icon scale2" style="{{img}}"></view>
-						<view class="star_icon scale2" style="{{img}}"></view>
-						<view class="star_icon scale2" style="{{img}}"></view>
-						<view class="star_icon scale2" style="{{img}}"></view>
+						<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+						<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+						<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+						<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+						<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
 					</view>
 				</view>
 				<view class="comment_cont">
@@ -92,12 +107,22 @@
 <view id="buy">
 	<view class="buy_click">
 		<view class="consult">
-			<view class="scale2" style="width:38px;height:38px;margin:0 auto;{{img}};background-position: -352px 0;"></view>
+			<view style="width:36rpx;height:36rpx;overflow:hidden;margin:0 auto 14rpx auto;">
+				<view class="scale1" style="width:38px;height:38px;margin:0 auto;{{img}};background-position: -352px 0;"></view>
+			</view>
 			<view class="text1">客服</view>
 		</view>
 		<view class="consult collect" bindtap="collect">
-			<view class="scale2" style="width:36px;height:36px;margin:0 auto;{{img}};background-position: -524px 0;"></view>
-			<view class="text1">收藏</view>
+			<view style="width:36rpx;height:36rpx;overflow:hidden;margin:0 auto 14rpx auto;">
+				<view class="scale1" style="width:36px;height:36px;margin:0 auto;{{img}};{{is_collect?'background-position: -559px 0':'background-position: -524px 0'}}"></view>
+			</view>
+			<view class="text1" style="{{is_collect?'color:#21c3d4':''}}">收藏</view>
+		</view>
+		<view class="consult collect">
+			<view class="shopping_cart">
+				<view class="shopping_number">{{web_count}}</view>
+				<image src="/images/shopping_cart.png"></image>
+			</view>
 		</view>
 		<view class="go_buy flexRowBetween" >
 			<view class="shoppingCart color1" bindtap="selectModel" data-type="addCart">

@@ -19,7 +19,6 @@ Page({
       type:3
     },
     isSign:false,
-    img:"background:url('/images/small.png')"
   },
 
 

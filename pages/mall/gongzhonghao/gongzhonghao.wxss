@@ -46,6 +46,7 @@
 	overflow:hidden;
 	transition:all 2s;
 	opacity:1;
+	z-index:99;
 }
 .product_item{
 	font-size:32rpx;
@@ -60,6 +61,7 @@
 	position:absolute;
 	left:-27%;
 	top:0rpx;
+	z-index:999;
 	}
 .sildeIn{
 	transition:all 1s;
@@ -164,8 +166,6 @@
 .made_cont{
 	width:66%;
 	background:#fff;}
-.madeSort{
-	height:210rpx;}
 .left_bar{
 	width:100%;
 	text-align:center;
@@ -180,9 +180,7 @@
 	width:100%;
 	height:88rpx;
 	line-height:88rpx;
-
 	color:#666;
-	
 	}
 .madeSort .text2{
 	font-size:22rpx;
@@ -254,4 +252,5 @@
 .order_des{
 	width:30px;
 	height:30px;
+	z-index:1;
 }

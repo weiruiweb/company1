@@ -40,7 +40,7 @@
 		<view class="dishes_list">
 			<view class="dishes_item flexRowCenter1">
 				<view class="dishes_left">
-					<image src="/images_restaurant/dishes1.jpg"></image>
+					<image src="/images/sort_Img1.jpg"></image>
 				</view>
 				<view class="dishes_center">
 					<view class="avoidOverflow">大闸蟹</view>
@@ -68,7 +68,7 @@
 		<view class="dishes_list">
 			<view class="dishes_item flexRowCenter1">
 				<view class="dishes_left">
-					<image src="/images_restaurant/dishes1.jpg"></image>
+					<image src="/images/sort_Img1.jpg"></image>
 				</view>
 				<view class="dishes_center">
 					<view class="avoidOverflow">大闸蟹</view>

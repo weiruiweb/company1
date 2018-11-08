@@ -35,9 +35,13 @@
 .discount_bg{
 	position:relative;
 }
-.discout_img image{
+.discount_bg image{
 	width:100%;
 	height:147rpx;
+}
+.discout_img image{
+	width:100%;
+	height:148rpx;
 }
 .discount_money{
 	position:absolute;

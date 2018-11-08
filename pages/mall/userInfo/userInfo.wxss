@@ -44,3 +44,7 @@ border-radius:10rpx;margin-top:260rpx;}
 input{
 	font-family:''
 }
+.user_icon1 {
+	width:12px;
+	height:20px;
+}

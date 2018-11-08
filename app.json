@@ -23,6 +23,7 @@
     "pages/mall/sign/sign",
     "pages/mall/caseDetail/caseDetail",
     "pages/mall/collectData/collectData",
+    "pages/mall/userCredit/userCredit",
     "pages/exhibition/index/index",
     "pages/exhibition/index_cultrue/index_cultrue",
     "pages/exhibition/index_introduce/index_introduce",

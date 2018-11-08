@@ -35,7 +35,7 @@
 	<view class="order" bindtap="intoPath" data-path="/pages/mall/order/order">
 		<view class="user_order flexRowBetween">
 			<view class="order_left flexRowBetween">
-				<view class="user_icon scale2" style="{{img}};background-position: -360px -146px;"></view>
+				<view class="user_icon scale2" style="{{img}};height:33px;background-position: -360px -146px;"></view>
 				<view class="my_order">我的订单</view>
 			</view>
 			
@@ -72,7 +72,7 @@
 	<view class="user_all" style="margin-bottom:120rpx">
 		<view class="user_infor flexRowBetween"  bindtap="intoPath" data-path="/pages/mall/userInfo/userInfo">
 			<view class="user_left flexRowBetween">
-				<view class="user_icon scale2" style="{{img}};background-position: -328px -148px;"></view>
+				<view class="user_icon scale2" style="{{img}};width:30px;background-position: -330px -148px;"></view>
 				<text>我的信息</text>
 			</view>
 			<view class="next_page">

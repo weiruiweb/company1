@@ -34,18 +34,18 @@
     </view>
     <view class="module_item"  bindtap="about">
       <view class="item_top">
-       <view class="menu_icon1 scale" style="{{img}};background-position: 0px 0rpx;"></view>
+       <view class="menu_icon1 scale" style="{{img}};background-position: -1px 0rpx;"></view>
       </view>
       <view  class="text" style="{{fonts[3].font}}">
         关于我们
       </view>
     </view>
-    <view class="module_item"  bindtap="discount">
+    <view class="module_item"  bindtap="intoPath" data-path="/pages/classify/classify">
       <view class="item_top">
        <view class="menu_icon1 scale" style="{{img}};background-position: -256px 0rpx;"></view>
       </view>
       <view  class="text" style="{{fonts[3].font}}">
-        联系我们
+        案例体验
       </view>
     </view>
   </view>

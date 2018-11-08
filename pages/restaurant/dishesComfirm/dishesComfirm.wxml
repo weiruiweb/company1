@@ -2,7 +2,7 @@
 <view class="users flex">
 	<view>
 		<view class="user_banner">
-			<image src="/images_restaurant/comfirm.png"></image>
+			<image src="/images/comfirm.png"></image>
 		</view>
 		<view class="user_top">
 			<view class="flexRowBetween">

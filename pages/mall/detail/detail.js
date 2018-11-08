@@ -9,6 +9,12 @@ Page({
 
 
   data: {
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    circular: true,
+    interval: 2000,
+    duration: 500,
     mainData:[],
     chooseId:[],
     tabCurrent:0,
@@ -24,6 +30,7 @@ Page({
     buttonType:'',
     buttonClicked:true,
     isInCollectData:false,
+    is_collect:false,
   },
   
   onLoad(options){
@@ -51,12 +58,10 @@ Page({
 
     self.getMainData();
     if(wx.getStorageSync('collectData')[self.data.id]){
-      self.setData({
-        url: '/images/collect1.png',
-      });
+      
     }else{
       self.setData({
-        url: '/images/collect.png',
+        is_collect:false,
       });
     };
     wx.showShareMenu({
@@ -77,9 +82,15 @@ Page({
       return;
     };
     if(self.data.isInCollectData){
-      var res = api.delStorageArray('collectData',self.data.skuData,'id');     
+      var res = api.delStorageArray('collectData',self.data.skuData,'id'); 
+      self.setData({
+        is_collect:true,
+      });    
     }else{
       var res = api.setStorageArray('collectData',self.data.skuData,'id',999);
+      self.setData({
+        is_collect:false,
+      });
     };
      
     var collectData = api.getStorageArray('collectData');

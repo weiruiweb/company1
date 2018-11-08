@@ -23,9 +23,10 @@ Page({
     
     const self = this;
     wx.showLoading();
-    
     self.userInfoGet();
-
+    self.setData({
+     img:app.globalData.img,
+    });
   },
 
 

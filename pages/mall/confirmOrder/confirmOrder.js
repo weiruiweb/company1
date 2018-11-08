@@ -31,7 +31,6 @@ Page({
     order_id:'',
     complete_api:[],
     buyType:'delivery',
-    img:"background:url('/images/small.png')",
   },
 
   onLoad() {
@@ -41,6 +40,7 @@ Page({
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.setData({
       fonts:app.globalData.font,
+      img:app.globalData.img,
       web_buyType:self.data.buyType
     });
     getApp().globalData.address_id = '';

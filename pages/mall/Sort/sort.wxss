@@ -117,7 +117,8 @@ page{
 .made_item .product_name{
 	font-size:24rpx;
 	color:#222;
-
+	width:100%;
+	text-align:center;
 }
 .nav_img{
 	margin:0 auto 10rpx auto;

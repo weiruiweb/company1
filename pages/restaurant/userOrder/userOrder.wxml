@@ -15,19 +15,19 @@
     <view class="order_infor">
       <view class="order_item flexRowBetween">
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
       </view>
     </view>
@@ -62,19 +62,19 @@
     <view class="order_infor">
       <view class="order_item flexRowBetween">
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
       </view>
     </view>
@@ -110,19 +110,19 @@
     <view class="order_infor">
       <view class="order_item flexRowBetween">
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
         <view class="order_left">
-          <image src="/images_restaurant/product.jpg"></image>
+          <image src="/images/sort_Img1.jpg"></image>
         </view>
       </view>
     </view>

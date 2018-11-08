@@ -35,12 +35,12 @@
 		<picker mode="date" class="flexRowBetween" value="{{web_sForm.passage1}}" start="1970-09-01" end="2050-09-01" bindchange="bindDateChange" style="width:70%;">
 			<input placeholder="请输入出生日期" value="{{web_sForm.passage1}}" style="width:100%;"></input> 
 		</picker>
-		<view class="next_page" style="width:7%;text-align:right;">
-				<image src="/images/next_page.jpg" style=""></image>
+		<view class="next_page" style="width:7%;text-align:right;" bindchange="bindDateChange">
+			<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;">
+			</view>
 		</view>
 	</view>
 </view>
-
 <view class="user_input ">
 	<view class="users_detail flexRowBetween">
 		<view class="input_note">联系方式:</view>

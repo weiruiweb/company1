@@ -32,8 +32,7 @@
 	<view class="discout flexRowBetween">
 		<view class="discount_item">
 			<view class="discount_bg">
-				<view class="discout_img" style="width:360rpx;height:148rpx;{{img}};background-position:0 -118px;">	
-				</view>
+				<image src="/images/restruant_discont.jpg"></image>
 				<view class="discount_money flexRowBetween">
 					<view class="discout_left">
 						10
@@ -52,8 +51,7 @@
 		<view class="discount_space"></view>
 		<view class="discount_item">
 			<view class="discount_bg">
-				<view class="discout_img" style="width:360rpx;height:148rpx;{{img}};background-position:0 -118px;">	
-				</view>
+				<image src="/images/restruant_discont.jpg"></image>
 				<view class="discount_money flexRowBetween">
 					<view class="discout_left">
 						10

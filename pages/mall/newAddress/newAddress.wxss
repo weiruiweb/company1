@@ -7,6 +7,7 @@
 .users_detail{
 	width:100%;
 	align-items:center;
+	height:100%;
 }
 .user_input{
 	height:90rpx;
@@ -25,6 +26,9 @@
 .user_input image{
 	width:11rpx;
 	height:20rpx;
+}
+.address_right{
+	height:100%;
 }
 .address_right text{color:#b2b2b2;font-size:28rpx;}
 .address_right image{margin-left:15rpx;}

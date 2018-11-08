@@ -5,6 +5,7 @@
 		<view class="discount_item">
 			<view  style="font-size:24rpx;color:#666;line-height:86rpx;">有效期：{{func.timestampToTime(item.deadline)}}</view>
 			<view class="discount_bg">
+				<image src="/images/restruant_discont.jpg"></image>
 				<view class="discout_img">	
 					<image src="{{item.mainImg[0].url}}"></image>
 				</view>

@@ -13,7 +13,7 @@
 <view class="module flex">
   <view class="module-item" bindtap="intoPath" data-path="/pages/restaurant/Dishes/dishes">
      <view class="module_img">
-        <view class="module_icon scale" style="{{img}};background-position:-556px -1602px"></view>
+        <view class="module_icon scale1" style="{{img}};background-position:-556px -1602px"></view>
      </view>
      <view class="module_txt"  style="{{fonts[3].font}}">
         推荐
@@ -21,7 +21,7 @@
   </view>
   <view class="module-item" bindtap="intoPath"  data-path="/pages/restaurant/Dishes/dishes">
      <view class="module_img">
-        <view class="module_icon scale" style="{{img}};background-position:-436px -1602px"></view>
+        <view class="module_icon scale1" style="{{img}};background-position:-436px -1602px"></view>
      </view>
      <view class="module_txt"  style="{{fonts[3].font}}">
         凉菜
@@ -29,7 +29,7 @@
   </view>
   <view class="module-item" bindtap="intoPath"  data-path="/pages/restaurant/Dishes/dishes">
      <view class="module_img">
-        <view class="module_icon scale" style="{{img}};background-position:-316px -1602px"></view>
+        <view class="module_icon scale1" style="{{img}};background-position:-316px -1602px"></view>
      </view>
      <view class="module_txt"  style="{{fonts[3].font}}">
         热菜
@@ -37,7 +37,7 @@
   </view>
   <view class="module-item" bindtap="intoPath"  data-path="/pages/restaurant/queue/queue">
      <view class="module_img">
-        <view class="module_icon scale" style="{{img}};background-position:-196px -1602px"></view>
+        <view class="module_icon scale1" style="{{img}};background-position:-196px -1602px"></view>
      </view>
      <view class="module_txt"  style="{{fonts[3].font}}">
         排队
@@ -115,10 +115,10 @@
       </view>
     <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Dishes/dishes">
       <view class="navbar_top">
-        <view class="nav_img scale" style="{{img}};background-position:-108px -2070px;">
+        <view class="nav_img scale" style="{{img}};height:56px;background-position:-108px -2070px;">
           </view>
       </view>
-        <view class="text" style="{{fonts[2].font}}">点菜</view>
+        <view class="text" style="{{fonts[2].font}};">点菜</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect"  data-path="/pages/restaurant/User/user">
       <view class="navbar_top">

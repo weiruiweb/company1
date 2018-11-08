@@ -2,7 +2,7 @@
 <view class="w750 muens_list">
 	<view class="w710">
 		<view class="recommend_img">
-	      <image src="/images_restaurant/index3.jpg"/>
+	      <image src="/images/banner.jpg"/>
 	    </view>
 	    <view class="dishes_info flexRowCenter">
 	      <view class="dishes_left">
@@ -48,7 +48,7 @@
 	<view class="comment_list">
 		<view class="comment_item flexRowBetween">
 			<view class="commet_user">
-				<image src="/images_restaurant/index_icon4.png"></image>
+				<image src="/images/index_icon4.png"></image>
 			</view>
 			<view class="commet_cont">
 				<view class="user_name">

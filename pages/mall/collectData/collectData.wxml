@@ -1,8 +1,8 @@
-<!--shopping.wxml-->
-<view id="shopping">
-	<block wx:for="{{web_mainData}}" wx:key="id">
-		<view class="shopping_item">
-			<view class="flexRowBetween" style="align-items:center;">
+<!--shopping.wxml-->	
+<block wx:for="{{web_mainData}}" wx:key="id">
+	<view id="shopping" class="flex">
+		<view class="shopping_box flex">
+		<view class="shopping_item flexRowBetween">
 				<view class="select_status" data-index="{{index}}" bindtap='choose'>
 					<image src="{{item.isSelect=='true'?'/images/select_active.jpg':'/images/select.png'}}"></image>
 				</view>
@@ -14,14 +14,11 @@
 					<text class="text2">个性化定制</text>
 					<text class="price">¥{{item.price}}</text>
 				</view>
-				<view class="edit_number flexRowBetween">
-					<view class="minus" style="font-size:50rpx;line-height:36rpx;" data-index="{{index}}" data-type="-" bindtap="counter">-</view>
-					<input class="number" type="number" bindchange="bindManual" value="{{item.count}}" />
-					<view class="add"    data-index="{{index}}" data-type="+" bindtap="counter">+</view>
-				</view>
+				
 			</view>
-			<view class="circle {{flayTo==1?'animate':''}}" mode="aspectFill" style="{{flayTo==1?translateStyle:''}}"></view>
 		</view>
-	</block>
-	
-</view>
+		<view class="handle font30">
+			<view class="handle_item flex">删除</view>
+		</view>
+	</view>
+</block>

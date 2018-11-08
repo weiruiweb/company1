@@ -43,7 +43,7 @@
 	height:26rpx;
 	margin-right:10rpx;
 }
-.edit{color:#7d7d7d;width:15%;display:flex;
+.edit{color:#7d7d7d;width:17%;display:flex;
 	align-items:center;}
 .de_color{color:#7d7d7d}
 .address_btn{

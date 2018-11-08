@@ -259,8 +259,7 @@
 /********************服务类别*************************/
 .service_tlt{
 	position:relative;
-	left:24rpx;
-	margin-bottom:26rpx;}
+	left:24rpx;}
 .service_tlt image{
 	width:154rpx;
 	height:40rpx;}

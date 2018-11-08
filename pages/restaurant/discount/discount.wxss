@@ -42,3 +42,7 @@
 	text-align:center;
 
 }
+.userDiscount image{
+	width:563rpx;
+	height:224rpx;
+}

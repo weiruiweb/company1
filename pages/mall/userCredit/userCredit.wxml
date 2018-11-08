@@ -39,7 +39,7 @@
 			
 		</view>	
 	</view>
-	<view class="date_item">
+	<view class="date_item" style="border:none;">
 		<view style="width:45%;display:flex;align-items:center;">
 			<view class="date_left" style="color:#39bddf;width:100%;">
 				<picker  mode="date" value="{{web_endTime}}" data-type="endTime" bindchange="bindTimeChange" >

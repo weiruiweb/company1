@@ -1,8 +1,8 @@
-<!--dishes1.wxml-->
+<!--banner.wxml-->
 <view class="w750 muens_list" style="padding-bottom:30rpx;">
 	<view class="w710">
 		<view class="recommend_img">
-	      <image src="/images_restaurant/index3.jpg"/>
+	      <image src="/images/index3.jpg"/>
 	    </view>
 	    <view class="dishes_info flexRowCenter">
 	      <view class="dishes_left">
@@ -39,7 +39,7 @@
 	</view>
 	<view class="dishes_item flexRowBetween">
 		<view class="dishes_img">
-			<image src="/images_restaurant/dishes1.jpg"></image>
+			<image src="/images/banner.jpg"></image>
 		</view>
 		<view class="dishes_center">蟹黄芝士面包</view>
 		<view class="dishes_img">
@@ -49,7 +49,7 @@
 	</view>
 	<view class="dishes_item flexRowBetween">
 		<view class="dishes_img">
-			<image src="/images_restaurant/dishes1.jpg"></image>
+			<image src="/images/banner.jpg"></image>
 		</view>
 		<view class="dishes_center">蟹黄芝士面包</view>
 		<view class="dishes_img">
@@ -59,7 +59,7 @@
 	</view>
 	<view class="dishes_item flexRowBetween">
 		<view class="dishes_img">
-			<image src="/images_restaurant/dishes1.jpg"></image>
+			<image src="/images/banner.jpg"></image>
 		</view>
 		<view class="dishes_center">蟹黄芝士面包</view>
 		<view class="dishes_img">

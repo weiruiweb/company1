@@ -32,7 +32,9 @@ Page({
 
   getMainData(){
     const self = this;
-    self.data.mainData = api.jsonToArray(wx.getStorageSync('collectData'),'unshift');
+    //self.data.mainData = api.jsonToArray(wx.getStorageSync('collectData'),'unshift');
+    self.data.mainData = api.getStorageArray('collectData');
+    console.log('getMainData',self.data.mainData);
     self.setData({
       web_mainData:self.data.mainData,
     });

@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/classify/classify",
     "pages/mall/Index/index",
+    "pages/classify/classify",
     "pages/mall/Sort/sort",
     "pages/mall/Shopping/shopping",
     "pages/mall/User/user",

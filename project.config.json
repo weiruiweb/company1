@@ -33,11 +33,11 @@
 			"list": []
 		},
 		"miniprogram": {
-<<<<<<< HEAD
+
 			"current": 31,
-=======
+
 			"current": 38,
->>>>>>> 5e11280a04da506808c5670657626c179743e77e
+
 			"list": [
 				{
 					"id": 0,
@@ -207,16 +207,7 @@
 					"pathName": "pages/mall/discount/discount",
 					"query": ""
 				},
-				{
-					"id": -1,
-<<<<<<< HEAD
-					"name": "商城的个人中心界面",
-					"pathName": "pages/mall/User/user"
-=======
-					"name": "餐饮我的",
-					"pathName": "pages/restaurant/queueEnd/queueEnd",
-					"query": ""
-				},
+
 				{
 					"id": -1,
 					"name": "发型我的",
@@ -275,7 +266,7 @@
 					"id": -1,
 					"name": "美发确认订单",
 					"pathName": "pages/hair/confirmOrder/confirmOrder"
->>>>>>> 5e11280a04da506808c5670657626c179743e77e
+
 				}
 			]
 		}

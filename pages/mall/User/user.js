@@ -38,7 +38,7 @@ Page({
   onShow(){
     const self = this;
     self.getUserInfoData();
-    self.data.mainData = api.jsonToArray(wx.getStorageSync('collectData'),'unshift');
+    self.data.mainData = api.getStorageArray('collectData');
     console.log(self.data.mainData.length)
     self.setData({
       web_collectData:self.data.mainData.length

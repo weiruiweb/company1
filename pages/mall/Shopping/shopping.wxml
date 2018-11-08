@@ -16,7 +16,7 @@
 				</view>
 				<view class="edit_number flexRowBetween">
 					<view class="minus" style="font-size:50rpx;line-height:36rpx;" data-index="{{index}}" data-type="-" bindtap="counter">-</view>
-					<input class="number" type="number" bindchange="bindManual" value="{{item.count}}" />
+					<input class="number" data-index="{{index}}" type="number" bindinput="bindManual" value="{{item.count}}" />
 					<view class="add"    data-index="{{index}}" data-type="+" bindtap="counter">+</view>
 				</view>
 			</view>

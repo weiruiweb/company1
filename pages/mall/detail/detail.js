@@ -23,6 +23,7 @@ Page({
     choose_sku_item:[],
     buttonType:'',
     buttonClicked:true,
+    isInCollectData:false,
   },
   
   onLoad(options){
@@ -36,12 +37,19 @@ Page({
       img:app.globalData.img,
       web_count:self.data.count,
     });
+
     if(options.id){
       self.data.id = options.id;
-      console.log(12,self.data.id)
     };
+
+    var cartData = api.getStorageArray('cartData');
+    console.log('onLoad',cartData);
+
+    var collectData = api.getStorageArray('collectData');
+    self.data.isInCollectData = api.findItemInArray(collectData,'id',self.data.id);
+    console.log('onLoad',self.data.isInCollectData);
+
     self.getMainData();
-    
     if(wx.getStorageSync('collectData')[self.data.id]){
       self.setData({
         url: '/images/collect1.png',
@@ -54,20 +62,31 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     });
+
   },
 
 
 
   collect(){
     const self = this;  
-    if(self.data.buttonClicked){
+    if(getApp().globalData.buttonClick){
       api.showToast('数据有误请稍等','none');
       setTimeout(function(){
         wx.showLoading();
       },800)   
       return;
     };
-    const id = self.data.id;
+    if(self.data.isInCollectData){
+      var res = api.delStorageArray('collectData',self.data.skuData,'id');     
+    }else{
+      var res = api.setStorageArray('collectData',self.data.skuData,'id',999);
+    };
+     
+    var collectData = api.getStorageArray('collectData');
+    self.data.isInCollectData = api.findItemInArray(collectData,'id',self.data.id);
+    console.log('collect',collectData);
+    console.log('isInCollectData',self.data.isInCollectData);
+    /*const id = self.data.id;
     if(wx.getStorageSync('collectData')&&wx.getStorageSync('collectData')[id]){
       api.deleteFootOne(id,'collectData');
       self.setData({
@@ -78,7 +97,7 @@ Page({
       self.setData({
         url: '/images/collect1.png',
       });
-    };
+    };*/
   },
 
   getMainData(){
@@ -181,6 +200,7 @@ Page({
       web_count:count
     });
   },
+
   countTotalPrice(){  
     const self = this;
     var totalPrice = 0;
@@ -190,21 +210,22 @@ Page({
       web_totalPrice:self.data.totalPrice.toFixed(2)
     });
   },
+
   selectModel(e){
     const self = this;
     if(self.data.buttonClicked){
       api.showToast('数据有误请稍等','none');
       setTimeout(function(){
         wx.showLoading();
-      },800)   
+      },800);   
       return;
     };
     self.data.buttonType = api.getDataSet(e,'type');
     console.log( self.data.buttonType)
-    var isShow = !self.data.isShow;
+    self.data.isShow = !self.data.isShow;
     self.setData({
       web_buttonType:self.data.buttonType,
-      isShow:isShow
+      isShow:self.data.isShow
     })
   },
 
@@ -212,13 +233,16 @@ Page({
     const self = this;
     self.data.skuData.count = self.data.count;
     self.data.skuData.isSelect = true;
-    console.log(self.data.skuData);
-    if(self.data.skuData.id !=''&&self.data.skuData.id !=undefined){
-      api.footOne(self.data.skuData,'id',100,'cartData'); 
-      api.showToast('已加入购物车啦','none')
-    }else{
-      api.showToast('请完善信息','none')
-    }
+    var res = api.setStorageArray('cartData',self.data.skuData,'id',999); 
+    if(res){
+      api.showToast('加入成功','success');
+      self.data.isShow = !self.data.isShow;
+      self.setData({
+        isShow:self.data.isShow
+      })
+    };
+    var cartData = api.getStorageArray('cartData');
+    console.log('addCart',cartData);  
   },
 
   goBuy(){
@@ -256,6 +280,7 @@ Page({
     if(self.data.choose_sku_item.indexOf(id)==-1){
       return;
     };
+
     self.data.choose_sku_item = [];
     var parentid = api.getDataSet(e,'parentid');
     var sku = self.data.mainData.label[parentid];
@@ -267,7 +292,6 @@ Page({
       self.data.choose_sku_item.push(sku.child[i].id);
     };
 
-    
     for (var i = 0; i < self.data.mainData.sku.length; i++) {
       if(self.data.mainData.sku[i].sku_item.indexOf(parseInt(id))!=-1){
         self.data.choose_sku_item.push.apply(self.data.choose_sku_item,self.data.mainData.sku[i].sku_item);  
@@ -287,6 +311,7 @@ Page({
         self.data.skuData = api.cloneForm(self.data.mainData.sku[i]);
       };   
     };
+    
     self.setData({
       web_totalPrice:'',
       web_count:self.data.count,

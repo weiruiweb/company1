@@ -134,7 +134,6 @@ class Base{
             if(pform[key]){
                 form[key] = pform[key];
             }
-            
         };   
         return form;           
     };
@@ -193,15 +192,95 @@ class Base{
             //result.push(key);
             if(type=='push'){
                 result.push(obj[key]);
-            }
-
+            };
             if(type=='unshift'){
                 result.unshift(obj[key]);
-            }
-            
-            
-        }
+            };
+        };
         return result;
+    };
+
+
+    getStorageArray(storageName,key,value){
+        const self = this;
+        if(wx.getStorageSync(storageName)){
+            var array = JSON.parse(wx.getStorageSync(storageName));
+            if(key&&value&&array){
+                var index = self.findItemInArray(array,key,value)[0];
+                return array[index];
+            }else if(array){
+                return array;
+            }else{
+                return false;
+            };
+        }else{
+            return [];
+        };
+    };
+
+    setStorageArray(storageName,item,key,limit,type='unshift'){
+
+        const self = this;
+        if(wx.getStorageSync(storageName)){
+            var array = JSON.parse(wx.getStorageSync(storageName));
+            if(array.length<limit){
+                self.setItemInArray(array,item,key,type);
+            }else{
+                if(type=='unshift'){
+                    array.splice(array.length-1,1);
+                }else{
+                    array.splice(0,1);
+                };
+                self.setItemInArray(array,item,key,type);
+            };
+        }else{
+            var array = [];
+            array[type](item);
+        };
+        array = JSON.stringify(array);
+        wx.setStorageSync(storageName,array);
+        return true;
+
+    };
+
+    delStorageArray(storageName,item,key){
+
+        const self = this;
+        var array = JSON.parse(wx.getStorageSync(storageName));
+        var index = self.findItemInArray(array,key,item[key])[0];
+        array.splice(index,1);
+        array = JSON.stringify(array);
+        wx.setStorageSync(storageName,array);
+        return true;
+
+    };
+
+
+
+    findItemInArray(array,fieldName,field){
+
+        for(var i=0;i<array.length;i++){
+            if(array[i][fieldName] == field){
+                return [i,array[i]];
+            }
+        };
+        return false;
+
+    };
+
+    setItemInArray(array,item,fieldName,type='push'){
+        var findI = -1;
+        for(var i=0;i<array.length;i++){
+            if(array[i][fieldName] == item[fieldName]){
+                findI = i;
+            };
+        };
+        if(findI>=0){
+            array[findI] = item;
+        }else{
+            array[type](item);
+        };
+        return array;
     };
 
     footOne(res,name,limit,objName){
@@ -224,7 +303,6 @@ class Base{
               var history = {};
               for(var i=0;i<historyArray.length;i++){
                 history[historyArray[i][name]] = historyArray[i];
-                
               };
             }
             wx.setStorageSync(objName,history);
@@ -346,7 +424,10 @@ class Base{
                 url:path
             });
         }
+        
     };
+
+    
 
     arrayByItem(field,fieldName,array){
 

@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 30,
+			"current": 31,
 			"list": [
 				{
 					"id": -1,
@@ -218,7 +218,13 @@
 				{
 					"id": -1,
 					"name": "优惠券",
-					"pathName": "pages/mall/discount/discount"
+					"pathName": "pages/mall/discount/discount",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商城的个人中心界面",
+					"pathName": "pages/mall/User/user"
 				}
 			]
 		}

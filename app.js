@@ -8,8 +8,7 @@ App({
       // 展示本地存储能力
   //var token = new Token();
   //token.verify();
-
-},
+  },
 
   globalData: {
     mall_thirdapp_id:2,

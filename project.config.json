@@ -33,11 +33,11 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 30,
+			"current": 38,
 			"list": [
 				{
-					"id": -1,
-					"name": "首页",
+					"id": 0,
+					"name": "官网首页",
 					"pathName": "pages/exhibition/index/index",
 					"query": ""
 				},
@@ -98,13 +98,13 @@
 				{
 					"id": 10,
 					"name": "餐饮我的",
-					"pathName": "pages/restaurant/User/user",
+					"pathName": "pages/restaurant/group/group",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "餐饮我的",
-					"pathName": "pages/restaurant/dishes1/dishes1",
+					"id": 11,
+					"name": "我的",
+					"pathName": "pages/restaurant/User/user",
 					"query": ""
 				},
 				{
@@ -134,24 +134,6 @@
 				{
 					"id": -1,
 					"name": "支付",
-					"pathName": "pages/classify/classify",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "酒店",
-					"pathName": "pages/hotel/index/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "酒店",
-					"pathName": "pages/classify/classify",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "酒店",
 					"pathName": "pages/classify/classify",
 					"query": ""
 				},
@@ -218,7 +200,73 @@
 				{
 					"id": -1,
 					"name": "优惠券",
-					"pathName": "pages/mall/discount/discount"
+					"pathName": "pages/mall/discount/discount",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "餐饮我的",
+					"pathName": "pages/restaurant/queueEnd/queueEnd",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发型我的",
+					"pathName": "pages/hair/User/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "酒店",
+					"pathName": "pages/hotel/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "酒店详情",
+					"pathName": "pages/hotel/indexDetail/indexDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "健身订单确认",
+					"pathName": "pages/gym/courseDtailConfirm/courseDtailConfirm",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "健身订单确认1",
+					"pathName": "pages/gym/courseDtailConfirm1/courseDtailConfirm1",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "健身订单确认2",
+					"pathName": "pages/gym/confirmOrder/confirmOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "教练详情",
+					"pathName": "pages/gym/coachDetail/coachDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "教练详情",
+					"pathName": "pages/gym/coachCenter/coachCenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑课时",
+					"pathName": "pages/gym/coachCenterEdit/coachCenterEdit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "美发确认订单",
+					"pathName": "pages/hair/confirmOrder/confirmOrder"
 				}
 			]
 		}

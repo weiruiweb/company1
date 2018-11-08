@@ -10,41 +10,59 @@
 </view>
 <view class="menu flexRowBetween font30 color6">
   <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_introduce/index_introduce">
-    <view style="width:68rpx;height:60rpx;{{img}};background-position:-234px 0;margin:0 auto;"></view>
+    <view class="menu_top">
+      <view class="menu_icon scale1" style="{{img}};background-position:-0px -3437px;"></view>
+    </view>
     <view>公司简介</view>
   </view>
   <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_cultrue/index_cultrue?id=8">
-    <view style="width:68rpx;height:60rpx;{{img}};background-position:-101px 0;margin:0 auto;"></view>
+    <view class="menu_top">
+      <view class="menu_icon scale1" style="{{img}};background-position:-202px -3437px;"></view>
+    </view>
     <view>公司文化</view>
   </view>
   <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_cultrue/index_cultrue">
-    <view style="width:68rpx;height:60rpx;{{img}};background-position:-34px 0;margin:0 auto;"></view>
+    <view class="menu_top">
+      <view class="menu_icon scale1" style="{{img}};background-position:-68px -3437px;"></view>
+    </view>
     <view>公司团建</view>
   </view>
   <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_cultrue/index_cultrue">
-    <view style="width:68rpx;height:60rpx;{{img}};background-position:-134px 0;margin:0 auto;"></view>
+    <view class="menu_top">
+      <view class="menu_icon scale1" style="{{img}};background-position:-268px -3437px;"></view>
+    </view>
     <view>公司历史</view>
   </view>
   <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_cultrue/index_cultrue">
-    <view style="width:68rpx;height:60rpx;{{img}};background-position:-200px 0;margin:0 auto;"></view>
+    <view class="menu_top">
+      <view class="menu_icon scale1" style="{{img}};background-position:-400px -3437px;"></view>
+    </view>
     <view>公司动态</view>
   </view>
   <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_cultrue/index_cultrue">
-    <view style="width:68rpx;height:60rpx;{{img}};background-position:-166px 0;margin:0 auto;"></view>
+    <view class="menu_top">
+      <view class="menu_icon scale1" style="{{img}};background-position:-331px -3437px;"></view>
+    </view>
     <view>产品介绍</view>
   </view>
   <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_case/index_case">
-    <view style="width:68rpx;height:60rpx;{{img}};background-position:0px 0;margin:0 auto;"></view>
+    <view class="menu_top">
+      <view class="menu_icon scale1" style="{{img}};background-position:0px -3437px;"></view>
+    </view>
     <view>公司案例</view>
   </view>
   <view class="menu_item">
-    <view style="width:68rpx;height:60rpx;{{img}};background-position:-68px 0;margin:0 auto;"></view>
+    <view class="menu_top">
+      <view class="menu_icon scale1" style="{{img}};background-position:-136px -3437px;"></view>
+    </view>
     <view>联系我们</view>
   </view>
 </view>
 <view class="w710">
     <view id="marquee" class="flexRowBetween">
-      <view class="horn"><view style="width:34rpx;height:34rpx;{{img}};background-position:-296px 0;"></view></view>
+      <view class="horn">
+        <view class="scale2" style="width:34px;height:34px;{{img}};background-position:-590px -3437px;"></view>
+    </view>
       <view class="marquee_right">
         <view class="marquee_box">
           <view class="marquee_text font28 flex" style="{{orientation}}:{{marqueeDistance2}}px;width:100%;height:100%;">
@@ -70,7 +88,7 @@
       <view class="product_cont flexRowBetween">
         <view class="pro_vertical">
           <view class="product_tlt font30 color1 flexCenter">
-            <view style="width:40rpx;height:40rpx;{{img}};background-position:-272px 0"></view>
+            <view class="scale2" style="width:40px;height:40px;{{img}};background-position:-632px -3437px"></view>
             空间设计
           </view>
           <view class="font28 color1">树立品牌形象和风格</view>
@@ -83,7 +101,7 @@
         <view class="product_cont flex">
           <view class="pro_vertical">
             <view class="product_tlt font30 color1 flexCenter">
-              <view style="width:40rpx;height:40rpx;{{img}};background-position:-272px 0"></view>
+              <view class="scale2" style="width:40px;height:40px;{{img}};background-position:-544px -3437px"></view>
               空间设计
             </view>
             <view class="font28 color1">树立品牌形象和风格</view>
@@ -95,7 +113,7 @@
         <view class="product_cont flex">
           <view class="pro_vertical">
             <view class="product_tlt font30 color1 flexCenter">
-              <view style="width:40rpx;height:40rpx;{{img}};background-position:-316px 0"></view>
+              <view class="scale2" style="width:40px;height:30px;{{img}};background-position:-682px -3437px"></view>
               空间设计
             </view>
             <view class="font28 color1">树立品牌形象和风格</view>
@@ -109,7 +127,7 @@
     <view class="product_cont flexRowBetween">
       <view class="pro_vertical">
         <view class="product_tlt font30 color1 flexCenter">
-          <view style="width:40rpx;height:40rpx;{{img}};background-position:-330px -34px;"></view>
+          <view class="scale2" style="width:40px;height:40px;{{img}};background-position:-662px -3507px"></view>
           空间设计
         </view>
         <view class="font28 color1">树立品牌形象和风格</view>
@@ -143,20 +161,27 @@
 </view>
 <view class="navbar">
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index/index">
-        <view class="nav_img" style="{{img}};background-position:1px -35px">
-        </view>
+      <view class="navbar_top">
+        <view class="nav_img scale1" style="{{img}};background-position:0px -3507px"></view>
+      </view>
         <view class="text this-text">首页</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index1/index1">
-        <view class="nav_img" style="{{img}};background-position:-81px -35px"></view>
+        <view class="navbar_top">
+        <view class="nav_img scale1" style="{{img}};background-position:-162px -3507px"></view>
+      </view>
         <view class="text">公司业务</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index2/index2">
-        <view class="nav_img" style="{{img}};background-position:-136px -35px"></view>
+        <view class="navbar_top">
+        <view class="nav_img scale1" style="{{img}};background-position:-272px -3507px"></view>
+      </view>
         <view class="text">公司动态</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index3/index3">
-        <view class="nav_img" style="{{img}};background-position:-188px -35px"></view>
+        <view class="navbar_top">
+        <view class="nav_img scale1" style="{{img}};background-position:-376px -3507px"></view>
+      </view>
         <view class="text">联系我们</view>
     </view>
 </view>

@@ -7,11 +7,13 @@ const token = new Token();
 
 Page({
   data: {
-    img:"background:url('/images/hair.png')",
   },
   onLoad() {
     const self = this;
     self.getUserInfoData();
+    self.setData({
+      img:app.globalData.img,
+    });
   },
 
   getUserInfoData(){

@@ -22,7 +22,8 @@ Page({
     const self = this;
     wx.showLoading();
     self.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img
     });
     self.data.name = options.name;
     if(!wx.getStorageSync('hair_token')){

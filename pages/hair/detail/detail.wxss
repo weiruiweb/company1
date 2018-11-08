@@ -7,8 +7,8 @@
 	font-size:32rpx;
 }
 .product_top{
-	padding:20rpx 35rpx 35rpx;
-	border-bottom:solid 1px #ececec;
+	width:94.8%;
+	padding:30rpx 2.6%;
 }
 .name_share image{
 	width:35rpx;
@@ -105,7 +105,11 @@ line-height:62rpx;}
 }
 .user_img{
 	float:left;
-	padding-top:10rpx;
+	margin-right:6rpx;
+	width:68rpx;
+	height:68rpx;
+	border-radius:50%;
+	overflow:hidden;
 }
 .comment_list{
 	padding:22rpx 35rpx 14rpx;
@@ -144,7 +148,7 @@ line-height:62rpx;}
 	bottom:0rpx;
 	overflow:hidden;
 	background:#fff;
-	z-index:999;
+	z-index:99;
 }
 .consult{
 	width:35rpx;
@@ -199,22 +203,22 @@ line-height:62rpx;}
 	position:relative;
 }
 #choose{
-	height:566rpx;
+	height:586rpx;
 	width:704rpx;
 	position:fixed;
-	bottom:-100rpx;
+	bottom:-566rpx;
 	padding:32rpx 25rpx;
 	background:#fff;
 	z-index:99;
 }
 .sildeIn{
 	transition:all 1s;
-	transform:translateY(-120rpx);
+	transform:translateY(-586rpx);
 
 }
 .slideOut{
 	transition:all 1s;
-	transform:translateY(450rpx);
+	transform:translateY(586rpx);
 
 }
 .pricity{
@@ -302,11 +306,19 @@ line-height:62rpx;}
 	color:#878787;
 	border-right:solid 1px #e5e5e5; 
 	}
-.video{
-	width:624rpx;
-	height:350rpx;
-	margin:0rpx auto 200rpx;
-}
+
 .detail_show{
 	margin-bottom:120rpx;
+}
+.share{
+	width:32px;
+	height:32px;
+}
+.star_icon{
+	width:16px;
+	height:16px;
+	background-position: -543px -95px;
+}
+.buy_now{
+	z-index:9999;
 }

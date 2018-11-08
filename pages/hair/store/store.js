@@ -13,7 +13,6 @@ Page({
     autoplay: true,
     intervalOne:2000,
     duration: 1000,
-    img:"background:url('/images/hair.png')",
   },
   //事件处理函数
   onLoad(options) {
@@ -21,7 +20,9 @@ Page({
     wx.showLoading();
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData();
-
+    self.setData({
+      img:app.globalData.img
+    });
   },
 
 

@@ -11,6 +11,9 @@ Page({
   },
   
   onLoad: function () {
+  	this.setData({
+      img:app.globalData.img,
+    });
   },
   intoPath(e) {
     const self = this;

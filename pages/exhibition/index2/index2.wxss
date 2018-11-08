@@ -16,7 +16,26 @@
 	border-bottom:solid 1px #21c3d4;
 }
 .nav_img{
-	width:46rpx;
-	height:46rpx;
+	width:46px;
+	height:46px;
 	margin:0 auto;
+}
+.menu_icon{
+	width:68px;
+	height:60px;
+}
+.menu_top{
+	width:68rpx;
+	height:60rpx;
+	overflow:hidden;
+	margin:0 auto;
+}
+.navbar_top{
+	width:44rpx;
+	height:44rpx;
+	overflow: hidden;
+	margin:16rpx auto 0 auto;
+}
+.navbar .text{
+	margin-top:6rpx;
 }

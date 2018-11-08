@@ -22,6 +22,9 @@ Page({
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData();
     self.getSliderData();
+    self.setData({
+      img:app.globalData.img
+    }); 
   },
 
 

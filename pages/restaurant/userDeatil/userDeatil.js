@@ -7,11 +7,11 @@ const token = new Token();
 
 Page({
   data: {
-    img:"background:url('/images/restaurant.png')",
   },
   onLoad: function () {
     this.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img
     })
   },
   userInfo:function(){

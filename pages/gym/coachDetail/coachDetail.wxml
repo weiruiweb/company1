@@ -1,18 +1,22 @@
 <!--userINfor.wxml-->
-<view class="banner">
-    <view style="width:100%;height:320rpx;{{img}};background-position:0 -596px; "></view>
+<view class="banners">
+    <image src="/images/coach.jpg"></image>
     <view class="coach_name">库里教练</view>
 
 </view>
 <view class="ader flexRowCenter">
-    <view style="width:39rpx;height: 28rpx;{{img}};background-position:-70px 0;"></view>
+    <view class="scale2" style="width:39px;height: 28px;{{img}};background-position:-140px -3566px;"></view>
     人要是不去健身，那和咸鱼有什么区别
-    <view style="width:39rpx;height: 28rpx;{{img}};background-position:-92px 0;"></view>
+    <view class="scale2" style="width:39px;height: 28px;{{img}};background-position:-184px -3566px;"></view>
 </view>
 <view class="w710">
     <view class="intro_cont">
         <view class="w710">
             <view class="user_tlt">
+                <view class="icon_box">
+                    <view class="user_icon scale2" style="{{img}};height:26px;background-position:-225px -3700px;">
+                    </view>
+                </view>
                 <view class="tlt_cont">获奖经历</view>
             </view>
             <view class="intro_detail">
@@ -25,6 +29,10 @@
     <view class="intro_cont" style="height:278rpx;">
         <view class="w710">
             <view class="user_tlt">
+                <view class="icon_box">
+                    <view class="user_icon scale2" style="{{img}};background-position:-676px -3700px;">
+                    </view>
+                </view>
                 <view class="tlt_cont">个人故事</view>
             </view>
             <view class="intro_detail" style="height:178rpx;">
@@ -50,21 +58,21 @@
                     <view class="text1">7月24日</view>
                     <view class="text2">星期二</view>
                     <view class="up_down">
-                       <image  src="{{selectId == 0?'/images/up_down1.png':''}}"></image>
+                       <image  src="{{selectId == 0?'/images/up_down.png':''}}"></image>
                     </view>
                 </view>
                 <view class="time_item" data-id="1" bindtap="select">
                     <view class="text1">7月24日</view>
                     <view class="text2">星期二</view>
                     <view class="up_down">
-                       <image  src="{{selectId == 1?'/images/up_down1.png':''}}"></image>
+                       <image  src="{{selectId == 1?'/images/up_down.png':''}}"></image>
                     </view>
                 </view>
                 <view class="time_item" data-id="2" bindtap="select">
                     <view class="text1">7月24日</view>
                     <view class="text2">星期二</view>
                     <view class="up_down">
-                       <image  src="{{selectId == 2?'/images/up_down1.png':''}}"></image>
+                       <image  src="{{selectId == 2?'/images/up_down.png':''}}"></image>
                     </view>
                 </view>
                 <view class="time_item" data-id="3" bindtap="select">
@@ -73,7 +81,7 @@
                     </view>
                     <view class="text2">星期二</view>
                     <view class="up_down">
-                       <image  src="{{selectId == 3?'/images/up_down1.png':''}}"></image>
+                       <image  src="{{selectId == 3?'/images/up_down.png':''}}"></image>
                     </view>
                 </view>
             </view>

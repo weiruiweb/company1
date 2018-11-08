@@ -14,7 +14,7 @@
 	<view class="ticket_sort {{num == 0?'madeShow':''}}">
 		<block wx:for="{{web_mainData}}" wx:key="id">
 			<view class="ticket_bg">
-				<!-- <image src="/images/discount5.png"></image> -->
+				<image src="/images/discount4.jpg"></image>
 				 	<view class="ticket_cont">
 			   		<view class="discount_left">
 			   			¥<text>{{item.products[0].snap_product.discount}}</text>
@@ -31,7 +31,7 @@
 	<view class="ticket_sort {{num == 1?'madeShow':''}}">
 		<block wx:for="{{web_mainData}}" wx:key="id">
 		  	<view class="ticket_bg">
-			   <!-- <image src="/images/discount4.png"></image> -->
+			   <image src="/images/discount5.jpg"></image>
 			   <view class="ticket_cont">
 			   		<view class="discount_left discount_left1" style="width:40%">
 			   			<text>{{item.products[0].snap_product.discount}}</text>折

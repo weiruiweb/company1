@@ -10,13 +10,16 @@
 	margin:0 auto;
 }
 .user_pro{
-	width:23%;
+	width:21%;
 	height:106rpx;
 }
 .user_center{
 	height:16rpx;
-	width:54%;
+	width:58%;
 	background:#fff;
+}
+.user_txt1{
+	color:#fff;
 }
 .user_pro image{
 	width:100%;

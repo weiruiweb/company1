@@ -11,7 +11,7 @@
   </view>
   <view class="chose_pay">
     <view class="pay1">
-        <view style="width: 92rpx;height:92rpx;{{img}};background-position: -273px -25px;margin-left: 20rpx;"></view>
+        <view class="scale2" style="width: 92px;height:92px;{{img}};background-position: -619px -1756px;margin-left: 20rpx;"></view>
     </view>
   </view>
 </view>

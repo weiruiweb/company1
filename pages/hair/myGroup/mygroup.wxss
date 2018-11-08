@@ -50,8 +50,8 @@ page{
 	color:#333;
 }
 .circle{
-	width:10rpx;
-	height:10rpx;
+	font-size:30rpx;
+	color:#ff5176;
 	margin-right:10rpx;
 }
 .status{
@@ -61,7 +61,12 @@ page{
 .group_top{
 	margin:15rpx 0rpx;
 }
-.success{
+.success_box{
 	width:186rpx;
-	height:146rpx;
+	height:156rpx;
+	overflow:hidden;
+}
+.success{
+	width:186px;
+	height:150px;
 }

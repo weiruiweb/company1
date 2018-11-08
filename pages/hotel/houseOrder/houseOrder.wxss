@@ -158,3 +158,6 @@ view{
 .minus,.add{
 	background:#262626;
 }
+.edit_number{
+	width:100%;
+}

@@ -8,16 +8,6 @@
         </block>
     </swiper>
 </view>
-
-<!--   <view id="green" class="scroll-view-item bc_green"></view>
-  <view id="red" class="scroll-view-item bc_red"></view>
-  <view id="yellow" class="scroll-view-item bc_yellow"></view>
-  <view id="blue" class="scroll-view-item bc_blue"></view>
-  <view id="blue" class="scroll-view-item bc_blue"></view>
-  <view id="blue" class="scroll-view-item bc_blue"></view>
-  <view id="blue" class="scroll-view-item bc_blue"></view>
-  <view id="blue" class="scroll-view-item bc_blue"></view>
-</scroll-view> -->
 <view class="w710" id="index_cont">
   <view class="w100 index_in">
     <view class="gym_intro">
@@ -32,11 +22,21 @@
           </view>
           <view class="detail_right">
             <view class="star flex">
-              <view class="star_item" style="{{img}};background-position:-153px -68px;"></view>
-              <view class="star_item" style="{{img}};background-position:-153px -68px;"></view>
-              <view class="star_item" style="{{img}};background-position:-153px -68px;"></view>
-              <view class="star_item" style="{{img}};background-position:-153px -68px;"></view>
-              <view class="star_item" style="{{img}};background-position:-172px -68px;"></view>
+              <view class="star_icon">
+                <view class="star_item scale1" style="{{img}};background-position:-308px -3700px;"></view>
+              </view>
+              <view class="star_icon">
+                <view class="star_item scale1" style="{{img}};background-position:-308px -3700px;"></view>
+              </view>
+              <view class="star_icon">
+                <view class="star_item scale1" style="{{img}};background-position:-308px -3700px;"></view>
+              </view>
+              <view class="star_icon">
+                <view class="star_item scale1" style="{{img}};background-position:-308px -3700px;"></view>
+              </view>
+              <view class="star_icon">
+                <view class="star_item scale1" style="{{img}};background-position:-343px -3700px;"></view>
+              </view>
             </view>
             <view class="star_number">4/5</view>
           </view>
@@ -52,7 +52,7 @@
 <view class="w710">
   <view class="index_coach flexRowBetween">
     <view class="coach_icon">
-      <view style="width:22rpx;height:36rpx;{{img}};background-position: -68px -100px"></view>
+      <view class="scale1" style="width:22px;height:36px;{{img}};background-position: -138px -3763px"></view>
     </view>
     <view class="coach_list">
     <scroll-view scroll-x class="scroll-header">
@@ -69,7 +69,7 @@
               300min
             </view>
             <view class="coach_add">
-              <image src="/images_gym/index_icon1.png"></image>
+              <view class="add_icon scale1" style="{{img}};background-position:-434px -3566px;"></view>
             </view>
         </view>
       </block>
@@ -95,7 +95,7 @@
             </view>
             <view class="course2">
               <view class="sign_up flex">
-                <view style="width:28rpx;height:28rpx;{{img}};background-position:-267px 0px"></view>
+                <view class="scale2" style="width:28px;height:28px;{{img}};background-position:-534px -3566px"></view>
                 <view style="color:#bb212e;margin-right:26rpx;">79℃</view>
                 <view >报名状态：{{item.stock>1?'未满':'已满'}}</view>
               </view>
@@ -112,23 +112,33 @@
 </view>
 <view class="navbar">
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/index/index">
-        <view class="nav_img" style="{{img}};background-position:0 -38px;"></view>
-        <view class="text this-text" style="{{fonts[2].font}}">健身房</view>
+      <view class="nav_top">
+        <view class="nav_img scale1" style="{{img}};background-position:0 -3632px;"></view>
+      </view>
+        <view class="text this_text" style="{{fonts[2].font}}">健身房</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/course/course">
-        <view class="nav_img" style="{{img}};background-position:-98px -34px;"></view>
+        <view class="nav_top">
+          <view class="nav_img scale1" style="{{img}};background-position:-196px -3632px;"></view>
+        </view>
         <view class="text" style="{{fonts[2].font}}">分类</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/send/send">
-      <view class="nav_img" style="{{img}};background-position:-126px -34px;"></view>
+      <view class="nav_top">
+          <view class="nav_img scale1" style="{{img}};background-position:-252px -3632px;"></view>
+        </view>
       <view class="text" style="{{fonts[2].font}}">发布</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/coach/coach">
-        <view class="nav_img" style="{{img}};background-position:-184px -34px;"></view>
+        <view class="nav_top">
+          <view class="nav_img scale1" style="{{img}};background-position:-368px -3632px;"></view>
+        </view>
         <view class="text" style="{{fonts[2].font}}">教练</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/gym/user/user">
-        <view class="nav_img" style="{{img}};background-position:-239px -34px;"></view>
+        <view class="nav_top">
+          <view class="nav_img scale1" style="{{img}};width:60px;background-position:-478px -3632px;"></view>
+        </view>
         <view class="text" style="{{fonts[2].font}}">我的</view>
     </view>
 </view>

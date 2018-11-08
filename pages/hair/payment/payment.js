@@ -6,11 +6,12 @@ const token = new Token();
 
 Page({
   data: {
-    img:"background:url('/images/hair.png')",
   },
   
   onLoad: function () {
-   
+   this.setData({
+      img:app.globalData.img,
+    })
   },
   userInfo:function(){
     wx.navigateTo({

@@ -1,0 +1,86 @@
+<!--index3.wxml-->
+<view class="manage w710 flex">
+    <view class="manage_cont">
+        <view class="user_address flex color3">
+            <view class="address_icon">
+                <image src="/images/address.jpg"></image>
+            </view>
+            <view class="address_left">
+               <text>李雷</text><text>1888888888888</text>
+               <view class="avoidOverflow font30">陕西省西安市高新大都荟陕西省西安市高新大都荟陕西省西安市高新大都荟</view>
+            </view>
+            <view class="address_right">
+                <view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px">
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="w710" style="background: #fff;">
+    <view class="stroe_address flex">
+        <view class="store_left">
+            <image src="/images/address1.jpg"></image>
+        </view>
+        <view class="store_right font28 color6">
+            高新一号店
+        </view>
+    </view>
+</view>
+<view class="product w710" style="background: #fff;">
+    <view class="product_box  flexRowBetween">
+            <view class="product_left">
+                <image src="/images/index1.png"></image>
+            </view>
+            <view class="product_right">
+                <view class="product_detail">
+                    <view class="font32 color3 product_top">空间+导示</view>
+                    <view class="font24 color9">订购身份</view>
+                    <view class="font30 color6 product_price flex">¥189</view>
+                </view>
+            </view>
+    </view>
+</view>
+<view class="choose_number w710 flexRowBetween"  style="background: #fff;">
+        <view class="number_txt">
+            数量
+        </view>
+        <view class="edit_number flexRowBetween">
+            <view class="minus">-</view>
+            <view class="number">1</view>
+            <view class="add">+</view>
+
+        </view>
+</view>
+<view class="user_infor flexRowBetween w710" data-id="0" bindtap="choose_pay" style="margin-top: 20rpx;">
+        <view class="user_left flexRowBetween">
+            <image src="/images/confirm1.jpg"></image>
+            <text class="font28 color6">选择优惠券</text>
+        </view>
+        <view class="user_right">
+            <image src="{{is_choose==0?'/images/confirm_choose.jpg':''}}"></image>
+        </view>
+</view>
+<view class="user_infor flexRowBetween w710" data-id="1" bindtap="choose_pay" style="margin-top: 20rpx;">
+        <view class="user_left flexRowBetween">
+            <image src="/images/confirm2.jpg"></image>
+            <text class="font28 color6">余额支付</text>
+        </view>
+        <view class="user_right">
+            <image src="{{is_choose==1?'/images/confirm_choose.jpg':''}}"></image>
+        </view>
+</view>
+<view class="user_infor flexRowBetween w710" data-id="2" bindtap="choose_pay">
+        <view class="user_left flexRowBetween">
+            <image src="/images/confirm3.jpg"></image>
+            <text class="font28 color6">微信支付</text>
+        </view>
+        <view class="user_right">
+            <image src="{{is_choose==2?'/images/confirm_choose.jpg':''}}"></image>
+        </view>
+</view>
+<view class="confirm_btn flex font30">
+   <view class="confirm_left color6">实付款: <text class="price font32">¥1899</text></view> 
+   <view class="confirm_right color1 flex">
+        <button class="submit_info">立即付款</button>
+   </view> 
+</view>

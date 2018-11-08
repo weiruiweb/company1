@@ -15,7 +15,6 @@ Page({
       type:4
     },
     id:'',
-    img:"background:url('/images/gym.png')",
   },
 
 
@@ -23,6 +22,9 @@ Page({
     const self = this;
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData();
+    self.setData({
+      img:app.globalData.img,
+    });
   },
   
 

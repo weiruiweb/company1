@@ -1,7 +1,7 @@
 <!--shopping.wxml-->
 <view id="shoppingEmpty">
 	<view class="shopping_cart">
-		<view class="scale2" style="{{img}};width:104px;height:96px;background:0 -198px;margin:0 auto"></view>
+		<view class="" style="{{img}};width:104px;height:96px;background-position:0 -198px;margin:0 auto"></view>
 	</view>
 	<view class="note">空空如也购物车没有任何商品</view>
 	<view class="goShopping" bindtap="go_shopping">去逛逛</view>

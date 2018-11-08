@@ -1,14 +1,14 @@
 <!--userINfo.wxml-->
 <view id="credit">
 	<view class="credit_top">
-		<image src="/images_hair/credit_icon1.jpg"></image>
+		<view class="scale2" style="width:160px;height:126px;{{img}};background-position:-140px -2338px "></view>
 		<view>
 		<text>目前积分:</text>
 		<text class="cre_number">{{web_userData.info.data[0].balance}}</text>
 		</view>
 	</view>
-	<view class="cre_detail">
-		<image src="/images_hair/credit_icon2.jpg"></image>
+	<view class="cre_detail flex">
+		<view class="user_icon  scale4" style="{{img}};background-position: -121px -2632px"></view>
 		<text>消费详情</text>
 	</view>
 	<view class="credit_list flexRowBetween">

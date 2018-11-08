@@ -8,7 +8,10 @@ Page({
   },
   
   onLoad: function () {
-   
+    const self = this;
+    self.setData({
+      img:app.globalData.img,
+    });
   },
   userInfo:function(){
     wx.navigateTo({

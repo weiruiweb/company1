@@ -16,14 +16,14 @@ Page({
     duration: 1000,
     buttonClicked:true,
     classData:[],
-    img:"background:url('/images/gym.png')",
   },
 
   onLoad(options) {
     const self = this;
     wx.showLoading();
     self.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img,
     });
     self.data.name = options.name;
     if(!wx.getStorageSync('gym_token')){

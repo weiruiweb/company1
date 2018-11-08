@@ -1,7 +1,7 @@
 <!--shopping.wxml-->
 <view id="shoppingEmpty">
 	<view class="shopping_cart">
-		<view style="width: 108rpx;height:96rpx;{{img}};background-position:0 -334px;margin:0 auto;"></view>
+		<view class="scale" style="width: 216px;height:192px;{{img}};background-position:-425px -2628px;margin:0 auto;"></view>
 	</view>
 	<view class="note">你还不是会员</view>
 	<view class="goShopping" bindtap="newMemeber">立即开通</view>

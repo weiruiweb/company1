@@ -12,7 +12,10 @@ Page({
   //事件处理函数
 
   onLoad(options){
-
+    const self = this;
+    self.setData({
+      img:app.globalData.img,
+    });
   },
  
   intoPath(e){

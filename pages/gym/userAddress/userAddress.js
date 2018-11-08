@@ -11,7 +11,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    img:"background:url('/images/gym.png')",
     mainData:[],
     isLoadAll:false,
 
@@ -20,6 +19,9 @@ Page({
   onLoad(){
     const self = this;
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    self.setData({
+      img:app.globalData.img,
+    });
   },
 
   onShow(){

@@ -15,7 +15,6 @@ Page({
     buttonClicked:true,
     mainData:[],
     complete_api:[],
-    img:"background:url('/images/hotel.png')",
   },
   //事件处理函数
  
@@ -30,6 +29,9 @@ Page({
     };
     self.getSliderData(),
     self.getMainData()
+    self.setData({
+      img:app.globalData.img,
+    });
   },
 
   getSliderData(){

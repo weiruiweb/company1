@@ -17,7 +17,6 @@ Page({
       detail:'',
     },
     id:'',
-    img:"background:url('/images/gym.png')",
   },
 
   onLoad(options) {
@@ -30,6 +29,9 @@ Page({
         web_region:self.data.region
       })
     };
+    self.setData({
+      img:app.globalData.img,
+    });
   },
 
   getMainData(id){

@@ -13,14 +13,14 @@ Page({
       type:3,
       mainImg:[]
     },
-    img:"background:url('/images/gym.png')",
   },
   
   onLoad(){
     const self = this;
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.setData({
-      web_imgData:self.data.submitData.mainImg
+      web_imgData:self.data.submitData.mainImg,
+      img:app.globalData.img,
     });
   },
 

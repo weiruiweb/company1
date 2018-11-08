@@ -9,10 +9,11 @@ Page({
   isShow:false,
   isShows:false,
   this_item:0,
-  img:"background:url('/images/restaurant.png')",
   },
   onLoad: function () {
-   
+    this.setData({
+      img:app.globalData.img, 
+    })
   },
   order_status:function(e){
     var current = e.currentTarget.dataset.current

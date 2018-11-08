@@ -12,13 +12,15 @@ Page({
     isShow:false,
     isShows:false,
     this_item:0,
-    img:"background:url('/images/hair.png')",
   },
   
   onLoad() {
    const self  = this;
    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
    self.getMainData();
+   this.setData({
+      img:app.globalData.img,
+    })
   },
 
 
@@ -94,12 +96,8 @@ Page({
   },
   close:function(){
     this.setData({
-      isShow:false
-    })
-  },
-   closed:function(){
-    this.setData({
-      isShows:false
+      isShow:false,
+      isShows:false,
     })
   },
   this_bg:function(e){

@@ -18,12 +18,16 @@
       </view>
       <view class="chose_pay flexRowBetween">
         <view>
-          <view class="pay1" style="{{img}};background-position:-206px -82px;"></view>
+          <view style="height:94rpx;overflow: hidden;">
+            <view class="pay1 scale1" style="{{img}};background-position:-621px -1757px;"></view>
+          </view>
           <text class="text1">微信支付</text>
         </view>
         <view>
-          <view class="pay1" style="{{img}};background-position:-258px -82px;"></view>
-          <text class="text1">余额支付</text>
+          <view style="height:94rpx;overflow: hidden;">
+            <view class="pay1 scale1 " style="{{img}};background-position:0px -2356px;"></view>
+          </view>
+          <text class="text1" style="margin-top: 20rpx;">余额支付</text>
         </view>  
       </view>
     </view>

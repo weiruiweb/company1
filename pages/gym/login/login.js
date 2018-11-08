@@ -1,14 +1,13 @@
 //logs.js
 import {Api} from '../../../utils/api.js';
 var api = new Api();
-
+var app = getApp()
 import {Token} from '../../../utils/token.js';
 var token = new Token();
 
 Page({
 
   data: {
-    img:"background:url('/images/gym.png')",
     sForm:{
       login_name:'',
       password:''
@@ -16,7 +15,11 @@ Page({
     },
     web_show:true
   },
-
+  onLoad(){
+    this.setData({
+      img:app.globalData.img,
+    });
+  },
   onShow(){
     const self = this;
     if(wx.getStorageSync('gym_threeInfo')&&wx.getStorageSync('gym_threeToken')){
@@ -52,8 +55,6 @@ Page({
     }
     token.getToken(callback);
   },
-
-
   bindInputChange(e){
     const self = this;
     api.fillChange(e,self,'sForm');
@@ -61,11 +62,6 @@ Page({
       web_sForm:self.data.sForm,
     });
   },
-
-
-
-
-
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

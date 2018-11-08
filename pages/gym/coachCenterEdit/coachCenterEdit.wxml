@@ -51,11 +51,11 @@
 			<view class="uploder">
 			    <view class="uploder_all flex">
 			        <view class="uploder_item" style="display:flex">
-			              <image src="/images_gym/product1.jpg"></image>
+			              <image src="/images/product1.jpg"></image>
 			        </view>
 			        <view class="uploder_item">
 			          <view class="uploader__input" bindtap="upLoadImg" >
-			            <image src="/images_gym/fabu.png"></image>
+			            <view class="scale1" style="width:160px;height:164px;{{img}};background-position:-588px -3765px"></view>
 			          </view>
 			        </view>
 			    </view>
@@ -68,21 +68,21 @@
 			<view class="uploder">
 			    <view class="uploder_all flex">
 			        <view class="uploder_item" style="display:flex">
-			              <image src="/images_gym/product1.jpg"></image>
+			              <image src="/images/product.jpg"></image>
 			        </view>
 			        <view class="uploder_item">
 			          <view class="uploader__input" bindtap="upLoadImg" >
-			            <image src="/images_gym/fabu.png"></image>
+			            <view class="scale1" style="width:160px;height:164px;{{img}};background-position:-588px -3765px"></view>
 			          </view>
 			        </view>
 			    </view>
 			</view>
 			<view class="fabu">
 			  <view class="fabu_cont flexRowBetween"  style="font-size:30rpx;">
-			    <view class="fabu_right"   bindtap="intoPathRedi" data-path="/pages/gym/user/user">
+			    <view class="fabu_right color1"   bindtap="intoPathRedi" data-path="/pages/gym/user/user">
 			        保存
 			    </view>
-			    <view class="fabu_left">
+			    <view class="fabu_left color1">
 			      取消
 			    </view>
 			  </view>

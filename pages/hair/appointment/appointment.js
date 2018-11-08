@@ -9,13 +9,15 @@ Page({
 
     tabCurrent:0,
     mainData:[],
-    img:"background:url('/images/hair.png')",
   },
   
   onLoad(options) {
     const self = this;
     self.data.id =  options.id;
-    self.getMainData()
+    self.getMainData();
+    self.setData({
+      img:app.globalData.img
+    });
   },
 
   getMainData(){

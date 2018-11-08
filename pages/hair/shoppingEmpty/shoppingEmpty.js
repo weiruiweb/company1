@@ -10,7 +10,6 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    img:"background:url('/images/hair.png')",
   },
   //事件处理函数
   bindViewTap: function() {
@@ -19,7 +18,10 @@ Page({
     })
   },
   onLoad: function () {
-   
+    const self = this;
+    self.setData({
+      img:app.globalData.img,
+    });
   },
   newMemeber:function(){
     wx.navigateTo({

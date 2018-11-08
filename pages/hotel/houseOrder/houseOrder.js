@@ -24,6 +24,9 @@ Page({
     self.data.id = options.id;
     self.getSkuData();
     self.getartData()
+    self.setData({
+      img:app.globalData.img,
+    });
   },
 
   getSkuData(){

@@ -141,3 +141,11 @@ textarea{
 	width:100%;
 	align-items:center;
 }
+.submit_info{
+	background:#bb212e;
+	width:500rpx;
+}
+.user_icon1{
+	width:12px;
+	height:22px;
+}

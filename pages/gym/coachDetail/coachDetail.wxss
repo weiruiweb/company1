@@ -9,12 +9,12 @@ page{
 	min-height:100%;
 	background:#333;
 }
-.banner{
+.banners{
 	width:100%;
 	height:320rpx;
 	position:relative;
 }
-.banner image{
+.banners image{
 	width:100%;
 	height:320rpx;
 
@@ -31,6 +31,7 @@ page{
 	left:10%;
 	font-size:28rpx;
 	color:#ccc;
+	z-index:999;
 }
 .info_img{
 	height:220rpx;
@@ -236,4 +237,12 @@ page{
 }
 #phone input{
 	width:76%;
+}
+.submit_info{
+	width:500rpx;
+	background:#bb212e;
+}
+.user_icon {
+	width:32px;
+	height:36px;
 }

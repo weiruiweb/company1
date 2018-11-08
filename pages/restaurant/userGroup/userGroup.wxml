@@ -17,8 +17,8 @@
 			<view class="group_list  {{currentId == 0?'this_group':''}}">
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
-						<view class="group_top">
-							<image src="/images_restaurant/circle.jpg" class="circle"></image>
+						<view class="group_top flex">
+							<view class="circle flex">•</view>
 							<text class="data">2018.7.28</text>
 						</view>
 						<view class="my_name">
@@ -27,13 +27,13 @@
 						</view>
 					</view>
 					<view class="group_status">
-						<view style="{{img}};width:168rpx;height:146rpx;background-position:-100px -520px;float: right;"></view>
+						<view class="scale5" style="{{img}};width:168px;height:146px;background-position:-296px -1133px;float: right;"></view>
 					</view>
 				</view>
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
-						<view class="group_top">
-							<image src="/images_restaurant/circle.jpg" class="circle"></image>
+						<view class="group_top flex">
+							<view class="circle flex">•</view>
 							<text class="data">2018.7.28</text>
 						</view>
 						<text class="text1">我是团长</text>
@@ -41,7 +41,7 @@
 
 					</view>
 					<view class="group_status">
-						<view style="{{img}};width:168rpx;height:146rpx;background-position:-100px -520px;float: right;"></view>
+						<view class="scale5" style="{{img}};width:168px;height:146px;background-position:-296px -1133px;float: right;"></view>
 					</view>
 				</view>
 			</view>
@@ -51,27 +51,27 @@
 			<view class="group_list {{currentId == 1?'this_group':''}}">
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
-						<view class="group_top">
-							<image src="/images_restaurant/circle.jpg" class="circle"></image>
+						<view class="group_top flex">
+							<view class="circle flex">•</view>
 							<text class="data">2018.7.28</text>
 						</view>
 						<text class="text1">我是团长</text>
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<view style="{{img}};width:168rpx;height:146rpx;background-position:0px -520px;float: right;"></view>
+					<view class="scale2"  style="{{img}};width:168px;height:146px;background-position:-299px -1336px;float: right;"></view>
 				</view>
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
-						<view class="group_top">
-							<image src="/images_restaurant/circle.jpg" class="circle"></image>
+						<view class="group_top flex">
+							<view class="circle flex">•</view>
 							<text class="data">2018.7.28</text>
 						</view>
 						<text class="text1">我是团长</text>
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<view style="{{img}};width:168rpx;height:146rpx;background-position:0px -520px;float: right;"></view>
+					<view class="scale2"  style="{{img}};width:168px;height:146px;background-position:-299px -1336px;float: right;"></view>
 				</view>
 			</view>
 
@@ -80,27 +80,27 @@
 			<view class="group_list {{currentId == 2?'this_group':''}}">
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
-						<view class="group_top">
-							<image src="/images_restaurant/circle.jpg" class="circle"></image>
+						<view class="group_top flex">
+							<view class="circle flex">•</view>
 							<text class="data">2018.7.28</text>
 						</view>
 						<text class="text1">我是团长</text>
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<view style="{{img}};width:168rpx;height:146rpx;background-position:0px -234px;float: right;"></view>
+					<view class="scale2"  style="{{img}};width:168px;height:146px;background-position:0px -1599px;float: right;"></view>
 				</view>
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
-						<view class="group_top">
-							<image src="/images_restaurant/circle.jpg" class="circle"></image>
+						<view class="group_top flex">
+							<view class="circle flex">•</view>
 							<text class="data">2018.7.28</text>
 						</view>
 						<text class="text1">我是团长</text>
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<view style="{{img}};width:168rpx;height:146rpx;background-position:0px -520px;float: right;"></view>
+					<view class="scale2" style="{{img}};width:168px;height:146px;background-position:0px -1599px;float: right;"></view>
 				</view>
 			</view>
 

@@ -13,14 +13,14 @@ Page({
     index:0,
     currentId:72,
     isLoadAll:false,
-    img:"background:url('/images/hair.png')",
   },
   
   onLoad(options) {
     const self = this;
     wx.showLoading();
     self.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img,
     });
 
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);

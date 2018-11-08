@@ -15,7 +15,6 @@ Page({
       thirdapp_id:getApp().globalData.gym_thirdapp_id,
       category_id:88 
     },
-    img:"background:url('/images/gym.png')",
   },
   //事件处理函数
   onLoad(options){
@@ -25,7 +24,10 @@ Page({
       web_num:self.data.searchItem.category_id
     });
     self.getLabelData();
-    self.getMainData()
+    self.getMainData();
+    self.setData({
+      img:app.globalData.img,
+    });
   },
 
 

@@ -16,6 +16,7 @@ Page({
       longitude:'',
       phone:'',
       detail:'',
+
     },
     id:'',
   },
@@ -30,7 +31,10 @@ Page({
         web_region:self.data.region
       })
     };
-    self.switch2Change()  
+    self.switch2Change();
+    self.setData({
+      img:app.globalData.img, 
+    })
   },
 
   getMainData(id){

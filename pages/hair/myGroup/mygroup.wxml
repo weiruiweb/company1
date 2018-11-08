@@ -18,26 +18,29 @@
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
 						<view class="group_top flex">
-							<view class="circle" style="{{img}};background-position:-198px 0;"></view>
+							<view class="circle">•</view>
 							<text class="data">2018.7.28</text>
 						</view>
 						<text class="text1">我是团长</text>
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<view style="{{img}};background-position:0 -250px;" class="success"></view>
+					<view class="success_box">
+						<view class="scale1 success" style="{{img}};background-position:0px -2672px;"></view>
+					</view>
 				</view>
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
 						<view class="group_top flex">
-							<view class="circle" style="{{img}};background-position:-198px 0;"></view>
+							<view class="circle">•</view>
 							<text class="data">2018.7.28</text>
 						</view>
 						<text class="text1">我是团长</text>
 						<text class="text2">花费 220.00元</text>
-
 					</view>
-					<view style="{{img}};background-position:0 -250px;" class="success"></view>
+					<view class="success_box">
+						<view class="scale1 success" style="{{img}};background-position:0px -2672px;"></view>
+					</view>
 				</view>
 			</view>
 
@@ -47,24 +50,28 @@
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
 						<view class="group_top flex">
-							<view class="circle" style="{{img}};background-position:-198px 0;"></view>
+							<view class="circle">•</view>
 							<text class="data">2018.7.28</text>
 						</view>
 						<text class="text1">我是团长</text>
 						<text class="text2">花费 220.00元</text>
 					</view>
-					<view style="{{img}};background-position:-196px -250px;" class="success"></view>
+					<view class="success_box">
+						<view class="scale8"  style="{{img}};width:168px;height:150px;background-position:-299px -1332px;float: right;"></view>
+					</view>
 				</view>
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
 						<view class="group_top flex">
-							<view class="circle" style="{{img}};background-position:-198px 0;"></view>
+							<view class="circle">•</view>
 							<text class="data">2018.7.28</text>
 						</view>
 						<text class="text1">我是团长</text>
 						<text class="text2">花费 220.00元</text>
 					</view>
-					<view style="{{img}};background-position:-196px -250px;" class="success"></view>
+					<view class="success_box">
+						<view class="scale8"  style="{{img}};width:168px;height:150px;background-position:-299px -1332px;float: right;"></view>
+					</view>
 				</view>
 			</view>
 
@@ -74,26 +81,30 @@
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
 						<view class="group_top flex">
-							<view class="circle" style="{{img}};background-position:-198px 0;"></view>
+							<view class="circle">•</view>
 							<text class="data">2018.7.28</text>
 						</view>
 						<text class="text1">我是团长</text>
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<view style="{{img}};background-position:-98px -250px;" class="success"></view>
+					<view class="success_box">
+						<view class="scale8" style="{{img}};width:168px;height:146px;background-position:0px -1599px;float: right;"></view>
+					</view>
 				</view>
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
 						<view class="group_top flex">
-							<view class="circle" style="{{img}};background-position:-198px 0;"></view>
+							<view class="circle">•</view>
 							<text class="data">2018.7.28</text>
 						</view>
 						<text class="text1">我是团长</text>
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<view style="{{img}};background-position:-98px -250px;" class="success"></view>
+					<view class="success_box">
+						<view class="scale8" style="{{img}};width:168px;height:146px;background-position:0px -1599px;float: right;"></view>
+					</view>
 				</view>
 			</view>
 

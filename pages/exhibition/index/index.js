@@ -48,6 +48,9 @@ Page({
     self.getLabelDataTwo();
     self.getSliderData();
     self.getMainData();
+    self.setData({
+      img:app.globalData.img
+    });
   },
   
   run2: function () {

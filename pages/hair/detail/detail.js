@@ -24,7 +24,6 @@ Page({
     choose_sku_item:[],
     buttonType:'',
     buttonClicked:true,
-    img:"background:url('/images/small.png')",
   },
   
   onLoad(options){
@@ -38,6 +37,7 @@ Page({
     };
     self.setData({
       fonts:app.globalData.font,
+      img:app.globalData.img,
       web_count:self.data.count
     });
     if(options.id){
@@ -58,9 +58,6 @@ Page({
       withShareTicket: true
     });
   },
-
-
-
   collect(){
     const self = this;  
     if(self.data.buttonClicked){
@@ -151,9 +148,6 @@ Page({
     };
     api.productGet(postData,callback);
   },
-
-
-
   counter(e){
     const self = this;
     if(self.data.buttonClicked){
@@ -183,8 +177,12 @@ Page({
       web_count:count
     });
   },
-
-
+  select_this(e){
+    const self = this;
+    self.setData({
+      tabCurrent:e.currentTarget.dataset.current
+    });
+  },
 
   countTotalPrice(){  
     const self = this;
@@ -195,8 +193,6 @@ Page({
       web_totalPrice:self.data.totalPrice.toFixed(2)
     });
   },
-
-  
 
   selectModel(e){
     const self = this;
@@ -243,7 +239,9 @@ Page({
     }else{
       api.showToast('请完善信息','none')
     }
-
+    self.setData({
+      isShow:true
+    })
   },
 
 

@@ -9,7 +9,7 @@
 			<view class="product_name">
 				网站开发高端定制
 			</view>
-			<image src="/images_hair/share.jpg"></image>
+			<view class="share scale2" style="{{img}};background-position:-480px -96px"></view>
 		</view>
 		<view class="price_sale flexRowBetween">
 			<view class="price">
@@ -25,9 +25,7 @@
 			<text class="text1">请选择</text>
 			<input placeholder="基本展示 基本展示"></input>
 		</view>
-		<view class="next_page">	
-			<image src="/images_hair/next_page.jpg"></image>
-		</view>
+		<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
 	</view>
 	<view class="detail_comment flexRowBetween">
 		<view class="detail  {{tabCurrent == 0?'detail_select':''}}" data-current="0" bindtap="select_this">
@@ -46,72 +44,30 @@
 				<view class="comment_number">
 					评价(120)
 				</view>
-				<view class="good_percent">
+				<view class="good_percent flex">
 					<text>好评率</text>
 					<text class="percent">99%</text>
-					<image src="/images_hair/next_page.jpg"></image>
+					<view style="width:12rpx;height:100%;overflow: hidden;">
+						<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+					</view>
 				</view>
 			</view>
 			<view class="comment_list ">
 				<view class="flexRowBetween">
 					<view class="comment_user ">
 						<view class="user_img">
-						<image src="/images_hair/user1.jpg"></image>
+						<open-data type="userAvatarUrl" class="user_pho"></open-data>
 						</view>
 							<text class="text1">米桃子</text>
 							<text class="text2">2015.3.2</text>
 						
 					</view>
 					<view class="star flexRowBetween">
-						<image src="/images_hair/star.jpg"></image>
-						<image src="/images_hair/star.jpg"></image>
-						<image src="/images_hair/star.jpg"></image>
-						<image src="/images_hair/star.jpg"></image>
-						<image src="/images_hair/star.jpg"></image>
-					</view>
-				</view>
-				<view class="comment_cont">
-					很满意的一次购物很满意的一次购物很满意的一次购物
-				</view>
-			</view>
-			<view class="comment_list ">
-				<view class="flexRowBetween">
-					<view class="comment_user ">
-						<view class="user_img">
-						<image src="/images_hair/user1.jpg"></image>
-						</view>
-							<text class="text1">米桃子</text>
-							<text class="text2">2015.3.2</text>
-						
-					</view>
-					<view class="star flexRowBetween">
-						<image src="/images_hair/star.jpg"></image>
-						<image src="/images_hair/star.jpg"></image>
-						<image src="/images_hair/star.jpg"></image>
-						<image src="/images_hair/star.jpg"></image>
-						<image src="/images_hair/star.jpg"></image>
-					</view>
-				</view>
-				<view class="comment_cont">
-					很满意的一次购物很满意的一次购物很满意的一次购物
-				</view>
-			</view>
-			<view class="comment_list ">
-				<view class="flexRowBetween">
-					<view class="comment_user ">
-						<view class="user_img">
-						<image src="/images_hair/user1.jpg"></image>
-						</view>
-							<text class="text1">米桃子</text>
-							<text class="text2">2015.3.2</text>
-						
-					</view>
-					<view class="star flexRowBetween">
-						<image src="/images_hair/star.jpg"></image>
-						<image src="/images_hair/star.jpg"></image>
-						<image src="/images_hair/star.jpg"></image>
-						<image src="/images_hair/star.jpg"></image>
-						<image src="/images_hair/star.jpg"></image>
+						<view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
+				            <view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
+				            <view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
+				            <view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
+				            <view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
 					</view>
 				</view>
 				<view class="comment_cont">
@@ -131,7 +87,6 @@
 		</view>
 	</view>
 </view>
-
 <view id="choose" class="{{isShow?'sildeIn':'slideOut'}}">
 	<view class="flexRowBetween pricity">
 		<view class="choose_pro">
@@ -144,7 +99,7 @@
 			</view>
 		</view>
 		<view class="close" bindtap="close">
-		<image src="/images_hair/close.jpg"></image>
+			<view class="scale8" style="width:36px;height:36px;{{img}};background-position: -594px 0;"></view>
 		</view>
 	</view>
 	<view id="type" class="">
@@ -182,6 +137,9 @@
 			<view class="add">+</view>
 
 		</view>
+	</view>
+	<view class="go_buy buy_now" bindtap="intoPath" data-path="/pages/hair/confirmOrder/confirmOrder">
+		立即购买
 	</view>
 </view>
 

@@ -9,11 +9,11 @@
             <text class="text2">{{web_mainData.description}}</text>
           </view>
           <view class="star flex">
-            <view class="star_icon" style="{{img}};background-position: -274px 0;"></view>
-            <view class="star_icon" style="{{img}};background-position: -274px 0;"></view>
-            <view class="star_icon" style="{{img}};background-position: -274px 0;"></view>
-            <view class="star_icon" style="{{img}};background-position: -274px 0;"></view>
-            <view class="star_icon" style="{{img}};background-position: -274px 0;"></view>
+            <view class="star_icon scale1" style="{{img}};"></view>
+            <view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
+            <view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
+            <view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
+            <view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
           </view>
         </view>
     </view>
@@ -26,9 +26,11 @@
       </view>
   </view>
   <view class="service flex">
-      <view style="width:34rpx;height:30rpx;{{img}};background-position: -35px 0;"></view>
+     <view class="icon_box">
+          <view class="user_icon  scale4" style="{{img}};background-position: -121px -2632px"></view>
+        </view>
       <view style="width: 80%;text-align: left;"><text>服务项目</text></view>
-      <view style="width:18rpx;height:32rpx;{{img}};background-position: -262px 0;"></view>
+      <view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
   </view>
   <view class="service_list flexRowBetween">
       <text class="text1">单人自身洗剪吹一次</text>

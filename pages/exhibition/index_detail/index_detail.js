@@ -7,10 +7,7 @@ const token = new Token();
 
 
 Page({
-
-
   data: {
-
     artData:[],
     indicatorDots: true,
     autoplay: true,
@@ -23,7 +20,10 @@ Page({
   onLoad(options){
     const self = this;
     self.data.id = options.id;
-    self.getArtData()      
+    self.getArtData();
+    self.setData({
+      img:app.globalData.img
+    });      
   },
 
   getArtData(){

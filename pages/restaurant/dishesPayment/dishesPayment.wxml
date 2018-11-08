@@ -3,32 +3,32 @@
 	<view class="payment_left color1">订单：000002220</view>
 	<view class="payment_right color1">共4件合计：377元</view>
 </view>
-<view class="pay_tlt w750">
+<view class="pay_tlt w710">
 	支付方式
 </view>
-<view class="w750">
+<view class="w710">
 	<view class="pay_method flexRowBetween"  data-id="1" bindtap="choosePay">
 		<view class="pay_left flexRowBetween">
 			<view class="pay_icon">
-				<view class="pay_img" style="{{img}};background-position: -288px -520px"></view>
+				<view class="pay_img scale1" style="{{img}};background-position: -620px -1757px"></view>
 			</view>
 			<text>微信支付</text>
 		</view>
 		<view class="pay_right">
-			<view class="choose" style="{{isChoose ==1?img:''}};background-position: -320px -160px"></view>
+			<view class="choose" style="{{isChoose ==1?img:''}};background-position: -642px -1469px"></view>
 		</view>
 	</view>
 </view>
-<view class="w750">
+<view class="w710">
 	<view class="pay_method flexRowBetween"  data-id="2" bindtap="choosePay">
 		<view class="pay_left flexRowBetween">
 			<view class="pay_icon">
-				<view class="pay_img" style="{{img}};background-position: -288px -568px"></view>
+				<view class="pay_img scale1" style="{{img}};background-position: -24px -1497px"></view>
 			</view>
-			<text>微信支付</text>
+			<text>余额支付</text>
 		</view>
 		<view class="pay_right">
-			<view class="choose" style="{{isChoose ==2?img:''}};background-position: -320px -160px"></view>
+			<view class="choose" style="{{isChoose ==2?img:''}};background-position: -642px -1469px"></view>
 		</view>
 	</view>
 </view>

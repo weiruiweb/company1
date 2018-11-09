@@ -6,7 +6,9 @@
         <input placeholder="请输入充值金额"></input>
     </view>
     <view class="submit_info">
-      立即充值
+      <form bindsubmit="submit" class="form_button" report-submit="true">
+        <button form-type="submit" class="form_btn color1">立即充值</button>
+      </form>
     </view>
     
     

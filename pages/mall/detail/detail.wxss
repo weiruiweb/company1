@@ -191,7 +191,7 @@
 }
 .shoppingCart{
 	width:50%;
-	
+	height:100%;
 	background:#49e3de;
 	text-align:center;
 	}
@@ -340,7 +340,7 @@ video{
 }
 .shopping_cart{
 	width:46rpx;
-	margin:14rpx auto 0 auto;
+	margin:12rpx auto 0 auto;
 }
 .shopping_cart image{
 	width:46rpx;
@@ -354,5 +354,23 @@ video{
 	text-align:center;
 	line-height:20rpx;
 	font-size:20rpx;
+	color:#fff;
+}
+.go_buy button{
+	width:100%;
+	height:100%;
+	border:none;
+	background:none;
+	color:#fff;
+	padding:0;
+	line-height: 70rpx;
+	font-weight:normal;
+	font-size:30rpx;
+}
+.shoppingCart button{
+	width:100%;
+	height:100%;
+	background:none;
+	border: none;
 	color:#fff;
 }

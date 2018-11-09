@@ -126,4 +126,6 @@
     <view class="phone">预留电话：</view>
     <input placeholder="请输入预留电话"></input>
 </view>
-<button class="submit_info">预约教练</button>
+<form bindsubmit="submit" report-submit="true">
+    <button form-type="submit" class="form_btn submit_info color1">预约教练</button>
+</form>

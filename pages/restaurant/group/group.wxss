@@ -288,3 +288,11 @@ page{background:#f5f5f5;}
 	overflow:hidden;
 	margin:0rpx auto;
 }
+.grou_click  button{
+	height:77rpx;
+	line-height:77rpx;
+}
+.send_share button{
+	height:76rpx;
+	line-height:76rpx;
+}

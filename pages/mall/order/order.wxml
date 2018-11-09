@@ -46,7 +46,8 @@
 						<view class="order_left"><image src="{{c_item.snap_product.mainImg[0].url}}"></image></view>
 						<view class="order_name">
 							<view class="text1" style="height:30%">{{c_item.snap_product.title}}</view >
-							<view class="order_type" style="height:40%"><text style="font-size:28rpx;color:#808080">{{c_item.snap_product.description}}</text></view>
+							<view class="order_type avoidOverflow" style="height:40%">
+								<text style="font-size:28rpx;color:#808080">{{c_item.snap_product.description}}</text></view>
 							<view class="orders flexRowBetween" style="height:30%">
 								<text class="order_number">X{{c_item.count}}</text>
 								<text class="order_price">¥{{c_item.snap_product.price}}</text>

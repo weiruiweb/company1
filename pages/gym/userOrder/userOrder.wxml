@@ -30,7 +30,12 @@
 			<view class="total">
 				合计: <text>¥200</text>
 			</view>
-			<view class="handle">删除订单</view>
+			<view class="handle">
+				<form bindsubmit="submit" class="form_button" report-submit="true">
+			        <button form-type="submit" class="form_btn color1">删除订单</button>
+			    </form>
+			</view>
+
 		</view>
 	</view>
 </view>

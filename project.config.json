@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 39,
+			"current": 41,
 			"list": [
 				{
 					"id": 0,
@@ -273,6 +273,18 @@
 					"id": 39,
 					"name": "收藏夹",
 					"pathName": "pages/mall/collectData/collectData",
+					"query": "id=20"
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/mall/Shopping/shopping",
+					"query": "id=20"
+				},
+				{
+					"id": -1,
+					"name": "教练中心",
+					"pathName": "pages/gym/coachCenter/coachCenter",
 					"query": "id=20"
 				}
 			]

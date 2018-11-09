@@ -7,7 +7,7 @@
 					<open-data type="userAvatarUrl"></open-data>
 				</view>
 			</view>
-			 <view class="user_word" style="height:0">
+			 <view class="user_word">
 			 	<view class="user_name"><open-data type="userNickName" lang="zh_CN"></open-data></view>
 			 </view>
 			 <view style="width:15%;">

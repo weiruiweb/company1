@@ -33,58 +33,46 @@ Page({
   },
 
   /*添加到购物车*/
-  onAddingToCartTap:function(events){
-    // var currentFly = e.currentTarget.dataset.id
-    // this.setData({
-    //       flayTo:currentFly 
-    //   }); 
-      //防止快速点击
+  onAddingToCartTap:function(e){
       if(this.data.flayTo){
           return;
       }
-      this._flyToCartEffect(events);
+      this._flyToCartEffect(e);
       
   },
 
-    _flyToCartEffect:function(events){
+    _flyToCartEffect:function(e){
         //获得当前点击的位置，距离可视区域左上角
-        console.log(events);
-        var touches=events.touches[0];
+        const self = this;
+        console.log(e);
+        var touches=e.touches[0];
         var diff={
                 x:-touches.clientX*0.3+'px',
-                y:25+this.data.windowHeight-touches.clientY-140+'px',
-
+                y:25+self.data.windowHeight-touches.clientY-140+'px',
             },
-
             style = 'display: block;-webkit-transform:translate('+diff.x+','+diff.y+') rotate(350deg) scale(0.3); opacity: 1;',  //移动距离
             style1 = '-webkit-transform:scale(1.1)'
-          
-            this.setData({
-                flayTo:events.target.dataset.num,
-                //isFly:events.target.dataset.num,
+            self.setData({
+                flayTo:e.target.dataset.num,
                 translateStyle:style,
                 shoppingStyle:style1,
             });
-        var that=this;
         setTimeout(()=>{
-            that.setData({
+            self.setData({
                 flayTo:false,
                 translateStyle:'-webkit-transform: none;',  //恢复到最初状态
                 isShake:true,
                 
             });
             setTimeout(()=>{
-                var counts=that.data.cartTotalCounts+that.data.productCounts;
-                that.setData({
+                var counts=self.data.cartTotalCounts+self.data.productCounts;
+                self.setData({
                     isShake:false,
                     cartTotalCounts:counts
                 });
             },200);
         },500);
     },
-
-
-
 
   onShow() {
 
@@ -176,8 +164,10 @@ Page({
   },
 
 
-  pay(){
+  pay(e){
     const self = this;
+     let formId = e.detail.formId;
+    console.log(999,formId)
     const skuDatas = [];
     for(var i=0;i<self.data.mainData.length;i++){
       if(self.data.mainData[i].isSelect){
@@ -191,13 +181,14 @@ Page({
     wx.setStorageSync('payPro',skuDatas);
     api.pathTo('/pages/mall/confirmOrder/confirmOrder','nav')
   },
-
-
   counter(e){
     const self = this;
     const index = api.getDataSet(e,'index');
     if(api.getDataSet(e,'type')=='+'){  
-      self.data.mainData[index].count++;
+      if(this.data.flayTo){
+          return;
+      }
+      this._flyToCartEffect(e);
     }else{
       if(self.data.mainData[index].count > '1'){
         self.data.mainData[index].count--;

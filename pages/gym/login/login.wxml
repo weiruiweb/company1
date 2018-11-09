@@ -25,6 +25,6 @@
     </view>
   </view>
 </view>
-<button class="submit_info" style="width:93%;margin-top:160rpx;" bindtap="submit">
-  登录
-</button>
+<form bindsubmit="submit" class="" report-submit="true" >
+  <button form-type="submit" class="submit_info form_btn color1" style="width:93%;margin-top:160rpx;">登录</button>
+</form>

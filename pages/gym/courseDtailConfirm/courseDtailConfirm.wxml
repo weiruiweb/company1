@@ -96,4 +96,6 @@
         </view>
     </view>
 </view>
-<button class="submit_info"  bindtap="intoPathRedi" data-path="/pages/gym/user/user"> 提交订单,微信支付 </button>
+<form bindsubmit="submit" class="" report-submit="true">
+    <button form-type="submit" class="form_btn color1 submit_info">提交订单,微信支付</button>
+</form>

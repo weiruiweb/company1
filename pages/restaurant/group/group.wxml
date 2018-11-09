@@ -36,7 +36,11 @@
 						</view>
 					</view>
 					<view class="send_group flexRowBetween" style="height:35%">
-						<view class="grou_click"   bindtap="send_order">发起拼团</view>
+						<view class="grou_click">
+						<form bindsubmit="send_order" class="form_button" report-submit="true">
+		       				 <button form-type="submit" class="form_btn color1">发起拼团</button>
+		     		  	</form>
+						</view>
 						<view class="has_group">3人已团</view>
 					</view>
 				</view>
@@ -130,7 +134,11 @@
 						</view>
 						<view class="send_group flexRowBetween"  style="height:40%;">
 							<view class="grounp_left">
-								<view class="grou_click group_together" bindtap="send_order1">去拼单</view>
+								<view class="grou_click group_together">
+									<form bindsubmit="send_order1" class="form_button" report-submit="true">
+					       				 <button form-type="submit" class="form_btn color1">去拼单</button>
+					     		  	</form>
+								</view>
 							</view>
 							<view class="grounp_right">
 								<view class="need_person">还差<text>1人</text>拼团成功</view>
@@ -172,7 +180,11 @@
 						</view>
 						<view class="send_group flexRowBetween"  style="height:40%;">
 							<view class="grounp_left">
-								<view class="grou_click group_together" bindtap="send_order1">去拼单</view>
+								<view class="grou_click group_together">
+									<form bindsubmit="send_order1" class="form_button" report-submit="true">
+					       				 <button form-type="submit" class="form_btn color1">去拼单</button>
+					     		  	</form>
+								</view>
 							</view>
 							<view class="grounp_right">
 								<view class="need_person">还差<text>1人</text>拼团成功</view>
@@ -197,7 +209,7 @@
 	</view>
 	
 </view>
-<view class="{{isShow?'mask':''}} {{isShows?'mask':''}}">
+<view class="{{isShow ||isShows?'mask':''}}">
 
 </view>
 <view class="begin_group {{isShow?'group_show':''}}">
@@ -239,7 +251,9 @@
 			</view>
 		</view>
 		<view class="send_share">
-			去分享
+			<form bindsubmit="submit" class="form_button" report-submit="true">
+		        <button form-type="submit" class="form_btn color1">去分享</button>
+		     </form>
 		</view>
 	</view>
 </view>
@@ -261,7 +275,9 @@
 			</view>
 		</view>
 		<view class="send_share">
-			去分享
+			<form bindsubmit="submit" class="form_button" report-submit="true">
+		        <button form-type="submit" class="form_btn color1">去分享</button>
+		     </form>
 		</view>
 	</view>
 </view>

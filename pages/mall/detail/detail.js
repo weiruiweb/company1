@@ -32,13 +32,14 @@ Page({
     isInCollectData:false,
     is_collect:false,
   },
-  
+  test(e){
+    let formId = e.detail.formId;
+    console.log(999,formId)
+  },
   onLoad(options){
     const self = this;
     console.log(11,options);
-    
     wx.showLoading();
-
     self.setData({
       fonts:app.globalData.font,
       img:app.globalData.img,
@@ -240,8 +241,10 @@ Page({
     })
   },
 
-  addCart(){
+  addCart(e){
     const self = this;
+    let formId = e.detail.formId;
+    console.log(999,formId)
     self.data.skuData.count = self.data.count;
     self.data.skuData.isSelect = true;
     var res = api.setStorageArray('cartData',self.data.skuData,'id',999); 

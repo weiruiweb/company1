@@ -23,10 +23,14 @@
 <view class="fabu">
   <view class="fabu_cont"  style="font-size:30rpx;">
     <view class="fabu_left color1" bindtap="menuClick" data-key="passage1" data-num="0">
-        保存
+        <form bindsubmit="submit" class="form_button" report-submit="true">
+          <button form-type="submit" class="form_btn color1">取消</button>
+        </form>
     </view>
     <view class="fabu_right color1" bindtap="menuClick" data-key="passage1" data-num="1">
-      发布
+      <form bindsubmit="submit" class="form_button" report-submit="true">
+        <button form-type="submit" class="form_btn color1">发布</button>
+      </form>
     </view>
   </view>
 </view>

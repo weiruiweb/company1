@@ -4,7 +4,7 @@
 		<view class="shopping_item">
 			<view class="flexRowBetween" style="align-items:center;">
 				<view class="select_status" data-index="{{index}}" bindtap='choose'>
-					<image src="{{item.isSelect?'/images/select_active.jpg':'/images/select.png'}}"></image>
+					<image src="{{item.isSelect?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
 				</view>
 				<view class="shopping_img">
 					<image src="{{item.mainImg[0].url}}"></image>
@@ -15,9 +15,9 @@
 					<text class="price">¥{{item.price}}</text>
 				</view>
 				<view class="edit_number flexRowBetween">
-					<view class="minus" style="font-size:50rpx;line-height:36rpx;" data-index="{{index}}" data-type="-" bindtap="counter">-</view>
+					<view class="minus" style="font-size:50rpx;line-height:36rpx;" data-index="{{index}}"  data-type="-" bindtap="counter">-</view>
 					<input class="number" data-index="{{index}}" type="number" bindinput="bindManual" value="{{item.count}}" />
-					<view class="add"    data-index="{{index}}" data-type="+" bindtap="counter">+</view>
+					<view class="add"    data-index="{{index}}" data-num="1" data-type="+" bindtap="counter">+</view>
 				</view>
 			</view>
 			<view class="circle {{flayTo==1?'animate':''}}" mode="aspectFill" style="{{flayTo==1?translateStyle:''}}"></view>
@@ -26,7 +26,7 @@
 	
 	<view class="total" style="display:flex;">
 		<view class="all_select" style="width:10%;text-align:center;;overflow:hidden;" bindtap="chooseAll">
-			<image src="{{web_isChooseAll?'/images/select_active.jpg':'/images/select.png'}}"></image>
+			<image src="{{web_isChooseAll?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
 		</view>
 		<view class="select_c"  style="width:10%;text-align:left;overflow:hidden;" >全选</view>
 		<view class="del_shopping" style="width:10%;text-align:left;overflow:hidden;" bindtap="delete">
@@ -40,9 +40,10 @@
 		</view>
 		<view class="" style="align-items:center;width:35%;text-align:center;overflow:hidden;">
 			<view class="submit_shopping" style="margin:0rpx auto;">
-				<view class="pay_note" bindtap="pay">
-					<text class="text1">结算</text>
-					<text class="number_pay">(1)</text>
+				<view class="submit_shopping">
+					<form bindsubmit="pay" report-submit="true">
+						<button class="" form-type="submit">结算(1)</button>
+					</form>
 				</view>
 			</view>
 		</view>
@@ -74,7 +75,13 @@
     </view>
     <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/mall/Shopping/shopping">
          <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
-          <view class="nav_img scale2" style="{{img}};width:46px;height:42px;background-position: -190px -94px;">
+
+          <view class="nav_img scale2 {{isShake?'jisster':''}}" style="{{img}};width:46px;height:42px;background-position: -190px -94px;">
+          	<view class="cart_number" bindtap="onCartTap">
+	            <view class="fiexd-cart {{isShake?'animate':''}}" style="">
+	                <view style="color:#fff;font-size:40rpx;">{{cartTotalCounts}}</view>
+	            </view>
+	        </view>
           </view>
         </view>
         <view class="text this-text" style="{{fonts[2].font}}">购物车</view>

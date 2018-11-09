@@ -15,3 +15,7 @@
     </view>
   </view>
 </view>
+
+<form bindsubmit="submit"  report-submit="true">
+  <button form-type="submit" class="submit_info form_btn color1">立即充值</button>
+</form>

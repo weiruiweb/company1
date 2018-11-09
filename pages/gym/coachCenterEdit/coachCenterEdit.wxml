@@ -79,11 +79,15 @@
 			</view>
 			<view class="fabu">
 			  <view class="fabu_cont flexRowBetween"  style="font-size:30rpx;">
-			    <view class="fabu_right color1"   bindtap="intoPathRedi" data-path="/pages/gym/user/user">
-			        保存
+			    <view class="fabu_right">
+			        <form bindsubmit="intoPathRedi" class="form_button" report-submit="true" data-path="/pages/gym/user/user">
+				        <button form-type="submit" class="form_btn color1">保存</button>
+				     </form>
 			    </view>
-			    <view class="fabu_left color1">
-			      取消
+			    <view class="fabu_left color1"> 
+			      <form bindsubmit="intoPathRedi" class="form_button" report-submit="true" data-path="/pages/gym/user/user">
+				        <button form-type="submit" class="form_btn color1">取消</button>
+				     </form>
 			    </view>
 			  </view>
 			</view>

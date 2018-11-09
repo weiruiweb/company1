@@ -81,3 +81,6 @@ page{
 	background:#bb212e;
 	width:700rpx;
 }
+.form_button{
+	margin-top:50rpx;
+}

@@ -53,11 +53,11 @@
 </view>
 <view class="w710 delivery flex1 font28">
 	<view class="delivery_item flex1"  bindtap="chooseBuyWay" data-buytype="delivery">
-		<image src="{{web_buyType =='delivery'?'/images/select_active.jpg':'/images/select.png'}}"></image>
+		<image src="{{web_buyType =='delivery'?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
 		快递配送
 	</view>
 	<view class="delivery_item flex1"  bindtap="chooseBuyWay" data-buytype="pickself">
-		<image src="{{web_buyType =='pickself'?'/images/select_active.jpg':'/images/select.png'}}"></image>
+		<image src="{{web_buyType =='pickself'?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
 		上门自提
 	</view>
 </view>
@@ -126,8 +126,10 @@
 				<text style="">（实际价格，请与客服沟通）</text>
 			</view>
 		</view>
-		<view class="submit_order" bindtap="addOrder">
-			提交订单
+		<view class="submit_order">
+			<form bindsubmit="addOrder" report-submit="true">
+				<button form-type="submit">提交订单</button>
+			</form>
 		</view>
 	</view>
 </view>

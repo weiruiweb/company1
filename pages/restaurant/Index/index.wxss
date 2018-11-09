@@ -251,3 +251,6 @@ swiper{
 	width:100%;
 	height:44%;
 }
+.navbar{
+	box-shadow:0 0 10rpx #f8b8b5;
+}

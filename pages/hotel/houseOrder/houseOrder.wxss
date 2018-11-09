@@ -161,3 +161,7 @@ view{
 .edit_number{
 	width:100%;
 }
+.submit_btn button{
+	height:74rpx;
+	line-height:74rpx;
+}

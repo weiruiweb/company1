@@ -243,3 +243,10 @@ textarea{
 	line-height: 28rpx;
 	color:#1f70ae; 
 }
+.submit_order button{
+	border:none;
+	background:none;
+	width:100%;
+	height:100%;
+	color:#fff;
+}

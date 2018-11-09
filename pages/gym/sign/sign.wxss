@@ -246,3 +246,14 @@ page{
 .adver_txt text{
 	font-size:40rpx;
 }
+.form_button{
+	width:210rpx;
+	height:210rpx;
+	display: flex;
+}
+.form_button button{
+	width:210rpx;
+	height:210rpx;
+	text-align: center;
+	line-height: 210rpx;
+}

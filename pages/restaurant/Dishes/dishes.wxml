@@ -124,7 +124,7 @@
         <view class="nav_img scale" style="{{img}};height:56px;background-position:-163px -2070px;">
           </view>
       </view>
-        <view class="text" style="{{fonts[2].font}};">点菜</view>
+        <view class="text this_text" style="{{fonts[2].font}};">点菜</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect"  data-path="/pages/restaurant/User/user">
       <view class="navbar_top">

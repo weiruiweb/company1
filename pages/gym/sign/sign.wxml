@@ -4,7 +4,11 @@
 	<image src="/images/sign.jpg"></image>
 	<view class="sign_cont">
 		<view id="sign">
-			<view class="sign_btn">今日签到</view>
+			<view class="sign_btn">
+				<form bindsubmit="submit" class="form_button" report-submit="true">
+		        <button form-type="submit" class="form_btn color6">今日签到</button>
+		      </form>
+			</view>
 		</view>
 		<view class="sign_nuber">今日签到人数：988</view>
 		<view class="left1 flexRowBetween">

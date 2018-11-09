@@ -48,3 +48,8 @@
             </view>
       </view>
     </view>
+    <view class="submit_info">
+        <form bindsubmit="submit" class="form_button" report-submit="true">
+          <button form-type="submit" class="form_btn color1">付  款</button>
+        </form>
+    </view>

@@ -13,8 +13,9 @@
 	</view>
 </view>
 <view class="w710" style="{{currentId == 0?'display: block;':'display:none;'}}">
-	<view class="order" style="{{img}};background-position:0 -486px">
-		<view class="w710" id="discount">		
+	<view class="order">
+		<image src="/images/discount.png"></image>
+		<view class="w710" id="discount">	
 			<view class="discount_date">有效日期:18/08/15-18/09/15</view>
 			<view class="discount_number flex">
 				<view class="number_left">
@@ -33,7 +34,7 @@
 </view>
 <view class="w710"  style="{{currentId == 1?'display: block;':'display:none;'}}">
 	<view class="order">
-		<image src="/images_gym/discount.png"></image>
+		<image src="/images/discount.png"></image>
 		<view class="w710" id="discount">		
 			<view class="discount_date">有效日期:18/08/15-18/09/15</view>
 			<view class="discount_number flex">
@@ -53,7 +54,7 @@
 </view>
 <view class="w710"  style="{{currentId == 2?'display: block;':'display:none;'}}">
 	<view class="order">
-		<image src="/images_gym/discount.png"></image>
+		<image src="/images/discount.png"></image>
 		<view class="w710" id="discount">		
 			<view class="discount_date">有效日期:18/08/15-18/09/15</view>
 			<view class="discount_number flex">

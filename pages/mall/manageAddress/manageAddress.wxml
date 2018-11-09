@@ -16,7 +16,7 @@
 		</view>
 		<view class="address_set flexRowBetween">
 			<view class="default"  bindtap="{{item.isdefault=='0'?'updateAddress':''}}" data-id="{{item.id}}">
-				<image src="{{item.isdefault=='0'?'/images/select.png':'/images/select_active.jpg'}}"></image>
+				<image src="{{item.isdefault=='0'?'/images/select.png':'/images/mall_select_active.jpg'}}"></image>
 				<text>{{item.isdefault=='0'?'设为默认地址':'默认地址'}}</text>
 			</view>
 			<view class="edit" data-path="/pages/mall/newAddress/newAddress?id={{item.id}}" bindtap="intoPath">

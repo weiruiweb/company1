@@ -1,9 +1,4 @@
 <!--index.wxml-->
-<!--
-<view id="loading-wrapper" hidden="{{isHidden}}">
-  <view id="loading-text">LOADING</view>
-  <view id="loading-content"></view>
-</view>-->
 <view class="banner">
   <image class="bannerImg" src="/images/banner.png"></image>
   <image src="/images/cloude.png" class="clude" style="width:98rpx;height:48rpx"></image>
@@ -12,7 +7,6 @@
     <view style="{{fonts[1].font}};color:#fff;">提供优质一对一客户服务</view>
     <view class="custom" data-path="/pages/mall/Sort/sort" bindtap="intoPathRedi">立即定制 ></view>
   </view>
-  <!-- <image src="/images/cloude.png" class="clude1"></image> -->
 </view>
 
 <view  class="module">

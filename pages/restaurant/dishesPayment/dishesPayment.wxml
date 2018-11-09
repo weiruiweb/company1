@@ -33,5 +33,7 @@
 	</view>
 </view>
 <view class="submit_info">
-	立即付款
+	<form bindsubmit="submit" class="form_button" report-submit="true">
+	   <button form-type="submit" class="form_btn color1">立即付款</button>
+	</form>
 </view>

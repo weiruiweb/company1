@@ -181,7 +181,7 @@ Page({
 
  
 
-  addOrder(){
+  addOrder(e){
     const self = this;
     console.log(self.data.complete_api)
     if(self.data.buttonClicked){
@@ -225,6 +225,9 @@ Page({
       self.pay(self.data.order_id)
 
     }   
+    let formId = e.detail.formId;
+    // dealFormIds(formId, url);
+    console.log(999,formId)
   },
 
 

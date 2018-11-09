@@ -71,3 +71,10 @@ input{
 	justify-content:flex-start;
 	align-items:center;
 }
+.submit_info{
+	width:700rpx;
+	height:88rpx;
+	line-height:88rpx;
+	background:#404040;
+	margin-top:50rpx;
+}

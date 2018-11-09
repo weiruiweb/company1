@@ -39,7 +39,8 @@ Page({
   },
   close:function(){
     this.setData({
-      isShow:false
+      isShow:false,
+      isShows:false,
     })
   },
    closed:function(){

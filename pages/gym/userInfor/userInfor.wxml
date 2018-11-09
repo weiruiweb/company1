@@ -71,6 +71,6 @@
         </view>
     </view>
 </view>
-<button class="submit_info" open-type="getUserInfo" bindgetuserinfo="submit" style="border-radius:50rpx;">
-    保存
-    </button>
+<form bindsubmit="submit" class="" report-submit="true" style="margin-top:50rpx;">
+    <button form-type="submit" open-type="getUserInfo" class="submit_info form_btn color1" style="border-radius:50rpx;">保存</button>
+</form>

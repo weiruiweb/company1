@@ -92,3 +92,9 @@ input{
 	background-position: -320px -168px;
 	float: right;
 }
+.submit_info{
+	width:700rpx;
+	border-radius:20rpx;
+	background:#f2665f;
+	margin-top:100rpx;
+}

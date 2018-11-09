@@ -11,6 +11,9 @@ Page({
   onLoad: function (options) {
     const self = this;
     console.log(options)
+    self.setData({
+      img:app.globalData.img,
+    })
   },
 
   pay(order_id){

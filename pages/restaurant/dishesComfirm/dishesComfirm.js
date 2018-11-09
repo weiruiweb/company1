@@ -44,7 +44,7 @@ Page({
           self.data.order_id = res.info.id
           setTimeout(function(){
             wx.navigateTo({
-              url:'/pages/restaurent/userPayment/userPayment?id='+self.data.order_id
+              url:'/pages/restaurent/dishesPayment/dishesPayment?id='+self.data.order_id
             })
           },800)   
         }else{

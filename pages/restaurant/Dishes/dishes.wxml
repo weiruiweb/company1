@@ -95,7 +95,9 @@
     <view class="dining flexRowCenter" style="{{fonts[5].font}}">
 		<view class="dining_left">
 			<view class="flexRowBetween" style="width:68%;height:100%;margin:0 auto;color:#fff;">
-				<view class="scale2" style="width:54px;height:50px;margin:0 auto;{{img}};background-position:-124px -1898px"></view>
+				<view style="width:56rpx;height:50rpx;overflow:hidden;">
+					<view class="scale1" style="width:60px;height:50px;margin:0 auto;{{img}};background-position:-124px -1898px"></view>
+				</view>
 				<text style="height:100%;">输入桌号</text>
 			</view>
 		</view>

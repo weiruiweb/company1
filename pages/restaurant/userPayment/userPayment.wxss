@@ -55,7 +55,8 @@ input{
 	width:40%;
 }
 .choose_this{
-	width:55%;
+	width:50%;
+	padding-right:5%;
 	text-align:right
 }
 .pay1 text{
@@ -74,4 +75,20 @@ input{
 	width:29rpx;
 	height:28rpx;
 	margin-right:40rpx;
+}
+.pay_img{
+	width:90px;
+	height:90px;
+	margin:0 auto;
+}
+.pay_icon{
+	width:90rpx;
+	height:90rpx;
+	margin:0 auto;
+}
+.choose{
+	width:50rpx;
+	height:50rpx;
+	background-position: -320px -168px;
+	float: right;
 }

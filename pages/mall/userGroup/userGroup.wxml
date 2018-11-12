@@ -1,24 +1,24 @@
 <!--userPoster.wxml-->
 <view class="team_tlt flexRowBetween">
-	<view class="next_bank" style="{{fonts[4].font}}">
+	<view class="next_bank font30">
 		我的下级
 	</view>
-	<view class="next_number" style="{{fonts[4].font}}">
+	<view class="next_number font30">
 		总计<text >{{web_total}}</text>人
 	</view>
 	
 </view>
-<view class="date" style="{{fonts[4].font}}">
+<view class="date font30">
 	<view class="date_item">
 		<view style="width:45%;display:flex;align-items:center;">
 			<view class="date_left" style="color:#39bddf;width:100%;">
 				<picker  mode="date" value="{{web_startTime}}" data-type="startTime" bindchange="bindTimeChange" >
 					<view style="display:flex;align-items:center;width:100%;">
 						<view style="width:85%;height:70rpx;">
-						    <view class="picker text">
+						    <view class="picker text" style="color:#21c3d4;">
 						      起始日期
 						    </view>
-						    <view class="text" style="{{fonts[2].font}}">{{web_startTime}}</view>
+						    <view class="text font24" style="color:#21c3d4;">{{web_startTime}}</view>
 						</view>
 						<view style="width:15%;height:70rpx;">
 							<image src="/images/up_icon2.jpg"></image>
@@ -39,7 +39,7 @@
 						    <view class="picker text">
 						      截至日期
 						    </view>
-						    <view class="text" style="{{fonts[2].font}}">{{web_endTime}}</view>
+						    <view class="text font24">{{web_endTime}}</view>
 					    </view>
 					    <view style="width:15%;height:70rpx;">
 							<image src="/images/up_icon1.jpg"></image>
@@ -60,10 +60,10 @@
 				</view>
 				<view class="team_right">
 					<view class="team_user flexRowBetween">
-						<view class="tuser_name" style="{{fonts[4].font}}">{{item.userInfo.nickname}}</view>
-						<view class="tuser_name" style="{{fonts[2].font}};color:#444;">{{item.create_time}}</view>
+						<view class="tuser_name font30">{{item.userInfo.nickname}}</view>
+						<view class="tuser_name font24" style="color:#444;">{{item.create_time}}</view>
 					</view>
-					<view class="teat_add" style="{{fonts[1].font}}">
+					<view class="teat_add font22">
 						通过微信分享二维码加入团队
 					</view>
 				</view>

@@ -102,6 +102,7 @@ textarea{
 	position:fixed;
 	bottom:0rpx;
 	width:100%;
+	background:#fff;
 }
 .pay_order{
 
@@ -197,16 +198,14 @@ textarea{
 	align-items: center;
 }
 .discount_left{
-	width:50%;
+	width:40%;
 	font-size:40rpx;
 	color:#fff;
 	text-align: center;
 }
-.discount_left1{
-	color:#000;
-}
 .discount_left text{
-	font-size: 150rpx;
+	font-size: 100rpx;
+	color:#fff;
 }
 .discount_center{
 	width:50%;

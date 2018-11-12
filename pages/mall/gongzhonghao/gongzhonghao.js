@@ -52,7 +52,6 @@ Page({
     self.setData({
       web_index:index,
       web_currentId:currentId,
-
     });
     console.log(currentId)
     console.log(index)

@@ -8,11 +8,15 @@
 	width:29rpx;
 	height:29rpx;}
 .shopping_item{
-	margin-top:46rpx;
+	width:100%;
+	height:230rpx;
 	border-bottom:solid 1px #f5f5f5;
-	padding-bottom:35rpx;
 	position:relative;
 	align-items:center;
+}
+.product_cont{
+	height:152rpx;
+	width:100%;
 }
 .shopping_img{width:24%;height:152rpx;text-align:left;}
 .shopping_img image{
@@ -75,7 +79,7 @@
 	left:0rpx;
 	align-items:center;
 	background:#f2f2f2;
-
+	z-index:999;
 }
 .all_select image{
 	width:29rpx;
@@ -140,7 +144,6 @@
 	z-index:9999;
 }
 .circle.animate{
-	
   /*-webkit-transition:all 1000ms cubic-bezier(.4,.46,.3,1.31);*/
   -webkit-transition:all 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -168,12 +171,13 @@
 	left:59%;
 	top:3rpx;
 	height:0rpx;
-	z-index:;
+	z-index:1;
+	width:1005;
 }
 .fiexd-cart{
-	width:40rpx;
-	height:40rpx;
-	line-height: 40rpx;
+	width:50rpx;
+	height:50rpx;
+	line-height: 50rpx;
 	border-radius:50%;
 	background:#21c3d4;
 	margin:0rpx auto;

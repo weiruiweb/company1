@@ -8,14 +8,19 @@ const token = new Token();
 Page({
   data: {
      caseData:[],
+     loadingHidden:false,
   },
- 
+   preventTouchMove:function(e) {
+  },
   onLoad(options) {
     const self = this;
-    wx.showLoading();
+    setTimeout(function(){
+     self.setData({
+       loadingHidden: true
+     });
+    }, 2000);
     self.data.name = options.name;
     self.setData({
-      isHidden: false,
       fonts:app.globalData.font,
       img:app.globalData.img,
     });

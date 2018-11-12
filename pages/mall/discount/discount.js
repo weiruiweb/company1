@@ -15,7 +15,8 @@ Page({
     buttonClicked:false,
     isLoadAll:false,
     complete_api:[],
-    img:"background:url('/images/small.png')"
+    img:"background:url('/images/small.png')",
+    discount:false,
   },
   
   onLoad() {
@@ -77,7 +78,8 @@ Page({
     const callback = (res)=>{
       if(res&&res.solely_code==100000){
         api.showToast('领取成功！','none')
-        self.data.buttonClicked = false;    
+        self.data.buttonClicked = false; 
+        self.data.discount = true;    
       }; 
     };
     api.addOrder(postData,callback);

@@ -162,3 +162,19 @@
       <view class="text" style="{{fonts[2].font}};">我的</view>
     </view>
 </view>
+<view class="loadding flex"  hidden="{{loadingHidden}}" catchtouchmove="preventTouchMove">
+  <view class="loadding_cont flex">
+    <view class="item-1 spaces"></view>
+    <view class="item-3 spaces"></view>
+    <view class="item-5 spaces"></view>
+  </view>
+</view>
+<!-- 
+<view class="loading" hidden="{{loadingHidden}}">
+  <view>
+    <view class="c1"></view>
+    <view class="c2"></view>
+    <view class="c3"></view>
+    <view class="c4"></view>
+  </view>
+</view> -->

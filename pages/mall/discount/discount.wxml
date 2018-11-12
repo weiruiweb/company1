@@ -16,7 +16,8 @@
 	<view class="ticket_sort {{num== 0?'madeShow':''}}">
 		<block wx:for="{{web_mainData}}" wx:key="id">
 			<view class="ticket_bg">
-				<image src="/images/discount1.jpg"></image>
+				<image src="{{discount?'/images/discount2.jpg':'/images/discount1.jpg'}}"></image>
+
 			   <view class="ticket_cont">
 			   		<view class="discount_left">
 			   			¥<text>{{item.discount}}</text>

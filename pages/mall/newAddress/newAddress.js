@@ -22,7 +22,8 @@ Page({
   onLoad(options) {
     const self=this;
     self.setData({
-      fonts:app.globalData.font
+      fonts:app.globalData.font,
+      img:app.globalData.img
     });
     if(options.id){
       self.data.id = options.id

@@ -1,8 +1,8 @@
 <!--shopping.wxml-->
 <view id="shopping" wx:if="{{web_mainData[0].title}}">
 	<block wx:for="{{web_mainData}}" wx:key="id" >
-		<view class="shopping_item">
-			<view class="flexRowBetween" style="align-items:center;">
+		<view class="shopping_item flex">
+			<view class="flexRowBetween product_cont" style="align-items:center;position: relative;">
 				<view class="select_status" data-index="{{index}}" bindtap='choose'>
 					<image src="{{item.isSelect?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
 				</view>
@@ -17,10 +17,10 @@
 				<view class="edit_number flexRowBetween">
 					<view class="minus" style="font-size:50rpx;line-height:36rpx;" data-index="{{index}}"  data-type="-" bindtap="counter">-</view>
 					<input class="number" data-index="{{index}}" type="number" bindinput="bindManual" value="{{item.count}}" />
-					<view class="add"    data-index="{{index}}" data-num="1" data-type="+" bindtap="counter">+</view>
+					<view class="add"    data-index="{{index}}" data-type="+" bindtap="counter">+</view>
 				</view>
+				<view class="circle {{flayTo==index?'animate':''}}" mode="aspectFill" style="{{flayTo==index?translateStyle:''}}"></view>
 			</view>
-			<view class="circle {{flayTo==1?'animate':''}}" mode="aspectFill" style="{{flayTo==1?translateStyle:''}}"></view>
 		</view>
 	</block>
 	
@@ -35,7 +35,7 @@
 		<view class="toalt1"  style="width:20%;text-align:right;overflow:hidden;">
 			合计:
 		</view>
-		<view class="priceNumber" style="width:15%;text-align:center;overflow:hidden;">
+		<view class="priceNumber" style="width:20%;text-align:center;overflow:hidden;">
 		¥{{web_totalPrice}}
 		</view>
 		<view class="" style="align-items:center;width:35%;text-align:center;overflow:hidden;">
@@ -79,7 +79,7 @@
           <view class="nav_img scale2 {{isShake?'jisster':''}}" style="{{img}};width:46px;height:42px;background-position: -190px -94px;">
           	<view class="cart_number" bindtap="onCartTap">
 	            <view class="fiexd-cart {{isShake?'animate':''}}" style="">
-	                <view style="color:#fff;font-size:40rpx;">{{cartTotalCounts}}</view>
+	                <view style="color:#fff;font-size:36rpx;">{{cartTotalCounts}}</view>
 	            </view>
 	        </view>
           </view>

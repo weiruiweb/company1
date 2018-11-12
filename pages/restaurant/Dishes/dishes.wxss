@@ -114,7 +114,7 @@
 	align-items:center;
 	overflow:hidden;
 	position:fixed;
-	bottom:120rpx;
+	bottom:110rpx;
 	left:0rpx;
 	width:100%;
 	line-height:100rpx;

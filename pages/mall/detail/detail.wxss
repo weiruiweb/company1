@@ -237,7 +237,7 @@
 }
 .choose_pro{
 	width:25%;
-	height:
+	height:100%;
 }
 .choose_pro image{
 	width:160rpx;

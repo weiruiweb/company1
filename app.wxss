@@ -415,3 +415,146 @@ page{
 	border: none;
 	background: none;
 }
+ button::after{
+	width:100%;
+	height:100%;
+	border: none;
+	background: none;
+}
+.loadding{
+	width:100%;
+	height:100%;
+	position: absolute;
+	left: 0;
+	top:0;
+	z-index:9999;
+	background:rgba(0,0,0,0.2);
+}
+@keyframes loadding{
+	0%{
+		opacity:1
+	}
+	100%{
+		opacity:0
+	}
+}
+.loadding_cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:30%;
+  height:14%;
+  overflow: hidden;
+  background:#fff; 
+  box-shadow:0 0 30rpx #93e7f0;
+  border-radius:20rpx;
+  margin:0 auto;
+}
+.item-1 {
+  width: 20rpx;
+  height: 20rpx;
+  background: #f583a1;
+  border-radius: 50%;
+  background-color: #73eef3;
+  margin: 12rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50%,
+    75% {
+    transform: scale(2.5);
+  }
+  78%, 100% {
+    opacity: 0;
+  }
+}
+.item-1:before {
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #73eef3;
+  opacity: 0.7;
+  animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+  animation-delay:300ms;
+  transition: 0.5s all ease;
+  transform: scale(1);
+}
+.item-3 {
+  width: 20rpx;
+  height: 20rpx;
+  background: #f583a1;
+  border-radius: 50%;
+  background-color: #21c3d4;
+  margin: 12rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spaces{
+	margin:0 20rpx;
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50%,
+    75% {
+    transform: scale(2.5);
+  }
+  78%, 100% {
+    opacity: 0;
+  }
+}
+.item-3:before {
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #21c3d4;
+  opacity: 0.7;
+  animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+  animation-delay: 600ms;
+  transition: 0.5s all ease;
+  transform: scale(1);
+}
+.item-5 {
+  width: 20rpx;
+  height: 20rpx;
+  background: #f583a1;
+  border-radius: 50%;
+  background-color: #2da0e3;
+  margin: 12rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50%,
+    75% {
+    transform: scale(2.5);
+  }
+  78%, 100% {
+    opacity: 0;
+  }
+}
+.item-5:before {
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #2da0e3;
+  opacity: 0.7;
+  animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+  animation-delay: 900ms;
+  transition: 0.5s all ease;
+  transform: scale(1);
+}

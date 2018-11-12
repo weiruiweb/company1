@@ -11,7 +11,7 @@
 			 	<view class="user_name"><open-data type="userNickName" lang="zh_CN"></open-data></view>
 			 </view>
 			 <view style="width:15%;">
-		    	<view class="sign_up">
+		    	<view class="sign_up" bindtap="intoPath" data-path="/pages/mall/sign/sign">
 		    		<text>签</text>
 		    	</view>
 		    </view>

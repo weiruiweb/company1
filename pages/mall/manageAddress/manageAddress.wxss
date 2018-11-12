@@ -27,7 +27,7 @@
 	}
 .address_set text{font-size:24rpx;}
 .address_set .default{
-	color:#2c9fe1;
+	/*color:#2c9fe1;*/
 	width:71%;
 	align-items:center;
 	height:30rpx;

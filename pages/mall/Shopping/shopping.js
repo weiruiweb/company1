@@ -14,9 +14,6 @@ Page({
     productCounts:1,
     currentTabsIndex:0,
     cartTotalCounts:0,
-    // input默认是1  
-    num: 1,
-    // 使用data数据对象设置样式名  
     minusStatus: 'disabled',
     mainData:[],
     products:[],
@@ -46,33 +43,34 @@ Page({
         const self = this;
         console.log(e);
         var touches=e.touches[0];
+        console.log(touches);
         var diff={
                 x:-touches.clientX*0.3+'px',
-                y:25+self.data.windowHeight-touches.clientY-140+'px',
+                y:self.data.windowHeight-touches.clientY-100+'px',
             },
             style = 'display: block;-webkit-transform:translate('+diff.x+','+diff.y+') rotate(350deg) scale(0.3); opacity: 1;',  //移动距离
             style1 = '-webkit-transform:scale(1.1)'
             self.setData({
-                flayTo:e.target.dataset.num,
+                flayTo:e.target.dataset.index,
                 translateStyle:style,
                 shoppingStyle:style1,
             });
-        setTimeout(()=>{
-            self.setData({
-                flayTo:false,
-                translateStyle:'-webkit-transform: none;',  //恢复到最初状态
-                isShake:true,
-                
-            });
             setTimeout(()=>{
-                var counts=self.data.cartTotalCounts+self.data.productCounts;
                 self.setData({
-                    isShake:false,
-                    cartTotalCounts:counts
+                    flayTo:false,
+                    translateStyle:'-webkit-transform: none; opacity:0;transform:none; opacity:0;',  //恢复到最初状态
+                    isShake:true,
+                    
                 });
-            },200);
-        },500);
-    },
+                setTimeout(()=>{
+                    var counts=self.data.cartTotalCounts+self.data.productCounts;
+                    self.setData({
+                        isShake:false,
+                        cartTotalCounts:counts
+                    });
+                },300);
+            },1500);
+        },
 
   onShow() {
 
@@ -108,7 +106,7 @@ Page({
     self.data.isChooseAll = !self.data.isChooseAll;
     for (var i = 0; i < self.data.mainData.length; i++) {
       self.data.mainData[i].isSelect = self.data.isChooseAll;
-      api.setStorageArray('cartData',self.data.mainData[index],'id',999);
+      api.setStorageArray('cartData',self.data.mainData[i],'id',999);
     };
     self.setData({
       web_isChooseAll:self.data.isChooseAll,

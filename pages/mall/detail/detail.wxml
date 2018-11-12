@@ -179,7 +179,7 @@
 	<view>
 		<view class="shoppingCart" style="width:100%;height:80rpx;line-height:80rpx;color:#fff">
 			<form bindsubmit="{{web_buttonType=='buy'?'goBuy':'addCart'}}" report-submit="true">
-				<button  form-type="submit">确    认</button>
+				<button  form-type="submit" style="line-height:80rpx;">确    认</button>
 			</form>
 		</view>
 	</view>

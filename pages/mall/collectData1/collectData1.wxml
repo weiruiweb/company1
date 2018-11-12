@@ -1,0 +1,23 @@
+<!--shopping.wxml-->	
+
+<view id="shopping" wx:for="{{web_mainData}}" wx:for-item="cardTeam" id="{{cardTeam.id}}" class="item "   bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{cardTeam.right}}px;transform:{{cardTeam.trans}};transition:all 1s;"
+>
+		<view class="shopping_box flex">
+			<view class="shopping_item flexRowBetween">
+					<view class="select_status" data-index="{{index}}" bindtap='choose'>
+						<image src="{{item.isSelect=='true'?'/images/select_active.jpg':'/images/select.png'}}"></image>
+					</view>
+					<view class="shopping_img">
+						<image src="{{item.mainImg[0].url}}"></image>
+					</view>
+					<view class="shopping_name">
+						<text class="text1">{{item.title}}</text>
+						<text class="text2">个性化定制</text>
+						<text class="price">¥{{item.price}}</text>
+					</view>		
+			</view>
+		</view>
+		<view class="handle font30" catchtap="del" data-index="{{index}}">
+			<view class="handle_item flex">删除</view>
+		</view>
+	</view>

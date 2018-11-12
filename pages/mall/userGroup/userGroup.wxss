@@ -5,14 +5,14 @@
 }
 .next_bank{
 	color:#2e2e2e;
-	border-left:solid 2px #550f0f;
+	border-left:solid 2px #21c3d4;
 	padding-left:20rpx;
 }
 .next_number{
 	color:#666;
 }
 .next_number text{
-	color:#550f0f;
+	color:#21c3d4;
 }
 .date{
 	height:90rpx;

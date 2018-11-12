@@ -15,12 +15,16 @@ Page({
     sForm:{
       item:''
     },
+    loadingHidden:false,
   },
   
   onLoad() {
     const self = this;
-    wx.showLoading();
-    
+    setTimeout(function(){
+     self.setData({
+       loadingHidden: true
+     });
+    }, 2000);
     this.setData({
       fonts:app.globalData.font,
       img:app.globalData.img,

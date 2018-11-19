@@ -26,7 +26,6 @@ Page({
       thirdapp_id:getApp().globalData.mall_thirdapp_id,
       user_no:wx.getStorageSync('mall_info').user_no
     },
-
     buttonClicked:true,
     order_id:'',
     complete_api:[],
@@ -34,9 +33,9 @@ Page({
   },
 
   onLoad() {
+
     const self = this;
     wx.showLoading();
-    
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.setData({
       fonts:app.globalData.font,
@@ -45,6 +44,7 @@ Page({
     });
     getApp().globalData.address_id = '';
     self.getOrderData();
+
   },
 
  
@@ -84,7 +84,8 @@ Page({
     postData.searchItem = {
       thirdapp_id:getApp().globalData.thirdapp_id,
       user_no:wx.getStorageSync('mall_info').user_no,
-      type:['in',[3,4]]
+      type:['in',[3,4]],
+
     }
     postData.order = {
       create_time:'desc'
@@ -95,15 +96,15 @@ Page({
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
-      }
+      };
       self.data.complete_api.push('getOrderData')
       self.setData({
         buttonClicked:false,
-      })
+      });
       self.setData({
         web_orderData:self.data.orderData,
       });     
-      self.checkLoadComplete()
+      self.checkLoadComplete();
     };
     api.orderGet(postData,callback);
   },  
@@ -112,7 +113,7 @@ Page({
     const self = this;
     if(isNew){
       api.clearPageIndex(self);
-    }
+    };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName = 'getMallToken';
@@ -223,8 +224,7 @@ Page({
       api.addOrder(postData,callback);
     }else{
       self.pay(self.data.order_id)
-
-    }   
+    };   
     let formId = e.detail.formId;
     // dealFormIds(formId, url);
     console.log(999,formId)

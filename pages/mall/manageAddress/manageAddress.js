@@ -19,7 +19,6 @@ Page({
   onLoad(){
     const self = this;
     wx.showLoading();
-    
     self.setData({
       fonts:app.globalData.font,
       img:app.globalData.img,
@@ -32,12 +31,11 @@ Page({
     self.getMainData(true);
   },
 
-
   getMainData(isNew){
     const self = this;
     if(isNew){
       api.clearPageIndex(self);
-    }
+    };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName = 'getMallToken';
@@ -55,10 +53,12 @@ Page({
       });
     };
     api.addressGet(postData,callback);
+
   },
   
 
   choose(e){
+
     const self = this;
     const id = api.getDataSet(e,'id');
     self.data.id = id;
@@ -71,6 +71,7 @@ Page({
         delta: 1
       });
     },300);
+    
   },
 
 

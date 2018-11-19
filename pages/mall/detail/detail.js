@@ -9,66 +9,55 @@ Page({
 
 
   data: {
-    indicatorDots: true,
-    vertical: false,
-    autoplay: true,
-    circular: true,
-    interval: 2000,
-    duration: 500,
+
     mainData:[],
     chooseId:[],
     tabCurrent:0,
     isShow:false,
-    labelData:[],
     complete_api:[],
     keys:[],
-    values:[],    skuData:{},
+    values:[],    
     count:1,
     id:'',
-    sku_item:[],
-    choose_sku_item:[],
+    skuData:[],
+    choosed_sku_item:[],
+    can_choose_sku_item:[],
     buttonType:'',
     buttonClicked:true,
     isInCollectData:false,
     is_collect:false,
+
   },
-  test(e){
-    let formId = e.detail.formId;
-    console.log(999,formId)
-  },
+
   onLoad(options){
     const self = this;
-    console.log(11,options);
-    wx.showLoading();
-    self.setData({
-      fonts:app.globalData.font,
-      img:app.globalData.img,
-      web_count:self.data.count,
-    });
 
+    wx.showLoading();
     if(options.id){
       self.data.id = options.id;
     };
-
+    //初始化购物车
     var cartData = api.getStorageArray('cartData');
-    console.log('onLoad',cartData);
-
+    var cartRes = api.findItemInArray(cartData,'id',self.data.id);
+    self.data.cart_count = cartRes.length>0?cartRes[1].count:0;
+    //初始化收藏
     var collectData = api.getStorageArray('collectData');
     self.data.isInCollectData = api.findItemInArray(collectData,'id',self.data.id);
-    console.log('onLoad',self.data.isInCollectData);
 
-    self.getMainData();
-    if(wx.getStorageSync('collectData')[self.data.id]){
-      
-    }else{
-      self.setData({
-        is_collect:false,
-      });
-    };
     wx.showShareMenu({
       withShareTicket: true
     });
 
+    self.getMainData();
+
+    self.setData({
+      web_isInCollectData:self.data.isInCollectData,
+      web_cart_count:self.data.cart_count,
+      fonts:app.globalData.font,
+      img:app.globalData.img,
+      web_count:self.data.count,
+    });
+    
   },
 
 
@@ -83,33 +72,15 @@ Page({
       return;
     };
     if(self.data.isInCollectData){
-      var res = api.delStorageArray('collectData',self.data.skuData,'id'); 
-      self.setData({
-        is_collect:true,
-      });    
+      api.delStorageArray('collectData',self.data.choosed_skuData,'id'); 
     }else{
-      var res = api.setStorageArray('collectData',self.data.skuData,'id',999);
-      self.setData({
-        is_collect:false,
-      });
+      api.setStorageArray('collectData',self.data.choosed_skuData,'id',999);
     };
-     
     var collectData = api.getStorageArray('collectData');
     self.data.isInCollectData = api.findItemInArray(collectData,'id',self.data.id);
-    console.log('collect',collectData);
-    console.log('isInCollectData',self.data.isInCollectData);
-    /*const id = self.data.id;
-    if(wx.getStorageSync('collectData')&&wx.getStorageSync('collectData')[id]){
-      api.deleteFootOne(id,'collectData');
-      self.setData({
-        url: '/images/collect.png',
-      });
-    }else{
-      api.footOne(self.data.mainData,'id',100,'collectData');  
-      self.setData({
-        url: '/images/collect1.png',
-      });
-    };*/
+    self.setData({
+      web_isInCollectData:self.data.isInCollectData,
+    }); 
   },
 
   getMainData(){
@@ -147,20 +118,21 @@ Page({
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];
+
         for(var key in self.data.mainData.label){
           if(self.data.mainData.sku_array.indexOf(parseInt(key))!=-1){
-            self.data.labelData.push(self.data.mainData.label[key])
+            self.data.skuData.push(self.data.mainData.label[key])
           };    
         };
         
         for (var i = 0; i < self.data.mainData.sku.length; i++) {
           if(self.data.mainData.sku[i].id==self.data.id){
-            self.data.skuData = api.cloneForm(self.data.mainData.sku[i]);
+            self.data.choosed_skuData = api.cloneForm(self.data.mainData.sku[i]);
+            self.data.choosed_sku_item = api.cloneForm(self.data.mainData.sku[i].sku_item);
+            var skuRes = api.skuChoose(self.data.mainData.sku,self.data.choosed_sku_item);
+            self.data.can_choose_sku_item = skuRes.can_choose_sku_item;
           };
-          self.data.choose_sku_item.push.apply(self.data.choose_sku_item,self.data.mainData.sku[i].sku_item);
         };
-
-        self.data.sku_item = self.data.skuData.sku_item;
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
         self.data.complete_api.push('getMainData');
 
@@ -169,21 +141,59 @@ Page({
       };
 
       self.setData({
+        web_choosed_skuData:self.data.choosed_skuData,
         web_skuData:self.data.skuData,
-        web_labelData:self.data.labelData,
         web_mainData:self.data.mainData,
-        web_sku_item:self.data.sku_item,
-        web_choose_sku_item:self.data.choose_sku_item,
+        web_choosed_sku_item:self.data.choosed_sku_item,
+        web_can_choose_sku_item:self.data.can_choose_sku_item,
       });
-      console.log('self.data.labelData',self.data.web_mainData)
+
       self.checkLoadComplete();
+
     };
     api.productGet(postData,callback);
   },
 
+  chooseSku(e){
+    const self = this;
+
+    if(self.data.buttonClicked){
+      api.showToast('数据有误请稍等','none');
+      setTimeout(function(){
+        wx.showLoading();
+      },800)   
+      return;
+    };
+    
+    var id = api.getDataSet(e,'id');
+    if(self.data.can_choose_sku_item.indexOf(id)==-1){
+      return;
+    };
+
+    var index = self.data.choosed_sku_item.indexOf(id);
+    if(index==-1){
+      self.data.choosed_sku_item.push(id);
+    }else{
+      self.data.choosed_sku_item.splice(index,1);
+    };
+    var skuRes = api.skuChoose(self.data.mainData.sku,self.data.choosed_sku_item);
+    self.data.choosed_skuData = skuRes.choosed_skuData;
+    self.data.can_choose_sku_item = skuRes.can_choose_sku_item;
+
+    self.data.count = 1;
+    self.countTotalPrice();
+    self.setData({
+      web_choosed_sku_item:self.data.choosed_sku_item,
+      web_choosed_skuData:self.data.choosed_skuData,
+      web_can_choose_sku_item:self.data.can_choose_sku_item,
+    });
+    
+  },
 
 
+  //计算数量
   counter(e){
+
     const self = this;
     if(self.data.buttonClicked){
       api.showToast('数据有误请稍等','none');
@@ -192,17 +202,33 @@ Page({
       },800)   
       return;
     };
-    if(api.getDataSet(e,'type')=='+'){
-      self.data.count++;
-    }else if(self.data.skuData.count > '1'){
-      self.data.count--;
-    }
-    self.data.skuData.count = self.data.count
+    if(JSON.stringify(self.data.choosed_skuData)!='{}'){
+      if(api.getDataSet(e,'type')=='+'){
+        self.data.count++;
+      }else if(self.data.choosed_skuData.count > '1'){
+        self.data.count--;
+      }
+      self.data.choosed_skuData.count = self.data.count;
+    }else{
+      self.data.count = 1;
+    };
+    self.countTotalPrice();
+
+  },
+
+  //计算总价
+  countTotalPrice(){  
+    const self = this;
+    var totalPrice = 0;
+    if(JSON.stringify(self.data.choosed_skuData)!='{}'){
+      totalPrice += self.data.count*parseFloat(self.data.choosed_skuData.price);
+      self.data.totalPrice = totalPrice.toFixed(2);
+    };
+    self.data.totalPrice = totalPrice;
     self.setData({
       web_count:self.data.count,
-      web_skuData:self.data.skuData,
+      web_totalPrice:self.data.totalPrice
     });
-    self.countTotalPrice();
   },
 
   bindManual(e) {
@@ -213,15 +239,7 @@ Page({
     });
   },
 
-  countTotalPrice(){  
-    const self = this;
-    var totalPrice = 0;
-    totalPrice += self.data.count*parseFloat(self.data.skuData.price);
-    self.data.totalPrice = totalPrice;
-    self.setData({
-      web_totalPrice:self.data.totalPrice.toFixed(2)
-    });
-  },
+
 
   selectModel(e){
     const self = this;
@@ -244,10 +262,13 @@ Page({
   addCart(e){
     const self = this;
     let formId = e.detail.formId;
-    console.log(999,formId)
-    self.data.skuData.count = self.data.count;
-    self.data.skuData.isSelect = true;
-    var res = api.setStorageArray('cartData',self.data.skuData,'id',999); 
+    if(JSON.stringify(self.data.choosed_skuData)=='{}'){
+      api.showToast('未选中商品','success');
+      return;
+    };
+    self.data.choosed_skuData.count = self.data.count;
+    self.data.choosed_skuData.isSelect = true;
+    var res = api.setStorageArray('cartData',self.data.choosed_skuData,'id',999); 
     if(res){
       api.showToast('加入成功','success');
       self.data.isShow = !self.data.isShow;
@@ -256,85 +277,40 @@ Page({
       })
     };
     var cartData = api.getStorageArray('cartData');
-    console.log('addCart',cartData);  
+    var cartRes = api.findItemInArray(cartData,'id',self.data.id);
+    self.data.cart_count = cartRes.length>0?cartRes[1].count:0;
+    self.setData({
+      web_cart_count:self.data.cart_count,
+    }); 
   },
 
   goBuy(){
-    const self = this;
-    const skuDatas = [];
-    skuDatas.push({
-      id:self.data.id,
-      count:self.data.count
-    });
-    console.log(skuDatas);
-    if(self.data.skuData.id !=''&&self.data.skuData.id !=undefined){
-      wx.setStorageSync('payPro',skuDatas);
-      api.pathTo('/pages/mall/confirmOrder/confirmOrder','nav')
-    }else{
-      api.showToast('请完善信息','none')
-    }
 
-  },
-  chooseSku(e){
     const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      setTimeout(function(){
-        wx.showLoading();
-      },800)   
+    if(JSON.stringify(self.data.choosed_skuData)=='{}'){
+      api.showToast('未选中商品','success');
       return;
     };
-    self.data.skuData = {};
-    self.data.id = '';
-    
-    self.data.count = 1;
-    delete self.data.totalPrice;
-    var id = api.getDataSet(e,'id');
-    
-    if(self.data.choose_sku_item.indexOf(id)==-1){
-      return;
+    const postData = {
+      tokenFuncName:'getMallToken',
     };
-
-    self.data.choose_sku_item = [];
-    var parentid = api.getDataSet(e,'parentid');
-    var sku = self.data.mainData.label[parentid];
-
-    for(var i=0;i<sku.child.length;i++){
-      if(self.data.sku_item.indexOf(sku.child[i].id)!=-1){
-        self.data.sku_item.splice(self.data.sku_item.indexOf(sku.child[i].id), 1);
-      };
-      self.data.choose_sku_item.push(sku.child[i].id);
-    };
-
-    for (var i = 0; i < self.data.mainData.sku.length; i++) {
-      if(self.data.mainData.sku[i].sku_item.indexOf(parseInt(id))!=-1){
-        self.data.choose_sku_item.push.apply(self.data.choose_sku_item,self.data.mainData.sku[i].sku_item);  
+    const callback = (res)=>{
+      console.log(res);
+      if(res.info.data.length>0&&res.info.data[0].phone){
+        wx.setStorageSync('payPro',[{
+          id:self.data.choosed_skuData.id,
+          count:self.data.choosed_skuData.count,
+        }]);
+        api.pathTo('/pages/mall/confirmOrder/confirmOrder','nav');
+      }else{
+        api.showToast('请完善信息','none');
+        api.pathTo('/pages/mall/userInfo/userInfo','nav');
       };
     };
+    api.userInfoGet(postData,callback); 
 
-    for(var i=0;i<self.data.sku_item.length;i++){
-      if(self.data.choose_sku_item.indexOf(parseInt(self.data.sku_item[i]))==-1){
-        self.data.sku_item.splice(i, 1); 
-      };
-    };
-    self.data.sku_item.push(id);
-
-    for(var i=0;i<self.data.mainData.sku.length;i++){ 
-      if(JSON.stringify(self.data.mainData.sku[i].sku_item.sort())==JSON.stringify(self.data.sku_item.sort())){
-        self.data.id = self.data.mainData.sku[i].id;
-        self.data.skuData = api.cloneForm(self.data.mainData.sku[i]);
-      };   
-    };
-    
-    self.setData({
-      web_totalPrice:'',
-      web_count:self.data.count,
-      web_sku_item:self.data.sku_item,
-      web_skuData:self.data.skuData,
-      web_choose_sku_item:self.data.choose_sku_item,
-    });
-    
   },
+
 
   onShareAppMessage(res){
     const self = this;
@@ -345,12 +321,12 @@ Page({
       },800)   
       return;
     };
-     console.log(res)
+      console.log(res)
       if(res.from == 'button'){
         self.data.shareBtn = true;
       }else{   
         self.data.shareBtn = false;
-      }
+      };
       return {
         title: '纯粹科技',
         path: 'pages/detail/detail?id='+self.data.id,

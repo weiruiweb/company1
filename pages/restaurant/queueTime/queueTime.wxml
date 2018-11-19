@@ -24,7 +24,9 @@
 				领取优惠券
 			</view>
 			<view class="input_before" style="text-align:right;">
-				<view class="next_page" style="{{img}};background-position:-152px -383px;float: right;"></view>
+				<view class="next_page">
+					<image src="/images/next_page.jpg"></image>
+				</view>
 			</view>
 		</view>
 	</view>

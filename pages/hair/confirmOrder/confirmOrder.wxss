@@ -54,7 +54,6 @@ page{
 .product_left{
 	width:27.5%;
 	height:156rpx;
-	text-align:center;
 }
 .product_left image{
 	width:156rpx;

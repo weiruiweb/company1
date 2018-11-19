@@ -120,8 +120,8 @@ line-height:62rpx;}
 	padding-top:20rpx;
 }
 .star image{
-	width:15rpx;
-	height:15rpx;
+	width:16rpx;
+	height:16rpx;
 	margin-left:8rpx;
 
 }

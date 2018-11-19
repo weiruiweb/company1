@@ -12,7 +12,7 @@ Page({
   onLoad: function () {
     this.setData({
       fonts:app.globalData.font,
-      img:app.globalData.img
+      img:app.globalData.restaurant
     })
   },
   userInfo:function(){

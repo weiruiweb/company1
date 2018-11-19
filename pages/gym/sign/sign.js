@@ -18,7 +18,6 @@ Page({
       type:3
     },
     isSign:false,
-    img:"background:url('/images/gym.png')",
   },
 
 
@@ -38,7 +37,7 @@ Page({
     }),
     self.getComputeData();
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.gym,
     });
   },
 

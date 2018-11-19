@@ -13,7 +13,7 @@
 			 <view class="user_word ">
 			 	<view class="user_name flexRowBetween">
 			 		<view class="name_img">
-						<view style="width:30rpx;height:30rpx;{{img}};background-position: -194px -470px;"></view>
+						<view style="width:30rpx;height:30rpx;{{img1}};background-position: -194px -470px;"></view>
 			 		</view>
 			 		<view class="number">
 			 			<text>收货人</text><text>葳蕤</text>
@@ -21,12 +21,12 @@
 			 	</view>
 			 	<view class="user_name flexRowBetween" style="border:none">
 			 		<view class="name_img">
-						<view class="scale4" style="width:38px;height:38px;{{img}};background-position:-526px -2070px"></view>
+						<view class="scale4" style="width:38px;height:38px;{{img}};background-position:-526px -937px"></view>
 					</view>
 			 		<view class="number" style="width:70%;">
 			 			<text>西安市雁塔区</text>
 			 		</view>
-			 		<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+			 		<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img1}};background-position:-657px -46px"></view>
 			 	</view>
 
 			 </view>
@@ -47,7 +47,7 @@
 		<view class="txt2">优惠20元</view>
 	</view>
 	<view class="txt_right">
-		<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+		<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img1}};background-position:-657px -46px"></view>
 	</view>
 </view>
 
@@ -93,7 +93,7 @@
 <view id="menus">
 	<view class="has_menus flexRowCenter">
 		<view class="menus_icon">
-			<view class="scale5" style="width:46px;height:46px;margin:10rpx auto;{{img}};background-position:-246px -1898px"></view>
+			<view class="scale5" style="width:46px;height:46px;margin:10rpx auto;{{img}};background-position:-246px -765px"></view>
 			 <view class="cart_number" bindtap="onCartTap">
 	            <view class="fiexd-cart" style="">
 	                <view style="color:#fff;font-size:16rpx;">8</view>

@@ -37,7 +37,8 @@ Page({
     };
     self.setData({
       fonts:app.globalData.font,
-      img:app.globalData.img,
+      img1:app.globalData.img,
+      img:app.globalData.hair,
       web_count:self.data.count
     });
     if(options.id){

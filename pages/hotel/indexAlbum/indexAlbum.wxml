@@ -3,16 +3,16 @@
 <view class="p40" id="album">
   <view class="product flexRowBetween">
       <view class="product_img">
-        <image src="/images_hotel/product.png"></image>
+        <image src="/images/sort_img1.jpg"></image>
       </view>
       <view class="product_img">
-        <image src="/images_hotel/product.png"></image>
+        <image src="/images/sort_img1.jpg"></image>
       </view>
       <view class="product_img">
-        <image src="/images_hotel/product.png"></image>
+        <image src="/images/sort_img1.jpg"></image>
       </view>
       <view class="product_img">
-        <image src="/images_hotel/product.png"></image>
+        <image src="/images/sort_img1.jpg"></image>
       </view>
   </view>
 </view>

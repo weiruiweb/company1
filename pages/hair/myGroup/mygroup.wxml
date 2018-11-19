@@ -26,7 +26,7 @@
 
 					</view>
 					<view class="success_box">
-						<view class="scale1 success" style="{{img}};background-position:0px -2672px;"></view>
+						<view class="scale1 success" style="{{img}};background-position:0px -499px;"></view>
 					</view>
 				</view>
 				<view class="flexRowBetween group_item">
@@ -39,7 +39,7 @@
 						<text class="text2">花费 220.00元</text>
 					</view>
 					<view class="success_box">
-						<view class="scale1 success" style="{{img}};background-position:0px -2672px;"></view>
+						<view class="scale1 success" style="{{img}};background-position:0px -499px;"></view>
 					</view>
 				</view>
 			</view>
@@ -57,7 +57,7 @@
 						<text class="text2">花费 220.00元</text>
 					</view>
 					<view class="success_box">
-						<view class="scale8"  style="{{img}};width:168px;height:150px;background-position:-299px -1332px;float: right;"></view>
+						<view class="scale8"  style="{{img1}};width:168px;height:150px;background-position:-299px -199px;float: right;"></view>
 					</view>
 				</view>
 				<view class="flexRowBetween group_item">
@@ -70,7 +70,7 @@
 						<text class="text2">花费 220.00元</text>
 					</view>
 					<view class="success_box">
-						<view class="scale8"  style="{{img}};width:168px;height:150px;background-position:-299px -1332px;float: right;"></view>
+						<view class="scale8"  style="{{img1}};width:168px;height:150px;background-position:-299px -199px;float: right;"></view>
 					</view>
 				</view>
 			</view>
@@ -89,7 +89,7 @@
 
 					</view>
 					<view class="success_box">
-						<view class="scale8" style="{{img}};width:168px;height:146px;background-position:0px -1599px;float: right;"></view>
+						<view class="scale8" style="{{img1}};width:168px;height:146px;background-position:0px -466px;float: right;"></view>
 					</view>
 				</view>
 				<view class="flexRowBetween group_item">
@@ -103,7 +103,7 @@
 
 					</view>
 					<view class="success_box">
-						<view class="scale8" style="{{img}};width:168px;height:146px;background-position:0px -1599px;float: right;"></view>
+						<view class="scale8" style="{{img1}};width:168px;height:146px;background-position:0px -466px;float: right;"></view>
 					</view>
 				</view>
 			</view>

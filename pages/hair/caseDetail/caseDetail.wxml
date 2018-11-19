@@ -1,7 +1,7 @@
 <!--caseDetail.wxml-->
 <view class="caseDetail">
 	<view class="case_top">	
-		<image src="/images_hair/caseDetail_banner.jpg"></image>
+		<image src="/images/banner.png"></image>
 	</view>
 	<view class="case_cont">
 		<view class="caseTxt">
@@ -11,11 +11,11 @@
 			精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案例介绍精品案
 		</view>
 		<view class="case_img1">
-			<image src="/images_hair/case_detail1.jpg"></image>
+			<image src="/images/banner.png"></image>
 		</view>
 	</view>
 	<view class="case_bottom">
-		<image src="/images_hair/case-curtol.jpg">
+		<image src="/images/anner.png">
 		</image>
 	</view>
 </view>

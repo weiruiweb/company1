@@ -16,10 +16,6 @@ page{
 	width:22%;
 	margin-right:3%;
 }
-.shore_choose .tex1{
-
-
-}
 .choose_line{
 	width:100%;
 }
@@ -27,7 +23,6 @@ page{
 	width:18rpx;
 	height:32rpx;
 	float:right;
-	margin-top:26rpx;
 }
 .shore_choose .text2{
 	float:right;

@@ -55,7 +55,7 @@
 			        </view>
 			        <view class="uploder_item">
 			          <view class="uploader__input" bindtap="upLoadImg" >
-			            <view class="scale1" style="width:160px;height:164px;{{img}};background-position:-588px -3765px"></view>
+			            <view class="scale1" style="width:160px;height:164px;{{img}};background-position:-588px -199px"></view>
 			          </view>
 			        </view>
 			    </view>
@@ -72,7 +72,7 @@
 			        </view>
 			        <view class="uploder_item">
 			          <view class="uploader__input" bindtap="upLoadImg" >
-			            <view class="scale1" style="width:160px;height:164px;{{img}};background-position:-588px -3765px"></view>
+			            <view class="scale1" style="width:160px;height:164px;{{img}};background-position:-588px -199px"></view>
 			          </view>
 			        </view>
 			    </view>

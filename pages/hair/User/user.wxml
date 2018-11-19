@@ -14,7 +14,7 @@
 	<view class="cre_wrap">
 		<view class="credit flexCenter">
 			<view class="cre_img">
-				<view class="cre_img1 scale2" style="{{img}};background-position: -576px -2174px;"></view>
+				<view class="cre_img1 scale2" style="{{img}};background-position: -576px 0px;"></view>
 			</view>
 			<text>大众会员</text>
 		</view>
@@ -35,56 +35,72 @@
 		<view class="user_infor flexRowBetween"  bindtap="userInfo">
 			<view class="user_left flex">
 				<view class="icon_box">
-					<view class="user_icon scale4" style="{{img}};background-position: -162px -2632px"></view>
+					<view class="user_icon scale4" style="{{img}};background-position: -162px -459px"></view>
 				</view>
 				<text>会员卡</text>
 			</view>
 			<view class="user_right">
-			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+				<view class="next_page">
+					<image src="/images/next_page.jpg"></image>
+				</view>
 			</view>
 		</view>
 		<view class="user_infor flexRowBetween" bindtap="consume">
 			<view class="user_left flex">
 				<view class="icon_box">
-					<view class="user_icon  scale4" style="{{img}};background-position: -121px -2632px"></view>
+					<view class="user_icon  scale4" style="{{img}};background-position: -121px -459px"></view>
 				</view>
 				<text>消费记录</text>
 			</view>
 			<view class="user_right">
-			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+			<view class="next_page">
+				<view class="next_page">
+					<image src="/images/next_page.jpg"></image>
+				</view>
+			</view>
 			</view>
 		</view>
 		<view class="user_infor flexRowBetween" bindtap="address">
 			<view class="user_left flex">
 				<view class="icon_box">
-					<view class="user_icon  scale4" style="{{img}};background-position: -82px -2632px"></view>
+					<view class="user_icon  scale4" style="{{img}};background-position: -82px -459px"></view>
 				</view>
 				<text>我的相册</text>
 			</view>
 			<view class="user_right">
-			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+			<view class="next_page">
+				<view class="next_page">
+					<image src="/images/next_page.jpg"></image>
+				</view>
+			</view>
 			</view>
 		</view>
 		<view class="user_infor flexRowBetween" bindtap="mygroup">
 			<view class="user_left flex">
 				<view class="icon_box">
-					<view class="user_icon scale4" style="{{img}};background-position: -44px -2632px;"></view>	
+					<view class="user_icon scale4" style="{{img}};background-position: -44px -459px;"></view>	
 				</view>
 				<text>我的团购</text>
 			</view>
 			<view class="user_right">
-			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+			<view class="next_page">
+				<view class="next_page">
+					<image src="/images/next_page.jpg"></image>
+				</view>
+			</view>
 			</view>
 		</view>
 		<view class="user_infor flexRowBetween" bindtap="discount">
 			<view class="user_left flex">
 				<view class="icon_box">
-					<view class="user_icon scale4" style="{{img}};background-position: 0px -2632px;width:34px;"></view>
+					<view class="user_icon scale4" style="{{img}};background-position: 0px -459px;width:34px;"></view>
 				</view>
 				<text>我的优惠卷</text>
 			</view>
 			<view class="user_right">
-			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+			<view class="next_page">
+				<image src="/images/next_page.jpg"></image>
+			</view>
 			</view>
 		</view>
 	</view>
@@ -96,31 +112,31 @@
 <view class="navbar">
     <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Index/index">
        <view class="nav_top">
-        <view class="nav_img scale1" style="{{img}};background-position: -108px -2494px;"></view>
+        <view class="nav_img scale1" style="{{img}};background-position: -108px -321px;"></view>
       </view>
       <view class="text">首页</view>
     </view>
     <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Service/service">
         <view class="nav_top">
-        <view class="nav_img scale1" style="{{img}};background-position: -216px -2494px;"></view>
+        <view class="nav_img scale1" style="{{img}};background-position: -216px -321px;"></view>
       </view>
         <view class="text">服务</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairStyle/hairstyle">
         <view class="nav_top">
-        <view class="nav_img scale1" style="{{img}};background-position: -0px -2494px;"></view>
+        <view class="nav_img scale1" style="{{img}};background-position: -0px -321px;"></view>
       </view>
         <view class="text">发型</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairDresser/hairDresser">
         <view class="nav_top">
-          <view class="nav_img scale1" style="{{img}};background-position: -433px -2494px;"></view>
+          <view class="nav_img scale1" style="{{img}};background-position: -433px -321px;"></view>
         </view>
         <view class="text ">技师</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/User/user">
         <view class="nav_top">
-          <view class="nav_img scale1" style="{{img}};background-position: -374px -2494px;"></view>
+          <view class="nav_img scale1" style="{{img}};background-position: -374px -321px;"></view>
         </view>
         <view class="text this-text">我的</view>
     </view>

@@ -12,7 +12,7 @@ Page({
   onLoad(options) {
     const self = this;
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.gym,
     });
   },
   

@@ -25,7 +25,7 @@ Page({
     self.getSkuData();
     self.getartData()
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.hotel,
     });
   },
 

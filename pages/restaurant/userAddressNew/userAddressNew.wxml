@@ -14,7 +14,9 @@
 		<view class="address_right flexRowBetween" style="width:13%;">
 			<text>+86</text>
 			<view style="height:100%;">
-				<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+				<view class="next_page">
+					<image src="/images/next_page.jpg"></image>
+				</view>
 			</view>
 		</view>
 	</view>

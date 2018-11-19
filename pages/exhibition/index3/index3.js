@@ -20,7 +20,6 @@ Page({
     autoplay: true,
     intervalOne:2000,
     duration: 1000,
-    img:"background:url('/images/website.png')",
   },
 
 
@@ -28,7 +27,7 @@ Page({
     const self = this;
     self.getArtData();
     self.setData({
-      img:app.globalData.img
+      img:app.globalData.website
     });     
   },
 

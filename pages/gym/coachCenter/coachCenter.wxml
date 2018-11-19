@@ -1,6 +1,6 @@
 <!--user.wxml-->
 <view class="banner">
-  <view style="width:100%;height:214rpx;{{img}};background-position:0 -596px;"></view>
+  <view style="width:100%;height:214rpx;{{img1}};background-position:0 -596px;"></view>
   <view class="banner_bottom flex">
     <view style="width:22%;">
         <view class="user_img">
@@ -19,14 +19,14 @@
     <view class="user">
         <view class="user_top flex user_line" bindtap="intoPath"  data-path="/pages/gym/coachCenterCheck/coachCenterCheck">
             <view class="icon_box">
-                <view class="user_icon scale2" style="{{img}};background-position:-312px -3566px;">
+                <view class="user_icon scale2" style="{{img}};background-position:-312px 0px;">
                 </view>
             </view>
             预约订单查询
         </view>
         <view class="user_top flex"  bindtap="intoPath"  data-path="/pages/gym/userCenterStudent/userCenterStudent">
             <view class="icon_box">
-                <view class="user_icon scale2" style="{{img}};background-position:-267px -3566px;">
+                <view class="user_icon scale2" style="{{img}};background-position:-267px 0px;">
                 </view>
             </view>
             查看学员信息

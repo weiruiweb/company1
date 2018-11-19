@@ -2,7 +2,7 @@
 
 <view id="comment">	
 	<view class="flexRowBetween orderlistShow">
-		<view><image src="/images_hair/order.jpg"></image></view>
+		<view><image src="/images/sort_Img1.jpg"></image></view>
 		<view class="order_name" style="display: flex; flex-direction: column;">
 			<view class="text1">高端网站建设(含小程序）</view>
 			<view class="orders flexRowBetween">
@@ -13,7 +13,7 @@
 		</view>
 	</view>
 	<view class="flexRowBetween orderlistShow">
-		<view><image src="/images_hair/order.jpg"></image></view>
+		<view><image src="/images/sort_Img1.jpg"></image></view>
 		<view class="order_name" style="display: flex; flex-direction: column;">
 			<view class="text1">高端网站建设(含小程序）</view>
 			<view class="orders flexRowBetween">

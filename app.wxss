@@ -558,3 +558,15 @@ page{
   transition: 0.5s all ease;
   transform: scale(1);
 }
+.next_page image{
+	width:12rpx;
+	height:20rpx;
+}
+.edit_img image{
+	width:26rpx;
+	height:26rpx;
+}
+.delete_img image{
+	width:26rpx;
+	height:26rpx;
+}

@@ -15,7 +15,6 @@ Page({
       address:''  
     },
     mainData:{},
-    img:"background:url('/images/gym.png')",
   },
 
 
@@ -27,6 +26,9 @@ Page({
       token.getUserInfo();
     };
     self.userInfoGet();
+     self.setData({
+      img:app.globalData.gym,
+    });
   },
 
 

@@ -27,7 +27,7 @@
 						</view>
 					</view>
 					<view class="group_status">
-						<view class="scale5" style="{{img}};width:168px;height:146px;background-position:-296px -1133px;float: right;"></view>
+						<view class="scale5" style="{{img}};width:168px;height:146px;background-position:-296px 0px;float: right;"></view>
 					</view>
 				</view>
 				<view class="flexRowBetween group_item">
@@ -41,7 +41,7 @@
 
 					</view>
 					<view class="group_status">
-						<view class="scale5" style="{{img}};width:168px;height:146px;background-position:-296px -1133px;float: right;"></view>
+						<view class="scale5" style="{{img}};width:168px;height:146px;background-position:-296px 0px;float: right;"></view>
 					</view>
 				</view>
 			</view>
@@ -59,7 +59,7 @@
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<view class="scale2"  style="{{img}};width:168px;height:146px;background-position:-299px -1336px;float: right;"></view>
+					<view class="scale2"  style="{{img}};width:168px;height:146px;background-position:-299px -203px;float: right;"></view>
 				</view>
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
@@ -71,7 +71,7 @@
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<view class="scale2"  style="{{img}};width:168px;height:146px;background-position:-299px -1336px;float: right;"></view>
+					<view class="scale2"  style="{{img}};width:168px;height:146px;background-position:-299px -203px;float: right;"></view>
 				</view>
 			</view>
 
@@ -88,7 +88,7 @@
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<view class="scale2"  style="{{img}};width:168px;height:146px;background-position:0px -1599px;float: right;"></view>
+					<view class="scale2"  style="{{img}};width:168px;height:146px;background-position:0px -466px;float: right;"></view>
 				</view>
 				<view class="flexRowBetween group_item">
 					<view class="group_info">
@@ -100,7 +100,7 @@
 						<text class="text2">花费 220.00元</text>
 
 					</view>
-					<view class="scale2" style="{{img}};width:168px;height:146px;background-position:0px -1599px;float: right;"></view>
+					<view class="scale2" style="{{img}};width:168px;height:146px;background-position:0px -466px;float: right;"></view>
 				</view>
 			</view>
 

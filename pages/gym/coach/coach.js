@@ -17,7 +17,7 @@ Page({
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData();
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.gym,
     });
   },
 

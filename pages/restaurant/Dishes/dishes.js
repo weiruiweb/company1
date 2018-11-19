@@ -79,7 +79,7 @@ Page({
     };
     this.setData({
       fonts:app.globalData.font,
-      img:app.globalData.img,
+      img:app.globalData.restaurant,
     });
     self.data.id = options.id
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);

@@ -11,7 +11,7 @@ Page({
   
   onLoad: function () {
     this.setData({
-        img:app.globalData.img,
+        img:app.globalData.restaurant,
    })
   },
   order_status:function(e){

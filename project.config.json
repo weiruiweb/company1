@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 39,
+			"current": 44,
 			"list": [
 				{
 					"id": 0,
@@ -286,6 +286,23 @@
 					"name": "教练中心",
 					"pathName": "pages/gym/coachCenter/coachCenter",
 					"query": "id=20"
+				},
+				{
+					"id": -1,
+					"name": "caidan",
+					"pathName": "pages/restaurant/dishes2/dishes2",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "caidan",
+					"pathName": "pages/restaurant/dishesComfirm/dishesComfirm",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "caidan",
+					"pathName": "pages/hair/confirmOrder/confirmOrder"
 				}
 			]
 		}

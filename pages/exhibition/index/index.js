@@ -23,7 +23,6 @@ Page({
     duration: 1000,
     mainData:[],
     complete_api:[],
-    img:"background:url('/images/website.png')",
   },
   //事件处理函数
  
@@ -49,7 +48,7 @@ Page({
     self.getSliderData();
     self.getMainData();
     self.setData({
-      img:app.globalData.img
+      img:app.globalData.website
     });
   },
   

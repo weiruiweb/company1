@@ -33,7 +33,7 @@ Page({
     };
     self.setData({
       fonts:app.globalData.font,
-      img:app.globalData.img,
+      img:app.globalData.restaurant,
     })
     self.getSliderData();
     self.getMainData()

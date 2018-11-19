@@ -42,7 +42,7 @@
 	<view class="user_all">
 		<view class="user_infor flexRowBetween"  bindtap="intoPath"  data-path="/pages/restaurant/userGroup/userGroup">
 			<view class="user_left flexRowBetween">
-				<view class="user_icon scale4" style="{{img}};background-position:-484px -2070px"></view>
+				<view class="user_icon scale4" style="{{img}};background-position:-484px -937px"></view>
 				<text>我的团购</text>
 			</view>
 			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
@@ -77,7 +77,7 @@
 		</view>
 		<view class="user_infor flexRowBetween" bindtap="intoPath"  data-path="/pages/restaurant/userTake/userTake">
 			<view class="user_left flexRowBetween">
-				<view class="user_icon scale4" style="{{img}};background-position:-484px -2070px"></view>
+				<view class="user_icon scale4" style="{{img}};background-position:-484px -937px"></view>
 				<text>我的外卖</text>
 			</view>
 			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
@@ -89,21 +89,21 @@
 <view class="navbar">
       <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Index/index">
       	<view class="navbar_top">
-          <view class="nav_img scale" style="{{img}};background-position: 0px -2070px;">
+          <view class="nav_img scale" style="{{img}};background-position: 0px -937px;">
           </view>
         </view>
         <view class="text" style="{{fonts[2].font}}">首页</view>
       </view>
     <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Dishes/dishes">
     	<view class="navbar_top">
-	        <view class="nav_img scale" style="{{img}};height:56px;background-position: -110px -2070px;">
+	        <view class="nav_img scale" style="{{img}};height:56px;background-position: -110px -937px;">
 	          </view>
 	    </view>
 	    <view class="text" style="{{fonts[2].font}};">点菜</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect"  data-path="/pages/restaurant/User/user">
     <view class="navbar_top">
-      <view class="nav_img scale" style="{{img}};background-position: -276px -2070px;">
+      <view class="nav_img scale" style="{{img}};background-position: -276px -937px;">
       </view>
     </view>
     <view class="text this-text" style="{{fonts[2].font}}">我的</view>

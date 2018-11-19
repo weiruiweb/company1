@@ -3,25 +3,25 @@
 	<view class="takeOut">
 		<view class="user_process flexRowBetween">
 			<view class="user_pro">
-				<view class="scale1" style="width:84px;height:80px;{{img}};background-position: -341px -1958px;"></view>
+				<view class="scale1" style="width:84px;height:80px;{{img}};background-position: -341px -825px;"></view>
 			</view>
 			<view class="user_center">
 				
 			</view>
 			<view class="user_pro">
-				<view class="scale1" style="width:84px;height:80px;{{img}};background-position: -424px -1958px;"></view>
+				<view class="scale1" style="width:84px;height:80px;{{img}};background-position: -424px -825px;"></view>
 			</view>
 			<view class="user_center">
 				
 			</view>
 			<view class="user_pro">
-				<view class="scale1" style="width:84px;height:80px;{{img}};background-position: -512px -1958px;"></view>
+				<view class="scale1" style="width:84px;height:80px;{{img}};background-position: -512px -825px;"></view>
 			</view>
 			<view class="user_center">
 				
 			</view>
 			<view class="user_pro">
-				<view class="scale1" style="width:84px;height:80px;{{img}};background-position: -604px -1958px;"></view>
+				<view class="scale1" style="width:84px;height:80px;{{img}};background-position: -604px -825px;"></view>
 			</view>
 		</view>
 		<view class="user_txt flexRowBetween">
@@ -42,12 +42,12 @@
 </view>
 <view class="take_user">
 	<view class="take_name flexRowBetween">
-		<view class="take_left scale2"><view style="width:44px;height:32px;{{img}};background-position: -384px -2070px;"></view></view>
+		<view class="take_left scale2"><view style="width:44px;height:32px;{{img}};background-position: -384px -937px;"></view></view>
 		<view class="take_right"><text>收货人：姓名</text></view>
 	</view>
 	<view class="take_name flexRowBetween">
 		<view class="take_left scale2">
-			<view style="width:44px;height:32px;{{img}};background-position: -433px -2070px;"></view>
+			<view style="width:44px;height:32px;{{img}};background-position: -433px -937px;"></view>
 		</view>
 		<view class="take_right"><text>雁塔区高新大都荟A座2007</text></view>
 	</view>

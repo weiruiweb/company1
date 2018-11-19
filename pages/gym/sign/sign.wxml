@@ -36,9 +36,9 @@
 	<image src="/images/sign1.jpg"></image>
 	<view class="adver_txt flexRowBetween"> 
 		<view style="width:70%;margin:0 auto;" class="flexRowBetween"> 
-			<view class="scale2" style="width:39px;height: 28px;{{img}};background-position:-140px -3566px;"></view>
+			<view class="scale2" style="width:39px;height: 28px;{{img}};background-position:-140px 0px;"></view>
 			<view class="font28 color1">不去健身，那和咸鱼有什么区别 </view>
-			<view class="scale2" style="width:39px;height: 28px;{{img}};background-position:-140px -3566px;"></view> 
+			<view class="scale2" style="width:39px;height: 28px;{{img}};background-position:-140px 0px;"></view> 
 		</view>
 	</view>
 </view>
@@ -48,11 +48,11 @@
 			<view class="year_in">
 				<view class="date_year flexRowBetween"  style="font-size:28rpx;">
 					<view bindtap="changeMonth" data-type="mins" style="width:50rpx">
-					 <view class="scale2" style="width:12px;height:30px;{{img}};background-position:-696px -3566px;;"></view>
+					 <view class="scale2" style="width:12px;height:30px;{{img}};background-position:-696px 0px;;"></view>
 					</view>
 					<view> {{web_year}}年{{web_month}}月</view>
 					<view bindtap="changeMonth" data-type="add" style="width:50rpx">
-					  <view class="scale2" style="width:12px;height:30px;{{img}};background-position:-716px -3566px;;"></view>
+					  <view class="scale2" style="width:12px;height:30px;{{img}};background-position:-716px 0px;;"></view>
 					</view>
 				</view>
 			</view>

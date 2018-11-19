@@ -1,6 +1,6 @@
 <!--dishes.wxml-->
 <view class="w750 menu_click" bindtap="menu_click">
-	<view class="scale1" style="width:42px;height:38px;margin:30px;{{img}};background-position:-330px -2070px"></view>
+	<view class="scale1" style="width:42px;height:38px;margin:30px;{{img}};background-position:-330px -937px"></view>
 </view>
 <view class="">
 </view>
@@ -26,19 +26,19 @@
 		           <text style="{{fonts[3].font}};color:#666;"> 综合评分：</text>
 		           <view class="sta_list flexRowBetween">
 		           	 <view style="width:20%;height:100%;">
-			            <view class="scale4" style="width:30px;height:30px;margin-right:10rpx;{{img}};background-position:-402px -1898px"></view>
+			            <view class="scale4" style="width:30px;height:30px;margin-right:10rpx;{{img}};background-position:-402px -765px"></view>
 			         </view>
 		            <view style="width:20%;height:100%;">
-			            <view class="scale4" style="width:30px;height:30px;margin-right:10rpx;{{img}};background-position:-402px -1898px"></view>
+			            <view class="scale4" style="width:30px;height:30px;margin-right:10rpx;{{img}};background-position:-402px -765px"></view>
 			         </view>
 			         <view style="width:20%;height:100%;">
-			            <view class="scale4" style="width:30px;height:30px;margin-right:10rpx;{{img}};background-position:-402px -1898px"></view>
+			            <view class="scale4" style="width:30px;height:30px;margin-right:10rpx;{{img}};background-position:-402px -765px"></view>
 			         </view>
 			         <view style="width:20%;height:100%;">
-			            <view class="scale4" style="width:30px;height:30px;margin-right:10rpx;{{img}};background-position:-402px -1898px"></view>
+			            <view class="scale4" style="width:30px;height:30px;margin-right:10rpx;{{img}};background-position:-402px -765px"></view>
 			         </view>
 		              <view style="width:20%;height:100%;">
-			            <view class="scale4" style="width:30px;height:30px;margin-right:10rpx;{{img}};background-position:-364px -1898px"></view>
+			            <view class="scale4" style="width:30px;height:30px;margin-right:10rpx;{{img}};background-position:-364px -765px"></view>
 			         </view>
 		           </view>
 		        </view>
@@ -62,7 +62,7 @@
 <view id="menus">
 	<view class="has_menus flexRowCenter">
 		<view class="menus_icon">
-			<view class="scale5" style="width:46px;height:46px;margin:10rpx auto;{{img}};background-position:-246px -1898px"></view>
+			<view class="scale5" style="width:46px;height:46px;margin:10rpx auto;{{img}};background-position:-246px -765px"></view>
 			 <view class="cart_number" bindtap="onCartTap">
 	            <view class="fiexd-cart {{isShake?'animate':''}}" style="">
 	                <view style="color:#fff;font-size:16rpx;">{{web_cartTotalCounts}}</view>
@@ -81,13 +81,13 @@
 <view class="qcored" style="{{isShow?'display:none':''}}">
   <view class="qcored_cont">
     <view class="close scale2" bindtap="close" style="position: absolute;top:-36px;right: -36px;"> 
-      <view style="width:72px;height:72px;{{img}};background-position:0px -2172px"></view>
+      <view style="width:72px;height:72px;{{img}};background-position:-632px -370px"></view>
     </view>
     <view style="{{fonts[5].font}};color:#666;height:80rpx;line-height:80rpx;">
     		外卖
     </view>
     <view class="waimai flex">
-    	<view class="scale2" style="width:56px;height:42px;margin:0 auto;{{img}};background-position:-60px -1898px"></view>
+    	<view class="scale2" style="width:56px;height:42px;margin:0 auto;{{img}};background-position:-60px -765px"></view>
     </view>
     <view style="{{fonts[5].font}};color:#666;height:80rpx;line-height:80rpx;">
     		堂食
@@ -96,7 +96,7 @@
 		<view class="dining_left">
 			<view class="flexRowBetween" style="width:68%;height:100%;margin:0 auto;color:#fff;">
 				<view style="width:56rpx;height:50rpx;overflow:hidden;">
-					<view class="scale1" style="width:60px;height:50px;margin:0 auto;{{img}};background-position:-124px -1898px"></view>
+					<view class="scale1" style="width:60px;height:50px;margin:0 auto;{{img}};background-position:-124px -765px"></view>
 				</view>
 				<text style="height:100%;">输入桌号</text>
 			</view>
@@ -104,7 +104,7 @@
 		<view class="scer"></view>
 		<view class="dining_right ">
 			<view class="flexRowCenter" style="width:64%;height:100%;margin:0 auto;color:#fff;">
-				<view class="scale2" style="width:54px;height:50px;margin:0 auto;{{img}};background-position:0px -1898px"></view>
+				<view class="scale2" style="width:54px;height:50px;margin:0 auto;{{img}};background-position:0px -765px"></view>
 				<text style="height:100%;">扫码</text>
 			</view>
 		</view>
@@ -114,21 +114,21 @@
 <view class="navbar">
       <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Index/index">
         <view class="navbar_top">
-          <view class="nav_img scale" style="{{img}};background-position:0px -2070px;">
+          <view class="nav_img scale" style="{{img}};background-position:0px -937px;">
           </view>
         </view>
         <view class="text" style="{{fonts[2].font}}">首页</view>
       </view>
     <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Dishes/dishes">
       <view class="navbar_top">
-        <view class="nav_img scale" style="{{img}};height:56px;background-position:-163px -2070px;">
+        <view class="nav_img scale" style="{{img}};height:56px;background-position:-163px -937px;">
           </view>
       </view>
         <view class="text this_text" style="{{fonts[2].font}};">点菜</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect"  data-path="/pages/restaurant/User/user">
       <view class="navbar_top">
-        <view class="nav_img scale" style="{{img}};background-position: -218px -2070px;">
+        <view class="nav_img scale" style="{{img}};background-position: -218px -937px;">
           </view>
       </view>
         <view class="text" style="{{fonts[2].font}}">我的</view>

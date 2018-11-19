@@ -9,7 +9,9 @@ Page({
   },
   
   onLoad: function () {
-   
+   self.setData({
+      img:app.globalData.hair
+    });
   },
   userInfo:function(){
     wx.navigateTo({

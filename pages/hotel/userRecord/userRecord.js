@@ -4,13 +4,12 @@ const app = getApp()
 
 Page({
   data: {
-    img:"background:url('/images/hotel.png')",
   },
   
   onLoad: function () {
     const self = this;
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.hotel,
     });
   },
   userInfo:function(){

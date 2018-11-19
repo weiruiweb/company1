@@ -20,7 +20,7 @@ Page({
   onLoad: function () {
     const self = this;
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.hair,
     });
   },
   newMemeber:function(){

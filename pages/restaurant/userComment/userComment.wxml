@@ -13,21 +13,11 @@
 			<view class="star flexRowBetween">
 				<view class="star_xt flex">打分</view>
 				<view class="star_all flex">
-					 <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-402px -1898px"></view>
-			         </view>
-		            <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-402px -1898px"></view>
-			         </view>
-			         <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-402px -1898px"></view>
-			         </view>
-			         <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-402px -1898px"></view>
-			         </view>
-		              <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-364px -1898px"></view>
-			         </view>
+					 <image src="/images/star.jpg"></image>
+					 <image src="/images/star.jpg"></image>
+					 <image src="/images/star.jpg"></image>
+					 <image src="/images/star.jpg"></image>
+					 <image src="/images/star.jpg"></image>
 				</view>
 			</view>
 		</view>
@@ -57,21 +47,11 @@
 			<view class="star flexRowBetween">
 				<view class="star_xt">打分</view>
 				<view class="star_all flex">
-					 <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-402px -1898px"></view>
-			         </view>
-		            <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-402px -1898px"></view>
-			         </view>
-			         <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-402px -1898px"></view>
-			         </view>
-			         <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-402px -1898px"></view>
-			         </view>
-		              <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-364px -1898px"></view>
-			         </view>
+					 <image src="/images/star.jpg"></image>
+					 <image src="/images/star.jpg"></image>
+					 <image src="/images/star.jpg"></image>
+					 <image src="/images/star.jpg"></image>
+					 <image src="/images/star.jpg"></image>
 				</view>
 			</view>
 		</view>
@@ -101,21 +81,11 @@
 			<view class="star flexRowBetween">
 				<view class="star_xt">打分</view>
 				<view class="star_all flex">
-					 <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-402px -1898px"></view>
-			         </view>
-		            <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-402px -1898px"></view>
-			         </view>
-			         <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-402px -1898px"></view>
-			         </view>
-			         <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-402px -1898px"></view>
-			         </view>
-		              <view style="width:20%;height:100%;">
-			            <view class="scale2 star_item" style="{{img}};background-position:-364px -1898px"></view>
-			         </view>
+					 <image src="/images/star.jpg"></image>
+					 <image src="/images/star.jpg"></image>
+					 <image src="/images/star.jpg"></image>
+					 <image src="/images/star.jpg"></image>
+					 <image src="/images/star.jpg"></image>
 				</view>
 			</view>
 		</view>

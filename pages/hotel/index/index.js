@@ -30,7 +30,7 @@ Page({
     self.getSliderData(),
     self.getMainData()
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.hotel,
     });
   },
 

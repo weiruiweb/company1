@@ -29,7 +29,12 @@ App({
     categoryIndex:'',
     userInfo: null,
     font:[{font:'font-size:20rpx'},{font:'font-size:22rpx'},{font:'font-size:24rpx'},{font:'font-size:28rpx'},{font:'font-size:30rpx'},{font:'font-size:32rpx'}],
-    img:"background:url('http://www.solelytech.com/solelynet/small.png')",
+    img:"background:url('http://www.solelytech.com/solelynet/images/small.png')",
+    restaurant:"background:url('http://www.solelytech.com/solelynet/images/restaurant.png')",
+    hair:"background:url('http://www.solelytech.com/solelynet/images/hair.png')",
+    hotel:"background:url('http://www.solelytech.com/solelynet/images/hotel.png')",
+    website:"background:url('http://www.solelytech.com/solelynet/images/website.png')",
+    gym:"background:url('http://www.solelytech.com/solelynet/images/gym.png')",
   },
 
 

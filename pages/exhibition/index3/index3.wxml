@@ -9,28 +9,28 @@
     <view class="contact_list flexRowBetween font30 color6">
         <view class="input_before ">联系地址:</view>
         <view  placeholder="请输入联系地址">{{web_artData.title}}</view>
-        <view class="input_icon scale2"><view class="user_icon" style="{{img}};background-position:-567px -3507px"></view></view>
+        <view class="input_icon scale2"><view class="user_icon" style="{{img}};background-position:-567px -70px"></view></view>
     </view>
     <view class="contact_list flexRowBetween font30 color6">
         <view class="input_before ">联系电话:</view>
         <view  placeholder="请输入联系电话">{{web_artData.contactPhone}}</view>
 
         <view class="input_icon scale2">
-            <view class="user_icon" style="{{img}};background-position:-432px -3507px"></view>
+            <view class="user_icon" style="{{img}};background-position:-432px -70px"></view>
         </view>
     </view>
     <view class="contact_list flexRowBetween font30 color6">
         <view class="input_before ">联系QQ:</view>
         <view  placeholder="请输入联系QQ">877854886</view>
         <view class="input_icon scale2">
-            <view class="user_icon" style="{{img}};background-position:-523px -3507px"></view>
+            <view class="user_icon" style="{{img}};background-position:-523px -70px"></view>
         </view>
     </view>
     <view class="contact_list flexRowBetween font30 color6">
         <view class="input_before ">联系邮箱:</view>
         <view  placeholder="请输入联系邮箱">{{web_artData.description}}</view>
         <view class="input_icon scale2">
-            <view class="user_icon" style="{{img}};background-position:-478px -3507px"></view>
+            <view class="user_icon" style="{{img}};background-position:-478px -70px"></view>
         </view>
     </view>
 </view>
@@ -59,25 +59,25 @@
 <view class="navbar">
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index/index">
       <view class="navbar_top">
-        <view class="nav_img scale1" style="{{img}};background-position:-55px -3507px"></view>
+        <view class="nav_img scale1" style="{{img}};background-position:-55px -70px"></view>
       </view>
         <view class="text">首页</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index1/index1">
         <view class="navbar_top">
-        <view class="nav_img scale1" style="{{img}};background-position:-162px -3507px"></view>
+        <view class="nav_img scale1" style="{{img}};background-position:-162px -70px"></view>
       </view>
         <view class="text">公司业务</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index2/index2">
         <view class="navbar_top">
-        <view class="nav_img scale1" style="{{img}};background-position:-272px -3507px"></view>
+        <view class="nav_img scale1" style="{{img}};background-position:-272px -70px"></view>
       </view>
         <view class="text">公司动态</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index3/index3">
         <view class="navbar_top">
-        <view class="nav_img scale1" style="{{img}};background-position:-323px -3507px"></view>
+        <view class="nav_img scale1" style="{{img}};background-position:-323px -70px"></view>
       </view>
         <view class="text this-text">联系我们</view>
     </view>

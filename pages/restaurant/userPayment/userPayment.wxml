@@ -16,7 +16,7 @@
           优惠券
         </view>
         <input placeholder="请选择优惠劵"></input>
-        <image src="/images_restaurant/next_page.jpg"></image>
+        <image src="/images/next_page.jpg"></image>
     </view>
     <view class="pay_methodT" style="font-size:28rpx;margin-top:32rpx;padding:0px 20rpx;">
       付款方式
@@ -25,13 +25,13 @@
       <view class="chose_pay flexRowBetween" data-id="1" bindtap="choosePay">
           <view class="pay1 flexRowCenter">
               <view class="pay_icon">
-                <view class="pay_img scale1" style="{{img}};background-position: -620px -1757px">
+                <view class="pay_img scale1" style="{{img}};background-position: -620px -624px">
                 </view>
               </view>
               <text class="text1">微信支付</text>
           </view>
           <view class="choose_this">
-            <view class="choose" style="{{isChoose ==1?img:''}};background-position: -642px -1469px"></view>
+            <view class="choose" style="{{isChoose ==1?img:''}};background-position: -642px -336px"></view>
           </view>
       </view>
     </view>
@@ -39,12 +39,12 @@
       <view class="chose_pay flexRowBetween"  data-id="2"  bindtap="choosePay">
           <view class="pay1 flexRowCenter">
               <view class="pay_icon">
-                <view class="pay_img scale1" style="{{img}};background-position: -24px -1497px"></view>
+                <view class="pay_img scale1" style="{{img}};background-position: -24px -364px"></view>
               </view>
               <text class="text1">余额支付</text>
           </view>
           <view class="choose_this">
-              <view class="choose" style="{{isChoose ==2?img:''}};background-position: -642px -1469px"></view>
+              <view class="choose" style="{{isChoose ==2?img:''}};background-position: -642px -336px"></view>
             </view>
       </view>
     </view>

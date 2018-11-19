@@ -5,12 +5,11 @@ import {Token} from '../../../utils/token.js';
 const token = new Token();
 Page({
   data: {
-    img:"background:url('/images/restaurant.png')",
   },
   onLoad: function () {
     this.setData({
       fonts:app.globalData.font,
-      img:app.globalData.img,
+      img:app.globalData.restaurant,
     })
   },
   intoPath(e){

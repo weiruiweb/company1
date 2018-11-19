@@ -9,7 +9,8 @@ Page({
   onLoad: function () {
     const self = this;
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.hotel,
+      img:app.globalData.restaurant,
     });
   },
   userInfo:function(){
@@ -22,15 +23,4 @@ Page({
       date: e.detail.value
     })
   },
- 
-  newAddress:function(){
-    wx.navigateTo({
-      url:'/pages/hotel/newAddress/newAddress'
-    })
-  },
-  discount:function(){
-    wx.navigateTo({
-      url:'/pages/hotel/discount/discount'
-    })
-  }
 })

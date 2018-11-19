@@ -23,7 +23,7 @@ Page({
     wx.showLoading();
     self.setData({
       fonts:app.globalData.font,
-      img:app.globalData.img,
+      img:app.globalData.gym,
     });
     self.data.name = options.name;
     if(!wx.getStorageSync('gym_token')){

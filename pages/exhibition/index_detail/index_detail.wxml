@@ -11,7 +11,7 @@
 <view class="w710">
     <view class="font32 color3 flexRowBetween  product_top">
         <view class="product_name ">{{web_artData.title}}</view>
-        <view class="share scale1" style="{{img}};background-position:-615px -3507px"></view>
+        <view class="share scale1" style="{{img}};background-position:-615px -70px"></view>
     </view>
     <view class="font26 color6 flexRowBetween  product_top">
         <view class="product_name flex">

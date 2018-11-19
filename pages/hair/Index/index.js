@@ -15,7 +15,6 @@ Page({
     interval: 3000,
     duration: 1000,
     buttonClicked:true,
-    img:"background:url('/images/hair.png')",
   },
 
   onLoad(options) {
@@ -23,7 +22,7 @@ Page({
     wx.showLoading();
     self.setData({
       fonts:app.globalData.font,
-      img:app.globalData.img
+      img:app.globalData.hair
     });
     self.data.name = options.name;
     if(!wx.getStorageSync('hair_token')){

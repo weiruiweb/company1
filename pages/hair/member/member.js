@@ -6,7 +6,7 @@ const token = new Token();
 
 Page({
   data: {
-    img:"background:url('/images/hair.png')",
+    
   },
   
   onLoad: function () {

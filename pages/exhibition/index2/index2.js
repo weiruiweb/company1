@@ -31,7 +31,7 @@ Page({
     self.getLabelData();
     self.getSliderData();
     self.setData({
-      img:app.globalData.img
+      img:app.globalData.website
     });
   },
 

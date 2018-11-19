@@ -21,7 +21,7 @@ Page({
     wx.showLoading();
     self.setData({
      fonts:app.globalData.font,
-     img:app.globalData.img
+     img:app.globalData.hair
     });
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData();

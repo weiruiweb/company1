@@ -44,7 +44,7 @@
 
 	<view class="tab_item {{tapCurrent == 1?'tab_this':''}}">
 		<view class="tab_list flexRowBetween ">
-			<view class="limit_time scale8" style="{{img}};background-position: -573px -1260px;">
+			<view class="limit_time scale8" style="{{img1}};background-position: -573px -127px;">
 			</view>
 			<image src="/images_hair/tuan1.jpg"></image>
 			<view class="active_info">
@@ -78,7 +78,7 @@
 			</view>
 		</view>
 		<view class="tab_list flexRowBetween">	
-			<view class="limit_time scale8" style="{{img}};background-position: -573px -1260px;">
+			<view class="limit_time scale8" style="{{img1}};background-position: -573px -127px;">
 			</view>
 			<image src="/images_hair/tuan1.jpg"></image>
 			<view class="active_info">
@@ -118,8 +118,8 @@
 </view>
 <view class="begin_group {{isShow?'group_show':''}}">
 	<view class="group_wrap">
-		<view class="close scale2" bindtap="close" style="position: absolute;top:-15px;right: -15px;"> 
-	      <view style="width:62px;height:62px;{{img}};background-position:0px -2174px"></view>
+		<view class="close" bindtap="close"> 
+	      <image src="/images/close.jpg"></image>
 	    </view>
 		<text class="text1">发起拼团</text>
 		<text class="text">邀请<text class="group_number">2</text>人即可组团成功，23:49:07后结束</text>
@@ -142,14 +142,14 @@
 			</view>
 			<view class="three_share flexRowBetween">
 				<view class="bg_img {{this_item ==0?'this_bg':''}}" bindtap="this_bg" data-current="0">
-					<view class="scale1" style="width:46px;height:38px;{{img}};background-position:-478px -1898px;margin-left:6rpx;margin-top:10rpx;"></view>
+					<view class="scale1" style="width:46px;height:38px;{{img1}};background-position:-478px -765px;margin-left:6rpx;margin-top:10rpx;"></view>
 				</view>
 				<view class="bg_img {{this_item ==1?'this_bg':''}}" bindtap="this_bg"  data-current="1">
-					<view class="scale1" style="width:46px;height:38px;{{img}};background-position:-528px -1898px;margin-left:10rpx;margin-top:10rpx;">
+					<view class="scale1" style="width:46px;height:38px;{{img1}};background-position:-528px -765px;margin-left:10rpx;margin-top:10rpx;">
 					</view>
 				</view>
 				<view class="bg_img {{this_item ==2?'this_bg':''}}" bindtap="this_bg"  data-current="2">
-					<view class="scale1" style="width:46px;height:38px;{{img}};background-position:-575px -1898px;margin-left:10rpx;margin-top:10rpx;"></view>
+					<view class="scale1" style="width:46px;height:38px;{{img1}};background-position:-575px -765px;margin-left:10rpx;margin-top:10rpx;"></view>
 				</view>
 			</view>
 		</view>
@@ -160,8 +160,8 @@
 </view>
 <view class="begin_group {{isShows?'group_shows':''}}">
 	<view class="group_wrap">
-		<view class="close scale2" bindtap="close" style="position: absolute;top:-16px;right: -16px;"> 
-	      <view style="width:62px;height:62px;{{img}};background-position:0px -2174px"></view>
+		<view class="close" bindtap="close"> 
+	      <image src="/images/close.jpg"></image>
 	    </view>
 		<text class="text1">参与拼团</text>
 		<text class="text">邀请<text class="group_number">2</text>人即可组团成功，23:49:07后结束</text>

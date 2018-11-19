@@ -12,7 +12,7 @@
       </view>
     </view>
     <view class="store_right">
-      <image src="/images_hair/stores1.jpg" bindtap="map"></image>
+      <view style="{{img}};background-position: -380px -396px;width:36px;height:32px;"></view>
       <view class="store_phone distance">
           0.6km
       </view>
@@ -31,7 +31,7 @@
       </view>
     </view>
     <view class="store_right">
-      <image src="/images_hair/stores1.jpg" bindtap="map"></image>
+      <view style="{{img}};background-position: -380px -396px;width:36px;height:32px;"></view>
       <view class="store_phone distance">
           0.6km
       </view>
@@ -50,7 +50,7 @@
       </view>
     </view>
     <view class="store_right">
-      <image src="/images_hair/stores1.jpg" bindtap="map"></image>
+      <view style="{{img}};background-position: -380px -396px;width:36px;height:32px;"></view>
       <view class="store_phone distance">
           0.6km
       </view>

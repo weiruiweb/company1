@@ -22,7 +22,7 @@ Page({
     self.data.id = options.id;
     self.getArtData();
     self.setData({
-      img:app.globalData.img
+      img:app.globalData.website
     });      
   },
 

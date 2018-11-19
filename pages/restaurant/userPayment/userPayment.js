@@ -12,7 +12,7 @@ Page({
     const self = this;
     console.log(options)
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.restaurant,
     })
   },
 

@@ -20,7 +20,13 @@ page{
 	width:70%;
 	padding:0 15%;
 }
-
+.user_img{
+	width:70rpx;
+	height:70rpx;
+	border-radius:50%;
+	overflow:hidden;
+	margin:0 auto;
+}
 .recommend_img{
 	text-align:center;
 }

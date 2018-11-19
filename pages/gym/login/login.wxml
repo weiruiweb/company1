@@ -10,7 +10,7 @@
 <view id="login">
   <view class="login_input flexRowBetween">
     <view class="input_img">
-      <view class="scale2" style="width:32px;height:36px;{{img}};background-position: -706px -3632px;"></view>
+      <view class="scale2" style="width:32px;height:36px;{{img}};background-position: -706px -66px;"></view>
     </view>
      <view class="input_in">
       <input placeholder="请输入账号" data-key="login_name" bindinput="bindInputChange"></input>
@@ -18,7 +18,7 @@
   </view>
   <view class="login_input flexRowBetween">
     <view class="input_img">
-      <view  class="scale2" style="width:30px;height:36px;{{img}};background-position: -672px -3632px;"></view>
+      <view  class="scale2" style="width:30px;height:36px;{{img}};background-position: -672px -66px;"></view>
     </view>
      <view class="input_in">
       <input placeholder="请输入验证码" placeholder="请输入密码" data-key="password" bindinput="bindInputChange"></input>

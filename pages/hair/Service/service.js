@@ -22,7 +22,7 @@ Page({
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.setData({
       web_num:self.data.searchItem.category_id,
-      img:app.globalData.img
+      img:app.globalData.hair
     })
     self.getLabelData();
     self.getMainData()

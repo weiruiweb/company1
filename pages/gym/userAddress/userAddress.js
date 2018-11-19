@@ -20,7 +20,8 @@ Page({
     const self = this;
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.gym,
+      img1:app.globalData.img,
     });
   },
 

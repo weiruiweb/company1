@@ -41,56 +41,26 @@
 </view>
 <view class="navbar">
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index/index">
-        <view class="nav_img">
-          <image src="/images_exhibition/navbar1-a.png"></image>
-        </view>
-        <view class="text this-text">首页</view>
-    </view>
-    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index1/index1">
-        <view class="nav_img">
-           <image src="/images_exhibition/navbar2.png"></image>
-        </view>
-        <view class="text">公司业务</view>
-    </view>
-    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index2/index2">
-        <view class="nav_img">
-           <image src="/images_exhibition/navbar3.png"></image>
-        </view>
-        <view class="text">公司动态</view>
-    </view>
-    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index3/index3">
-        <view class="nav_img">
-            <image src="/images_exhibition/navbar4.png"></image>
-        </view>
-        <view class="text">联系我们</view>
-    </view>
-</view>
-<!-- <import src="../../nav/nav.wxml" />
-<template is="navbar"/> -->
-
-
-<view class="navbar">
-    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index/index">
       <view class="navbar_top">
-        <view class="nav_img scale1" style="{{img}};background-position:-55px -3507px"></view>
+        <view class="nav_img scale1" style="{{img}};background-position:-55px -70px"></view>
       </view>
         <view class="text">首页</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index1/index1">
         <view class="navbar_top">
-        <view class="nav_img scale1" style="{{img}};background-position:-108px -3507px"></view>
+        <view class="nav_img scale1" style="{{img}};background-position:-108px -70px"></view>
       </view>
         <view class="text this-text">公司业务</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index2/index2">
         <view class="navbar_top">
-        <view class="nav_img scale1" style="{{img}};background-position:-272px -3507px"></view>
+        <view class="nav_img scale1" style="{{img}};background-position:-272px -70px"></view>
       </view>
         <view class="text">公司动态</view>
     </view>
     <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index3/index3">
         <view class="navbar_top">
-        <view class="nav_img scale1" style="{{img}};background-position:-376px -3507px"></view>
+        <view class="nav_img scale1" style="{{img}};background-position:-376px -70px"></view>
       </view>
         <view class="text">联系我们</view>
     </view>

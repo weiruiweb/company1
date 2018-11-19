@@ -17,7 +17,7 @@ Page({
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData();
     this.setData({
-        img:app.globalData.img,
+        img:app.globalData.restaurant,
    })
   },
 

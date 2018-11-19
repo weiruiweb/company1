@@ -33,7 +33,8 @@
    		<view class="input_before">优惠券</view>
    		<view class="house_input flexRowBetween">
    			<view></view>
-   			<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px">
+   			<view class="next_page">
+   				<image src="/images/next_page.jpg"></image>
 			</view>
    		</view>
    </view>

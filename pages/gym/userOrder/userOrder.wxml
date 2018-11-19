@@ -17,7 +17,7 @@
 		<view class="w710">		
 			<view class=" order_list flexRowBetween">		
 				<view class="order_left">		
-				   <image src="/images_gym/index3.png"></image>
+				   <image src="/images/sort_img1.jpg"></image>
 				</view>
 				<view class="order_right">		
 				   <view class="order_name">格莱美舞蹈</view>

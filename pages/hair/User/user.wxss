@@ -147,3 +147,6 @@ text-align:center;
 	width:40rpx;
 	overflow: hidden;
 }
+.next_page{
+	text-align:right;
+}

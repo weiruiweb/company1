@@ -9,7 +9,7 @@
 			<view class="product_name">
 				网站开发高端定制
 			</view>
-			<view class="share scale2" style="{{img}};background-position:-480px -96px"></view>
+			<view class="share scale2" style="{{img1}};background-position:-480px -96px"></view>
 		</view>
 		<view class="price_sale flexRowBetween">
 			<view class="price">
@@ -25,7 +25,9 @@
 			<text class="text1">请选择</text>
 			<input placeholder="基本展示 基本展示"></input>
 		</view>
-		<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+		<view class="next_page">
+			<image src="/image/next_page.jpg"></image>
+		</view>
 	</view>
 	<view class="detail_comment flexRowBetween">
 		<view class="detail  {{tabCurrent == 0?'detail_select':''}}" data-current="0" bindtap="select_this">
@@ -37,7 +39,7 @@
 	</view>
 	<view class="detail_show">
 		<view id="detail" style="{{tabCurrent == 0?'display:block':'display:none'}}">
-			<image src="/images_hair/detail1.jpg"></image>
+			<image src="/images_hair/banner.jpg"></image>
 		</view>
 		<view id="comment" style="{{tabCurrent == 1?'display:block':'display:none'}}">
 			<view class="good_com flexRowBetween">
@@ -48,7 +50,9 @@
 					<text>好评率</text>
 					<text class="percent">99%</text>
 					<view style="width:12rpx;height:100%;overflow: hidden;">
-						<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+						<view class="next_page">
+							<image src="/image/next_page.jpg"></image>
+						</view>
 					</view>
 				</view>
 			</view>
@@ -63,11 +67,11 @@
 						
 					</view>
 					<view class="star flexRowBetween">
-						<view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
-				            <view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
-				            <view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
-				            <view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
-				            <view class="star_icon scale1" style="{{img}};background-position: -543px -95px;"></view>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
+						<image src="/images/star.jpg"></image>
 					</view>
 				</view>
 				<view class="comment_cont">
@@ -99,7 +103,7 @@
 			</view>
 		</view>
 		<view class="close" bindtap="close">
-			<view class="scale8" style="width:36px;height:36px;{{img}};background-position: -594px 0;"></view>
+			<view class="scale8" style="width:36px;height:36px;{{img1}};background-position: -594px 0;"></view>
 		</view>
 	</view>
 	<view id="type" class="">

@@ -20,7 +20,7 @@ Page({
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.setData({
       web_imgData:self.data.submitData.mainImg,
-      img:app.globalData.img,
+      img:app.globalData.gym,
     });
   },
 

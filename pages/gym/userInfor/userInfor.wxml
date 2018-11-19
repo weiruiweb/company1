@@ -28,7 +28,7 @@
                     <input placeholder="请输入身高" data-key="email" bindblur="changeBind" value="{{web_sForm.email}}"></input>
                 </view>
                 <view class="infor_right">
-                    <view style="width:14rpx;height:20rpx;background-position:-85px -100px;{{img}}"></view>
+                    <view style="width:14px;height:20px;background-position:-704px 0px;{{img}}"></view>
                 </view>
             </view>
             <view class="infor_list flexRowBetween">
@@ -39,7 +39,7 @@
                     <input placeholder="请输入体重" data-key="address" bindblur="changeBind" value="{{web_sForm.address}}"></input>
                 </view>
                 <view class="infor_right">
-                    <view style="width:14rpx;height:20rpx;background-position:-85px -100px;{{img}}"></view>
+                    <view style="width:14px;height:20px;background-position:-704px 0px;{{img}}"></view>
                 </view>
             </view>
             <view class="infor_list flexRowBetween">
@@ -54,7 +54,7 @@
                   </picker>
                 </view>
                 <view class="infor_right">
-                    <view style="width:14rpx;height:20rpx;background-position:-85px -100px;{{img}}"></view>
+                    <view style="width:14px;height:20px;background-position:-704px 0px;{{img}}"></view>
                 </view>
             </view>
              <view class="infor_list flexRowBetween" style="border:none;">
@@ -64,13 +64,11 @@
                 <view class="infor_center">
                     <input placeholder="请输入电话" data-key="phone" bindblur="changeBind" value="{{web_sForm.phone}}"></input>
                 </view>
-                <view class="infor_right">
-                    <view style="width:14rpx;height:20rpx;background-position:-25px -50px;{{img}}"></view>
-                </view>
+                
             </view>
         </view>
     </view>
 </view>
-<form bindsubmit="submit" class="" report-submit="true" style="margin-top:50rpx;">
-    <button form-type="submit" open-type="getUserInfo" class="submit_info form_btn color1" style="border-radius:50rpx;">保存</button>
+<form bindsubmit="submit" class="" report-submit="true" style="margin-top:150rpx;">
+    <button form-type="submit" open-type="getUserInfo" class="submit_info form_btn color1" style="border-radius:50rpx;margin-top:150rpx;">保存</button>
 </form>

@@ -14,7 +14,7 @@
 				 <view class="user_word ">
 				 	<view class="user_name flexRowBetween">
 				 		<view class="name_img">
-				 			<view class="scale4" style="width:38px;height:38px;{{img}};background-position:-526px -2070px"></view>
+				 			<view class="scale4" style="width:38px;height:38px;{{img}};background-position:-526px -937px"></view>
 				 		</view>
 				 		<view class="number">
 				 			<text>桌号</text><text>A区11桌</text>
@@ -43,7 +43,9 @@
 		<view class="txt2">优惠20元</view>
 	</view>
 	<view class="txt_right">
-		<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
+		<view class="next_page">
+			<image src="/images/next_page.jpg"></image>
+		</view>
 	</view>
 </view>
 
@@ -75,7 +77,7 @@
 <view id="menus">
 	<view class="has_menus flexRowCenter">
 		<view class="menus_icon">
-			<view class="scale5" style="width:46px;height:46px;margin:10rpx auto;{{img}};background-position:-246px -1898px"></view>
+			<view class="scale5" style="width:46px;height:46px;margin:10rpx auto;{{img}};background-position:-246px -765px"></view>
 			 <view class="cart_number">
 	            <view class="fiexd-cart" style="">
 	                <view style="color:#fff;font-size:16rpx;">8</view>

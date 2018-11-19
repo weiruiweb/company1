@@ -11,7 +11,7 @@ Page({
 
   onLoad(options) {
     this.setData({
-      img:app.globalData.img,
+      img:app.globalData.gym,
     });
   },
   intoPath(e) {

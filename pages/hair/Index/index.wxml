@@ -11,31 +11,31 @@
 <view class="module flexRowBetween" >
   <view class="module_item" bindtap="HairDresser">
     <view class="module_icon module1">
-      <view class="module_bg scale1" style="{{img}};background-position:-282px -2244px;"></view>
+      <view class="module_bg scale1" style="{{img}};background-position:-282px -71px;"></view>
     </view>
     <text>预约技师</text>
   </view>
   <view class="module_item" bindtap="shoppingEmpty">
     <view class="module_icon module2">
-      <view class="module_bg scale1" style="{{img}};background-position:-188px -2244px;"></view>
+      <view class="module_bg scale1" style="{{img}};background-position:-188px -71px;"></view>
     </view>
     <text>会员权益</text>
   </view>
   <view class="module_item" bindtap="group">
     <view class="module_icon module3">
-      <view class="module_bg scale1" style="{{img}};background-position:-94px -2244px;"></view>
+      <view class="module_bg scale1" style="{{img}};background-position:-94px -71px;"></view>
     </view>
     <text>团购活动</text>
   </view>
   <view class="module_item" bindtap="about">
     <view class="module_icon module4">
-      <view class="module_bg scale1" style="{{img}};background-position:0px -2244px;"></view>
+      <view class="module_bg scale1" style="{{img}};background-position:0px -71px;"></view>
     </view>
     <text>关于我们</text>
   </view>
   <view class="module_item">
    <view class="module_icon module5">
-      <view class="module_bg scale1" style="{{img}};background-position:-376px -2244px;"></view>
+      <view class="module_bg scale1" style="{{img}};background-position:-376px -71px;"></view>
     </view>
     <text>联系我们</text>
   </view>
@@ -46,13 +46,13 @@
     门店
   </view>
   <view class="store_nears">
-    <view class="near scale4" bindtap="store" style="{{img}};background-position:-164px -2568px;">
+    <view class="near scale4" bindtap="store" style="{{img}};background-position:-164px -395px;">
       <view class="text1">最近</view>
     </view>
   </view>
   <text class="store_active">高新一号店，会员优惠日充200送200~</text>
   <view class="map" bindtap="map"> 
-    <view class="map_img scale6" style="{{img}};background-position:-380px -2568px;"></view>
+    <view class="map_img scale6" style="{{img}};background-position:-380px -395px;"></view>
   </view>
 </view>
 <view class="discont">
@@ -96,31 +96,31 @@
 <view class="navbar">
     <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Index/index">
        <view class="nav_top">
-        <view class="nav_img scale1" style="{{img}};background-position: -162px -2494px;"></view>
+        <view class="nav_img scale1" style="{{img}};background-position: -162px -321px;"></view>
       </view>
       <view class="text  this-text" style="color:#fb5676">首页</view>
     </view>
     <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Service/service">
         <view class="nav_top">
-        <view class="nav_img scale1" style="{{img}};background-position: -216px -2494px;"></view>
+        <view class="nav_img scale1" style="{{img}};background-position: -216px -321px;"></view>
       </view>
         <view class="text">服务</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairStyle/hairstyle">
         <view class="nav_top">
-        <view class="nav_img scale1" style="{{img}};background-position: 0px -2494px;"></view>
+        <view class="nav_img scale1" style="{{img}};background-position: 0px -321px;"></view>
       </view>
         <view class="text">发型</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/HairDresser/hairDresser">
         <view class="nav_top">
-          <view class="nav_img scale1" style="{{img}};background-position: -432px -2494px;"></view>
+          <view class="nav_img scale1" style="{{img}};background-position: -432px -321px;"></view>
         </view>
         <view class="text">技师</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect" data-path="/pages/hair/User/user">
         <view class="nav_top">
-          <view class="nav_img scale1" style="{{img}};background-position: -324px -2494px;"></view>
+          <view class="nav_img scale1" style="{{img}};background-position: -324px -321px;"></view>
         </view>
         <view class="text">我的</view>
     </view>

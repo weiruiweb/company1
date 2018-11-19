@@ -3,7 +3,7 @@
      <view class="user_tlt">
     <view class="tlt_cont">
         <view class="icon_box">
-            <view class="user_icon scale2" style="{{img}};background-position:-381px -3700px;">
+            <view class="user_icon scale2" style="{{img}};background-position:-381px -134px;">
             </view>
         </view>订单确认</view>
     </view>
@@ -23,12 +23,12 @@
                 </view>
                  <view class="infor_center flexRowBetween" style="width:30%;">
                     <view class="mins">
-                    <view class="scale2" style="width:60px;height: 60px;{{img}};background-position:0px -3566px;">
+                    <view class="scale2" style="width:60px;height: 60px;{{img}};background-position:0px -0px;">
                     </view>
                     </view>
                     <view class="number">1</view>
                     <view class="add">
-                        <view class="scale2" style="width:60px;height: 60px;{{img}};background-position:-70px -3566px;">
+                        <view class="scale2" style="width:60px;height: 60px;{{img}};background-position:-70px -0px;">
                     </view>
                     </view>
                 </view>
@@ -42,7 +42,7 @@
                 </view>
                 <view class="infor_right">
                     <view class="next_page">
-                        <view class="user_icon1 scale2" style="{{img}};background-position: -169px -3763px;"></view>
+                        <view class="user_icon1 scale2" style="{{img}};background-position: -169px -197px;"></view>
                     </view>
                 </view>
             </view>

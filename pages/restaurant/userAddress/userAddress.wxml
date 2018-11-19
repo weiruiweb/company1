@@ -23,11 +23,15 @@
 				<text>{{item.isdefault=='0'?'设为默认地址':'默认地址'}}</text>
 			</view>
 			<view class="edit" data-path="/pages/restaurant/userAddressNew/userAddressNew?id={{item.id}}" bindtap="intoPath">
-				<view style="{{img}};width:30px;height:30px;background-position: -567px -92px;"></view>
+				<view class="edit_img">
+					<image src="/images/edit.jpg"></image>
+				</view>
 				<text>编辑</text>
 			</view>
 			<view class="edit delete" data-id="{{item.id}}" bindtap="deleteAddress">
-				<view class="scale2" style="{{img}};width:30px;height:30px;background-position: -598px -92px;"></view>
+				<view class="delete_img">
+					<image src="/images/del.jpg"></image>
+				</view>
 				<text>删除</text>
 			</view>
 		</view>

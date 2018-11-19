@@ -12,7 +12,7 @@ Page({
     const self = this;
     self.getUserInfoData();
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.hair,
     });
   },
 

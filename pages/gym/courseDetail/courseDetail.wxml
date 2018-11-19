@@ -14,13 +14,13 @@
             <view class="tlt_cont">格莱美舞蹈</view>
             <view class="mark">
               <view style="width:28rpx;overflow: hidden;">
-                  <view class="scale4" style="width:28px;height:28px;{{img}};background-position:-663px -3566px">
+                  <view class="scale4" style="width:28px;height:28px;{{img}};background-position:-663px -0px">
                   </view>
               </view>2h
             </view>
             <view class="mark">
               <view style="width:28rpx;overflow: hidden;">
-                <view class="scale4" style="width:28px;height:28px;{{img}};background-position:-534px -3566px">
+                <view class="scale4" style="width:28px;height:28px;{{img}};background-position:-534px -0px">
                 </view>
               </view>79°
             </view>

@@ -88,8 +88,6 @@
     "pages/restaurant/queue/queue",
     "pages/restaurant/queueTime/queueTime",
     "pages/restaurant/discount/discount",
-    "pages/restaurant/coldDishes/coldDishes",
-    "pages/restaurant/hotDishes/hotDishes",
     "pages/restaurant/dishes1/dishes1",
     "pages/restaurant/dishes2/dishes2",
     "pages/restaurant/dishesComfirm/dishesComfirm",

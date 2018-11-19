@@ -16,7 +16,9 @@
 	<input placeholder="请输入出生日期" value="{{web_sForm.passage1}}" style=""></input>
 	<picker mode="date" class="" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
 	<view style="height:90rpx;overflow: hidden;">
-		<view class="next_page scale7" style="width:12px;height:32px;float:right;{{img}};background-position:-657px -46px"></view>
+		<view class="next_page">
+			<image src="/images/next_page.jpg"></image>
+		</view>
 	</view>
 	</picker>
 </view>

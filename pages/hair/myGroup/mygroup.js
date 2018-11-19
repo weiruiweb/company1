@@ -11,7 +11,8 @@ Page({
   
   onLoad: function () {
     this.setData({
-      img:app.globalData.img,
+      img1:app.globalData.img,
+      img:app.globalData.hair,
     })
   },
   order_status:function(e){

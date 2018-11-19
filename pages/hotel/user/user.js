@@ -14,7 +14,7 @@ Page({
     const self = this;
     self.userInfoGet()
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.hotel,
     });
   },
 

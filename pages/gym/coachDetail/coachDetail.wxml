@@ -5,16 +5,16 @@
 
 </view>
 <view class="ader flexRowCenter">
-    <view class="scale2" style="width:39px;height: 28px;{{img}};background-position:-140px -3566px;"></view>
+    <view class="scale2" style="width:39px;height: 28px;{{img}};background-position:-140px -0px;"></view>
     人要是不去健身，那和咸鱼有什么区别
-    <view class="scale2" style="width:39px;height: 28px;{{img}};background-position:-184px -3566px;"></view>
+    <view class="scale2" style="width:39px;height: 28px;{{img}};background-position:-184px -0px;"></view>
 </view>
 <view class="w710">
     <view class="intro_cont">
         <view class="w710">
             <view class="user_tlt">
                 <view class="icon_box">
-                    <view class="user_icon scale2" style="{{img}};height:26px;background-position:-225px -3700px;">
+                    <view class="user_icon scale2" style="{{img}};height:26px;background-position:-225px -134px;">
                     </view>
                 </view>
                 <view class="tlt_cont">获奖经历</view>
@@ -30,7 +30,7 @@
         <view class="w710">
             <view class="user_tlt">
                 <view class="icon_box">
-                    <view class="user_icon scale2" style="{{img}};background-position:-676px -3700px;">
+                    <view class="user_icon scale2" style="{{img}};background-position:-676px -134px;">
                     </view>
                 </view>
                 <view class="tlt_cont">个人故事</view>
@@ -77,7 +77,7 @@
                 </view>
                 <view class="time_item" data-id="3" bindtap="select">
                     <view style="text-align:center;margin-top:20rpx;">
-                        <view style="width:40rpx;height:40rpx;{{img}};background-position:-243px 0"></view>
+                        <view style="width:40rpx;height:40rpx;{{img1}};background-position:-243px 0"></view>
                     </view>
                     <view class="text2">星期二</view>
                     <view class="up_down">

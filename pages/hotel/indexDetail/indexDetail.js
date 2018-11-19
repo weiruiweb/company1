@@ -28,7 +28,7 @@ Page({
     self.data.id = options.id;
     self.getMainData()
     self.setData({
-      img:app.globalData.img,
+      img:app.globalData.hotel,
     });
   },
 

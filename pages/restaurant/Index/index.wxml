@@ -13,7 +13,7 @@
 <view class="module flex">
   <view class="module-item" bindtap="intoPath" data-path="/pages/restaurant/Dishes/dishes">
      <view class="module_img">
-        <view class="module_icon scale1" style="{{img}};background-position:-556px -1602px"></view>
+        <view class="module_icon scale1" style="{{img}};background-position:-556px -469px"></view>
      </view>
      <view class="module_txt"  style="{{fonts[3].font}}">
         推荐
@@ -21,7 +21,7 @@
   </view>
   <view class="module-item" bindtap="intoPath"  data-path="/pages/restaurant/Dishes/dishes">
      <view class="module_img">
-        <view class="module_icon scale1" style="{{img}};background-position:-436px -1602px"></view>
+        <view class="module_icon scale1" style="{{img}};background-position:-436px -469px"></view>
      </view>
      <view class="module_txt"  style="{{fonts[3].font}}">
         凉菜
@@ -29,7 +29,7 @@
   </view>
   <view class="module-item" bindtap="intoPath"  data-path="/pages/restaurant/Dishes/dishes">
      <view class="module_img">
-        <view class="module_icon scale1" style="{{img}};background-position:-316px -1602px"></view>
+        <view class="module_icon scale1" style="{{img}};background-position:-316px -469px"></view>
      </view>
      <view class="module_txt"  style="{{fonts[3].font}}">
         热菜
@@ -37,7 +37,7 @@
   </view>
   <view class="module-item" bindtap="intoPath"  data-path="/pages/restaurant/queue/queue">
      <view class="module_img">
-        <view class="module_icon scale1" style="{{img}};background-position:-196px -1602px"></view>
+        <view class="module_icon scale1" style="{{img}};background-position:-196px -469px"></view>
      </view>
      <view class="module_txt"  style="{{fonts[3].font}}">
         排队
@@ -53,7 +53,7 @@
         <view class="left_txt3" style="{{fonts[2].font}};color:#f2665f;">抢到就是赚到</view>
       </view> 
       <view class="right_img">
-        <view class="scale4" style="width:150px;height:122px;{{img}};background-position:0px -1767px"></view>
+        <view class="scale4" style="width:150px;height:122px;{{img}};background-position:0px -634px"></view>
       </view>
     </view>
     <view class="space1">
@@ -65,14 +65,14 @@
         <view class="left_txt3" style="{{fonts[2].font}};color:#f2665f;">优惠多福利多</view>
       </view> 
       <view class="right_img">
-        <view class="scale4" style="width:150px;height:122px;{{img}};background-position:-160px -1767px"></view>
+        <view class="scale4" style="width:150px;height:122px;{{img}};background-position:-160px -634px"></view>
       </view>
     </view>
   </view>
 
 </view>
 <view class="index_tlt">
-    <view class="tlt_img scale1" style="width:303px;height:68px;{{img}};background-position:-298px -1783px">
+    <view class="tlt_img scale1" style="width:303px;height:68px;{{img}};background-position:-298px -650px">
     </view>
     <view class="tlt_txt"  style="{{fonts[4].font}};color:#fff;">
       特色推荐
@@ -108,21 +108,21 @@
 <view class="navbar">
       <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Index/index">
         <view class="navbar_top">
-          <view class="nav_img scale" style="{{img}};background-position:-54px -2070px;">
+          <view class="nav_img scale" style="{{img}};background-position:-54px -937px;">
           </view>
         </view>
         <view class="text this-text" style="{{fonts[2].font}}"  style="color:#f2665f">首页</view>
       </view>
     <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Dishes/dishes">
       <view class="navbar_top">
-        <view class="nav_img scale" style="{{img}};height:56px;background-position:-108px -2070px;">
+        <view class="nav_img scale" style="{{img}};height:56px;background-position:-108px -937px;">
           </view>
       </view>
         <view class="text" style="{{fonts[2].font}};">点菜</view>
     </view>
     <view class="navbar_item"  bindtap="intoPathRedirect"  data-path="/pages/restaurant/User/user">
       <view class="navbar_top">
-        <view class="nav_img scale" style="{{img}};background-position: -218px -2070px;">
+        <view class="nav_img scale" style="{{img}};background-position: -218px -937px;">
           </view>
       </view>
         <view class="text" style="{{fonts[2].font}}">我的</view>

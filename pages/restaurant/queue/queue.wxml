@@ -24,7 +24,8 @@
 		<view class="flexRowBetween">
 			<view class="input_before" style="width:95%;">领取优惠券</view>
 			<view class="input_up" style="width:5%;">
-				<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px">
+				<view class="next_page flex" style="height:100%;">
+					<image src="/images/next_page.jpg"></image>
 				</view>
 			</view>
 		</view>
@@ -70,7 +71,7 @@
 	</view>
 </view>
 <view class="queqe_btn" bindtap="intoPath" data-path="/pages/restaurant/queueTime/queueTime">
-	<view class="queqe_txt scale1" style="{{img}};background-position:-9px -1145px;">
+	<view class="queqe_txt scale1" style="{{img}};background-position:-9px -12px;">
 		立即排队
 	</view>
 </view>

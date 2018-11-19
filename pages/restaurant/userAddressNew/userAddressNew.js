@@ -33,7 +33,7 @@ Page({
     };
     self.switch2Change();
     self.setData({
-      img:app.globalData.img, 
+      img:app.globalData.restaurant, 
     })
   },
 

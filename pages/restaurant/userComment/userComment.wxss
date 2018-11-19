@@ -97,3 +97,8 @@ page{
 	height:30px;
 	margin-right:10rpx;
 }
+.star_all image{
+	width:16rpx;
+	height:16rpx;
+	margin-right:6rpx;
+}

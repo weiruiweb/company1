@@ -29,7 +29,7 @@
 <view class="product w710" style="background: #fff;">
     <view class="product_box  flexRowBetween">
             <view class="product_left">
-                <image src="/images/index1.png"></image>
+                <image src="/images/sort_Img1.png"></image>
             </view>
             <view class="product_right">
                 <view class="product_detail">

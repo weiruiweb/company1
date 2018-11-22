@@ -1,0 +1,79 @@
+<!--index1.wxml-->
+<view class="tab font30 flexRowBetween">
+    <view class="tab_item {{currentId == 0?'tab_this':''}}" data-id="0" bindtap="tab">
+        企业动态
+    </view>
+    <view class="tab_item {{currentId == 1?'tab_this':''}}" data-id="1"  bindtap="tab">
+        合作须知
+    </view>
+</view>
+
+<view class="w710" style="{{currentId == 0?'display:block':'display:none'}}">
+    <block wx:for="{{web_mainData}}" wx:key="id">
+        <view class="product flexRowBetween w710" bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}">
+            <view class="product_box flexRowBetween">
+                <view class="product_left">
+                    <image src="{{item.mainImg[0].url}}"></image>
+                </view>
+                <view class="product_right flexRowBetween">
+                    <view class="product_detail">
+                        <view class="font32 product_top">{{item.title}}</view>
+                        <view class="font26 color6 product_center">{{item.description}}</view>
+                        <view class="font24 color9 product_top">
+                           {{item.create_time}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>
+<view class="w710 state" style="{{currentId == 1?'display:block':'display:none'}}">
+    <block wx:for="{{web_cooperData}}" wx:key="id">
+        <view class="state_right"  bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}">
+            <view class="state_right_box">
+                <view class="state_top flex font30">
+                    {{item.title}}
+                </view>
+                <view class="font26 color6 state_cont">
+                {{item.description}}
+                </view>
+            </view>
+        </view>
+    </block>
+</view>
+
+<view class="navbar">
+    <view class="navbar_item flex"  bindtap="intoPathRedirect" data-path="/pages/entrance/index/index">
+        <view style="width:100%;text-align: center;">
+            <view class="nav_img">
+              <image src="/images/navbar1.png"></image>
+            </view>
+            <view class="text">首页</view>
+        </view>
+    </view>
+    <view class="navbar_item flex"   bindtap="intoPathRedirect" data-path="/pages/entrance/case/case">
+        <view style="width:100%;text-align: center;">
+            <view class="nav_img">
+               <image src="/images/navbar2.png"></image>
+            </view>
+            <view class="text">行业案例</view>
+        </view>
+    </view>
+    <view class="navbar_item flex">
+        <view style="width:100%;text-align: center;">
+            <view class="nav_img">
+               <image src="/images/navbar3-a.png"></image>
+            </view>
+            <view class="text this-text">资讯中心</view>
+        </view>
+    </view>
+    <view class="navbar_item flex"   bindtap="intoPathRedirect" data-path="/pages/entrance/user/user">
+        <view style="width:100%;text-align: center;">
+            <view class="nav_img">
+                <image src="/images/navbar4.png"></image>
+            </view>
+            <view class="text">个人中心</view>
+        </view>
+    </view>
+</view>

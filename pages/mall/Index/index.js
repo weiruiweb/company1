@@ -10,7 +10,7 @@ Page({
      caseData:[],
      loadingHidden:false,
   },
-   preventTouchMove:function(e) {
+   preventTouchMove :function(e) {
   },
   onLoad(options) {
     const self = this;

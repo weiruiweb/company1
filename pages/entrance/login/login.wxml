@@ -1,0 +1,27 @@
+<!--login.wxml-->
+<view class="login">
+  <view class="user_img">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+</view>
+<view id="login">
+  <view class="login_input flexRowBetween">
+    <view class="input_img">
+      <image src="/images/user.png"></image>
+    </view>
+     <view class="input_in">
+      <input placeholder="姓名"></input>
+    </view>
+  </view>
+  <view class="login_input flexRowBetween">
+    <view class="input_img">
+      <image src="/images/password.png"></image>
+    </view>
+     <view class="input_in">
+      <input placeholder="密码"></input>
+    </view>
+  </view>
+</view>
+<form bindsubmit="submit" report-submit="true">
+  <button form-type="submit" class="submit_info" style="width:700rpx;margin:160rpx auto 0 auto;height:88rpx;line-height:88rpx;border-radius: 50rpx;">登录</button>
+</form>

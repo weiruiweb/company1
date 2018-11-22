@@ -1,0 +1,58 @@
+/**index.wxss**/
+
+@import "../../../wxParse/wxParse.wxss"
+page{
+	background: #f2f2f2;
+}
+.banner{
+	width:100%;
+	height:400rpx;
+	overflow:hidden;
+	position:relative;
+}
+.banner image{
+	width:100%;
+	height:400rpx;
+}
+.banner_box{
+	width:100%;
+	height:400rpx;
+	position: absolute;
+	left: 0;
+	top:0;
+}
+.wx_img{
+	width:184rpx;
+	height:184rpx;
+	border-radius:50%;
+	border:solid 1px #60cffa;
+	margin:0 auto;
+}
+.user_img{
+	width:146rpx;
+	height:146rpx;
+	border-radius:50%;
+	overflow: hidden;
+	margin:0 auto;
+	border:solid 1px #fff;
+}
+.sort{
+	margin-top: 20rpx;
+	flex-wrap: wrap;
+}
+.sort_item{
+	height:254rpx;
+	background:#fff;
+	width:33.33%;
+	box-sizing: border-box;
+	border-bottom: solid 2px #f2f2f2;
+}
+.item_box{
+	width:100%;
+	height:200rpx;
+	text-align: center;
+}
+.item_box image{
+	width:46rpx;
+	height:44rpx;
+}

@@ -1,0 +1,70 @@
+<!--User.wxml-->
+<view class="w710" style="height:100%;">
+	<view class="state" bindtap="intoPath" data-path="/pages/entrance/userProjectState1/userProjectState1">
+		<view class="state_cont flex">
+			<view class="state_left flex">
+				<view class="circle"></view>
+			</view>
+			<view class="state_right flex">
+				<view class="state_right_box">
+					<view class="state_top flex">
+						<view class="font28 color6" style="width:75%;">标题标题标题标题标题</view>
+						<view class="font26 color9" style="width:25%;">2016-9-9</view>
+					</view>
+					<view class="state_bottom">
+						<view class="font28 color6" style="width:20%;">剩余工期</view>
+						<view class="font26 color9 state_text" style="width:70%;">标题标题标题标题标题标题标题标题标题标标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题题标题标题标题标题标题</view>
+						<view class="next_page" style="width:10%;">
+							<image src="/images/next_page.jpg"></image>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="state"  bindtap="intoPath" data-path="/pages/entrance/userProjectState1/userProjectState1">
+		<view class="state_cont flex">
+			<view class="state_left flex">
+				<view class="circle"></view>
+			</view>
+			<view class="state_right flex">
+				<view class="state_right_box">
+					<view class="state_top flex">
+						<view class="font28 color6" style="width:75%;">标题标题标题标题标题</view>
+						<view class="font26 color9" style="width:25%;">2016-9-9</view>
+					</view>
+					<view class="state_bottom">
+						<view class="font28 color6" style="width:20%;">剩余工期</view>
+						<view class="font26 color9 state_text" style="width:70%;">标题标题标题标题标题标题标题标题标题标标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题题标题标题标题标题标题</view>
+						<view class="next_page" style="width:10%;">
+							<image src="/images/next_page.jpg"></image>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="state"  bindtap="intoPath" data-path="/pages/entrance/userProjectState1/userProjectState1">
+		<view class="state_cont flex">
+			<view class="state_left flex">
+				<view class="circle"></view>
+			</view>
+			<view class="state_right flex">
+				<view class="state_right_box">
+					<view class="state_top flex">
+						<view class="font28 color6" style="width:75%;">标题标题标题标题标题</view>
+						<view class="font26 color9" style="width:25%;">2016-9-9</view>
+					</view>
+					<view class="state_bottom">
+						<view class="font28 color6" style="width:20%;">剩余工期</view>
+						<view class="font26 color9 state_text" style="width:70%;">标题标题标题标题标题标题标题标题标题标标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题题标题标题标题标题标题</view>
+						<view class="next_page" style="width:10%;">
+							<image src="/images/next_page.jpg"></image>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+

@@ -1,5 +1,18 @@
 {
   "pages": [
+    "pages/entrance/index/index",
+    "pages/entrance/case/case",
+    "pages/entrance/user/user",
+    "pages/entrance/information/information",
+    "pages/entrance/informationDetail/informationDetail",
+    "pages/entrance/userMessage/userMessage",
+    "pages/entrance/userInfor/userInfor",
+    "pages/entrance/userProject/userProject",
+    "pages/entrance/userProjectDetail/userProjectDetail",
+    "pages/entrance/userProjectState/userProjectState",
+    "pages/entrance/userProjectState1/userProjectState1",
+    "pages/entrance/userResume/userResume",
+    "pages/entrance/login/login",
     "pages/mall/Index/index",
     "pages/classify/classify",
     "pages/mall/Sort/sort",

@@ -16,6 +16,7 @@ App({
     hair_thirdapp_id:9,
     hotel_thirdapp_id:10,
     restaurant_thirdapp_id:11,
+    solely_thirdapp_id:17,
     gym_thirdapp_id:12,
     address_id:'',
     buttonClick:false,

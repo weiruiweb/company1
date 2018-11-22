@@ -1,0 +1,82 @@
+<!--index1.wxml-->
+<view class="menu w710" bindtap="menu">
+  <view class="menu_click flex">
+    <image src="/images/sort.jpg"></image>
+    <text class="font28 color">小程序</text>
+  </view>
+</view>
+<view class="menu_cont w710 bg1" style="{{is_show?'top:0':''}}">
+  <view class="w710">
+    <view class="menu_choose flex">
+      <view class="font30 color6">小程序 餐饮 点餐</view>
+    </view>
+    <view class="sort_module">
+      <view class="font30" style="width:100%;height:98rpx;line-height: 106rpx;">行业</view>
+      <view class="menu_all flex">
+        <view class="menu_item font26 color6" data-id="0" bindtap="this_choose" style="{{currentId==0?'background:#dcfcff':''}}">小程序</view>
+        <view class="menu_item font26 color6" data-id="1" style="{{currentId==1?'background:#dcfcff':''}}" bindtap="this_choose">小程序</view>
+        <view class="menu_item font26 color6" data-id="2" bindtap="this_choose">小程序</view>
+         <view class="menu_item font26 color6" data-id="3" bindtap="this_choose">小程序</view>
+      </view>
+    </view>
+    <view class="sort_module">
+      <view class="font30" style="width:100%;height:98rpx;line-height: 106rpx;">行业</view>
+      <view class="menu_all flex">
+        <view class="menu_item font26 color6" data-id="0" bindtap="this_choose1" style="{{currentId1==0?'background:#dcfcff':''}}">小程序</view>
+        <view class="menu_item font26 color6" data-id="1" bindtap="this_choose1" style="{{currentId1==1?'background:#dcfcff':''}}">小程序</view>
+      </view>
+    </view>
+    <view class="sort_module">
+      <view class="font30" style="width:100%;height:98rpx;line-height: 106rpx;">行业</view>
+      <view class="menu_all flex">
+        <view class="menu_item font26 color6" data-id="0" bindtap="this_choose2" style="{{currentId2==0?'background:#dcfcff':''}}">小程序</view>
+        <view class="menu_item font26 color6" data-id="1" bindtap="this_choose2" style="{{currentId2==1?'background:#dcfcff':''}}">小程序</view>
+       
+      </view>
+    </view>
+  </view>
+</view>
+<view class="w710 index_product flexRowBetween" >
+  <block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="recommend_left" bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}">
+        <image src="{{item.mainImg[0].url}}"></image>
+        <view class="product_name font28">{{item.title}}</view>
+    </view>
+  </block>
+</view>
+
+
+<view class="navbar">
+    <view class="navbar_item flex"  bindtap="intoPathRedirect" data-path="/pages/entrance/index/index">
+      <view style="width:100%;text-align: center;">
+        <view class="nav_img">
+          <image src="/images/navbar1.png"></image>
+        </view>
+        <view class="text">首页</view>
+      </view>
+    </view>
+    <view class="navbar_item flex">
+      <view style="width:100%;text-align: center;">
+        <view class="nav_img">
+           <image src="/images/navbar2-a.png"></image>
+        </view>
+        <view class="text this-text">行业案例</view>
+      </view>
+    </view>
+    <view class="navbar_item flex"   bindtap="intoPathRedirect" data-path="/pages/entrance/information/information">
+      <view style="width:100%;text-align: center;">
+        <view class="nav_img">
+           <image src="/images/navbar3.png"></image>
+        </view>
+        <view class="text">资讯中心</view>
+      </view>
+    </view>
+    <view class="navbar_item flex"   bindtap="intoPathRedirect" data-path="/pages/entrance/user/user">
+      <view style="width:100%;text-align: center;">
+        <view class="nav_img">
+            <image src="/images/navbar4.png"></image>
+        </view>
+        <view class="text">个人中心</view>
+      </view>
+    </view>
+</view>

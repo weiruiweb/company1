@@ -16,7 +16,19 @@ class Token {
             this.getUserInfo();
         };
     }
+    getEntranceToken(callback,postData) { 
 
+        if((postData&&postData.refreshToken)||!wx.getStorageSync('entrance_token')){
+            var params = {
+                token_name:'entrance_token',
+                info_name:'entrance_info',
+                thirdapp_id:17
+            };
+            this.getUserInfo(params,callback);
+        }else{
+            return wx.getStorageSync('entrance_token');
+        }
+    }
     getMallToken(callback,postData) { 
 
         if((postData&&postData.refreshToken)||!wx.getStorageSync('mall_token')){

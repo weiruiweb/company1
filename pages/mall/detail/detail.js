@@ -9,7 +9,6 @@ Page({
 
 
   data: {
-
     mainData:[],
     chooseId:[],
     tabCurrent:0,

@@ -1,0 +1,151 @@
+<!--index.wxml-->
+<view class="banner">
+    <image src="/images/banner.png"></image>
+</view>
+<view class="great flex">
+    <view class="great_left flex">
+      <view class="left_cont">
+        <view style="color:#2997e1">公司简介</view>
+        <view class="font28 color6">触手可得 直接扫码</view>
+        <image src="/images/index1.png"></image>
+      </view>
+    </view>
+    <view class="great_right">
+      <view class="great_top flex">
+          <view class="great_tRight">
+              <image src="/images/index_icon1.png"></image>
+          </view>
+          <view class="great_tLeft avoidOverflow">
+              <view class="font30" style="color:#ffab7e;text-align: left;">精品体验</view>
+              <view class="font26 color6" style="font-weight:700;text-align: left;">微信会员共享</view>
+          </view>
+      </view>
+      <view class="great_top great_bottom flex">
+          <view class="great_tRight">
+              <image src="/images/index_icon2.png"></image>
+          </view>
+          <view class="great_tLeft avoidOverflow">
+              <view class="font30" style="color:#67e1b8;text-align: left;">出色伙伴</view>
+              <view class="font26 color6" style="font-weight: 700;text-align: left;">特惠不打烊</view>
+          </view>
+      </view>
+    </view>
+</view>
+<view class="menu flex">
+    <view class="great_top flexCenter">
+      <view class="great_tRight">
+          <image src="/images/index_icon3.png"></image>
+      </view>
+      <view class="great_tLeft avoidOverflow">
+          <view class="font24" style="color:#9087f9;text-align: left;">精品体验</view>
+          <view class="font22 color9" style="font-weight:normal;text-align: left;">微信会员</view>
+      </view>
+  </view>
+  <view class="great_top flexCenter" style="border-left:solid 1px #e0e0e0;border-right:solid 1px #e0e0e0;">
+      <view class="great_tRight">
+          <image src="/images/index_icon4.png"></image>
+      </view>
+      <view class="great_tLeft avoidOverflow">
+          <view class="font24" style="color:#5cdfdd;text-align: left;">精品体验</view>
+          <view class="font22 color9" style="font-weight:normal;text-align: left;">微信会员</view>
+      </view>
+  </view>
+  <view class="great_top flexCenter">
+      <view class="great_tRight">
+          <image src="/images/index_icon5.png"></image>
+      </view>
+      <view class="great_tLeft avoidOverflow">
+          <view class="font24" style="color:#5cdfdd;text-align: left;">精品体验</view>
+          <view class="font22 color9" style="font-weight:normal;text-align: left;">微信会员</view>
+      </view>
+  </view>
+</view>
+<view class="case_show">
+    <view class="service_tlt">
+        <image src="/images/tlt_bg_03.png"></image>
+        <text class="text1">推荐案例</text>
+    </view>
+    <view class="w710 index_product flexRowBetween">
+      <block wx:for="{{web_caseData}}" wx:key="id">
+        <view class="recommend_left" bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}">
+            <image src="{{item.mainImg[0].url}}"></image>
+            <view class="product_name font30 flexCenter">
+                <image src="/images/navbar1.png"></image>
+                <text class="font24 color6">{{item.title}}</text>
+            </view>
+        </view>
+      </block>
+    </view>
+</view>
+<view class="case">
+  <view class="service_tlt">
+    <image src="/images/tlt_bg_03.png"></image>
+    <text class="text1">推荐阅读</text>
+  </view>
+  <block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="case_cont">
+      <view class="case_top flexRowBetween" wx:if="{{index%2==0}}">
+          <view  class="case_left">
+            <view class="img_scale">
+             <image src="{{item.mainImg[0].url}}"></image>
+            </view>
+          </view>
+          <view class="case_right"  bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}">
+            <view class="right_in">
+              <view class="text1  font24">{{item.description}}</view>
+              <view class="right_more">
+                  <view class="case_more">了解更多 > </view>
+              </view>            
+            </view>
+          </view>
+      </view>
+      <view class="case_bottom flexRowBetween" wx:else>
+        <view class="case_right"  bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}">
+            <view class="right_in">
+            <view class="text1 font24">{{item.description}}</view>
+            <view class="right_more">
+                <view class="case_more">了解更多 > </view>
+            </view>            
+          </view>
+        </view>
+        <view class="case_left">
+          <image src="{{item.mainImg[0].url}}"></image>       
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="navbar">
+    <view class="navbar_item flex">
+      <view style="width:100%;text-align: center;">
+        <view class="nav_img">
+          <image src="/images/navbar1-a.png"></image>
+        </view>
+        <view class="text this-text">首页</view>
+      </view>
+    </view>
+    <view class="navbar_item flex"   bindtap="intoPathRedirect" data-path="/pages/entrance/case/case">
+      <view style="width:100%;text-align: center;">
+        <view class="nav_img">
+           <image src="/images/navbar2.png"></image>
+        </view>
+        <view class="text">行业案例</view>
+      </view>
+    </view>
+    <view class="navbar_item flex"   bindtap="intoPathRedirect" data-path="/pages/entrance/information/information">
+      <view style="width:100%;text-align: center;">
+        <view class="nav_img">
+           <image src="/images/navbar3.png"></image>
+        </view>
+        <view class="text">资讯中心</view>
+      </view>
+    </view>
+    <view class="navbar_item flex"   bindtap="intoPathRedirect" data-path="/pages/entrance/user/user">
+      <view style="width:100%;text-align: center;">
+        <view class="nav_img">
+            <image src="/images/navbar4.png"></image>
+        </view>
+        <view class="text">个人中心</view>
+      </view>
+    </view>
+</view>

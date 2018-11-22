@@ -1,0 +1,54 @@
+page{
+	min-height:100%;
+	width:100%;
+	background:#f2f2f2;
+}
+.list_img{
+	width:8%;
+	height:100%;
+}
+.list_img image{
+	width:34rpx;
+	height:38rpx;
+	margin:0 auto;
+}
+.input_list1{
+	height:80rpx;
+	margin-top:30rpx;
+	border-bottom:solid 1px #e0e0e0;
+}
+.input_list1 .input_before1{
+	width:22%;
+	color:#666;
+}
+.input_list1 .input{
+	width:70%;
+	color:#666;
+	text-align: right;
+}
+.project{
+	width:100%%;
+	min-height:100%;
+	background:#fff;
+	border-radius:20rpx;
+	margin-top:20rpx;
+}
+.project_name{
+	width:100%;
+	margin-bottom: 30rpx;
+
+}
+.name_box{
+	width:206rpx;
+	height:56rpx;
+	border-radius: 0 50rpx 50rpx 0;
+	overflow: hidden;
+	margin-top:20rpx;
+}
+.name_cont{
+	width:96%;
+	padding-left: 4%;
+	height:56rpx;
+	line-height:56rpx;
+	background: linear-gradient(to right,rgba(72,222,223,1.00),rgba(42,154,225,1.00));
+}

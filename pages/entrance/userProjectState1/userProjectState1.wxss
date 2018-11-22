@@ -1,0 +1,41 @@
+page{
+	min-height:100%;
+	width:100%;
+	background:#f2f2f2;
+}
+.input_list1{
+	height:80rpx;
+	margin-top:30rpx;
+}
+.input_list1 .input_before1{
+	width:22%;
+	color:#666;
+}
+.input_list1 .input{
+	width:78%;
+	color:#666;
+}
+.project{
+	width:100%;
+	background:#fff;
+	border-radius:20rpx;
+	margin-top:20rpx;
+	padding-bottom:30rpx;
+}
+.input1{	
+	height:115rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3; 
+	margin-bottom:20rpx;
+}
+.add_detail{
+	width:94%;
+	height:606rpx;
+	border-radius: 20rpx;
+	background:#f2f2f2;
+	padding:3%;
+}

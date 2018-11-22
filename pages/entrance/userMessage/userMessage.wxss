@@ -1,0 +1,14 @@
+/**index.wxss**/
+
+@import "../../../wxParse/wxParse.wxss"
+page{
+	background:#f2f2f2;
+}
+textarea{
+	width:94%;
+	height:80vh;
+	background:#fff;
+	border-radius:20rpx;
+	margin-top:20rpx;
+	padding:3%;
+}

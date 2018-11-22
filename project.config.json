@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 44,
+			"current": 46,
 			"list": [
 				{
 					"id": 0,
@@ -302,7 +302,19 @@
 				{
 					"id": -1,
 					"name": "caidan",
-					"pathName": "pages/hair/confirmOrder/confirmOrder"
+					"pathName": "pages/hair/confirmOrder/confirmOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "入口小程序",
+					"pathName": "pages/entrance/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的信息",
+					"pathName": "pages/entrance/userInfor/userInfor"
 				}
 			]
 		}

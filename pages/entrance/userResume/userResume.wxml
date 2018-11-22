@@ -1,0 +1,34 @@
+<!--User.wxml-->
+<view class="w710">
+	<view class="input_list1 font30 flex">
+		<view class="input_before1">姓名:</view>
+		<input placeholder="请输入姓名"></input>
+	</view>
+	<view class="input_list1 font30 flex">
+		<view class="input_before1">电话:</view>
+		<input placeholder="请输入联系电话"></input>
+	</view>
+	<view class="input_list1 font30 flex">
+		<view class="input_before1">学历:</view>
+		<input placeholder="请输入学历"></input>
+	</view>
+	<view class="input_list1 font30 flex">
+		<view class="input_before1">专业:</view>
+		<input placeholder="请输入专业"></input>
+	</view>
+	<view class="input_list1 font30 flex">
+		<view class="input_before1">工作年限:</view>
+		<input placeholder="请输入工作年限"></input>
+	</view>
+	<view class="input_list1 font30 flex">
+		<view class="input_before1">期望工资:</view>
+		<input placeholder="请输入期望工资"></input>
+	</view>
+	<view class="input_list1 font30 flex">
+		<view class="input_before1">居住地址:</view>
+		<input placeholder="请输入居住地址"></input>
+	</view>
+</view>
+<form bindsubmit="submit" report-submit="true">
+	<button  form-type="submit" style="line-height:80rpx;margin-top:100rpx;" class="submit_info">提交</button>
+</form>

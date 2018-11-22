@@ -1,0 +1,87 @@
+<!--index3.wxml-->
+<view class="banner">
+    <image src="/images/user_banner.png"></image>
+    <view class="banner_box flex">
+        <view class="wx_img flex">
+            <view class="user_img">
+              <open-data type="userAvatarUrl"></open-data>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="sort flex">
+    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/userInfor/userInfor">
+        <view class="item_box flex">
+            <view style="width:100%;">
+                <image src="/images/user_icon1.png"></image>
+                <view class="font28 color3">我的信息</view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/userProject/userProject">
+        <view class="item_box flex" style="border-left:solid 1px #bfbfbf;border-right:solid 1px #bfbfbf">
+            <view style="width:100%;">
+                <image src="/images/user_icon2.png"></image>
+                <view class="font28 color3">我的项目</view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/userMessage/userMessage">
+        <view class="item_box flex">
+            <view style="width:100%;">
+                <image src="/images/user_icon3.png"></image>
+                <view class="font28 color3">我的留言</view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/login/login">
+        <view class="item_box flex">
+            <view style="width:100%;">
+                <image src="/images/user_icon4.png"></image>
+                <view class="font28 color3">员工登录</view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/userResume/userResume">
+        <view class="item_box flex" style="border-left:solid 1px #bfbfbf;">
+            <view style="width:100%;">
+                <image src="/images/user_icon5.png"></image>
+                <view class="font28 color3">投递简历</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="navbar">
+    <view class="navbar_item flex"  bindtap="intoPathRedirect" data-path="/pages/entrance/index/index">
+        <view style="width:100%;text-align: center;">
+            <view class="nav_img">
+              <image src="/images/navbar1.png"></image>
+            </view>
+            <view class="text">首页</view>
+        </view>
+    </view>
+    <view class="navbar_item flex"  bindtap="intoPathRedirect" data-path="/pages/entrance/case/case">
+        <view style="width:100%;text-align: center;">
+            <view class="nav_img">
+               <image src="/images/navbar2.png"></image>
+            </view>
+            <view class="text">行业案例</view>
+        </view>
+    </view>
+    <view class="navbar_item flex" bindtap="intoPathRedirect" data-path="/pages/entrance/information/information">
+        <view style="width:100%;text-align: center;">
+            <view class="nav_img">
+               <image src="/images/navbar3.png"></image>
+            </view>
+            <view class="text">资讯中心</view>
+        </view>
+    </view>
+    <view class="navbar_item flex">
+        <view style="width:100%;text-align: center;">
+            <view class="nav_img">
+                <image src="/images/navbar4-a.png"></image>
+            </view>
+            <view class="text this-text">个人中心</view>
+        </view>
+    </view>
+</view>

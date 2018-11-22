@@ -1,0 +1,97 @@
+/**index.wxss**/
+@import "../../../wxParse/wxParse.wxss"
+
+page{
+	background:#f2f2f2;
+}
+.tab{
+	height:88rpx;
+	background:#fff;
+}
+.tab_item{
+	width:50%;
+	text-align:center;
+	height:88rpx;
+	line-height:88rpx;
+}
+.tab_this{
+	color:#21c3d4;
+	border-bottom:solid 1px #21c3d4;
+}
+.product{
+	height:196rpx;
+	background:#fff;
+	border-radius: 20rpx;
+	margin-top:20rpx;
+}
+.product_box{
+	width:100%;
+	height:156rpx;
+
+}
+.product_detail{
+	width:100%;
+	height:146rpx;
+}
+.product_left{
+	width:32.5%;
+	height:156rpx;
+}
+.product_left image{
+	width:192rpx;
+	height:156rpx;
+	border-radius:20rpx;
+}
+.product_right{
+	width:67.5%;
+	height:156rpx;
+}
+.product_price{
+	width:100%;
+}
+.test{
+	height:100%;
+	display:flex;
+	flex-flow: row wrap;
+	align-content:space-between;
+}
+.product_center{
+	width:100%;
+	height: 44%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2; 
+}
+.product_top{
+	width:100%;
+	height: 28%;
+}
+.product_name{
+	width:60%
+}
+.product_date{
+	width:40%;
+}
+
+.state{
+	margin-top: 20rpx;
+}
+.state_cont{
+	margin-bottom:20rpx;
+}
+.state_right{
+	width:100%;
+	height:100%;
+}
+.state_right_box{
+	width:94%;
+	padding:3%;
+	background:#fff;
+	border-radius: 20rpx;
+}
+.state_top{
+	margin-bottom:16rpx;
+}

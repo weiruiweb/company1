@@ -10,7 +10,7 @@
       <image src="/images/user.png"></image>
     </view>
      <view class="input_in">
-      <input placeholder="姓名"></input>
+      <input placeholder="姓名" data-key="login_name" bindinput="bindInputChange"></input>
     </view>
   </view>
   <view class="login_input flexRowBetween">
@@ -18,7 +18,7 @@
       <image src="/images/password.png"></image>
     </view>
      <view class="input_in">
-      <input placeholder="密码"></input>
+      <input placeholder="密码" type="password" data-key="password" bindinput="bindInputChange"></input>
     </view>
   </view>
 </view>

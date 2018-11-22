@@ -33,9 +33,22 @@ page{
 	line-height: 66rpx;
 }
 .menu_click image{
-	width:32rpx;
-	height:30rpx;
-	margin-right:20rpx;
+	width:50rpx;
+	height:58rpx;
+	margin:0 auto;
+	transition:all 1s;
+	animation:down 1s infinite; 
+}
+@keyframes down{
+	0%{
+		transform: translateY(0rpx);
+	}
+	50%{
+		transform: translateY(16rpx);
+	}
+	100%{
+		transform: translateY(0rpx);
+	}
 }
 .menu_cont{
 	background: #fff;

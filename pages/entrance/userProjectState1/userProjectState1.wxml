@@ -3,22 +3,25 @@
 	<view class="project">
 		<view class="input_list1 w710 font30 flex">
 			<view class="input_before1" style="width:12%;">标题:</view>
-			<view class="input">纯粹科技</view>
+			<view class="input">{{web_mainData.title}}</view>
 		</view>
 		<view class="input_list1 w710  font30 flex">
 			<view class="input_before1" style="width:12%;">时间:</view>
-			<view class="input color9">2018-9-9</view>
+			<view class="input color9">{{web_mainData.create_time}}</view>
 		</view>
 		<view class="input_list1 w710  font30" style="height:115rpx;display:flex;">
 			<view class="input_before1">剩余工期:</view>
-			<view class="input input1">内容内容内容内容内容内容内容内容内容内容内容 内容内容内容内容内容内容内容内容内容内容内容 内容内容内容内容内容内容内容内容内</view>
+			<view class="input input1">{{web_mainData.contactPhone}}</view>
 		</view>
 		<view class="w710 font28 color6" style="height:78rpx;line-height:78rpx;">
 			备注
 		</view>
 		<view class="w710">
 			<view class="add_detail font26 color6">
-				内容内容内容内容内容内容内容内容内容内容内容 内容内容内容内容内容内容内容内容内容内容内容 内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容 内容内容内容内容内容内容内容内容内容内容内容 内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容 内容内容内容内容内容内容内容内容内容内容内容 内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容 内容内容内容内容内容内容内容内容内容内容内容 内容内容内容内容内容内容内容内容内
+				<view class="content ql-editor">
+					<import src="../../../wxParse/wxParse.wxml"/>
+				    <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+				</view>	
 			</view>
 		</view>
 	</view>

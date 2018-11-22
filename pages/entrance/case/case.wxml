@@ -1,8 +1,7 @@
 <!--index1.wxml-->
 <view class="menu w710" bindtap="menu">
   <view class="menu_click flex">
-    <image src="/images/sort.jpg"></image>
-    <text class="font28 color">小程序</text>
+    <image src="/images/head_down.png"></image>
   </view>
 </view>
 <view class="menu_cont w710 bg1" style="{{is_show?'top:0':''}}">

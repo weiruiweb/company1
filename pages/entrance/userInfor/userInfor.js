@@ -16,17 +16,15 @@ Page({
     },
   },
   onLoad: function () {
-    if(!wx.getStorageSync('getEntranceToken')){
-      var token = new Token();
-      token.getUserInfo();
-    };
+    const self = this;
+   
     self.userInfoGet();
   },
 
   userInfoGet(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('getEntranceToken');
+    postData.tokenFuncName = 'getEntranceToken';
     const callback = (res)=>{
       console.log(res)
       self.data.mainData = res;
@@ -60,7 +58,7 @@ Page({
   userInfoUpdate(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('getEntranceToken');
+    postData.tokenFuncName = 'getEntranceToken';
     postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
     const callback = (data)=>{

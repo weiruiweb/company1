@@ -312,9 +312,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 46,
 					"name": "我的信息",
-					"pathName": "pages/entrance/userInfor/userInfor"
+					"pathName": "pages/entrance/user/user",
+					"query": ""
 				}
 			]
 		}

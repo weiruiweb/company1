@@ -3,7 +3,7 @@
 	<view class="project">
 		<view class="project_name flex">
 			<view class="name_box">
-				<view class="name_cont font32 color1">项目一</view>
+				<view class="name_cont font32 color1">{{web_mainData.title}}</view>
 			</view>
 		</view>
 		<view class="input_list1 w710 font30 flex">
@@ -11,7 +11,7 @@
 				<image src="/images/project1.png"></image>
 			</view>
 			<view class="input_before1">合同编号:</view>
-			<view class="input">16548468</view>
+			<view class="input">{{web_mainData.contactPhone}}</view>
 		</view>
 		<view class="input_list1 w710  font30 flex">
 			<view class="list_img flex">
@@ -32,7 +32,7 @@
 				<image src="/images/project4.png"></image>
 			</view>
 			<view class="input_before1">手机号码:</view>
-			<view class="input">1284646644</view>
+			<view class="input">{{web_mainData.contactPhone}}</view>
 		</view>
 		<view class="input_list1 w710  font30 flex">
 			<view class="list_img flex">
@@ -50,7 +50,7 @@
 		</view>
 	</view>
 </view>
-<form bindsubmit="submit" report-submit="true">
-	<button  form-type="submit" style="line-height:80rpx;margin-top:80rpx;" class="submit_info">项目动态
+
+	<button  bindtap="intoPath" data-path="/pages/entrance/userProjectState/userProjectState?id={{web_mainData.menu_id}}" style="line-height:80rpx;margin-top:80rpx;" class="submit_info">项目动态
 	</button>
-</form>
+

@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 46,
+			"current": 47,
 			"list": [
 				{
 					"id": 0,
@@ -315,6 +315,12 @@
 					"id": 46,
 					"name": "我的信息",
 					"pathName": "pages/entrance/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "行业案例",
+					"pathName": "pages/entrance/case/case",
 					"query": ""
 				}
 			]

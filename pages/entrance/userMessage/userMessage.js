@@ -8,6 +8,7 @@ Page({
   data: {
    submitData:{
     content:'',
+    type:0,
     },
   },
 

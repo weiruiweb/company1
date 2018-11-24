@@ -2,9 +2,14 @@
 <view class="banner">
     <image src="/images/user_banner.png"></image>
     <view class="banner_box flex">
-        <view class="wx_img flex">
-            <view class="user_img">
-              <open-data type="userAvatarUrl"></open-data>
+        <view style="width:100%;">
+            <view class="wx_img flex">
+                <view class="user_img">
+                  <open-data type="userAvatarUrl"></open-data>
+                </view>
+            </view>
+            <view class="font28 color3 flex" style="width:100%;text-align:center;margin-top: 20rpx;">
+                <open-data type="userNickName" lang="zh_CN" style="margin:0 auto;"></open-data>
             </view>
         </view>
     </view>

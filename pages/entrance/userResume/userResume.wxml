@@ -2,31 +2,31 @@
 <view class="w710">
 	<view class="input_list1 font30 flex">
 		<view class="input_before1">姓名:</view>
-		<input placeholder="请输入姓名"></input>
+		<input placeholder="请输入姓名" data-key="title" bindblur="changeBind" value="{{web_submitData.title}}"></input>
 	</view>
 	<view class="input_list1 font30 flex">
 		<view class="input_before1">电话:</view>
-		<input placeholder="请输入联系电话"></input>
+		<input placeholder="请输入联系电话" data-key="phone" bindblur="changeBind"  value="{{web_submitData.phone}}"></input>
 	</view>
 	<view class="input_list1 font30 flex">
 		<view class="input_before1">学历:</view>
-		<input placeholder="请输入学历"></input>
+		<input placeholder="请输入学历" data-key="content" bindblur="changeBind" value="{{web_submitData.content}}"></input>
 	</view>
 	<view class="input_list1 font30 flex">
 		<view class="input_before1">专业:</view>
-		<input placeholder="请输入专业"></input>
+		<input placeholder="请输入专业" data-key="keywords" bindblur="changeBind" value="{{web_submitData.keywords}}"></input>
 	</view>
 	<view class="input_list1 font30 flex">
 		<view class="input_before1">工作年限:</view>
-		<input placeholder="请输入工作年限"></input>
+		<input placeholder="请输入工作年限" data-key="score" bindblur="changeBind" value="{{web_submitData.score}}"></input>
 	</view>
 	<view class="input_list1 font30 flex">
 		<view class="input_before1">期望工资:</view>
-		<input placeholder="请输入期望工资"></input>
+		<input placeholder="请输入期望工资" data-key="passage1" bindblur="changeBind" value="{{web_submitData.passage1}}"></input>
 	</view>
 	<view class="input_list1 font30 flex">
-		<view class="input_before1">居住地址:</view>
-		<input placeholder="请输入居住地址"></input>
+		<view class="input_before1" data-key="passage2" bindblur="changeBind" >居住地址:</view>
+		<input placeholder="请输入居住地址" value="{{web_submitData.passage2}}"></input>
 	</view>
 </view>
 <form bindsubmit="submit" report-submit="true">

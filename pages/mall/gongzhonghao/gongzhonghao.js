@@ -28,7 +28,6 @@ Page({
   onLoad(options) {
     const self = this;
     wx.showLoading();
-
     this.setData({
       fonts:app.globalData.font,
       img:app.globalData.img,
@@ -99,8 +98,6 @@ Page({
     };
     api.productGet(postData,callback);
   },
-
-
   getLabelData(currentId){
     const self = this;
     const postData = {};

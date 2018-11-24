@@ -109,3 +109,50 @@ page{
 	border:solid 1pox #21c3d4;
 	background:#dcfcff;
 }
+
+.ip_tab_comtainer {
+    width: 100%;
+    white-space: nowrap;
+}
+
+.ip_tab_comtainer_padd {
+    display: inline-block;
+}
+
+.ip_tab_item_s {
+    display: inline-block;
+    line-height: 40rpx;
+    padding: 12rpx 32rpx;
+    color: #ED373D;
+    margin-right: 8rpx;
+    margin-left: 8rpx;
+    font-size: 28rpx;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #ffffff;
+    border-radius: 4rpx;
+    border: 1px solid #ED373D;
+}
+
+.ip_tab_item_n {
+    display: inline-block;
+    padding: 12rpx 32rpx;
+    line-height: 40rpx;
+    color: #353535;
+    margin-right: 8rpx;
+    background-color: #ffffff;
+    margin-left: 8rpx;
+    font-size: 28rpx;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 4rpx;
+    border: 1px solid #CCCCCC;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}

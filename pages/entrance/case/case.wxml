@@ -7,14 +7,18 @@
 </view>
 <view class="menu_cont w710 bg1" style="{{is_show?'top:0':''}}">
   <view class="w710">
-    <view class="menu_choose flex">
-      <view class="font28 color6" style="margin-right:20rpx;">{{web_submitData.passage_array}}</view>
-    </view>
+
+      <scroll-view scroll-x="true" class="menu_choose flex">
+          <view class="font28 color6 flex" style="height:100%;">
+              {{web_submitData.passage_array}}
+          </view>
+      </scroll-view>
     <view class="sort_module" wx:for="{{web_labelDataTwo[0]}}" wx:key="id">
       <view class="font30" style="width:100%;height:98rpx;line-height: 106rpx;" data-index="{{index}}">{{item.title}}</view>
       <view class="menu_all flex">
        <block wx:for="{{item.child}}" wx:key="id" wx:for-item='c_item'>
-          <view class="menu_item font26 color6 {{web_searchData.indexOf(c_item.id)>=0?'choosed':''}}"  bindtap="this_choose"  data-id="{{c_item.id}}" data-text="{{c_item.title}}" >{{c_item.title}}</view>
+          <view class="menu_item font26 color6 {{web_searchData.indexOf(c_item.id)>=0?'choosed':''}}"  bindtap="this_choose"  data-id="{{c_item.id}}" data-text="{{c_item.title}}">{{c_item.title}}</view>
+          <!-- <view class="menu_item font26 color6"  bindtap="this_choose"  data-id="{{c_item.id}}" data-text="{{c_item.title}}" style="{{func.inArray(c_item.id,web_searchData)==-1?'border:1px dashed  #e5e5e5':''}}">{{c_item.title}}</view> -->
         </block>
       </view>
     </view>

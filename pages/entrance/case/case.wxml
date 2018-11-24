@@ -36,8 +36,9 @@
   </block>
 </view>
 <view class="mask"  bindtap="menu_hidden" wx:if="{{is_show}}" catchtouchmove="true">
-  
 </view>
+<view class="font22 color6" style="text-align:center;">技术支持：西安纯粹云科技有限公司</view>
+<view style="width:100%;height:120rpx;"></view>
 <view class="navbar">
     <view class="navbar_item flex"  bindtap="intoPathRedirect" data-path="/pages/entrance/index/index">
       <view style="width:100%;text-align: center;">

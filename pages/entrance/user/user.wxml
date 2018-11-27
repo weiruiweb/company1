@@ -23,7 +23,7 @@
             </view>
         </view>
     </view>
-    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/userProject/userProject">
+    <view class="sort_item flex" bindtap="{{web_buttonCanClick?'test':''}}" data-path="/pages/entrance/userProject/userProject">
         <view class="item_box flex" style="border-left:solid 1px #bfbfbf;border-right:solid 1px #bfbfbf">
             <view style="width:100%;">
                 <image src="/images/user_icon2.png"></image>

@@ -6,7 +6,7 @@ const token = new Token();
 
 Page({
   data: {
- 
+    buttonCanClick:true
   },
   //事件处理函数
   preventTouchMove:function(e) {
@@ -14,7 +14,9 @@ Page({
   },
 
   onLoad(options){
-
+    this.setData({
+      web_buttonCanClick:this.data.buttonCanClick
+    })
   },
  
   intoPath(e){
@@ -28,9 +30,21 @@ Page({
       delta:1
     })
   },
+
   intoPathRedirect(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
+  },
+
+  test(e){
+
+    const self = this;
+
+    api.buttonCanClick(self);
+    setTimeout(function(){
+      api.buttonCanClick(self,true)
+    },5000);
+    
   }, 
  
 })

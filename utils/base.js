@@ -20,7 +20,14 @@ class Base{
 
         if(params.data.tokenFuncName){
             console.log('params.data.token');
-            params.data.token = token[params.data.tokenFuncName](callback);
+            if(params.data.refreshToken){
+                token[params.data.tokenFuncName](callback,{refreshToken:true});
+            }else{
+                params.data.token = token[params.data.tokenFuncName](callback);
+            };
+            if(!params.data.token){
+                return;
+            };
             console.log('params.data.token',params.data.token);
         };
         
@@ -37,36 +44,7 @@ class Base{
                 // 异常不要返回到回调中，就在request中处理，记录日志并showToast一个统一的错误即可
                 var code = res.data.solely_code;
                 if (res.data.solely_code == '200000') {
-
                     token[params.data.tokenFuncName](callback,{refreshToken:true});
-
-
-                    /*var pages = getCurrentPages()    //获取加载的页面
-                    var currentPage = pages[pages.length-1]    //获取当前页面的对象
-                    var pages = currentPage.route;
-                    console.log(pages);
-                    var pagesArray = pages.split('/');
-                    console.log(pagesArray)
-                    
-                    if(wx.getStorageSync('threeToken')&&params.data.token == wx.getStorageSync('threeToken')){
-                        that.logOff();
-                    }else{
-                        console.log('pagesArray',pagesArray);
-                        if(pagesArray[1]=='mall'){
-                            
-                            token.getMallToken('mall',callback);      
-                        }else if(pagesArray[1]=='exhibition'){
-                            token.getExhibitionToken(params,callback); 
-                        }else if(pagesArray[1]=='gym'){
-                            token.getGymToken(params,callback); 
-                        }else if(pagesArray[1]=='hair'){
-                            token.getHairToken(params,callback); 
-                        }else if(pagesArray[1]=='hotel'){
-                            token.getHotelToken(params,callback); 
-                        }else if(pagesArray[1]=='restaurant'){
-                            token.getRestaurantToken(params,callback);
-                        }
-                    };*/
                 } else {
                     params.sCallback && params.sCallback(res.data);
                 };
@@ -136,6 +114,24 @@ class Base{
             }
         };   
         return form;           
+    };
+
+    buttonCanClick(self,type){
+        if(type){
+            self.data.buttonCanClick = type;
+            self.setData({
+                web_buttonCanClick:self.data.buttonCanClick
+            });
+            return type;
+        }else if(self.data.buttonCanClick){
+            self.data.buttonCanClick = false;
+            self.setData({
+                web_buttonCanClick:self.data.buttonCanClick
+            });
+            return self.data.buttonCanClick;
+        }else{
+            return false;
+        };
     };
 
     dealRes(res){
@@ -433,6 +429,38 @@ class Base{
 
     };
 
+    getcurrentPage(){
+        var pages = getCurrentPages();
+        var currentPage = pages[pages.length-1];
+        return currentPage;
+    };
+
+    checkLoadAll(array,item,self){
+
+        var path = this.getcurrentPage().route
+        if(wx.getStorageSync('checkLoadAll')&&wx.getStorageSync('checkLoadAll').path==path){
+            var testArray = wx.getStorageSync('checkLoadAll').testArray;
+        }else{
+            var testArray = [];
+        };
+        testArray.push(item);
+        if(this.checkArrayEqual(array,testArray)){
+            wx.hideLoading();
+            wx.removeStorageSync('checkLoadAll');
+            if(self){
+                self.data.buttonCanClick = true;
+                self.setData({
+                    web_buttonCanClick:self.data.buttonCanClick
+                });
+            };
+            return true;
+        }else{
+            wx.setStorageSync('checkLoadAll',{path:path,testArray:testArray});
+            return false
+        };
+        
+    };
+
 
     showToast(title,type,func){
         wx.showToast({
@@ -484,7 +512,6 @@ class Base{
                 wx.hideLoading();
                 this.showToast('授权请点击同意','fail');
               }else{
-                token.getUserInfo();
                 wx.getUserInfo({
                     success: function(user) {
                         callback&&callback(user.userInfo,setting);  

@@ -16,6 +16,7 @@ class Token {
             this.getUserInfo();
         };
     }
+    
     getEntranceToken(callback,postData) { 
 
         if((postData&&postData.refreshToken)||!wx.getStorageSync('entrance_token')){
@@ -104,10 +105,8 @@ class Token {
                 success: function(res) {
                     wxUserInfo = res.userInfo;
                     self.getTokenFromServer(wxUserInfo,params,callback)                  
-                    
                 }
             });
-
         };
         console.log(wxUserInfo)
     }

@@ -11,8 +11,9 @@ Page({
      labelData:[],
     labelDataTwo:[],
     labelDataThree:[],
-    isLoadAllStandard:['getMainData','getLabelData','getCaseData'],
-    isLoadAll:false
+    isFirstLoadAllStandard:['getMainData','getLabelData','getCaseData'],
+    isLoadAll:false,
+    buttonCanClick:false
   },
   //事件处理函数
  
@@ -47,7 +48,7 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      self.data.isLoadAll = api.checkLoadAll(self.data.isLoadAllStandard,'getMainData',self);
+      api.checkLoadAll(self.data.isLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });
@@ -83,7 +84,7 @@ Page({
           }
         }
       }
-      self.data.isLoadAll  = api.checkLoadAll(self.data.isLoadAllStandard,'getLabelData',self);
+      api.checkLoadAll(self.data.isLoadAllStandard,'getLabelData',self);
      self.getCaseData();
     };
     api.labelGet(postData,callback);   
@@ -104,7 +105,7 @@ Page({
         self.data.isLoadAll = true,
         api.showToast('没有更多了','fail');
       }
-      self.data.isLoadAll  = api.checkLoadAll(self.data.isLoadAllStandard,'getCaseData',self);
+      api.checkLoadAll(self.data.isLoadAllStandard,'getCaseData',self);
       self.setData({
         web_caseData:self.data.caseData,
       }); 

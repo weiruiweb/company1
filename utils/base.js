@@ -122,14 +122,19 @@ class Base{
             self.setData({
                 web_buttonCanClick:self.data.buttonCanClick
             });
+            if(!type){
+                wx.hideLoading();
+            };
             return type;
         }else if(self.data.buttonCanClick){
             self.data.buttonCanClick = false;
             self.setData({
                 web_buttonCanClick:self.data.buttonCanClick
             });
+            wx.showLoading();
             return self.data.buttonCanClick;
         }else{
+            wx.showLoading();
             return false;
         };
     };

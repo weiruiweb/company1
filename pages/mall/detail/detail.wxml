@@ -137,28 +137,28 @@
 	<view style="padding:0 2.5%">
 		<view class="flexRowBetween pricity">
 			<view class="choose_pro">
-				<image src="{{web_skuData.mainImg[0].url}}"></image>
+				<image src="{{web_choosed_skuData.mainImg[0].url}}"></image>
 			</view>
 			<view class="product_txt">
-				<view class="pro_name">{{web_skuData.title}}</view>
+				<view class="pro_name">{{web_choosed_skuData.title}}</view>
 				<view class="pro_type">
 					个性化定制
 				</view>
 				<view class="price_choose">
-				￥{{web_totalPrice?web_totalPrice:web_skuData.price}}
+				￥{{web_totalPrice?web_totalPrice:web_choosed_skuData.price}}
 				</view>
 			</view>
 			<view class="close" bindtap="close">
 			<view class="scale2" style="width:36px;height:36px;{{img}};background-position: -594px 0;"></view>
 			</view>
 		</view>
-		<block wx:for="{{web_labelData}}" wx:key="id" >
+		<block wx:for="{{web_skuLabelData}}" wx:key="id" >
 			<view id="type" class="flexRowBetween">
 				<view class="pro_type"  >	
 					{{item.title}}
 				</view>
-				<block wx:for="{{web_labelData[index].child}}" wx:key="id" wx:for-item="c_item">
-					<view class="pro_types" data-id="{{c_item.id}}" data-parentid="{{item.id}}"  bindtap="{{func.inArray(c_item.id,web_choose_sku_item)!=-1?'chooseSku':''}}" style="{{func.inArray(c_item.id,web_choose_sku_item)==-1?'border:1px dashed  #e5e5e5;color:#e5e5e5;':(func.inArray(c_item.id,web_sku_item)!=-1?'border:1px solid #21c3d4;color:#21c3d4;':'')}}">
+				<block wx:for="{{web_skuLabelData[index].child}}" wx:key="id" wx:for-item="c_item">
+					<view class="pro_types" data-id="{{c_item.id}}" data-parentid="{{item.id}}"  bindtap="{{func.inArray(c_item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" style="{{func.inArray(c_item.id,web_can_choose_sku_item)==-1?'border:1px dashed  #e5e5e5;color:#e5e5e5;':(func.inArray(c_item.id,web_choosed_sku_item)!=-1?'border:1px solid #21c3d4;color:#21c3d4;':'')}}">
 						{{c_item.title}}
 					</view>
 				</block>
@@ -169,9 +169,9 @@
 				数量
 			</view>
 			<view class="edit_number flexRowBetween">
-				<view class="minus" style="line-height:45rpx;" data-type="-" bindtap="counter" data-id="{{web_skuData.id}}">-</view>
+				<view class="minus" style="line-height:45rpx;" data-type="-" bindtap="counter" data-id="{{web_skuLabelData.id}}">-</view>
 				<input class="number" type="number" bindchange="bindManual" value="{{web_count}}" />
-				<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuData.id}}">+</view>
+				<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuLabelData.id}}">+</view>
 			</view>
 		</view>
 		

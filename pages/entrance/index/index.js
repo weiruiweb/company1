@@ -48,7 +48,7 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      api.checkLoadAll(self.data.isLoadAllStandard,'getMainData',self);
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });
@@ -84,7 +84,7 @@ Page({
           }
         }
       }
-      api.checkLoadAll(self.data.isLoadAllStandard,'getLabelData',self);
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
      self.getCaseData();
     };
     api.labelGet(postData,callback);   
@@ -105,7 +105,7 @@ Page({
         self.data.isLoadAll = true,
         api.showToast('没有更多了','fail');
       }
-      api.checkLoadAll(self.data.isLoadAllStandard,'getCaseData',self);
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getCaseData',self);
       self.setData({
         web_caseData:self.data.caseData,
       }); 

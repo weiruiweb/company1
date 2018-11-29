@@ -16,7 +16,7 @@
               <image src="/images/index_icon1.png"></image>
           </view>
           <view class="great_tLeft avoidOverflow">
-              <view class="font30" style="color:#ffab7e;text-align: left;">精品体验</view>
+              <view class="font30" style="color:#ffab7e;text-align: left;" bindtap="intoPath" data-path="/pages/classify/classify">精品体验</view>
               <view class="font26 color6" style="font-weight:700;text-align: left;">微信会员共享</view>
           </view>
       </view>

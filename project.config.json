@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 47,
+			"current": 48,
 			"list": [
 				{
 					"id": 0,
@@ -321,6 +321,12 @@
 					"id": -1,
 					"name": "行业案例",
 					"pathName": "pages/entrance/case/case",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/mall/gongzhonghao/gongzhonghao",
 					"query": ""
 				}
 			]

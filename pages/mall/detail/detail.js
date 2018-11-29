@@ -21,6 +21,7 @@ Page({
     skuData:[],
     choosed_sku_item:[],
     can_choose_sku_item:[],
+    skuLabelData:[],
     buttonType:'',
     buttonClicked:true,
     isInCollectData:false,
@@ -119,8 +120,9 @@ Page({
         self.data.mainData = res.info.data[0];
 
         for(var key in self.data.mainData.label){
+            console.log('self.data.mainData.sku_array',self.data.mainData.sku_array)
           if(self.data.mainData.sku_array.indexOf(parseInt(key))!=-1){
-            self.data.skuData.push(self.data.mainData.label[key])
+            self.data.skuLabelData.push(self.data.mainData.label[key])
           };    
         };
         
@@ -130,24 +132,30 @@ Page({
             self.data.choosed_sku_item = api.cloneForm(self.data.mainData.sku[i].sku_item);
             var skuRes = api.skuChoose(self.data.mainData.sku,self.data.choosed_sku_item);
             self.data.can_choose_sku_item = skuRes.can_choose_sku_item;
+            console.log('self.data.can_choose_sku_item',self.data.can_choose_sku_item)
           };
         };
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
         self.data.complete_api.push('getMainData');
-
       }else{
         api.showToast('商品信息有误','none');
       };
-
+      console.log('getMainData',self.data.choosed_skuData)
+      console.log('getMainDataweb_skuData',self.data.skuLabelData)
       self.setData({
         web_choosed_skuData:self.data.choosed_skuData,
-        web_skuData:self.data.skuData,
+        web_skuLabelData:self.data.skuLabelData,
         web_mainData:self.data.mainData,
         web_choosed_sku_item:self.data.choosed_sku_item,
         web_can_choose_sku_item:self.data.can_choose_sku_item,
       });
 
-      self.checkLoadComplete();
+      /*sku逻辑说明
+      被选中的sku数据choosed_skuData
+      被选中的sku_item choosed_sku_item
+      可供选择的sku_item can_choose_sku_item(包括被选中的sku_item)
+       api.skuChoose(sku数据，被选中的sku_item)返回choosed_skuData，choosed_sku_item
+      */
 
     };
     api.productGet(postData,callback);

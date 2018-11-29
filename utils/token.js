@@ -146,16 +146,16 @@ class Token {
                             wx.setStorageSync(params.token_name, res.data.token);
                             
                             if(callback){
-                                callback && callback(res.data.token);
-                            }      
+                                callback && callback();
+                            };      
                         }else{
                             wx.showToast({
                                 title: '获取token失败',
                                 icon: 'fail',
                                 duration: 1000,
                                 mask:true
-                            })
-                        }
+                            });
+                        };
                         
                         
                     }
@@ -206,9 +206,7 @@ class Token {
                        
                         wx.removeStorageSync('token');
                         wx.removeStorageSync('login');
-/*                        wx.redirectTo({
-                            url:'/pages/teacher/login/login'
-                        })*/
+
                     }
                     
                     

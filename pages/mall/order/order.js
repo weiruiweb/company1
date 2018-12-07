@@ -98,19 +98,8 @@ Page({
   pay(e){
     const self = this;
     var id = api.getDataSet(e,'id');
-    var score = api.getDataSet(e,'score')
-    const postData = {
-      tokenFuncName :'getMallToken',
-      searchItem:{
-        id:id
-      },
-      score:score
-    };
-    const callback = (res)=>{
-      wx.hideLoading();
-      self.getMainData(true)   
-    };
-    api.pay(postData,callback);
+    
+    api.pathTo('/pages/mall/confirmOrder/confirmOrder?order_id='+id,'nav'); 
   },
 
 

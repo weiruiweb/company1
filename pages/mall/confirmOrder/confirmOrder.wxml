@@ -35,14 +35,14 @@
 <view>
 	<view class="order_list">
 		<view class="order_confirm">
-			<block wx:for="{{web_mainData}}" wx:key="id">
+			<block wx:for="{{web_mainData.products}}" wx:key="id">
 				<view class="flexRowBetween orderlistShow ">
-					<view class="img_left"><image src="{{item.product.mainImg[0].url}}"></image></view>
+					<view class="img_left"><image src="{{item.snap_product.mainImg[0].url}}"></image></view>
 					<view class="order_name">
-						<view class="text1 avoidOverflow">{{item.product.title}}</view>
+						<view class="text1 avoidOverflow">{{item.snap_product.title}}</view>
 						<view class="order_type avoidOverflow">个性化定制</view>
 						<view class="orders flexRowBetween">
-							<text class="order_price">¥{{item.product.price}}</text>
+							<text class="order_price">¥{{item.snap_product.price}}</text>
 							<text class="order_number">X{{item.count}}</text>
 						</view>
 					</view>
@@ -60,6 +60,10 @@
 		<image src="{{web_buyType =='pickself'?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
 		上门自提
 	</view>
+</view>
+
+<view>
+	<view>订单金额：{{web_price}}</view>
 </view>
 
 <block wx:for="{{web_orderData}}" wx:key="id" >
@@ -104,7 +108,7 @@
 	                <view class="discount_txt3" style="background: #d6d6d6;color:#5d5d5d;">限制公众号使用</view>
 	            </view>
 	        </view>
-	            <view class="select_discount">
+	        <view class="select_discount">
 	        	<checkbox-group bindchange="checkboxChange">
 				    <checkbox value="{{item.id}}" checked="{{item.checked}}"/>{{item.value}}
 				</checkbox-group>
@@ -119,16 +123,16 @@
 	<view class="pay_order " style="display:flex;width:100%;align-items:center;">
 		<view class="total_money" style="width:70%;margin-right:5%;text-align:right;">
 			<view class="heji" style="width:100%;text-align:right;">
-				<text>合计:</text>
-				<text class="text2">¥{{web_totalPrice}}</text>
+				<text>微信支付:</text>
+				<text class="text2">¥{{web_pay.wxPay}}</text>
 			</view>
 			<view class="price_note" style="display:block;width:100%;text-align:right;">
 				<text style="">（实际价格，请与客服沟通）</text>
 			</view>
 		</view>
 		<view class="submit_order">
-			<form bindsubmit="addOrder" report-submit="true">
-				<button form-type="submit">提交订单</button>
+			<form bindsubmit="{{web_buttonCanClick?'submit':''}}" report-submit="true">
+				<button form-type="submit">立即支付</button>
 			</form>
 		</view>
 	</view>

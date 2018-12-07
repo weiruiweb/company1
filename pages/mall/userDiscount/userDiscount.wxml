@@ -13,7 +13,7 @@
 <view class="ticket">
 	<view class="ticket_sort {{num == 0?'madeShow':''}}">
 		<block wx:for="{{web_mainData}}" wx:key="id">
-			<view class="ticket_bg">
+			<view class="ticket_bg" data-id="{{}}" >
 				<image src="/images/discount4.jpg"></image>
 				 	<view class="ticket_cont">
 			   		<view class="discount_left">

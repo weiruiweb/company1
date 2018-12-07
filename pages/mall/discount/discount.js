@@ -17,12 +17,12 @@ Page({
     complete_api:[],
     img:"background:url('/images/small.png')",
     discount:false,
+    isFirstLoadAllStandard:['getMainData'],
   },
   
   onLoad() {
     const self = this;
-    wx.showLoading();
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self);
     self.getMainData()
   },
 
@@ -30,7 +30,7 @@ Page({
     const self = this;
     if(isNew){
       api.clearPageIndex(self);
-    }
+    };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = api.cloneForm(self.data.searchItem);
@@ -40,32 +40,23 @@ Page({
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
-      }
-      self.data.complete_api.push('getMainData')
-      self.setData({
-        buttonClicked:false,
-      })
+      };
       self.setData({
         web_mainData:self.data.mainData,
-      });     
-      self.checkLoadComplete()
+      });   
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);  
     };
     api.productGet(postData,callback);
   },
 
   addOrder(e){
     const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      setTimeout(function(){
-        wx.showLoading();
-      },800)   
-      return;
-    }
-    self.data.buttonClicked = true;
+    api.buttonCanClick(self);
     var id = api.getDataSet(e,'id');
     var type = api.getDataSet(e,'type');
-    var deadline = api.getDataSet(e,'deadline');
+    var duration = api.getDataSet(e,'duration');
+    console.log('duration',duration);
+    var limit = api.getDataSet(e,'limit');
     const postData = {
       tokenFuncName : 'getMallToken',
       product:[
@@ -73,7 +64,10 @@ Page({
       ],
       pay:{score:0},
       type:type,
-      deadline:deadline
+      data:{
+        end_time:new Date().getTime() + duration,
+        limit:limit
+      }
     };
     const callback = (res)=>{
       if(res&&res.solely_code==100000){
@@ -81,8 +75,10 @@ Page({
         self.data.buttonClicked = false; 
         self.data.discount = true;    
       }; 
+      api.buttonCanClick(self,true);
     };
     api.addOrder(postData,callback);
+
   },
 
 

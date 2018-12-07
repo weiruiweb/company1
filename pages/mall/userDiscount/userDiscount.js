@@ -25,7 +25,7 @@ Page({
       token.getUserInfo();
     };
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
-    self.getOrderData()
+    self.getOrderData();
   },
 
   getOrderData(isNew){
@@ -40,24 +40,25 @@ Page({
     postData.searchItem.user_no = wx.getStorageSync('info').user_no;
     postData.order = {
       create_time:'desc'
-    }
+    };
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
-      }
-      self.data.complete_api.push('getOrderData')
+      };
+      self.data.complete_api.push('getOrderData');
       self.setData({
         buttonClicked:false,
-      })
+      });
       self.setData({
         web_mainData:self.data.mainData,
       });     
-      self.checkLoadComplete()
+      self.checkLoadComplete();
     };
     api.orderGet(postData,callback);
+
   },
 
   
@@ -77,12 +78,14 @@ Page({
     this.setData({
       num: num
     });
-    self.data.searchItem = {};
+    self.data.searchItem = {
+      thirdapp_id:getApp().globalData.thirdapp_id,
+    };
     if(num=='0'){
       self.data.searchItem.type = '3';
     }else if(num=='1'){
       self.data.searchItem.type = '4';
-    }
+    };
     self.setData({
       web_mainData:[],
     });

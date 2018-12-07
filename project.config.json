@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 48,
+			"current": 49,
 			"list": [
 				{
 					"id": 0,
@@ -328,6 +328,11 @@
 					"name": "分类",
 					"pathName": "pages/mall/gongzhonghao/gongzhonghao",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/mall/order/order"
 				}
 			]
 		}

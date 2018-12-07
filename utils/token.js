@@ -146,7 +146,7 @@ class Token {
                             wx.setStorageSync(params.token_name, res.data.token);
                             
                             if(callback){
-                                callback && callback();
+                                callback && callback(res.data.token);
                             };      
                         }else{
                             wx.showToast({

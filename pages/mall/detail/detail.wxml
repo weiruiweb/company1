@@ -128,7 +128,7 @@
 				<button  form-type="submit">加入购物车</button>
 			</form>
 			<form class="go_pay  color1" bindtap="selectModel" data-type="buy">
-				<button  form-type="submit">立即购买</button>
+				<button  form-type="submit">提交订单</button>
 			</form>
 		</view>
 	</view>
@@ -174,11 +174,10 @@
 				<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuLabelData.id}}">+</view>
 			</view>
 		</view>
-		
 	</view>	
 	<view>
 		<view class="shoppingCart" style="width:100%;height:80rpx;line-height:80rpx;color:#fff">
-			<form bindsubmit="{{web_buttonType=='buy'?'goBuy':'addCart'}}" report-submit="true">
+			<form bindsubmit="{{web_buttonCanClick?(web_buttonType=='buy'?'goBuy':'addCart'):''}}" report-submit="true">
 				<button  form-type="submit" style="line-height:80rpx;">确    认</button>
 			</form>
 		</view>

@@ -9,6 +9,7 @@ Page({
 
 
   data: {
+    
     mainData:[],
     chooseId:[],
     tabCurrent:0,
@@ -26,13 +27,13 @@ Page({
     buttonClicked:true,
     isInCollectData:false,
     is_collect:false,
+    isFirstLoadAllStandard:['getMainData'],
 
   },
 
   onLoad(options){
     const self = this;
-
-    wx.showLoading();
+    api.commonInit(self);
     if(options.id){
       self.data.id = options.id;
     };
@@ -47,9 +48,7 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     });
-
     self.getMainData();
-
     self.setData({
       web_isInCollectData:self.data.isInCollectData,
       web_cart_count:self.data.cart_count,
@@ -59,8 +58,6 @@ Page({
     });
     
   },
-
-
 
   collect(){
     const self = this;  
@@ -125,7 +122,6 @@ Page({
             self.data.skuLabelData.push(self.data.mainData.label[key])
           };    
         };
-        
         for (var i = 0; i < self.data.mainData.sku.length; i++) {
           if(self.data.mainData.sku[i].id==self.data.id){
             self.data.choosed_skuData = api.cloneForm(self.data.mainData.sku[i]);
@@ -140,8 +136,11 @@ Page({
       }else{
         api.showToast('商品信息有误','none');
       };
-      console.log('getMainData',self.data.choosed_skuData)
-      console.log('getMainDataweb_skuData',self.data.skuLabelData)
+      console.log('getMainData',self.data.choosed_skuData);
+      console.log('getMainDataweb_skuData',self.data.skuLabelData);
+
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+
       self.setData({
         web_choosed_skuData:self.data.choosed_skuData,
         web_skuLabelData:self.data.skuLabelData,
@@ -158,19 +157,13 @@ Page({
       */
 
     };
+
     api.productGet(postData,callback);
   },
 
   chooseSku(e){
     const self = this;
 
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      setTimeout(function(){
-        wx.showLoading();
-      },800)   
-      return;
-    };
     
     var id = api.getDataSet(e,'id');
     if(self.data.can_choose_sku_item.indexOf(id)==-1){
@@ -202,13 +195,7 @@ Page({
   counter(e){
 
     const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      setTimeout(function(){
-        wx.showLoading();
-      },800)   
-      return;
-    };
+
     if(JSON.stringify(self.data.choosed_skuData)!='{}'){
       if(api.getDataSet(e,'type')=='+'){
         self.data.count++;
@@ -250,13 +237,7 @@ Page({
 
   selectModel(e){
     const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      setTimeout(function(){
-        wx.showLoading();
-      },800);   
-      return;
-    };
+    api.buttonCanClick
     self.data.buttonType = api.getDataSet(e,'type');
     console.log( self.data.buttonType)
     self.data.isShow = !self.data.isShow;
@@ -264,6 +245,7 @@ Page({
       web_buttonType:self.data.buttonType,
       isShow:self.data.isShow
     })
+
   },
 
   addCart(e){
@@ -294,6 +276,8 @@ Page({
   goBuy(){
 
     const self = this;
+    api.buttonCanClick(self);
+    
     if(JSON.stringify(self.data.choosed_skuData)=='{}'){
       api.showToast('未选中商品','success');
       return;
@@ -304,15 +288,34 @@ Page({
     const callback = (res)=>{
       console.log(res);
       if(res.info.data.length>0&&res.info.data[0].phone){
-        wx.setStorageSync('payPro',[{
-          id:self.data.choosed_skuData.id,
-          count:self.data.choosed_skuData.count,
-        }]);
-        api.pathTo('/pages/mall/confirmOrder/confirmOrder','nav');
+       
+        const c_postData = {
+          tokenFuncName:'getMallToken',
+          sku:[
+            {
+              id:self.data.choosed_skuData.id,
+              count:self.data.count
+            }
+          ],
+          type:1
+        };
+
+        const c_callback = (res)=>{
+          api.buttonCanClick(self,true);
+          if(res&&res.solely_code==100000){
+            api.pathTo('/pages/mall/confirmOrder/confirmOrder?order_id='+res.info.id,'nav');        
+          }else{
+            api.showToast(res.msg,'none');
+          };
+        };
+        api.addOrder(c_postData,c_callback);
+
       }else{
         api.showToast('请完善信息','none');
+        api.buttonCanClick(self,true);
         api.pathTo('/pages/mall/userInfo/userInfo','nav');
       };
+
     };
     api.userInfoGet(postData,callback); 
 
@@ -363,16 +366,6 @@ Page({
       }
   },
 
-
-
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData']);
-    if(complete){
-      wx.hideLoading();
-      self.data.buttonClicked = false;
-    };
-  },
 
   intoPath(e){
     const self = this;

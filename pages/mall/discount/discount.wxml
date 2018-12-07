@@ -27,7 +27,7 @@
 			   			<view class="discount_txt2 color1">{{func.timestampToTime(item.deadline)}}前有效 可叠加券</view>
 			   			<view class="discount_txt3 ">限制公众号使用</view>
 			   		</view>
-			   		<view class="discount_right" data-id="{{item.id}}" data-type="{{item.type}}" data-deadline="{{item.deadline}}" bindtap="addOrder"><view class="ac_discount" >立即领取</view></view>
+			   		<view class="discount_right" data-id="{{item.id}}" data-type="{{item.type}}" data-duration="{{item.duration}}" bindtap="{{web_buttonCanClick?'addOrder':''}}"><view class="ac_discount" >立即领取</view></view>
 			   </view>
 			</view>
 		</block>
@@ -51,7 +51,7 @@
 			   				<view>11.7 限服饰类部分商品</view>
 			   			</view>
 			   		</view>
-			   		<view class="discount_right" data-id="{{item.id}}" data-type="{{item.type}}" data-deadline="{{item.deadline}}" bindtap="addOrder"><view class="ac_discount" >立即领取</view></view>
+			   		<view class="discount_right" data-id="{{item.id}}" data-type="{{item.type}}" data-limit="{{item.use_limit}}" data-deadline="{{item.deadline}}" bindtap="addOrder"><view class="ac_discount" >立即领取</view></view>
 			   </view>
 			</view>
 		</block>

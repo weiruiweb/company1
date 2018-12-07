@@ -34,10 +34,12 @@ Page({
     self.data.id=options.id
     if(options.name&&options.name=='score'){
       self.data.searchItem.score = ['>',0]
-    };
-    if(options.name&&options.name=='group'){
+    }else if(options.name&&options.name=='group'){
       self.data.searchItem.is_group = 1
-    };
+    }else{
+      self.data.searchItem.score = ['=',0];
+      self.data.searchItem.is_group = 0
+    }
     self.getLabelData();
     self.setData({
       web_index:self.data.index,

@@ -45,7 +45,7 @@
 
 </view>
 <view  class="module">
-  <view class="module_item"  data-path="/pages/mall/gongzhonghao/gongzhonghao?name=score" bindtap="intoPathRedi">
+  <view class="module_item"  data-path="/pages/mall/gongzhonghao/gongzhonghao?name=score" bindtap="intoPath">
     <view class="item_top">
      <view class="menu_icon1 scale" style="{{img}};background-position: -256px 0rpx;"></view>
     </view>
@@ -53,7 +53,7 @@
       积分商城
     </view>
   </view>
-  <view class="module_item"  data-path="/pages/mall/gongzhonghao/gongzhonghao?name=group" bindtap="intoPathRedi">
+  <view class="module_item"  data-path="/pages/mall/gongzhonghao/gongzhonghao?name=group" bindtap="intoPath">
     <view class="item_top">
      <view class="menu_icon1 scale" style="{{img}};background-position: -256px 0rpx;"></view>
     </view>

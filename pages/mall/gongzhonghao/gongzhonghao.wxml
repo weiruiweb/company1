@@ -49,7 +49,7 @@
 		</view>
 
 		<view class="madeContItem madeShow">
-			<block wx:for="{{web_mainData[index].sku}}" wx:key="id">
+			<block wx:for="{{web_mainData}}" wx:key="id">
 				<view class="shopping_item" bindtap="intoPath" data-path="/pages/mall/detail/detail?id={{item.id}}">
 					<view class="shopping_img">
 						<image src="{{item.mainImg[0].url}}"></image>

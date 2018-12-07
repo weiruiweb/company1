@@ -78,7 +78,9 @@ Page({
       if(res&&res.solely_code==100000){
         api.showToast('领取成功！','none')
         self.data.discount = true;    
-      }; 
+      }else{
+        api.showToast(res.msg,'none')
+      }
       api.buttonCanClick(self,true);
     };
     api.addOrder(postData,callback);

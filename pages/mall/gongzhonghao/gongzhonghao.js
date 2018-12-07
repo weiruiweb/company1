@@ -18,6 +18,9 @@ Page({
     sForm:{
       item:''
     },
+    searchItem:{
+      
+    },
     isShow:false,
     sort:{
       sortby:'',
@@ -29,6 +32,12 @@ Page({
     const self = this;
     api.commonInit(self);
     self.data.id=options.id
+    if(options.name&&options.name=='score'){
+      self.data.searchItem.score = ['>',0]
+    };
+    if(options.name&&options.name=='group'){
+      self.data.searchItem.is_group = 1
+    };
     self.getLabelData();
     self.setData({
       web_index:self.data.index,
@@ -63,7 +72,8 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      thirdapp_id:getApp().globalData.mall_thirdapp_id
+      thirdapp_id:getApp().globalData.mall_thirdapp_id,
+      type:1
     };
     if(self.data.id){
       postData.searchItem.category_id = self.data.id
@@ -76,12 +86,15 @@ Page({
         middleKey:'product_no',
         key:'product_no',
         condition:'=',
+        searchItem:api.cloneForm(self.data.searchItem)
       } 
     };
-
     const callback = (res)=>{
       if(res.info.data.length>0){
-        self.data.mainData.push.apply(self.data.mainData,res.info.data);
+        for (var i = 0; i < res.info.data.length; i++) {
+          self.data.mainData.push.apply(self.data.mainData,res.info.data[i].sku);
+        }
+
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');

@@ -140,7 +140,7 @@
 			<view class="product_txt">
 				<view class="pro_name">{{web_choosed_skuData.title}}</view>
 				<view class="pro_type">
-					个性化定制
+					{{web_choosed_skuData.description}}
 				</view>
 				<view class="price_choose">
 				￥{{web_totalPrice?web_totalPrice:web_choosed_skuData.price}}

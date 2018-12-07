@@ -17,7 +17,7 @@ Page({
       detail:'',
     },
     id:'',
-    isFirstLoadAllStandard:['getMainData'],
+    
   },
 
   onLoad(options) {
@@ -31,6 +31,8 @@ Page({
         web_region:self.data.region
       })
     };
+    wx.hideLoading();
+    self.data.buttonCanClick = true;
   },
 
   getMainData(id){
@@ -39,7 +41,7 @@ Page({
     const postData = {};
     postData.searchItem = {};
     postData.searchItem.id = id;
-    postData.token = wx.getStorageSync('mall_token');
+    postData.tokenFuncName = 'getMallToken';
     const callback = (res)=>{
       console.log(res);
       self.data.mainData = res;
@@ -55,7 +57,7 @@ Page({
         web_mainData:self.data.sForm,
         web_region:self.data.region
       })
-      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+
     };
     api.addressGet(postData,callback);
   },
@@ -109,7 +111,7 @@ Page({
       if(data){
         api.dealRes(data);
       };
-      api.buttonCanClick(self,true); 
+       api.buttonCanClick(self,true); 
     };
     api.addressAdd(postData,callback);
   },

@@ -73,7 +73,11 @@ class Base{
         wx.showLoading();
         self.data.buttonCanClick = false;
         self.data.paginate = this.cloneForm(getApp().globalData.paginate);
-        self.data.isLoadAll = true;
+        self.data.isLoadAll = false;
+        self.setData({
+          fonts:getApp().globalData.font,
+          img:getApp().globalData.img,
+        });
         wx.removeStorageSync('checkLoadAll');
     }
 

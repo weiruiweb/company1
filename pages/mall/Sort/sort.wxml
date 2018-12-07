@@ -74,7 +74,7 @@
         </view>
         <view class="text" style="{{fonts[2].font}}">首页</view>
       </view>
-    <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/mall/Sort/sort">
+    <view class="navbar_item" >
       <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
         <view class="nav_img scale2" style="{{img}};width:44px;height:42px;background-position: 2px -94px;">
         </view>
@@ -95,11 +95,4 @@
       </view>
         <view class="text" style="{{fonts[2].font}};">我的</view>
     </view>
-</view>
-<view class="loadding flex"  hidden="{{loadingHidden}}" catchtouchmove="preventTouchMove">
-  <view class="loadding_cont flex">
-    <view class="item-1 spaces"></view>
-    <view class="item-3 spaces"></view>
-    <view class="item-5 spaces"></view>
-  </view>
 </view>

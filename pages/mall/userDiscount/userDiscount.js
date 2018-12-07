@@ -12,19 +12,13 @@ Page({
       thirdapp_id:getApp().globalData.thirdapp_id,
       type:3
     },
-    buttonClicked:false,
-    isLoadAll:false,
-    complete_api:[]
+    isFirstLoadAllStandard:['getOrderData']
   },
   
   onLoad() {
     const self = this;
-    wx.showLoading();
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self)
+    
     self.getOrderData();
   },
 
@@ -48,14 +42,11 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       };
-      self.data.complete_api.push('getOrderData');
-      self.setData({
-        buttonClicked:false,
-      });
+      api.buttonCanClick(self,true)
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getOrderData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });     
-      self.checkLoadComplete();
     };
     api.orderGet(postData,callback);
 
@@ -65,9 +56,7 @@ Page({
 
   menuClick: function (e) {
     const self = this;
-    self.setData({
-      buttonClicked:true,
-    })
+    api.buttonCanClick(self);
     const num = e.currentTarget.dataset.num;
     self.changeSearch(num);
   },
@@ -92,17 +81,11 @@ Page({
     self.getOrderData(true);
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getOrderData']);
-    if(complete){
-      wx.hideLoading();
-    };
-  },
+
 
   onReachBottom: function () {
     const self = this;
-    if(!self.data.isLoadAll){
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
       self.data.paginate.currentPage++;
       self.getOrderData();
     };

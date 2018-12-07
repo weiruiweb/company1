@@ -17,14 +17,12 @@ Page({
       detail:'',
     },
     id:'',
+    isFirstLoadAllStandard:['getMainData'],
   },
 
   onLoad(options) {
     const self=this;
-    self.setData({
-      fonts:app.globalData.font,
-      img:app.globalData.img
-    });
+    api.commonInit(self);
     if(options.id){
       self.data.id = options.id
       self.getMainData(self.data.id); 
@@ -37,6 +35,7 @@ Page({
 
   getMainData(id){
     const self = this;
+
     const postData = {};
     postData.searchItem = {};
     postData.searchItem.id = id;
@@ -56,6 +55,7 @@ Page({
         web_mainData:self.data.sForm,
         web_region:self.data.region
       })
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
     };
     api.addressGet(postData,callback);
   },
@@ -90,8 +90,10 @@ Page({
     postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
     const callback = (data)=>{
-      wx.hideLoading();
-      api.dealRes(data);
+      if(data){
+        api.dealRes(data);
+      };
+      api.buttonCanClick(self,true); 
     };
     api.addressUpdate(postData,callback);
   },
@@ -104,8 +106,10 @@ Page({
     postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
     const callback = (data)=>{
-      wx.hideLoading();
-      api.dealRes(data);
+      if(data){
+        api.dealRes(data);
+      };
+      api.buttonCanClick(self,true); 
     };
     api.addressAdd(postData,callback);
   },
@@ -113,6 +117,7 @@ Page({
 
   submit(){
     const self = this;
+    api.buttonCanClick(self);
     var phone = self.data.sForm.phone;
     const pass = api.checkComplete(self.data.sForm);
     if(pass){

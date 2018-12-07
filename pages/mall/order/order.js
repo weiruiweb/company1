@@ -14,19 +14,16 @@ Page({
       thirdapp_id:'2',
       type:['in',[1,2]]
     },
+    isFirstLoadAllStandard:['getMainData'],
   },
 
 
   onLoad(options){
     const self = this;
-    
+    api.commonInit(self);
     if(options.num){
       self.changeSearch(options.num)
     }
-    this.setData({
-      fonts:app.globalData.font
-    });
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData()
   },
 
@@ -51,26 +48,30 @@ Page({
           self.data.isLoadAll = true;
           api.showToast('没有更多了','none');
         };
-        wx.hideLoading();
+        api.buttonCanClick(self,true);
+        api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
         self.setData({
           web_mainData:self.data.mainData,
         });  
       }else{
         api.showToast('网络故障','none')
       }
-      console.log('getMainData',self.data.mainData)
     };
     api.orderGet(postData,callback);
   },
 
   deleteOrder(e){
     const self = this;
+    api.buttonCanClick(self)
     const postData = {};
     postData.tokenFuncName = 'getMallToken';
     postData.searchItem = {};
     postData.searchItem.id = api.getDataSet(e,'id');
     const callback  = res=>{
-      api.dealRes(res);
+      if(res){
+        api.dealRes(res);
+      } 
+      api.buttonCanClick(self,true)
       self.getMainData(true);
     };
     api.orderDelete(postData,callback);
@@ -78,6 +79,7 @@ Page({
 
   orderUpdate(e){
     const self = this;
+    api.buttonCanClick(self)
     const postData = {};
     postData.tokenFuncName = 'getMallToken';
     postData.data ={
@@ -87,7 +89,12 @@ Page({
     postData.searchItem = {};
     postData.searchItem.id = api.getDataSet(e,'id');
     const callback  = res=>{
-      api.showToast('已确认收货','none');
+      if(res.solely_code==100000){
+        api.showToast('已确认收货','none'); 
+      }else{
+        api.showToast(res.msg,'none')
+      };  
+      api.buttonCanClick(self,true);
       self.getMainData(true);
     };
     api.orderUpdate(postData,callback);
@@ -105,6 +112,7 @@ Page({
 
   menuClick: function (e) {
     const self = this;
+    api.buttonCanClick(self)
     const num = e.currentTarget.dataset.num;
     self.changeSearch(num);
   },
@@ -140,7 +148,7 @@ Page({
   
   onReachBottom() {
     const self = this;
-    if(!self.data.isLoadAll){
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
       self.data.paginate.currentPage++;
       self.getMainData();
     };

@@ -1,5 +1,6 @@
 <!--detail.wxml-->
-<wxs module="func" src="../../../utils/func.wxs" />
+
+<wxs src="../../../utils/func.wxs" module="func" />
 <view id="details">
 <view class="banner">
 	<view class="page-body">
@@ -26,15 +27,13 @@
 				<view style="width:32px;height:32px;border:none;{{img}};background-position: -482px -94px;"></view>
 			</button>
 		</view>
-		<view class="guarantee flexRowBetween">
-			<text>【{{web_mainData.passage1}}】</text><text>【{{web_mainData.passage2}}】</text>
-		</view>
+
 		<view class="price_sale flexRowBetween">
 			<view class="price">
 				￥{{web_mainData.price}}元
 			</view>
 			<view class="sale">
-				销量2888笔
+				销量{{web_mainData.sale_count}}笔
 			</view>
 		</view>
 	</view>
@@ -58,43 +57,42 @@
 	<view class="detail_show">
 		<view id="detail" style="{{tabCurrent == 0?'display:block':'display:none'}}">
 			<view class="content ql-editor" >
-                <import src="../../wxParse/wxParse.wxml"/>
+                <import src="../../../wxParse/wxParse.wxml"/>
                 <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
             </view> 
 		</view>
 		<view id="comment" style="{{tabCurrent == 1?'display:block':'display:none'}}">
 			<view class="good_com flexRowBetween">
 				<view class="comment_number">
-					评价(120)
+					评价({{web_num}})
 				</view>
-				<view class="good_percent">
-					<text>好评率</text>
-					<text class="percent">99%</text>
-				</view>
+				
 			</view>
-			<view class="comment_list ">
-				<view class="flexRowBetween"  style="align-items:center;">
-					<view class="comment_user" style="display:flex;align-items:center;">
-						<view class="user_img">
-							
+			<block wx:for="{{web_messageData}}" wx:key="id">
+				<view class="comment_list ">
+					<view class="flexRowBetween"  style="align-items:center;">
+						<view class="comment_user" style="display:flex;align-items:center;">
+							<view class="user_img">
+								<image src="{{item.user[0].headImgUrl}}"></image>
+							</view>
+							<view class="txts" style="height:58rpx;">
+								<view class="text1">{{item.user[0].nickname}}</view>
+								<view class="text2">{{item.creta_time}}</view>
+							</view>
 						</view>
-						<view class="txts" style="height:58rpx;">
-							<view class="text1">米桃子</view>
-							<view class="text2">2015.3.2</view>
+						<view class="star flexRowBetween">
+							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
 						</view>
 					</view>
-					<view class="star flexRowBetween">
-						<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-						<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-						<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-						<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-						<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+					<view class="comment_cont">
+						{{item.content}}
 					</view>
 				</view>
-				<view class="comment_cont">
-					很满意的一次购物很满意的一次购物很满意的一次购物
-				</view>
-			</view>
+			</block>
 		</view>
 	</view>
 </view>

@@ -12,9 +12,7 @@ Page({
       thirdapp_id:getApp().globalData.mall_thirdapp_id,
       type:3
     },
-    buttonClicked:false,
-    isLoadAll:false,
-    complete_api:[],
+
     img:"background:url('/images/small.png')",
     discount:false,
     isFirstLoadAllStandard:['getMainData'],
@@ -52,13 +50,17 @@ Page({
   addOrder(e){
     const self = this;
     api.buttonCanClick(self);
+    console.log(e);
     var id = api.getDataSet(e,'id');
     var type = api.getDataSet(e,'type');
     var duration = api.getDataSet(e,'duration');
+    var discount = api.getDataSet(e,'discount');
+    var standard = api.getDataSet(e,'standard');
+    var limit = api.getDataSet(e,'limit')
     console.log('duration',duration);
     var limit = api.getDataSet(e,'limit');
     const postData = {
-      tokenFuncName : 'getMallToken',
+      tokenFuncName:'getMallToken',
       product:[
         {id:id,count:1}
       ],
@@ -66,13 +68,15 @@ Page({
       type:type,
       data:{
         end_time:new Date().getTime() + duration,
-        limit:limit
+        limit:limit,
+        discount:discount,
+        standard:standard,
       }
     };
+    console.log('postData',postData)
     const callback = (res)=>{
       if(res&&res.solely_code==100000){
         api.showToast('领取成功！','none')
-        self.data.buttonClicked = false; 
         self.data.discount = true;    
       }; 
       api.buttonCanClick(self,true);
@@ -84,9 +88,7 @@ Page({
 
   menuClick: function (e) {
     const self = this;
-    self.setData({
-      buttonClicked:true,
-    })
+    api.buttonCanClick(self);
     const num = e.currentTarget.dataset.num;
     self.changeSearch(num);
   },
@@ -97,7 +99,9 @@ Page({
     this.setData({
       num: num
     });
-    self.data.searchItem = {};
+    self.data.searchItem = {
+      thirdapp_id:getApp().globalData.mall_thirdapp_id,
+    };
     if(num=='0'){
       self.data.searchItem.type = '3';
     }else if(num=='1'){
@@ -109,17 +113,11 @@ Page({
     self.getMainData(true);
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData']);
-    if(complete){
-      wx.hideLoading();
-    };
-  },
+
 
   onReachBottom: function () {
     const self = this;
-    if(!self.data.isLoadAll){
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
       self.data.paginate.currentPage++;
       self.getMainData();
     };

@@ -1,19 +1,19 @@
 <!--manageAddress.wxml-->
 <view class="order_sort flexRowBetween">
-	<view class="order_item {{num ==0?'order_this':''}}" data-num="0" bindtap="menuClick">
+	<view class="order_item {{num ==0?'order_this':''}}" data-num="0" bindtap="{{web_buttonCanClick?'menuClick':''}}">
 		全部
 	</view>
-	<view class="order_item {{num ==1?'order_this':''}}" data-num="1"  bindtap="menuClick">
+	<view class="order_item {{num ==1?'order_this':''}}" data-num="1"  bindtap="{{web_buttonCanClick?'menuClick':''}}">
 		待付款
 	</view>
-	<view class="order_item {{num ==2?'order_this':''}}" data-num="2" bindtap="menuClick">
-		待服务
+	<view class="order_item {{num ==2?'order_this':''}}" data-num="2" bindtap="{{web_buttonCanClick?'menuClick':''}}">
+		待收货
 	</view>
-	<view class="order_item {{num ==3?'order_this':''}}" data-num="3" bindtap="menuClick">
-		服务中
+	<view class="order_item {{num ==3?'order_this':''}}" data-num="3" bindtap="{{web_buttonCanClick?'menuClick':''}}">
+		已完成
 	</view>
-	<view class="order_item {{num ==4?'order_this':''}}" data-num="4" bindtap="menuClick">
-		待评价
+	<view class="order_item {{num ==4?'order_this':''}}" data-num="4" bindtap="{{web_buttonCanClick?'menuClick':''}}">
+		已取消
 	</view>
 </view>
 <view class="order_list">
@@ -71,13 +71,13 @@
 				</view>
 				<view class="handle_order">
 					<view class="flexRowBetween">
-						<view class="handle_orders delete_order" data-id="{{item.id}}" bindtap='deleteOrder' wx:if="{{item.pay_status == '0'}}">删除订单</view>
+						<view class="handle_orders delete_order" data-id="{{item.id}}" bindtap="{{web_buttonCanClick?'deleteOrder':''}}" wx:if="{{item.pay_status == '0'}}">删除订单</view>
 
 						<view class="handle_orders delete_order" data-id="{{item.id}}" data-price="{{item.price}}" bindtap="pay" wx:if="{{item.pay_status == '0'&&item.order_step=='0'}}">去支付</view>
 
 						<view class="handle_orders comment_order" bindtap="intoPath" data-path="/pages/commentOrder/commentOrder" wx:if="{{item.pay_status == '1'&&item.item[0].isremark!='1'}}">去评价</view>
 
-						<view class="handle_orders comment_order" bindtap="intoPath"  wx:if="{{item.pay_status == '1'&&item.transport_status == '1'&&item.order_step == '0'}}" data-id="{{item.id}}">确认收货</view>
+						<view class="handle_orders comment_order" bindtap="{{web_buttonCanClick?'orderUpdate':''}}"  wx:if="{{item.pay_status == '1'&&item.transport_status == '1'&&item.order_step == '0'}}" data-id="{{item.id}}">确认收货</view>
 
 						<view class="handle_orders comment_order" bindtap="intoPath" data-path="/pages/commentOrder/commentOrder" wx:if="{{item.pay_status == '1'&&item.transport_status == '1'&&item.order_step == '0'}}">查看物流</view>
 

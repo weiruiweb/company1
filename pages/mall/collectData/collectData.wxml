@@ -11,7 +11,7 @@
 				</view>
 				<view class="shopping_name">
 					<text class="text1">{{item.title}}</text>
-					<text class="text2">个性化定制</text>
+					<text class="text2">{{item.description}}</text>
 					<text class="price">¥{{item.price}}</text>
 				</view>
 				
@@ -33,7 +33,7 @@
 				</view>
 				<view class="shopping_name">
 					<text class="text1">{{item.title}}</text>
-					<text class="text2">个性化定制</text>
+					<text class="text2">{{item.description}}</text>
 					<text class="price">¥{{item.price}}</text>
 				</view>		
 		</view>

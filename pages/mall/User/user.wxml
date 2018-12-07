@@ -47,26 +47,23 @@
 			</view>
 		</view>
 	</view>
-	<view class="process flexRowBetween">
-		<view class="peocess_item item_other" bindtap="order">
-			<view class="user_icon3 scale2" style="{{img}};background-position: -122px -146px;width:46px;"></view>
+	<view class="process flexRowBetween" >
+		<view class="peocess_item item_other"  bindtap="intoPath" data-path="/pages/userOrder/userOrder?num=1">
+			<view class="user_icon3 scale2" style="{{img}};background-position: -122px -146px;width:46px;" ></view>
 			<text>待付款</text>
 		</view>
-		<view class="peocess_item">
+		<view class="peocess_item"  bindtap="intoPath" data-path="/pages/userOrder/userOrder?num=2">
 			<view class="user_icon3 scale2" style="{{img}};background-position: -168px -146px;"></view>
 			<text>待发货</text>
 		</view>
-		<view class="peocess_item">
+		<view class="peocess_item"  bindtap="intoPath" data-path="/pages/userOrder/userOrder?num=3">
 			<view class="user_icon3 scale2" style="width:46px;{{img}};background-position: -78px -144px;"></view>
-			<text>待收货</text>
+			<text>已取消</text>
 		</view>
-		<view class="peocess_item">
-			<view class="user_icon3 scale2" style="width:46px;{{img}};background-position: -32px -144px;"></view>
-			<text>待评价</text>
-		</view>
-		<view class="peocess_item">
+		
+		<view class="peocess_item"  bindtap="intoPath" data-path="/pages/userOrder/userOrder?num=4">
 			<view class="user_icon3 scale2" style="width:46px;{{img}};background-position: -218px -144px;"></view>
-			<text>退换货</text>
+			<text>已完成</text>
 		</view>
 	</view>
 	<view class="user_all" style="margin-bottom:120rpx">

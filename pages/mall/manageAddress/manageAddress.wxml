@@ -15,7 +15,7 @@
 			</view>
 		</view>
 		<view class="address_set flexRowBetween">
-			<view class="default"  bindtap="{{item.isdefault=='0'?'updateAddress':''}}" data-id="{{item.id}}">
+			<view class="default"  bindtap="{{item.isdefault=='0'?(web_buttonCanClick?'updateAddress':''):''}}" data-id="{{item.id}}">
 				<image src="{{item.isdefault=='0'?'/images/select.png':'/images/mall_select_active.jpg'}}"></image>
 				<text style="{{item.isdefault=='0'?'':'color:#2c9fe1'}}">{{item.isdefault=='0'?'设为默认地址':'默认地址'}}</text>
 			</view>
@@ -23,7 +23,7 @@
 				<view class="scale2" style="{{img}};width:30px;height:30px;background-position: -567px -92px;"></view>
 				<text>编辑</text>
 			</view>
-			<view class="edit delete" data-id="{{item.id}}" bindtap="deleteAddress">
+			<view class="edit delete" data-id="{{item.id}}" bindtap="{{web_buttonCanClick?'deleteAddress':''}}">
 				<view class="scale2" style="{{img}};width:30px;height:30px;background-position: -598px -92px;"></view>
 				<text>删除</text>
 			</view>

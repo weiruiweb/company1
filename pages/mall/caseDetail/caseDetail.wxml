@@ -1,4 +1,5 @@
 <!--caseDetail.wxml-->
+<wxs src="../../../utils/func.wxs" module="func" />
 <view class="caseDetail">
 	<view class="case_top">	
 		<image src="{{web_mainData.bannerImg[0].url}}"></image>

@@ -19,14 +19,12 @@ Page({
     products:[],
     totalPrice:0,
     isChooseAll:'',
+    isFirstLoadAllStandard:['getMainData'],
   },
   
   onLoad() {
     const self = this;
-    this.setData({
-      fonts:app.globalData.font,
-      img:app.globalData.img,
-    });
+    api.commonInit(self);
   },
 
   /*添加到购物车*/
@@ -38,44 +36,42 @@ Page({
       
   },
 
-    _flyToCartEffect:function(e){
-        //获得当前点击的位置，距离可视区域左上角
-        const self = this;
-        console.log(e);
-        var touches=e.touches[0];
-        console.log(touches);
-        var diff={
-                x:-touches.clientX*0.3+'px',
-                y:self.data.windowHeight-touches.clientY-100+'px',
-            },
-            style = 'display: block;-webkit-transform:translate('+diff.x+','+diff.y+') rotate(350deg) scale(0.3); opacity: 1;',  //移动距离
-            style1 = '-webkit-transform:scale(1.1)'
-            self.setData({
-                flayTo:e.target.dataset.index,
-                translateStyle:style,
-                shoppingStyle:style1,
-            });
-            setTimeout(()=>{
-                self.setData({
-                    flayTo:false,
-                    translateStyle:'-webkit-transform: none; opacity:0;transform:none; opacity:0;',  //恢复到最初状态
-                    isShake:true,
-                    
-                });
-                setTimeout(()=>{
-                    var counts=self.data.cartTotalCounts+self.data.productCounts;
-                    self.setData({
-                        isShake:false,
-                        cartTotalCounts:counts
-                    });
-                },300);
-            },1500);
-        },
+  _flyToCartEffect:function(e){
+    //获得当前点击的位置，距离可视区域左上角
+    const self = this;
+    console.log(e);
+    var touches=e.touches[0];
+    console.log(touches);
+    var diff={
+      x:-touches.clientX*0.3+'px',
+      y:self.data.windowHeight-touches.clientY-100+'px',
+    },
+    style = 'display: block;-webkit-transform:translate('+diff.x+','+diff.y+') rotate(350deg) scale(0.3); opacity: 1;',  //移动距离
+    style1 = '-webkit-transform:scale(1.1)'
+    self.setData({
+      flayTo:e.target.dataset.index,
+      translateStyle:style,
+      shoppingStyle:style1,
+    });
+    setTimeout(()=>{
+      self.setData({
+        flayTo:false,
+        translateStyle:'-webkit-transform: none; opacity:0;transform:none; opacity:0;',  //恢复到最初状态
+        isShake:true, 
+      });
+      setTimeout(()=>{
+        var counts=self.data.cartTotalCounts+self.data.productCounts;
+        self.setData({
+            isShake:false,
+            cartTotalCounts:counts
+        });
+      },300);
+    },1500);
+  },
 
   onShow() {
 
     const self = this;
-    //self.data.mainData = api.jsonToArray(wx.getStorageSync('cartData'),'unshift');
     self.data.mainData = api.getStorageArray('cartData');
     console.log('onShow',self.data.mainData);
     self.checkChooseAll();
@@ -83,6 +79,7 @@ Page({
       web_isChooseAll:self.data.isChooseAll,
       web_mainData:self.data.mainData
     });
+    api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
     self.countTotalPrice();
 
   },

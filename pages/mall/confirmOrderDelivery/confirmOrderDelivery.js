@@ -19,17 +19,17 @@ Page({
     submitData:{
       passage1:''
     },
-    buttonClicked: true,
     order_id:'',
-    complete_api:[]
+    buttonCanClicked:false,
+    pay:{
+      coupon:[]
+    },
+    isFirstLoadAllStandard:['getMainData'],
   },
 
   onLoad() {
     const self = this;
-
-    this.setData({
-      fonts:app.globalData.font
-    });
+    api.commonInit(self);
     getApp().globalData.address_id = '';
   },
 
@@ -47,6 +47,7 @@ Page({
     self.getMainData();
     console.log(self.data.idData)
     self.getAddressData();
+    self.getCouponData();
   },
 
 
@@ -63,12 +64,12 @@ Page({
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
         self.countTotalPrice(); 
-        self.data.complete_api.push('getMainData');
+        
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       }
-
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });
@@ -83,11 +84,44 @@ Page({
           }
         }
       };
-      
-      self.checkLoadComplete()   
     };
     api.skuGet(postData,callback);
   },
+
+  getCouponData(isNew){
+    const self = this;
+    if(isNew){
+      api.clearPageIndex(self);
+    }
+    const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
+    postData.tokenFuncName = 'getProjectToken';
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.thirdapp_id,
+      user_no:wx.getStorageSync('info').user_no,
+      type:['in',[3,4]],
+    };
+    postData.order = {
+      create_time:'desc'
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.orderData.push.apply(self.data.orderData,res.info.data);
+      }else{
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','none');
+      };
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getOrderData',self);
+      self.setData({
+        buttonClicked:false,
+      });
+      console.log(self.data.orderData);
+      self.setData({
+        web_orderData:self.data.orderData,
+      });     
+    };
+    api.orderGet(postData,callback);
+  },  
 
   getAddressData(){
     const self = this;
@@ -108,10 +142,8 @@ Page({
 
   addOrder(){
     const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      return;
-    }else if(!self.data.order_id){
+    self.buttonCanClick(self);
+    if(!self.data.order_id){
       self.data.buttonClicked = false;
       const postData = {
         tokenFuncName : 'getMallToken',
@@ -126,12 +158,9 @@ Page({
       };
       const callback = (res)=>{
         if(res&&res.solely_code==100000){
-          setTimeout(function(){
-            self.data.buttonClicked = false;
-          }, 1000)         
-        }; 
-        self.data.order_id = res.info
-        self.pay(self.data.order_id);     
+         self.data.order_id = res.info
+          self.pay(self.data.order_id);          
+        };     
       };
       api.addOrder(postData,callback);
     }else{
@@ -162,19 +191,57 @@ Page({
       }else{
         api.showToast('支付失败','none')
       }
-         
+      api.buttonCanClick(self,true)    
     };
     api.pay(postData,callback);
   },
 
-  checkLoadComplete(){
+  useCoupon(e){
     const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData']);
-    if(complete){
-      wx.hideLoading();
-      self.data.buttonClicked = false;
+    var id = api.getDataSet(e,'id');
+    var count = api.getDataSet(e,'count');
+    var findItem = api.findItemInArray(self.data.pay.coupon,'id',id);
+    if(findItem){
+      self.data.pay.coupon.splice(findItem[0],1);
+    }else{
+      self.data.pay.coupon.push({
+        id:id,
+        price:count
+      });
     };
+    self.setData({
+      web_pay:self.data.pay
+    });
+    console.log('self.data.pay',self.data.pay); 
+    self.countPrice();
+    
+
   },
+
+
+  countPrice(){
+    const self = this;
+    var totalPrice = 0;
+    var couponPrice = 0;
+    var productsArray = self.data.mainData.products;
+    self.data.price = self.data.mainData.price;
+    if(self.data.pay.coupon.length>0){
+      var couponPrice = 0;
+      for (var i = 0; i < self.data.pay.coupon.length; i++) {
+        couponPrice += self.data.pay.coupon[i].price
+      };
+    };
+    self.data.pay.wxPay = self.data.price - couponPrice;
+    console.log('countPrice',self.data.pay)
+    self.setData({
+      web_couponPrice:couponPrice.toFixed(2),
+      web_price:self.data.price,
+      web_pay:self.data.pay
+    });
+
+  },
+
+
 
   countTotalPrice(){  
     const self = this;

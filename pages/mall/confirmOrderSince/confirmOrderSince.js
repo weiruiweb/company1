@@ -19,17 +19,13 @@ Page({
     submitData:{
       passage1:''
     },
-    buttonClicked: true,
     order_id:'',
-    complete_api:[]
+    isFirstLoadAllStandard:['getMainData'],
   },
 
   onLoad() {
     const self = this;
-
-    this.setData({
-      fonts:app.globalData.font
-    });
+    api.commonInit(self);
     getApp().globalData.address_id = '';
   },
 
@@ -63,12 +59,12 @@ Page({
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
         self.countTotalPrice(); 
-        self.data.complete_api.push('getMainData');
+        
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       }
-
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });
@@ -108,11 +104,8 @@ Page({
 
   addOrder(){
     const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      return;
-    }else if(!self.data.order_id){
-      self.data.buttonClicked = false;
+    api.buttonCanClick(self);
+    if(!self.data.order_id){
       const postData = {
         tokenFuncName : 'getMallToken',
         sku:[
@@ -126,12 +119,11 @@ Page({
       };
       const callback = (res)=>{
         if(res&&res.solely_code==100000){
-          setTimeout(function(){
-            self.data.buttonClicked = false;
-          }, 1000)         
-        }; 
-        self.data.order_id = res.info
-        self.pay(self.data.order_id);     
+          self.data.order_id = res.info
+          self.pay(self.data.order_id);         
+        }else{
+          api.showToast(res.msg,'none')
+        }
       };
       api.addOrder(postData,callback);
     }else{
@@ -162,19 +154,12 @@ Page({
       }else{
         api.showToast('支付失败','none')
       }
-         
+      api.buttonCanClick(self,true)  
     };
     api.pay(postData,callback);
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData']);
-    if(complete){
-      wx.hideLoading();
-      self.data.buttonClicked = false;
-    };
-  },
+
 
   countTotalPrice(){  
     const self = this;

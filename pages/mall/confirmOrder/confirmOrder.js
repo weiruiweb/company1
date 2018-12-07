@@ -24,14 +24,15 @@ Page({
     },
     searchItemTwo:{
       thirdapp_id:getApp().globalData.mall_thirdapp_id,
-      user_no:wx.getStorageSync('mall_info').user_no
+      user_no:wx.getStorageSync('mall_info').user_no,
+      type:['in',[3,4]]
     },
-    buttonClicked:true,
     order_id:'',
-    complete_api:[],
     buyType:'delivery',
-    isFirstLoadAllStandard:['getMainData','getAddressData'],
-    pay:{}
+    isFirstLoadAllStandard:['getMainData','getAddressData','getUserData'],
+    pay:{
+      coupon:[]
+    }
 
   },
 
@@ -45,13 +46,11 @@ Page({
       api.showToast('数据传递有误','error');
     };
     self.setData({
-      fonts:app.globalData.font,
-      img:app.globalData.img,
       web_buyType:self.data.buyType
     });
     getApp().globalData.address_id = '';
     self.getMainData();
-
+    self.getUserData();
   },
 
  
@@ -70,6 +69,7 @@ Page({
     };
     console.log(self.data.idData)
     self.getAddressData();
+    self.getCouponData(true)
 
   },
 
@@ -80,7 +80,6 @@ Page({
 
 
   getMainData(isNew){
-
     const self = this;
     if(isNew){
       api.clearPageIndex(self);
@@ -102,8 +101,27 @@ Page({
       self.countPrice();
     };
     api.orderGet(postData,callback);
+  }, 
 
-  },  
+  getUserData(){
+    const self = this;
+    const postData = {};
+    postData.tokenFuncName = 'getMallToken';
+    const callback = (res)=>{
+      if(res.solely_code==100000){
+        if(res.info.data.length>0){
+          self.data.userData = res.info.data[0]; 
+        }
+        self.setData({
+          web_userData:self.data.userData,
+        });  
+      }else{
+        api.showToast('网络故障','none')
+      };
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getUserData',self);
+    };
+    api.userInfoGet(postData,callback);   
+  }, 
 
   getCouponData(isNew){
 
@@ -128,6 +146,56 @@ Page({
       self.countPrice();
     };
     api.orderGet(postData,callback);
+
+  },
+
+  useCoupon(e){
+
+    const self = this;
+    var id = api.getDataSet(e,'id');
+    var count = api.getDataSet(e,'count');
+    var findItem = api.findItemInArray(self.data.pay.coupon,'id',id);
+    if(findItem){
+      self.data.pay.coupon.splice(findItem[0],1);
+    }else{
+      self.data.pay.coupon.push({
+        id:id,
+        price:count
+      });
+    };
+    self.setData({
+      web_pay:self.data.pay
+    });
+    console.log('self.data.pay',self.data.pay); 
+    self.countPrice();
+    
+
+  },
+
+
+
+
+  
+  countPrice(){
+
+    const self = this;
+    var totalPrice = 0;
+    var couponPrice = 0;
+    var productsArray = self.data.mainData.products;
+    self.data.price = self.data.mainData.price;
+    if(self.data.pay.coupon.length>0){
+      var couponPrice = 0;
+      for (var i = 0; i < self.data.pay.coupon.length; i++) {
+        couponPrice += self.data.pay.coupon[i].price
+      };
+    };
+    self.data.pay.wxPay = self.data.price - couponPrice;
+    console.log('countPrice',self.data.pay)
+    self.setData({
+      web_couponPrice:couponPrice.toFixed(2),
+      web_price:self.data.price,
+      web_pay:self.data.pay
+    });
 
   },
 
@@ -193,16 +261,7 @@ Page({
 
   },
 
-  checkLoadComplete(){
 
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData','getOrderData']);
-    if(complete){
-      wx.hideLoading();
-      self.data.buttonClicked = false;
-    };
-
-  },
 
   chooseBuyWay(e){
 
@@ -221,14 +280,12 @@ Page({
     const self = this;
     self.data.id = e.detail.value;
     console.log(self.data.id);
-    self.data.searchItemTwo.id=6;
-    self.getCouponData()
   },
 
 
 
   
-  countPrice(){
+/*  countPrice(){
 
     const self = this;
     var totalPrice = 0;
@@ -243,7 +300,7 @@ Page({
       web_pay:self.data.pay
     });
 
-  },
+  },*/
 
 
   intoPath(e){
@@ -266,7 +323,7 @@ Page({
 
     const self = this;
     api.buttonCanClick(self);
-    if(self.data.buyType=='delivery'&&!self.data.addressData){
+    if(self.data.buyType=='delivery'&&self.data.addressData.length==0){
       api.showToast('请选择收货地址','error');
       api.buttonCanClick(self,true);
       return;

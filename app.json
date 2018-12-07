@@ -38,6 +38,8 @@
     "pages/mall/collectData/collectData",
     "pages/mall/collectData1/collectData1",
     "pages/mall/userCredit/userCredit",
+    "pages/mall/scoreMall/scoreMall",
+    "pages/mall/groupMall/groupMall",
     "pages/exhibition/index/index",
     "pages/exhibition/index_cultrue/index_cultrue",
     "pages/exhibition/index_introduce/index_introduce",

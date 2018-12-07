@@ -54,7 +54,7 @@
 		<input placeholder="请输入住址" data-key="address" bindblur="changeBind" value="{{web_sForm.address}}"></input>
 	</view>
 </view>
-<view class="submit_info" bindtap="submit">
+<view class="submit_info" bindtap="{{web_buttonCanClick?'submit':''}}">
 	保存
 </view>
 

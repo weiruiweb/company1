@@ -10,39 +10,58 @@
 </view>
 
 <view  class="module">
-    <view class="module_item" bindtap="sign">
-      <view class="item_top">
-          <view class="menu_icon1 scale" style="{{img}};background-position:-171px 0;"></view>
-      </view>
-      <view  class="text" style="{{fonts[3].font}}">
-        积分签到
-      </view>
+  <view class="module_item" bindtap="intoPath" data-path="/pages/mall/sign/sign">
+    <view class="item_top">
+        <view class="menu_icon1 scale" style="{{img}};background-position:-171px 0;"></view>
     </view>
-    <view class="module_item" bindtap="discount">
-      <view class="item_top">
-       <view class="menu_icon1 scale" style="{{img}};background-position: -86px 0rpx;"></view>
-      </view>
-      <view  class="text" style="{{fonts[3].font}}">
-        优惠券
-      </view>
-    </view>
-    <view class="module_item"  bindtap="about">
-      <view class="item_top">
-       <view class="menu_icon1 scale" style="{{img}};background-position: -1px 0rpx;"></view>
-      </view>
-      <view  class="text" style="{{fonts[3].font}}">
-        关于我们
-      </view>
-    </view>
-    <view class="module_item"  bindtap="intoPath" data-path="/pages/classify/classify">
-      <view class="item_top">
-       <view class="menu_icon1 scale" style="{{img}};background-position: -256px 0rpx;"></view>
-      </view>
-      <view  class="text" style="{{fonts[3].font}}">
-        案例体验
-      </view>
+    <view  class="text" style="{{fonts[3].font}}">
+      积分签到
     </view>
   </view>
+  <view class="module_item" bindtap="intoPath" data-path="/pages/mall/discount/discount">
+    <view class="item_top">
+     <view class="menu_icon1 scale" style="{{img}};background-position: -86px 0rpx;"></view>
+    </view>
+    <view  class="text" style="{{fonts[3].font}}">
+      优惠券
+    </view>
+  </view>
+  <view class="module_item"  bindtap="intoPath" data-path="/pages/mall/about/about">
+    <view class="item_top">
+     <view class="menu_icon1 scale" style="{{img}};background-position: -1px 0rpx;"></view>
+    </view>
+    <view  class="text" style="{{fonts[3].font}}">
+      关于我们
+    </view>
+  </view>
+  <view class="module_item"  bindtap="intoPath" data-path="/pages/classify/classify">
+    <view class="item_top">
+     <view class="menu_icon1 scale" style="{{img}};background-position: -256px 0rpx;"></view>
+    </view>
+    <view  class="text" style="{{fonts[3].font}}">
+      案例体验
+    </view>
+  </view>
+
+</view>
+<view  class="module">
+  <view class="module_item"  bindtap="intoPath" data-path="/pages/mall/scoreMall/scoreMall">
+    <view class="item_top">
+     <view class="menu_icon1 scale" style="{{img}};background-position: -256px 0rpx;"></view>
+    </view>
+    <view  class="text" style="{{fonts[3].font}}">
+      积分商城
+    </view>
+  </view>
+  <view class="module_item"  bindtap="intoPath" data-path="/pages/mall/groupMall/groupMall">
+    <view class="item_top">
+     <view class="menu_icon1 scale" style="{{img}};background-position: -256px 0rpx;"></view>
+    </view>
+    <view  class="text" style="{{fonts[3].font}}">
+      团购商城
+    </view>
+  </view>
+</view>
 <view class="service">
   <view class="service_tlt scale1" style="width:154px;height:40px;{{img}};background-position: -396px -148px;">
     <text class="text1">服务类别</text>
@@ -88,7 +107,7 @@
     </view>
   </view>
 </view>
-<view class="solely_more" bindtap="about" style="width:100%;height:132px;{{img}};background-position: 0px -336px;">
+<view class="solely_more"  bindtap="intoPath" data-path="/pages/mall/about/about" style="width:100%;height:132px;{{img}};background-position: 0px -336px;">
   <view class="company_name">
     <text>纯粹科技</text>
     <view class="more">了解更多 ></view>
@@ -133,28 +152,28 @@
 </view>
 
 <view class="navbar">
-      <view class="navbar_item" bindtap="index">
+      <view class="navbar_item" >
         <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
         <view class="nav_img scale2" style="{{img}};width:44px;height:42px;background-position: -90px -94px;">
         </view>
       </view>
         <view class="text this-text" style="{{fonts[2].font}}">首页</view>
       </view>
-    <view class="navbar_item" bindtap="sort">
+    <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/mall/Sort/sort">
       <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
           <view class="nav_img scale2" style="{{img}};width:44px;height:42px;background-position: -42px -94px;">
           </view>
         </view>
       <view class="text" style="{{fonts[2].font}}">分类</view>
     </view>
-    <view class="navbar_item"  bindtap="shopping">
+    <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pages/mall/Shopping/shopping">
       <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
         <view class="nav_img scale2" style="{{img}};width:42px;height:42px;background-position: -240px -94px;">
         </view>
       </view>
       <view class="text" style="{{fonts[2].font}}">购物车</view>
     </view>
-    <view class="navbar_item"  bindtap="User">
+    <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pages/mall/User/user">
       <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
         <view class="nav_img scale2" style="{{img}};width:42px;height:42px;background-position: -330px -94px;">
         </view>
@@ -162,19 +181,3 @@
       <view class="text" style="{{fonts[2].font}};">我的</view>
     </view>
 </view>
-<view class="loadding flex"  hidden="{{loadingHidden}}" catchtouchmove="preventTouchMove">
-  <view class="loadding_cont flex">
-    <view class="item-1 spaces"></view>
-    <view class="item-3 spaces"></view>
-    <view class="item-5 spaces"></view>
-  </view>
-</view>
-<!-- 
-<view class="loading" hidden="{{loadingHidden}}">
-  <view>
-    <view class="c1"></view>
-    <view class="c2"></view>
-    <view class="c3"></view>
-    <view class="c4"></view>
-  </view>
-</view> -->

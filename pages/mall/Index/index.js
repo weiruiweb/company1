@@ -7,25 +7,16 @@ const token = new Token();
 
 Page({
   data: {
-     caseData:[],
-     loadingHidden:false,
+    caseData:[],
+    isFirstLoadAllStandard:['getMainData'],
   },
-   preventTouchMove :function(e) {
-  },
+
+
+
   onLoad(options) {
     const self = this;
-    setTimeout(function(){
-     self.setData({
-       loadingHidden: true
-     });
-    }, 2000);
-    self.data.name = options.name;
-    self.setData({
-      fonts:app.globalData.font,
-      img:app.globalData.img,
-    });
-    self.getCaseData()
-
+    api.commonInit(self);
+    self.getMainData()
     if(options.scene){
       var scene = decodeURIComponent(options.scene)
     };
@@ -50,9 +41,10 @@ Page({
     };
   },
 
-  getCaseData(){
+  getMainData(){
     const self = this;
     const postData = {};
+    postData.paginate = self.data.paginate;
     postData.searchItem = {
       thirdapp_id:getApp().globalData.mall_thirdapp_id
     };
@@ -74,7 +66,7 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_caseData:self.data.caseData,
       });
@@ -85,7 +77,7 @@ Page({
   onShareAppMessage(res){
     const self = this;
     return {
-      title: '直销商城',
+      title: '纯粹科技',
       path: 'pages/mall/index/index?parentNo='+wx.getStorageSync('info').user_no,
       success: function (res){
         console.log(res);
@@ -93,47 +85,14 @@ Page({
     }
   },
 
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
+  },
 
-  about:function(){
-    wx.navigateTo({
-      url:'/pages/mall/about/about'
-    })
-  },
-  sign:function(){
-    wx.navigateTo({
-      url:'/pages/mall/sign/sign'
-    })
-  },
-  caseDetail:function(){
-    wx.navigateTo({
-      url:'/pages/mall/caseDetail/caseDetail'
-    })
-  },
-  discount:function(){
-    wx.navigateTo({
-      url:'/pages/mall/discount/discount'
-    })
-  },
-  shopping:function(){
-     wx.redirectTo({
-      url:'/pages/mall/Shopping/shopping'
-    })
-  },
-  sort:function(){
-     wx.redirectTo({
-      url:'/pages/mall/Sort/sort'
-    })
-  },
-  index:function(){
-     wx.redirectTo({
-      url:'/pages/mall/Index/index'
-    })
-  },
-  User:function(){
-     wx.redirectTo({
-      url:'/pages/mall/User/user'
-    })
-  },
   
   intoPath(e){
     const self = this;

@@ -27,8 +27,8 @@ Page({
     buttonClicked:true,
     isInCollectData:false,
     is_collect:false,
-    isFirstLoadAllStandard:['getMainData'],
-
+    isFirstLoadAllStandard:['getMainData','getMessageData'],
+    messageData:[],
   },
 
   onLoad(options){
@@ -49,11 +49,10 @@ Page({
       withShareTicket: true
     });
     self.getMainData();
+    self.getMessageData();
     self.setData({
       web_isInCollectData:self.data.isInCollectData,
       web_cart_count:self.data.cart_count,
-      fonts:app.globalData.font,
-      img:app.globalData.img,
       web_count:self.data.count,
     });
     
@@ -132,7 +131,7 @@ Page({
           };
         };
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
-        self.data.complete_api.push('getMainData');
+  
       }else{
         api.showToast('商品信息有误','none');
       };
@@ -318,19 +317,52 @@ Page({
 
     };
     api.userInfoGet(postData,callback); 
+  },
 
+  getMessageData(isNew){
+    const self = this;
+    if(isNew){
+      api.clearPageIndex(self); 
+    };
+    const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
+    postData.tokenFuncName='getMallToken',
+    postData.searchItem = {
+      relation_id:self.data.mainData.id,
+      type:2
+    };
+    postData.order = {
+      create_time:'desc'
+    };
+    postData.getAfter = {
+      user:{
+        tableName:'user',
+        middleKey:'user_no',
+        key:'user_no',
+        searchItem:{
+          status:1
+        },
+        condition:'='
+      }
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.messageData.push.apply(self.data.messageData,res.info.data);
+      }else{
+        self.data.isLoadAll = true;
+      };
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMessageData',self);
+      self.setData({
+        web_num:res.info.total,
+        web_messageData:self.data.messageData,
+      });  
+    };
+    api.messageGet(postData,callback);
   },
 
 
   onShareAppMessage(res){
-    const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      setTimeout(function(){
-        wx.showLoading();
-      },800)   
-      return;
-    };
+    const self = this
       console.log(res)
       if(res.from == 'button'){
         self.data.shareBtn = true;
@@ -378,6 +410,7 @@ Page({
       isShow:false
     })
   },
+  
   select_this(e){
     const self = this;
     self.setData({

@@ -8,20 +8,13 @@ const token = new Token();
 Page({
   data: {
     userData:[],
+    isFirstLoadAllStandard:['getMainData'],
   },
 
   
   onLoad(options){
     const self = this;
-    wx.showLoading();
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getMallToken();
-    };
-    self.setData({
-     fonts:app.globalData.font,
-     img:app.globalData.img,
-    });
+    api.commonInit(self);
     if(options.scene){
       var scene = decodeURIComponent(options.scene)
     };
@@ -37,7 +30,7 @@ Page({
 
   onShow(){
     const self = this;
-    self.getUserInfoData();
+    self.getMainData();
     self.data.mainData = api.getStorageArray('collectData');
     console.log(self.data.mainData.length)
     self.setData({
@@ -45,7 +38,7 @@ Page({
     })
   },
 
-  getUserInfoData(){
+  getMainData(){
     const self = this;
     const postData = {};
     postData.tokenFuncName = 'getMallToken';
@@ -60,7 +53,7 @@ Page({
       }else{
         api.showToast('网络故障','none')
       };
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
     };
     api.userInfoGet(postData,callback);   
   },

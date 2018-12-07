@@ -7,22 +7,17 @@ const token = new Token();
 
 Page({
   data:{
-     aboutData:[],
-     newsData:[],
-     complete_api:[],
+    aboutData:[],
+    newsData:[],
+    isFirstLoadAllStandard:['getNewsData','getAboutData'],
   },
  
   onLoad() {
-    
+
     const self = this;
-    wx.showLoading();
-    self.setData({
-      fonts:app.globalData.font,
-      img:app.globalData.img,
-    });
+    api.commonInit(self);
     self.getAboutData();
     self.getNewsData()
-
   },
 
   getNewsData(){
@@ -49,11 +44,11 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      self.data.complete_api.push('getNewsData');
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getNewsData',self);
       self.setData({
         web_newsData:self.data.newsData,
       });
-      self.checkLoadComplete()
+    
     };
     api.articleGet(postData,callback);
   },
@@ -79,11 +74,10 @@ Page({
       if(res.info.data.length>0){
         self.data.aboutData = res.info.data[0];
       };
-      self.data.complete_api.push('getAboutData');
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getAboutData',self);
       self.setData({
         web_aboutData:self.data.aboutData,
       });
-      self.checkLoadComplete()
     };
     api.articleGet(postData,callback);
   },
@@ -98,12 +92,6 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'redi');
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getAboutData','getNewsData']);
-    if(complete){
-      wx.hideLoading();
-    };
-  },
+
 
 })

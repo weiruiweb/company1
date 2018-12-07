@@ -24,8 +24,7 @@ Page({
 
   onLoad(){
     const self = this;
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
-    wx.showLoading();
+    api.commonInit(self);
     if(self.data.searchItem.parent_no&&self.data.searchItem.parent_no!=undefined){
       self.getMainData();
     }else{
@@ -34,13 +33,7 @@ Page({
         self.getMainData(false,res)
       };
       token.getMallToken(callback,{refreshToken:true});
-    };
-    self.setData({
-      fonts:app.globalData.font
-    });
-
-    
-    
+    };  
   },
 
   onPullDownRefresh(){
@@ -94,7 +87,7 @@ Page({
         wx.hideNavigationBarLoading();
         wx.stopPullDownRefresh();
       },300);
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
         web_total:res.info.total
@@ -110,7 +103,7 @@ Page({
 
   onReachBottom() {
     const self = this;
-    if(!self.data.isLoadAll){
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
       self.data.paginate.currentPage++;
       self.getMainData();
     };

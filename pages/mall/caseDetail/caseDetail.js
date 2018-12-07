@@ -12,16 +12,14 @@ Page({
    */
   data: {
     
-    mainData:[]
-    
+    mainData:[],
+    isFirstLoadAllStandard:['getMainData'],
   },
     
 
   onLoad(options){
     const self = this;
-    wx.showLoading();
-    
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self);
     self.data.id = options.id;
     self.getMainData();
   },
@@ -41,7 +39,7 @@ Page({
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
       };
       console.log(self.data.mainData);
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });   

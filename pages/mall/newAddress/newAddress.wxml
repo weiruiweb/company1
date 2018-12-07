@@ -38,9 +38,10 @@
 		<switch bindchange="switch2Change" />
 	</view>
 </view>
+
 <view class="address_btn">
 	<view class="submit_info">
-		<form bindsubmit="submit" class="form_button" report-submit="true">
+		<form bindsubmit="{{web_buttonCanClick?'submit':''}}" class="form_button" report-submit="true">
 			<button form-type="submit" class="form_btn color1">保存</button>
 		</form>
 	</view>

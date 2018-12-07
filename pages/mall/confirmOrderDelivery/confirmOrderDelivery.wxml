@@ -43,7 +43,7 @@
 					<view class="img_left"><image src="{{item.mainImg[0].url}}"></image></view>
 					<view class="order_name">
 						<view class="text1 avoidOverflow">{{item.title}}</view>
-						<view class="order_type avoidOverflow">个性化定制</view>
+						<view class="order_type avoidOverflow">{{item.dexcription}}</view>
 						<view class="orders flexRowBetween">
 							<text class="order_price">¥{{item.price}}</text>
 							<text class="order_number">X{{web_count}}</text>
@@ -84,7 +84,7 @@
 				<text style="">（实际价格，请与客服沟通）</text>
 			</view>
 		</view>
-		<view class="submit_order" bindtap="addOrder">
+		<view class="submit_order" bindtap="{{web_buttonCanClick?'addOrder':''}}">
 			提交订单
 		</view>
 	</view>

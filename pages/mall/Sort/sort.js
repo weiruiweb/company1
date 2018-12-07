@@ -15,21 +15,12 @@ Page({
     sForm:{
       item:''
     },
-    loadingHidden:false,
+    isFirstLoadAllStandard:['getMainData','getLabelData'],
   },
   
   onLoad() {
     const self = this;
-    setTimeout(function(){
-     self.setData({
-       loadingHidden: true
-     });
-    }, 2000);
-    this.setData({
-      fonts:app.globalData.font,
-      img:app.globalData.img,
-    });
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self);
     self.getLabelData();
     self.setData({
       web_index:self.data.index,
@@ -81,7 +72,7 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       }
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });  
@@ -107,7 +98,7 @@ Page({
         api.showToast('没有更多了','none');
       }
       console.log(self.data.labelData)
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
       self.setData({
         web_labelData:self.data.labelData,
       });

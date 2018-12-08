@@ -223,7 +223,10 @@ Page({
     if(self.data.sForm.score>0){
       self.data.pay.score = self.data.sForm.score
     };
-    self.data.pay.wxPay = self.data.price - couponPrice - parseInt(self.data.sForm.score) ;
+    if(self.data.sForm.balance>0){
+      self.data.pay.balance = self.data.sForm.balance
+    };
+    self.data.pay.wxPay = self.data.price - couponPrice - parseInt(self.data.sForm.score) -parseInt(self.data.sForm.balance) ;
     console.log('countPrice',self.data.pay)
     self.setData({
       web_couponPrice:couponPrice.toFixed(2),

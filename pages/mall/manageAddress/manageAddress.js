@@ -17,13 +17,13 @@ Page({
 
   onLoad(){
     const self = this;
-    api.commonInit(self);
-    self.getMainData(true);
+    
   },
 
   onShow(){
     const self = this;
-    
+    api.commonInit(self);
+    self.getMainData(true);
   },
 
   getMainData(isNew){

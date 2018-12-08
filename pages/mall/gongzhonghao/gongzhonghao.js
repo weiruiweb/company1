@@ -11,21 +11,22 @@ Page({
   data: {
     _num:0,
     labelData:[],
+    threeLabelData:[],
     mainData:[],
-    index:0,
-    currentId:20,
     isLoadAll:false,
     sForm:{
       item:''
     },
     searchItem:{
-      
+      category_id:30,
     },
+    order:{},
     isShow:false,
     sort:{
       sortby:'',
       sort:''
     },
+    isFirstLoadAllStandard:['getMainData','getLabelData'],
   },
   
   onLoad(options) {
@@ -37,80 +38,56 @@ Page({
     }else if(options.name&&options.name=='group'){
       self.data.searchItem.is_group = 1
     }else{
-      self.data.searchItem.score = ['=',0];
+      self.data.searchItem.score = 0;
       self.data.searchItem.is_group = 0
     }
     self.getLabelData();
     self.setData({
-      web_index:self.data.index,
-      web_currentId:self.data.currentId
+      web_id:self.data.searchItem.category_id
     });
   },
 
 
 
-  menuTap(e){
+  categorySearch(e){
     const self = this;
-    var index = e.currentTarget.dataset.index;
-    var currentId = e.currentTarget.dataset.id;
-
+    var id =  api.getDataSet(e,'id');
+    self.data.searchItem.category_id = id;
     self.setData({
-      web_index:index,
-      web_currentId:currentId,
+      web_id:id,
     });
-    console.log(currentId)
-    console.log(index)
-
-    self.getMainData(true,currentId)
+    self.getMainData(true)
   },
 
 
 
-  getMainData(isNew,currentId){
+  getMainData(isNew){
     const self = this;
     if(isNew){
       api.clearPageIndex(self); 
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.searchItem = {
-      thirdapp_id:getApp().globalData.mall_thirdapp_id,
-      type:1
-    };
-    if(self.data.id){
-      postData.searchItem.category_id = self.data.id
-    }else{
-      postData.searchItem.category_id = currentId
-    };
-    postData.getAfter={
-      sku:{
-        tableName:'sku',
-        middleKey:'product_no',
-        key:'product_no',
-        condition:'=',
-        searchItem:api.cloneForm(self.data.searchItem)
-      } 
-    };
+    postData.searchItem = api.cloneForm(self.data.searchItem);
+    postData.searchItem.thirdapp_id = getApp().globalData.mall_thirdapp_id;
+    postData.order = api.cloneForm(self.data.order);
     const callback = (res)=>{
       if(res.info.data.length>0){
-        for (var i = 0; i < res.info.data.length; i++) {
-          self.data.mainData.push.apply(self.data.mainData,res.info.data[i].sku);
-        }
-
+        self.data.mainData.push.apply(self.data.mainData,res.info.data)
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       }
-      wx.hideLoading();
       console.log(self.data.mainData)
       self.setData({
         web_mainData:self.data.mainData,
       });  
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);  
     };
-    api.productGet(postData,callback);
+    api.skuGet(postData,callback);
   },
   
-  getLabelData(currentId){
+  getLabelData(){
     const self = this;
     const postData = {};
     postData.searchItem = {
@@ -122,16 +99,22 @@ Page({
     };
     const callback = (res)=>{
       if(res.info.data.length>0){
-        self.data.labelData.push.apply(self.data.labelData,res.info.data);
+        for (var i = 0; i < res.info.data.length; i++) {
+          self.data.labelData.push.apply(self.data.labelData,res.info.data[i].child)
+        }
+        for (var i = 0; i < self.data.labelData.length; i++) {
+          self.data.threeLabelData.push.apply(self.data.threeLabelData,self.data.labelData[i].child)
+        }
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       }
-      console.log(self.data.labelData)
+      console.log(self.data.threeLabelData)
       wx.hideLoading();
       self.setData({
-        web_labelData:self.data.labelData,
+        web_threeLabelData:self.data.threeLabelData,
       });
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);  
       self.getMainData();
     };
     api.labelGet(postData,callback);   
@@ -139,18 +122,17 @@ Page({
 
   changeSort(e){
     const self = this;
-    self.setData({
-      buttonClicked: true,
-      _num:e.currentTarget.dataset.num
-    });
     const sortby = api.getDataSet(e,'sortby');
+    console.log(sortby)
     if(self.data.sort.sortby == sortby){
       if(self.data.sort.sort == 'asc'){
-        self.data.sort.sort = 'desc'
+        self.data.order = {
+          sortby:'desc'
+        };
       }else if(self.data.sort.sort == 'desc'){
-        self.data.sort.sort = 'normal'
-      }else if(self.data.sort.sort == 'normal'){
-        self.data.sort.sort = 'asc'
+        self.data.order = {
+          sortby:'asc'
+        };
       }
     }else{
       self.data.sort.sortby = sortby;
@@ -160,14 +142,9 @@ Page({
       web_sort:self.data.sort
     });
     
-    if(self.data.sort.sort == 'normal'){
-      self.data.sort = {}
+    if(self.data.sort.sort == 'multi'){
+      self.data.order = {};
     };
-    setTimeout(function(){
-      self.setData({
-        buttonClicked: false
-      })
-    }, 1000);
     self.getMainData(true);
   },
 

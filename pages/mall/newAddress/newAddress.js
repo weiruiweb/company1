@@ -32,7 +32,7 @@ Page({
       })
     };
     wx.hideLoading();
-    self.data.buttonCanClick = true;
+    
   },
 
   getMainData(id){
@@ -119,7 +119,7 @@ Page({
 
   submit(){
     const self = this;
-    api.buttonCanClick(self);
+    api.buttonCanClick(self,true);
     var phone = self.data.sForm.phone;
     const pass = api.checkComplete(self.data.sForm);
     if(pass){

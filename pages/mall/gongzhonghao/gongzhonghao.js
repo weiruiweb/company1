@@ -9,7 +9,7 @@ const token = new Token();
 Page({
   
   data: {
-    _num:0,
+
     labelData:[],
     threeLabelData:[],
     mainData:[],
@@ -22,10 +22,7 @@ Page({
     },
     order:{},
     isShow:false,
-    sort:{
-      sortby:'',
-      sort:''
-    },
+
     isFirstLoadAllStandard:['getMainData','getLabelData'],
   },
   
@@ -51,6 +48,7 @@ Page({
 
   categorySearch(e){
     const self = this;
+    api.buttonCanClick(self);
     var id =  api.getDataSet(e,'id');
     self.data.searchItem.category_id = id;
     self.setData({
@@ -78,7 +76,7 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       }
-      console.log(self.data.mainData)
+      api.buttonCanClick(self,true);
       self.setData({
         web_mainData:self.data.mainData,
       });  
@@ -120,29 +118,25 @@ Page({
     api.labelGet(postData,callback);   
   },
 
-  changeSort(e){
+  changeOrder(e){
     const self = this;
-    const sortby = api.getDataSet(e,'sortby');
-    console.log(sortby)
-    if(self.data.sort.sortby == sortby){
-      if(self.data.sort.sort == 'asc'){
-        self.data.order = {
-          sortby:'desc'
-        };
-      }else if(self.data.sort.sort == 'desc'){
-        self.data.order = {
-          sortby:'asc'
-        };
+    api.buttonCanClick(self);
+    const key = api.getDataSet(e,'key');
+    console.log(key)
+    if(self.data.order.key == key){
+      if(self.data.order[key] == 'asc'){
+        self.data.order[key] = 'desc'
+  
+      }else if(self.data.order[key] == 'desc'){
+        self.data.order[key] = 'asc'
       }
     }else{
-      self.data.sort.sortby = sortby;
-      self.data.sort.sort = 'asc';
+      self.data.order.key = key;
+      self.data.order[key] = 'asc';
     };
-    self.setData({
-      web_sort:self.data.sort
-    });
+  
     
-    if(self.data.sort.sort == 'multi'){
+    if(self.data.order[key] == 'multi'){
       self.data.order = {};
     };
     self.getMainData(true);

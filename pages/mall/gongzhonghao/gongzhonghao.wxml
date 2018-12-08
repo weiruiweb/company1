@@ -25,19 +25,19 @@
 	</view>
 	<view class="made_cont" style="width:100%;">	
 		<view class="product_sort flexRowBetween">
-			<view data-num="0" class="product_item {{_num==0?'changeColor':''}} flex" data-sortby="multi" bindtap="changeSort">
+			<view data-num="0" class="product_item {{_num==0?'changeColor':''}} flex" data-key="multi" bindtap="changeOrder">
 				<text>综合</text>
 				<view class="order_des scale2" style="{{img}};{{_num == 0?'background-position: -596px -46px;':'background-position: -566px -46px;'}}"></view>
 			</view>
-			<view data-num="2" class="product_item flex {{_num==2?'changeColor':''}}" data-sortby="sale_count" bindtap="changeSort">
+			<view data-num="2" class="product_item flex {{_num==2?'changeColor':''}}" data-key="sale_count" bindtap="changeOrder">
 				<text>销量</text>
 				<view class="order_des scale2" style="{{img}};{{_num == 2?'background-position: -596px -46px;':'background-position: -566px -46px;'}}"></view>
 			</view>
-			<view data-num="3" class="product_item flex {{_num==3?'changeColor':''}}" data-sortby="create_time" bindtap="changeSort">
+			<view data-num="3" class="product_item flex {{_num==3?'changeColor':''}}" data-key="create_time" bindtap="changeOrder">
 				<text>新品</text>
 				<view class="order_des scale2" style="{{img}};{{_num == 3?'background-position: -596px -46px':'background-position: -566px -46px'}}"></view>
 			</view>
-			<view data-num="4" class="product_item flex {{_num==4?'changeColor':''}}" data-sortby="price" bindtap="changeSort">
+			<view data-num="4" class="product_item flex {{_num==4?'changeColor':''}}" data-key="price" bindtap="changeOrder">
 				<text>价格</text>
 				<view class="order_des scale2" style="{{img}};{{_num == 4?'background-position: -596px -46px':'background-position: -566px -46px'}}"></view>
 			</view>

@@ -176,9 +176,8 @@ textarea{
 	margin-top: 40rpx;
 }
 .select_discount{
-	position: absolute;
-	top:10%;
-	right:5%;
+	width:20%;
+	font-size:22rpx;
 }
 .select_discount image{
 	width:30rpx;
@@ -198,13 +197,13 @@ textarea{
 	align-items: center;
 }
 .discount_left{
-	width:40%;
-	font-size:40rpx;
+	width:25%;
+	font-size:30rpx;
 	color:#fff;
 	text-align: center;
 }
 .discount_left text{
-	font-size: 100rpx;
+	font-size: 80rpx;
 	color:#fff;
 }
 .discount_center{

@@ -87,7 +87,7 @@
 	            <view class="discount_left">
 	                <text>{{item.products[0].snap_product.discount}}</text>折
 	            </view>
-	            <view class="discount_center discount_center1" style="width:60%">
+	            <view class="discount_center discount_center1">
 	                <view class="discount_txt1">
 	                    <view>{{item.products[0].snap_product.description}}</view>
 	                </view>
@@ -95,10 +95,10 @@
 	                    <view>{{func.timestampToTime(item.products[0].snap_product.deadline)}}点限量领取</view>
 	                </view>
 	            </view>
-	        </view>
-	        <view class="select_discount">
-	        	<view class="submit_info bg font24" data-id="{{item.id}}" data-count="{{item.discount}}" bindtap="useCoupon" style="width:140rpx;color:red">去使用
-                    </view>
+	            <view class="select_discount">
+		        	<view class="submit_info bg font24" data-id="{{item.id}}" data-count="{{item.discount}}" bindtap="useCoupon" style="width:140rpx;color:#666;font-size:24rpx;height:50rpx;line-height: 50rpx;">去使用
+	                    </view>
+		        </view>
 	        </view>
 	    </view>
 	</view>
@@ -117,11 +117,12 @@
 	                <view class="discount_txt1">{{item.products[0].snap_product.description}}</view>
 	                <view class="discount_txt2">{{func.timestampToTime(item.products[0].snap_product.deadline)}}当日有效 可叠加店铺券</view>
 	            </view>
+	            <view class="select_discount">
+		    		<view class="submit_info bg font24" data-id="{{item.id}}" data-count="{{item.discount}}" bindtap="useCoupon" style="width:140rpx;color:#666;font-size:24rpx;height:50rpx;line-height: 50rpx;">点击使用
+		            </view>
+		        </view>
 	        </view>
-	        <view class="select_discount">
-	    		<view class="submit_info bg font24" data-id="{{item.id}}" data-count="{{item.discount}}" bindtap="useCoupon" style="width:140rpx;color:red">去使用
-	            </view>>
-	        </view>
+	        
 	    </view>
 	</view>
 </block>

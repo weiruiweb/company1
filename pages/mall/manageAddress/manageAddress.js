@@ -6,12 +6,9 @@ const token = new Token();
 
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     mainData:[],
+    buttonClicked:true,
     isFirstLoadAllStandard:['getMainData'],
   },
 

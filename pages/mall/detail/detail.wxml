@@ -20,10 +20,10 @@
 <view class="detail">
 	<view class="w710" style="padding:10rpx 2.6%;">
 		<view class="name_share flexRowBetween" style="align-items:center;">
-			<view class="product_name avoidOverflow" style="width:80%;">
+			<view class="product_name avoidOverflow" style="width:90%;">
 				{{web_mainData.title}}
 			</view>
-			<button class="scale2" bindtap="onShareAppMessage"  open-type="share" >
+			<button style="margin-left:240rpx;" class="scale2" bindtap="onShareAppMessage"  open-type="share" >
 				<view style="width:32px;height:32px;border:none;{{img}};background-position: -482px -94px;"></view>
 			</button>
 		</view>
@@ -131,53 +131,55 @@
 		</view>
 	</view>
 </view>
-<view id="choose" class="{{isShow?'sildeIn':'slideOut'}}">
-	<view style="padding:0 2.5%">
-		<view class="flexRowBetween pricity">
-			<view class="choose_pro">
-				<image src="{{web_choosed_skuData.mainImg[0].url}}"></image>
-			</view>
-			<view class="product_txt">
-				<view class="pro_name">{{web_choosed_skuData.title}}</view>
-				<view class="pro_type">
-					{{web_choosed_skuData.description}}
+<view id="choose" style="{{isShow?'bottom:0':'bottom:-100%'}}">
+	<view id="choose_cont">
+		<view style="padding:0 2.5%">
+			<view class="flexRowBetween pricity">
+				<view class="choose_pro">
+					<image src="{{web_choosed_skuData.mainImg[0].url}}"></image>
 				</view>
-				<view class="price_choose">
-				￥{{web_totalPrice?web_totalPrice:web_choosed_skuData.price}}
-				</view>
-			</view>
-			<view class="close" bindtap="close">
-			<view class="scale2" style="width:36px;height:36px;{{img}};background-position: -594px 0;"></view>
-			</view>
-		</view>
-		<block wx:for="{{web_skuLabelData}}" wx:key="id" >
-			<view id="type" class="flexRowBetween">
-				<view class="pro_type"  >	
-					{{item.title}}
-				</view>
-				<block wx:for="{{web_skuLabelData[index].child}}" wx:key="id" wx:for-item="c_item">
-					<view class="pro_types" data-id="{{c_item.id}}" data-parentid="{{item.id}}"  bindtap="{{func.inArray(c_item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" style="{{func.inArray(c_item.id,web_can_choose_sku_item)==-1?'border:1px dashed  #e5e5e5;color:#e5e5e5;':(func.inArray(c_item.id,web_choosed_sku_item)!=-1?'border:1px solid #21c3d4;color:#21c3d4;':'')}}">
-						{{c_item.title}}
+				<view class="product_txt">
+					<view class="pro_name">{{web_choosed_skuData.title}}</view>
+					<view class="pro_type">
+						{{web_choosed_skuData.description}}
 					</view>
-				</block>
+					<view class="price_choose">
+					￥{{web_totalPrice?web_totalPrice:web_choosed_skuData.price}}
+					</view>
+				</view>
+				<view class="close" bindtap="close">
+				<view class="scale2" style="width:36px;height:36px;{{img}};background-position: -594px 0;"></view>
+				</view>
 			</view>
-		</block>
-		<view class="choose_number flexRowBetween">
-			<view class="number_txt">
-				数量
+			<block wx:for="{{web_skuLabelData}}" wx:key="id" >
+				<view id="type" class="flexRowBetween">
+					<view class="pro_type"  >	
+						{{item.title}}
+					</view>
+					<block wx:for="{{web_skuLabelData[index].child}}" wx:key="id" wx:for-item="c_item">
+						<view class="pro_types" data-id="{{c_item.id}}" data-parentid="{{item.id}}"  bindtap="{{func.inArray(c_item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" style="{{func.inArray(c_item.id,web_can_choose_sku_item)==-1?'border:1px dashed  #e5e5e5;color:#e5e5e5;':(func.inArray(c_item.id,web_choosed_sku_item)!=-1?'border:1px solid #21c3d4;color:#21c3d4;':'')}}">
+							{{c_item.title}}
+						</view>
+					</block>
+				</view>
+			</block>
+			<view class="choose_number flexRowBetween">
+				<view class="number_txt">
+					数量
+				</view>
+				<view class="edit_number flexRowBetween">
+					<view class="minus" style="line-height:45rpx;" data-type="-" bindtap="counter" data-id="{{web_skuLabelData.id}}">-</view>
+					<input class="number" type="number" bindchange="bindManual" value="{{web_count}}" />
+					<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuLabelData.id}}">+</view>
+				</view>
 			</view>
-			<view class="edit_number flexRowBetween">
-				<view class="minus" style="line-height:45rpx;" data-type="-" bindtap="counter" data-id="{{web_skuLabelData.id}}">-</view>
-				<input class="number" type="number" bindchange="bindManual" value="{{web_count}}" />
-				<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuLabelData.id}}">+</view>
+		</view>	
+		<view class="confirm_close">
+			<view class="shoppingCart" style="width:100%;height:80rpx;line-height:80rpx;color:#fff">
+				<form bindsubmit="{{web_buttonCanClick?(web_buttonType=='buy'?'goBuy':'addCart'):''}}" report-submit="true">
+					<button  form-type="submit" style="line-height:80rpx;">确    认</button>
+				</form>
 			</view>
-		</view>
-	</view>	
-	<view>
-		<view class="shoppingCart" style="width:100%;height:80rpx;line-height:80rpx;color:#fff">
-			<form bindsubmit="{{web_buttonCanClick?(web_buttonType=='buy'?'goBuy':'addCart'):''}}" report-submit="true">
-				<button  form-type="submit" style="line-height:80rpx;">确    认</button>
-			</form>
 		</view>
 	</view>
 </view>

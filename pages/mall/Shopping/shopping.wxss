@@ -30,6 +30,7 @@
 	line-height:45rpx;
 	border:solid 1px #e5e5e5;
 	font-size:20rpx;
+	overflow: hidden;
 }
 .edit_number .minus,.edit_number .add{
 	width:45rpx;

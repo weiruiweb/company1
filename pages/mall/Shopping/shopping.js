@@ -32,22 +32,26 @@ Page({
       if(this.data.flayTo){
           return;
       }
-      this._flyToCartEffect(e);
-      
+      this._flyToCartEffect(e); 
   },
-
   _flyToCartEffect:function(e){
     //获得当前点击的位置，距离可视区域左上角
     const self = this;
-    console.log(e);
+    console.log(333,e);
     var touches=e.touches[0];
     console.log(touches);
     var diff={
-      x:-touches.clientX*0.3+'px',
-      y:self.data.windowHeight-touches.clientY-100+'px',
+      x:-touches.clientX*0.32+'px',
+      y:self.data.windowHeight-touches.clientY-70+'px',
     },
     style = 'display: block;-webkit-transform:translate('+diff.x+','+diff.y+') rotate(350deg) scale(0.3); opacity: 1;',  //移动距离
     style1 = '-webkit-transform:scale(1.1)'
+    var flay_circle = e.target.dataset.index;
+    if(flay_circle == 0){
+      var style2= '-webkit-transform:scale(0,0);opacity:0;background:#fff;transform:scale(0.1,0.1);';
+    }else{
+        var style2= '-webkit-transform: none;transform:none;';
+    }
     self.setData({
       flayTo:e.target.dataset.index,
       translateStyle:style,
@@ -55,18 +59,19 @@ Page({
     });
     setTimeout(()=>{
       self.setData({
-        flayTo:false,
-        translateStyle:'-webkit-transform: none; opacity:0;transform:none; opacity:0;',  //恢复到最初状态
+        flayTo:0,
+        translateStyle:style2,  //恢复到最初状态
         isShake:true, 
       });
       setTimeout(()=>{
         var counts=self.data.cartTotalCounts+self.data.productCounts;
         self.setData({
             isShake:false,
-            cartTotalCounts:counts
+       
+            translateStyle:'opacity:0;'
         });
       },300);
-    },1500);
+    },400);
   },
 
   onShow() {
@@ -180,12 +185,13 @@ Page({
     const self = this;
     const index = api.getDataSet(e,'index');
     if(api.getDataSet(e,'type')=='+'){  
-      if(this.data.flayTo){
+       self.data.mainData[index].count++;
+      if(self.data.flayTo){
           return;
       }
-      this._flyToCartEffect(e);
+      self.onAddingToCartTap(e);
     }else{
-      if(self.data.mainData[index].count > '1'){
+      if(self.data.mainData[index].count > 1){
         self.data.mainData[index].count--;
       }
     };

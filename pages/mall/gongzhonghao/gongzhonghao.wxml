@@ -56,12 +56,12 @@
 					</view>
 					<view class="shopping_name">
 						<text class="text1">{{item.title}}</text>
-						<text class="text2">{{item.description}}</text>
+						<text class="text2 avoidOverflow">{{item.description}}</text>
 						
 						<view class="flexRowBetween" style="align-items:center;height:30%;">
 							<view style="width:55%;"><text class="price">¥{{item.price}}</text></view>
 							<view class="edit_number" style="width:45%;display:flex;align-items:center;">
-								<view class="text" >{{item.sale_count}}件已售</view>
+								<view class="text" style="width:60%;text-align:right;">已售{{item.sale_count}}件</view>
 								<view class="scale3" style="{{img}};width:44px;height:42px;background-position: -238px -94px;"></view>
 							</view>
 						</view>

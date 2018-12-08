@@ -16,12 +16,12 @@
 	<view class="users_detail flexRowBetween" style="justify-content:flex-start">
 		<view class="input_note">性别:</view>
 		<view data-value="1" data-key="gender" bindtap="changeBind" style="display:flex;align-items:center">
-			<image src="{{web_sForm.gender=='1'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx" ></image>
+			<image src="{{web_sForm.gender=='1'?'/images/mall_select_active.jpg':'/images/radio.png'}}" style="width:40rpx;height:40rpx" ></image>
       		<view style="font-size:15px;margin-left:10rpx">男</view>
 		</view>
    		
 		<view data-value="0" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:80rpx;align-items:center">
-			<image src="{{web_sForm.gender=='0'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx" ></image>
+			<image src="{{web_sForm.gender=='0'?'/images/mall_select_active.jpg':'/images/radio.png'}}" style="width:40rpx;height:40rpx" ></image>
       		<view style="font-size:15px;margin-left:10rpx">女</view>
 		</view>
 	</view>
@@ -35,7 +35,7 @@
 		<picker mode="date" class="flexRowBetween" value="{{web_sForm.passage1}}" start="1970-09-01" end="2050-09-01" bindchange="bindDateChange" style="width:70%;">
 			<input placeholder="请输入出生日期" value="{{web_sForm.passage1}}" style="width:100%;"></input> 
 		</picker>
-		<view class="next_page" style="width:7%;text-align:right;" bindchange="bindDateChange">
+		<view class="next_page" style="width:7%;margin-left:100rpx;text-align:right;" bindchange="bindDateChange">
 			<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;">
 			</view>
 		</view>

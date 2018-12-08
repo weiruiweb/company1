@@ -505,23 +505,27 @@ class Base{
         })
     };
 
-    pathTo(path,type,time){
+    pathTo(path,type,callback){
 
         if(type=='nav'){
             wx.navigateTo({
-                url:path
+                url:path,
+                success:callback
             });
         }else if(type=='tab'){
             wx.switchTab({
-                url:path
+                url:path,
+                success:callback
             });
         }else if(type=='redi'){
             wx.redirectTo({
-                url:path
+                url:path,
+                success:callback
             });
         }else if(type=='rela'){
             wx.reLaunch({
-                url:path
+                url:path,
+                success:callback
             });
         }
         

@@ -22,12 +22,18 @@ Page({
     submitData:{
       passage1:''
     },
+    sForm:{
+      score:0,
+      balance:0 
+    },
+     
     searchItemTwo:{
       thirdapp_id:getApp().globalData.mall_thirdapp_id,
       user_no:wx.getStorageSync('mall_info').user_no,
       type:['in',[3,4]]
     },
     order_id:'',
+    order_array:[],
     buyType:'delivery',
     isFirstLoadAllStandard:['getMainData','getAddressData','getUserData'],
     pay:{
@@ -42,6 +48,7 @@ Page({
     api.commonInit(self);
     if(options.order_id){
       self.data.order_id = options.order_id;
+      self.data.order_array = options.order_id.split(',');
     }else{
       api.showToast('数据传递有误','error');
     };
@@ -80,6 +87,7 @@ Page({
 
 
   getMainData(isNew){
+
     const self = this;
     if(isNew){
       api.clearPageIndex(self);
@@ -88,11 +96,11 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName = 'getMallToken';
     postData.searchItem = {
-      id:self.data.order_id
+      id:['in',self.data.order_array]
     };
     const callback = (res)=>{
       if(res.info.data.length>0){
-        self.data.mainData = res.info.data[0];
+        self.data.mainData = res.info.data;
       };
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
@@ -101,6 +109,7 @@ Page({
       self.countPrice();
     };
     api.orderGet(postData,callback);
+
   }, 
 
   getUserData(){
@@ -172,7 +181,25 @@ Page({
 
   },
 
+  inputBind(e){
+    const self = this;
 
+    api.fillChange(e,self,'sForm');
+    if(api.getDataSet(e,"key")=='score'){
+      if(self.data.sForm.score>self.data.userData.score||self.data.sForm.score>self.data.mainData[0].score)
+      api.showToast('积分不符合规则','none',function(self){
+        self.data.sForm.score = '';
+        self.setData({
+          web_sForm:self.data.sForm
+        })
+      })  
+    };
+    console.log(self.data.sForm);
+    self.setData({
+      web_sForm:self.data.sForm,
+    }); 
+    self.countPrice(); 
+  },
 
 
   
@@ -182,14 +209,21 @@ Page({
     var totalPrice = 0;
     var couponPrice = 0;
     var productsArray = self.data.mainData.products;
-    self.data.price = self.data.mainData.price;
+    self.data.price = 0;
+    for (var i = 0; i < self.data.mainData.length; i++) {
+
+      self.data.price += parseInt(self.data.mainData[i].price)
+    };
     if(self.data.pay.coupon.length>0){
       var couponPrice = 0;
       for (var i = 0; i < self.data.pay.coupon.length; i++) {
         couponPrice += self.data.pay.coupon[i].price
       };
     };
-    self.data.pay.wxPay = self.data.price - couponPrice;
+    if(self.data.sForm.score>0){
+      self.data.pay.score = self.data.sForm.score
+    };
+    self.data.pay.wxPay = self.data.price - couponPrice - parseInt(self.data.sForm.score) ;
     console.log('countPrice',self.data.pay)
     self.setData({
       web_couponPrice:couponPrice.toFixed(2),

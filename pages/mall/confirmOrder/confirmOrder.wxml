@@ -33,41 +33,50 @@
 </view>
 
 <view>
-	<view class="order_list">
-		<view class="order_confirm">
-			<block wx:for="{{web_mainData.products}}" wx:key="id">
-				<view class="flexRowBetween orderlistShow ">
-					<view class="img_left"><image src="{{item.snap_product.mainImg[0].url}}"></image></view>
-					<view class="order_name">
-						<view class="text1 avoidOverflow">{{item.snap_product.title}}</view>
-						<view class="order_type avoidOverflow">个性化定制</view>
-						<view class="orders flexRowBetween">
-							<text class="order_price">¥{{item.snap_product.price}}</text>
-							<text class="order_number">X{{item.count}}</text>
+	<block wx:for="{{web_mainData}}">
+		<view class="order_list">
+			<view class="w710 delivery flex1 font28">
+				<view class="delivery_item flex1"  bindtap="chooseBuyWay" data-buytype="delivery">
+					<image src="{{web_buyType =='delivery'?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
+					快递配送
+				</view>
+				<view class="delivery_item flex1"  bindtap="chooseBuyWay" data-buytype="pickself">
+					<image src="{{web_buyType =='pickself'?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
+					上门自提
+				</view>
+			</view>
+
+			<view>
+				
+				<view style="font-size:28rpx;display:flex;margin-top:20rpx">可用积分{{web_userData.score}}
+					<input placeholder="请输入您要使用的积分" style="border:1px solid #e5e5e5" data-key="score" bindblur="inputBind" value="{{web_sForm.score}}"></input>
+				</view>
+				<view style="font-size:28rpx;display:flex;margin-top:20rpx">可用余额{{web_userData.balance}}
+					<input placeholder="请输入您要使用的余额" style="border:1px solid #e5e5e5" data-key="balance" bindblur="inputBind" value="{{web_sForm.balance}}"></input>
+				</view>
+			</view>
+			<view class="order_confirm">
+				<block wx:for="{{item.products}}" wx:key="id" wx:for-item="c_item">
+					<view class="flexRowBetween orderlistShow ">
+						<view class="img_left"><image src="{{c_item.snap_product.mainImg[0].url}}"></image></view>
+						<view class="order_name">
+							<view class="text1 avoidOverflow">{{c_item.snap_product.title}}</view>
+							<view class="order_type avoidOverflow">个性化定制</view>
+							<view class="orders flexRowBetween">
+								<text class="order_price">¥{{c_item.snap_product.price}}</text>
+								<text class="order_number">X{{c_item.count}}</text>
+							</view>
 						</view>
 					</view>
-				</view>
-			</block>
+				</block>
+			</view>
 		</view>
-	</view>
+	</block>
 </view>
-<view class="w710 delivery flex1 font28">
-	<view class="delivery_item flex1"  bindtap="chooseBuyWay" data-buytype="delivery">
-		<image src="{{web_buyType =='delivery'?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
-		快递配送
-	</view>
-	<view class="delivery_item flex1"  bindtap="chooseBuyWay" data-buytype="pickself">
-		<image src="{{web_buyType =='pickself'?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
-		上门自提
-	</view>
-</view>
-
-<view>
-	<view style="font-size:28rpx">订单金额{{web_price}}</view>
-	<view style="font-size:28rpx">可用积分{{web_userData.score}}</view>
-	<view style="font-size:28rpx">可用余额{{web_userData.balance}}</view>
-</view>
-
+<view style="font-size:28rpx">订单总额：{{web_price}}</view>
+<view style="font-size:28rpx">积分抵扣：{{web_price}}</view>
+<view style="font-size:28rpx">佣金抵扣：{{web_price}}</view>
+<view style="font-size:28rpx">其他抵扣：{{web_price}}</view>
 <block wx:for="{{web_couponData}}" wx:key="id" >
 	<view class="ticket flex" wx:if="{{item.type=='4'}}">
 	    <view class="ticket_bg">

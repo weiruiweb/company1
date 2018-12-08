@@ -18,11 +18,12 @@ Page({
   onLoad(){
     const self = this;
     api.commonInit(self);
+    self.getMainData(true);
   },
 
   onShow(){
     const self = this;
-    self.getMainData(true);
+    
   },
 
   getMainData(isNew){
@@ -71,7 +72,10 @@ Page({
 
   intoPath(e){
     const self = this;
-    api.pathTo(api.getDataSet(e,'path'),'nav');
+    api.buttonCanClick(self);
+    api.pathTo(api.getDataSet(e,'path'),'nav',function(){
+      api.buttonCanClick(self,true)
+    });
   },
 
 

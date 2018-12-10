@@ -14,7 +14,7 @@
 	</view>
 	<view class="made_sort {{isShow?'sildeIn':'slideOut'}}" >
 		<block wx:for="{{web_threeLabelData}}" wx:key="id">
-			<view class="madeSort  {{web_id == item.id?'made_bg':''}}"  data-id="{{item.id}}" catchtap="categorySearch">
+			<view class="madeSort  {{web_id == item.id?'made_bg':''}}"  data-id="{{item.id}}" catchtap="{{web_buttonCanClick?'categorySearch':''}}">
 				<view class="left_bar">
 					<view class="lsort_LeftAll">
 						<view class="img_bg text1 active">{{item.title}}</view>
@@ -25,21 +25,22 @@
 	</view>
 	<view class="made_cont" style="width:100%;">	
 		<view class="product_sort flexRowBetween">
-			<view data-num="0" class="product_item {{_num==0?'changeColor':''}} flex" data-key="multi" bindtap="changeOrder">
+				
+			<view  class="product_item {{web_order.multi?'changeColor':''}} flex" data-key="multi" bindtap="{{web_buttonCanClick?'changeOrder':''}}">
 				<text>综合</text>
-				<view class="order_des scale2" style="{{img}};{{_num == 0?'background-position: -596px -46px;':'background-position: -566px -46px;'}}"></view>
+	
 			</view>
-			<view data-num="2" class="product_item flex {{_num==2?'changeColor':''}}" data-key="sale_count" bindtap="changeOrder">
+			<view  class="product_item flex {{web_order.sale_count?'changeColor':''}}" data-key="sale_count" bindtap="{{web_buttonCanClick?'changeOrder':''}}">
 				<text>销量</text>
-				<view class="order_des scale2" style="{{img}};{{_num == 2?'background-position: -596px -46px;':'background-position: -566px -46px;'}}"></view>
+				<view class="order_des scale2" style="{{img}};{{web_order.sale_count == 'asc'?'background-position: -596px -46px;':'background-position: -566px -46px;'}}"></view>
 			</view>
-			<view data-num="3" class="product_item flex {{_num==3?'changeColor':''}}" data-key="create_time" bindtap="changeOrder">
+			<view  class="product_item flex {{web_order.create_time?'changeColor':''}}" data-key="create_time" bindtap="{{web_buttonCanClick?'changeOrder':''}}">
 				<text>新品</text>
-				<view class="order_des scale2" style="{{img}};{{_num == 3?'background-position: -596px -46px':'background-position: -566px -46px'}}"></view>
+				<view class="order_des scale2" style="{{img}};{{web_order.create_time == 'asc'?'background-position: -596px -46px':'background-position: -566px -46px'}}"></view>
 			</view>
-			<view data-num="4" class="product_item flex {{_num==4?'changeColor':''}}" data-key="price" bindtap="changeOrder">
+			<view  class="product_item flex {{web_order.price==4?'changeColor':''}}" data-key="price" bindtap="{{web_buttonCanClick?'changeOrder':''}}">
 				<text>价格</text>
-				<view class="order_des scale2" style="{{img}};{{_num == 4?'background-position: -596px -46px':'background-position: -566px -46px'}}"></view>
+				<view class="order_des scale2" style="{{img}};{{web_order.price == 'asc'?'background-position: -596px -46px':'background-position: -566px -46px'}}"></view>
 			</view>
 		</view>
 

@@ -20,10 +20,12 @@ Page({
     searchItem:{
       category_id:30,
     },
-    order:{},
+    order:{
+      multi:'asc'
+    },
     isShow:false,
-
     isFirstLoadAllStandard:['getMainData','getLabelData'],
+
   },
   
   onLoad(options) {
@@ -37,9 +39,10 @@ Page({
     }else{
       self.data.searchItem.score = 0;
       self.data.searchItem.is_group = 0
-    }
+    };
     self.getLabelData();
     self.setData({
+      web_order:self.data.order,
       web_id:self.data.searchItem.category_id
     });
   },
@@ -68,7 +71,9 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = api.cloneForm(self.data.searchItem);
     postData.searchItem.thirdapp_id = getApp().globalData.mall_thirdapp_id;
-    postData.order = api.cloneForm(self.data.order);
+    if(!self.data.order.multi){
+      postData.order = api.cloneForm(self.data.order);
+    };
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data)
@@ -122,23 +127,12 @@ Page({
     const self = this;
     api.buttonCanClick(self);
     const key = api.getDataSet(e,'key');
-    console.log(key)
-    if(self.data.order.key == key){
-      if(self.data.order[key] == 'asc'){
-        self.data.order[key] = 'desc'
-  
-      }else if(self.data.order[key] == 'desc'){
-        self.data.order[key] = 'asc'
-      }
-    }else{
-      self.data.order.key = key;
-      self.data.order[key] = 'asc';
+    self.data.order = {
+      [key]:self.data.order[key]=='asc'?'desc':'asc'
     };
-  
-    
-    if(self.data.order[key] == 'multi'){
-      self.data.order = {};
-    };
+    self.setData({
+      web_order:self.data.order
+    });
     self.getMainData(true);
   },
 

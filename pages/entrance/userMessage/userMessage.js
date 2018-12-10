@@ -11,12 +11,6 @@ Page({
     type:0,
     },
   },
-
-  menuClick: function (e) {
-    const self = this;
-    self.messageAdd()
-  },
-
   messageAdd(){
      const self = this;
     const postData = {};

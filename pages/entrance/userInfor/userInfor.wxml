@@ -22,11 +22,11 @@
 	</view>
 	<view class="input_list1 font30 flex">
 		<view class="input_before1">开户行地址:</view>
-		<input placeholder="请输入开户地址" data-key="passage1" bindblur="changeBind" value="{{web_sForm.passage1}}"></input>
+		<input placeholder="请输入开户地址" data-key="passage1" bindblur="changeBind" value="{{web_sForm.passage1}}" style="width:72%;"></input>
 	</view>
 	<view class="input_list1 font30 flex">
 		<view class="input_before1">开户行账号:</view>
-		<input placeholder="请输入开户行账号" data-key="idCard" bindblur="changeBind" value="{{web_sForm.idCard}}"></input>
+		<input placeholder="请输入开户行账号" data-key="idCard" bindblur="changeBind" value="{{web_sForm.idCard}}" style="width:72%;"></input>
 	</view>
 </view>
 <form bindsubmit="submit" report-submit="true">

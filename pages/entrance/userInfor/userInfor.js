@@ -62,7 +62,6 @@ Page({
     postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
     const callback = (data)=>{
-      
       if(data.solely_code==100000){
         api.showToast('完善成功','none')
       }else{

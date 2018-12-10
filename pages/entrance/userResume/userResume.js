@@ -30,9 +30,23 @@ Page({
     });  
     console.log(self.data.submitData)
   },
-  submit:function(){
+  submit(){
     const self = this;
-    self.messageAdd();
+    var phone = self.data.submitData.phone;
+    const pass = api.checkComplete(self.data.submitData);
+    console.log('pass',pass);
+    if(pass){
+      if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
+        api.showToast('手机格式不正确','none')
+      }else{
+        wx.showLoading();
+        const callback = (user,res) =>{
+          self.messageAdd(); 
+       }; 
+     }
+   }else{
+      api.showToast('请补全信息','none');
+   };
   },
   messageAdd(){
     const self =this;
@@ -42,20 +56,11 @@ Page({
     postData.data = api.cloneForm(self.data.submitData);
     const callback = (data)=>{
         api.dealRes(data);
-        self.data.submitData = {
-          title:'',
-          phone:'',
-          content:'',
-          keywords:'', 
-          score:'',
-          passage1:'',
-          passage2:'',
-        };
+        submitData:self.data.submitData;
         self.setData({
           web_submitData:self.data.submitData
         });
       };
       api.messageAdd(postData,callback);
-  }
-
+  },
 })

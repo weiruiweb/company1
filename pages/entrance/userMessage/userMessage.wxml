@@ -2,6 +2,6 @@
 <view class="w710" style="height:100%;">
   <textarea placeholder="输入留言" class="font28 color6" data-key="content" bindinput="changeBind" value="{{web_submitData.content}}"></textarea>
 </view>
-<form bindsubmit="menuClick" report-submit="true">
+<form bindsubmit="messageAdd" report-submit="true">
 	<button  form-type="submit" style="line-height:80rpx;margin-top:20rpx;" class="submit_info">提交</button>
 </form>

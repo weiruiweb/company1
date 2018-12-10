@@ -26,6 +26,36 @@ Page({
     
   },
 
+ getPhoneNumber: function (e) {
+	console.log(e.detail.iv);
+	console.log(e.detail.encryptedData);
+	wx.login({
+		success: res => {
+			console.log(res.code);
+			wx.request({
+			    url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/ProgrameToken/get',
+			    method:'POST',
+			    data: {
+					'encryptedData': encodeURIComponent(e.detail.encryptedData),
+					'iv': e.detail.iv,
+					'code': res.code
+				},
+			       
+			success: function (res) {
+				console.log(res)
+				if (res.solely_code ==100000) {//我后台设置的返回值为1是正确
+				//存入缓存即可
+					wx.setStorageSync('phone', res.phone);
+				}
+			},
+			fail: function (err) {
+				console.log(err);
+			}
+			})
+		}
+	})
+},
+
 
   userInfoGet(){
     const self = this;

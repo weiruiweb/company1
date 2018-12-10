@@ -42,7 +42,7 @@
 			<view class="submit_shopping" style="margin:0rpx auto;">
 				<view class="submit_shopping">
 					<form bindsubmit="pay" report-submit="true">
-						<button class="" form-type="submit">结算(1)</button>
+						<button class="" form-type="submit">结算</button>
 					</form>
 				</view>
 			</view>

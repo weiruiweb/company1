@@ -23,7 +23,7 @@ Page({
     api.commonInit(self);
     if(options.num){
       self.changeSearch(options.num)
-    }
+    };
     self.getMainData()
   },
 
@@ -70,8 +70,7 @@ Page({
     const callback  = res=>{
       if(res){
         api.dealRes(res);
-      } 
-      api.buttonCanClick(self,true)
+      };
       self.getMainData(true);
     };
     api.orderDelete(postData,callback);
@@ -94,7 +93,6 @@ Page({
       }else{
         api.showToast(res.msg,'none')
       };  
-      api.buttonCanClick(self,true);
       self.getMainData(true);
     };
     api.orderUpdate(postData,callback);

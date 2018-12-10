@@ -6,7 +6,7 @@ const token = new Token();
 
 Page({
   data: {
-    buttonCanClick:true
+   
   },
   //事件处理函数
   preventTouchMove:function(e) {
@@ -14,9 +14,7 @@ Page({
   },
 
   onLoad(options){
-    this.setData({
-      web_buttonCanClick:this.data.buttonCanClick
-    })
+  
   },
  
   intoPath(e){

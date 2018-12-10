@@ -22,6 +22,7 @@ Page({
     const self = this;
     self.getLabelData();
     self.getMainData();
+    token.getEntranceToken()
   },
   
   getMainData(){

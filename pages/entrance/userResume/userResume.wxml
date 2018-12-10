@@ -8,27 +8,97 @@
 		<view class="input_before1">电话:</view>
 		<input placeholder="请输入联系电话" data-key="phone" bindblur="changeBind"  value="{{web_submitData.phone}}"></input>
 	</view>
-	<view class="input_list1 font30 flex">
-		<view class="input_before1">学历:</view>
-		<input placeholder="请输入学历" data-key="content" bindblur="changeBind" value="{{web_submitData.content}}"></input>
+	<view class="flexRowBetween" style="justify-content:flex-start">
+		<text class="inputLabel">性别:</text>
+		<view data-value="1" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:100rpx;align-items:center">
+			<image src="{{web_submitData.gender=='1'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx;" ></image>
+      		<view style="font-size:15px">男</view>
+		</view>
+   		
+		<view data-value="0" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:80rpx;align-items:center">
+			<image src="{{web_submitData.gender=='0'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx" ></image>
+      		<view style="font-size:15px">女</view>
+		</view>
 	</view>
-	<view class="input_list1 font30 flex">
-		<view class="input_before1">专业:</view>
-		<input placeholder="请输入专业" data-key="keywords" bindblur="changeBind" value="{{web_submitData.keywords}}"></input>
+
+	<view class="flexRowBetween" style="justify-content:flex-start">
+		<text class="inputLabel">投递来源:</text>
+		<view data-value="0" data-key="class" bindtap="changeBind" style="display:flex;margin-left:100rpx;align-items:center">
+			<image src="{{web_submitData.class=='0'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx;" ></image>
+      		<view style="font-size:15px">智联</view>
+		</view>
+   		
+		<view data-value="1" data-key="class" bindtap="changeBind" style="display:flex;margin-left:80rpx;align-items:center">
+			<image src="{{web_submitData.class=='1'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx" ></image>
+      		<view style="font-size:15px">公司邀约</view>
+		</view>
+
+		<view data-value="2" data-key="class" bindtap="changeBind" style="display:flex;margin-left:80rpx;align-items:center">
+			<image src="{{web_submitData.class=='2'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx" ></image>
+      		<view style="font-size:15px">BOSS直聘</view>
+		</view>
 	</view>
+
 	<view class="input_list1 font30 flex">
-		<view class="input_before1">工作年限:</view>
-		<input placeholder="请输入工作年限" data-key="score" bindblur="changeBind" value="{{web_submitData.score}}"></input>
+		<view class="input_before1">毕业院校及专业:</view>
+		<input placeholder="请输入毕业院校及专业" data-key="description" bindblur="changeBind" value="{{web_submitData.description}}"></input>
 	</view>
-	<view class="input_list1 font30 flex">
-		<view class="input_before1">期望工资:</view>
-		<input placeholder="请输入期望工资" data-key="passage1" bindblur="changeBind" value="{{web_submitData.passage1}}"></input>
-	</view>
-	<view class="input_list1 font30 flex">
-		<view class="input_before1" data-key="passage2" bindblur="changeBind" >居住地址:</view>
-		<input placeholder="请输入居住地址" value="{{web_submitData.passage2}}"></input>
-	</view>
+	
+
+
+	
+<view class="section">
+  <picker mode="date"  start="2000-01-01" end="2050-01-01" bindchange="bindDateChange">
+    <view class="picker">
+      <view class="w690 things_time flex">
+    <view class="things_tlt font28 flex">
+        出生年月</view>
+    <view class="things_right flexRowBetween font28">
+        <view class="thing1  flexRowBetween">
+            <view class="font28 ">{{web_submitData.keywords[0]}}</view>
+        </view>
+        <view class="years font28 ">年</view>
+        <view class="thing1  flexRowBetween">
+            <view class="font28 ">{{web_submitData.keywords[1]}}</view>
+        </view>
+         <view class="years font28 ">月</view>
+        <view class="thing1  flexRowBetween">
+            <view class="font28 ">{{web_submitData.keywords[2]}}</view>
+        </view>
+         <view class="years font28 ">日</view>
+        </view>
+    </view>
+    </view>
+  </picker>
 </view>
-<form bindsubmit="submit" report-submit="true">
+<view class="w690 flex"  style="margin-top: 50rpx;" >
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
+    <view class="font24 color9">上传照片</view>
+</view>
+<view class="w710 uplode flex" id="uploaderFiles">
+    <view class="uploder flexRowBetween">
+        <block  wx:for="{{web_submitData.mainImg}}" wx:key="{{index}}">
+            <view class="upload_box">
+                <view class = 'circle left-circle' style="{{rotate}}"></view>
+                <view class = 'circle right-circle'></view>
+                <view class="uploader_item forgive_number" bindtap="previewImage" id="{{item.url}}">
+                    <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" />
+                    <view class="color1 font32 percent flex" wx:if="{{percent <=99}}" >
+                        <view class="percent_number" style="text-align:center;">{{percent}}%</view>
+                    </view>
+                </view> 
+            </view>
+        </block>
+        <view  class="uploader_item" bindtap="upLoadImg" wx:if="{{web_submitData.mainImg.length<2}}">
+            <image src="/images/upload.png"></image>
+        </view>
+    </view>
+</view>
+<view class="input_list1 font30 flex" style="margin-top:30px">
+	<view class="input_before1">工作经历:</view>
+	<textarea placeholder="请输入工作经历" data-key="content" bindblur="changeBind" value="{{web_submitData.content}}"></textarea>
+</view>
+</view>
+<form bindsubmit="{{web_buttonCanClick?'submit':''}}" report-submit="true">
 	<button  form-type="submit" style="line-height:80rpx;margin-top:100rpx;" class="submit_info">提交</button>
 </form>

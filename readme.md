@@ -20,14 +20,14 @@ description  | 项目备注
 keywords  | 项目状态
 content  | 项目付款标准
 view_count  | 项目工期
-spu_array  | 项目剩余工期
-spu_item  | 项目总金额
+passage1  | 项目剩余工期
+passage2  | 项目总金额
 
 
 ##message表
      KEY      |    VALUE
 --------------|--------------
-title  | 项目名称
+title  | 标题
 type  | 5：内部反馈；6：进度反馈；7：开发反馈；8：客户确认单；9：客户修改意见确认单
 content  | 详情
 description  | 备注

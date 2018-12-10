@@ -12,6 +12,7 @@ Page({
     },
     web_show:true,
     },
+
  submit(){
     const self = this;
     var postData={};
@@ -27,7 +28,7 @@ Page({
       if(res){       
           wx.setStorageSync('threeInfo',res.data.info); 
           wx.redirectTo({
-            url: '/pages/entrance/user/user'
+            url: '/pages/entrance/project/project'
           })
           api.showToast('登陆成功','none')  
       }else{

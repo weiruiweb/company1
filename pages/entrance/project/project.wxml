@@ -1,0 +1,17 @@
+<!--User.wxml-->
+<view class="w710">
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="project" bindtap="intoPath" data-path="/pages/entrance/userProjectDetail/userProjectDetail?id={{item.id}}">
+			<view class="project_name flex">
+				<view class="name_box">
+					<view class="name_cont font32 color1">{{item.title}}</view>
+				</view>
+			</view>
+			<view class="project_cont">
+				<view class="cont_box font26 color6 w710">
+					{{item.description}}
+				</view>
+			</view>
+		</view>
+	</block>
+</view>

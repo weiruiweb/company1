@@ -15,35 +15,31 @@ Page({
     const self = this;
     wx.showLoading();
     self.data.id = options.id;
-    self.getLabelData();
+    self.getMainData();
     
   },
- getLabelData(){
-    const  self =this;
-    const postData={};
-    postData.searchItem = {
-      thirdapp_id:getApp().globalData.solely_thirdapp_id
-    };
-    postData.searchItem.parentid = self.data.id;
-    const callback =(res)=>{
-      if(res.info.data.length>0){
-        self.data.labelData.push.apply(self.data.labelData,res.info.data);
-      }
-      wx.hideLoading();
-      self.setData({
-        web_labelData:self.data.labelData,
-      });
-      self.getMainData();
-    };
-    api.labelGet(postData,callback);
-  },
+
+
   getMainData(){
     const  self =this;
     const postData={};
+    postData.tokenFuncName='getEntranceToken';
     postData.searchItem = {
-      thirdapp_id:getApp().globalData.solely_thirdapp_id
+      thirdapp_id:getApp().globalData.solely_thirdapp_id,
+      passage_array:self.data.id,
+      user_type:1
     };
-    postData.searchItem.menu_id = self.data.labelData[0].id;
+    postData.getAfter = {
+    	article:{
+    		tableName:'article',
+    		middleKey:'passage_array',
+    		key:'id',
+    		searchItem:{
+    			status:1
+    		},
+    		condition:'='
+    	}
+    };
     const callback =(res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
@@ -56,8 +52,9 @@ Page({
         web_mainData:self.data.mainData,
       });
     };
-    api.articleGet(postData,callback);
+    api.messageGet(postData,callback);
   },
+
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

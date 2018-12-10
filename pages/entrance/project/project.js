@@ -11,8 +11,6 @@ Page({
 
   onLoad: function () {
     const self = this;
-    console.log(wx.getStorageSync('entrance_info').info.phone)
-   
     api.commonInit(self);  	
     self.getMainData();
   },
@@ -20,16 +18,10 @@ Page({
 
   getMainData(){
     const  self =this;
-     if(wx.getStorageSync('entrance_info').info.phone.length == 0){
-    	api.showToast('请补全信息','none',2000,function(){
-    		api.pathTo('/pages/entrance/userInfor/userInfor','redi')
-    	});
-    	return;
-    };
     const postData={};
     postData.searchItem = {
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
-      contactPhone:wx.getStorageSync('entrance_info').info.phone
+      user_no:wx.getStorageSync('threeInfo').user_no
     };
     postData.getBefore ={
      caseData:{

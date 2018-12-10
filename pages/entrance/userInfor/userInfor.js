@@ -14,10 +14,11 @@ Page({
       passage1:'',
       idCard:'' 
     },
+    isFirstLoadAllStandard:['userInfoGet'],
   },
   onLoad: function () {
     const self = this;
-   
+   	api.commonInit(self);  
     self.userInfoGet();
   },
 
@@ -35,13 +36,15 @@ Page({
       self.data.sForm.level = res.info.data[0].info.level;
       self.data.sForm.passage1 = res.info.data[0].info.passage1;
       self.data.sForm.idCard = res.info.data[0].info.idCard
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'userInfoGet',self);
       self.setData({
         web_sForm:self.data.sForm,
       });
-      wx.hideLoading();
+      
     };
     api.userGet(postData,callback);
   },
+
   changeBind(e){
     const self = this;
     if(api.getDataSet(e,'value')){
@@ -67,13 +70,14 @@ Page({
       }else{
         api.showToast('网络故障','none')
       };
-      wx.hideLoading();
+      api.buttonCanClick(self,true);
     };
     api.userInfoUpdate(postData,callback);
   },
 
   submit(){
     const self = this;
+    api.buttonCanClick(self);
     var phone = self.data.sForm.phone;
     const pass = api.checkComplete(self.data.sForm);
     if(pass){
@@ -88,6 +92,7 @@ Page({
      }
    }else{
       api.showToast('请补全信息','none');
+      api.buttonCanClick(self,true);
    };
   },
 })

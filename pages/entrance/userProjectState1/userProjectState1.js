@@ -14,22 +14,30 @@ Page({
     wx.showLoading();
     self.data.id = options.id;
     self.getMainData();
-    this.setData({
-      fonts:app.globalData.font
-    });
-    
-    self.getMainData();
+ 
   },
+
   getMainData(){
     const self= this;
     const postData = {};
+    postData.tokenFuncName='getEntranceToken';
     postData.searchItem ={
       thirdapp_id:app.globalData.solely_thirdapp_id,
-      id:self.data.id
+      id:self.data.id,
+      user_type:1
     };
-    postData.searchItem.id = self.data.id;
+    postData.getAfter = {
+    	article:{
+    		tableName:'article',
+    		middleKey:'passage_array',
+    		key:'id',
+    		searchItem:{
+    			status:1
+    		},
+    		condition:'='
+    	}
+    };
     const callback = (res)=>{
-      self.data.mainData = {};
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
@@ -40,6 +48,29 @@ Page({
         web_mainData:self.data.mainData,
       });  
     };
-    api.articleGet(postData,callback);
+    api.messageGet(postData,callback);
   },
+
+
+
+
+
+  messageUpdate(){
+    const self =this;
+    const postData = {};
+    postData.tokenFuncName = 'getEntranceToken';
+    postData.data = {
+    	behavior:0
+    };
+    const callback = (data)=>{
+    	if(data.solely_code==100000){
+    		api.showToast('已同意','none')
+    	}else{
+    		api.showToast(data.msg,'none')
+    	}
+    };
+    api.messageUpdate(postData,callback);
+  },
+
+
 })

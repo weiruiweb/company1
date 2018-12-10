@@ -13,6 +13,7 @@
     "pages/entrance/userProjectState1/userProjectState1",
     "pages/entrance/userResume/userResume",
     "pages/entrance/login/login",
+    "pages/entrance/project/project",
     "pages/mall/Index/index",
     "pages/classify/classify",
     "pages/mall/Sort/sort",

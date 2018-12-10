@@ -11,7 +11,7 @@
 		</view>
 		<view class="input_list1 w710  font30" style="height:115rpx;display:flex;">
 			<view class="input_before1">剩余工期:</view>
-			<view class="input input1">{{web_mainData.contactPhone}}</view>
+			<view class="input input1">{{web_mainData.article[0].passage1}}个工作日</view>
 		</view>
 		<view class="w710 font28 color6" style="height:78rpx;line-height:78rpx;">
 			备注
@@ -24,5 +24,9 @@
 				</view>	
 			</view>
 		</view>
+		<form bindsubmit="messageUpdate" report-submit="true" >
+			<button  form-type="submit" style="line-height:80rpx;margin-top:100rpx;" class="submit_info" wx:if="{{web_mainData.type==8||web_mainData.type==9}}">提交</button>
+		</form>
 	</view>
 </view>
+

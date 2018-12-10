@@ -109,7 +109,7 @@
 		</view>
 		<view class="consult collect" bindtap="collect">
 			<view style="width:36rpx;height:36rpx;overflow:hidden;margin:0 auto 14rpx auto;">
-				<view class="scale1" style="width:36px;height:36px;margin:0 auto;{{img}};{{is_collect?'background-position: -559px 0':'background-position: -524px 0'}}"></view>
+				<view class="scale1" style="width:36px;height:36px;margin:0 auto;{{img}};{{web_isInCollectData?'background-position: -559px 0':'background-position: -524px 0'}}"></view>
 			</view>
 			<view class="text1" style="{{is_collect?'color:#21c3d4':''}}">
 				{{is_collect?'已收藏':'收藏'}}

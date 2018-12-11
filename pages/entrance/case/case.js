@@ -107,6 +107,13 @@ Page({
     })
   },
 
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
+  },
 
   this_choose(e){ 
     const self = this;

@@ -4,7 +4,7 @@ const app = getApp();
 
 
 Page({
-  
+
   data: {
     mainData:[],
     isFirstLoadAllStandard:['getMainData'],
@@ -27,6 +27,7 @@ Page({
     	return;
     };
     const postData={};
+    postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
       contactPhone:wx.getStorageSync('entrance_info').info.phone
@@ -57,6 +58,14 @@ Page({
     api.articleGet(postData,callback);
   },
 
+
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
+  },
 
   intoPath(e){
     const self = this;

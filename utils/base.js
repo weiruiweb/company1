@@ -65,39 +65,14 @@ class Base{
             }
         });
 
-       
-        
-    }
-
-    commonInit(self){
-        wx.showLoading();
-        self.data.buttonCanClick = false;
-        self.data.paginate = this.cloneForm(getApp().globalData.paginate);
-        self.data.isLoadAll = false;
-        self.setData({
-          fonts:getApp().globalData.font,
-          img:getApp().globalData.img,
-        });
-        wx.removeStorageSync('checkLoadAll');
-    }
-
-    upLoadImg(param,callback) {
-        var that=this;
-        $.ajax({ // $.post，告辞
-            type: 'post',
-            contentType: false, // 关关关！必须得 false
-                                // 这个不关会扔一个默认值 application/x-www-form-urlencoded 过去，后端拿不到数据的！
-                               // 而且你甚至不能传个字符串 'multipart/form-data'，后端一样拿不到数据！
-            processData: false, // 关关关！重点
-            url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/FtpImage/upload',
-            data: param,
+        wx.uploadFile({
+           url: url,
+            data: params.data,
+            method:params.type,
             success:function(res){
-
-                if(res.solely_code==201000){
-
-                }else if(res.solely_code==200000){
+                if (res.data.solely_code == '200000') {
                     token[params.data.tokenFuncName](callback,{refreshToken:true});
-                }else{
+                } else {
                     params.sCallback && params.sCallback(res.data);
                 };
 
@@ -115,7 +90,24 @@ class Base{
                 });
             }
         });
+
+       
+        
     }
+
+    commonInit(self){
+        wx.showLoading();
+        self.data.buttonCanClick = false;
+        self.data.paginate = this.cloneForm(getApp().globalData.paginate);
+        self.data.isLoadAll = false;
+        self.setData({
+          fonts:getApp().globalData.font,
+          img:getApp().globalData.img,
+        });
+        wx.removeStorageSync('checkLoadAll');
+    }
+
+
 
 
     _processError(err){ 

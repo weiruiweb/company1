@@ -23,9 +23,13 @@ Page({
   },
 
 
-  getMainData(){
+  getMainData(isNew){
     const  self =this;
+    if(isNew){
+      api.clearPageIndex(self)
+    };
     const postData={};
+    postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName='getEntranceToken';
     postData.searchItem = {
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
@@ -58,6 +62,15 @@ Page({
     api.messageGet(postData,callback);
   },
 
+
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
+  },
+
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
@@ -74,5 +87,5 @@ Page({
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
   }, 
-  
+
 })

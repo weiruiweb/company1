@@ -111,10 +111,41 @@ Page({
   },
 
 
-   upLoadImg: function (){
-    var self = this;
-    
-    if(self.data.submitData.mainImg.length>2){
+  upLoadImg(){
+    const self = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        console.log(res)
+        self.data.tempFilePaths = res.tempFilePaths[0]
+      }
+      
+    });
+    console.log(self.data.tempFilePaths)
+    const postData = {};
+    postData.token=wx.getStorageSync('entrance_token'),
+    postData.data = {
+      
+      filePath:self.data.tempFilePaths,
+      name:'file',
+    };
+    const callback = (res) =>{
+      if(res.solely_code==100000){
+        res = JSON.parse(res.data);
+        self.data.submitData.mainImg.push({url:res.info.url})
+        self.setData({
+          web_submitData:self.data.submitData
+        });
+      }else{
+        api.showToast('上传失败','none')
+      }
+    }
+    api.upload(postData,callback)
+  },
+
+    /*if(self.data.submitData.mainImg.length>2){
       api.showToast('仅限3张','fail');
       return;
     };
@@ -151,11 +182,12 @@ Page({
           }
         })
       },
+
       fail: function(err){
         wx.hideLoading();
       }
     })
-  },
+  },*/
 
 
 

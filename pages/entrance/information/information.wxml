@@ -1,14 +1,14 @@
 <!--index1.wxml-->
 <view class="tab font30 flexRowBetween">
-    <view class="tab_item {{currentId == 0?'tab_this':''}}" data-id="0" bindtap="tab">
+    <view class="tab_item {{currentId == 0?'tab_this':''}}" data-id="0" bindtap="{{web_buttonCanClick?'tab':''}}">
         企业动态
     </view>
-    <view class="tab_item {{currentId == 1?'tab_this':''}}" data-id="1"  bindtap="tab">
+    <view class="tab_item {{currentId == 1?'tab_this':''}}" data-id="1"  bindtap="{{web_buttonCanClick?'tab':''}}">
         合作须知
     </view>
 </view>
 
-<view class="w710" style="{{currentId == 0?'display:block':'display:none'}}">
+<view class="w710">
     <block wx:for="{{web_mainData}}" wx:key="id">
         <view class="product flexRowBetween w710" bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}">
             <view class="product_box flexRowBetween">
@@ -28,20 +28,7 @@
         </view>
     </block>
 </view>
-<view class="w710 state" style="{{currentId == 1?'display:block':'display:none'}}">
-    <block wx:for="{{web_cooperData}}" wx:key="id">
-        <view class="state_right"  bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}">
-            <view class="state_right_box">
-                <view class="state_top flex font30">
-                    {{item.title}}
-                </view>
-                <view class="font26 color6 state_cont">
-                {{item.description}}
-                </view>
-            </view>
-        </view>
-    </block>
-</view>
+
 <view class="font22 color6" style="text-align:center;">技术支持：西安纯粹云科技有限公司</view>
 <view style="width:100%;height:120rpx;"></view>
 <view class="navbar">

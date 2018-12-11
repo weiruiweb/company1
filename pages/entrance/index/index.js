@@ -26,6 +26,7 @@ Page({
   getMainData(){
     const  self =this;
     const postData={};
+    postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       thirdapp_id:getApp().globalData.solely_thirdapp_id
     };
@@ -80,10 +81,10 @@ Page({
 
               }
              }
-          }else{
-            api.showToast('没有更多了','fail');
           }
         }
+      }else{
+        api.showToast('没有更多了','fail');
       }
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
      self.getCaseData();
@@ -91,7 +92,7 @@ Page({
     api.labelGet(postData,callback);   
   },
 
-    getCaseData(){
+  getCaseData(){
     const self =this;
     const postData={};
     postData.searchItem ={
@@ -125,6 +126,15 @@ Page({
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
   }, 
+
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
+  },
+  
 })
 
   

@@ -34,17 +34,7 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'redi');
   },
 
-  test(e){
 
-    const self = this;
-    console.log(0);
-    api.buttonCanClick(self);
-    console.log(1);
-    setTimeout(function(){
-      api.buttonCanClick(self,true)
-    },5000);
-    
-  }, 
  
 })
 

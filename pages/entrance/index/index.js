@@ -8,18 +8,16 @@ Page({
   data: {
     caseData:[],
     mainData:[],
-     labelData:[],
+    labelData:[],
     labelDataTwo:[],
     labelDataThree:[],
     isFirstLoadAllStandard:['getMainData','getLabelData','getCaseData'],
-    isLoadAll:false,
-    buttonCanClick:false
   },
   //事件处理函数
  
   onLoad(options) {
-    wx.showLoading();
     const self = this;
+    api.commonInit(self);
     self.getLabelData();
     self.getMainData();
     token.getEntranceToken()
@@ -56,6 +54,8 @@ Page({
     };
     api.articleGet(postData,callback);
   },
+
+
   getLabelData(){
     const self = this;
     const postData = {};
@@ -90,6 +90,7 @@ Page({
     };
     api.labelGet(postData,callback);   
   },
+
     getCaseData(){
     const self =this;
     const postData={};
@@ -114,10 +115,12 @@ Page({
     };
     api.articleGet(postData,callback);
   },
+
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
+
   intoPathRedirect(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');

@@ -4,6 +4,7 @@ const app = getApp();
 
 
 Page({
+  
   data: {
     mainData:[],
     isFirstLoadAllStandard:['getMainData'],
@@ -11,8 +12,7 @@ Page({
 
   onLoad: function () {
     const self = this;
-    console.log(wx.getStorageSync('entrance_info').info.phone)
-   
+
     api.commonInit(self);  	
     self.getMainData();
   },

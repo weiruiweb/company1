@@ -1,20 +1,26 @@
-//logs.js
+
 import {Api} from '../../../utils/api.js';
 var api = new Api();
 const app = getApp();
 import {Token} from '../../../utils/token.js';
 const token = new Token();
+
 Page({
+
   data: {
+
     mainData:[],
+    isFirstLoadAllStandard:['getMainData'],
+    
   },
+
   onLoad: function (options) {
     const self = this;
-    wx.showLoading();
+    api.commonInit(self);
     self.data.id = options.id;
     self.getMainData();
-    console.log(100,self.data.id)
   },
+
   getMainData(){
     const self= this;
     const postData = {};
@@ -29,9 +35,7 @@ Page({
         self.data.mainData = res.info.data[0];
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
       };
-      console.log(self.data.mainData);
-      console.log(111,self.data.mainData.menu_id);
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });   

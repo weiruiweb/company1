@@ -11,7 +11,7 @@ Page({
       password:''
     },
     web_show:true,
-    },
+  },
 
  submit(){
     const self = this;
@@ -51,6 +51,7 @@ Page({
   onLoad(options){
      const self = this;
   },
+  
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

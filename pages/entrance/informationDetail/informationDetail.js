@@ -4,21 +4,22 @@ const api = new Api();
 const app = getApp();
 import {Token} from '../../../utils/token.js';
 const token = new Token();
+
+
 Page({
+
   data: {
     mainData:[],
+    isFirstLoadAllStandard:['getMainData'],
   },
-  onLoad: function (options) {
+
+  onLoad(options) {
     const self = this;
-    wx.showLoading();
+    api.commonInit(self);
     self.data.id = options.id;
     self.getMainData();
-    this.setData({
-      fonts:app.globalData.font
-    });
-    
-    self.getMainData();
   },
+
   getMainData(){
     const self= this;
     const postData = {};
@@ -34,11 +35,13 @@ Page({
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
       };
       console.log(self.data.mainData);
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });  
     };
     api.articleGet(postData,callback);
   },
+
+
 })

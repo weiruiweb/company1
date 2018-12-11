@@ -3,17 +3,20 @@ var api = new Api();
 const app = getApp();
 import {Token} from '../../../utils/token.js';
 const token = new Token();
+
 Page({
+ 
   data: {
-    
-  },
-  data: {
+
     labelData:[],
     mainData:[],
+    isFirstLoadAllStandard:['getMainData'],
+
   },
+
   onLoad: function (options) {
     const self = this;
-    wx.showLoading();
+    api.commonInit(self);
     self.data.id = options.id;
     self.getMainData();
     
@@ -47,7 +50,7 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });
@@ -66,8 +69,10 @@ Page({
       delta:1
     })
   },
+
   intoPathRedirect(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
   }, 
+  
 })

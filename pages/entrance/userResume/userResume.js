@@ -16,15 +16,16 @@ Page({
       mainImg:[],
       content:'',
       description:'',
-      behavior:0,
+
       class:''
     }, 
     buttonCanClick:true
+
   },
 
 
 
-  onLoad: function () {
+  onLoad() {
     const self = this;
     token.getEntranceToken();
     self.setData({
@@ -83,7 +84,7 @@ Page({
 
   submit(){
     const self = this;
-    self.data.buttonCanClick = false;
+    api.buttonCanClick(self);
     self.setData({
     	web_buttonCanClick:self.data.buttonCanClick
     });
@@ -93,10 +94,7 @@ Page({
     if(pass){
       if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
         api.showToast('手机格式不正确','none',function(){
-        	self.data.buttonCanClick = true;
-        	self.setData({
-		    	web_buttonCanClick:self.data.buttonCanClick
-		    })
+        	api.buttonCanClick(self,true)
         });
       }else{
         const callback = (user,res) =>{
@@ -105,7 +103,10 @@ Page({
        api.getAuthSetting(callback);  
      }
    }else{
-      api.showToast('请补全信息','none');
+      api.showToast('请补全信息','none',function(){
+        api.buttonCanClick(self,true)
+      });
+      
    };
   },
 
@@ -157,22 +158,21 @@ Page({
   },
 
 
+
   messageAdd(){
     const self =this;
     const postData = {};
     postData.tokenFuncName = 'getEntranceToken';
     postData.data = {};
     postData.data = api.cloneForm(self.data.submitData);
+    postData.data.behavior = 0;
     const callback = (data)=>{
     	if(data.solely_code==100000){
     		api.showToast('投递成功','none')
     	}else{
     		api.showToast(data.msg,'none')
     	}
-    	self.data.buttonCanClick = true;
-    	self.setData({
-	    	web_buttonCanClick:self.data.buttonCanClick
-	    })
+    	api.buttonCanClick(self,true)
     };
     api.messageAdd(postData,callback);
   },

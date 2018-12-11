@@ -18,13 +18,13 @@ Page({
     labelDataThree:[],
     currentText:'',
     searchData:[],
+    isFirstLoadAllStandard:['getMainData'],
   },
   
 
   onLoad(){
     const self = this;
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
-    wx.showLoading();
+    api.commonInit(self);  
     self.getLabelData();
   },
 
@@ -40,10 +40,10 @@ Page({
     };
     console.log(101,postData.searchItem.menu_id);
     if(self.data.searchData.length>0){
-     postData.searchItem.menu_id = ['in',self.data.searchData]; 
-   }else{
-    postData.searchItem.menu_id = ['in',self.data.labelDataThree];
-   }
+      postData.searchItem.menu_id = ['in',self.data.searchData]; 
+    }else{
+      postData.searchItem.menu_id = ['in',self.data.labelDataThree];
+    }
     const callback =(res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
@@ -51,7 +51,7 @@ Page({
         self.data.isLoadAll = true,
         api.showToast('没有更多了','fail');
       }
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       }); 
@@ -59,6 +59,8 @@ Page({
     };
     api.articleGet(postData,callback);
   },
+
+
   getLabelData(){
     const self = this;
     const postData = {};
@@ -96,11 +98,16 @@ Page({
     };
     api.labelGet(postData,callback);   
   },
+
+
   menu(e){
-     this.setData({
-        is_show:true
-      })
+    const self = this;
+    self.setData({
+      is_show:true
+    })
   },
+
+
   this_choose(e){ 
     const self = this;
     var text = e.currentTarget.dataset.text;
@@ -132,6 +139,7 @@ Page({
     });
     console.log(9090,self.data.searchData);
   },
+
   menu_hidden(){
     const self = this;
     self.getMainData(true);
@@ -140,6 +148,7 @@ Page({
     });
 
   },
+
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

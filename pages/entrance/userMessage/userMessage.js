@@ -6,22 +6,36 @@ const token = new Token();
 
 Page({
   data: {
-   submitData:{
-    content:'',
-    type:0,
+
+    submitData:{
+      content:'',
+
     },
+
+    buttonCanClick:true
   },
+
+  onLoad(){
+    const self = this;
+    self.setData({
+      web_buttonCanClick:self.data.buttonCanClick
+    })
+  },
+
+
   messageAdd(){
-     const self = this;
+    const self = this;
     const postData = {};
     postData.tokenFuncName = 'getEntranceToken';
     postData.data = {};
     postData.data = api.cloneForm(self.data.submitData);
+    postData.data.type = 0;
     const callback = (data)=>{
       api.dealRes(data);
       self.data.submitData = {
         content:''
       };
+      api.buttonCanClick(self,true);
       self.setData({
         web_submitData:self.data.submitData
       });
@@ -37,6 +51,23 @@ Page({
     });  
     console.log(self.data.submitData)
   },
+
+  submit(){
+    const self = this;
+    api.buttonCanClick(self);
+    const pass = api.checkComplete(self.data.submitData);
+    if(pass){
+      const callback = (user,res) =>{
+          self.messageAdd(); 
+       };
+       api.getAuthSetting(callback);   
+     
+    }else{
+      api.showToast('请补全信息','none');
+      api.buttonCanClick(self,true);
+    };
+  },
+
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
@@ -53,6 +84,7 @@ Page({
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
   }, 
+
 })
 
   

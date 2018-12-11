@@ -81,6 +81,43 @@ class Base{
         wx.removeStorageSync('checkLoadAll');
     }
 
+    upLoadImg(param,callback) {
+        var that=this;
+        $.ajax({ // $.post，告辞
+            type: 'post',
+            contentType: false, // 关关关！必须得 false
+                                // 这个不关会扔一个默认值 application/x-www-form-urlencoded 过去，后端拿不到数据的！
+                               // 而且你甚至不能传个字符串 'multipart/form-data'，后端一样拿不到数据！
+            processData: false, // 关关关！重点
+            url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/FtpImage/upload',
+            data: param,
+            success:function(res){
+
+                if(res.solely_code==201000){
+
+                }else if(res.solely_code==200000){
+                    token[params.data.tokenFuncName](callback,{refreshToken:true});
+                }else{
+                    params.sCallback && params.sCallback(res.data);
+                };
+
+            },
+            error:function(res){
+                 console.log(err)
+                //wx.hideNavigationBarLoading();
+                //that._processError(err);
+                // params.eCallback && params.eCallback(err);
+                wx.showToast({
+                    title:'网络故障',
+                    icon:'fail',
+                    duration:2000,
+                    mask:true,
+                });
+            }
+        });
+    }
+
+
     _processError(err){ 
         console.log(err);
     }
@@ -449,15 +486,18 @@ class Base{
 
     };
 
+
+
     checkComplete(obj){
         var pass = true;
         for(var key in obj){
-          if(!obj[key]||JSON.stringify(obj[key])=='[]'){
+          if(!obj[key]||obj[key]=='0'){
+            console.log(obj[key]);
             pass = false;
           };
         };
         return pass;
-
+        console.log(pass);
     };
 
     getcurrentPage(){

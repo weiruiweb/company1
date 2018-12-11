@@ -16,6 +16,8 @@ Page({
     },
     isFirstLoadAllStandard:['userInfoGet'],
   },
+
+
   onLoad: function () {
     const self = this;
    	api.commonInit(self);  
@@ -95,4 +97,6 @@ Page({
       api.buttonCanClick(self,true);
    };
   },
+
+  
 })

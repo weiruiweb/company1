@@ -18,11 +18,11 @@ page{
 	border-bottom:solid 1px #e0e0e0;
 }
 .input_list1 .input_before1{
-	width:22%;
+	width:32%;
 	color:#666;
 }
 .input_list1 .input{
-	width:70%;
+	width:68%;
 	color:#666;
 	text-align: right;
 }

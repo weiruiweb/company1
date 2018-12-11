@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 52,
+			"current": 53,
 			"list": [
 				{
 					"id": 0,
@@ -350,7 +350,13 @@
 				{
 					"id": -1,
 					"name": "个人中心",
-					"pathName": "pages/entrance/user/user"
+					"pathName": "pages/entrance/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "项目管理",
+					"pathName": "pages/entrance/userProjectDetail/userProjectDetail"
 				}
 			]
 		}

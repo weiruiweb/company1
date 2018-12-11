@@ -15,24 +15,17 @@
 		</view>
 		<view class="input_list1 w710  font30 flex">
 			<view class="list_img flex">
-				<image src="/images/project2.png"></image>
+				<image src="/images/project3.png"></image>
 			</view>
 			<view class="input_before1">客户名称:</view>
 			<view class="input">{{web_mainData.small_title}}</view>
 		</view>
 		<view class="input_list1 w710  font30 flex">
 			<view class="list_img flex">
-				<image src="/images/project3.png"></image>
+				<image src="/images/project4.png"></image>
 			</view>
 			<view class="input_before1">客户电话:</view>
 			<view class="input">{{web_mainData.contactPhone}}</view>
-		</view>
-		<view class="input_list1 w710  font30 flex">
-			<view class="list_img flex">
-				<image src="/images/project4.png"></image>
-			</view>
-			<view class="input_before1">项目备注:</view>
-			<view class="input">{{web_mainData.description}}</view>
 		</view>
 		<view class="input_list1 w710  font30 flex">
 			<view class="list_img flex">
@@ -55,24 +48,31 @@
 		</view>
 		<view class="input_list1 w710  font30 flex">
 			<view class="list_img flex">
-				<image src="/images/project6.png"></image>
+				<image src="/images/project7.png"></image>
 			</view>
 			<view class="input_before1">项目工期:</view>
 			<view class="input">{{web_mainData.view_count}}</view>
 		</view>
 		<view class="input_list1 w710  font30 flex">
 			<view class="list_img flex">
-				<image src="/images/project6.png"></image>
+				<image src="/images/project8.png"></image>
 			</view>
 			<view class="input_before1">项目剩余工期:</view>
 			<view class="input">{{web_mainData.passage1}}</view>
 		</view>
 		<view class="input_list1 w710  font30 flex">
 			<view class="list_img flex">
-				<image src="/images/project6.png"></image>
+				<image src="/images/project9.png"></image>
 			</view>
 			<view class="input_before1">项目进度:</view>
 			<view class="input">{{web_mainData.passage2}}</view>
+		</view>
+		<view class="w710  font30" style="margin-top:30rpx;padding-bottom:40rpx;display:flex;">
+			<view class="list_img flex" style="width:8%;">
+				<image src="/images/project3.png"></image>
+			</view>
+			<view class="input_before1" style="width:32%;">项目备注:</view>
+			<view class="input">{{web_mainData.description}}</view>
 		</view>
 	</view>
 </view>

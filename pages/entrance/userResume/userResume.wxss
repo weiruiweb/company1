@@ -19,3 +19,20 @@ page{
 	border-radius:16rpx;
 	color:#666;
 }
+.next image{
+	width:12rpx;
+	height:20rpx;
+}
+.picker{
+	width:100%;
+}
+.uploader_item image{
+	width:160rpx;
+	height:160rpx;
+}
+textarea{
+	padding:3%;
+	height:200rpx;
+	border:solid 1px #e0e0e0;
+	height:scroll;
+}

@@ -31,28 +31,21 @@
 	</view>
 	<view class="next_page scale2" style="{{img}};background-position: -658px -46px;"></view>
 </view>
-
+<view class="delivery font28">
+	<view class="w710 flex">
+		<view class="delivery_item flex1"  bindtap="chooseBuyWay" data-buytype="delivery">
+			<image src="{{web_buyType =='delivery'?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
+			快递配送
+		</view>
+		<view class="delivery_item flex1"  bindtap="chooseBuyWay" data-buytype="pickself">
+			<image src="{{web_buyType =='pickself'?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
+			上门自提
+		</view>
+	</view>
+</view>
 <view>
 	<block wx:for="{{web_mainData}}">
 		<view class="order_list">
-			<view class="w710 delivery flex1 font28">
-				<view class="delivery_item flex1"  bindtap="chooseBuyWay" data-buytype="delivery">
-					<image src="{{web_buyType =='delivery'?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
-					快递配送
-				</view>
-				<view class="delivery_item flex1"  bindtap="chooseBuyWay" data-buytype="pickself">
-					<image src="{{web_buyType =='pickself'?'/images/mall_select_active.jpg':'/images/select.png'}}"></image>
-					上门自提
-				</view>
-			</view>
-
-			<view>
-				
-				<view style="font-size:28rpx;display:flex;margin-top:20rpx">可用积分{{web_userData.score}}
-					<input placeholder="请输入您要使用的积分" style="border:1px solid #e5e5e5" data-key="score" bindblur="inputBind" value="{{web_sForm.score}}"></input>
-				</view>
-				
-			</view>
 			<view class="order_confirm">
 				<block wx:for="{{item.products}}" wx:key="id" wx:for-item="c_item">
 					<view class="flexRowBetween orderlistShow ">
@@ -71,17 +64,35 @@
 		</view>
 	</block>
 </view>
-<view style="font-size:28rpx;display:flex;margin-top:20rpx">可用余额{{web_userData.balance}}
-	<input placeholder="请输入您要使用的余额" style="border:1px solid #e5e5e5" data-key="balance" bindblur="inputBind" value="{{web_sForm.balance}}"></input>
+<view class="w710 flex balance bg_white" style="margin-bottom:20rpx;">			
+	<view class="balance_left font28">
+		<text>可用积分</text><text>{{web_userData.score}}</text>
+	</view>
+	<view class="balance_right bg_white">
+		<input class="font24" placeholder="请输入您要使用的积分" style="border:1px solid #e5e5e5;" data-key="score" bindblur="inputBind" value="{{web_sForm.score}}"></input>
+	</view>
 </view>
-<view style="font-size:28rpx">订单总额：{{web_price}}</view>
-<view style="font-size:28rpx">积分抵扣：{{web_pay.score?web_pay.score:'0'}}</view>
-<view style="font-size:28rpx">优惠券抵扣：{{web_couponPrice?web_couponPrice:'0'}}</view>
-<view style="font-size:28rpx">佣金抵扣：{{web_pay.balance?web_pay.balance:'0'}}</view>
-<view style="font-size:28rpx">其他抵扣：{{web_pay.other?web_pay.other:'0'}}</view>
+<view class="w710 flex balance bg_white" style="margin-bottom:20rpx;">
+	<view class="balance_left font28"><text>可用余额</text><text>{{web_userData.balance}}</text></view>
+	<view class="balance_right  font28">
+		<input placeholder="请输入您要使用的余额" style="border:1px solid #e5e5e5" data-key="balance" bindblur="inputBind" value="{{web_sForm.balance}}"></input>
+	</view>
+</view>
+<view class="w710 flex  balance">
+	<view class="balance_left font28">订单总额：{{web_price}}</view>
+	<view class="balance_right font28">积分抵扣：{{web_pay.score?web_pay.score:'0'}}</view>
+</view>
+<view class="w710 flex  balance">
+	<view class="balance_left font28">优惠券抵扣：{{web_couponPrice?web_couponPrice:'0'}}</view>
+	<view class="balance_right font28">佣金抵扣：{{web_pay.balance?web_pay.balance:'0'}}</view>
+</view>
+<view class="w710 flex  balance">
+	<view style="font-size:28rpx">其他抵扣：{{web_pay.other?web_pay.other:'0'}}</view>
+</view>
 <block wx:for="{{web_couponData}}" wx:key="id" >
 	<view class="ticket flex" wx:if="{{item.type=='4'}}">
 	    <view class="ticket_bg">
+	    	<view class="font24 ticket_tlt">优惠券</view>
 	        <image src="/images/discount4.jpg"></image>
 	        <view class="ticket_cont">
 	            <view class="discount_left">
@@ -96,7 +107,7 @@
 	                </view>
 	            </view>
 	            <view class="select_discount">
-		        	<view class="submit_info bg font24" data-id="{{item.id}}" bindtap="useCoupon" style="width:140rpx;color:#666;font-size:24rpx;height:50rpx;line-height: 50rpx;">去使用
+		        	<view class="submit_info bg font24" data-id="{{item.id}}" bindtap="useCoupon" style="width:140rpx;color:#666;font-size:24rpx;height:50rpx;line-height: 50rpx;">点击使用
 	                </view>
 		        </view>
 	        </view>
@@ -107,6 +118,7 @@
 
 	<view class="ticket flex"  wx:else>
 	    <view class="ticket_bg">
+	    	<view class="font24 ticket_tlt">抵扣券</view>
 	        <image src="/images/discount5.jpg"></image>
 	        <view class="ticket_cont">
 	            <view class="discount_left">

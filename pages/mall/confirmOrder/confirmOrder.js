@@ -160,7 +160,6 @@ Page({
   },
 
   useCoupon(e){
-
     const self = this;
     var id = api.getDataSet(e,'id');
     var findCoupon = api.findItemInArray(self.data.couponData,'id',id);

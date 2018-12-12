@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 64,
 			"list": [
 				{
 					"id": 0,
@@ -382,6 +382,48 @@
 					"name": "热门职位",
 					"pathName": "pages/entrance/position/position",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商城确认",
+					"pathName": "pages/mall/confirmOrder/confirmOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商城确认1",
+					"pathName": "pages/mall/confirmOrder/confirmOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商城确认1",
+					"pathName": "pages/mall/confirmOrder/confirmOrder",
+					"query": "95"
+				},
+				{
+					"id": -1,
+					"name": "商城确认1",
+					"pathName": "pages/mall/confirmOrder/confirmOrder",
+					"query": "95"
+				},
+				{
+					"id": -1,
+					"name": "商城确认1",
+					"pathName": "pages/mall/confirmOrder/confirmOrder",
+					"query": "95"
+				},
+				{
+					"id": -1,
+					"name": "商城确认1",
+					"pathName": "pages/mall/confirmOrder/confirmOrder",
+					"query": "95"
+				},
+				{
+					"id": -1,
+					"name": "商城确认1",
+					"pathName": "pages/mall/confirmOrder/confirmOrder",
+					"query": "95"
 				}
 			]
 		}

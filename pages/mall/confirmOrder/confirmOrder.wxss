@@ -1,5 +1,14 @@
 /**index.wxss**/
-@import "../../../wxParse/wxParse.wxss"; 
+@import "../../../wxParse/wxParse.wxss"
+
+page{
+	width:100%;
+	min-height:100%;
+	background:#f2f2f2;
+}
+.bg_white{
+	background:#fff;
+}
 #confirmOrder{
 	width:100%;
 	height:100%;
@@ -155,7 +164,8 @@ textarea{
 	height:24rpx;
 }
 .delivery {
-	margin-top:30rpx;
+	padding:30rpx 0;
+	border-bottom:solid 1px #e0e0e0;
 }
 .delivery_item image{
 	width:30rpx;
@@ -203,7 +213,7 @@ textarea{
 	text-align: center;
 }
 .discount_left text{
-	font-size: 80rpx;
+	font-size: 64rpx;
 	color:#fff;
 }
 .discount_center{
@@ -246,5 +256,34 @@ textarea{
 	background:none;
 	width:100%;
 	height:100%;
+	color:#fff;
+}
+.balance{
+	height:80rpx;
+	background:#fff;
+}
+
+.balance_left,.balance_right{
+	width:50%;
+}
+.balance_left text{
+	margin-right:20rpx;
+}
+.balance_right input{
+	padding:0 2%;
+	width:96%;
+	border:solid 1px #e0e0e0;
+	border-radius:10rpx;
+}
+.balance_right input{
+	border:none;
+}
+.ticket_tlt{
+	width:80rpx;
+	height:80rpx;
+	position: absolute;
+	left:18rpx;
+	top:18rpx;
+	transform: rotate(-45deg);
 	color:#fff;
 }

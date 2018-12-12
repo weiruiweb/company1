@@ -29,7 +29,6 @@
 		<view class="made_cont">
 			<view class="flexRowBetween made_tlt">
 				<view class="made_name">{{web_labelData[web_index].title}}</view>
-				<view class="made_more" >更多 ></view>
 			</view>	
 			<view class="made_case">
 				<block wx:for="{{web_mainData}}" wx:key="id">

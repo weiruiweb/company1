@@ -23,38 +23,27 @@ Page({
     const self = this;
     api.commonInit(self);
     self.userInfoGet();
-    
+
   },
 
- getPhoneNumber: function (e) {
-	console.log(e.detail.iv);
-	console.log(e.detail.encryptedData);
-	wx.login({
-		success: res => {
-			console.log(res.code);
-			wx.request({
-			    url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/ProgrameToken/get',
-			    method:'POST',
-			    data: {
-					'encryptedData': encodeURIComponent(e.detail.encryptedData),
-					'iv': e.detail.iv,
-					'code': res.code
-				},
-			       
-			success: function (res) {
-				console.log(res)
-				if (res.solely_code ==100000) {//我后台设置的返回值为1是正确
-				//存入缓存即可
-					wx.setStorageSync('phone', res.phone);
-				}
-			},
-			fail: function (err) {
-				console.log(err);
-			}
-			})
-		}
-	})
-},
+  getPhoneNumber(e) {
+    const self = this;
+    const postData = {
+      appid:wx.getStorageSync('mall_info').thirdApp.appid,
+      tokenFuncName:'getMallToken',
+      encryptedData:e.detail.encryptedData,
+      iv:e.detail.iv
+    };
+    const callback = (res) =>{
+      if(res.solely_code==100000){
+        self.data.sForm.phone = res.info.phoneNumber; 
+      };
+      self.setData({
+        web_sForm:self.data.sForm,
+      });
+    }
+    api.decryptWxInfo(postData,callback)
+  },
 
 
   userInfoGet(){
@@ -63,7 +52,7 @@ Page({
     postData.tokenFuncName = 'getMallToken';
     const callback = (res)=>{
       console.log(res)
-      self.data.mainData = res;
+      self.data.mainData = res.info.data[0];
       self.data.sForm.phone = res.info.data[0].info.phone;
       self.data.sForm.name = res.info.data[0].info.name;
       self.data.sForm.gender = res.info.data[0].info.gender;

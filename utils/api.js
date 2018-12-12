@@ -277,7 +277,21 @@ class Api extends Base{
             }
         };
         this.request(allParams);
+    }      
+
+    decryptWxInfo(param,callback){
+        var allParams ={
+            url:'Func/Common/decryptWxInfo',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
     }  
+
+
 
     pay(param,callback){
         var allParams ={

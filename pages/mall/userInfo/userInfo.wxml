@@ -2,7 +2,7 @@
 <view class="user_input ">
 	<view class="users_detail flexRowBetween">
 		<view class="input_note">昵称:</view>
-		<input placeholder="请输入昵称"   value="{{web_mainData.info.data[0].nickname}}"></input>
+		<input placeholder="请输入昵称"   value="{{web_mainData.nickname}}"></input>
 	</view>
 </view>
 <view class="user_input ">
@@ -44,7 +44,9 @@
 <view class="user_input ">
 	<view class="users_detail flexRowBetween">
 		<view class="input_note">联系方式:</view>
-		<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">绑定手机号</button> 
+		 
+		<input  data-key="phone" bindblur="changeBind" value="{{web_sForm.phone}}" wx:if="!{{web_sForm.phone}}"></input>
+		<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if="{{web_mainData.phone==''}}">绑定手机号</button>
 	</view>
 </view>
 

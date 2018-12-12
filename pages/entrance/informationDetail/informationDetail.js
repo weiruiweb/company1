@@ -7,9 +7,17 @@ const token = new Token();
 
 
 Page({
-
   data: {
     mainData:[],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    circular: true,
+    interval: 2000,
+    duration: 500,
+    previousMargin: 0,
+    swiperIndex:0,
+    nextMargin: 0,
     isFirstLoadAllStandard:['getMainData'],
   },
 
@@ -19,7 +27,6 @@ Page({
     self.data.id = options.id;
     self.getMainData();
   },
-
   getMainData(){
     const self= this;
     const postData = {};
@@ -42,6 +49,11 @@ Page({
     };
     api.articleGet(postData,callback);
   },
-
+  swiperChange(e) {
+    const that = this;
+    that.setData({
+      swiperIndex: e.detail.current,
+    })
+  },
 
 })

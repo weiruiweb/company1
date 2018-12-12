@@ -1,8 +1,72 @@
 /**index.wxss**/
 @import "../../../wxParse/wxParse.wxss"
+.page-body image{
+	width:100%;
+	height:400rpx;
+}
+view{
+	color:#666;
+}
+.swiper{
+	height:400rpx;
+	 position:relative;
+}
+swiper{
+	width:100%;
+	height: 100%;
+}
+.swiper-block{
+  height: 400rpx;
+  width: 100%;
+}
+.swiper-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow:unset;
+}
+.slide-image{
+  height:330rpx;
+  width: 520rpx;
+  border-radius: 9rpx;
+  box-shadow: 0px 0px 30rpx rgba(0, 0,0,.2); 
+  margin: 0rpx 30rpx;
+  z-index: 1;  
+}
+.active{
+  transform: scale(1.14);
+  transition:all .2s ease-in 0s;
+  z-index: 20; 
+}
+
+.dots{ 
+  position: absolute; 
+  right: 50rpx; 
+  bottom: 20rpx; 
+  display: flex; 
+  justify-content: center; 
+} 
+.dots .dot{ 
+  margin: 0 12rpx; 
+  width: 18rpx; 
+  height: 18rpx; 
+  background: #333; 
+  border-radius: 8rpx; 
+  transition: all .6s; 
+} 
+.dots .dot.active{ 
+  width: 34rpx; 
+  background: #fff; 
+}
+ 
+.swiper image {
+  width: 100%;
+  height: 100%;
+}
 .banner{
 	width:100%;
-	height:360rpx;
+	height:400rpx;
 	overflow: hidden;
 }
 .banner image{
@@ -15,7 +79,6 @@
 	height:318rpx;
 	border-top:solid 1px #e0e0e0;
 	border-bottom:solid 1px #e0e0e0;
-	margin-top: 44rpx;
 }
 .great_left{
 	width:50%;
@@ -61,7 +124,7 @@
 }
 .menu .great_top{
 	width:33.33%;
-	height:140rpx;
+	height:156rpx;
 }
 .menu .great_tRight{
 	width:54%;

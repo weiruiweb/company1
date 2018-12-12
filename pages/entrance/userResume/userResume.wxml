@@ -11,30 +11,30 @@
 	<view class="input_list1 flex" style="justify-content:flex-start">
 		<text class="font30 input_before1">性别:</text>
 		<view data-value="1" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:100rpx;align-items:center">
-			<image src="{{web_submitData.gender=='1'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx;" ></image>
-      		<view style="font-size:15px">男</view>
+			<image src="{{web_submitData.gender=='1'?'/images/male_a.png':'/images/male.jpg'}}" style="width:40rpx;height:40rpx;margin-right:10rpx;" ></image>
+      		<view class="font28" style="{{web_submitData.gender=='1'?'color:#21c3d4':''}}">男</view>
 		</view>
    		
 		<view data-value="0" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:80rpx;align-items:center">
-			<image src="{{web_submitData.gender=='0'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx" ></image>
-      		<view style="font-size:15px">女</view>
+			<image src="{{web_submitData.gender=='0'?'/images/female_a.jpg':'/images/female.jpg'}}" style="width:40rpx;height:40rpx;margin-right:10rpx" ></image>
+      		<view class="font28" style="{{web_submitData.gender=='0'?'color:#21c3d4':''}}">女</view>
 		</view>
 	</view>
 
 	<view class="input_list1 flex" style="justify-content:flex-start">
 		<view class="font30 input_before1" style="width:22%;">投递来源:</view>
 		<view class="flexRowCenter" data-value="0" style="width:22%" data-key="class" bindtap="changeBind">
-			<image src="{{web_submitData.class=='0'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:40rpx;height:40rpx;margin-right:10rpx;" ></image>
+			<image src="{{web_submitData.class=='0'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:30rpx;height:30rpx;margin-right:10rpx;" ></image>
       		<view style="font-size:15px">智联</view>
 		</view>
    		
 		<view class="flexRowCenter" data-value="1" style="width:26%"  data-key="class" bindtap="changeBind">
-			<image src="{{web_submitData.class=='1'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:40rpx;height:40rpx;margin-right:10rpx" ></image>
+			<image src="{{web_submitData.class=='1'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:30rpx;height:30rpx;margin-right:10rpx" ></image>
       		<view style="font-size:15px">公司邀约</view>
 		</view>
 
 		<view data-value="2" style="width:31%"  data-key="class" bindtap="changeBind" class="flexRowCenter">
-			<image src="{{web_submitData.class=='2'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:40rpx;height:40rpx;margin-right:10rpx" ></image>
+			<image src="{{web_submitData.class=='2'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:30rpx;height:30rpx;margin-right:10rpx" ></image>
       		<view style="font-size:15px">BOSS直聘</view>
 		</view>
 	</view>

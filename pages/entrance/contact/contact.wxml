@@ -12,17 +12,14 @@
             <view class="contact_left1">
               <image src="/images/index_icon6.png"></image>
             </view>  
-              <view class="font26 color6 contact_center">{{web_noticeData.description}}</view>
+              <view class="font26 color6 contact_center avoidOverflow">{{web_noticeData.description}}</view>
           </view>
           <view class="contact_list flex">
             <view class="contact_left1">
               <image src="/images/index_icon7.png"></image>
             </view>
-              <view class="font26 color6" style="border-right:solid 1px #e0e0e0;width:71%;">{{web_noticeData.title
+              <view class="font26 color6">{{web_noticeData.title
               }}</view>
-              <view class="contact_right1" bindtap="intoMap">
-                <image src="/images/index_icon8.png"></image>
-              </view>
           </view>
       </view>
       <view class="contact_left contact_right">

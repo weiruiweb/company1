@@ -3,6 +3,76 @@ page{
 	width:100%;
 	background:#f2f2f2;
 }
+.page-body image{
+	width:100%;
+	height:400rpx;
+}
+.swiper{
+	height:400rpx;
+	 position:relative;
+}
+swiper{
+	width:100%;
+	height: 100%;
+}
+.swiper-block{
+  height: 400rpx;
+  width: 100%;
+}
+.swiper-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow:unset;
+}
+.slide-image{
+  height:330rpx;
+  width: 520rpx;
+  border-radius: 9rpx;
+  box-shadow: 0px 0px 30rpx rgba(0, 0,0,.2); 
+  margin: 0rpx 30rpx;
+  z-index: 1;  
+}
+.active{
+  transform: scale(1.14);
+  transition:all .2s ease-in 0s;
+  z-index: 20; 
+}
+
+.dots{ 
+  position: absolute; 
+  right: 50rpx; 
+  bottom: 20rpx; 
+  display: flex; 
+  justify-content: center; 
+} 
+.dots .dot{ 
+  margin: 0 12rpx; 
+  width: 18rpx; 
+  height: 18rpx; 
+  background: #333; 
+  border-radius: 8rpx; 
+  transition: all .6s; 
+} 
+.dots .dot.active{ 
+  width: 34rpx; 
+  background: #fff; 
+}
+ 
+.swiper image {
+  width: 100%;
+  height: 100%;
+}
+.banner{
+	width:100%;
+	height:400rpx;
+	overflow: hidden;
+}
+.banner image{
+	width:100%;
+	height:100%;
+}
 .state{
 	margin-top: 20rpx;
 }

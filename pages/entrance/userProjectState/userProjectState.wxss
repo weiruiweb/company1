@@ -65,6 +65,7 @@ page{
 	align-items: center;
   	justify-content: center;
   	color:#666;
+  	background:#fff;
 }
 .date_left{
 	height:70rpx;
@@ -126,5 +127,19 @@ page{
   font-size:22rpx;
 
 }
-.general{background:#ef4f4f;}
-.weak{background:#f09091;}
+.User_cont{
+	width:50%;
+	height:300rpx;
+	text-align:center;
+}
+.user_img{
+	width:150rpx;
+	height:150rpx;
+	overflow:hidden;
+	margin:0 auto 30rpx auto;
+}
+.user_img image{
+	width:150rpx;
+	height:150rpx;
+	margin:0 auto;
+}

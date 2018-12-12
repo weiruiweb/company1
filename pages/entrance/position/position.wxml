@@ -9,7 +9,7 @@
 				</view>
 			</view>
 			<view class="clientList_right">
-				<view class="clientTime">{{item.create_time}}</view>
+				<view class="clientTime color font22">{{item.create_time}}</view>
 			</view>
 		</view>
 		<view class="clientList flexRowBetween font30">

@@ -3,15 +3,19 @@
 <view class="User_cont">
 	<block wx:for="{{web_mainData}}" wx:key="id">
 		<view class="clientList flexRowBetween">
-			<image src="{{item.mainImg[0].url}}" style="border-radius:50%"></image>
+			<view class="client_img">
+				<image src="{{item.mainImg[0].url}}" style="border-radius:50%"></image>
+			</view>
 			<view class="clientList_center" style="align-items:center;">
 				<view class="clientName">
-					<text style="line-height:63px">{{item.title}}</text>
+					<text class="font30 color6">{{item.title}}</text>
 				</view>
 			</view>
 		</view>
-		<view class="clientList flexRowBetween font30">
-			{{item.description}}	
+		<view class="w710 flexRowBetween font30" style="background:#fff;">
+			<view class="client_intro">
+				{{item.description}}	
+			</view>
 		</view>
 	</block>
 </view>

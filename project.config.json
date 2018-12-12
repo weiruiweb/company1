@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 54,
+			"current": 56,
 			"list": [
 				{
 					"id": 0,
@@ -362,7 +362,19 @@
 				{
 					"id": -1,
 					"name": "投递简历",
-					"pathName": "pages/entrance/userResume/userResume"
+					"pathName": "pages/entrance/userResume/userResume",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的项目",
+					"pathName": "pages/entrance/userProject/userProject",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "项目动态",
+					"pathName": "pages/entrance/userProjectState/userProjectState"
 				}
 			]
 		}

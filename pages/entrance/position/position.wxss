@@ -33,10 +33,5 @@
   font-size:24rpx;
   margin:15rpx 0rpx;
   }
-.clientTime{
-  color:#ddd;
-  font-size:22rpx;
-
-}
 .general{background:#ef4f4f;}
 .weak{background:#f09091;}

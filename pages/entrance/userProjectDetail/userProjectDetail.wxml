@@ -71,8 +71,8 @@
 			<view class="list_img flex" style="width:8%;">
 				<image src="/images/project3.png"></image>
 			</view>
-			<view class="input_before1" style="width:32%;">项目备注:</view>
-			<view class="input" styyle="width:60%;">{{web_mainData.description}}</view>
+			<view class="input_before1" style="width:24%;">项目备注:</view>
+			<view class="input" style="width:68%;">{{web_mainData.description}}</view>
 		</view>
 	</view>
 </view>

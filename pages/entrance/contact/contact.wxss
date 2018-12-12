@@ -1,0 +1,60 @@
+/**index.wxss**/
+@import "../../../wxParse/wxParse.wxss"; 
+view{
+	color:#666;
+}
+.contact{
+	padding:0 4%;
+	width:92%;
+	margin:36rpx 0;
+}
+.contact_list{
+	height: 64rpx;
+	font-size: 28rpx;
+	color:#666;
+	width:100%;
+}
+.contact_list image{
+	width:28rpx;
+	height:30rpx;
+	margin-right: 10rpx;
+}
+.contact_left{
+	width:70%;
+}
+.contact_right{
+	width:30%;
+}
+.contact_left1{
+	width:12%;
+}
+.contact_right1{
+	width:15%;
+	text-align: center;
+}
+.contact_right1 image{
+	margin:0 auto;
+}
+.contact_center{
+	width:88%;
+}
+.copy{
+	color:#333;
+	border-bottom: solid 1px #333;
+}
+.contact_right{
+	text-align: center;
+}
+.contact_right image{
+	width:200rpx;
+	height: 200rpx;
+}
+.contact_right{
+	font-size: 28rpx;
+}
+.contact_deatil image{
+	width:100%;
+	height:400rpx;
+	border-radius: 20rpx;
+	margin:20rpx auto;
+}

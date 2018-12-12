@@ -117,6 +117,25 @@ Page({
     api.articleGet(postData,callback);
   },
 
+  intoMap(){
+    const self = this;
+    wx.getLocation({
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success: function (res) {  //因为这里得到的是你当前位置的经纬度
+        var latitude = res.latitude
+        var longitude = res.longitude
+        wx.openLocation({        //所以这里会显示你当前的位置
+          longitude: 108.8939050000,
+          latitude: 34.2377310000,
+          //109.045249,34.325841
+          name: "西安纯粹云信息科技有限公司",
+          address:"西安纯粹云信息科技有限公司",
+          scale: 28
+        })
+      }
+    })
+  },
+
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

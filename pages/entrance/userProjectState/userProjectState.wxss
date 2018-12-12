@@ -57,3 +57,32 @@ page{
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2; 
 }
+.date{
+	height:90rpx;
+	border-top:solid 1px #ccc;
+	border-bottom:solid 1px #ccc;
+	display:flex;
+	align-items: center;
+  	justify-content: center;
+  	color:#666;
+}
+.date_left{
+	height:70rpx;
+}
+.date_item{
+	height:70rpx;
+	border-right:solid 1px #ccc;
+	width:50%;
+	text-align:center;
+	display:flex;
+	align-items: center;
+  	justify-content: center;
+}
+.date_item .text{
+	height:50%;
+}
+.date_item image{
+	width:17rpx;
+	height:10rpx;
+	margin-left:10rpx;
+}

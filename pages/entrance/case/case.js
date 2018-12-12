@@ -52,6 +52,11 @@ Page({
         api.showToast('没有更多了','fail');
       }
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+      setTimeout(function()
+      {
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+      },300);
       self.setData({
         web_mainData:self.data.mainData,
       }); 
@@ -85,10 +90,10 @@ Page({
 
               }
              }
-          }else{
-            api.showToast('没有更多了','fail');
           }
         }
+      }else{
+        api.showToast('没有更多了','fail');
       }
       wx.hideLoading();
       self.setData({
@@ -99,6 +104,14 @@ Page({
     api.labelGet(postData,callback);   
   },
 
+  onPullDownRefresh(){
+    const self = this;
+    wx.showNavigationBarLoading(); 
+    self.data.searchData=[];
+    
+    self.getMainData(true);
+
+  },
 
   menu(e){
     const self = this;

@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="contact">
+  <view class="contact_cont flexRowBetween">
+      <view class="contact_left">
+          <view class="contact_list flex">
+            <view class="contact_left1">
+              <image src="/images/index_icon5.png"></image>
+            </view>
+              <view class="font26 color6 contact_center">{{web_noticeData.contactPhone}}</view>
+          </view>
+          <view class="contact_list flex">
+            <view class="contact_left1">
+              <image src="/images/index_icon6.png"></image>
+            </view>  
+              <view class="font26 color6 contact_center">{{web_noticeData.description}}</view>
+          </view>
+          <view class="contact_list flex">
+            <view class="contact_left1">
+              <image src="/images/index_icon7.png"></image>
+            </view>
+              <view class="font26 color6" style="border-right:solid 1px #e0e0e0;width:71%;">{{web_noticeData.title
+              }}</view>
+              <view class="contact_right1" bindtap="intoMap">
+                <image src="/images/index_icon8.png"></image>
+              </view>
+          </view>
+      </view>
+      <view class="contact_left contact_right">
+          <image src="{{web_noticeData.mainImg[0].url}}"></image>
+          <view>客服二维码</view>
+      </view>
+  </view>
+</view>
+<view class="w710 contact_deatil">
+  <view class="font24 color6">
+    <view class="content ql-editor" >
+      <import src="../../../wxParse/wxParse.wxml"/>
+      <template is="wxParse" data="{{wxParseData:web_noticeData.content}}"/>
+    </view> 
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<!--user.wxml-->
+
+<view class="User_cont">
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="clientList flexRowBetween">
+			<image src="{{item.mainImg[0].url}}" style="border-radius:50%"></image>
+			<view class="clientList_center" style="align-items:center;">
+				<view class="clientName">
+					<text style="line-height:63px">{{item.title}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="clientList flexRowBetween font30">
+			{{item.description}}	
+		</view>
+	</block>
+</view>
+

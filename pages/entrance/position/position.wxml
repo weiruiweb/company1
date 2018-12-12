@@ -1,0 +1,20 @@
+<!--user.wxml-->
+
+<view class="User_cont">
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="clientList flexRowBetween">
+			<view class="clientList_center" style="align-items:center;">
+				<view class="clientName">
+					<text style="line-height:63px">{{item.title}}</text>
+				</view>
+			</view>
+			<view class="clientList_right">
+				<view class="clientTime">{{item.create_time}}</view>
+			</view>
+		</view>
+		<view class="clientList flexRowBetween font30">
+			{{item.description}}	
+		</view>
+	</block>
+</view>
+

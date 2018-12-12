@@ -1,4 +1,5 @@
 {
   "navigationBarTitleText": "项目管理",
-  "disableScroll": true
+  "disableScroll": true,
+   "enablePullDownRefresh": true
 }

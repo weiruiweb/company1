@@ -20,43 +20,43 @@
               <view class="font26 color6" style="font-weight:700;text-align: left;">微信会员共享</view>
           </view>
       </view>
-      <view class="great_top great_bottom flex">
+      <view class="great_top great_bottom flex" data-path="/pages/entrance/partner/partner" bindtap="intoPath">
           <view class="great_tRight">
               <image src="/images/index_icon2.png"></image>
           </view>
           <view class="great_tLeft avoidOverflow">
               <view class="font30" style="color:#67e1b8;text-align: left;">出色伙伴</view>
-              <view class="font26 color6" style="font-weight: 700;text-align: left;">特惠不打烊</view>
+              <view class="font26 color6" style="font-weight: 700;text-align: left;">我们的团队</view>
           </view>
       </view>
     </view>
 </view>
 <view class="menu flex">
-    <view class="great_top flexCenter">
+    <view class="great_top flexCenter" data-path="/pages/entrance/position/position" bindtap="intoPath">
       <view class="great_tRight">
           <image src="/images/index_icon3.png"></image>
       </view>
       <view class="great_tLeft avoidOverflow">
-          <view class="font24" style="color:#9087f9;text-align: left;">精品体验</view>
-          <view class="font22 color9" style="font-weight:normal;text-align: left;">微信会员</view>
+          <view class="font24" style="color:#9087f9;text-align: left;">热招职位</view>
+          <view class="font22 color9" style="font-weight:normal;text-align: left;">期待你的加入</view>
       </view>
   </view>
-  <view class="great_top flexCenter" style="border-left:solid 1px #e0e0e0;border-right:solid 1px #e0e0e0;">
+  <view class="great_top flexCenter" style="border-left:solid 1px #e0e0e0;border-right:solid 1px #e0e0e0;" bindtap="intoMap">
       <view class="great_tRight">
           <image src="/images/index_icon4.png"></image>
       </view>
       <view class="great_tLeft avoidOverflow">
-          <view class="font24" style="color:#5cdfdd;text-align: left;">精品体验</view>
-          <view class="font22 color9" style="font-weight:normal;text-align: left;">微信会员</view>
+          <view class="font24" style="color:#5cdfdd;text-align: left;">一键导航</view>
+          <view class="font22 color9" style="font-weight:normal;text-align: left;">期待您的到来</view>
       </view>
   </view>
-  <view class="great_top flexCenter">
+  <view class="great_top flexCenter" data-path="/pages/entrance/contact/contact" bindtap="intoPath">
       <view class="great_tRight">
           <image src="/images/index_icon5.png"></image>
       </view>
       <view class="great_tLeft avoidOverflow">
-          <view class="font24" style="color:#5cdfdd;text-align: left;">精品体验</view>
-          <view class="font22 color9" style="font-weight:normal;text-align: left;">微信会员</view>
+          <view class="font24" style="color:#5cdfdd;text-align: left;">联系我们</view>
+          <view class="font22 color9" style="font-weight:normal;text-align: left;">竭诚为您服务</view>
       </view>
   </view>
 </view>

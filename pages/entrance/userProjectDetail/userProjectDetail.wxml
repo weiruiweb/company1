@@ -72,7 +72,7 @@
 				<image src="/images/project3.png"></image>
 			</view>
 			<view class="input_before1" style="width:32%;">项目备注:</view>
-			<view class="input">{{web_mainData.description}}</view>
+			<view class="input" styyle="width:60%;">{{web_mainData.description}}</view>
 		</view>
 	</view>
 </view>

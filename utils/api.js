@@ -54,6 +54,21 @@ class Api extends Base{
         this.request(allParams);
     }
 
+
+
+    WxFormIdAdd(form_id,end_time){
+        var allParams ={
+            url:'Common/WxFormId/add',
+            type:'post',
+            data:{
+                tokenFuncName:'getEntranceToken',
+                form_id:form_id,
+                end_time:end_time,
+            },
+        };
+        this.request(allParams);       
+    }
+
     upload(param,callback){
         var allParams ={
             url:'Base/FtpImage/upload',

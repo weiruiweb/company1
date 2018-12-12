@@ -19,7 +19,7 @@ Page({
 
       class:''
     }, 
-    buttonCanClick:true
+    isFirstLoadAllStandard:['getMainData'],
 
   },
 
@@ -27,7 +27,8 @@ Page({
 
   onLoad() {
     const self = this;
-    token.getEntranceToken();
+    api.commonInit(self);
+    self.getMainData();
     self.setData({
     	web_submitData:self.data.submitData,
     	web_buttonCanClick:self.data.buttonCanClick
@@ -36,7 +37,7 @@ Page({
   },
 
 
-   getNowFormatDate() {
+  getMainData() {
     const self = this;
     var date = new Date();
     var seperator1 = "-";
@@ -50,6 +51,7 @@ Page({
         strDate = "0" + strDate;
     }
     var currentdate = year + seperator1 + month + seperator1 + strDate;
+    api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
     self.data.submitData.keywords =  currentdate.split('-')
     self.setData({
       web_submitData:self.data.submitData
@@ -79,6 +81,11 @@ Page({
       web_submitData:self.data.submitData
     })
     new Date(self.data.submitData.keywords.join("-")).getTime();
+  },
+
+
+  formIdAdd(e){
+    api.WxFormIdAdd(e.detail.formId,(new Date()).getTime()/1000+7*86400);  
   },
 
 
@@ -113,39 +120,7 @@ Page({
 
   upLoadImg(){
     const self = this;
-    wx.chooseImage({
-      count: 1,
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
-      success(res) {
-        console.log(res)
-        self.data.tempFilePaths = res.tempFilePaths[0]
-      }
-      
-    });
-    console.log(self.data.tempFilePaths)
-    const postData = {};
-    postData.token=wx.getStorageSync('entrance_token'),
-    postData.data = {
-      
-      filePath:self.data.tempFilePaths,
-      name:'file',
-    };
-    const callback = (res) =>{
-      if(res.solely_code==100000){
-        res = JSON.parse(res.data);
-        self.data.submitData.mainImg.push({url:res.info.url})
-        self.setData({
-          web_submitData:self.data.submitData
-        });
-      }else{
-        api.showToast('上传失败','none')
-      }
-    }
-    api.upload(postData,callback)
-  },
-
-    /*if(self.data.submitData.mainImg.length>2){
+    if(self.data.submitData.mainImg.length>2){
       api.showToast('仅限3张','fail');
       return;
     };
@@ -153,41 +128,34 @@ Page({
       mask: true,
       title: '图片上传中',
     });
+    const callback = (res)=>{
+      console.log('res',res)
+      if(res.solely_code==100000){
+
+        self.data.submitData.mainImg.push({url:res.info.url})
+        self.setData({
+          web_submitData:self.data.submitData
+        });
+        wx.hideLoading()  
+      }else{
+        api.showToast('网络故障','none')
+      }
+
+    };
 
     wx.chooseImage({
       count:1,
       success: function(res) {
         console.log(res);
-        var tempFilePaths = res.tempFilePaths
-        
-        wx.uploadFile({
-          url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/FtpImage/upload ',
-          filePath:tempFilePaths[0],
-          name: 'file',
-          formData: {
-            token:wx.getStorageSync('entrance_token')
-          },
-          success: function(res){
-            res = JSON.parse(res.data);
-            self.data.submitData.mainImg.push({url:res.info.url})
-            self.setData({
-              web_submitData:self.data.submitData
-            });
-            wx.hideLoading()
-
-          },
-          fail: function(err){
-            wx.hideLoading();
-            api.showToast('上传失败','fail')
-          }
-        })
+        var tempFilePaths = res.tempFilePaths;
+        console.log(callback)
+        api.uploadFile(tempFilePaths[0],'file',{tokenFuncName:'getEntranceToken'},callback)
       },
-
       fail: function(err){
         wx.hideLoading();
       }
     })
-  },*/
+  },
 
 
 

@@ -51,10 +51,7 @@ class Base{
                 getApp().globalData.buttonClick = false;
             },
             fail: function (err) {
-                console.log(err)
-                //wx.hideNavigationBarLoading();
-                //that._processError(err);
-                // params.eCallback && params.eCallback(err);
+                
                 wx.showToast({
                     title:'网络故障',
                     icon:'fail',
@@ -63,25 +60,42 @@ class Base{
                 });
                 getApp().globalData.buttonClick = false;
             }
-        });
+        });  
+    }
 
+    uploadFile(filePath,name,formData,callback){
+
+        var that = this;
+        const c_callback = (res)=>{
+            that.uploadFile(filePath,name,formData,callback);
+        };
+        console.log('uploadFile',formData)
+        if(formData.tokenFuncName){
+            if(formData.refreshTokn){
+                token[formData.tokenFuncName](c_callback,{refreshToken:true});
+            }else{
+                formData.token = token[formData.tokenFuncName](c_callback);
+            };
+            if(!formData.token){
+                return;
+            };
+        };
         wx.uploadFile({
-           url: url,
-            data: params.data,
-            method:params.type,
-            success:function(res){
-                if (res.data.solely_code == '200000') {
-                    token[params.data.tokenFuncName](callback,{refreshToken:true});
-                } else {
-                    params.sCallback && params.sCallback(res.data);
+            url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/FtpImage/upload',
+            filePath:filePath,
+            name:name,
+            formData:formData,
+            success: function (res) {
+                if(res.data){
+                    res.data = JSON.parse(res.data);
                 };
-
+                if (res.data.solely_code == '200000') {
+                    token[formData.tokenFuncName](c_callback,{refreshToken:true});
+                }else{
+                    callback&&callback(res.data);
+                };
             },
-            error:function(res){
-                 console.log(err)
-                //wx.hideNavigationBarLoading();
-                //that._processError(err);
-                // params.eCallback && params.eCallback(err);
+            fail: function(err){
                 wx.showToast({
                     title:'网络故障',
                     icon:'fail',
@@ -89,11 +103,11 @@ class Base{
                     mask:true,
                 });
             }
-        });
-
-       
-        
+        })
     }
+
+
+
 
     commonInit(self){
         wx.showLoading();

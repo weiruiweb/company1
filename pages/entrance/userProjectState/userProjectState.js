@@ -9,12 +9,12 @@ Page({
   data: {
     searchItem:{
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
-      passage_array:self.data.id,
+      
       user_type:1
     },
     labelData:[],
     mainData:[],
-    isFirstLoadAllStandard:['getMainData'],
+    isFirstLoadAllStandard:['getMainData','getProjectData'],
     startTime:'',
     endTime:'',
   },
@@ -24,6 +24,7 @@ Page({
     api.commonInit(self);
     self.data.id = options.id;
     self.getMainData();
+    self.getProjectData();
     
   },
 
@@ -36,7 +37,8 @@ Page({
     const postData={};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName='getEntranceToken';
-    postData.searchItem = api.cloneForm(self.data.searchItem)
+    postData.searchItem = api.cloneForm(self.data.searchItem);
+    postData.searchItem.passage_array=self.data.id;
     postData.getAfter = {
     	article:{
     		tableName:'article',
@@ -55,12 +57,58 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
+      setTimeout(function()
+      {
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+      },300);
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });
     };
     api.messageGet(postData,callback);
+  },
+
+  getProjectData(){
+    const self= this;
+    const postData = {};
+    postData.searchItem ={
+      thirdapp_id:app.globalData.solely_thirdapp_id,
+      id:self.data.id
+    };
+    postData.getAfter = {
+      userOne:{
+        tableName:'user',
+        middleKey:'user_no',
+        key:'user_no',
+        searchItem:{
+          status:1
+        },
+        condition:'='
+      },
+      userTwo:{
+        tableName:'user',
+        middleKey:'listorder',
+        key:'user_no',
+        searchItem:{
+          status:1
+        },
+        condition:'='
+      }
+    };
+    postData.searchItem.id = self.data.id;
+    const callback = (res)=>{
+      self.data.mainData = {};
+      if(res.info.data.length>0){
+        self.data.projectData = res.info.data[0];
+      };
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getProjectData',self);
+      self.setData({
+        web_projectData:self.data.projectData,
+      });   
+    };
+    api.articleGet(postData,callback);
   },
 
 

@@ -1,4 +1,5 @@
 {
   "navigationBarTitleText": "项目动态",
-  "disableScroll": true
+  "disableScroll": true,
+  "enablePullDownRefresh": true
 }

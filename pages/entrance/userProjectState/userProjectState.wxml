@@ -1,4 +1,26 @@
 <!--User.wxml-->
+<view class="User_cont">
+ 产品经理：
+	<view class="clientList flexRowBetween">
+		<image src="{{web_projectData.userOne[0].headImgUrl}}" style="border-radius:50%"></image>
+		<view class="clientList_center" style="align-items:center;">
+			<view class="clientName">
+				<text style="line-height:63px">{{web_projectData.userOne[0].nickname}}</text>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="User_cont">
+ 业务经理：
+	<view class="clientList flexRowBetween">
+		<image src="{{web_projectData.userTwo[0].headImgUrl}}" style="border-radius:50%"></image>
+		<view class="clientList_center" style="align-items:center;">
+			<view class="clientName">
+				<text style="line-height:63px">{{web_projectData.userTwo[0].nickname}}</text>
+			</view>
+		</view>
+	</view>
+</view>
 <view class="date font30">
     <view class="date_item">
         <view style="width:45%;display:flex;align-items:center;">
@@ -40,6 +62,7 @@
         </view> 
     </view>     
 </view>
+
 <view class="w710" style="height:100%;">
 	<block wx:for="{{web_mainData}}" wx:key="id">
 		<view class="state" bindtap="intoPath" data-path="/pages/entrance/userProjectState1/userProjectState1?id={{item.id}}">

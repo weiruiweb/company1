@@ -19,6 +19,9 @@ Page({
     values:[],    
     count:1,
     id:'',
+    searchItem:{
+      status:['in',1]
+    },
     skuData:[],
     choosed_sku_item:[],
     can_choose_sku_item:[],
@@ -33,9 +36,13 @@ Page({
 
   onLoad(options){
     const self = this;
+    console.log(options)
     api.commonInit(self);
     if(options.id){
       self.data.id = options.id;
+    };
+    if(options.is_group){
+      self.data.is_group = options.is_group
     };
     //初始化购物车
     var cartData = api.getStorageArray('cartData');
@@ -51,6 +58,7 @@ Page({
     self.getMainData();
     self.getMessageData();
     self.setData({
+      web_is_group:self.data.is_group,
       web_isInCollectData:self.data.isInCollectData,
       web_cart_count:self.data.cart_count,
       web_count:self.data.count,
@@ -106,11 +114,12 @@ Page({
         middleKey:'product_no',
         key:'product_no',
         condition:'=',
-        searchItem:{
-          status:['in',[1]]
-        },
+        searchItem:api.cloneForm(self.data.searchItem)
       } 
     };
+    if(self.data.is_group==1){
+      postData.getAfter.sku.searchItem.is_group = ['in',1]
+    };  
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];
@@ -121,17 +130,18 @@ Page({
             self.data.skuLabelData.push(self.data.mainData.label[key])
           };    
         };
+
         for (var i = 0; i < self.data.mainData.sku.length; i++) {
           if(self.data.mainData.sku[i].id==self.data.id){
             self.data.choosed_skuData = api.cloneForm(self.data.mainData.sku[i]);
             self.data.choosed_sku_item = api.cloneForm(self.data.mainData.sku[i].sku_item);
             var skuRes = api.skuChoose(self.data.mainData.sku,self.data.choosed_sku_item);
             self.data.can_choose_sku_item = skuRes.can_choose_sku_item;
-            console.log('self.data.can_choose_sku_item',self.data.can_choose_sku_item)
           };
+        
         };
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
-  
+        console.log(self.data.mainData)
       }else{
         api.showToast('商品信息有误','none');
       };
@@ -297,8 +307,15 @@ Page({
             }
           ],
           type:1
-        };
 
+        };
+        if(self.data.choosed_skuData.is_group==1){
+          c_postData.isGroup=true
+
+        };
+        if(self.data.group_no&&self.data.group_no!="undefined"){
+          c_postData.group_no=self.data.group_no
+        };
         const c_callback = (res)=>{
           api.buttonCanClick(self,true);
           if(res&&res.solely_code==100000){

@@ -106,7 +106,10 @@ class Base{
         })
     }
 
-
+    parentAdd(tokenFuncName,parent_no,callback){
+       var token = new Token({parent_no:parent_no});
+       token[tokenFuncName](callback,{refreshToken:true});
+    }
 
 
     commonInit(self){

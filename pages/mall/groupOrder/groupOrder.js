@@ -13,6 +13,7 @@ Page({
    searchItem:{
       thirdapp_id:'2',
       type:['in',[1,2]],
+      group_no:['NOT IN',null]
     },
     isFirstLoadAllStandard:['getMainData'],
   },
@@ -21,9 +22,7 @@ Page({
   onLoad(options){
     const self = this;
     api.commonInit(self);
-    if(options.num){
-      self.changeSearch(options.num)
-    };
+
     self.getMainData()
   },
 
@@ -130,6 +129,8 @@ Page({
       self.data.searchItem.pay_status = '1';
       self.data.searchItem.transport_status = '0';
       self.data.searchItem.order_step = '0';
+      self.data.searchItem.order_step = '4';
+      self.data.searchItem.order_step = '5';
     }else if(num=='3'){
       self.data.searchItem.pay_status = '1';
       self.data.searchItem.transport_status = '1';
@@ -150,16 +151,6 @@ Page({
       self.data.paginate.currentPage++;
       self.getMainData();
     };
-  },
-
-  intoPath(e){
-    const self = this;
-    api.pathTo(api.getDataSet(e,'path'),'nav');
-  },
-
-  intoPathRedi(e){
-    const self = this;
-    api.pathTo(api.getDataSet(e,'path'),'redi');
   },
 
 

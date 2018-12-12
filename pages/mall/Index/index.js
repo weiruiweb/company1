@@ -16,29 +16,17 @@ Page({
   onLoad(options) {
     const self = this;
     api.commonInit(self);
-    self.getMainData()
+    
     if(options.scene){
       var scene = decodeURIComponent(options.scene)
     };
-    if(options.parentNo){
-      var scene = options.parentNo
+    if(options.parent_no){
+      var scene = options.parent_no
     };
-    if(options.passage1){
-      var scene = options.passage1
+    const callback=(res)=>{
+        self.getMainData();
     };
-    
-    if(scene){
-      var num = scene.search('_');
-      var sceneNew = scene.substring(0,scene.length-1);
-
-      if(num==-1){
-        var token = new Token({parent_no:scene}); 
-      }else{
-        var token = new Token({passage1:sceneNew}); 
-      }   
-      token.getMallToken();
-      console.log('getToken',sceneNew)
-    };
+    api.parentAdd('getMallToken',scene,callback);
   },
 
   getMainData(){

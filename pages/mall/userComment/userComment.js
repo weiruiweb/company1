@@ -1,85 +1,84 @@
+
 import {Api} from '../../../utils/api.js';
 const api = new Api();
 const app = getApp();
 import {Token} from '../../../utils/token.js';
 const token = new Token();
 
-
 Page({
   data: {
-    userData:[],
-    isFirstLoadAllStandard:['getMainData'],
+
+   messageData:[],
+   isFirstLoadAllStandard:['getMainData'],
+   searchItem:{
+    },
+    buttonCanClick:false,
+    isLoadAll:false
   },
 
-  
+
   onLoad(options){
     const self = this;
-    api.commonInit(self);
-    if(options.scene){
-      var scene = decodeURIComponent(options.scene)
-    };
-    if(options.parentNo){
-      var scene = options.parentNo
-    };
-    if(scene){
-      var token = new Token({parent_no:scene});
-      token.getMallToken(false);
-    };
-    
+    wx.showLoading();
+    wx.removeStorageSync('checkLoadAll');
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    self.getMainData()
   },
 
-  onShow(){
-    const self = this;
-    self.getMainData();
-    self.data.mainData = api.getStorageArray('collectData');
-    console.log(self.data.mainData.length)
-    self.setData({
-      web_collectData:self.data.mainData.length
-    })
-  },
 
-  getMainData(){
+  getMainData(isNew){
     const self = this;
+    if(isNew){
+      api.clearPageIndex(self); 
+    };
     const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName = 'getMallToken';
+    postData.searchItem = {
+      type:2
+    };
+    postData.order = {
+      create_time:'desc'
+    };
+    postData.getAfter = {
+      product:{
+        tableName:'product',
+        middleKey:'relation_id',
+        key:'id',
+        searchItem:{
+          status:1
+        },
+        condition:'='
+      }
+    };
     const callback = (res)=>{
-      if(res.solely_code==100000){
-        if(res.info.data.length>0){
-          self.data.userData = res.info.data[0]; 
-        }
-        self.setData({
-          web_userData:self.data.userData,
-        });  
+      if(res.info.data.length>0){
+        self.data.messageData.push.apply(self.data.messageData,res.info.data);
       }else{
-        api.showToast('网络故障','none')
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','none')
       };
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+      self.setData({
+        web_messageData:self.data.messageData,
+      });  
     };
-    api.userInfoGet(postData,callback);   
-  },
- 
-
-  intoPath(e){
-    const self = this;
-    api.pathTo(api.getDataSet(e,'path'),'nav');
+    api.messageGet(postData,callback);
   },
 
-  intoPathRedi(e){
+  onShareAppMessage(res,e){
     const self = this;
-    api.pathTo(api.getDataSet(e,'path'),'redi');
-  },
-
-  onShareAppMessage(res){
-    const self = this;
-    console.log(res)
+    var id = api.getDataSet(e,'id');
+  
+     console.log(res)
       if(res.from == 'button'){
         self.data.shareBtn = true;
       }else{   
         self.data.shareBtn = false;
       }
       return {
-        title: '巧巧爱家',
-        path: 'pages/detail/detail?parent_no='+wx.getStorageSync('mall_info').user_no,
+        title: '华珍商城',
+        path: 'pages/detail/detail?product_id='+id,
         success: function (res){
           console.log(res);
           console.log(parentNo)
@@ -105,4 +104,6 @@ Page({
         }
       }
   },
+
+
 })

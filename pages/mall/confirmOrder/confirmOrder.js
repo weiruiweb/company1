@@ -209,9 +209,12 @@ Page({
       if(self.data.sForm.score>self.data.userData.score||self.data.sForm.score>self.data.mainData[0].score)
       api.showToast('积分不符合规则','none',function(self){
         self.data.sForm.score = '';
-        self.setData({
-          web_sForm:self.data.sForm
-        })
+      })  
+    };
+    if(api.getDataSet(e,"key")=='balance'){
+      if(self.data.sForm.balance>self.data.userData.balance)
+      api.showToast('佣金不足','none',function(self){
+        self.data.sForm.balance = '';  
       })  
     };
     console.log(self.data.sForm);

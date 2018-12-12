@@ -137,6 +137,18 @@ Page({
   },
 
 
+  addCart(e){
+    const self = this;
+    var index = api.getDataSet(e,'index');
+    self.data.choosed_skuData = self.data.mainData[index];
+    self.data.choosed_skuData.count = 1;
+    self.data.choosed_skuData.isSelect = true;
+    var res = api.setStorageArray('cartData',self.data.choosed_skuData,'id',999); 
+    if(res){
+      api.showToast('加入成功','success');
+    };
+  },
+
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

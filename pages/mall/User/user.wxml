@@ -67,6 +67,15 @@
 		</view>
 	</view>
 	<view class="user_all" style="margin-bottom:120rpx">
+		<view class="user_infor flexRowBetween"  bindtap="intoPath" data-path="/pages/mall/groupOrder/groupOrder">
+			<view class="user_left flexRowBetween">
+				<view class="user_icon scale2" style="{{img}};width:30px;background-position: -330px -148px;"></view>
+				<text>我的团购订单</text>
+			</view>
+			<view class="next_page">
+				<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;"></view>
+			</view>
+		</view>
 		<view class="user_infor flexRowBetween"  bindtap="intoPath" data-path="/pages/mall/userInfo/userInfo">
 			<view class="user_left flexRowBetween">
 				<view class="user_icon scale2" style="{{img}};width:30px;background-position: -330px -148px;"></view>
@@ -89,6 +98,15 @@
 			<view class="user_left flexRowBetween">
 				<view class="user_icon scale2" style="{{img}};background-position: -268px -148px;"></view>
 				<text>我的优惠劵</text>
+			</view>
+			<view class="next_page">
+				<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;"></view>
+			</view>
+		</view>
+		<view class="user_infor flexRowBetween" bindtap="intoPath" data-path="/pages/mall/userComment/userComment">
+			<view class="user_left flexRowBetween">
+				<view class="user_icon scale2" style="{{img}};background-position: -268px -148px;"></view>
+				<text>我的评价</text>
 			</view>
 			<view class="next_page">
 				<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;"></view>

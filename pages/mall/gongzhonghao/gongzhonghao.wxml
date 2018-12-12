@@ -46,8 +46,8 @@
 
 		<view class="madeContItem madeShow">
 			<block wx:for="{{web_mainData}}" wx:key="id">
-				<view class="shopping_item" bindtap="intoPath" data-path="/pages/mall/detail/detail?id={{item.id}}">
-					<view class="shopping_img">
+				<view class="shopping_item" >
+					<view class="shopping_img" bindtap="intoPath" data-path="/pages/mall/detail/detail?id={{item.id}}&&is_group={{item.is_group}}">
 						<image src="{{item.mainImg[0].url}}"></image>
 					</view>
 					<view class="shopping_name">
@@ -58,7 +58,7 @@
 							<view style="width:55%;"><text class="price">¥{{item.price}}</text></view>
 							<view class="edit_number" style="width:45%;display:flex;align-items:center;">
 								<view class="text" >{{item.sale_count}}件已售</view>
-								<view class="scale3" style="{{img}};width:44px;height:42px;background-position: -238px -94px;"></view>
+								<view class="scale3" style="{{img}};width:44px;height:42px;background-position: -238px -94px;" bindtap="addCart" data-index="{{index}}"></view>
 							</view>
 						</view>
 					</view>	

@@ -68,11 +68,20 @@
 				</view>
 				<view class="handle_order">
 					<view class="flexRowBetween">
+
+					<button class="handle_orders delete_order" data-id="{{item.id}}"  wx:if="{{item.group_no&&item.group_no!='null'&&item.pay_status=='1'&&item.order_step=='4'}}" bindtap="onShareAppMessage"  open-type="share" data-group_no="{{item.group_no}}" data-id="{{item.products[0].snap_product.id}}">去分享</button>  
+
+            		<view class="handle_orders delete_order" data-id="{{item.id}}" data-price="{{item.price}}" bindtap="pay" wx:if="{{item.pay_status == '0'&&item.order_step=='0'}}">去支付</view>  
+
+            		<view class="handle_orders delete_order"  wx:if="{{item.group_no&&item.group_no!='null'&&item.pay_status=='1'&&item.order_step=='5'}}">已成团</view>
+            		
+            		<view class="handle_orders delete_order"  wx:if="{{item.group_no&&item.group_no!='null'&&item.pay_status=='1'&&item.order_step=='4'}}">未成团</view>  
+
 						<view class="handle_orders delete_order" data-id="{{item.id}}" bindtap="{{web_buttonCanClick?'deleteOrder':''}}" wx:if="{{item.pay_status == '0'}}">删除订单</view>
 
 						<view class="handle_orders delete_order" data-id="{{item.id}}" data-price="{{item.price}}" bindtap="pay" wx:if="{{item.pay_status == '0'&&item.order_step=='0'}}">去支付</view>
 
-						<view class="handle_orders comment_order" bindtap="intoPath" data-path="/pages/mall/commentOrder/commentOrder" wx:if="{{item.pay_status == '1'&&item.item[0].isremark!='1'&&item.transport_status=='2'&&item.order_step=='3'}}">去评价</view>
+						<view class="handle_orders comment_order" bindtap="intoPath" data-path="/pages/commentOrder/commentOrder" wx:if="{{item.pay_status == '1'&&item.item[0].isremark!='1'}}">去评价</view>
 
 						<view class="handle_orders comment_order" bindtap="{{web_buttonCanClick?'orderUpdate':''}}"  wx:if="{{item.pay_status == '1'&&item.transport_status == '1'&&item.order_step == '0'}}" data-id="{{item.id}}">确认收货</view>
 

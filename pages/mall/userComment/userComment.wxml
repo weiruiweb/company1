@@ -1,0 +1,38 @@
+<!--manageAddress.wxml-->
+<view class="order_list">
+	<block wx:for="{{web_messageData}}" wx:key="id">
+		<view class="order_all">	
+			<view class="order_tlt flexRowBetween">
+				<view class="tlt_left">
+					<text>{{item.create_time}}</text>
+				</view>
+			</view>
+			<view class="same_stroe">
+				<view class="flexRowBetween orderlistShow" >
+					<view class="order_left"><image src="{{item.product[0].mainImg[0].url}}"></image></view>
+					<view class="order_name">
+						<view class="text1" style="height:30%">{{item.product[0].title}}</view >
+						<view class="order_type avoidOverflow" style="height:40%">
+							<text style="font-size:28rpx;color:#808080">{{item.product[0].description}}</text></view>
+						<view class="orders flexRowBetween" style="height:30%">
+							<text class="order_number">¥{{item.product[0].price}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view>{{item.content}}</view>
+			<view class="handle">
+				<view class="handle_order">
+					<view class="flexRowBetween">
+
+						<view class="handle_orders delete_order" bindtap='intoPath' data-path="/pages/detail/detail?id={{item.relation_id}}">再次购买</view>
+						
+						 <button class="handle_orders delete_order color" data-id="{{item.relation_id}}"   bindtap="onShareAppMessage"  open-type="share" style="border:solid 1px #e83632;color:#e83632;">去分享</button>
+					</view>
+				</view>
+			</view>
+		</view>	
+	</block>	
+</view>
+
+

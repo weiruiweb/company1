@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 57,
+			"current": 3,
 			"list": [
 				{
 					"id": 0,
@@ -54,10 +54,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "商城首页",
 					"pathName": "pages/mall/Index/index",
-					"query": ""
+					"query": "parent_no=UA1865727981427"
 				},
 				{
 					"id": -1,
@@ -380,7 +380,8 @@
 				{
 					"id": -1,
 					"name": "热门职位",
-					"pathName": "pages/entrance/position/position"
+					"pathName": "pages/entrance/position/position",
+					"query": ""
 				}
 			]
 		}

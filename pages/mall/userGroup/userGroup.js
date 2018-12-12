@@ -10,13 +10,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    isFirstLoadAllStandard:['getMainData'],
     mainData:[],
     startTime:'',
     endTime:'',
     searchItem:{
       thirdapp_id:getApp().globalData.mall_thirdapp_id,
-      parent_no:wx.getStorageSync('info').user_no
+      parent_no:wx.getStorageSync('mall_info').user_no
     }
 
   },
@@ -30,6 +30,7 @@ Page({
     }else{
       var token = new Token();
       const callback = (res)=>{
+        console.log(res)
         self.getMainData(false,res)
       };
       token.getMallToken(callback,{refreshToken:true});
@@ -57,9 +58,7 @@ Page({
     postData.tokenFuncName = 'getMallToken';
     console.log(self.data.searchItem);
     postData.searchItem = api.cloneForm(self.data.searchItem);
-    if(res){
-      postData.searchItem.parent_no = res.data.info.user_no;
-    };
+
     postData.order = {
       create_time:'desc'
     }

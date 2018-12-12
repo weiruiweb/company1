@@ -96,8 +96,8 @@
 	                </view>
 	            </view>
 	            <view class="select_discount">
-		        	<view class="submit_info bg font24" data-id="{{item.id}}" data-count="{{item.discount}}" bindtap="useCoupon" style="width:140rpx;color:#666;font-size:24rpx;height:50rpx;line-height: 50rpx;">去使用
-	                    </view>
+		        	<view class="submit_info bg font24" data-id="{{item.id}}" bindtap="useCoupon" style="width:140rpx;color:#666;font-size:24rpx;height:50rpx;line-height: 50rpx;">去使用
+	                </view>
 		        </view>
 	        </view>
 	    </view>
@@ -134,7 +134,7 @@
 		<view class="total_money" style="width:70%;margin-right:5%;text-align:right;">
 			<view class="heji" style="width:100%;text-align:right;">
 				<text>微信支付:</text>
-				<text class="text2">¥{{web_pay.wxPay}}</text>
+				<text class="text2">¥{{web_pay.wxPay&&web_pay.wxPay.price||0}}</text>
 			</view>
 			<view class="price_note" style="display:block;width:100%;text-align:right;">
 				<text style="">（实际价格，请与客服沟通）</text>

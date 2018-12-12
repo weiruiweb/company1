@@ -38,7 +38,8 @@ Page({
     isFirstLoadAllStandard:['getMainData','getAddressData','getUserData'],
     pay:{
       coupon:[]
-    }
+    },
+    couponTotalPrice:0
 
   },
 
@@ -162,23 +163,42 @@ Page({
 
     const self = this;
     var id = api.getDataSet(e,'id');
-    var count = api.getDataSet(e,'count');
+    var findCoupon = api.findItemInArray(self.data.couponData,'id',id);
     var findItem = api.findItemInArray(self.data.pay.coupon,'id',id);
+    console.log('findCoupon',findCoupon)
+    if(findCoupon){
+      findCoupon = findCoupon[1];
+      var findSameCoupon = api.findItemsInArray(self.data.pay.coupon,'product_id',findCoupon.products[0].snap_product.id);
+    }else{
+      api.showToast('优惠券错误','error');
+      return;
+    };
     if(findItem){
       self.data.pay.coupon.splice(findItem[0],1);
     }else{
+      if(!(self.data.price-self.data.couponTotalPrice)>findCoupon.standard){
+        api.showToast('金额不达标','error');
+        return;
+      };
+      if(findCoupon.limit>0&&findSameCoupon.length>=findCoupon.limit){
+        api.showToast('叠加使用超限','error');
+        return;
+      };
+      if(findCoupon.type==3){
+        var couponPrice = findCoupon.discount;
+      }else if(findCoupon.type==4){
+        var couponPrice = findCoupon.discount*self.data.price;
+      };
+      if(couponPrice+self.data.couponTotalPrice>self.data.price){
+        couponPrice = self.data.price - self.data.couponTotalPrice;
+      };
       self.data.pay.coupon.push({
         id:id,
-        price:count
+        price:couponPrice,
+        product_id:findCoupon.products[0].snap_product.id
       });
     };
-    self.setData({
-      web_pay:self.data.pay
-    });
-    console.log('self.data.pay',self.data.pay); 
     self.countPrice();
-    
-
   },
 
   inputBind(e){
@@ -209,27 +229,28 @@ Page({
     var totalPrice = 0;
     var couponPrice = 0;
     var productsArray = self.data.mainData.products;
-    self.data.price = 0;
-    for (var i = 0; i < self.data.mainData.length; i++) {
-
-      self.data.price += parseInt(self.data.mainData[i].price)
-    };
-    if(self.data.pay.coupon.length>0){
-      var couponPrice = 0;
-      for (var i = 0; i < self.data.pay.coupon.length; i++) {
-        couponPrice += self.data.pay.coupon[i].price
-      };
-    };
+    self.data.couponTotalPrice = api.addItemInArray(self.data.pay.coupon,'price');
+    self.data.price = api.addItemInArray(self.data.mainData,'price');
+    
     if(self.data.sForm.score>0){
       self.data.pay.score = self.data.sForm.score
     };
     if(self.data.sForm.balance>0){
       self.data.pay.balance = self.data.sForm.balance
     };
-    self.data.pay.wxPay = self.data.price - couponPrice - parseInt(self.data.sForm.score) -parseInt(self.data.sForm.balance) ;
-    console.log('countPrice',self.data.pay)
+    var wxPay = self.data.price - self.data.couponTotalPrice - parseInt(self.data.sForm.score) -parseInt(self.data.sForm.balance) ;
+    if(wxPay>0){
+      self.data.pay.wxPay = {
+        price:wxPay,
+      };
+    }else{
+      delete self.data.pay.wxPay;
+    };
+    console.log('countPrice-wxPay',wxPay);
+    console.log('countPrice-price',self.data.price);
+    console.log('countPrice',self.data.pay);
     self.setData({
-      web_couponPrice:couponPrice.toFixed(2),
+      web_couponPrice:self.data.couponTotalPrice,
       web_price:self.data.price,
       web_pay:self.data.pay
     });
@@ -271,7 +292,6 @@ Page({
     };
 
     const callback = (res)=>{
-
       if(res.solely_code==100000){
         if(res.info){
           const payCallback=(payData)=>{
@@ -320,26 +340,6 @@ Page({
   },
 
 
-
-  
-/*  countPrice(){
-
-    const self = this;
-    var totalPrice = 0;
-    var couponPrice = 0;
-    var productsArray = self.data.mainData.products;
-    self.data.price = self.data.mainData.price;
-    self.data.pay.wxPay = self.data.price;
-
-    self.setData({
-      web_couponPrice:couponPrice.toFixed(2),
-      web_price:self.data.price,
-      web_pay:self.data.pay
-    });
-
-  },*/
-
-
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
@@ -357,7 +357,6 @@ Page({
 
 
   submit(e){
-
     const self = this;
     api.buttonCanClick(self);
     if(self.data.buyType=='delivery'&&self.data.addressData.length==0){

@@ -321,7 +321,30 @@ class Base{
             }
         };
         return false;
+    };
 
+    findItemsInArray(array,fieldName,field){
+        var array = [];
+        for(var i=0;i<array.length;i++){
+            if(array[i][fieldName] == field){
+                array.push({
+                    index:i,
+                    data:array[i]
+                });
+            }
+        };
+        return array;
+    };
+
+
+    addItemInArray(array,fieldName){
+        var count = 0;
+        for(var i=0;i<array.length;i++){
+            if(array[i][fieldName]){
+                count += parseFloat(array[i][fieldName])
+            };
+        };
+        return count.toFixed(2);
     };
 
     setItemInArray(array,item,fieldName,type='push'){

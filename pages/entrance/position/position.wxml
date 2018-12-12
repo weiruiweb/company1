@@ -1,20 +1,31 @@
-<!--user.wxml-->
 
 <view class="User_cont">
 	<block wx:for="{{web_mainData}}" wx:key="id">
-		<view class="clientList flexRowBetween">
-			<view class="clientList_center" style="align-items:center;">
-				<view class="clientName">
-					<text style="line-height:63px">{{item.title}}</text>
-				</view>
+		<view class="w710 flexRowBetween">
+			<view class="clientList_center font30 color3" style="align-items:center;">
+				{{item.title}}
 			</view>
 			<view class="clientList_right">
-				<view class="clientTime color font22">{{item.create_time}}</view>
+				<view class="clientTime color9 font24">{{item.create_time}}</view>
 			</view>
 		</view>
-		<view class="clientList flexRowBetween font30">
+		<view class="w710 position_condition flex">
+			<view class="position_left flex">
+				<image src="/images/project3.png"></image>
+				<text class="font28 color6">1人</text>
+			</view>
+			<view class="position_right color font30">
+				6-9千/月
+			</view>
+		</view>
+		<view class="w710 font28 color9 address flex" bindtap="intoMap">
+			<image src="/images/position.png"></image>
+			<text>雁塔区科技路高新大都荟7号楼A座</text>
+		</view>
+		<view class="client_intro flexRowBetween font30 w710">
 			{{item.description}}	
 		</view>
 	</block>
 </view>
+
 

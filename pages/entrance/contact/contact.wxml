@@ -4,19 +4,19 @@
       <view class="contact_left">
           <view class="contact_list flex">
             <view class="contact_left1">
-              <image src="/images/index_icon5.png"></image>
+              <image src="/images/phone1.png"></image>
             </view>
               <view class="font26 color6 contact_center">{{web_noticeData.contactPhone}}</view>
           </view>
           <view class="contact_list flex">
             <view class="contact_left1">
-              <image src="/images/index_icon6.png"></image>
+              <image src="/images/email.png"></image>
             </view>  
               <view class="font26 color6 contact_center avoidOverflow">{{web_noticeData.description}}</view>
           </view>
           <view class="contact_list flex">
             <view class="contact_left1">
-              <image src="/images/index_icon7.png"></image>
+              <image src="/images/position.png"></image>
             </view>
               <view class="font26 color6">{{web_noticeData.title
               }}</view>

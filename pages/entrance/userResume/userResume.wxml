@@ -1,14 +1,17 @@
 <!--User.wxml-->
 <view class="w710">
 	<view class="input_list1 font30 flex">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
 		<view class="input_before1">姓名:</view>
 		<input placeholder="请输入姓名" data-key="title" bindblur="changeBind" value="{{web_submitData.title}}"></input>
 	</view>
 	<view class="input_list1 font30 flex">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
 		<view class="input_before1">电话:</view>
 		<input placeholder="请输入联系电话" data-key="phone" bindblur="changeBind"  value="{{web_submitData.phone}}"></input>
 	</view>
 	<view class="input_list1 flex" style="justify-content:flex-start">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
 		<text class="font30 input_before1">性别:</text>
 		<view data-value="1" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:100rpx;align-items:center">
 			<image src="{{web_submitData.gender=='1'?'/images/male_a.png':'/images/male.jpg'}}" style="width:40rpx;height:40rpx;margin-right:10rpx;" ></image>
@@ -22,6 +25,7 @@
 	</view>
 
 	<view class="input_list1 flex" style="justify-content:flex-start">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
 		<view class="font30 input_before1" style="width:22%;">投递来源:</view>
 		<view class="flexRowCenter" data-value="0" style="width:22%" data-key="class" bindtap="changeBind">
 			<image src="{{web_submitData.class=='0'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:30rpx;height:30rpx;margin-right:10rpx;" ></image>
@@ -40,10 +44,12 @@
 	</view>
 
 	<view class="input_list1 font30 flex">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
 		<view class="input_before1" style="width:40%;">毕业院校及专业:</view>
 		<input placeholder="请输入毕业院校及专业" data-key="description" bindblur="changeBind" value="{{web_submitData.description}}"></input>
 	</view>
   <view class="input_list1 font30 flex">
+    <view class="color font30" style="margin-right: 20rpx;">●</view>
     <picker mode="date"  start="2000-01-01" end="2050-01-01" bindchange="bindDateChange" style="width:100%;">
       <view class="picker flex">
           <view class="input_before1 font28 flex" style="width:22%;">
@@ -63,9 +69,6 @@
               </view>
                <view class="years font28 ">日</view>
           </view>
-        <view class="next" style="width:28%;text-align: center;">
-            <image src="/images/next_page.jpg"></image>
-        </view>
       </view>
     </picker>
   </view>

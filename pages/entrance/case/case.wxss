@@ -76,14 +76,13 @@ page{
 	flex-wrap: wrap;
 }
 .menu_item{
-	width:208rpx;
+	width:190rpx;
 	height:68rpx;
-	border-radius: 20rpx;
-	border:solid 1px #dcdcdc;
+	border-bottom:solid 1px #dcdcdc;
 	text-align:center;
 	line-height: 68rpx;
 	margin-bottom: 30rpx;
-	margin-right:12rpx;
+	margin-right:32rpx;
 }
 .product_name {
 	width:100%;

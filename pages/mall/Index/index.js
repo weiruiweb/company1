@@ -66,7 +66,7 @@ Page({
     const self = this;
     return {
       title: '纯粹科技',
-      path: 'pages/mall/index/index?parentNo='+wx.getStorageSync('info').user_no,
+      path: 'pages/index/index?parent_no='+wx.getStorageSync('mall_info').user_no,
       success: function (res){
         console.log(res);
       }

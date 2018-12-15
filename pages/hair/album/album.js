@@ -7,12 +7,12 @@ const token = new Token();
 Page({
   data: {
     albumData:[],
-    isLoadAll:false,
-    complete_api:[]
+    isFirstLoadAllStandard:['getAlbumData']
   },
   
   onLoad() {
     const self = this;
+    api.commonInit(self);
     self.getAlbumData();
 
   },
@@ -21,6 +21,7 @@ Page({
   getAlbumData(){
     const self = this;
     const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       thirdapp_id:getApp().globalData.hair_thirdapp_id,
       title:'相册',
@@ -34,7 +35,7 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       };
-      self.data.complete_api.push('getAlbumData')
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getAlbumData',self);
       self.setData({
         web_albumData:self.data.albumData
       });
@@ -45,18 +46,11 @@ Page({
 
   onReachBottom() {
     const self = this;
-    if(!self.data.isLoadAll){
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
       self.data.paginate.currentPage++;
       self.getMainData();
     };
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getAlbumData']);
-    if(complete){
-      wx.hideLoading();
-    };
-  },
 
 })

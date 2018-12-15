@@ -76,7 +76,7 @@ page{
 	background:#e8e9e9;
 }
 .shore_choose .input2{
-	width:80%;
+	width:95%;
 	margin-top:15rpx;
 }
 #data{

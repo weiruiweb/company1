@@ -11,7 +11,7 @@ Page({
    num:0,
    mainData:[],
    searchItem:{
-      thirdapp_id:'2',
+      thirdapp_id:getApp().globalData.mall_thirdapp_id,
       type:['in',[1,2]],
     },
     isFirstLoadAllStandard:['getMainData'],

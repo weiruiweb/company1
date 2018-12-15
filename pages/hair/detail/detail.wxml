@@ -1,29 +1,43 @@
 <!--detail.wxml-->
+<wxs src="../../../utils/func.wxs" module="func" />
 <view id="details">
 <view class="banner">
-	<image src="/images_hair/detail.jpg"></image>
+	<view class="page-body">
+	    <view class="page-section page-section-spacing swiper">
+	      <swiper
+	        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+	        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+	        <block wx:for="{{web_mainData.mainImg}}" wx:index="{{index}}" wx:key="id">
+	          <swiper-item>
+	            <image src="{{item.url}}"></image>
+	          </swiper-item>
+	        </block>
+	      </swiper>
+	    </view>
+	</view>
 </view>
 <view class="detail">
 	<view class="product_top">
 		<view class="name_share flexRowBetween">
 			<view class="product_name">
-				网站开发高端定制
+				{{web_mainData.title}}
 			</view>
-			<view class="share scale2" style="{{img1}};background-position:-480px -96px"></view>
+			<button style="margin-left:240rpx;" class="scale2" bindtap="onShareAppMessage"  open-type="share" >
+				<view style="width:32px;height:32px;border:none;{{img}};background-position: -482px -94px;"></view>
+			</button>
 		</view>
 		<view class="price_sale flexRowBetween">
 			<view class="price">
-				￥5000.00元
+				￥{{web_mainData.price}}元
 			</view>
 			<view class="sale">
-				销量2888笔
+				销量{{web_mainData.sale_count}}笔
 			</view>
 		</view>
 	</view>
 	<view class="choose flexRowBetween" bindtap="goBuy">
 		<view class="choose_left flexRowBetween" >
 			<text class="text1">请选择</text>
-			<input placeholder="基本展示 基本展示"></input>
 		</view>
 		<view class="next_page">
 			<image src="/image/next_page.jpg"></image>
@@ -39,45 +53,42 @@
 	</view>
 	<view class="detail_show">
 		<view id="detail" style="{{tabCurrent == 0?'display:block':'display:none'}}">
-			<image src="/images_hair/banner.jpg"></image>
+			<view class="content ql-editor" >
+                <import src="../../../wxParse/wxParse.wxml"/>
+                <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+            </view> 
 		</view>
 		<view id="comment" style="{{tabCurrent == 1?'display:block':'display:none'}}">
 			<view class="good_com flexRowBetween">
 				<view class="comment_number">
-					评价(120)
-				</view>
-				<view class="good_percent flex">
-					<text>好评率</text>
-					<text class="percent">99%</text>
-					<view style="width:12rpx;height:100%;overflow: hidden;">
-						<view class="next_page">
-							<image src="/image/next_page.jpg"></image>
-						</view>
-					</view>
+					评价({{web_num}})
 				</view>
 			</view>
-			<view class="comment_list ">
-				<view class="flexRowBetween">
-					<view class="comment_user ">
-						<view class="user_img">
-						<open-data type="userAvatarUrl" class="user_pho"></open-data>
+			<block wx:for="{{web_messageData}}" wx:key="id">
+				<view class="comment_list ">
+					<view class="flexRowBetween"  style="align-items:center;">
+						<view class="comment_user" style="display:flex;align-items:center;">
+							<view class="user_img">
+								<image src="{{item.user[0].headImgUrl}}"></image>
+							</view>
+							<view class="txts" style="height:58rpx;">
+								<view class="text1">{{item.user[0].nickname}}</view>
+								<view class="text2">{{item.creta_time}}</view>
+							</view>
 						</view>
-							<text class="text1">米桃子</text>
-							<text class="text2">2015.3.2</text>
-						
+						<view class="star flexRowBetween">
+							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
+						</view>
 					</view>
-					<view class="star flexRowBetween">
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
-						<image src="/images/star.jpg"></image>
+					<view class="comment_cont">
+						{{item.content}}
 					</view>
 				</view>
-				<view class="comment_cont">
-					很满意的一次购物很满意的一次购物很满意的一次购物
-				</view>
-			</view>
+			</block>
 		</view>
 	</view>
 </view>
@@ -86,63 +97,52 @@
 </view>
 <view id="buy">
 	<view class="flexRowBetween">
-		<view class="go_buy" bindtap="goBuy">
+		<view class="go_buy" bindtap="selectModel" data-type="buy">
 			立即购买
 		</view>
 	</view>
 </view>
 <view id="choose" class="{{isShow?'sildeIn':'slideOut'}}">
-	<view class="flexRowBetween pricity">
-		<view class="choose_pro">
-			<image src="/images_hair/choose_pro.jpg"></image>
-		</view>
-		<view class="product_txt">
-			<view class="pro_name">洗发套餐</view>
-			<view class="price_choose">
-			￥3999
+			<view class="flexRowBetween pricity">
+				<view class="choose_pro">
+					<image src="{{web_choosed_skuData.mainImg[0].url}}"></image>
+				</view>
+				<view class="product_txt">
+					<view class="pro_name">{{web_choosed_skuData.title}}</view>
+					<view class="pro_type">
+						{{web_choosed_skuData.description}}
+					</view>
+					<view class="price_choose">
+					￥{{web_totalPrice?web_totalPrice:web_choosed_skuData.price}}
+					</view>
+				</view>
+				<view class="close" bindtap="close">
+				<view class="scale8" style="width:36px;height:36px;{{img}};background-position: -594px 0;"></view>
+				</view>
 			</view>
-		</view>
-		<view class="close" bindtap="close">
-			<view class="scale8" style="width:36px;height:36px;{{img1}};background-position: -594px 0;"></view>
-		</view>
-	</view>
-	<view id="type" class="">
-		<view class="pro_type">	
-			类型
-		</view>
-		<view class="pro_types  {{isChoose == 0?'pro_this':''}}" data-type="0" bindtap="choose_type">	
-			洗剪吹
-		</view>
-		<view class="pro_types {{isChoose == 1?'pro_this':''}}" data-type="1" bindtap="choose_type">	
-			烫发
-		</view>
-		<view class="pro_types {{isChoose == 2?'pro_this':''}}" data-type="2" bindtap="choose_type">	
-			染发
-		</view>
-	</view>
-	<view id="type" class="">
-		<view class="pro_type">	
-			服务
-		</view>
-		<view class="pro_types  {{isChoose1 == 0?'service_this':''}}" data-type="0" bindtap="choose_service">	
-			总监
-		</view>
-		<view class="pro_types  {{isChoose1 == 1?'service_this':''}}" data-type="1" bindtap="choose_service">	
-			无要求
-		</view>
-	</view>
+			<block wx:for="{{web_skuLabelData}}" wx:key="id" >
+				<view id="type" class="flexRowBetween">
+					<view class="pro_type"  >	
+						{{item.title}}
+					</view>
+					<block wx:for="{{web_skuLabelData[index].child}}" wx:key="id" wx:for-item="c_item">
+						<view class="pro_types" data-id="{{c_item.id}}" data-parentid="{{item.id}}"  bindtap="{{func.inArray(c_item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" style="{{func.inArray(c_item.id,web_can_choose_sku_item)==-1?'border:1px dashed  #e5e5e5;color:#e5e5e5;':(func.inArray(c_item.id,web_choosed_sku_item)!=-1?'border:1px solid #21c3d4;color:#21c3d4;':'')}}">
+							{{c_item.title}}
+						</view>
+					</block>
+				</view>
+			</block>
 	<view class="choose_number flexRowBetween">
 		<view class="number_txt">
 			数量
 		</view>
 		<view class="edit_number flexRowBetween">
-			<view class="minus">-</view>
-			<view class="number">1</view>
-			<view class="add">+</view>
-
+			<view class="minus" style="line-height:45rpx;" data-type="-" bindtap="counter" data-id="{{web_skuLabelData.id}}">-</view>
+			<input class="number" type="number" bindchange="bindManual" value="{{web_count}}" />
+			<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuLabelData.id}}">+</view>
 		</view>
 	</view>
-	<view class="go_buy buy_now" bindtap="intoPath" data-path="/pages/hair/confirmOrder/confirmOrder">
+	<view class="go_buy buy_now" bindtap="{{web_buttonCanClick?(web_buttonType=='buy'?'goBuy':'addCart'):''}}">
 		立即购买
 	</view>
 </view>

@@ -58,7 +58,7 @@
 		<view class="confirm_left">
 			合计：¥{{web_totalPrice}}
 		</view>
-		<view class="confirm_right" bindtap="addOrder"  >
+		<view class="confirm_right" bindtap="{{web_buttonCanClick?'addOrder':''}}"  >
 			<view class="submit_btn">
 				<form bindsubmit="close" class="form_button" report-submit="true">
 				  <button form-type="submit" class=" form_btn color1">立即预订</button>

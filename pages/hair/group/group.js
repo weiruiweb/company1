@@ -7,7 +7,7 @@ const token = new Token();
 Page({
   data: {
     mainData:[],
-    complete_api:[],
+    isFirstLoadAllStandard:['getMainData'],
     tapCurrent:0,
     isShow:false,
     isShows:false,
@@ -16,7 +16,7 @@ Page({
   
   onLoad() {
    const self  = this;
-   self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+   api.commonInit(self);
    self.getMainData();
    this.setData({
       img1:app.globalData.restaurant,
@@ -53,23 +53,15 @@ Page({
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
       };
-      self.data.complete_api.push('getMainData')
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
-      }); 
-      self.checkLoadComplete()    
+      });   
     };
     api.productGet(postData,callback);
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getSliderData','getCardData','getMainData','getCouponData']);
-    if(complete){
-      wx.hideLoading();
-      self.data.buttonClicked = false;
-    };
-  },
+
 
 
   order_status:function(e){

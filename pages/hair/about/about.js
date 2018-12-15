@@ -6,15 +6,16 @@ const token = new Token();
 
 Page({
   data: {
-    
+    isFirstLoadAllStandard:['getArtData']
   },
   
   onLoad() {
     const self = this;
-    self.getartData()
+    api.commonInit(self);
+    self.getArtData()
   },
 
-  getartData(){
+  getArtData(){
     const self = this;
     const postData = {};
     postData.searchItem = {
@@ -37,8 +38,8 @@ Page({
         self.data.artData = res.info.data[0];
         self.data.artData.content = api.wxParseReturn(res.info.data[0].content).nodes;
       };
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getArtData',self);
       console.log(self.data.artData);
-      wx.hideLoading();
       self.setData({
         web_artData:self.data.artData,
       });  

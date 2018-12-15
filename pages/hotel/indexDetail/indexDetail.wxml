@@ -36,7 +36,7 @@
 <view class="house_time flexRowBetween">
 	<view class="p40 flexRowBetween">
 		<block wx:for="{{web_mainData.sku}}" wx:key="id">
-		<view class="select flexRowCenter" data-num="{{item.id}}" bindtap="menuClick">
+		<view class="select flexRowCenter" data-num="{{item.id}}" bindtap="{{web_buttonCanClick?'menuClick':''}}">
 			<image src="{{web_num == item.id?'/images/select_hotel_a.jpg':'/images/select.png'}}"></image>
 			{{item.title}}
 		</view>
@@ -55,7 +55,7 @@
 				</view>
 				<view class="house_detail flexRowBetween">
 					<view class="text">9-19</view>
-					<view class="text" style="font-size:26rpx; text-align: right;">剩余2间</view>
+					<view class="text" style="font-size:26rpx; text-align: right;">剩余{{web_skuData.stock}}间</view>
 				</view>
 			</view>
 	</view>

@@ -7,24 +7,15 @@ Page({
   data: {
     num:'',
     isShow:false,
-    complete_api:[],
+    isFirstLoadAllStandard:['getMainData'],
     searchItem:{},
   },
-  //事件处理函数
 
-  show:function(e){
-    var isShow = !this.data.isShow;
-    this.setData({
-      isShow:isShow
-    })
-  },
-  close:function(e){
-     this.setData({
-      isShow:false,
-    })
-  },
+
+
   onLoad(options) {
     const self = this;
+    api.commonInit(self);
     self.data.id = options.id;
     self.getMainData()
     self.setData({
@@ -54,14 +45,13 @@ Page({
       }else{
         api.showToast('门店不存在','none');
       }
-      self.data.complete_api.push('getMainData')
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       console.log(self.data.mainData)
       self.setData({
         web_skuData:self.data.mainData.sku[0],
         web_num:self.data.mainData.sku[0].id,
         web_mainData:self.data.mainData,
-      });  
-     self.checkLoadComplete()
+      });     
     };
     api.productGet(postData,callback);
   },  
@@ -77,7 +67,7 @@ Page({
       }else{
         api.showToast('数据错误','none');
       }
-      console.log(self.data.mainData)
+      api.buttonCanClick(self,true);
       self.setData({
         web_skuData:self.data.skuData,
       });  
@@ -85,17 +75,11 @@ Page({
     api.skuGet(postData,callback);
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData']);
-    if(complete){
-      wx.hideLoading();
-      self.data.buttonClicked = false;
-    };
-  },
 
-  menuClick: function (e) {
+
+  menuClick(e) {
     const self = this;
+    api.buttonCanClick(self);
     const num = e.currentTarget.dataset.num;
     self.changeSearch(num);
   },
@@ -107,7 +91,20 @@ Page({
       web_num: num
     });
     self.data.searchItem.id = num;
-    self.getSkuData(true);
+    self.getSkuData();
+  },
+
+  show:function(e){
+    var isShow = !this.data.isShow;
+    this.setData({
+      isShow:isShow
+    })
+  },
+
+  close:function(e){
+     this.setData({
+      isShow:false,
+    })
   },
 
   intoPath(e){

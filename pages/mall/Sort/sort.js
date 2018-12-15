@@ -10,7 +10,7 @@ Page({
     labelData:[],
     mainData:[],
     index:0,
-    currentId:20,
+    currentId:32,
     isLoadAll:false,
     sForm:{
       item:''
@@ -33,6 +33,7 @@ Page({
 
   menuTap(e){
     const self = this;
+    api.buttonCanClick(self);
     var index = e.currentTarget.dataset.index;
     var currentId = e.currentTarget.dataset.id;
 
@@ -71,7 +72,8 @@ Page({
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
-      }
+      };
+      api.buttonCanClick(self,true);
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,

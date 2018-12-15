@@ -12,23 +12,16 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 1000,
-    buttonClicked:true,
     mainData:[],
-    complete_api:[],
+    isFirstLoadAllStandard:['getSliderData','getMainData']
   },
   //事件处理函数
  
   onLoad(options) {
     const self = this;
-    wx.showLoading();
-    self.data.name = options.name;
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
-    if(!wx.getStorageSync('hotel_token')){
-      var token = new Token();
-      token.getUserInfo(self.data.name);
-    };
-    self.getSliderData(),
-    self.getMainData()
+    api.commonInit(self);
+    self.getSliderData();
+    self.getMainData();
     self.setData({
       img:app.globalData.hotel,
     });
@@ -47,9 +40,9 @@ Page({
         self.setData({
           web_sliderUrl:res.info.data[0]['mainImg']
         });
-        self.data.complete_api.push('getSliderData')
+          api.checkLoadAll(self.data.isFirstLoadAllStandard,'getSliderData',self)
       };
-      self.checkLoadComplete();
+      
     };
     api.labelGet(postData,callback);
   },
@@ -74,24 +67,16 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       }
-      self.data.complete_api.push('getMainData')
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       console.log(self.data.mainData)
       self.setData({
         web_mainData:self.data.mainData,
       });  
-     self.checkLoadComplete()
     };
     api.productGet(postData,callback);
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData','getSliderData']);
-    if(complete){
-      wx.hideLoading();
-      self.data.buttonClicked = false;
-    };
-  },
+
 
   bindMultiPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)

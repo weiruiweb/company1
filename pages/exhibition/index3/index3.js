@@ -20,11 +20,13 @@ Page({
     autoplay: true,
     intervalOne:2000,
     duration: 1000,
+    isFirstLoadAllStandard:['getArtData']
   },
 
 
   onLoad(){
     const self = this;
+    api.commonInit(self);
     self.getArtData();
     self.setData({
       img:app.globalData.website
@@ -54,7 +56,7 @@ Page({
       if(res.info.data.length>0){
         self.data.artData = res.info.data[0];
       };
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getArtData',self)
       self.setData({
         web_artData:self.data.artData,
       });  
@@ -64,6 +66,7 @@ Page({
 
   messageAdd(){
     const self = this;
+
     const postData = {};
     postData.token = wx.getStorageSync('token');
     postData.data = {};
@@ -79,21 +82,27 @@ Page({
         content:'',
         phone:'',
       };
+      api.buttonCanClick(self,true);
       self.setData({
         web_submitData:self.data.submitData,
       });  
-      wx.hideLoading(); 
     };
     api.messageAdd(postData,callback);     
   },
 
+  formIdAdd(e){
+    api.WxFormIdAdd(e.detail.formId,(new Date()).getTime()/1000+7*86400);  
+  },
+
   submit(){
     const self = this;
+    api.buttonCanClick(self);
     const pass = api.checkComplete(self.data.submitData);
     if(pass){
       self.messageAdd();
     }else{
       api.showToast('请补全信息','none');
+      api.buttonCanClick(self,true);
     };
   },
 

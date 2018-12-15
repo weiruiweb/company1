@@ -1,13 +1,13 @@
 <!--mygroup.wxml-->
 <view class="mygroup flexRowBetween">
-	<view class="group_success {{currentId == 0?'this_status':''}}" data-id="0" bindtap="order_status">
+	<view class="group_success {{num ==3?'this_status':''}}" data-num="3" bindtap="{{web_buttonCanClick?'menuClick':''}}">
 		<text>成功</text>
 	</view>
-	<view class="group_success  {{currentId == 1?'this_status':''}}"  data-id="1" bindtap="order_status" style="border-left:solid 1rpx #e2e2e2;border-right:solid 1rpx #e2e2e2">
+	<view class="group_success  {{num ==2?'this_status':''}}" data-num="2" bindtap="{{web_buttonCanClick?'menuClick':''}}" style="border-left:solid 1rpx #e2e2e2;border-right:solid 1rpx #e2e2e2">
 		<text>等待中</text>
 		
 	</view>
-	<view class="group_success  {{currentId == 2?'this_status':''}}"  data-id="2" bindtap="order_status">
+	<view class="group_success  {{num ==4?'this_status':''}}" data-num="4" bindtap="{{web_buttonCanClick?'menuClick':''}}">
 		<text>失败</text>
 		
 	</view>

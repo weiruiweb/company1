@@ -148,7 +148,6 @@ Page({
         self.data.couponData.push.apply(self.data.couponData,res.info.data);
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','none');
       }
       self.setData({
         web_couponData:self.data.couponData,

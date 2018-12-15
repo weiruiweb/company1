@@ -21,7 +21,7 @@ Page({
     id:'',
   },
 
-  onLoad: function (options) {
+  onLoad(options) {
     const self=this;
     if(options.id){
       self.data.id = options.id

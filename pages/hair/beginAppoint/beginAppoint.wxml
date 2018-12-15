@@ -1,9 +1,9 @@
 <!--Beginappointment.wxml-->
 <view class="shore_choose ">
    
-     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" style="width:100%;">
+     <picker bindchange="bindPickerChange" value="{{index}}" range="{{web_storeArray}}" style="width:100%;">
         <view class="picker flexRowBetween">
-         <input class="input2" placeholder="高新3号店" value="{{array[index]}}"></input>
+         <input class="input2"  value="{{web_storeArray[index]}}"></input>
           <view class="next_page">
             <image src="/images/next_page.jpg"></image>
           </view>
@@ -12,9 +12,9 @@
     
 </view>
 <view class="shore_choose ">
-    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" style="width:100%;">
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{index}}" range="{{web_multiArray}}" style="width:100%;">
     <view class="picker flexRowBetween"> 
-    <input class="input2" placeholder="技术总监  梁家辉" value="{{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}"></input>
+    <input class="input2"  value="{{web_multiArray[index][web_multiArray[index]]}}"></input>
     <view class="next_page">
       <image src="/images/next_page.jpg"></image>
     </view>
@@ -29,9 +29,12 @@
         <text class="txt1 {{isChoose == 2?'this_item':''}}" data-type="2" bindtap="choose">染发</text>  
     </view>
 </view>
-
+<view class="shore_choose ">
+  <text class="input_before">预留电话</text>
+  <input class="input2"></input>  
+</view>
 <view class="shore_choose flexRowBetween">
-    <text class="input_before">预订数量</text>
+    <text class="input_before">人数</text>
     <view class="edit_number flexRowBetween">
       <view class="minus">-</view>
       <view class="number">1</view>
@@ -245,7 +248,7 @@
       预约定金
     </view>
     <view class="text2">
-      ¥222.00
+      ¥{{web_mainData.price}}
     </view>
   </view>
   <view class="begin_right">

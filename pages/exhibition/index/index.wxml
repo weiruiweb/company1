@@ -51,7 +51,7 @@
     </view>
     <view>公司案例</view>
   </view>
-  <view class="menu_item">
+  <view class="menu_item" bindtap="intoPathRedirect" data-path="/pages/exhibition/index3/index3">
     <view class="menu_top">
       <view class="menu_icon scale1" style="{{img}};background-position:-136px -0px;"></view>
     </view>

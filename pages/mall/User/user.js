@@ -78,8 +78,8 @@ Page({
         self.data.shareBtn = false;
       }
       return {
-        title: '巧巧爱家',
-        path: 'pages/detail/detail?parent_no='+wx.getStorageSync('mall_info').user_no,
+        title: '纯粹科技',
+        path: 'pages/index/index?parent_no='+wx.getStorageSync('mall_info').user_no,
         success: function (res){
           console.log(res);
           console.log(parentNo)

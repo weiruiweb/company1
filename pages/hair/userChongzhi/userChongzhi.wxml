@@ -3,10 +3,10 @@
         <view class="pay_before">
           充值金额
         </view>
-        <input placeholder="请输入充值金额"></input>
+        <input placeholder="请输入充值金额" bindblur="changeBind" data-key="price" value="{{web_submitData.price}}"></input>
     </view>
-    <view class="submit_info">
-      立即充值
-    </view>
+<form  bindsubmit="{{web_buttonCanClick?'pay':''}}" >
+    <button class="submit_info" form-type="submit">立即支付</button>
+</form>
     
     

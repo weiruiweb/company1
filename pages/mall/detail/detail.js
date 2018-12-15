@@ -292,14 +292,14 @@ Page({
       return;
     };
     const postData = {
-      tokenFuncName:'getMallToken',
+      tokenFuncName:'getHairToken',
     };
     const callback = (res)=>{
       console.log(res);
       if(res.info.data.length>0&&res.info.data[0].phone){
        
         const c_postData = {
-          tokenFuncName:'getMallToken',
+          tokenFuncName:'getHairToken',
           sku:[
             {
               id:self.data.choosed_skuData.id,
@@ -319,7 +319,7 @@ Page({
         const c_callback = (res)=>{
           api.buttonCanClick(self,true);
           if(res&&res.solely_code==100000){
-            api.pathTo('/pages/mall/confirmOrder/confirmOrder?order_id='+res.info.id,'nav');        
+            api.pathTo('/pages/hair/confirmOrder/confirmOrder?order_id='+res.info.id,'nav');        
           }else{
             api.showToast(res.msg,'none');
           };
@@ -343,7 +343,7 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.tokenFuncName='getMallToken',
+    postData.tokenFuncName='getHairToken',
     postData.searchItem = {
       relation_id:self.data.mainData.id,
       type:2

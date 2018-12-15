@@ -23,7 +23,7 @@ class Token {
             var params = {
                 token_name:'entrance_token',
                 info_name:'entrance_info',
-                thirdapp_id:17
+                thirdapp_id:22
             };
             this.getUserInfo(params,callback);
         }else{
@@ -36,7 +36,7 @@ class Token {
             var params = {
                 token_name:'mall_token',
                 info_name:'mall_info',
-                thirdapp_id:2
+                thirdapp_id:23
             };
             this.getUserInfo(params,callback);
         }else{
@@ -44,11 +44,65 @@ class Token {
         }
     }    
 
-    getExhibitionToken(params) { 
-        var exhibition_token = wx.getStorageSync('exhibition_token');
-        var params ='exhibition'
-        this.getUserInfo(params);
-    }    
+    getHairToken(callback,postData) { 
+
+        if((postData&&postData.refreshToken)||!wx.getStorageSync('hair_token')){
+            var params = {
+                token_name:'hair_token',
+                info_name:'hair_info',
+                thirdapp_id:24 
+            };
+            this.getUserInfo(params,callback);
+        }else{
+            return wx.getStorageSync('hair_token');
+        }
+    }   
+
+
+    getRestaurantToken(callback,postData) { 
+
+        if((postData&&postData.refreshToken)||!wx.getStorageSync('restaurant_token')){
+            var params = {
+                token_name:'restaurant_token',
+                info_name:'restaurant_info',
+                thirdapp_id:25
+            };
+            this.getUserInfo(params,callback);
+        }else{
+            return wx.getStorageSync('restaurant_token');
+        }
+    } 
+
+    getExhibitionToken(callback,postData) { 
+
+        if((postData&&postData.refreshToken)||!wx.getStorageSync('exhibition_token')){
+            var params = {
+                token_name:'exhibition_token',
+                info_name:'exhibition_info',
+                thirdapp_id:26
+            };
+            this.getUserInfo(params,callback);
+        }else{
+            return wx.getStorageSync('exhibition_token');
+        }
+    } 
+
+    getHotelToken(callback,postData) { 
+
+        if((postData&&postData.refreshToken)||!wx.getStorageSync('hotel_token')){
+            var params = {
+                token_name:'hotel_token',
+                info_name:'hotel_info',
+                thirdapp_id:27
+            };
+            this.getUserInfo(params,callback);
+        }else{
+            return wx.getStorageSync('hotel_token');
+        }
+    } 
+
+
+    
 
     getGymToken(params) { 
         var gym_token = wx.getStorageSync('gym_token');
@@ -56,23 +110,10 @@ class Token {
         this.getUserInfo(params);
     }    
 
-    getHairToken(params) { 
-        var hair_token = wx.getStorageSync('hair_token');
-        var params ='hair'
-        this.getUserInfo(params);
-    }    
+ 
 
-    getHotelToken(params) { 
-        var hotel_token = wx.getStorageSync('hotel_token');
-        var params ='hotel'
-        this.getUserInfo(params);
-    } 
+   
 
-    getRestaurantToken(params) { 
-        var restaurant_token = wx.getStorageSync('restaurant_token');
-        var params ='restaurant'
-        this.getUserInfo(params);
-    }
 
     getUserInfo(params,callback){
         var self = this;
@@ -136,7 +177,7 @@ class Token {
                 };
                 console.log(postData)
                 wx.request({
-                    url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/ProgrameToken/get',
+                    url: 'https://www.solelycloud.com/api/public/index.php/api/v1/Base/ProgrameToken/get',
                     method:'POST',
                     data:postData,
                     success:function(res){
@@ -175,7 +216,7 @@ class Token {
                 password:wx.getStorageSync('login').password,
             }
             wx.request({
-                url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Func/Common/loginByUp',
+                url: 'https://www.solelycloud.com/api/public/index.php/api/v1/Func/Common/loginByUp',
                 method:'POST',
                 data:postData,
                 success:function(res){

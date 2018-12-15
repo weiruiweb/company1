@@ -1,7 +1,7 @@
 <!--service wxml-->
 <view class="tab_click flexRowBetween">
 	<block wx:for="{{web_labelData}}" wx:key="id">
-		<view class="tab_sort {{web_num == item.id?'this_tab':''}}" data-num="{{item.id}}" bindtap="menuClick">
+		<view class="tab_sort {{web_num == item.id?'this_tab':''}}" data-num="{{item.id}}" bindtap="{{web_buttonCanClick?'menuClick':''}}">
 			{{item.title}}
 		</view>
 	</block>

@@ -18,7 +18,7 @@ Page({
       item:''
     },
     searchItem:{
-      category_id:30,
+      category_id:38,
     },
     order:{
       multi:'asc'
@@ -147,6 +147,27 @@ Page({
     if(res){
       api.showToast('加入成功','success');
     };
+  },
+
+ 
+  search(e){
+    const self = this;
+    api.fillChange(e,self,'sForm');
+    console.log('self.data.sForm.item',self.data.sForm.item)
+    self.data.mainData = [];
+    if(self.data.sForm.item){ 
+      console.log(666) 
+      self.data.searchItem.title =  ['LIKE',['%'+self.data.sForm.item+'%']],
+      self.getMainData(true,self.data.sForm.item);
+      
+    }else{
+      delete self.data.searchItem.title;
+      console.log(666) 
+      self.getMainData()
+    };
+    self.setData({
+      web_sForm:self.data.sForm
+    })
   },
 
   intoPath(e){

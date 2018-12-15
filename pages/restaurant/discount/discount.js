@@ -8,18 +8,13 @@ const token = new Token();
 Page({
   data: {
     mainData:[],
-    isLoadAll:false,
-    buttonClicked:true,
-    complete_api:[]
+    isFirstLoadAllStandard:['']
   },
 
 
   onLoad() {
   	const self = this;
-    self.setData({
-      fonts:app.globalData.font
-    });
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self);
     self.getMainData()
   },
 
@@ -43,28 +38,20 @@ Page({
           self.data.isLoadAll = true;
           api.showToast('没有更多了','none');
         };
-        self.data.complete_api.push('getMainData')
         self.setData({
           web_mainData:self.data.mainData,
         });  
       }else{
         api.showToast('网络故障','none')
       }
-      self.checkLoadComplete()
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
     };
     api.productGet(postData,callback);
   },
 
   addOrder(e){
     const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      setTimeout(function(){
-        wx.showLoading();
-      },800)   
-      return;
-    }
-    self.data.buttonClicked = true;
+    api.buttonCanClick(self);
     var id = api.getDataSet(e,'id');
     var type = api.getDataSet(e,'type');
     var deadline = api.getDataSet(e,'deadline');
@@ -79,27 +66,19 @@ Page({
     };
     const callback = (res)=>{
       if(res&&res.solely_code==100000){
-        api.showToast('领取成功！','none')
-         
+        api.showToast('领取成功！','none')  
       }; 
-      self.data.buttonClicked = false;   
+      api.buttonCanClick(self,true)
     };
     api.addOrder(postData,callback);
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData']);
-    if(complete){
-      wx.hideLoading();
-      self.data.buttonClicked = false
-    };
-  },
+
 
 
   onReachBottom() {
     const self = this;
-    if(!self.data.isLoadAll){
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
       self.data.paginate.currentPage++;
       self.getMainData();
     };

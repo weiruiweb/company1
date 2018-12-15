@@ -17,7 +17,7 @@ Page({
     searchItem:{
       menu_id:''
     },
-    complete_api:[],
+    isFirstLoadAllStandard:['getLabelData','getSliderData','getLabelData'],
     indicatorDots: true,
     autoplay: true,
     intervalOne:2000,
@@ -26,8 +26,7 @@ Page({
     
   onLoad(){
     const self = this;
-    wx.showLoading();
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self);
     self.getLabelData();
     self.getSliderData();
     self.setData({
@@ -56,11 +55,10 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      self.data.complete_api.push('getMainData');
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self)
       self.setData({
         web_mainData:self.data.mainData,
       });
-      self.checkLoadComplete();
     };
     api.articleGet(postData,callback);
   },
@@ -78,9 +76,8 @@ Page({
         self.setData({
           web_labelUrl:res.info.data[0]['mainImg'][0]['url'],
         });
-        self.data.complete_api.push('getSliderData'); 
+          api.checkLoadAll(self.data.isFirstLoadAllStandard,'getSliderData',self)
       };
-      self.checkLoadComplete();
     };
     api.labelGet(postData,callback);
   },
@@ -115,7 +112,7 @@ Page({
       self.data.labelData = res.info.data;
       self.data.searchItem.menu_id = res.info.data[0].id;
       self.data.num = res.info.data[0].id;
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self)
       self.setData({
         web_labelData:self.data.labelData,
         web_viewWidth:self.data.viewWidth,
@@ -144,17 +141,10 @@ Page({
 
  
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData','getSliderData']);
-    if(complete){
-      wx.hideLoading();
-    };
-  },
 
   onReachBottom() {
     const self = this;
-    if(!self.data.isLoadAll){
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
       self.data.paginate.currentPage++;
       self.getMainData();
     };

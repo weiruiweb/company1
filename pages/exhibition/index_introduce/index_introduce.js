@@ -13,13 +13,14 @@ Page({
     autoplay: true,
     intervalOne:2000,
     duration: 1000,
+    isFirstLoadAllStandard:['getMainData','getartData']
   },
   //事件处理函数
 
 
   onLoad() {
     const self = this;
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self);
     self.getartData();
     self.getMainData();
   },
@@ -52,7 +53,7 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });
@@ -84,8 +85,7 @@ Page({
         self.data.artData = res.info.data[0];
         self.data.artData.content = api.wxParseReturn(res.info.data[0].content).nodes;
       };
-      console.log(self.data.artData);
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getartData',self);
       self.setData({
         web_artData:self.data.artData,
       });  

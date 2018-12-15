@@ -12,7 +12,7 @@ class Base{
     request(params) {
         var that = this;
         getApp().globalData.buttonClick = true;
-        var baseRestUrl = 'https://api.solelycloud.com/api/public/index.php/api/v1/';
+        var baseRestUrl = 'https://www.solelycloud.com/api/public/index.php/api/v1/';
         var url=baseRestUrl + params.url;
         const callback = (res)=>{
             that.request(params);
@@ -81,7 +81,7 @@ class Base{
             };
         };
         wx.uploadFile({
-            url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/FtpImage/upload',
+            url: 'https://www.solelycloud.com/api/public/index.php/api/v1/Base/FtpImage/upload',
             filePath:filePath,
             name:name,
             formData:formData,
@@ -520,12 +520,28 @@ class Base{
 
 
 
-    checkComplete(obj){
+/*    checkComplete(obj){
         var pass = true;
         for(var key in obj){
           if(!obj[key]||obj[key]=='0'){
             console.log(obj[key]);
             pass = false;
+          };
+        };
+        return pass;
+        console.log(pass);
+    };*/
+
+    checkComplete(obj){
+        var pass = true;
+        for(var key in obj){
+
+          if(!obj[key]){
+            if(obj[key]===0){
+                pass = true;
+            }else{
+                pass = false;
+            };
           };
         };
         return pass;

@@ -11,12 +11,12 @@ App({
   },
 
   globalData: {
-    mall_thirdapp_id:2,
-    exhibition_thirdapp_id:8,
-    hair_thirdapp_id:9,
-    hotel_thirdapp_id:10,
-    restaurant_thirdapp_id:11,
-    solely_thirdapp_id:17,
+    mall_thirdapp_id:23,
+    exhibition_thirdapp_id:26,
+    hair_thirdapp_id:24,
+    hotel_thirdapp_id:27,
+    restaurant_thirdapp_id:25,
+    solely_thirdapp_id:22,
     gym_thirdapp_id:12,
     address_id:'',
     buttonClick:false,

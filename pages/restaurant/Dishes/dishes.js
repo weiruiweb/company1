@@ -20,6 +20,7 @@ Page({
     num:79,
     isLoadAll:false,
     cartData:[],
+    isFirstLoadAllStandard:['getMainData','getLabelData']
   },
   /*添加到购物车*/
     onAddingToCartTap:function(events){
@@ -72,17 +73,12 @@ Page({
 
    onLoad(options) {
     const self = this;
-    wx.showLoading();
-    if(!wx.getStorageSync('restaurant_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
+    api.commonInit(self);
     this.setData({
       fonts:app.globalData.font,
       img:app.globalData.restaurant,
     });
     self.data.id = options.id
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getLabelData();
     self.setData({
       web_num:self.data.num
@@ -94,9 +90,7 @@ Page({
     const self = this;
     self.data.cartData = api.jsonToArray(wx.getStorageSync('cartData'),'unshift');
     console.log(self.data.cartData)
-
     self.setData({
-
       web_cartData:self.data.cartData
     });
     self.countTotalPrice();
@@ -104,6 +98,7 @@ Page({
 
   menuClick: function (e) {
     const self = this;
+    api.buttonCanClick(self);
     const num = e.currentTarget.dataset.num;
     self.changeSearch(num);
   },
@@ -118,6 +113,7 @@ Page({
     
     self.getMainData(true);
   },
+
   getMainData(isNew){
     const self = this;
     if(isNew){
@@ -136,9 +132,9 @@ Page({
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
-      }
-      wx.hideLoading();
-      console.log(self.data.mainData)
+      };
+      api.buttonCanClick(self,true);
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });  
@@ -164,11 +160,8 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       }
-      console.log(self.data.labelData)
-
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
       self.setData({
-
         web_labelData:self.data.labelData,
       });
       self.getMainData();

@@ -29,6 +29,7 @@ Page({
     const self = this;
     api.commonInit(self);
     self.getMainData();
+    self.getRandomColor();
     self.setData({
     	web_submitData:self.data.submitData,
     	web_buttonCanClick:self.data.buttonCanClick
@@ -92,17 +93,13 @@ Page({
   submit(){
     const self = this;
     api.buttonCanClick(self);
-    self.setData({
-    	web_buttonCanClick:self.data.buttonCanClick
-    });
     var phone = self.data.submitData.phone;
     const pass = api.checkComplete(self.data.submitData);
     console.log('pass',pass);
     if(pass){
       if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
-        api.showToast('手机格式不正确','none',function(){
-        	api.buttonCanClick(self,true)
-        });
+        api.showToast('手机格式不正确','none')
+        api.buttonCanClick(self,true)
       }else{
         const callback = (user,res) =>{
           self.messageAdd(); 
@@ -110,9 +107,9 @@ Page({
        api.getAuthSetting(callback);  
      }
    }else{
-      api.showToast('请补全信息','none',function(){
-        api.buttonCanClick(self,true)
-      });
+      api.showToast('请补全信息','none')
+      api.buttonCanClick(self,true)
+     
       
    };
   },
@@ -158,6 +155,70 @@ Page({
   },
 
 
+  upLoadVideo(){
+    const self = this;
+    wx.showLoading({
+      mask: true,
+      title: '视频上传中',
+    });
+    const callback = (res)=>{
+      console.log('res',res)
+      if(res.solely_code==100000){
+        wx.hideLoading()  
+      }else{
+        api.showToast('网络故障','none')
+      }
+    };
+    wx.chooseVideo({
+      success: function(res) { 
+        console.log(res);
+        var src = res.tempFilePath;
+        console.log(callback)
+        api.uploadFile(src,'file',{tokenFuncName:'getEntranceToken'},callback)
+      },
+      fail: function(err){
+        wx.hideLoading();
+      }
+    })
+  },
+
+  upLoadAudio(){
+    const self = this;
+    wx.showLoading({
+      mask: true,
+      title: '音频上传中',
+    });
+    const callback = (res)=>{
+      console.log('res',res)
+      if(res.solely_code==100000){
+        wx.hideLoading()  
+      }else{
+        api.showToast('网络故障','none')
+      }
+    };
+    wx.chooseVideo({
+      success: function(res) { 
+        console.log(res);
+        var src = res.tempFilePath;
+        console.log(callback)
+        api.uploadFile(src,'file',{tokenFuncName:'getEntranceToken'},callback)
+      },
+      fail: function(err){
+        wx.hideLoading();
+      }
+    })
+  },
+
+  getRandomColor() {
+    const rgb = []
+    for (let i = 0; i < 3; ++i) {
+      let color = Math.floor(Math.random() * 256).toString(16)
+      color = color.length == 1 ? '0' + color : color
+      rgb.push(color)
+    }
+    return '#' + rgb.join('')
+  },
+
 
   messageAdd(){
     const self =this;
@@ -168,7 +229,10 @@ Page({
     postData.data.behavior = 0;
     const callback = (data)=>{
     	if(data.solely_code==100000){
-    		api.showToast('投递成功','none')
+    		api.showToast('投递成功','none',)
+        wx.navigateBack({
+          delta:1
+        })
     	}else{
     		api.showToast(data.msg,'none')
     	}

@@ -8,17 +8,17 @@ Page({
   data: {
 
     mainData:[],
-    isLoadAll:false,
+    isFirstLoadAllStandard:['getMainData']
 
   },
 
   onLoad(){
     const self = this;
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self);
     self.getMainData();
     this.setData({
-        img:app.globalData.restaurant,
-   })
+      img:app.globalData.restaurant,
+    })
   },
 
 
@@ -38,6 +38,8 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
+      api.buttonCanClick(self,true);
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',true)
       self.setData({
         web_mainData:self.data.mainData,
       });
@@ -71,6 +73,7 @@ Page({
 
   deleteAddress(e){
     const self = this;
+    api.buttonCanClick(self);
     const postData = {};
     postData.searchItem = {};
     postData.searchItem.id = api.getDataSet(e,'id');
@@ -88,6 +91,7 @@ Page({
 
   updateAddress(e){
     const self = this;
+    api.buttonCanClick(self);
     const postData = {};
     postData.token = wx.getStorageSync('restaurant_token');
     postData.searchItem = {};
@@ -108,7 +112,7 @@ Page({
   
   onReachBottom() {
     const self = this;
-    if(!self.data.isLoadAll){
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
       self.data.paginate.currentPage++;
       self.getMainData();
     };

@@ -77,7 +77,7 @@
   	<view class="input_before1" style="width:26%;">工作经历:</view>
   	<textarea placeholder="请输入工作经历" data-key="content" bindblur="changeBind" value="{{web_submitData.content}}"></textarea>
   </view>
-    <view class="w710"  style="margin-top: 50rpx;display:flex;" >
+  <view class="w710"  style="margin-top: 50rpx;display:flex;" >
         <view class="color font30" style="margin-right: 20rpx;">●</view>
         <view class="input_before1 font30 color6" style="width:24%;">上传照片</view>
         <view class="w710 uplode flex" id="uploaderFiles">
@@ -100,7 +100,70 @@
         </view>
     </view>
   </view>
+  <view class="w710"  style="margin-top: 50rpx;display:flex;" >
+        <view class="color font30" style="margin-right: 20rpx;">●</view>
+        <view class="input_before1 font30 color6" style="width:24%;">上传视频</view>
+        <view class="w710 uplode flex" id="uploaderFiles">
+        <view class="uploder flexRowBetween">
+            <view  class="uploader_item" bindtap="upLoadVideo">
+                <image src="/images/upload.png"></image>
+            </view>
+            <view class="section tc">
+              <video src="https://www.solelycloud.com/api/public/uploads/22/20181213/61ced244b1a7183a88742bed52a22e5c.mp4" controls></video>
+              <view class="btn-area">
+                <button bindtap="bindButtonTap">获取视频</button>
+              </view>
+            </view>
+
+            <view class="section tc">
+              <video
+                id="myVideo"
+                src="https://www.solelycloud.com/api/public/uploads/22/20181213/61ced244b1a7183a88742bed52a22e5c.mp4"
+                danmu-list="{{danmuList}}"
+                enable-danmu
+                danmu-btn
+                controls
+              ></video>
+              <view class="btn-area">
+                <button bindtap="bindButtonTap">获取视频</button>
+                <input bindblur="bindInputBlur" />
+                <button bindtap="bindSendDanmu">发送弹幕</button>
+              </view>
+            </view>
+            
+        </view>
+    </view>
+  </view>
+
+  <view class="w710"  style="margin-top: 50rpx;display:flex;" >
+        <view class="color font30" style="margin-right: 20rpx;">●</view>
+        <view class="input_before1 font30 color6" style="width:24%;">上传音频</view>
+        <view class="w710 uplode flex" id="uploaderFiles">
+        <view class="uploder flexRowBetween">
+            <view  class="uploader_item" bindtap="upLoadAudio">
+                <image src="/images/upload.png"></image>
+            </view>
+            
+            <audio
+              poster="{{poster}}"
+              name="{{name}}"
+              author="{{author}}"
+              src="https://www.solelycloud.com/api/public/uploads/22/20181213/ec4e45d4d4f35f03ca84d41188dc6f34.mp3"
+              id="myAudio"
+              controls
+              loop
+            ></audio>
+
+            <button type="primary" bindtap="audioPlay">播放</button>
+            <button type="primary" bindtap="audioPause">暂停</button>
+            <button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+            <button type="primary" bindtap="audioStart">回到开头</button>
+        </view>
+    </view>
+  </view>
 </view>
+
+
 <form bindsubmit="formIdAdd" report-submit="true">
 	<button  formType="submit"  bindtap="{{web_buttonCanClick?'submit':''}}" style="line-height:80rpx;margin-top:100rpx;" class="submit_info">提交</button>
 </form>

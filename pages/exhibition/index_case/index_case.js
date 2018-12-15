@@ -9,7 +9,7 @@ Page({
   data: {
     artData:[],
     mainData:[],
-    complete_api:[],
+    isFirstLoadAllStandard:['getArtData','getMainData'],
     indicatorDots: true,
     autoplay: true,
     intervalOne:2000,
@@ -20,8 +20,7 @@ Page({
 
   onLoad() {
     const self = this;
-    wx.showLoading();
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self);
     self.getArtData();
     self.getMainData();
   },
@@ -54,11 +53,10 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      self.data.complete_api.push('getMainData');
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self)
       self.setData({
         web_mainData:self.data.mainData,
       });
-      self.checkLoadComplete();
     };
     api.articleGet(postData,callback);
   },
@@ -87,22 +85,15 @@ Page({
         self.data.artData = res.info.data[0];
         self.data.artData.content = api.wxParseReturn(res.info.data[0].content).nodes;
       };
-      self.data.complete_api.push('getArtData');
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getArtData',self);
       self.setData({
         web_artData:self.data.artData,
       });
-      self.checkLoadComplete();  
     };
     api.articleGet(postData,callback);
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData','getArtData']);
-    if(complete){
-      wx.hideLoading();
-    };
-  },
+
  
   intoPath(e){
     const self = this;

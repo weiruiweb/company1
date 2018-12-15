@@ -163,10 +163,14 @@ Page({
     })
   },
 
+  formIdAdd(e){
+    api.WxFormIdAdd(e.detail.formId,(new Date()).getTime()/1000+7*86400);  
+  },
 
   pay(e){
     const self = this;
-     let formId = e.detail.formId;
+    api.buttonCanClick(self);
+    let formId = e.detail.formId;
     console.log(999,formId)
     const skuDatas = [];
     for(var i=0;i<self.data.mainData.length;i++){
@@ -177,10 +181,42 @@ Page({
         });
       }
     };
-    console.log(skuDatas);
-    wx.setStorageSync('payPro',skuDatas);
-    api.pathTo('/pages/mall/confirmOrder/confirmOrder','nav')
+    const postData = {
+      tokenFuncName:'getMallToken',
+    };
+    const callback = (res)=>{
+      console.log(res);
+      if(res.info.data.length>0&&res.info.data[0].phone){
+       
+        const c_postData = {
+          tokenFuncName:'getMallToken',
+          sku:skuDatas,
+          type:1
+
+        };
+        if(c_postData.sku.length==0){
+          api.showToast('未选择商品','none');
+          return;
+        };
+        const c_callback = (res)=>{
+          api.buttonCanClick(self,true);
+          if(res&&res.solely_code==100000){
+            api.pathTo('/pages/mall/confirmOrder/confirmOrder?order_id='+res.info.id,'nav');        
+          }else{
+            api.showToast(res.msg,'none');
+          };
+        };
+        api.addOrder(c_postData,c_callback);
+      }else{
+        api.showToast('请完善信息','none');
+        api.buttonCanClick(self,true);
+        api.pathTo('/pages/mall/userInfo/userInfo','nav');
+      };
+    };
+    api.userInfoGet(postData,callback)
   },
+
+
   counter(e){
     const self = this;
     const index = api.getDataSet(e,'index');

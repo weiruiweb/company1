@@ -24,7 +24,10 @@ Page({
 
   onLoad(){
     const self = this;
-    api.commonInit(self);  
+    api.commonInit(self);
+    self.setData({
+      web_searchData:self.data.searchData
+    });
     self.getLabelData();
   },
 
@@ -157,7 +160,7 @@ Page({
        web_submitData:self.data.submitData,
        web_searchData:self.data.searchData,
     });
-    console.log(9090,self.data.searchData);
+    console.log('web_searchData',self.data.searchData);
   },
 
   menu_hidden(){

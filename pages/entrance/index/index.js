@@ -33,6 +33,7 @@ Page({
     self.getSliderData();
     token.getEntranceToken()
   },
+  
   getSliderData(){
     const self = this;
     const postData = {};
@@ -52,6 +53,7 @@ Page({
     };
     api.labelGet(postData,callback);
   },
+  
   getMainData(){
     const  self =this;
     const postData={};

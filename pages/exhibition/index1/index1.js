@@ -8,7 +8,7 @@ const token = new Token();
 Page({
   data: {
     mainData:[],
-    complete_api:[],
+    isFirstLoadAllStandard:['getMainData','getSliderData'],
     indicatorDots: true,
     autoplay: true,
     intervalOne:2000,
@@ -17,8 +17,7 @@ Page({
   //事件处理函数
   onLoad(options) {
     const self = this;
-    wx.showLoading();
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self);
     self.getMainData();
     self.getSliderData();
     self.setData({
@@ -54,11 +53,10 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      self.data.complete_api.push('getMainData'); 
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self)
       self.setData({
         web_mainData:self.data.mainData,
       });
-      self.checkLoadComplete();
     };
     api.articleGet(postData,callback);
   },
@@ -76,20 +74,13 @@ Page({
         self.setData({
           web_labelUrl:res.info.data[0]['mainImg'],
         });
-        self.data.complete_api.push('getSliderData'); 
+        api.checkLoadAll(self.data.isFirstLoadAllStandard,'getSliderData',self)
       };
-      self.checkLoadComplete();
     };
     api.labelGet(postData,callback);
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData','getSliderData']);
-    if(complete){
-      wx.hideLoading();
-    };
-  },
+
 
 
   intoPath(e){

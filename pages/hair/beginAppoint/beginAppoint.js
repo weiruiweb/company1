@@ -8,66 +8,90 @@ Page({
   data: {
     tabCurrent:0,
     isChoose:0,
-    array: ['高新1号店:陕西省西安市雁塔区大都荟', '高新2号店:  陕西省西安市雁塔区大都荟', '高新3号店:  陕西省西安市雁塔区大都荟', '高新4号店:  陕西省西安市雁塔区大都荟'],
+    isFirstLoadAllStandard:['getMainData','getStoreData'],
+    storeArray: [],
     array1: ['60分钟', '90分钟', '120分钟', '150分钟'],
     index: 0,
     index1:0,
 
-    multiArray: [['发型师1', '发型师2'], ['发型师2', '发型师4', '发型师4', '发型师6', '发型师9']],
-    objectMultiArray: [
-      [
-        {
-          id: 0,
-          name: '高新3号店'
-        },
-        {
-          id: 1,
-          name: '高新1号店'
-        }
-      ], [
-        {
-          id: 0,
-          name: '高新1号店'
-        },
-        {
-          id: 1,
-          name: '高新1号店'
-        },
-        {
-          id: 2,
-          name: '高新1号店'
-        },
-        {
-          id: 3,
-          name: '高新1号店'
-        },
-        {
-          id: 3,
-          name: '高新1号店'
-        }
-      ], [
-        {
-          id: 0,
-          name: '猪肉绦虫'
-        },
-        {
-          id: 1,
-          name: '高新1号店'
-        }
-      ]
-    ],
+    multiArray: [],
+    
   },
   
-  onLoad: function () {
-    this.setData({
+  onLoad(options) {
+    const self = this;
+    api.commonInit(self);
+    self.data.id = options.id;
+    self.setData({
       img:app.globalData.hair,
     });
+    self.getMainData();
   },
+
+  getMainData(){
+    const self = this;
+    const postData = {};
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.hair_thirdapp_id,
+      id:self.data.id
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.mainData = res.info.data[0];
+        self.data.multiArray = [[self.data.mainData.title],[self.data.mainData.description]]
+      }else{
+        api.showToast('没有更多了','none');
+      }
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+      console.log(self.data.mainData)
+      self.setData({
+        web_multiArray:self.data.multiArray,
+        web_mainData:self.data.mainData
+      });  
+      self.getStoreData()
+    };
+    api.productGet(postData,callback);
+  },
+
+  getStoreData(){
+    const self = this;
+    const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.hair_thirdapp_id
+    };
+    postData.getBefore = {
+      store:{
+        tableName:'label',
+        middleKey:'menu_id',
+        key:'id',
+        searchItem:{
+          title:['=',['门店']]
+        },
+        condition:'in'
+      }
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        for (var i = 0; i < res.info.data.length; i++) {
+          self.data.storeArray.push(res.info.data[i].title+':'+res.info.data[i].description)
+        }
+      }
+      console.log(self.data.storeArray)
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getStoreData',self);
+      self.setData({
+        web_storeArray:self.data.storeArray,
+      });  
+    };
+    api.articleGet(postData,callback);
+  },
+
   userInfo:function(){
     wx.navigateTo({
       url:'/pages/hair/userInfo/userInfo'
     })
   },
+
    bindDateChange: function(e) {
     this.setData({
       date: e.detail.value
@@ -105,7 +129,7 @@ Page({
    bindMultiPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      multiIndex: e.detail.value
+      index2: e.detail.value
     })
   },
 })

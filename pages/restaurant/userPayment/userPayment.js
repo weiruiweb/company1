@@ -6,20 +6,26 @@ const token = new Token();
 Page({
   data: {
     isChoose:1,
+    buttonCanClick:true
   },
   
   onLoad: function (options) {
     const self = this;
     console.log(options)
     self.setData({
+      web_buttonCanClick:self.data.buttonCanClick,
       img:app.globalData.restaurant,
     })
   },
 
   pay(order_id){
     const self = this;
+    self.data.buttonCanClick = false;
+    self.setData({
+      web_buttonCanClick:self.data.buttonCanClick
+    });
     const postData = {
-      token:wx.getStorageSync('hotel_token'),
+      tokenFuncName:'getRestaurantToken',
       searchItem:{
         id:order_id
       },
@@ -40,6 +46,10 @@ Page({
       }else{
         api.showToast('网络故障','none')
       };
+      self.data.buttonCanClick = true;
+      self.setData({
+        web_buttonCanClick:self.data.buttonCanClick
+      })
     };
     api.pay(postData,callback);
   },

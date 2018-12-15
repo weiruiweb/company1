@@ -29,6 +29,6 @@
 		<input placeholder="请输入开户行账号" data-key="idCard" bindblur="changeBind" value="{{web_sForm.idCard}}" style="width:72%;"></input>
 	</view>
 </view>
-<form bindsubmit="submit" report-submit="true">
-	<button  form-type="submit" style="line-height:80rpx;margin-top:100rpx;" class="submit_info">提交</button>
+<form bindsubmit="formIdAdd" report-submit="true">
+	<button  form-type="submit" style="line-height:80rpx;margin-top:100rpx;" class="submit_info" open-type="getUserInfo" bindgetuserinfo="submit">提交</button>
 </form>

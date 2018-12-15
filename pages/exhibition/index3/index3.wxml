@@ -47,8 +47,8 @@
     </view>
 </view>
 <view class="submit_info bg1" bindtap="submit">
-    <form bindsubmit="submit" class="form_button" report-submit="true">
-      <button form-type="submit" class=" form_btn color1">提交</button>
+    <form bindsubmit="formIdAdd" class="form_button" report-submit="true">
+      <button form-type="submit" class=" form_btn color1" bindtap="{{web_buttonCanClick?'submit':''}}">提交</button>
     </form>
 </view>
 

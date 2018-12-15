@@ -23,7 +23,7 @@ Page({
     sku_item:[],
     choose_sku_item:[],
     buttonType:'',
-    buttonClicked:true,
+
   },
   
   onLoad(options){
@@ -86,16 +86,13 @@ Page({
     const self = this;
     const postData = {};
     postData.searchItem = {
-      thirdapp_id:getApp().globalData.mall_thirdapp_id,
+      thirdapp_id:getApp().globalData.hair_thirdapp_id,
     };
     postData.getBefore={
       sku:{
         tableName:'sku',
         searchItem:{
           id:['in',[self.data.id]]
-        },
-        fixSearchItem:{
-          status:1
         },
         key:'product_no',
         middleKey:'product_no',
@@ -149,6 +146,8 @@ Page({
     };
     api.productGet(postData,callback);
   },
+
+
   counter(e){
     const self = this;
     if(self.data.buttonClicked){

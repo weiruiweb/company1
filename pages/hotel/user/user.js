@@ -6,13 +6,14 @@ const token = new Token();
 
 Page({
   data: {
+    isFirstLoadAllStandard:['userInfoGet']
   },
   //事件处理函数
 
 
   onLoad(options){
     const self = this;
-    self.userInfoGet()
+    self.userInfoGet();
     self.setData({
       img:app.globalData.hotel,
     });
@@ -21,7 +22,7 @@ Page({
   userInfoGet(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('hotel_token');
+    postData.tokenFuncName = 'getHotelToken';
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0]
@@ -29,7 +30,7 @@ Page({
       self.setData({
         web_mainData:self.data.mainData,
       });
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'userInfoGet',true)
     };
     api.userGet(postData,callback);
   },
@@ -46,6 +47,7 @@ Page({
       delta:1
     })
   },
+
   intoPathRedirect(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');

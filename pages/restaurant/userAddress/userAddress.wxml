@@ -28,7 +28,7 @@
 				</view>
 				<text>编辑</text>
 			</view>
-			<view class="edit delete" data-id="{{item.id}}" bindtap="deleteAddress">
+			<view class="edit delete" data-id="{{item.id}}" bindtap="{{web_buttonCanlick?'deleteAddress':''}}">
 				<view class="delete_img">
 					<image src="/images/del.jpg"></image>
 				</view>

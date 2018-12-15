@@ -19,7 +19,7 @@
     </view>
     <view class="detail_comment flexRowBetween">
       <view class="detail  {{tabCurrent == 0?'detail_select':''}}" data-current="0" bindtap="select_this">
-          <text>预约人数:</text><text>168</text>
+          <text>预约人数:</text><text>{{web_mainData.order.length}}</text>
       </view>
       <view class="comment {{tabCurrent == 1?'detail_select':''}}"  data-current="1" bindtap="select_this">
         <text class="tex1">好评率</text><text class="tex2">99%</text>
@@ -46,6 +46,6 @@
       <text class="text1">单人自身洗剪吹一次</text>
       <text class="text2">¥222.0</text>
   </view>
-  <view class="sumbit_btn" bindtap="beginAppoint">
+  <view class="sumbit_btn" data-path="/pages/hair/beginAppoint/beginAppoint?id={{web_mainData.id}}" bindtap="intoPath"> 
       立即预约
   </view>

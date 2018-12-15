@@ -7,7 +7,7 @@
 		<view class="sort_txt">分类</view>
 	</view>
 	
-	<input placeholder="搜索商品名称"></input>
+	<input placeholder="搜索商品名称" bindchange="search" data-key="item" value="{{web_sForm.item}}"></input>
 </view>
 <view class="made_product flexRowBetween">
 	<view class="{{isShow?'mask':''}}" bindtap="mask">
@@ -38,7 +38,7 @@
 				<text>新品</text>
 				<view class="order_des scale2" style="{{img}};{{web_order.create_time == 'asc'?'background-position: -596px -46px':'background-position: -566px -46px'}}"></view>
 			</view>
-			<view  class="product_item flex {{web_order.price==4?'changeColor':''}}" data-key="price" bindtap="{{web_buttonCanClick?'changeOrder':''}}">
+			<view  class="product_item flex {{web_order.price?'changeColor':''}}" data-key="price" bindtap="{{web_buttonCanClick?'changeOrder':''}}">
 				<text>价格</text>
 				<view class="order_des scale2" style="{{img}};{{web_order.price == 'asc'?'background-position: -596px -46px':'background-position: -566px -46px'}}"></view>
 			</view>
@@ -56,9 +56,9 @@
 						
 						<view class="flexRowBetween" style="align-items:center;height:30%;">
 							<view style="width:55%;"><text class="price">¥{{item.price}}</text></view>
-							<view class="edit_number" style="width:45%;display:flex;align-items:center;">
+							<view class="edit_number" style="width:45%;display:flex;align-items:center;"  bindtap="addCart">
 								<view class="text" >{{item.sale_count}}件已售</view>
-								<view class="scale3" style="{{img}};width:44px;height:42px;background-position: -238px -94px;" bindtap="addCart" data-index="{{index}}"></view>
+								<view class="scale3" style="{{img}};width:44px;height:42px;background-position: -238px -94px;" data-index="{{index}}"></view>
 							</view>
 						</view>
 					</view>	

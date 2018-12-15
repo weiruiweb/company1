@@ -66,28 +66,34 @@ Page({
       img:app.globalData.restaurant
     })
   },
+
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
+
   intoPathRedirect(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
   },
+
   menu_click:function(){
     var isTranslate = !this.data.isTranslate
     this.setData({
       isTranslate:isTranslate
     })
   },
+
   tabCont:function(){
       this.setData({
        isTranslate:false
       });
   },
+
   close:function(){
     this.setData({
       isShow:true
     })
   }
+  
 })

@@ -22,19 +22,13 @@ Page({
     intervalOne:2000,
     duration: 1000,
     mainData:[],
-    complete_api:[],
+    isFirstLoadAllStandard:['getLabelData','getLabelDataTwo','getSliderData','getMainData']
   },
   //事件处理函数
  
-  onLoad(options) {
+  onLoad() {
     const self = this;
-    self.data.name = options.name;
-    if(!wx.getStorageSync('exhibition_token')){
-      var token = new Token();
-      token.getUserInfo(self.data.name);
-    };
-    wx.showLoading();
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self);
     var length = self.data.text.length * self.data.size;
     var windowWidth = wx.getSystemInfoSync().windowWidth;
     self.setData({
@@ -106,11 +100,10 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      self.data.complete_api.push('getMainData');
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
-      });
-      self.checkLoadComplete();
+      });    
     };
     api.articleGet(postData,callback);
   },
@@ -128,9 +121,8 @@ Page({
         self.setData({
           web_sliderUrl:res.info.data[0]['mainImg']
         });
-        self.data.complete_api.push('getSliderData')
+        api.checkLoadAll(self.data.isFirstLoadAllStandard,'getSliderData',self);
       };
-      self.checkLoadComplete();
     };
     api.labelGet(postData,callback);
   },
@@ -146,11 +138,10 @@ Page({
     const callback = (res)=>{
       if(res.info.data.length>0){ 
         self.setData({
-          web_labelUrl:res.info.data[0]['mainImg'][0]['url'],
+          web_labelUrl:res.info.data[0].mainImg[0].url,
         });
-        self.data.complete_api.push('getLabelData')
+        api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
       };
-      self.checkLoadComplete();
     };
     api.labelGet(postData,callback);
   },
@@ -169,20 +160,12 @@ Page({
           web_text:res.info.data[0].description,
           web_labelUrlTwo:res.info.data[0]['mainImg'][0]['url'],
         });
-        self.data.complete_api.push('getLabelDataTwo')
-      };
-      self.checkLoadComplete();
+        api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelDataTwo',self);
+      }
     };
     api.labelGet(postData,callback);
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getSliderData','getLabelData','getLabelDataTwo','getMainData']);
-    if(complete){
-      wx.hideLoading();
-    };
-  },
 
 
   intoPath(e){

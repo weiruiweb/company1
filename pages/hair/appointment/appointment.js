@@ -9,10 +9,12 @@ Page({
 
     tabCurrent:0,
     mainData:[],
+    isFirstLoadAllStandard:['getMainData']
   },
   
   onLoad(options) {
     const self = this;
+    api.commonInit(self);
     self.data.id =  options.id;
     self.getMainData();
     self.setData({
@@ -27,13 +29,16 @@ Page({
       thirdapp_id:getApp().globalData.hair_thirdapp_id,
       id:self.data.id
     };
-    postData.getAfter={
-      sku:{
-        tableName:'sku',
-        middleKey:'product_no',
-        key:'sku_no',
-        condition:'=',
-      } 
+    postData.getAfter = {
+      order:{
+        tableName:'OrderItem',
+        middleKey:'id',
+        key:'product_id',
+        searchItem:{
+          status:1
+        },
+        condition:'='
+      }
     };
     const callback = (res)=>{
       if(res.info.data.length>0){
@@ -41,7 +46,7 @@ Page({
       }else{
         api.showToast('没有更多了','none');
       }
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       console.log(self.data.mainData)
       self.setData({
         web_mainData:self.data.mainData,
@@ -51,25 +56,23 @@ Page({
   },
 
 
-  userInfo:function(){
-    wx.navigateTo({
-      url:'/pages/hair/userInfo/userInfo'
-    })
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
   },
+
+
    bindDateChange: function(e) {
     this.setData({
       date: e.detail.value
     })
   },
+
   discount:function(e){
     var current=e.currentTarget.dataset.current;
     this.setData({
       tapCurrent:current
     })
   },
-  beginAppoint:function(){
-    wx.navigateTo({
-      url:'/pages/hair/beginAppoint/beginAppoint'
-    })
-  }
+
 })

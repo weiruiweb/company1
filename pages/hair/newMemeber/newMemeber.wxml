@@ -32,7 +32,7 @@
 	<input placeholder="如街道，门牌号" value="{{web_sForm.address}}"  data-key="address" bindblur="changeBind"></input>
 </view>
 
-<view class="submit_info" bindtap="backAddress">
+<view class="submit_info" bindtap="{{web_buttonCanCalik?'submit':''}}">
 	办理会员
 </view>
 

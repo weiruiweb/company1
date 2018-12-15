@@ -8,7 +8,7 @@
 			<open-data type="userNickName" lang="zh_CN"></open-data>
 		</view>
 		<view class="member_bank">
-			<text>大众会员</text><text> 15165665</text>
+			<text></text><text>{{web_userData.user_no}}</text>
 		</view>
 	</view>
 	<view class="cre_wrap">
@@ -23,7 +23,7 @@
 <view id="user">
 	<view class="user_two flexRowBetween">
 		<view class="user_credit user_collect">
-			<view class="collect_number">{{web_userData.score?web_userData.score:'网络故障'}}</view>
+			<view class="collect_number">{{web_userData.score?web_userData.score:'0.00'}}</view>
 			<view class="collect_txt">我的余额</view>
 		</view>
 		<view class="user_fill" bindtap="top_in">

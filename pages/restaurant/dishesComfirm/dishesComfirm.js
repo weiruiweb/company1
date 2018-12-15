@@ -4,12 +4,15 @@ const app = getApp();
 import {Token} from '../../../utils/token.js';
 const token = new Token();
 Page({
-  data: {
 
+  data: {
+    isFirstLoadAllStandard:['onShow']
   },
 
-  onLoad: function () {
-    this.setData({
+  onLoad() {
+    const self = this;
+    api.commonInit(self);
+    self.setData({
       fonts:app.globalData.font,
       img:app.globalData.restaurant,
     })
@@ -19,18 +22,17 @@ Page({
     const self = this;
     self.data.mainData = api.jsonToArray(wx.getStorageSync('cartData'),'unshift');
     console.log(self.data.mainData)
-
     self.setData({
-
       web_mainData:self.data.mainData
     });
     self.countTotalPrice();
+    api.checkLoadAll(self.data.isFirstLoadAllStandard,'onShow',self)
   },
 
   addOrder(){
     const self = this;
       const postData = {
-        token:wx.getStorageSync('hotel_token'),
+        tokenFuncName:'getRestaurantToken',
         sku:[
           {id:self.data.mainData.id,count:self.data.mainData.count}
         ],

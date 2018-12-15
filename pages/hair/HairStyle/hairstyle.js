@@ -11,19 +11,18 @@ Page({
     labelData:[],
     mainData:[],
     index:0,
-    currentId:72,
-    isLoadAll:false,
+    currentId:65,
+    isFirstLoadAllStandard:['getMainData','getLabelData']
   },
   
   onLoad(options) {
     const self = this;
-    wx.showLoading();
+    api.commonInit(self);
     self.setData({
       fonts:app.globalData.font,
       img:app.globalData.hair,
     });
 
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getLabelData();
     self.setData({
       web_index:self.data.index,
@@ -36,6 +35,7 @@ Page({
 
   menuTap(e){
     const self = this;
+    api.buttonCanClick(self);
     var index = e.currentTarget.dataset.index;
     var currentId = e.currentTarget.dataset.id;
 
@@ -72,8 +72,9 @@ Page({
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
-      }
-      wx.hideLoading();
+      };
+      api.buttonCanClick(self,true);
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });  
@@ -94,7 +95,10 @@ Page({
       title:['in',['男士发型','女士发型']]
     };
     postData.searchItemOr = {
-      parentid:['in',[65,64]]
+      parentid:['in',[60,61]]
+    };
+    postData.order = {
+      create_time:'desc'
     }
     const callback = (res)=>{
       if(res.info.data.length>0){
@@ -103,8 +107,7 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       }
-      console.log(self.data.labelData)
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
       self.setData({
         web_labelData:self.data.labelData,
       });

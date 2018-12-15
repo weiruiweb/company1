@@ -79,12 +79,12 @@
 
   <view class="dresser_list">
     <block wx:for="{{web_mainData}}" wx:key="id">
-      <view class="dresser_item" bindtap="order">
+      <view class="dresser_item" bindtap="intoPath" data-path="/pages/hair/appointment/appointment?id={{item.id}}">
         <image src="{{item.mainImg[0].url}}"></image>
         <view class="text">
           <text class="text1">{{item.title}}</text><text class="text1 text2">{{item.description}}</text>
         </view>
-        <text class="number">160人预约过</text>
+        <text class="number">{{item.order.length}}人预约过</text>
         <view class="order">
           预约TA
         </view>

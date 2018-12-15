@@ -7,19 +7,24 @@ const token = new Token();
 
 Page({
   data: {
+    
+    isFirstLoadAllStandard:['getUserInfoData']
   },
+
   onLoad() {
     const self = this;
+    api.commonInit(self);
     self.getUserInfoData();
     self.setData({
       img:app.globalData.hair,
     });
+
   },
 
   getUserInfoData(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('hair_token');
+    postData.tokenFuncName = 'getHairToken';
     const callback = (res)=>{
       if(res.solely_code==100000){
         if(res.info.data.length>0){
@@ -31,8 +36,7 @@ Page({
       }else{
         api.showToast('网络故障','none')
       }
-      
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getUserInfoData',self);
     };
     api.userInfoGet(postData,callback);   
   },

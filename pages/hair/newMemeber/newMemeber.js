@@ -13,13 +13,13 @@ Page({
       address:'',
       passage1:''    
     },
-
+    isFirstLoadAllStandard:['userInfoGet'],
     mainData:{},
     
   },
   onLoad(){
     const self = this;
-    wx.showLoading();
+    api.commonInit(self);
     self.userInfoGet();
     self.setData({
       img:app.globalData.img
@@ -30,7 +30,7 @@ Page({
   userInfoGet(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('hair_token');
+    postData.tokenFuncName='getHairToken';
     const callback = (res)=>{
       if(res){
         self.data.mainData = res;
@@ -42,7 +42,7 @@ Page({
       self.setData({
         web_sForm:self.data.sForm,
       });
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'userInfoGet',self)
     };
     api.userGet(postData,callback);
   },
@@ -83,6 +83,7 @@ Page({
       }else{
         api.showToast('网络故障','none')
       };
+      api.buttonCanClick(self,true)
     };
     api.userInfoUpdate(postData,callback);
   },
@@ -92,6 +93,7 @@ Page({
 
   submit(){
     const self = this;
+    api.buttonCanClick(self);
     var phone = self.data.sForm.phone;
     const pass = api.checkComplete(self.data.sForm);
     if(pass){
@@ -106,6 +108,7 @@ Page({
       }
     }else{
       api.showToast('请补全信息','none');
+      api.buttonCanClick(true,self)
     };
   },
 

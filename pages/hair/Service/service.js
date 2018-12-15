@@ -11,15 +11,15 @@ Page({
     mainData:[],
     searchItem:{
       thirdapp_id:getApp().globalData.hair_thirdapp_id,
-      category_id:92
+      category_id:72
     },
-    buttonClicked:false,
+    isFirstLoadAllStandard:['getLabelData','getMainData'],
     num:''
   },
   
   onLoad() {
     const self  = this;
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self);
     self.setData({
       web_num:self.data.searchItem.category_id,
       img:app.globalData.hair
@@ -47,6 +47,7 @@ Page({
         condition:'in',
       },
     };
+
     postData.order = {
       create_time:'normal'
     }
@@ -56,10 +57,9 @@ Page({
       }else{
         api.showToast('没有更多了','none')
       };
-      wx.hideLoading();
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
       self.setData({
-        web_labelData:self.data.labelData,
-       
+        web_labelData:self.data.labelData,  
       });
     };
     api.labelGet(postData,callback);   
@@ -67,7 +67,6 @@ Page({
 
   getMainData(isNew){
     const self = this;
-    self.data.buttonClicked=true;
     if(isNew){
       api.clearPageIndex(self); 
       self.setData({
@@ -79,11 +78,23 @@ Page({
     postData.searchItem = api.cloneForm(self.data.searchItem);
     postData.order={
       create_time:'desc'
-    }
-
+    };
+    postData.getAfter={
+      sku:{
+        tableName:'sku',
+        middleKey:'product_no',
+        searchItem:{
+          status:1
+        },
+        key:'product_no',
+        condition:'=',
+      } 
+    };
     const callback = (res)=>{
       if(res.info.data.length>0){
-        self.data.mainData.push.apply(self.data.mainData,res.info.data);
+        for (var i = 0; i < res.info.data.length; i++) {
+            self.data.mainData.push.apply(self.data.mainData,res.info.data[i].sku);
+        };
         if(res.info.data.length>8){
           self.data.mainData = self.data.mainData.slice(0,8) 
         }
@@ -91,8 +102,8 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      self.data.buttonClicked = false;
-      wx.hideLoading();
+      api.buttonCanClick(self,true);
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });     
@@ -103,9 +114,7 @@ Page({
 
   menuClick: function (e) {
     const self = this;
-    if(self.data.buttonClicked==true){
-      return
-    }
+    api.buttonCanClick(self);
     const num = e.currentTarget.dataset.num;
     self.changeSearch(num);
   },
@@ -121,11 +130,6 @@ Page({
   },
 
 
-  detail:function(){
-    wx.navigateTo({
-      url:'/pages/hair/detail/detail'
-    })
-  },
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

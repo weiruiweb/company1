@@ -66,7 +66,6 @@
 				<view class="comment_number">
 					评价({{web_num}})
 				</view>
-				
 			</view>
 			<block wx:for="{{web_messageData}}" wx:key="id">
 				<view class="comment_list ">

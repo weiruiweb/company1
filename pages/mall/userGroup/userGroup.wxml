@@ -15,13 +15,14 @@
 				<picker  mode="date" value="{{web_startTime}}" data-type="startTime" bindchange="bindTimeChange" >
 					<view style="display:flex;align-items:center;width:100%;">
 						<view style="width:85%;height:70rpx;">
-						    <view class="picker text" style="color:#21c3d4;">
+						    <view class="picker text" style="{{web_startTime?'color:#21c3d4':''}}">
 						      起始日期
 						    </view>
 						    <view class="text font24" style="color:#21c3d4;">{{web_startTime}}</view>
 						</view>
 						<view style="width:15%;height:70rpx;">
-							<image src="/images/up_icon2.jpg"></image>
+							
+							<image src="{{web_startTime?'/images/up_icon2':'/images/up_icon1'}}.jpg"></image>
 						</view>
 					</view>	
 				</picker>
@@ -36,13 +37,13 @@
 				<picker  mode="date" value="{{web_endTime}}" data-type="endTime" bindchange="bindTimeChange" >
 					<view style="display:flex;align-items:center;width:100%;">
 						<view style="width:85%;height:70rpx;">
-						    <view class="picker text">
+						    <view class="picker text" style="{{web_endTime?'color:#21c3d4':''}}">
 						      截至日期
 						    </view>
-						    <view class="text font24">{{web_endTime}}</view>
+						    <view class="text font24" style="color:#21c3d4;">{{web_endTime}}</view>
 					    </view>
 					    <view style="width:15%;height:70rpx;">
-							<image src="/images/up_icon1.jpg"></image>
+							<image src="{{web_endTime?'/images/up_icon2':'/images/up_icon1'}}.jpg"></image>
 						</view>
 					</view>
 				</picker>

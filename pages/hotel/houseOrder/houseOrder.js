@@ -8,8 +8,7 @@ Page({
     is_select:0,
     isShow:false,
     is_discount:0,
-    complete_api:[],
-    buttonClicked:true,
+    isFirstLoadAllStandard:['getSkuData','getartData'],
     submitData:{
       phone:'',
       name:'',
@@ -19,7 +18,7 @@ Page({
   
   onLoad(options) {
     const self = this;
-    wx.showLoading();
+    api.commonInit(self);
     
     self.data.id = options.id;
     self.getSkuData();
@@ -42,14 +41,12 @@ Page({
       }else{
         api.showToast('数据错误','none');
       };
-      self.data.skuData.count = 1;
-      self.countTotalPrice(); 
-      self.data.complete_api.push('getSkuData');
-      
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getSkuData',self);
       self.setData({
         web_skuData:self.data.skuData,
       }); 
-      self.checkLoadComplete() 
+      self.data.skuData.count = 1;
+      self.countTotalPrice(); 
     };
     api.skuGet(postData,callback);
   },
@@ -76,11 +73,10 @@ Page({
         self.data.artData = res.info.data[0];
         self.data.artData.content = api.wxParseReturn(res.info.data[0].content).nodes;
       };
-      self.data.complete_api.push('getartData')
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getSkuData',self);
       self.setData({
         web_artData:self.data.artData,
       });  
-      self.checkLoadComplete() 
     };
     api.articleGet(postData,callback);
   },
@@ -112,14 +108,11 @@ Page({
 
   addOrder(){
     const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      return;
-    };
+    api.buttonCanClick(self);
     if(!self.data.order_id){
       self.data.buttonClicked = true;
       const postData = {
-        token:wx.getStorageSync('hotel_token'),
+        tokenFuncName:'getHotelToken',
         sku:[
           {id:self.data.skuData.id,count:self.data.skuData.count}
         ],
@@ -129,9 +122,6 @@ Page({
       };
       const callback = (res)=>{
         if(res&&res.solely_code==100000){
-          setTimeout(function(){
-            self.data.buttonClicked = false;
-          },1000);
           self.data.order_id = res.info.id
           self.pay(self.data.order_id);         
         }; 
@@ -144,12 +134,8 @@ Page({
 
   pay(order_id){
     const self = this;
-    self.setData({
-      buttonClicked: true
-    })
-    
     const postData = {
-      token:wx.getStorageSync('hotel_token'),
+      tokenFuncName:'getHotelToken',
       searchItem:{
         id:order_id
       },
@@ -169,10 +155,8 @@ Page({
         api.realPay(res.info,payCallback); 
       }else{
         api.showToast('网络故障','none')
-        self.setData({
-          buttonClicked: false
-        })
       };
+      api.buttonCanClick(self,true)
     };
     api.pay(postData,callback);
   },
@@ -195,14 +179,7 @@ Page({
     });
   },
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getSkuData','getartData']);
-    if(complete){
-      wx.hideLoading();
-      self.data.buttonClicked = false;
-    };
-  },
+
 
   intoPath(e){
     const self = this;
@@ -232,7 +209,8 @@ Page({
       isShow:isShow
     })
   },
-   close:function(){
+  
+  close:function(){
     this.setData({
       isShow:false
     })

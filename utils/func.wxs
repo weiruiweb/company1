@@ -28,6 +28,8 @@ var timeToTimestamp= function(format){
     
 }
 
+
+
 var stringToArray= function(str,babel){
     if(str){
         return str.split(babel);
@@ -68,24 +70,26 @@ var inArray= function(value,array){
 
 
 var getArrayByTarget = function(array,targetName,target){
+
+  var results = [];
   var getItemsBytarget =function(array,targetName,target){
 
     for(var i = 0;i < array.length; i++){
       if(results.length>0){
         return false;
-      }  
+      };  
       var item = array[i];
-      for(var c_i=0;c_i<target.length;c_i++){
-        if(item[targetName] == target[c_i]){  
-          results.push(item);
-        }else if(item.child&&item.child.length>0){            
-          getItemsBytarget(item.child,targetName,target);
-        }
-      }
-    };
 
+      if(item[targetName]&&item[targetName] == target){  
+        results.push(item);
+      }else if(item.child&&item.child.length>0){            
+        getItemsBytarget(item.child,targetName,target);
+      };
+    };
+    
   }; 
-  var results = [];
+
+  
   getItemsBytarget(array,targetName,target);
   return results;   
   

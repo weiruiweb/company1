@@ -16,12 +16,13 @@ Page({
     autoplay: true,
     intervalOne:2000,
     duration: 1000,
-
+    isFirstLoadAllStandard:['getArtData']
   },
 
 
   onLoad(options){
     const self = this;
+    api.commonInit(self);
     self.data.id = options.id;
     self.getArtData()      
   },
@@ -36,9 +37,9 @@ Page({
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.artData = res.info.data[0];
-      }    
-      wx.hideLoading();
-      self.data.artData.content = api.wxParseReturn(res.info.data[0].content).nodes;
+        self.data.artData.content = api.wxParseReturn(res.info.data[0].content).nodes;
+      };
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getArtData',self)
       self.setData({
         web_artData:self.data.artData,
       });  

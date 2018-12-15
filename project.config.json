@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 64,
+			"current": 65,
 			"list": [
 				{
 					"id": 0,
@@ -424,6 +424,12 @@
 					"name": "商城确认1",
 					"pathName": "pages/mall/confirmOrder/confirmOrder",
 					"query": "95"
+				},
+				{
+					"id": -1,
+					"name": "行业案例",
+					"pathName": "pages/entrance/case/case",
+					"query": "parent_no=UA1865727981427"
 				}
 			]
 		}

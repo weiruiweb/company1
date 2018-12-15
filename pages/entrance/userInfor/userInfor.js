@@ -24,6 +24,10 @@ Page({
     self.userInfoGet();
   },
 
+  formIdAdd(e){
+    api.WxFormIdAdd(e.detail.formId,(new Date()).getTime()/1000+7*86400);  
+  },
+
   userInfoGet(){
     const self = this;
     const postData = {};

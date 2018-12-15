@@ -8,7 +8,7 @@ const token = new Token();
 Page({
   data: {
     mainData:[],
-    complete_api:[],
+    isFirstLoadAllStandard:['getMainData'],
     indicatorDots: true,
     autoplay: true,
     intervalOne:2000,
@@ -17,8 +17,7 @@ Page({
   //事件处理函数
   onLoad(options) {
     const self = this;
-    wx.showLoading();
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    api.commonInit(self);
     self.getMainData();
     self.setData({
       img:app.globalData.hair
@@ -32,6 +31,7 @@ Page({
       api.clearPageIndex(self);  
     };
     const postData = {};
+
     postData.searchItem = {
       thirdapp_id:getApp().globalData.hair_thirdapp_id
     };
@@ -53,31 +53,24 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      self.data.complete_api.push('getMainData'); 
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self)
       self.setData({
         web_mainData:self.data.mainData,
-      });
-      self.checkLoadComplete();
+      });     
     };
     api.articleGet(postData,callback);
   },
 
   onReachBottom() {
     const self = this;
-    if(!self.data.isLoadAll){
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
       self.data.paginate.currentPage++;
       self.getMainData();
     };
   },
 
 
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData']);
-    if(complete){
-      wx.hideLoading();
-    };
-  },
+
 
 
   intoPath(e){

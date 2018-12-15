@@ -40,7 +40,7 @@ Page({
         self.setData({
           web_sliderUrl:res.info.data[0]['mainImg']
         });
-          api.checkLoadAll(self.data.isFirstLoadAllStandard,'getSliderData',self)
+        api.checkLoadAll(self.data.isFirstLoadAllStandard,'getSliderData',self)
       };
       
     };

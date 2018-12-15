@@ -18,6 +18,7 @@ Page({
     sliderData:[],
     caseData:[],
     mainData:[],
+    menu_array:[],
     labelData:[],
     labelDataTwo:[],
     labelDataThree:[],
@@ -88,64 +89,60 @@ Page({
   },
 
 
-  getLabelData(){
-    const self = this;
-    const postData = {};
+  getCaseData(isNew){
+    var self = this;
+    if(isNew){
+      api.clearPageIndex(self)
+    };
+    var postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      thirdapp_id:getApp().globalData.solely_thirdapp_id,
-      type:1,
-    };
-    const callback = (res)=>{
+      thirdapp_id:21
+    }
+    postData.searchItem.menu_id = ['in', self.data.menu_array]; 
+    var callback = (res) => {
       if(res.info.data.length>0){
-        self.data.labelData.push.apply(self.data.labelData,res.info.data);
-        var length=self.data.labelData.length;
-        for(var i=0;i<length;i++){
-          if(self.data.labelData[i].title=='行业案例'){
-             self.data.labelDataTwo.push(self.data.labelData[i].child);
-             var child_length = self.data.labelData[i].child.length;
-             console.log(909,self.data.labelData[i].child);
-             for(var j=0;j<child_length;j++){
-              if(self.data.labelData[i].child[j].child){
-                for(var h=0;h<self.data.labelData[i].child[j].child.length;h++){
-                  self.data.labelDataThree.push(self.data.labelData[i].child[j].child[h].id)
-                }
-
-              }
-             }
-          }
-        }
+        self.data.caseData.push.apply(self.data.caseData,res.info.data)
       }else{
-        api.showToast('没有更多了','fail');
-      }
-      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
-     self.getCaseData();
-    };
-    api.labelGet(postData,callback);   
-  },
-
-  getCaseData(){
-    const self =this;
-    const postData={};
-    postData.searchItem ={
-        thirdapp_id:getApp().globalData.solely_thirdapp_id,
-    };
-    postData.searchItem.menu_id = ['in',self.data.labelDataThree];
-    const callback =(res)=>{
-      if(res.info.data.length>0){
-        self.data.caseData.push.apply(self.data.caseData,res.info.data);
-        self.data.caseData=self.data.caseData.slice(0,4);
-        
-      }else{
-        self.data.isLoadAll = true,
-        api.showToast('没有更多了','fail');
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','none')
       }
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getCaseData',self);
+      self.data.menu_array = [];
       self.setData({
-        web_caseData:self.data.caseData,
-      }); 
-      console.log(1000,self.data.web_caseData);
+        web_menu_array:self.data.menu_array,
+        web_caseData:self.data.caseData
+      })
     };
-    api.articleGet(postData,callback);
+    api.articleGet(postData, callback);
+  },
+
+
+  getLabelData(isNew) {
+    var self = this;
+    if(isNew){
+      api.clearPageIndex(self)
+    };
+    var postData = {};
+    postData.searchItem = { 
+        type: 1,
+        thirdapp_id: 21,
+        parentid:2
+    };
+    var callback = function(res) {
+      if(res.info.data.length>0){
+        self.data.labelData.push.apply(self.data.labelData,res.info.data)
+      }
+      for (var i = 0; i < res.info.data.length; i++) {
+        self.data.menu_array.push(res.info.data[i].id)
+      };
+       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
+      self.setData({
+        web_labelData:self.data.labelData
+      });
+      self.getCaseData();
+    };
+    api.labelGet(postData,callback);
   },
 
   intoMap(){

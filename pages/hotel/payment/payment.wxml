@@ -3,7 +3,7 @@
     <view class="pay_before">
       消费金额
     </view>
-    <input placeholder="请输入消费金额"></input>
+    <input placeholder="请输入消费金额" bindblur="changeBind" data-key="price" value="{{web_submitData.price}}"></input>
 </view>
 <view class="pay_method flex">
   <view class="pay_txt">
@@ -17,5 +17,5 @@
 </view>
 
 <form bindsubmit="submit"  report-submit="true">
-  <button form-type="submit" class="submit_info form_btn color1">立即充值</button>
+  <button form-type="submit" class="submit_info form_btn color1" bindtap="{{web_buttonCanClick?'pay':''}}">立即充值</button>
 </form>

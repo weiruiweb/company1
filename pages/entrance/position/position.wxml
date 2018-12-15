@@ -23,7 +23,10 @@
 			<text>雁塔区科技路高新大都荟7号楼A座</text>
 		</view>
 		<view class="client_intro flexRowBetween font30 w710">
-			{{item.description}}	
+			<view class="content ql-editor">
+				<import src="../../../wxParse/wxParse.wxml"/>
+			    <template is="wxParse" data="{{wxParseData:item.content}}"/>
+			</view>
 		</view>
 	</block>
 </view>

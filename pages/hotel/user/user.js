@@ -13,6 +13,7 @@ Page({
 
   onLoad(options){
     const self = this;
+    api.commonInit(self);
     self.userInfoGet();
     self.setData({
       img:app.globalData.hotel,
@@ -30,7 +31,7 @@ Page({
       self.setData({
         web_mainData:self.data.mainData,
       });
-      api.checkLoadAll(self.data.isFirstLoadAllStandard,'userInfoGet',true)
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'userInfoGet',self)
     };
     api.userGet(postData,callback);
   },

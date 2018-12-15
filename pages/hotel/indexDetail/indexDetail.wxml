@@ -1,6 +1,12 @@
 <!--index.wxml-->
 <view class="banner">
-    <image src="/images_hotel/banner.png"></image>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:370rpx">
+        <block wx:for="{{web_mainDat.bannerImg}}" wx:key="id">
+            <swiper-item>
+                <image src="{{item.url}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
 </view>
 <view class="p40" id="album">
   <view class="address flexRowBetween">
@@ -139,7 +145,7 @@
 			<view class="confirm_left">
 				合计：{{web_skuData.price}}
 			</view>
-			<view class="confirm_right" bindtap="intoPath"  data-path="/pages/hotel/houseOrder/houseOrder?id={{web_skuData.id}}">
+			<view class="confirm_right" bindtap="{{web_buttonCanClick?'addOrder':''}}" >
 				<view class="submit_btn">提交订单</view>
 			</view>
 		</view>

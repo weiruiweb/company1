@@ -1,23 +1,6 @@
 <!--User.wxml-->
 <view class="banner">
-    <view class="page-body">
-      <view class="page-section page-section-spacing swiper">
-        <swiper
-           autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
-          interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px" bindchange="swiperChange">
-          <block wx:for="{{web_mainData.bannerImg}}" wx:index="{{index}}" wx:key="id">
-            <swiper-item>
-              <image src="{{item.url}}"></image>
-            </swiper-item>
-          </block>
-        </swiper>
-        <view class="dots"> 
-        <block wx:for="{{web_mainData.bannerImg}}" wx:key="unique"> 
-          <view class="dot{{index == swiperIndex ? ' active' : ''}}"></view> 
-        </block> 
-      </view>
-      </view>
-  </view>
+   <image src="{{web_mainData.mainImg[0].url}}"></image>   
 </view>
 <view class="w710" style="height:100%;">
 	<view class="state">
@@ -25,17 +8,27 @@
 			<view class="state_right_box">
 				<view class="state_top flex">
 					<view class="font24 color3" style="width:65%;">{{web_mainData.title}}</view>
-					<view class="font24 color9" style="width:35%; text-align: right;">{{web_mainData.create_time}}</view>
 				</view>
-				<view class="font26 color9">
-					<view class="content ql-editor">
-						<import src="../../../wxParse/wxParse.wxml"/>
-					    <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
-					</view>	
-				</view>
+	
 			</view>
 			
 		</view>
 	</view>
+</view>
+<view class="caseShow_img phonecaseImg">
+    <view class="contain">
+        <view class="introduce_tlt">
+            <span>界面展示</span>
+            <span></span>
+        </view>
+        <view class="wx_detail">
+            <block  wx:for="{{web_mainData.bannerImg}}">  
+                <view class="deatil_list">
+                    <image src="{{item.url}}" class="img-responsive"/>
+                </view>
+            </block>
+        </view>
+         
+    </view>
 </view>
 

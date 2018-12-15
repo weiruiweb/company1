@@ -19,22 +19,25 @@ Page({
     swiperIndex:0,
     nextMargin: 0,
     isFirstLoadAllStandard:['getMainData'],
+    searchItem:{
+      thirdapp_id:getApp().globalData.solely_thirdapp_id
+    }
   },
 
   onLoad(options) {
     const self = this;
     api.commonInit(self);
+    if(options.name){
+      self.data.searchItem.thirdapp_id = 21
+    };
     self.data.id = options.id;
     self.getMainData();
   },
   getMainData(){
     const self= this;
     const postData = {};
-    postData.searchItem ={
-      thirdapp_id:app.globalData.solely_thirdapp_id,
-      id:self.data.id
-    };
-    postData.searchItem.id = self.data.id;
+    postData.searchItem =api.cloneForm(self.data.searchItem)
+    postData.searchItem.id=self.data.id;
     const callback = (res)=>{
       self.data.mainData = {};
       if(res.info.data.length>0){

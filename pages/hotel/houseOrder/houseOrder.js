@@ -8,7 +8,7 @@ Page({
     is_select:0,
     isShow:false,
     is_discount:0,
-    isFirstLoadAllStandard:['getSkuData','getartData'],
+    isFirstLoadAllStandard:['getartData'],
     submitData:{
       phone:'',
       name:'',
@@ -19,8 +19,12 @@ Page({
   onLoad(options) {
     const self = this;
     api.commonInit(self);
-    
-    self.data.id = options.id;
+    if(options.order_id){
+      self.data.order_id = options.order_id;
+      self.data.order_array = options.order_id.split(',');
+    }else{
+      api.showToast('数据传递有误','error');
+    };
     self.getSkuData();
     self.getartData()
     self.setData({
@@ -28,28 +32,7 @@ Page({
     });
   },
 
-  getSkuData(){
-    const self = this;
-    const postData = {};
-    postData.searchItem = {
-       thirdapp_id:getApp().globalData.hotel_thirdapp_id,
-       id:self.data.id
-    }
-    const callback = (res)=>{
-      if(res.info.data.length>0){
-        self.data.skuData = res.info.data[0];
-      }else{
-        api.showToast('数据错误','none');
-      };
-      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getSkuData',self);
-      self.setData({
-        web_skuData:self.data.skuData,
-      }); 
-      self.data.skuData.count = 1;
-      self.countTotalPrice(); 
-    };
-    api.skuGet(postData,callback);
-  },
+
 
   getartData(){
     const self = this;
@@ -73,7 +56,7 @@ Page({
         self.data.artData = res.info.data[0];
         self.data.artData.content = api.wxParseReturn(res.info.data[0].content).nodes;
       };
-      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getSkuData',self);
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getartData',self);
       self.setData({
         web_artData:self.data.artData,
       });  
@@ -106,40 +89,19 @@ Page({
     });  
   },
 
-  addOrder(){
-    const self = this;
-    api.buttonCanClick(self);
-    if(!self.data.order_id){
-      self.data.buttonClicked = true;
-      const postData = {
-        tokenFuncName:'getHotelToken',
-        sku:[
-          {id:self.data.skuData.id,count:self.data.skuData.count}
-        ],
-        pay:{wxPay:self.data.totalPrice.toFixed(2)},
-        type:1,
-        snap_address:self.data.submitData
-      };
-      const callback = (res)=>{
-        if(res&&res.solely_code==100000){
-          self.data.order_id = res.info.id
-          self.pay(self.data.order_id);         
-        }; 
-      };
-      api.addOrder(postData,callback);
-    }else{
-      self.pay(self.data.order_id);
-    };   
-  },
+
 
   pay(order_id){
     const self = this;
     const postData = {
       tokenFuncName:'getHotelToken',
       searchItem:{
-        id:order_id
+        id:self.data.order_id
       },
-      wxPay:self.data.totalPrice.toFixed(2),
+      wxPay:{
+        price:self.data.totalPrice.toFixed(2),
+      },
+      
       wxPayStatus:0
     };
     const callback = (res)=>{

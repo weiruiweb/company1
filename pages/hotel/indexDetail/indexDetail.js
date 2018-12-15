@@ -17,6 +17,7 @@ Page({
     const self = this;
     api.commonInit(self);
     self.data.id = options.id;
+    
     self.getMainData()
     self.setData({
       img:app.globalData.hotel,
@@ -64,6 +65,7 @@ Page({
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.skuData = res.info.data[0];
+        self.data.skuData.count = 1;
       }else{
         api.showToast('数据错误','none');
       }
@@ -73,6 +75,29 @@ Page({
       });  
     };
     api.skuGet(postData,callback);
+  },
+
+  addOrder(){
+    const self = this;
+    api.buttonCanClick(self);
+   
+      self.data.buttonClicked = true;
+      const postData = {
+        tokenFuncName:'getHotelToken',
+        sku:[
+          {id:self.data.skuData.id,count:self.data.skuData.count}
+        ],
+        type:1,
+        snap_address:self.data.submitData
+      };
+      const callback = (res)=>{
+        if(res&&res.solely_code==100000){
+          api.pathTo('/pages/hair/confirmOrder/confirmOrder?order_id='+res.info.id,'nav');        
+        }else{
+          api.showToast(res.msg,'none');
+        };
+      };
+      api.addOrder(postData,callback);  
   },
 
 

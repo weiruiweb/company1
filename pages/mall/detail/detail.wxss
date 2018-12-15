@@ -388,3 +388,84 @@ video{
 	text-align:center;
 	line-height:80rpx;
 }
+.detail_banner{
+    margin-top:1rem;
+}
+.caseComputer{margin-top: 1.5rem;}
+.case_intro{
+    margin-left:0.5rem;}
+.case_intro img{
+    width:2.4rem;
+    height:2.4rem;
+    overflow:hidden;
+    border-radius:50%;
+    margin-top:0.5rem;
+}
+.case_intro h5{
+    color: #444;
+    font-size: 0.26rem;}
+.case_intro p {
+    color: #888;
+    font-size: 14px;
+    margin-top: 52px;
+    line-height: 28px;
+}
+.case_intro a{
+    width:160px;
+    height:45px;
+    border-radius: 20px;
+    background: #089fe3;
+    line-height: 45px;
+    text-align: center;
+    color:#fff;
+    margin-top:45px;}
+.case_intro a img{margin-right:15px;}
+.caseImg{
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.caseImg_center{width: 42%;margin:0px 1%;float: left;}
+.caseShow_img {
+    text-align: center;
+}
+.caseIphones{
+    position: relative;
+    width:3rem;
+    height: 6.08rem;
+}
+.caseIphones .caseImg{
+    position: absolute;
+    top:0.74rem;
+    left:0.24rem;}
+.caseIphones img{
+    width:100%;
+    height: 100%;
+    margin:0px auto;}
+.caseImg img{
+    width:2.54rem;
+    height:4.60rem;
+}
+.phonecaseImg .caseImg_top{
+    box-shadow: 0px 0px 5px #666;
+    padding:10px;height: 100%;
+    border:solid 1px #9d9d9d;}
+.phonecaseImg img{box-shadow: 0px 0px 1px #666;}
+.phonecaseImg{margin-bottom: 250px;}
+.caseImg_left1{
+    width: 50%;
+    float:left;
+}
+.caseImg_right1{
+    width:50%;
+    float:right;
+}
+.deatil_list{
+    width:24%;
+}
+.wx_detail {
+    width:100%;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}

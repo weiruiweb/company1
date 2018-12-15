@@ -13,15 +13,12 @@
               {{web_submitData.passage_array}}
           </view>
       </scroll-view>
-    <view class="sort_module" wx:for="{{web_labelDataTwo[0]}}" wx:key="id">
-      <view class="font30" style="width:100%;height:98rpx;line-height: 106rpx;" data-index="{{index}}">{{item.title}}</view>
       <view class="menu_all flex">
-        <block wx:for="{{item.child}}" wx:key="id" wx:for-item='c_item'>
+        <block wx:for="{{web_labelData}}" wx:key="id" >
            
-          <view class="menu_item font26 color6"  bindtap="this_choose"  data-id="{{c_item.id}}" data-text="{{c_item.title}}" style="{{func.inArray(c_item.id,web_searchData)!=-1?'border-bottom:1px solid  #21c3d4':''}}">{{c_item.title}}</view> 
+          <view class="menu_item font26 color6"  bindtap="this_choose"  data-id="{{item.id}}" data-text="{{item.title}}" style="{{func.inArray(item.id,web_menu_array)!=-1?'border-bottom:1px solid  #21c3d4':''}}">{{item.title}}</view> 
         </block>
       </view>
-    </view>
   </view>
   <view class="menu_click flex" bindtap="menu_hidden">
     <image src="/images/up1.png"></image>

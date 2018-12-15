@@ -14,24 +14,23 @@ Page({
       passage_array:[],
     },
     labelData:[],
-    labelDataTwo:[],
-    labelDataThree:[],
+    menu:[],
+    menu_array:[],
     currentText:'',
-    searchData:[],
-    isFirstLoadAllStandard:['getMainData'],
+
   },
   
 
   onLoad(){
     const self = this;
-    api.commonInit(self);
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.setData({
-      web_searchData:self.data.searchData
+      web_menu_array:self.data.menu_array
     });
     self.getLabelData();
   },
 
-  getMainData(isNew){
+/*  getMainData(isNew){
     const self =this;
     if(isNew){
       api.clearPageIndex(self); 
@@ -66,53 +65,76 @@ Page({
       console.log(1000,self.data.web_mainData);
     };
     api.articleGet(postData,callback);
+  },*/
+
+  getMainData(isNew){
+    var self = this;
+    if(isNew){
+      api.clearPageIndex(self)
+    };
+    var postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
+    postData.searchItem = {
+      thirdapp_id:21
+    }
+    postData.searchItem.menu_id = ['in', self.data.menu_array]; 
+    var callback = (res) => {
+      if(res.info.data.length>0){
+        self.data.mainData.push.apply(self.data.mainData,res.info.data)
+      }else{
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','none')
+      }
+      setTimeout(function()
+      {
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+      },300);
+      self.data.menu_array = [];
+      self.setData({
+        web_menu_array:self.data.menu_array,
+        web_mainData:self.data.mainData
+      })
+    };
+    api.articleGet(postData, callback);
   },
 
 
-  getLabelData(){
-    const self = this;
-    const postData = {};
-    postData.searchItem = {
-      thirdapp_id:getApp().globalData.solely_thirdapp_id,
-      type:1,
+  getLabelData(isNew) {
+    var self = this;
+    if(isNew){
+      api.clearPageIndex(self)
     };
-    const callback = (res)=>{
+    var postData = {};
+    postData.searchItem = { 
+        type: 1,
+        thirdapp_id: 21,
+        parentid:2
+    };
+    var callback = function(res) {
       if(res.info.data.length>0){
-        self.data.labelData.push.apply(self.data.labelData,res.info.data);
-        var length=self.data.labelData.length;
-        for(var i=0;i<length;i++){
-          if(self.data.labelData[i].title=='行业案例'){
-             self.data.labelDataTwo.push(self.data.labelData[i].child);
-             var child_length = self.data.labelData[i].child.length;
-             console.log(909,self.data.labelData[i].child);
-             for(var j=0;j<child_length;j++){
-              if(self.data.labelData[i].child[j].child){
-                for(var h=0;h<self.data.labelData[i].child[j].child.length;h++){
-                  self.data.labelDataThree.push(self.data.labelData[i].child[j].child[h].id)
-                }
-
-              }
-             }
-          }
-        }
-      }else{
-        api.showToast('没有更多了','fail');
+        self.data.labelData.push.apply(self.data.labelData,res.info.data)
       }
-      wx.hideLoading();
+      for (var i = 0; i < res.info.data.length; i++) {
+        self.data.menu_array.push(res.info.data[i].id)
+      };
       self.setData({
-        web_labelDataTwo:self.data.labelDataTwo,
+        web_labelData:self.data.labelData
       });
-     self.getMainData();
+      self.getMainData();
     };
-    api.labelGet(postData,callback);   
+    api.labelGet(postData,callback);
   },
 
   onPullDownRefresh(){
     const self = this;
     wx.showNavigationBarLoading(); 
-    self.data.searchData=[];
-    
-    self.getMainData(true);
+    self.data.labelData = [];
+    self.data.submitData.passage_array=[];
+    self.setData({
+       web_submitData:self.data.submitData,
+    });
+    self.getLabelData(true);
 
   },
 
@@ -141,7 +163,7 @@ Page({
     // self.data.searchData = [];
     // self.data.searchData.push(currentId);
     var position = self.data.submitData.passage_array.indexOf(text);
-    var position1 = self.data.searchData.indexOf(currentId);
+    var position1 = self.data.menu_array.indexOf(currentId);
     if(position>=0){
       self.data.submitData.passage_array.splice(position, 1); 
     }else{
@@ -150,17 +172,17 @@ Page({
       console.log(self.data.submitData.passage_array)
     };
     if(position1>=0){
-      self.data.searchData.splice(position1, 1);
+      self.data.menu_array.splice(position1, 1);
     }else{
-    //  self.data.searchData = [];
-      self.data.searchData.push(currentId);
+    //  self.data.menu_array = [];
+      self.data.menu_array.push(currentId);
     }
     
     self.setData({
        web_submitData:self.data.submitData,
-       web_searchData:self.data.searchData,
+       web_menu_array:self.data.menu_array,
     });
-    console.log('web_searchData',self.data.searchData);
+    console.log('web_menu_array',self.data.menu_array);
   },
 
   menu_hidden(){

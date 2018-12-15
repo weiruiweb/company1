@@ -1,24 +1,20 @@
 //index.js
-//获取应用实例
 import {Api} from '../../../utils/api.js';
-const api = new Api();
+var api = new Api();
+const app = getApp();
 
 Page({
   data: {
    num:1,
    mainData:[],
    searchItem:{
-      thirdapp_id:'10',
+      thirdapp_id:getApp().globalData.hotel_thirdapp_id,
     },
   },
 
 
   onLoad(options){
     const self = this;
-    if(!wx.getStorageSync('hotel_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData()
   },

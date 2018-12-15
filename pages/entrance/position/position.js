@@ -45,6 +45,9 @@ Page({
     const callback =(res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
+        for (var i = 0; i < self.data.mainData.length; i++) {
+          self.data.mainData[i].content = api.wxParseReturn(res.info.data[i].content).nodes;
+        }
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');

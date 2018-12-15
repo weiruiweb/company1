@@ -1,0 +1,33 @@
+<!--User.wxml-->
+<view class="banner">
+   <image src="{{web_mainData.mainImg[0].url}}"></image>   
+</view>
+<view class="w710" style="height:100%;">
+	<view class="state">
+		<view class="state_right">
+			<view class="state_right_box">
+				<view class="state_top flex">
+					<view class="font24 color3" style="width:65%;">{{web_mainData.title}}</view>
+				</view>
+	
+			</view>
+			
+		</view>
+	</view>
+</view>
+<view class="caseShow_img phonecaseImg">
+    <view class="contain">
+        <view class="introduce_tlt">
+            <view class="font32 color3">界面展示</view>
+        </view>
+        <view class="wx_detail flex">
+            <block  wx:for="{{web_mainData.bannerImg}}">  
+                <view class="deatil_list">
+                    <image src="{{item.url}}" class="img-responsive"/>
+                </view>
+            </block>
+        </view>
+         
+    </view>
+</view>
+

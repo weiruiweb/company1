@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 65,
+			"current": 66,
 			"list": [
 				{
 					"id": 0,
@@ -430,6 +430,11 @@
 					"name": "行业案例",
 					"pathName": "pages/entrance/case/case",
 					"query": "parent_no=UA1865727981427"
+				},
+				{
+					"id": -1,
+					"name": "合作伙伴",
+					"pathName": "pages/entrance/partner/partner"
 				}
 			]
 		}

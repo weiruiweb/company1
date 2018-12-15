@@ -1,11 +1,10 @@
 .User_cont{background:#f2f2f2;width:100%;height:100%;}
 .clientList{
-  height:200rpx;
   background:#fff;
   border-bottom:5rpx solid #f2f2f2;
   text-align:center;
-  width:80%;
-  padding:0 10%;
+  width:94.6%;
+  padding:2.7%;
   }
 .clientList image{
   width:124rpx;
@@ -13,48 +12,29 @@
   border-radius:50%;
   }
 .client_img{
-  width:40%;
+  width:26%;
 }
-.clientList_center{width:60%;}
+.clientList_center{
+  width:74%;
+  height:100%;
+}
 .clientList_right{width:225rpx;line-height:63px}
-.clientName{
-  font-size:28rpx;
-  color:#2e2e2ew;
-}
 .clientType{
   color:#666;
   font-size:26rpx;
   margin-bottom:10rpx;
 }
-.clientName text{float:left;margin-right:26rpx;}
+.clientName {
+  text-align: left;
+}
 .clientName image{
   width:23rpx;
   height:23rpx;
 }
-.clientPen{
-  width:80rpx;
-  height:40rpx;
-  border-radius:30rpx;
-  background:#f11f20;
-  text-align:center;
-  line-height:40rpx;
-  color:#fff;
-  font-size:22rpx;
-  margin-bottom:20rpx;
-}
-.clientPhone{
-  color:#666;
-  font-size:24rpx;
-  margin:15rpx 0rpx;
-  }
-.clientTime{
-  color:#ddd;
-  font-size:22rpx;
-
-}
-.general{background:#ef4f4f;}
-.weak{background:#f09091;}
 .client_intro{
-  padding:30rpx 0;
-  background:#fff;
+  text-align:left;
+}
+
+.flex2{
+  display:flex;
 }

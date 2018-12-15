@@ -2,19 +2,19 @@
 
 <view class="User_cont">
 	<block wx:for="{{web_mainData}}" wx:key="id">
-		<view class="clientList flexRowBetween">
+		<view class="clientList flex2">
 			<view class="client_img">
 				<image src="{{item.mainImg[0].url}}" style="border-radius:50%"></image>
 			</view>
-			<view class="clientList_center" style="align-items:center;">
-				<view class="clientName">
-					<text class="font30 color6">{{item.title}}</text>
+			<view class="clientList_center">
+				<view class="clientName font32 color3">
+					{{item.title}}
 				</view>
-			</view>
-		</view>
-		<view class="w710 flexRowBetween font30" style="background:#fff;">
-			<view class="client_intro">
-				{{item.description}}	
+				<view class="font28 color9">
+					<view class="client_intro">
+						{{item.description}}	
+					</view>
+				</view>
 			</view>
 		</view>
 	</block>

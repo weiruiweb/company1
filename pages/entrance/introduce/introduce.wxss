@@ -114,3 +114,8 @@ swiper{
   text-align:center;
   line-height:90rpx;
 }
+.wxParse-inline{
+  font-size:28rpx;
+  margin-top:30rpx;
+  text-indent:60rpx;
+}

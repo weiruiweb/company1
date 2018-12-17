@@ -7,8 +7,6 @@ Page({
   data: {
     is_show:false,
     currentId:0,
-    currentId1:0,
-    currentId2:0,
     mainData:[],
     submitData:{
       passage_array:[],
@@ -30,42 +28,7 @@ Page({
     self.getLabelData();
   },
 
-/*  getMainData(isNew){
-    const self =this;
-    if(isNew){
-      api.clearPageIndex(self); 
-    };
-    const postData={};
-    postData.paginate = api.cloneForm(self.data.paginate);
-    postData.searchItem ={
-        thirdapp_id:getApp().globalData.solely_thirdapp_id,
-    };
-    console.log(101,postData.searchItem.menu_id);
-    if(self.data.searchData.length>0){
-      postData.searchItem.menu_id = ['in',self.data.searchData]; 
-    }else{
-      postData.searchItem.menu_id = ['in',self.data.labelDataThree];
-    }
-    const callback =(res)=>{
-      if(res.info.data.length>0){
-        self.data.mainData.push.apply(self.data.mainData,res.info.data);
-      }else{
-        self.data.isLoadAll = true,
-        api.showToast('没有更多了','fail');
-      }
-      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
-      setTimeout(function()
-      {
-        wx.hideNavigationBarLoading();
-        wx.stopPullDownRefresh();
-      },300);
-      self.setData({
-        web_mainData:self.data.mainData,
-      }); 
-      console.log(1000,self.data.web_mainData);
-    };
-    api.articleGet(postData,callback);
-  },*/
+
 
   getMainData(isNew){
     var self = this;
@@ -157,24 +120,19 @@ Page({
     const self = this;
     var text = e.currentTarget.dataset.text;
     var currentId = e.currentTarget.dataset.id;
-    // self.data.currentId = currentId;
-    // self.data.submitData.passage_array=[];
-    // self.data.submitData.passage_array.push(text);
-    // self.data.searchData = [];
-    // self.data.searchData.push(currentId);
+
     var position = self.data.submitData.passage_array.indexOf(text);
     var position1 = self.data.menu_array.indexOf(currentId);
     if(position>=0){
       self.data.submitData.passage_array.splice(position, 1); 
     }else{
-     // self.data.submitData.passage_array=[];
+
       self.data.submitData.passage_array.push(text);
       console.log(self.data.submitData.passage_array)
     };
     if(position1>=0){
       self.data.menu_array.splice(position1, 1);
     }else{
-    //  self.data.menu_array = [];
       self.data.menu_array.push(currentId);
     }
     
@@ -183,15 +141,14 @@ Page({
        web_menu_array:self.data.menu_array,
     });
     console.log('web_menu_array',self.data.menu_array);
+    self.getMainData(true);
   },
 
   menu_hidden(){
-    const self = this;
-    self.getMainData(true);
+    const self = this; 
     self.setData({
       is_show:false
     });
-
   },
 
   intoPath(e){

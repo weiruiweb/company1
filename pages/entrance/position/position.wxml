@@ -12,10 +12,10 @@
 		<view class="w710 position_condition flex">
 			<view class="position_left flex">
 				<image src="/images/project3.png"></image>
-				<text class="font28 color6">1人</text>
+				<text class="font28 color6">{{item.passage1}}人</text>
 			</view>
 			<view class="position_right color font30">
-				6-9千/月
+				{{item.passage1}}/月
 			</view>
 		</view>
 		<view class="w710 font28 color9 address flex" bindtap="intoMap">

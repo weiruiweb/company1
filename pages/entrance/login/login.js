@@ -13,7 +13,19 @@ Page({
     web_show:true,
   },
 
- submit(){
+  onShow(){
+    const self = this;
+    if(wx.getStorageSync('threeInfo')&&wx.getStorageSync('threeToken')){
+        self.setData({
+          web_show:false
+        });
+        wx.redirectTo({
+          url: '/pages/entrance/project/project'
+        })
+    }
+  },
+
+  submit(){
     const self = this;
     var postData={};
     postData.tokenFuncName = 'getEntranceToken';

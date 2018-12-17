@@ -64,7 +64,7 @@
 			<view class="list_img flex">
 				<image src="/images/project9.png"></image>
 			</view>
-			<view class="input_before1">项目进度:</view>
+			<view class="input_before1">项目总金额:</view>
 			<view class="input">{{web_mainData.passage2}}</view>
 		</view>
 		<view class="w710  font30" style="margin-top:30rpx;padding-bottom:40rpx;display:flex;">

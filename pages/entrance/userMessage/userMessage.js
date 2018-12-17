@@ -9,7 +9,7 @@ Page({
 
     submitData:{
       content:'',
-
+      type:2
     },
 
     buttonCanClick:true
@@ -29,7 +29,6 @@ Page({
     postData.tokenFuncName = 'getEntranceToken';
     postData.data = {};
     postData.data = api.cloneForm(self.data.submitData);
-    postData.data.type = 0;
     const callback = (data)=>{
       api.dealRes(data);
       setTimeout(function(){

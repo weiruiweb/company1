@@ -81,7 +81,7 @@ class Base{
             };
         };
         wx.uploadFile({
-            url: 'https://www.solelycloud.com/api/public/index.php/api/v1/Base/FtpImage/upload',
+            url: 'https://www.solelycloud.com/api/public/index.php/api/v1/Base/FtpFile/upload',
             filePath:filePath,
             name:name,
             formData:formData,

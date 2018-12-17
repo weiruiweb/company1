@@ -46,7 +46,7 @@
         <input style="width:76%;padding-left:2%;height:80rpx;line-height: 100rpx;" class="bg" placeholder="请输入您的联系电话" data-key="phone" bindinput="changeBind" value="{{web_submitData.phone}}"></input>
     </view>
 </view>
-<view class="submit_info bg1" bindtap="submit">
+<view class="submit_info bg1">
     <form bindsubmit="formIdAdd" class="form_button" report-submit="true">
       <button form-type="submit" class=" form_btn color1" bindtap="{{web_buttonCanClick?'submit':''}}">提交</button>
     </form>

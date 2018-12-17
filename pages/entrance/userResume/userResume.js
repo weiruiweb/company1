@@ -219,6 +219,10 @@ Page({
     return '#' + rgb.join('')
   },
 
+  formIdAdd(e){
+    api.WxFormIdAdd(e.detail.formId,(new Date()).getTime()/1000+7*86400);  
+  },
+
 
   messageAdd(){
     const self =this;

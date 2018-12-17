@@ -15,7 +15,7 @@ Page({
     computeData:[],
     rewardScore:'',
     searchItem :{
-      thirdapp_id:'2',
+      thirdapp_id:getApp().globalData.mall_thirdapp_id,
       type:3
     },
     isSign:false,
@@ -121,7 +121,7 @@ Page({
     console.log(self.data.rewardScore)
     const postData = {
       reward:{
-        score:self.data.rewardScore
+        score:20
       },
       type:3,
       title:'签到成功'
@@ -139,25 +139,25 @@ Page({
               tableName:'FlowLog',
               FuncName:'add',
               data:{
-                count:self.data.levelOne,
+                count:10,
                 trade_info:'下级签到积分奖励',
                 user_no:transitionArray[i].parent_no,
                 type:3,
-                thirdapp_id:getApp().globalData.thirdapp_id
+                thirdapp_id:getApp().globalData.mall_thirdapp_id
               }
             }
           );
         }else if(transitionArray[i].level==2){
           postData.saveAfter.push(
             {
-              tableName:'flowLog',
+              tableName:'FlowLog',
               FuncName:'add',
               data:{
-                count:self.data.levelTwo,
+                count:5,
                 trade_info:'下级签到积分奖励',
                 user_no:transitionArray[i].parent_no,
                 type:3,
-                thirdapp_id:getApp().globalData.thirdapp_id
+                thirdapp_id:getApp().globalData.mall_thirdapp_id
               }
             }
           );
@@ -223,19 +223,22 @@ Page({
       api.pathTo('/pages/userComplete/userComplete','redi');
       },1000);
     }else{
+
       if(self.data.todayData){
         if(self.data.todayData.length>0){
+          console.log(self.data.todayData.length)
           api.showToast('今日已签到','none');
         }else{
           wx.showLoading();
-          const callback = (user,res) =>{
+          console.log(self.data.todayData.length)
+         
+            console.log(self.data.isAll)
             if(self.data.isAll){
-              self.signIn(user);  
+              console.log(self.data.todayData.length)
+              self.signIn();  
             }else{
               api.showToast('请稍后重试','none')
             }    
-          };
-          api.getAuthSetting(callback);
         };
       }else{
         self.checkToday(self.submit());
@@ -399,7 +402,7 @@ Page({
         },
         
         searchItem:{
-          user_no:wx.getStorageSync('mall_info').user_no,
+          _no:wx.getStorageSync('mall_info')._no,
           type:3,
         }
       }

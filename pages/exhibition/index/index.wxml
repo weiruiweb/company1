@@ -67,7 +67,7 @@
         <view class="marquee_box">
           <view class="marquee_text font28 flex" style="{{orientation}}:{{marqueeDistance2}}px;width:100%;height:100%;">
             <text>{{web_text}}</text>
-            <text wx:if="{{marquee2copy_status}}" style="margin-left:{{marquee2_margin}}px;">{{text}}</text>
+            <text wx:if="{{marquee2copy_status}}" style="margin-left:{{marquee2_margin}}px;">{{web_text}}</text>
           </view>
         </view>
       </view>

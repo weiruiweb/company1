@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 66,
+			"current": 3,
 			"list": [
 				{
 					"id": 0,
@@ -57,7 +57,7 @@
 					"id": 3,
 					"name": "商城首页",
 					"pathName": "pages/mall/Index/index",
-					"query": "parent_no=UA1865727981427"
+					"query": ""
 				},
 				{
 					"id": -1,
@@ -434,7 +434,8 @@
 				{
 					"id": -1,
 					"name": "合作伙伴",
-					"pathName": "pages/entrance/partner/partner"
+					"pathName": "pages/entrance/partner/partner",
+					"query": ""
 				}
 			]
 		}

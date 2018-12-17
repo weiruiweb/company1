@@ -3,17 +3,17 @@
 	<view class="User_cont flex font28">
 		<view style="width:100%;">
 			<view class="user_img">
-				<image src="/images/index_icon2.png"></image>
+				<image src="{{web_projectData.userOne[0].mainImg[0].url}}"></image>
 			</view>
-			<view class="font30 color6"> 产品经理：蔺文娟</view>
+			<view class="font30 color6"> 产品经理：{{web_projectData.userOne[0].login_name}}</view>
 		</view>
 	</view>
 	<view class="User_cont font28 flex">
 		<view style="width:100%;">
 			<view class="user_img">
-				<image src="/images/index_icon2.png"></image>
+				<image src="{{web_projectData.userTwo[0].mainImg[0].url}}"></image>
 			</view>
-		 	<view class="font30 color6">业务经理：徐庆婕</view>
+		 	<view class="font30 color6">业务经理：{{web_projectData.userTwo[0].login_name}}</view>
 		 </view>
 	</view>
 </view>

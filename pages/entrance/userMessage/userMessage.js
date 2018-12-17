@@ -32,7 +32,7 @@ Page({
     const callback = (data)=>{
       api.dealRes(data);
       setTimeout(function(){
-        api.pathTo('/pages/entrance/user/user','redi')
+        api.pathTo('/pages/entrance/user/user','rela')
       },1000);
       api.buttonCanClick(self,true);
       self.setData({

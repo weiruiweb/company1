@@ -204,7 +204,7 @@ Page({
 
     api.fillChange(e,self,'sForm');
     if(api.getDataSet(e,"key")=='score'){
-      if(self.data.sForm.score>self.data.userData.score||self.data.sForm.score>self.data.mainData[0].score)
+      if(self.data.sForm.score>parseInt(self.data.userData.score)||self.data.sForm.score>self.data.mainData[0].score)
       api.showToast('积分不符合规则','none');
       self.data.sForm.score = '';
       self.setData({

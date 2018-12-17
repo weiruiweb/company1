@@ -89,7 +89,7 @@ Page({
       },
       userTwo:{
         tableName:'user',
-        middleKey:'listorder',
+        middleKey:'passage3',
         key:'user_no',
         searchItem:{
           status:1
@@ -99,7 +99,6 @@ Page({
     };
     postData.searchItem.id = self.data.id;
     const callback = (res)=>{
-      self.data.mainData = {};
       if(res.info.data.length>0){
         self.data.projectData = res.info.data[0];
       };

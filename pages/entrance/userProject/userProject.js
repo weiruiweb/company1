@@ -36,7 +36,7 @@ Page({
         postData.paginate = api.cloneForm(self.data.paginate);
         postData.searchItem = {
           thirdapp_id:getApp().globalData.solely_thirdapp_id,
-          contactPhone:wx.getStorageSync('entrance_info').info.phone
+          contactPhone:res.info.data[0].phone
         };
         postData.getBefore ={
          caseData:{

@@ -22,10 +22,15 @@ Page({
     if(options.parent_no){
       var scene = options.parent_no
     };
-    const callback=(res)=>{
+    if(scene){
+       const callback=(res)=>{
         self.getMainData();
-    };
-    api.parentAdd('getMallToken',scene,callback);
+      };
+      api.parentAdd('getMallToken',scene,callback); 
+    }else{
+      self.getMainData();
+    }
+   
   },
 
   getMainData(){

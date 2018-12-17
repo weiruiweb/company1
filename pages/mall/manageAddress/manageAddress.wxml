@@ -1,35 +1,35 @@
 <!--manageAddress.wxml-->
-<view id="address">
-	<block wx:for="{{web_mainData}}" wx:key="id">
-		<view class="address_item flexRowBetween" bindtap="choose" data-id="{{item.id}}">
-			<view class="address_left">
-				<view class="text1">
-					{{item.name}}
-				</view>
-				<view class="text1 text_other avoidOverflow">
-					{{item.province+item.city+item.country+item.detail}}
-				</view>
+
+<block wx:for="{{web_mainData}}" wx:key="id">
+	<view class="address_item w710" bindtap="choose" data-id="{{item.id}}">
+		<view class="address_left flexRowBetween">
+			<view class="text1">
+				{{item.name}}
 			</view>
 			<view class="address_right">
 				{{item.phone}}
 			</view>
 		</view>
-		<view class="address_set flexRowBetween">
-			<view class="default"  bindtap="{{item.isdefault=='0'?(web_buttonCanClick?'updateAddress':''):''}}" data-id="{{item.id}}">
-				<image src="{{item.isdefault=='0'?'/images/select.png':'/images/mall_select_active.jpg'}}"></image>
-				<text style="{{item.isdefault=='0'?'':'color:#2c9fe1'}}">{{item.isdefault=='0'?'设为默认地址':'默认地址'}}</text>
-			</view>
-			<view class="edit" data-path="/pages/mall/newAddress/newAddress?id={{item.id}}" bindtap="intoPath">
-				<view class="scale2" style="{{img}};width:30px;height:30px;background-position: -567px -92px;"></view>
-				<text>编辑</text>
-			</view>
-			<view class="edit delete" data-id="{{item.id}}" bindtap="{{web_buttonCanClick?'deleteAddress':''}}">
-				<view class="scale2" style="{{img}};width:30px;height:30px;background-position: -598px -92px;"></view>
-				<text>删除</text>
-			</view>
+		
+		<view class="text1 text_other font30">
+			{{item.province+item.city+item.country+item.detail}}
 		</view>
-	</block>
-</view>
+	</view>
+	<view class="address_set flexRowBetween">
+		<view class="default"  bindtap="{{item.isdefault=='0'?(web_buttonCanClick?'updateAddress':''):''}}" data-id="{{item.id}}">
+			<image src="{{item.isdefault=='0'?'/images/select.png':'/images/mall_select_active.jpg'}}"></image>
+			<text style="{{item.isdefault=='0'?'':'color:#2c9fe1'}}">{{item.isdefault=='0'?'设为默认地址':'默认地址'}}</text>
+		</view>
+		<view class="edit" data-path="/pages/mall/newAddress/newAddress?id={{item.id}}" bindtap="intoPath">
+			<view class="scale2" style="{{img}};width:30px;height:30px;background-position: -567px -92px;"></view>
+			<text>编辑</text>
+		</view>
+		<view class="edit delete" data-id="{{item.id}}" bindtap="{{web_buttonCanClick?'deleteAddress':''}}">
+			<view class="scale2" style="{{img}};width:30px;height:30px;background-position: -598px -92px;"></view>
+			<text>删除</text>
+		</view>
+	</view>
+</block>
 <view class="address_btn">
 	<view class="submit_info" bindtap="{{web_buttonCanClick?'intoPath':''}}" data-path="/pages/mall/newAddress/newAddress" style="border-radius:50rpx;">
 		添加新地址

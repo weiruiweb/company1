@@ -48,3 +48,8 @@ input{
 	width:12px;
 	height:20px;
 }
+.input_note span{
+	width:30%;
+	height:100%;
+	display:inline-block;
+}

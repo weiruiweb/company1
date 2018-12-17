@@ -1,7 +1,7 @@
 <!--userINfo.wxml-->
 <view class="user_input ">
 	<view class="users_detail flexRowBetween">
-		<view class="input_note">昵称:</view>
+		<view class="input_note">昵<span></span>称:</view>
 		<input placeholder="请输入昵称"   value="{{web_mainData.nickname}}"></input>
 	</view>
 </view>
@@ -14,7 +14,7 @@
 
 <view class="user_input ">
 	<view class="users_detail flexRowBetween" style="justify-content:flex-start">
-		<view class="input_note">性别:</view>
+		<view class="input_note">性<span></span>别:</view>
 		<view data-value="1" data-key="gender" bindtap="changeBind" style="display:flex;align-items:center">
 			<image src="{{web_sForm.gender=='1'?'/images/mall_select_active.jpg':'/images/radio.png'}}" style="width:40rpx;height:40rpx" ></image>
       		<view style="font-size:15px;margin-left:10rpx">男</view>
@@ -32,13 +32,16 @@
 	<view class="users_detail flexRowBetween">	
 		<view class="input_note">出生日期:</view>
 		
-		<picker mode="date" class="flexRowBetween" value="{{web_sForm.passage1}}" start="1970-09-01" end="2050-09-01" bindchange="bindDateChange" style="width:70%;">
-			<input placeholder="请输入出生日期" value="{{web_sForm.passage1}}" style="width:100%;"></input> 
-		</picker>
-		<view class="next_page" style="width:7%;margin-left:100rpx;text-align:right;" bindchange="bindDateChange">
-			<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;">
+		<picker mode="date" class="flexRowBetween" value="{{web_sForm.passage1}}" start="1970-09-01" end="2050-09-01" bindchange="bindDateChange" style="width:77%;">
+			<view style="width:540rpx" class="flex">
+				<input placeholder="请输入出生日期" value="{{web_sForm.passage1}}" style="width:100%;"></input> 
+				<view class="next_page" style="width:7%;text-align:right;" bindchange="bindDateChange">
+					<view class="user_icon1 scale2" style="{{img}};background-position: -658px -46px;">
+					</view>
+				</view>
 			</view>
-		</view>
+		</picker>
+		
 	</view>
 </view>
 <view class="user_input ">
@@ -52,7 +55,7 @@
 
 <view class="user_input ">
 	<view class="users_detail flexRowBetween">
-		<view class="input_note">住址:</view>
+		<view class="input_note">住<span></span>址:</view>
 		<input placeholder="请输入住址" data-key="address" bindblur="changeBind" value="{{web_sForm.address}}"></input>
 	</view>
 </view>

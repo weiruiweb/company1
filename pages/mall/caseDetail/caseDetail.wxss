@@ -5,8 +5,8 @@
 	height:330rpx;
 }
 .caseTxt{
-	height:160rpx;
-	line-height:160rpx;
+	height:60rpx;
+	line-height:60rpx;
 	text-align:center;
 	font-size:32rpx;
 	color:#363636;

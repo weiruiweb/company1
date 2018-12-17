@@ -17,7 +17,7 @@ Page({
     searchItem:{
       menu_id:''
     },
-    isFirstLoadAllStandard:['getLabelData','getSliderData','getLabelData'],
+    isFirstLoadAllStandard:['getMainData','getSliderData','getLabelData'],
     indicatorDots: true,
     autoplay: true,
     intervalOne:2000,
@@ -70,7 +70,6 @@ Page({
       thirdapp_id:getApp().globalData.exhibition_thirdapp_id,
       title:'公司动态',
     };
-   
     const callback = (res)=>{
       if(res.info.data.length>0){ 
         self.setData({

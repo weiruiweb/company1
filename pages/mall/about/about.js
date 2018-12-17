@@ -20,9 +20,13 @@ Page({
     self.getNewsData()
   },
 
-  getNewsData(){
+  getNewsData(isNew){
     const self = this;
+    if(isNew){
+      api.clearPageIndex(self)
+    };
     const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       thirdapp_id:getApp().globalData.amll_thirdapp_id
     };
@@ -80,6 +84,14 @@ Page({
       });
     };
     api.articleGet(postData,callback);
+  },
+
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.paginate.currentPage++;
+      self.getNewsData();
+    };
   },
 
   intoPath(e){

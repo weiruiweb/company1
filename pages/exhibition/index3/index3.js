@@ -68,7 +68,7 @@ Page({
     const self = this;
 
     const postData = {};
-    postData.token = wx.getStorageSync('token');
+    postData.tokenFuncName = 'getExhibitionToken'
     postData.data = {};
     postData.data = api.cloneForm(self.data.submitData);
 

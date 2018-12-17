@@ -79,7 +79,7 @@ Page({
 
   deleteAddress(e){
     const self = this;
-    self.buttonCanClick(self);
+    api.buttonCanClick(self);
     const postData = {};
     postData.searchItem = {};
     postData.searchItem.id = api.getDataSet(e,'id');
@@ -98,7 +98,7 @@ Page({
 
   updateAddress(e){
     const self = this;
-    self.buttonCanClick(self);
+    api.buttonCanClick(self);
     const postData = {};
     postData.tokenFuncName = 'getMallToken';
     postData.searchItem = {};

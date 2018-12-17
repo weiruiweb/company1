@@ -127,12 +127,12 @@ Page({
       self.data.searchItem.order_step = ['in',[0,4,5]]
     }else if(num=='2'){
       self.data.searchItem.pay_status = '1';
-      self.data.searchItem.transport_status = '0';
+      self.data.searchItem.transport_status = ['in',[0,1]];
       self.data.searchItem.order_step = ['in',[0,4,5]]
 
     }else if(num=='3'){
       self.data.searchItem.pay_status = '1';
-      self.data.searchItem.transport_status = '1';
+      self.data.searchItem.transport_status = '2';
       self.data.searchItem.order_step = ['in',[0,5]]
     }else if(num=='4'){
       self.data.searchItem.order_step = '3';
@@ -188,6 +188,11 @@ Page({
           console.log(res)
         }
       }
+  },
+
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 
 

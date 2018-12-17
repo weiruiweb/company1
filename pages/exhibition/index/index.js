@@ -173,7 +173,7 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 
-  intoPathRedirect(e){
+  intoPathRedi(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
   }, 

@@ -15,13 +15,18 @@ Page({
     sForm:{
       item:''
     },
+    searchItem:{thirdapp_id:getApp().globalData.thirdapp_id},
     isFirstLoadAllStandard:['getMainData','getLabelData'],
   },
   
-  onLoad() {
+  onLoad(options) {
     const self = this;
     api.commonInit(self);
     self.getLabelData();
+    if(options.id&&options.index){
+      self.data.currentId = options.id;
+      self.data.index = options.index
+    };
     self.setData({
       web_index:self.data.index,
       web_currentId:self.data.currentId
@@ -49,6 +54,25 @@ Page({
   },
 
 
+  search(e){
+    const self = this;
+    api.fillChange(e,self,'sForm');
+    console.log('self.data.sForm.item',self.data.sForm.item)
+    self.data.mainData = [];
+    if(self.data.sForm.item){ 
+      console.log(666) 
+      self.data.searchItem.title =  ['LIKE',['%'+self.data.sForm.item+'%']],
+      self.getMainData(true,self.data.sForm.item);
+      
+    }else{
+      delete self.data.searchItem.title;
+      console.log(666) 
+      self.getMainData()
+    };
+    self.setData({
+      web_sForm:self.data.sForm
+    })
+  },
 
   getMainData(isNew,currentId){
     const self = this;
@@ -57,9 +81,7 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.searchItem = {
-      thirdapp_id:getApp().globalData.mall_thirdapp_id
-    };
+    postData.searchItem = api.cloneForm(self.data.searchItem);
     if(currentId){
       postData.searchItem.parentid = currentId
     }else{

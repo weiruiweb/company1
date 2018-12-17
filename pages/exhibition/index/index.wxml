@@ -15,17 +15,17 @@
     </view>
     <view>公司简介</view>
   </view>
-  <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_cultrue/index_cultrue?id=8">
+  <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_cultrue/index_cultrue?id=42">
     <view class="menu_top">
       <view class="menu_icon scale1" style="{{img}};background-position:-202px -0px;"></view>
     </view>
     <view>公司文化</view>
   </view>
-  <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_cultrue/index_cultrue">
+  <view class="menu_item" bindtap="intoPathRedi" data-path="/pages/exhibition/index1/index1">
     <view class="menu_top">
       <view class="menu_icon scale1" style="{{img}};background-position:-68px -0px;"></view>
     </view>
-    <view>公司团建</view>
+    <view>公司业务</view>
   </view>
   <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_cultrue/index_cultrue">
     <view class="menu_top">
@@ -33,13 +33,13 @@
     </view>
     <view>公司历史</view>
   </view>
-  <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_cultrue/index_cultrue">
+  <view class="menu_item" bindtap="intoPathRedi" data-path="/pages/exhibition/index2/index2">
     <view class="menu_top">
       <view class="menu_icon scale1" style="{{img}};background-position:-400px -0px;"></view>
     </view>
     <view>公司动态</view>
   </view>
-  <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_cultrue/index_cultrue">
+  <view class="menu_item" bindtap="intoPath" data-path="/pages/exhibition/index_detail/index_detail?id=111">
     <view class="menu_top">
       <view class="menu_icon scale1" style="{{img}};background-position:-331px -0px;"></view>
     </view>
@@ -51,7 +51,7 @@
     </view>
     <view>公司案例</view>
   </view>
-  <view class="menu_item" bindtap="intoPathRedirect" data-path="/pages/exhibition/index3/index3">
+  <view class="menu_item" bindtap="intoPathRedi" data-path="/pages/exhibition/index3/index3">
     <view class="menu_top">
       <view class="menu_icon scale1" style="{{img}};background-position:-136px -0px;"></view>
     </view>
@@ -72,10 +72,6 @@
         </view>
       </view>
   </view>
-</view>
-<view class="w710 bg flexRowBetween">
-  <view class="bg_img flex"><image src="{{web_labelUrl}}"></image></view>
-  <view class="bg_img flex"><image src="{{web_labelUrlTwo}}"></image></view>
 </view>
 <view class="big_title flexRowBetween">
     <view class="tlt_left"></view>
@@ -159,25 +155,25 @@
 <view style="height:120rpx;width:100%;">
 </view>
 <view class="navbar">
-    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index/index">
+    <view class="navbar_item"   bindtap="intoPathRedi" data-path="/pages/exhibition/index/index">
       <view class="navbar_top">
         <view class="nav_img scale1" style="{{img}};background-position:0px -70px"></view>
       </view>
         <view class="text this-text">首页</view>
     </view>
-    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index1/index1">
+    <view class="navbar_item"   bindtap="intoPathRedi" data-path="/pages/exhibition/index1/index1">
         <view class="navbar_top">
         <view class="nav_img scale1" style="{{img}};background-position:-162px -70px"></view>
       </view>
         <view class="text">公司业务</view>
     </view>
-    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index2/index2">
+    <view class="navbar_item"   bindtap="intoPathRedi" data-path="/pages/exhibition/index2/index2">
         <view class="navbar_top">
         <view class="nav_img scale1" style="{{img}};background-position:-272px -70px"></view>
       </view>
         <view class="text">公司动态</view>
     </view>
-    <view class="navbar_item"   bindtap="intoPathRedirect" data-path="/pages/exhibition/index3/index3">
+    <view class="navbar_item"   bindtap="intoPathRedi" data-path="/pages/exhibition/index3/index3">
         <view class="navbar_top">
         <view class="nav_img scale1" style="{{img}};background-position:-376px -70px"></view>
       </view>

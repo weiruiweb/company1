@@ -1,14 +1,14 @@
 <!--sort wxml-->
 <view id="sort">
 	<view class="search">
-		<input placeholder="搜索商品名称" bindconfirm="changeBind" data-key="item"></input>
+		<input placeholder="搜索商品名称" bindblur="search" data-key="item"></input>
 	</view>
 
 	<view class="made_product" style="display:flex">
 		<view class="made_sort">
 			<block wx:for="{{web_labelData}}" wx:key="id">
 				<view class="madeSort">
-					<view class="left_bar {{web_index == index?'made_bg':''}}" data-index="{{index}}" data-id="{{item.child[0].id}}" catchtap="menuTap">
+					<view class="left_bar {{web_index == index?'made_bg':''}}" data-index="{{index}}" data-id="{{item.child[0].id}}" catchtap="{{web_buttonCanClick?'menuTap':''}}">
 						<view class="lsort_LeftAll">
 							<view class="img_bg text1 active" style="{{fonts[4].font}}">{{item.title}}</view>
 						</view> 
@@ -16,7 +16,7 @@
 						<view class="small_sort">
 							<view class="small_txt">
 								<block wx:for="{{web_labelData[index].child}}" wx:for-item="c_item" wx:for-index="c_index">
-									<text class="text2" catchtap="menuTap"  data-id="{{c_item.id}}" data-index="{{index}}" style="{{fonts[2].font}};{{web_currentId == c_item.id?'color:#39bddf':''}}">{{c_item.title}}</text>
+									<text class="text2" catchtap="{{web_buttonCanClick?'menuTap':''}}"  data-id="{{c_item.id}}" data-index="{{index}}" style="{{fonts[2].font}};{{web_currentId == c_item.id?'color:#39bddf':''}}">{{c_item.title}}</text>
 								</block>
 							</view>
 						</view>

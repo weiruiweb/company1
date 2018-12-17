@@ -76,7 +76,7 @@
         <image src="/images/sort_Img1.jpg"></image>
       </view>
     </view>
-    <view class="service_right" data-path="/pages/mall/Sort/sort" bindtap="intoPathRedi">
+    <view class="service_right" data-path="/pages/mall/Sort/sort?id=36&&index=2" bindtap="intoPathRedi">
       <view class="service_rightT">
           <view class="service_top  flexRowBetween">
           <view class="serviceTLeft flex">
@@ -91,7 +91,7 @@
           </view>
         </view>
       </view>
-      <view class="service_rightB" data-path="/pages/mall/Sort/sort" bindtap="intoPathRedi">
+      <view class="service_rightB" data-path="/pages/mall/Sort/sort?id=34&&index=1" bindtap="intoPathRedi">
           <view class="service_bottom  flexRowBetween">
           <view class="serviceBLeft flex">
             <view style="text-align: center;">

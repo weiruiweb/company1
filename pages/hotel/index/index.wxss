@@ -134,15 +134,18 @@ view{
 	margin-top:45rpx;
 	width:100%;
 	overflow:hidden;
+	border:none;
+	height:280rpx;
 }
 .product_img{
 	width:47%;
 	height:260rpx;
-	margin-bottom: 25rpx;
+	border-radius:20rpx;
+	overflow:hidden;
 }
 .product_img image{
 	width:100%;
-	height:100%;
+	height:260rpx;
 }
 .store{
 	margin-top:45rpx;

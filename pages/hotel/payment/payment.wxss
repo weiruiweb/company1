@@ -57,7 +57,7 @@ input{
 	line-height:50rpx;
 }
 .chose_pay{
-	width:318rpx;
+	width:188rpx;
 }
 .flexRowCenter{
 	display:flex;

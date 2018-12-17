@@ -11,7 +11,7 @@
   </view>
   <view class="chose_pay">
     <view class="pay1">
-        <view class="scale2" style="width: 92px;height:92px;{{img1}};background-position: -619px -623px;margin-left: 20rpx;"></view>
+        <image src="/images/confirm3.jpg"></image>
     </view>
   </view>
 </view>

@@ -12,11 +12,11 @@
 <view class="w710">
 	<block wx:for="{{web_mainData}}" wx:key="id">
 		<view class="order">
-			<view class="w710">	
 				<view class="order_tlt flexRowBetween">
-					<view class="tlt_left">订单编号：{{item.order_no}}</view>
-					<view class="tlt_left tlt_right">{{item.create_time}}</view>
+					<view class="tlt_left flex" style="width:60%;">订单编号：{{item.order_no}}</view>
+					<view style="width:40%;" class="tlt_left tlt_right  flex">{{item.create_time}}</view>
 				</view>
+			<view class="w710">
 				<view class=" order_list flexRowBetween">		
 					<view class="order_left">		
 					   <image src="{{item.products[0].snap_product.mainImg[0].url}}"></image>

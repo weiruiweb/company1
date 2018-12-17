@@ -89,13 +89,18 @@ page{
 	border-bottom:solid 1px #e0e0e0;
 }
 .tlt_left{
-	width:50%;
+	width:68%;
 	overflow:hidden;
 	font-size:26rpx;
 	color:#666;
+	height:100%;
+	background:#fff;
+	padding-left:2%;
 }
 .tlt_right{
 	text-align:right;
+	width:30%;
+	padding-left:0;
 }
 .flexRowCenter{
 	display:flex;

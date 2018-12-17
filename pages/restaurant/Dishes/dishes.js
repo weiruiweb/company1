@@ -83,6 +83,10 @@ Page({
     self.setData({
       web_num:self.data.num
     });
+
+    var cartData = api.getStorageArray('cartData');
+    var cartRes = api.findItemInArray(cartData,'id',self.data.id);
+    self.data.cart_count = cartRes.length>0?cartRes[1].count:0;
    
   },
 
@@ -174,10 +178,21 @@ Page({
     var index = api.getDataSet(e,'index');
     var id = api.getDataSet(e,'id');
     self.data.mainData[index].count = self.data.count;
-    api.footOne(self.data.mainData[index],'id',100,'cartData'); 
-    api.showToast('已加入购物车啦','none');
+    var res = api.setStorageArray('cartData',self.data.mainData[index],'id',999); 
+    if(res){
+      api.showToast('加入成功','success');
+    };
+    var cartData = api.getStorageArray('cartData');
+    var cartRes = api.findItemInArray(cartData,'id',id);
+    self.data.cart_count = cartRes.length>0?cartRes[1].count:0;
+    self.setData({
+      web_cart_count:self.data.cart_count,
+    }); 
     self.countTotalPrice()
   },
+
+  
+
 
   countTotalPrice(){
     const self = this;

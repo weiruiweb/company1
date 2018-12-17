@@ -26,7 +26,7 @@
 </view>
 <view class="w710 index_product flexRowBetween">
   <block wx:for="{{web_mainData}}" wx:key="id">
-    <view class="recommend_left" bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}">
+    <view class="recommend_left" bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}&&name=case">
         <image src="{{item.mainImg[0].url}}"></image>
         <view class="product_name font28">{{item.title}}</view>
     </view>

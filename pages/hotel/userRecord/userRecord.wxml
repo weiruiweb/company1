@@ -6,65 +6,23 @@
       </view>
     </view>
     <text>目前余额:</text>
-    <text class="cre_number">600</text>
+    <text class="cre_number">{{web_userData.balance}}</text>
     </view>
   </view>
   <view class="cre_detail flex">
     <view class="scale2" style="width:36px;height:32px;{{img}};background-position: -42px -0px;"></view>
     <text>消费详情</text>
   </view>
-  <view class="credit_list flexRowBetween">
-    <view class="cre_data">
-      2015-5-3
+  <block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="credit_list flexRowBetween">
+      <view class="cre_data">
+        {{item.create_time}}
+      </view>
+      <view class="adrees">
+        {{item.trade_info}}
+      </view>
+      <view class="credit_number">
+        {{item.count}}
+      </view>
     </view>
-    <view class="adrees">
-      大床房
-    </view>
-    <view class="credit_number">
-      -800
-    </view>
-  </view>
-  <view class="credit_list flexRowBetween">
-    <view class="cre_data">
-      2015-5-3
-    </view>
-    <view class="adrees">
-      充值
-    </view>
-    <view class="credit_number">
-      +800
-    </view>
-  </view>
-  <view class="credit_list flexRowBetween">
-    <view class="cre_data">
-      2015-5-3
-    </view>
-    <view class="adrees">
-      大床房
-    </view>
-    <view class="credit_number">
-      +800
-    </view>
-  </view>
-  <view class="credit_list flexRowBetween">
-    <view class="cre_data">
-      2015-5-3
-    </view>
-    <view class="adrees">
-      大床房
-    </view>
-    <view class="credit_number">
-      +800
-    </view>
-  </view>
-  <view class="credit_list flexRowBetween">
-    <view class="cre_data">
-      2015-5-3
-    </view>
-    <view class="adrees">
-      大床房
-    </view>
-    <view class="credit_number">
-      -800
-    </view>
-  </view>
+  </block>

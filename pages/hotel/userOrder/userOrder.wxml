@@ -30,15 +30,12 @@
 					</view>
 				</view>
 				<view class="pay">
-					<view class="handle" data-id="{{item.id}}" wx:if="{{item.pay_status == '0'}}">
-					
-						  <button form-type="submit" class="submit_info color1">删除</button>
-					
+					<view class="handle" data-id="{{item.id}}" wx:if="{{item.pay_status == '0'}}" bindtap="deleteOrder">
+						  删除	
 					</view>
-					<view class="handle pay_btn" data-id="{{item.id}}" data-price="{{item.price}}"  wx:if="{{item.pay_status == '0'&&item.order_step=='0'}}">
-						  <button form-type="submit" class="submit_info color1">支付</button>
-					</view>
-				
+					<view class="handle pay_btn" data-id="{{item.id}}" data-price="{{item.price}}"  wx:if="{{item.pay_status == '0'&&item.order_step=='0'}}" bindtap="pay">
+						  支付
+					</view>			
 				</view>
 			</view>
 		</view>

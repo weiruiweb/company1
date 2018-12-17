@@ -11,16 +11,18 @@
 		<view class="user_icon  scale4" style="{{img}};background-position: -121px -459px"></view>
 		<text>消费详情</text>
 	</view>
-	<view class="credit_list flexRowBetween">
-		<view class="cre_data">
-			2015-5-3
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="credit_list flexRowBetween">
+			<view class="cre_data">
+				{{item.create_time}}
+			</view>
+			<view class="adrees">
+				{{item.trade_info}} //这里需要消费的门店
+			</view>
+			<view class="credit_number">
+				{{item.count}}
+			</view>
 		</view>
-		<view class="adrees">
-			碑林区
-		</view>
-		<view class="credit_number">
-			-800
-		</view>
-	</view>
+	</block>
 </view>
 

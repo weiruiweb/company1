@@ -39,7 +39,6 @@ Page({
       self.setData({
         web_albumData:self.data.albumData
       });
-      self.checkLoadComplete();
     };
     api.labelGet(postData,callback);
   },

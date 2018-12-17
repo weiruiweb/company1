@@ -34,65 +34,7 @@
 		</view>
 		</block>
 		
-		<view class="menus_has" style="" >	
-			凉菜<text>（4）</text>
-		</view>
-		<view class="dishes_list">
-			<view class="dishes_item flexRowCenter1">
-				<view class="dishes_left">
-					<image src="/images/sort_Img1.jpg"></image>
-				</view>
-				<view class="dishes_center">
-					<view class="avoidOverflow">大闸蟹</view>
-					<view class="" style="color:#f2665f;font-size:30rpx;">168元</view>
-				</view>
-
-				<view class="dishes_right">
-					<view class="dishes_number flexRowCenter">
-						<view class="add_s">
-							<view class="min_dishes" style="font-size:70rpx;line-height:34rpx;">-</view>
-						</view>
-						<view class="add_centerN" >1</view>
-						<view class="add_s">
-							<view class="min_dishes add_dishes ">+</view>
-						</view>
-					</view>
-					<view id="menus_up">
-						<view class="menus_up">
-							下单
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="dishes_list">
-			<view class="dishes_item flexRowCenter1">
-				<view class="dishes_left">
-					<image src="/images/sort_Img1.jpg"></image>
-				</view>
-				<view class="dishes_center">
-					<view class="avoidOverflow">大闸蟹</view>
-					<view class="" style="color:#f2665f;font-size:30rpx;">168元</view>
-				</view>
-
-				<view class="dishes_right">
-					<view class="dishes_number flexRowCenter">
-						<view class="add_s">
-							<view class="min_dishes" style="font-size:70rpx;line-height:34rpx;">-</view>
-						</view>
-						<view class="add_centerN" >1</view>
-						<view class="add_s">
-							<view class="min_dishes add_dishes ">+</view>
-						</view>
-					</view>
-					<view id="menus_up">
-						<view class="menus_up">
-							下单
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
+		
 </view>
 <view class="menu_totl ">
 	<view class="menu_in flexRowCenter">

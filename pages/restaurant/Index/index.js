@@ -43,7 +43,6 @@ Page({
       thirdapp_id:getApp().globalData.restaurant_thirdapp_id,
       description:'特色推荐'
     };
-   
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);

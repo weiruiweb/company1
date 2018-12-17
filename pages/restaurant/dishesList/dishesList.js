@@ -15,7 +15,7 @@ Page({
 
   onShow() {
     const self = this;
-    self.data.mainData = api.jsonToArray(wx.getStorageSync('cartData'),'unshift');
+    self.data.mainData = api.getStorageArray('cartData');
     console.log(self.data.mainData)
 
     self.setData({
@@ -29,14 +29,13 @@ Page({
     const self = this;
     const index = api.getDataSet(e,'index');
     if(api.getDataSet(e,'type')=='+'){  
-      self.data.mainData[index].count++;
+       self.data.mainData[index].count++;
     }else{
-      if(self.data.mainData[index].count > '1'){
-  
+      if(self.data.mainData[index].count > 1){
         self.data.mainData[index].count--;
       }
     };
-    api.updateFootOne(self.data.mainData[index].id,'cartData','count',self.data.mainData[index].count);
+    api.setStorageArray('cartData',self.data.mainData[index],'id',999);
     self.setData({
       web_mainData:self.data.mainData
     });

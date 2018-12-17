@@ -16,7 +16,7 @@
              <view class="scale2" style="width:38px;height:42px;{{img}};background-position: -206px -51px;"></view>¥{{web_mainData.info.balance}}
             </view>
         </view>
-        <view class="user_right"  bindtap="intoPath"  data-path="/pages/hotel/sign/sign">
+        <view class="user_right">
             <view style="font-size:32rpx;color:#fff;">
             普通会员
           </view>

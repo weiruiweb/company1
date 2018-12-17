@@ -69,22 +69,11 @@ Page({
 
 
 
-  pay(e){
+   pay(e){
     const self = this;
     var id = api.getDataSet(e,'id');
-    var balance = api.getDataSet(e,'balance')
-    const postData = {
-      token:wx.getStorageSync('hotel_token'),
-      searchItem:{
-        id:id
-      },
-      balance:balance
-    };
-    const callback = (res)=>{
-      wx.hideLoading();
-      self.getMainData(true)   
-    };
-    api.pay(postData,callback);
+    
+    api.pathTo('/pages/hotel/houseOrder/houseOrder?order_id='+id,'nav'); 
   },
 
 

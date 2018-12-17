@@ -46,6 +46,17 @@ Page({
         condition:'in'
       },
     };
+    postData.getAfter = {
+      order:{
+        tableName:'OrderItem',
+        middleKey:'id',
+        key:'product_id',
+        searchItem:{
+          status:1
+        },
+        condition:'='
+      }
+    };
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);

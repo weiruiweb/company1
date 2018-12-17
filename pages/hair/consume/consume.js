@@ -10,21 +10,21 @@ Page({
     mainData:[],
     userData:[],
     searchItem:{
-      status:['in',[0,1]]
+      status:['in',[0,1]],
+      type:1
     },
-    isFirstLoadAllStandard:['getUserInfoData','getMainData']
+    isFirstLoadAllStandard:['getMainData','getUserInfoData'],
   },
 
   
   onLoad(){
     const self = this;
     api.commonInit(self);
-    self.setData({
-     fonts:app.globalData.font,
-     img:app.globalData.hair
-    });
     self.getMainData();
-    self.getUserInfoData()
+    self.getUserInfoData();
+    self.setData({
+      img:app.globalData.hotel,
+    });
   },
 
   intoPath(e){
@@ -33,32 +33,20 @@ Page({
   },
 
 
-  onPullDownRefresh(){
-    const self = this;
-    wx.showNavigationBarLoading(); 
-    delete self.data.searchItem.create_time;
-    self.setData({
-      web_startTime:'',
-      web_endTime:'',
-    });
-    self.getMainData(true);
-
-  },
 
 
   getUserInfoData(){
     const self = this;
     const postData = {};
-    postData.tokenFuncName='getHairToken';
+    postData.tokenFuncName = 'getHotelToken';
     const callback = (res)=>{
       if(res.info.data.length>0){
-        self.data.userData = res;
+        self.data.userData = res.info.data[0];
       }
-      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getUserInfoData',self);
       self.setData({
         web_userData:self.data.userData,
       });
-
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getUserInfoData',self);
     };
     api.userInfoGet(postData,callback);   
   },
@@ -72,7 +60,7 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('hair_token');
+    postData.tokenFuncName = 'getHotelToken';
     postData.searchItem = api.cloneForm(self.data.searchItem)
     postData.order = {
       create_time:'desc',
@@ -80,11 +68,12 @@ Page({
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
+        
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       };
-      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self)
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });
@@ -104,5 +93,9 @@ Page({
 
 
 
+
+
+
 })
+
 

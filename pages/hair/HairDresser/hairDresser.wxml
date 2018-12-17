@@ -7,9 +7,9 @@
           <text class="text1">{{item.title}}</text><text class="text1 text2">{{item.description}}</text>
         </view>
         <view class="dresser_intro">
-        	从事美发行业20年，擅长女士卷发，染发，烫发
+        	{{item.description}}
         </view>
-        <text class="number">160人预约过</text>
+        <text class="number">{{item.order.length}}人预约过</text>
         <view class="order" bindtap="intoPath" data-path="/pages/hair/appointment/appointment?id={{item.id}}">
           预约TA
         </view>

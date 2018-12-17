@@ -20,7 +20,7 @@ Page({
 
   onShow() {
     const self = this;
-    self.data.mainData = api.jsonToArray(wx.getStorageSync('cartData'),'unshift');
+    self.data.mainData = api.getStorageArray('cartData');
     console.log(self.data.mainData)
     self.setData({
       web_mainData:self.data.mainData

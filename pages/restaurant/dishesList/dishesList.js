@@ -15,7 +15,7 @@ Page({
 
   onShow() {
     const self = this;
-    self.data.mainData = api.getStorageArray('cartData');
+    self.data.mainData = api.getStorageArray('restaurant_cartData');
     console.log(self.data.mainData)
 
     self.setData({

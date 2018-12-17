@@ -17,7 +17,7 @@ Page({
       labelData:[],
     mainData:[],
     count:1,
-    num:79,
+    num:76,
     isLoadAll:false,
     cartData:[],
     isFirstLoadAllStandard:['getMainData','getLabelData']
@@ -84,15 +84,15 @@ Page({
       web_num:self.data.num
     });
 
-    var cartData = api.getStorageArray('cartData');
-    var cartRes = api.findItemInArray(cartData,'id',self.data.id);
-    self.data.cart_count = cartRes.length>0?cartRes[1].count:0;
+
    
   },
 
   onShow() {
     const self = this;
-    self.data.cartData = api.jsonToArray(wx.getStorageSync('cartData'),'unshift');
+    self.data.cartData = api.getStorageArray('restaurant_cartData');
+    var cartRes = api.findItemInArray(self.data.cartData,'id',self.data.id);
+    self.data.cart_count = cartRes.length>0?cartRes[1].count:0;
     console.log(self.data.cartData)
     self.setData({
       web_cartData:self.data.cartData
@@ -178,11 +178,12 @@ Page({
     var index = api.getDataSet(e,'index');
     var id = api.getDataSet(e,'id');
     self.data.mainData[index].count = self.data.count;
-    var res = api.setStorageArray('cartData',self.data.mainData[index],'id',999); 
+    var res = api.setStorageArray('restaurant_cartData',self.data.mainData[index],'id',999); 
     if(res){
       api.showToast('加入成功','success');
     };
-    var cartData = api.getStorageArray('cartData');
+    self.data.cartData = api.getStorageArray('restaurant_cartData');
+    var cartData = api.getStorageArray('restaurant_cartData');
     var cartRes = api.findItemInArray(cartData,'id',id);
     self.data.cart_count = cartRes.length>0?cartRes[1].count:0;
     self.setData({

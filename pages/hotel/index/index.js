@@ -47,6 +47,30 @@ Page({
     api.labelGet(postData,callback);
   },
 
+  getLabelData(){
+    const self = this;
+    const postData = {};
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.hotel_thirdapp_id,
+      
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.mainData = res.info.data[0];
+        self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
+      }else{
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','none');
+      }
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+      console.log(self.data.mainData)
+      self.setData({
+        web_mainData:self.data.mainData,
+      });  
+    };
+    api.labelGet(postData,callback);
+  },
+
   getMainData(isNew){
     const self = this;
     if(isNew){
@@ -56,9 +80,8 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       thirdapp_id:getApp().globalData.hotel_thirdapp_id,
-      title:'西安市'
+      
     };
- 
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];

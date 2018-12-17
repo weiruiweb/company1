@@ -8,7 +8,7 @@ Page({
     is_select:0,
     isShow:false,
     is_discount:0,
-    isFirstLoadAllStandard:['getartData'],
+    isFirstLoadAllStandard:['getartData','getSkuData'],
     submitData:{
       phone:'',
       name:'',
@@ -31,6 +31,33 @@ Page({
       img:app.globalData.hotel,
     });
   },
+
+   getSkuData(isNew){
+
+    const self = this;
+    if(isNew){
+      api.clearPageIndex(self);
+    };
+    const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
+    postData.tokenFuncName = 'getHotelToken';
+    postData.searchItem = {
+      id:['in',self.data.order_array]
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.skuData = res.info.data[0];
+        self.data.skuData.count = 1;
+      };
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getSkuData',self);
+      self.setData({
+        web_skuData:self.data.skuData,
+      });     
+      self.countTotalPrice();
+    };
+    api.orderGet(postData,callback);
+
+  }, 
 
 
 
@@ -121,6 +148,24 @@ Page({
       api.buttonCanClick(self,true)
     };
     api.pay(postData,callback);
+  },
+
+  submit(){
+    const self = this;
+    api.buttonCanClick(self);
+    var phone = self.data.submitData.phone;
+    const pass = api.checkComplete(self.data.submitData);
+    if(pass){
+      if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
+        api.showToast('手机格式不正确','none')
+        api.buttonCanClick(self,true);
+      }else{
+        self.pay();   
+      }
+    }else{
+      api.showToast('请补全信息','none');
+      api.buttonCanClick(self,true);
+    };
   },
 
   bindManual(e) {

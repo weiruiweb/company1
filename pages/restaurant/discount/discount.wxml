@@ -17,7 +17,7 @@
 						<view class="discount_top" >
 							{{item.description}}
 						</view>
-						<view class="discount_bottom" data-id="{{item.id}}" data-type="{{item.type}}" data-deadline="{{item.deadline}}" bindtap="addOrder">
+						<view class="discount_bottom" data-id="{{item.id}}" data-type="{{item.type}}" data-limit="{{item.use_limit}}" data-end_time="{{item.end_time}}" data-discount="{{item.discount}}" data-standard="{{item.standard}}" bindtap="{{web_buttonCanClick?'addOrder':''}}">
 							立即领取
 						</view>
 					</view>

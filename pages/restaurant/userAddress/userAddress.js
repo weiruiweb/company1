@@ -1,10 +1,13 @@
 import {Api} from '../../../utils/api.js';
 const api = new Api();
+const app = getApp();
+import {Token} from '../../../utils/token.js';
+const token = new Token();
+
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+
   data: {
 
     mainData:[],
@@ -29,7 +32,7 @@ Page({
     }
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('restaurant_token');
+    postData.tokenFuncName = 'getRestaurantToken';
     const callback = (res)=>{
       console.log(res);
       if(res.info.data.length>0){
@@ -39,7 +42,7 @@ Page({
         api.showToast('没有更多了','fail');
       };
       api.buttonCanClick(self,true);
-      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',true)
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self)
       self.setData({
         web_mainData:self.data.mainData,
       });
@@ -77,7 +80,7 @@ Page({
     const postData = {};
     postData.searchItem = {};
     postData.searchItem.id = api.getDataSet(e,'id');
-    postData.token = wx.getStorageSync('restaurant_token');
+    postData.tokenFuncName = 'getRestaurantToken';
     const callback = (res)=>{
       const resType = api.dealRes(res);
       if(resType){
@@ -93,7 +96,7 @@ Page({
     const self = this;
     api.buttonCanClick(self);
     const postData = {};
-    postData.token = wx.getStorageSync('restaurant_token');
+    postData.tokenFuncName = 'getRestaurantToken';
     postData.searchItem = {};
     postData.searchItem.id = api.getDataSet(e,'id');
     postData.data = {

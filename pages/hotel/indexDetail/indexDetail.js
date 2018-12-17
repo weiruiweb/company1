@@ -43,6 +43,8 @@ Page({
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
+        self.data.skuData = self.data.mainData.sku[0];
+        self.data.skuData.count = 1;
       }else{
         api.showToast('门店不存在','none');
       }
@@ -92,7 +94,7 @@ Page({
       };
       const callback = (res)=>{
         if(res&&res.solely_code==100000){
-          api.pathTo('/pages/hair/confirmOrder/confirmOrder?order_id='+res.info.id,'nav');        
+          api.pathTo('/pages/hotel/houseOrder/houseOrder?order_id='+res.info.id,'nav');        
         }else{
           api.showToast(res.msg,'none');
         };

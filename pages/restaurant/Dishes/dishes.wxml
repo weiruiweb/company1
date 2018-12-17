@@ -6,7 +6,7 @@
 </view>
 <view class="menus_Left {{isTranslate?'sildeIn':'slideOut'}}" style="{{fonts[3].font}}">
 <block wx:for="{{web_labelData}}" wx:key="id">
-	<view class="  {{web_num == item.id?'today_recom':'menus_sort'}}"   data-num="{{item.id}}" catchtap="menuClick">
+	<view class="  {{web_num == item.id?'today_recom':'menus_sort'}}"   data-num="{{item.id}}" catchtap="{{web_buttonCanClick?'menuClick':''}}">
 		{{item.title}}
 	</view>
 </block>
@@ -78,7 +78,7 @@
 		</view>
 	</view>
 </view>
-<view class="qcored" style="{{isShow?'display:none':''}}">
+<!--<view class="qcored" style="{{isShow?'display:block':''}}">
   <view class="qcored_cont">
     <view class="close scale2" bindtap="close" style="position: absolute;top:-36px;right: -36px;"> 
       <view style="width:72px;height:72px;{{img}};background-position:-632px -370px"></view>
@@ -110,7 +110,8 @@
 		</view>
     </view>
    </view> 
-</view>
+</view>--!>
+
 <view class="navbar">
       <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Index/index">
         <view class="navbar_top">
@@ -119,7 +120,7 @@
         </view>
         <view class="text" style="{{fonts[2].font}}">首页</view>
       </view>
-    <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Dishes/dishes">
+    <view class="navbar_item" >
       <view class="navbar_top">
         <view class="nav_img scale" style="{{img}};height:56px;background-position:-163px -937px;">
           </view>

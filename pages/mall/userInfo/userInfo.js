@@ -57,6 +57,7 @@ Page({
       self.data.sForm.name = res.info.data[0].info.name;
       self.data.sForm.gender = res.info.data[0].info.gender;
       self.data.sForm.address = res.info.data[0].info.address
+      self.data.sForm.passage1 = res.info.data[0].info.passage1
       self.setData({
         web_sForm:self.data.sForm,
         web_mainData:self.data.mainData
@@ -98,7 +99,7 @@ Page({
       if(data.solely_code==100000){
         api.showToast('完善成功','none');
         setTimeout(function(){
-          api.pathTo('/pages/User/user','redi')
+          api.pathTo('/pages/mall/User/user','redi')
         },1000);  
       }else{
         api.showToast('网络故障','none')

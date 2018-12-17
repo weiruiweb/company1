@@ -91,7 +91,7 @@
               {{item.title}}
           </view>
           <view class="avoidOverflow " style="{{fonts[2].font}};color:#999;height:45%;">
-              马来西亚风味，口感十足
+              {{item.description}}
           </view>
         </view>
         <view class="dishes_right" style="{{fonts[5].font}};">

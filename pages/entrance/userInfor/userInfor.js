@@ -72,7 +72,11 @@ Page({
     postData.data = api.cloneForm(self.data.sForm);
     const callback = (data)=>{
       if(data.solely_code==100000){
-        api.showToast('完善成功','none')
+        api.showToast('完善成功','none');
+       
+        setTimeout(function(){
+          api.pathTo('/pages/entrance/user/user','redi')
+        },1000);
       }else{
         api.showToast('网络故障','none')
       };

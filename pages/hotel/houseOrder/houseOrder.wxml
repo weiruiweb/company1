@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="p40">
-	<view class="house_name">{{web_skuData.title}}（¥{{web_skuData.price}}）</view>
+	<view class="house_name">{{web_skuData.products[0].snap_product.title}}（¥{{web_skuData.price}}）</view>
 	<view class="house_name" style="font-size:28rpx;"><text>2018-09-19入住</text><text>2018-09-2 09:30之前离店</text><text>1天</text></view>
 </view>
 <view class="p40" id="album">
@@ -11,9 +11,9 @@
    		</view>
 		<view class="orders flexRowBetween" style="width:24%;margin-left: 4%;">
 			<view class="edit_number flexRowBetween">
-				<view class="minus" style="height:45rpx;font-size:50rpx;line-height:40rpx;width:30%;text-align:center;border-right:1px solid #e0e0e0" data-type="-" bindtap="counter" data-id="{{web_skuData.id}}" >-</view>
+				<view class="minus" style="height:45rpx;font-size:50rpx;line-height:40rpx;width:30%;text-align:center;border-right:1px solid #e0e0e0" data-type="-" bindtap="counter" data-id="{{web_skuData.products[0].snap_product.id}}" >-</view>
 				<input type="number" bindchange="bindManual" value="{{web_skuData.count}}" style="width:40px;text-align:center;background:#fff;color:#262626;" />
-				<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuData.id}}" style="width:30%;text-align:center;height:45rpx;line-height:40rpx;border-left:1px solid #e0e0e0">+</view>
+				<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuData.products[0].snap_product.id}}" style="width:30%;text-align:center;height:45rpx;line-height:40rpx;border-left:1px solid #e0e0e0">+</view>
 			</view>
 		</view>
    </view>
@@ -58,10 +58,10 @@
 		<view class="confirm_left">
 			合计：¥{{web_totalPrice}}
 		</view>
-		<view class="confirm_right" bindtap="{{web_buttonCanClick?'addOrder':''}}"  >
+		<view class="confirm_right">
 			<view class="submit_btn">
 				<form bindsubmit="close" class="form_button" report-submit="true">
-				  <button form-type="submit" class=" form_btn color1">立即预订</button>
+				  <button form-type="submit" class=" form_btn color1" bindtap="{{web_buttonCanClick?'submit':''}}">立即预订</button>
 				</form>
 			</view>
 		</view>
@@ -96,7 +96,7 @@
 	</view>
 	<view class="close">
 		<form bindsubmit="close" class="form_button"  report-submit="true">
-		  <button form-type="submit" class="form_btn color1">确认</button>
+		  <button form-type="submit" class="form_btn color1" bindtap="{{web_buttonCanClick?'pay':''}}">确认</button>
 		</form>
 	</view>
 </view>

@@ -32,9 +32,9 @@ Page({
     postData.data.type = 0;
     const callback = (data)=>{
       api.dealRes(data);
-      self.data.submitData = {
-        content:''
-      };
+      setTimeout(function(){
+        api.pathTo('/pages/entrance/user/user','redi')
+      },1000);
       api.buttonCanClick(self,true);
       self.setData({
         web_submitData:self.data.submitData

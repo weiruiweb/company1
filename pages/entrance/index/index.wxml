@@ -113,7 +113,7 @@
              <image src="{{item.mainImg[0].url}}"></image>
             </view>
           </view>
-          <view class="case_right"  bindtap="intoPath" data-path="/pages/entrance/caseDetail/caseDetail?id={{item.id}}">
+          <view class="case_right"  bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}">
             <view class="right_in">
               <view class="text1  font24">{{item.description}}</view>
               <view class="right_more">
@@ -123,7 +123,7 @@
           </view>
       </view>
       <view class="case_bottom flexRowBetween" wx:else>
-        <view class="case_right"  bindtap="intoPath" data-path="/pages/entrance/caseDetail/caseDetail?id={{item.id}}">
+        <view class="case_right"  bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}">
             <view class="right_in">
             <view class="text1 font24">{{item.description}}</view>
             <view class="right_more">

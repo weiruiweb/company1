@@ -4,47 +4,45 @@ const app = getApp();
 import {Token} from '../../../utils/token.js';
 const token = new Token();
 
-
 Page({
   data: {
+    num:0,
     mainData:[],
-    isFirstLoadAllStandard:['']
+    searchItem:{
+      thirdapp_id:getApp().globalData.restaurant_thirdapp_id,
+      type:['in',[3,4]]
+    },
+
+    img:"background:url('/images/small.png')",
+    discount:false,
+    isFirstLoadAllStandard:['getMainData'],
   },
-
-
+  
   onLoad() {
-  	const self = this;
+    const self = this;
     api.commonInit(self);
     self.getMainData()
   },
 
-
   getMainData(isNew){
     const self = this;
     if(isNew){
-      api.clearPageIndex(self);  
+      api.clearPageIndex(self);
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.searchItem = {
-      thirdapp_id:getApp().globalData.restaurant_thirdapp_id,
-      type:['in',[3,4]]
-    }
+    postData.searchItem = api.cloneForm(self.data.searchItem);
     const callback = (res)=>{
-      if(res.solely_code==100000){
-        if(res.info.data.length>0){
-          self.data.mainData.push.apply(self.data.mainData,res.info.data);
-        }else{
-          self.data.isLoadAll = true;
-          api.showToast('没有更多了','none');
-        };
-        self.setData({
-          web_mainData:self.data.mainData,
-        });  
+      if(res.info.data.length>0){
+        self.data.mainData.push.apply(self.data.mainData,res.info.data);
       }else{
-        api.showToast('网络故障','none')
-      }
-      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','none');
+      };
+      self.setData({
+        web_mainData:self.data.mainData,
+      });   
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);  
     };
     api.productGet(postData,callback);
   },
@@ -52,36 +50,53 @@ Page({
   addOrder(e){
     const self = this;
     api.buttonCanClick(self);
+    console.log(e);
     var id = api.getDataSet(e,'id');
     var type = api.getDataSet(e,'type');
-    var deadline = api.getDataSet(e,'deadline');
+    var duration = api.getDataSet(e,'duration');
+    var discount = api.getDataSet(e,'discount');
+    var standard = api.getDataSet(e,'standard');
+    var limit = api.getDataSet(e,'limit')
+    console.log('duration',duration);
+    var limit = api.getDataSet(e,'limit');
     const postData = {
-      token:wx.getStorageSync('restaurant_token'),
+      tokenFuncName:'getMallToken',
       product:[
         {id:id,count:1}
       ],
       pay:{score:0},
       type:type,
-      deadline:deadline
+      data:{
+        end_time:new Date().getTime() + duration,
+        limit:limit,
+        discount:discount,
+        standard:standard,
+      }
     };
+    console.log('postData',postData)
     const callback = (res)=>{
       if(res&&res.solely_code==100000){
-        api.showToast('领取成功！','none')  
-      }; 
-      api.buttonCanClick(self,true)
+        api.showToast('领取成功！','none')
+        self.data.discount = true;    
+      }else{
+        api.showToast(res.msg,'none')
+      }
+      api.buttonCanClick(self,true);
     };
     api.addOrder(postData,callback);
+
   },
 
 
 
 
-  onReachBottom() {
+
+
+  onReachBottom: function () {
     const self = this;
     if(!self.data.isLoadAll&&self.data.buttonCanClick){
       self.data.paginate.currentPage++;
       self.getMainData();
     };
   },
-
 })

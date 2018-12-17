@@ -205,20 +205,24 @@ Page({
     api.fillChange(e,self,'sForm');
     if(api.getDataSet(e,"key")=='score'){
       if(self.data.sForm.score>self.data.userData.score||self.data.sForm.score>self.data.mainData[0].score)
-      api.showToast('积分不符合规则','none',function(self){
-        self.data.sForm.score = '';
-      })  
+      api.showToast('积分不符合规则','none');
+      self.data.sForm.score = '';
+      self.setData({
+        web_sForm:self.data.sForm,
+      }); 
+      return;
     };
     if(api.getDataSet(e,"key")=='balance'){
       if(self.data.sForm.balance>self.data.userData.balance)
-      api.showToast('佣金不足','none',function(self){
-        self.data.sForm.balance = '';  
-      })  
+      api.showToast('佣金不足','none')
+      self.data.sForm.balance = '';  
+      self.setData({
+        web_sForm:self.data.sForm,
+      }); 
+      return;
     };
     console.log(self.data.sForm);
-    self.setData({
-      web_sForm:self.data.sForm,
-    }); 
+    
     self.countPrice(); 
   },
 

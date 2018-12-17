@@ -11,9 +11,7 @@ Page({
    num:0,
    mainData:[],
    searchItem:{
-      thirdapp_id:getApp().globalData.mall_thirdapp_id,
-      type:['in',[1,2]],
-      group_no:['NOT IN',null]
+
     },
     isFirstLoadAllStandard:['getMainData'],
   },
@@ -35,10 +33,13 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName = 'getMallToken';
-    postData.searchItem = api.cloneForm(self.data.searchItem)
+    postData.searchItem = api.cloneForm(self.data.searchItem);
+    postData.searchItem.thirdapp_id = getApp().globalData.mall_thirdapp_id;
+    postData.searchItem.type = 5;
+    postData.searchItem.group_no=['NOT IN',null]
     postData.order = {
       create_time:'desc'
-    }
+    };
     const callback = (res)=>{
       if(res.solely_code==100000){
         if(res.info.data.length>0){
@@ -82,8 +83,7 @@ Page({
     postData.tokenFuncName = 'getMallToken';
     postData.data ={
       transport_status:2,
-      order_step:3
-    }
+    };
     postData.searchItem = {};
     postData.searchItem.id = api.getDataSet(e,'id');
     const callback  = res=>{
@@ -119,22 +119,21 @@ Page({
     this.setData({
       num: num
     });
-
+    self.data.searchItem = {};
     if(num=='0'){
 
     }else if(num=='1'){
       self.data.searchItem.pay_status = '0';
-      self.data.searchItem.order_step = '0';
+      self.data.searchItem.order_step = ['in',[0,4,5]]
     }else if(num=='2'){
       self.data.searchItem.pay_status = '1';
       self.data.searchItem.transport_status = '0';
-      self.data.searchItem.order_step = '0';
-      self.data.searchItem.order_step = '4';
-      self.data.searchItem.order_step = '5';
+      self.data.searchItem.order_step = ['in',[0,4,5]]
+
     }else if(num=='3'){
       self.data.searchItem.pay_status = '1';
       self.data.searchItem.transport_status = '1';
-      self.data.searchItem.order_step = '0';
+      self.data.searchItem.order_step = ['in',[0,5]]
     }else if(num=='4'){
       self.data.searchItem.order_step = '3';
     }
@@ -151,6 +150,44 @@ Page({
       self.data.paginate.currentPage++;
       self.getMainData();
     };
+  },
+
+    onShareAppMessage(res,e){
+    const self = this
+    var id = api.getDataSet(e,'id');
+    var group_no = api.getDataSet(e,'group_no');
+      if(res.from == 'button'){
+        self.data.shareBtn = true;
+      }else{   
+        self.data.shareBtn = false;
+      };
+      return {
+        title: '纯粹科技',
+        path: 'pages/mall/detail/detail?group_no='+group_no+'&&id='+id,
+        success: function (res){
+          console.log(res);
+          console.log(parentNo)
+          if(res.errMsg == 'shareAppMessage:ok'){
+            console.log('分享成功')
+            if (self.data.shareBtn){
+              if(res.hasOwnProperty('shareTickets')){
+              console.log(res.shareTickets[0]);
+                self.data.isshare = 1;
+              }else{
+                self.data.isshare = 0;
+              }
+            }
+          }else{
+            wx.showToast({
+              title: '分享失败',
+            })
+            self.data.isshare = 0;
+          }
+        },
+        fail: function(res) {
+          console.log(res)
+        }
+      }
   },
 
 

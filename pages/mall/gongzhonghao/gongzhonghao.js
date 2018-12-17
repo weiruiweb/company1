@@ -141,11 +141,12 @@ Page({
     const self = this;
     var index = api.getDataSet(e,'index');
     self.data.choosed_skuData = self.data.mainData[index];
+    console.log(self.data.choosed_skuData)
     self.data.choosed_skuData.count = 1;
     self.data.choosed_skuData.isSelect = true;
     var res = api.setStorageArray('cartData',self.data.choosed_skuData,'id',999); 
     if(res){
-      api.showToast('加入成功','success');
+      api.showToast('加入购物车成功','success');
     };
   },
 

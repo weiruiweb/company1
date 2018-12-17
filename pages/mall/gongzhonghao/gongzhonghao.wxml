@@ -56,9 +56,9 @@
 						
 						<view class="flexRowBetween" style="align-items:center;height:30%;">
 							<view style="width:55%;"><text class="price">¥{{item.price}}</text></view>
-							<view class="edit_number" style="width:45%;display:flex;align-items:center;"  bindtap="addCart">
+							<view class="edit_number" style="width:45%;display:flex;align-items:center;" data-index="{{index}}"  bindtap="addCart">
 								<view class="text" >{{item.sale_count}}件已售</view>
-								<view class="scale3" style="{{img}};width:44px;height:42px;background-position: -238px -94px;" data-index="{{index}}"></view>
+								<view class="scale3" style="{{img}};width:44px;height:42px;background-position: -238px -94px;" ></view>
 							</view>
 						</view>
 					</view>	

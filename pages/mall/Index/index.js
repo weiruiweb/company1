@@ -16,7 +16,6 @@ Page({
   onLoad(options) {
     const self = this;
     api.commonInit(self);
-    
     if(options.scene){
       var scene = decodeURIComponent(options.scene)
     };

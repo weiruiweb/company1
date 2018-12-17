@@ -292,14 +292,14 @@ Page({
       return;
     };
     const postData = {
-      tokenFuncName:'getHairToken',
+      tokenFuncName:'getMallToken',
     };
     const callback = (res)=>{
       console.log(res);
       if(res.info.data.length>0&&res.info.data[0].phone){
        
         const c_postData = {
-          tokenFuncName:'getHairToken',
+          tokenFuncName:'getMallToken',
           sku:[
             {
               id:self.data.choosed_skuData.id,
@@ -310,8 +310,8 @@ Page({
 
         };
         if(self.data.choosed_skuData.is_group==1){
-          c_postData.isGroup=true
-
+          c_postData.isGroup=true;
+          c_postData.type = 5
         };
         if(self.data.group_no&&self.data.group_no!="undefined"){
           c_postData.group_no=self.data.group_no
@@ -319,7 +319,7 @@ Page({
         const c_callback = (res)=>{
           api.buttonCanClick(self,true);
           if(res&&res.solely_code==100000){
-            api.pathTo('/pages/hair/confirmOrder/confirmOrder?order_id='+res.info.id,'nav');        
+            api.pathTo('/pages/mall/confirmOrder/confirmOrder?order_id='+res.info.id,'nav');        
           }else{
             api.showToast(res.msg,'none');
           };
@@ -343,7 +343,7 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.tokenFuncName='getHairToken',
+    postData.tokenFuncName='getMallToken',
     postData.searchItem = {
       relation_id:self.data.mainData.id,
       type:2

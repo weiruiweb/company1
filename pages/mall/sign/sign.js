@@ -360,7 +360,7 @@ Page({
     const self = this;
     const postData = {};
     postData.searchItem = {
-      id:28,
+      id:109,
       thirdapp_id:getApp().globalData.mall_thirdapp_id,
     };
     const callback = (res)=>{

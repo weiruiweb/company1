@@ -1,4 +1,4 @@
-import {Api} from '../../../utils/api.js';
+  import {Api} from '../../../utils/api.js';
 const api = new Api();
 const app = getApp();
 import {Token} from '../../../utils/token.js';
@@ -8,11 +8,9 @@ const token = new Token();
 
 Page({
   data: {
-   num:0,
-   mainData:[],
-   searchItem:{
-      thirdapp_id:getApp().globalData.mall_thirdapp_id,
-      type:['in',[1,2]],
+    num:0,
+    mainData:[],
+    searchItem:{
     },
     isFirstLoadAllStandard:['getMainData'],
   },
@@ -36,7 +34,9 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName = 'getMallToken';
-    postData.searchItem = api.cloneForm(self.data.searchItem)
+    postData.searchItem = api.cloneForm(self.data.searchItem);
+    postData.searchItem.thirdapp_id = getApp().globalData.mall_thirdapp_id;
+    postData.searchItem.type = 1;
     postData.order = {
       create_time:'desc'
     }
@@ -120,7 +120,7 @@ Page({
     this.setData({
       num: num
     });
-
+    self.data.searchItem = {};
     if(num=='0'){
 
     }else if(num=='1'){

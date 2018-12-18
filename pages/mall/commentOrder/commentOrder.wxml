@@ -21,6 +21,6 @@
 	</view>
 	
 </view>
-<view class="submit_info" bindtap="submit">
+<view class="submit_info" bindtap="{{web_buttonCanClick?'submit':''}}">
 		提交
 </view>

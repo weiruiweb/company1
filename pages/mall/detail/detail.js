@@ -22,6 +22,7 @@ Page({
     searchItem:{
       status:['in',1]
     },
+    skuIdArray:[],
     skuData:[],
     choosed_sku_item:[],
     can_choose_sku_item:[],
@@ -56,7 +57,7 @@ Page({
       withShareTicket: true
     });
     self.getMainData();
-    self.getMessageData();
+    
     self.setData({
       web_is_group:self.data.is_group,
       web_isInCollectData:self.data.isInCollectData,
@@ -137,9 +138,11 @@ Page({
             self.data.choosed_sku_item = api.cloneForm(self.data.mainData.sku[i].sku_item);
             var skuRes = api.skuChoose(self.data.mainData.sku,self.data.choosed_sku_item);
             self.data.can_choose_sku_item = skuRes.can_choose_sku_item;
+            
           };
-        
+          self.data.skuIdArray.push(self.data.mainData.sku[i].id);//为了抓所有Sku的评论
         };
+        console.log('self.data.skuIdArray',self.data.skuIdArray)
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
         console.log(self.data.mainData)
       }else{
@@ -149,7 +152,7 @@ Page({
       console.log('getMainDataweb_skuData',self.data.skuLabelData);
 
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
-
+      self.getMessageData();
       self.setData({
         web_choosed_skuData:self.data.choosed_skuData,
         web_skuLabelData:self.data.skuLabelData,
@@ -345,7 +348,7 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName='getMallToken',
     postData.searchItem = {
-      relation_id:self.data.mainData.id,
+      relation_id:['in',self.data.skuIdArray],
       type:2
     };
     postData.order = {

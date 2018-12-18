@@ -79,13 +79,6 @@
 								<view class="text2">{{item.creta_time}}</view>
 							</view>
 						</view>
-						<view class="star flexRowBetween">
-							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-						</view>
 					</view>
 					<view class="comment_cont">
 						{{item.content}}
@@ -121,10 +114,10 @@
 			</view>
 		</view>
 		<view class="go_buy flexRowBetween" >
-			<form class="shoppingCart color1" bindsubmit="selectModel" data-type="addCart" wx:if="{{web_is_group==0}}">
+			<form class="shoppingCart color1" bindsubmit="selectModel" data-type="addCart" wx:if="{{web_choosed_skuData.is_group==0}}">
 				<button  form-type="submit">加入购物车</button>
 			</form>
-			<form class="go_pay  color1" bindtap="selectModel" data-type="buy" style="{{web_is_group==1?'width:100%':''}}">
+			<form class="go_pay  color1" bindtap="selectModel" data-type="buy" style="{{web_choosed_skuData.is_group==1?'width:100%':''}}">
 				<button  form-type="submit">提交订单</button>
 			</form>
 		</view>

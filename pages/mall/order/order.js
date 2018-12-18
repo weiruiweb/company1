@@ -22,6 +22,11 @@ Page({
     if(options.num){
       self.changeSearch(options.num)
     };
+    
+  },
+
+  onShow(){
+    const self = this;
     self.getMainData()
   },
 
@@ -98,6 +103,27 @@ Page({
     api.orderUpdate(postData,callback);
   },
 
+  refuedOrder(e){
+    const self = this;
+    api.buttonCanClick(self)
+    const postData = {};
+    postData.tokenFuncName = 'getMallToken';
+    postData.data ={
+      order_step:1
+    }
+    postData.searchItem = {};
+    postData.searchItem.id = api.getDataSet(e,'id');
+    const callback  = res=>{
+      if(res.solely_code==100000){
+        api.showToast('申请成功','none'); 
+      }else{
+        api.showToast(res.msg,'none')
+      };  
+      self.getMainData(true);
+    };
+    api.orderUpdate(postData,callback);
+  },
+
 
 
   pay(e){
@@ -128,14 +154,14 @@ Page({
       self.data.searchItem.order_step = '0';
     }else if(num=='2'){
       self.data.searchItem.pay_status = '1';
-      self.data.searchItem.transport_status = '0';
+      self.data.searchItem.transport_status = ['in',[0,1]];
       self.data.searchItem.order_step = '0';
     }else if(num=='3'){
       self.data.searchItem.pay_status = '1';
-      self.data.searchItem.transport_status = '1';
-      self.data.searchItem.order_step = '0';
-    }else if(num=='4'){
+      self.data.searchItem.transport_status = '2';
       self.data.searchItem.order_step = '3';
+    }else if(num=='4'){
+      self.data.searchItem.order_step = ['in',[1,2]];
     }
     self.setData({
       web_mainData:[],

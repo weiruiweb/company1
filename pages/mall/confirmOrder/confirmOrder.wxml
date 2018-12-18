@@ -52,19 +52,14 @@
 						<view class="img_left"><image src="{{c_item.snap_product.mainImg[0].url}}"></image></view>
 						<view class="order_name">
 							<view class="text1 avoidOverflow">{{c_item.snap_product.title}}</view>
-							<view class="order_type avoidOverflow">个性化定制</view>
+							<view class="order_type avoidOverflow">{{c_item.snap_product.description}}</view>
 							<view class="orders flexRowBetween">
 								<text class="order_price">¥{{c_item.snap_product.price}}</text>
 								<text class="order_number">X{{c_item.count}}</text>
 							</view>
 						</view>
 					</view>
-				</block>
-			</view>
-		</view>
-	</block>
-</view>
-<view class="w710 flex balance bg_white" style="margin-bottom:20rpx;">			
+					<view class="w710 flex balance bg_white" style="margin-bottom:20rpx;">			
 	<view class="balance_left font28">
 		<text>可用积分</text><text>{{web_userData.score}}</text>
 	</view>
@@ -72,6 +67,12 @@
 		<input class="font24" placeholder="请输入您要使用的积分" style="border:1px solid #e5e5e5;" data-key="score" bindblur="inputBind" value="{{web_sForm.score}}"></input>
 	</view>
 </view>
+				</block>
+			</view>
+		</view>
+	</block>
+</view>
+
 <view class="w710 flex balance bg_white" style="margin-bottom:20rpx;">
 	<view class="balance_left font28"><text>可用余额</text><text>{{web_userData.balance}}</text></view>
 	<view class="balance_right  font28">
@@ -103,7 +104,7 @@
 	                    <view>{{item.products[0].snap_product.description}}</view>
 	                </view>
 	                <view class="discount_txt2">
-	                    <view>{{func.timestampToTime(item.products[0].snap_product.deadline)}}点限量领取</view>
+	                    <view>{{func.timestampToTime(item.products[0].snap_product.end_time)}}前有效</view>
 	                </view>
 	            </view>
 	            <view class="select_discount">
@@ -127,7 +128,7 @@
 	            </view>
 	            <view class="discount_center">
 	                <view class="discount_txt1">{{item.products[0].snap_product.description}}</view>
-	                <view class="discount_txt2">{{func.timestampToTime(item.products[0].snap_product.deadline)}}当日有效 可叠加店铺券</view>
+	                <view class="discount_txt2">{{func.timestampToTime(item.products[0].snap_product.end_time)}}前有效</view>
 	            </view>
 	            <view class="select_discount">
 		    		<view class="submit_info bg font24" data-id="{{item.id}}" data-count="{{item.discount}}" bindtap="useCoupon" style="width:140rpx;color:#666;font-size:24rpx;height:50rpx;line-height: 50rpx;">点击使用

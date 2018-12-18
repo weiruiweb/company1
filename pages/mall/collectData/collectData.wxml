@@ -1,32 +1,6 @@
 <!--shopping.wxml-->	
-<!-- <block wx:for="{{web_mainData}}" wx:key="id">
-	<view id="shopping" class="flex">
-		<view class="shopping_box flex">
-		<view class="shopping_item flexRowBetween">
-				<view class="select_status" data-index="{{index}}" bindtap='choose'>
-					<image src="{{item.isSelect=='true'?'/images/select_active.jpg':'/images/select.png'}}"></image>
-				</view>
-				<view class="shopping_img">
-					<image src="{{item.mainImg[0].url}}"></image>
-				</view>
-				<view class="shopping_name">
-					<text class="text1">{{item.title}}</text>
-					<text class="text2">{{item.description}}</text>
-					<text class="price">¥{{item.price}}</text>
-				</view>
-				
-			</view>
-		</view>
-		<view class="handle font30">
-			<view class="handle_item flex">删除</view>
-		</view>
-	</view>
-</block> -->
 <view id="shopping" class="touch-item flex"  wx:for="{{web_mainData}}" wx:key="">
 	<view class="shopping_box flex">
-		<view class="select_status" data-index="{{index}}" bindtap='choose'>
-			<image src="{{item.isSelect=='true'?'/images/select_active.jpg':'/images/select.png'}}"></image>
-		</view>
 		<view class="shopping_img">
 			<image src="{{item.mainImg[0].url}}"></image>
 		</view>

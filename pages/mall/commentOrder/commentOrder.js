@@ -10,13 +10,15 @@ Page({
     submitData:{
       content:'',
       type:2,
-    }
+    },
+    isFirstLoadAllStandard:['getMainData']
   },
   //事件处理函数
 
 
   onLoad(options){
     const self = this;
+    api.commonInit(self);
     self.data.id = options.id;
     console.log(self.data.id);
     self.getMainData()
@@ -41,7 +43,7 @@ Page({
         }else{
           api.showToast('数据错误','none');
         };
-        wx.hideLoading();
+        api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
         self.setData({
           web_mainData:self.data.mainData,
         });  
@@ -56,23 +58,37 @@ Page({
 
   messageAdd(){
     const self = this;
-    wx.showLoading();
+    
     const postData = {};
     postData.tokenFuncName = 'getMallToken';
     postData.data = api.cloneForm(self.data.submitData);
-    postData.data.relation_id = self.data.mainData.products[0].snap_product.product.id;
+    postData.data.relation_id = self.data.mainData.products[0].id;
+    postData.data.relation_table = 'sku';
     console.log(postData)
+    postData.saveAfter = [{
+      tableName:'OrderItem',
+      FuncName:'update',
+      searchItem:{
+        id:self.data.mainData.products[0].id
+      },
+      data:{
+        isremark:1,
+        user_no:wx.getStorageSync('mall_info').user_no,
+        thirdapp_id:getApp().globalData.mall_thirdapp_id
+      }
+    }]
     const callback = (data)=>{  
       if(data.solely_code == 100000){
         api.showToast('评价成功','none');
         setTimeout(function(){
-      wx.navigateBack({
-        delta:1
-      })
-      }, 1000)
+          wx.navigateBack({
+            delta:1
+          })
+        }, 1000)
       }else{
         api.showToast('评价失败','none');
       };
+      api.buttonCanClick(self,true);
     };
     api.messageAdd(postData,callback);  
   },
@@ -80,6 +96,7 @@ Page({
 
   submit(){
     const self = this;
+    api.buttonCanClick(self);
     const pass = api.checkComplete(self.data.submitData);
     if(pass){
         wx.showLoading();

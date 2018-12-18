@@ -174,7 +174,7 @@ Page({
     if(findItem){
       self.data.pay.coupon.splice(findItem[0],1);
     }else{
-      if(!(self.data.price-self.data.couponTotalPrice)>findCoupon.standard){
+      if((self.data.price-self.data.couponTotalPrice)<findCoupon.standard){
         api.showToast('金额不达标','error');
         return;
       };
@@ -187,8 +187,8 @@ Page({
       }else if(findCoupon.type==4){
         var couponPrice = findCoupon.discount*self.data.price;
       };
-      if(couponPrice+self.data.couponTotalPrice>self.data.price){
-        couponPrice = self.data.price - self.data.couponTotalPrice;
+      if(parseFloat(couponPrice)+parseFloat(self.data.couponTotalPrice)>parseFloat(self.data.price)){
+        couponPrice = parseFloat(self.data.price).toFixed(2) - parseFloat(self.data.couponTotalPrice).toFixed(2);
       };
       self.data.pay.coupon.push({
         id:id,
@@ -201,17 +201,18 @@ Page({
 
   inputBind(e){
     const self = this;
-
+    console.log('score',self.data.sForm.score);
+    console.log('test',self.data.mainData[0].products[0].snap_product.score);
     api.fillChange(e,self,'sForm');
-    if(api.getDataSet(e,"key")=='score'){
-      if(self.data.sForm.score>parseInt(self.data.userData.score)||self.data.sForm.score>self.data.mainData[0].score)
+/*    if(api.getDataSet(e,"key")=='score'){
+      if(self.data.sForm.score>self.data.userData.score||self.data.sForm.score>self.data.mainData[0].products[0].snap_product.score)
       api.showToast('积分不符合规则','none');
-      self.data.sForm.score = '';
+      // self.data.sForm.score = '';
       self.setData({
         web_sForm:self.data.sForm,
       }); 
       return;
-    };
+    };*/
     if(api.getDataSet(e,"key")=='balance'){
       if(self.data.sForm.balance>self.data.userData.balance)
       api.showToast('佣金不足','none')
@@ -221,7 +222,7 @@ Page({
       }); 
       return;
     };
-    console.log(self.data.sForm);
+    console.log('test',self.data.sForm);
     
     self.countPrice(); 
   },
@@ -236,7 +237,7 @@ Page({
     var productsArray = self.data.mainData.products;
     self.data.couponTotalPrice = api.addItemInArray(self.data.pay.coupon,'price');
     self.data.price = api.addItemInArray(self.data.mainData,'price');
-    
+    console.log('self.data.price',self.data.price)
     if(self.data.sForm.score>0){
       self.data.pay.score = self.data.sForm.score
     };
@@ -246,7 +247,7 @@ Page({
     var wxPay = self.data.price - self.data.couponTotalPrice - parseInt(self.data.sForm.score) -parseInt(self.data.sForm.balance) ;
     if(wxPay>0){
       self.data.pay.wxPay = {
-        price:wxPay,
+        price:wxPay.toFixed(2),
       };
     }else{
       delete self.data.pay.wxPay;
@@ -255,8 +256,8 @@ Page({
     console.log('countPrice-price',self.data.price);
     console.log('countPrice',self.data.pay);
     self.setData({
-      web_couponPrice:self.data.couponTotalPrice,
-      web_price:self.data.price,
+      web_couponPrice:parseFloat(self.data.couponTotalPrice).toFixed(2),
+      web_price:parseFloat(self.data.price).toFixed(2),
       web_pay:self.data.pay
     });
 

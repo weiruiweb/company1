@@ -23,8 +23,8 @@
 			   			¥<text>{{item.discount}}</text>
 			   		</view>
 			   		<view class="discount_center">
-			   			<view class="discount_txt1  color1">{{item.description}}</view>
-			   			<view class="discount_txt2 color1">{{func.timestampToTime(item.end_time)}}前有效 可叠加券</view>
+			   			<view class="discount_txt1  color1">{{item.title}}</view>
+			   			<view class="discount_txt2 color1">{{func.timestampToTime(item.end_time)}}前有效</view>
 			   		</view>
 			   		<view class="discount_right" data-id="{{item.id}}" data-type="{{item.type}}" data-limit="{{item.use_limit}}" data-end_time="{{item.end_time}}" data-discount="{{item.discount}}" data-standard="{{item.standard}}" bindtap="{{web_buttonCanClick?'addOrder':''}}"><view class="ac_discount" >立即领取</view></view>
 			   </view>

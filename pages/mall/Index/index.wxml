@@ -47,7 +47,7 @@
 <view  class="module" style="width:70%;margin:0 auto">
   <view class="module_item" style="width:50%;"  data-path="/pages/mall/gongzhonghao/gongzhonghao?name=score" bindtap="intoPath">
     <view class="item_top">
-     <view class="menu_icon1 scale" style="{{img}};background-position: -379px -198px;"></view>
+     <view class="menu_icon1 scale" style="{{img}};background-position: -472px -198px;"></view>
     </view>
     <view  class="text" style="{{fonts[3].font}}">
       积分商城
@@ -55,7 +55,7 @@
   </view>
   <view class="module_item" style="width:50%;" data-path="/pages/mall/gongzhonghao/gongzhonghao?name=group" bindtap="intoPath">
     <view class="item_top">
-     <view class="menu_icon1 scale" style="{{img}};background-position: -472px -198px;"></view>
+     <view class="menu_icon1 scale" style="{{img}};background-position: -379px -198px;"></view>
     </view>
     <view  class="text" style="{{fonts[3].font}}">
       团购商城

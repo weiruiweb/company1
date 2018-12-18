@@ -20,7 +20,14 @@ Page({
   onLoad(options){
     const self = this;
     api.commonInit(self);
+    wx.showShareMenu({
+      withShareTicket: true
+    });
+    
+  },
 
+  onShow(){
+    const self = this;
     self.getMainData()
   },
 
@@ -97,6 +104,27 @@ Page({
     api.orderUpdate(postData,callback);
   },
 
+  refuedOrder(e){
+    const self = this;
+    api.buttonCanClick(self)
+    const postData = {};
+    postData.tokenFuncName = 'getMallToken';
+    postData.data ={
+      order_step:1
+    }
+    postData.searchItem = {};
+    postData.searchItem.id = api.getDataSet(e,'id');
+    const callback  = res=>{
+      if(res.solely_code==100000){
+        api.showToast('申请成功','none'); 
+      }else{
+        api.showToast(res.msg,'none')
+      };  
+      self.getMainData(true);
+    };
+    api.orderUpdate(postData,callback);
+  },
+
 
 
   pay(e){
@@ -113,6 +141,8 @@ Page({
     const num = e.currentTarget.dataset.num;
     self.changeSearch(num);
   },
+
+
 
   changeSearch(num){
     const self = this;
@@ -152,21 +182,16 @@ Page({
     };
   },
 
-    onShareAppMessage(res,e){
+  onShareAppMessage(e){
     const self = this
-    var id = api.getDataSet(e,'id');
-    var group_no = api.getDataSet(e,'group_no');
-      if(res.from == 'button'){
-        self.data.shareBtn = true;
-      }else{   
-        self.data.shareBtn = false;
-      };
+    console.log(e)
+    var id = e.target.dataset.id;
+    var group_no = e.target.dataset.group_no;
       return {
         title: '纯粹科技',
         path: 'pages/mall/detail/detail?group_no='+group_no+'&&id='+id,
         success: function (res){
           console.log(res);
-          console.log(parentNo)
           if(res.errMsg == 'shareAppMessage:ok'){
             console.log('分享成功')
             if (self.data.shareBtn){

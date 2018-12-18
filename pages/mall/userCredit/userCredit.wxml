@@ -30,7 +30,7 @@
 						    <view class="text" style="{{fonts[2].font}}">{{web_startTime}}</view>
 						</view>
 						<view style="width:15%;height:70rpx;align-items:center;">
-							<image src="/images/up_icon2.jpg"></image>
+							<image src="{{web_startTime?'/images/up_icon2':'/images/up_icon1'}}.jpg"></image>
 						</view>
 					</view>	
 				</picker>
@@ -51,7 +51,7 @@
 						    <view class="text" style="{{fonts[2].font}}">{{web_endTime}}</view>
 					    </view>
 					    <view style="width:15%;height:70rpx;">
-							<image src="/images/up_icon1.jpg"></image>
+							<image src="{{web_endTime?'/images/up_icon2':'/images/up_icon1'}}.jpg"></image>
 						</view>
 					</view>
 				</picker>

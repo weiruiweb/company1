@@ -20,8 +20,8 @@
 			   			¥<text>{{item.products[0].snap_product.discount}}</text>
 			   		</view>
 			   		<view class="discount_center">
-			   			<view class="discount_txt1">{{item.products[0].snap_product.description}}</view>
-			   			<view class="discount_txt2">{{func.timestampToTime(item.products[0].snap_product.deadline)}}前有效 可叠加店铺券</view>
+			   			<view class="discount_txt1">{{item.products[0].snap_product.title}}</view>
+			   			<view class="discount_txt2">{{func.timestampToTime(item.products[0].snap_product.end_time)}}前有效</view>
 			   		</view>
 				</view>
 			</view>

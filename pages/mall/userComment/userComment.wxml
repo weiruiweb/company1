@@ -25,9 +25,8 @@
 				<view class="handle_order">
 					<view class="flexRowBetween">
 
-						<view class="handle_orders delete_order" bindtap='intoPath' data-path="/pages/detail/detail?id={{item.relation_id}}">再次购买</view>
+						<view class="handle_orders delete_order" bindtap='intoPath' data-path="/pages/mall/detail/detail?id={{item.relation_id}}">再次购买</view>
 						
-						 <button class="handle_orders delete_order color" data-id="{{item.relation_id}}"   bindtap="onShareAppMessage"  open-type="share" style="border:solid 1px #e83632;color:#e83632;">去分享</button>
 					</view>
 				</view>
 			</view>

@@ -10,7 +10,6 @@
 		<view class="input_note">手机号码:</view>
 		<input placeholder="请输入手机号码" style="width:64%;" value="{{web_mainData.phone}}"  data-key="phone" bindblur="inputChange"></input>
 		<view class="address_right flexRowBetween" style="width:13%;">
-			<text>+86</text>
 			<view style="height:100%;" class="flex">
 				<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
 			</view>

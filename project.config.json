@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 67,
 			"list": [
 				{
 					"id": 0,
@@ -435,6 +435,12 @@
 					"id": -1,
 					"name": "合作伙伴",
 					"pathName": "pages/entrance/partner/partner",
+					"query": ""
+				},
+				{
+					"id": 67,
+					"name": "我的订单",
+					"pathName": "pages/mall/order/order",
 					"query": ""
 				}
 			]

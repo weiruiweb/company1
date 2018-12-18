@@ -21,16 +21,7 @@ Page({
   onLoad(options) {
     const self = this;
     api.commonInit(self);
-    if(getApp().globalData.user_discount){
-      self.data.user_discount = getApp().globalData.user_discount
-    }else{
-      getApp().copyUser_discount = (res) => {
-          self.data.user_discount = res.discount;
-      };
-    };
-    self.setData({
-      user_discount:self.data.user_discount
-    })
+  
     self.getMainData();
   },
 
@@ -50,17 +41,14 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 
-  cancel(e){
-    const self = this;
-    console.log(api.getDataSet(e,'id'))
-    api.deleteFootOne(api.getDataSet(e,'id'),'collectData');
-    self.getMainData();
-  },
+
+
    del(e) {
-    this.data.mainData.splice(e.currentTarget.dataset.index, 1)
-    this.setData({
-     mainData: this.data.mainData
-    })
+    const self = this;
+    var index = api.getDataSet(e,'index');
+    api.showToast('已取消','none');
+    api.delStorageArray('collectData',self.data.mainData[index],'id'); 
+    self.getMainData()
    },
 
 

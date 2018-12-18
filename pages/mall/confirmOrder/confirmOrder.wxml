@@ -64,7 +64,7 @@
 		<text>可用积分</text><text>{{web_userData.score}}</text>
 	</view>
 	<view class="balance_right bg_white">
-		<input class="font24" placeholder="请输入您要使用的积分" style="border:1px solid #e5e5e5;" data-key="score" bindblur="inputBind" value="{{web_sForm.score}}"></input>
+		<input class="font24" placeholder="请输入您要使用的积分" style="border:1px solid #e5e5e5;" data-key="score" data-orderItem_id="c_item.id" data-score="{{c_item.snap_product.score}}" bindblur="inputBind" value="{{web_sForm.score}}"></input>
 	</view>
 </view>
 				</block>

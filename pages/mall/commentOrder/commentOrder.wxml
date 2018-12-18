@@ -2,12 +2,12 @@
 
 <view id="comment">	
 	<view class="flexRowBetween orderlistShow">
-		<view><image src="{{web_mainData.products[0].snap_product.mainImg[0].url}}"></image></view>
+		<view><image src="{{web_mainData.snap_product.mainImg[0].url}}"></image></view>
 		<view class="order_name" style="display: flex; flex-direction: column;">
-			<view class="text1">{{web_mainData.products[0].snap_product.title}}</view>
+			<view class="text1">{{web_mainData.snap_product.title}}</view>
 			<view class="orders flexRowBetween">
-				<text class="order_number">X{{web_mainData.products[0].count}}</text>
-				<text class="order_type">{{web_mainData.products[0].snap_product.description}}</text>
+				<text class="order_number">X{{web_mainData.count}}</text>
+				<text class="order_type">{{web_mainData.snap_product.description}}</text>
 				<text class="order_price">¥{{web_mainData.price}}</text>
 			</view>
 		</view>

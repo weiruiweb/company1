@@ -20,6 +20,7 @@ Page({
     const self = this;
     api.commonInit(self);
     self.data.id = options.id;
+    self.data.orderItem_id = options.orderItem_id;
     console.log(self.data.id);
     self.getMainData()
   },
@@ -39,7 +40,12 @@ Page({
     const callback = (res)=>{
       if(res.solely_code==100000){
         if(res.info.data.length>0){
-          self.data.mainData = res.info.data[0]
+          for (var i = 0; i < res.info.data[0].products.length; i++) {
+            if(res.info.data[0].products[i].id==self.data.orderItem_id){
+              self.data.mainData = res.info.data[0].products[i].snap_product;
+              break;
+            };
+          };
         }else{
           api.showToast('数据错误','none');
         };
@@ -49,7 +55,7 @@ Page({
         });  
       }else{
         api.showToast('网络故障','none')
-      }
+      };
       console.log('getMainData',self.data.mainData.products[0].snap_product.product.id)
     };
     api.orderGet(postData,callback);
@@ -62,14 +68,14 @@ Page({
     const postData = {};
     postData.tokenFuncName = 'getMallToken';
     postData.data = api.cloneForm(self.data.submitData);
-    postData.data.relation_id = self.data.mainData.products[0].id;
+    postData.data.relation_id = self.data.orderItem_id;
     postData.data.relation_table = 'sku';
     console.log(postData)
     postData.saveAfter = [{
       tableName:'OrderItem',
       FuncName:'update',
       searchItem:{
-        id:self.data.mainData.products[0].id
+        id:self.data.orderItem_id
       },
       data:{
         isremark:1,

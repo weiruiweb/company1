@@ -26,7 +26,9 @@ Page({
       score:0,
       balance:0 
     },
-     
+    scoreForm:{
+
+    },
     searchItemTwo:{
       thirdapp_id:getApp().globalData.mall_thirdapp_id,
       user_no:wx.getStorageSync('mall_info').user_no,
@@ -201,30 +203,40 @@ Page({
 
   inputBind(e){
     const self = this;
-    console.log('score',self.data.sForm.score);
-    console.log('test',self.data.mainData[0].products[0].snap_product.score);
-    api.fillChange(e,self,'sForm');
-/*    if(api.getDataSet(e,"key")=='score'){
-      if(self.data.sForm.score>self.data.userData.score||self.data.sForm.score>self.data.mainData[0].products[0].snap_product.score)
-      api.showToast('积分不符合规则','none');
-      // self.data.sForm.score = '';
-      self.setData({
-        web_sForm:self.data.sForm,
-      }); 
-      return;
-    };*/
+    
+
+    if(api.getDataSet(e,"key")=='score'){
+      var testScore = api.getDataSet(e,"score");
+      var orderItem_id = api.getDataSet(e,"orderItem_id");
+      self.data.scoreForm[orderItem_id] = e.detail.value;
+      self.data.scoreForm.score = 0;
+      for(var key in self.data.scoreForm){
+        self.data.sForm.score += self.data.scoreForm[key];
+      };
+      console.log('inputBind',self.data.sForm.score);
+      if(self.data.sForm.score>self.data.userData.score||!testScore||(testScore&&self.data.sForm.score>testScore)){
+        api.showToast('积分不符合规则','error');
+        self.data.sForm.score = '';
+        self.setData({
+          web_sForm:self.data.sForm,
+        }); 
+        return;
+      };
+    };
     if(api.getDataSet(e,"key")=='balance'){
-      if(self.data.sForm.balance>self.data.userData.balance)
-      api.showToast('佣金不足','none')
-      self.data.sForm.balance = '';  
-      self.setData({
-        web_sForm:self.data.sForm,
-      }); 
-      return;
+      api.fillChange(e,self,'sForm');
+      if(self.data.sForm.balance>self.data.userData.balance){
+        api.showToast('佣金不足','none')
+        self.data.sForm.balance = '';  
+        self.setData({
+          web_sForm:self.data.sForm,
+        }); 
+        return;
+      };
     };
     console.log('test',self.data.sForm);
-    
     self.countPrice(); 
+
   },
 
 

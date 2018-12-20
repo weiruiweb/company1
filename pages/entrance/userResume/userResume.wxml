@@ -43,11 +43,30 @@
 		</view>
 	</view>
 
+
+
 	<view class="input_list1 font30 flex">
     <view class="color" style="margin-right: 20rpx;font-size:20rpx;">●</view>
 		<view class="input_before1" style="width:40%;">毕业院校及专业:</view>
 		<input placeholder="请输入毕业院校及专业" data-key="description" bindblur="changeBind" value="{{web_submitData.description}}"></input>
 	</view>
+
+ <view class="input_list1 font30 flex">
+    <view class="color" style="margin-right: 20rpx;font-size:20rpx;">●</view>
+    <picker bindchange="PositionChange" value="{{index}}"  range="{{web_positionData}}" range-key ="title" style="width:100%;">
+      <view class="picker flex">
+        <view class="input_before1 font28 flex" style="width:22%;">
+          投递职位:
+        </view>
+        <view class="things_right flexRowBetween font28" style="width:50%;">
+          <view class="thing1  flexRowBetween">
+              <view class="font28"  style="text-align: center;width:100%;">{{web_positionData[web_index].title}}</view>
+          </view>
+        </view>
+      </view>
+    </picker>
+  </view>
+
   <view class="input_list1 font30 flex">
     <view class="color" style="margin-right: 20rpx;font-size:20rpx;">●</view>
     <picker mode="date"  start="2000-01-01" end="2050-01-01" bindchange="bindDateChange" style="width:100%;">
@@ -72,11 +91,13 @@
       </view>
     </picker>
   </view>
+
   <view class="font30" style="margin-top:20rpx;display:flex;">
     <view class="color" style="margin-right: 20rpx;font-size:20rpx;">●</view>
   	<view class="input_before1" style="width:26%;">工作经历:</view>
   	<textarea placeholder="请输入工作经历" data-key="content" bindblur="changeBind" value="{{web_submitData.content}}"></textarea>
   </view>
+
   <view class="w710"  style="margin-top: 50rpx;display:flex;" >
         <view class="color" style="margin-right: 20rpx;font-size:20rpx;">●</view>
         <view class="input_before1 font30 color6" style="width:24%;">上传照片</view>
@@ -94,73 +115,13 @@
                     </view> 
                 </view>
             </block>
-            <view  class="uploader_item" bindtap="upLoadImg" wx:if="{{web_submitData.mainImg.length<2}}">
+            <view  class="uploader_item" bindtap="upLoadImg" wx:if="{{web_submitData.mainImg.length<1}}">
                 <image src="/images/upload.png"></image>
             </view>
         </view>
     </view>
   </view>
-  <view class="w710"  style="margin-top: 50rpx;display:flex;" >
-        <view class="color" style="margin-right: 20rpx;font-size:20rpx;">●</view>
-        <view class="input_before1 font30 color6" style="width:24%;">上传视频</view>
-        <view class="w710 uplode flex" id="uploaderFiles">
-        <view class="uploder flexRowBetween">
-            <view  class="uploader_item" bindtap="upLoadVideo">
-                <image src="/images/upload.png"></image>
-            </view>
-            <view class="section tc">
-              <video src="https://www.solelycloud.com/api/public/uploads/22/20181213/61ced244b1a7183a88742bed52a22e5c.mp4" controls></video>
-              <view class="btn-area">
-                <button bindtap="bindButtonTap">获取视频</button>
-              </view>
-            </view>
 
-            <view class="section tc">
-              <video
-                id="myVideo"
-                src="https://www.solelycloud.com/api/public/uploads/22/20181213/61ced244b1a7183a88742bed52a22e5c.mp4"
-                danmu-list="{{danmuList}}"
-                enable-danmu
-                danmu-btn
-                controls
-              ></video>
-              <view class="btn-area">
-                <button bindtap="bindButtonTap">获取视频</button>
-                <input bindblur="bindInputBlur" />
-                <button bindtap="bindSendDanmu">发送弹幕</button>
-              </view>
-            </view>
-            
-        </view>
-    </view>
-  </view>
-
-  <view class="w710"  style="margin-top: 50rpx;display:flex;" >
-        <view class="color" style="margin-right: 20rpx;font-size:20rpx;">●</view>
-        <view class="input_before1 font30 color6" style="width:24%;">上传音频</view>
-        <view class="w710 uplode flex" id="uploaderFiles">
-        <view class="uploder flexRowBetween">
-            <view  class="uploader_item" bindtap="upLoadAudio">
-                <image src="/images/upload.png"></image>
-            </view>
-            
-            <audio
-              poster="{{poster}}"
-              name="{{name}}"
-              author="{{author}}"
-              src="https://www.solelycloud.com/api/public/uploads/22/20181213/ec4e45d4d4f35f03ca84d41188dc6f34.mp3"
-              id="myAudio"
-              controls
-              loop
-            ></audio>
-
-            <button type="primary" bindtap="audioPlay">播放</button>
-            <button type="primary" bindtap="audioPause">暂停</button>
-            <button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
-            <button type="primary" bindtap="audioStart">回到开头</button>
-        </view>
-    </view>
-  </view>
 </view>
 
 

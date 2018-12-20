@@ -585,7 +585,7 @@ class Base{
         wx.showToast({
             title:title,
             icon:type,
-            duration:1000,
+            duration:duration,
             mask:true,
             complete:func
         })

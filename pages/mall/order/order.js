@@ -27,6 +27,10 @@ Page({
 
   onShow(){
     const self = this;
+    self.data.mainData = [];
+    setData({
+      web_mainData:self.data.mainData
+    });
     self.getMainData()
   },
 

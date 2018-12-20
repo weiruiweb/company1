@@ -6,7 +6,8 @@ import {Token} from '../../../utils/token.js';
 const token = new Token();
 Page({
   data: {
-  	
+
+    positionData:[],
     submitData:{
       title:'',
       phone:'',
@@ -16,10 +17,10 @@ Page({
       mainImg:[],
       content:'',
       description:'',
-
+      relation_id:'',
       class:''
     }, 
-    isFirstLoadAllStandard:['getMainData'],
+    isFirstLoadAllStandard:['getMainData','getPositonData'],
 
   },
 
@@ -27,12 +28,15 @@ Page({
 
   onLoad() {
     const self = this;
+    
     api.commonInit(self);
     self.getMainData();
+    self.getPositonData();
     self.getRandomColor();
     self.setData({
     	web_submitData:self.data.submitData,
-    	web_buttonCanClick:self.data.buttonCanClick
+    	web_buttonCanClick:self.data.buttonCanClick,
+      web_index:0
     })
  
   },
@@ -60,6 +64,7 @@ Page({
   },
 
 
+
   changeBind(e){
     const self = this;
     if(api.getDataSet(e,'value')){
@@ -71,6 +76,18 @@ Page({
       web_submitData:self.data.submitData,
     }); 
     console.log(self.data.submitData)
+  },
+
+  PositionChange(e) {
+    const self = this;
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    console.log(self.data.positionData[e.detail.value].id)
+    self.data.submitData.relation_id = self.data.positionData[e.detail.value].id;
+
+    self.setData({
+      web_index:e.detail.value,
+      web_submitData:self.data.submitData
+    })
   },
 
    bindDateChange: function(e) {
@@ -87,6 +104,38 @@ Page({
 
   formIdAdd(e){
     api.WxFormIdAdd(e.detail.formId,(new Date()).getTime()/1000+7*86400);  
+  },
+
+  getPositonData(){
+    const  self =this;
+    const postData={};
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.solely_thirdapp_id
+    };
+    postData.getBefore = {
+      partner:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['热招职位']],
+        },
+        middleKey:'menu_id',
+        key:'id',
+        condition:'in',
+      },
+    }
+    const callback =(res)=>{
+      if(res.info.data.length>0){
+        self.data.positionData.push.apply(self.data.positionData,res.info.data),
+        self.data.submitData.relation_id=self.data.positionData[0].id
+      };
+      console.log(self.data.positionData)
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getPositonData',self);
+      self.setData({
+
+        web_positionData:self.data.positionData,
+      });
+    };
+    api.articleGet(postData,callback);
   },
 
 
@@ -233,10 +282,13 @@ Page({
     postData.data.behavior = 0;
     const callback = (data)=>{
     	if(data.solely_code==100000){
-    		api.showToast('投递成功','none',)
-        wx.navigateBack({
-          delta:1
-        })
+    		api.showToast('投递成功','none',1000,function(){
+          setTimeout(function(){
+            wx.navigateBack({
+              delta:1
+            }) 
+          },1000);  
+        }) 
     	}else{
     		api.showToast(data.msg,'none')
     	}

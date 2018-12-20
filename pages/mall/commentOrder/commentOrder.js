@@ -49,6 +49,8 @@ Page({
         }else{
           api.showToast('数据错误','none');
         };
+        console.log(self.data.mainData)
+        console.log(self.data.orderItem_id)
         api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
         self.setData({
           web_mainData:self.data.mainData,
@@ -56,7 +58,6 @@ Page({
       }else{
         api.showToast('网络故障','none')
       };
-      console.log('getMainData',self.data.mainData.products[0].snap_product.product.id)
     };
     api.orderGet(postData,callback);
   },
@@ -68,7 +69,7 @@ Page({
     const postData = {};
     postData.tokenFuncName = 'getMallToken';
     postData.data = api.cloneForm(self.data.submitData);
-    postData.data.relation_id = self.data.orderItem_id;
+    postData.data.relation_id = self.data.mainData.id;
     postData.data.relation_table = 'sku';
     console.log(postData)
     postData.saveAfter = [{
@@ -109,6 +110,7 @@ Page({
         self.messageAdd(); 
     }else{
       api.showToast('请补全信息','none');
+      api.buttonCanClick(self,true);
     };
   },
 

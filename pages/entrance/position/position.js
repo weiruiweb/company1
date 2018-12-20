@@ -18,6 +18,7 @@ Page({
     const self = this;
     api.commonInit(self);
     self.getMainData();
+   
   },
 
 

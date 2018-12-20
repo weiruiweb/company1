@@ -111,6 +111,8 @@
     </view>
    </view> 
 </view>--!>
+<view class="space_bottom" style="height:300rpx;">
+</view>
 
 <view class="navbar">
       <view class="navbar_item" bindtap="intoPathRedirect"  data-path="/pages/restaurant/Index/index">

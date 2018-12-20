@@ -592,7 +592,6 @@ class Base{
     };
 
     pathTo(path,type,callback){
-
         if(type=='nav'){
             wx.navigateTo({
                 url:path,

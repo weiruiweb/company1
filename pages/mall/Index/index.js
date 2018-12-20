@@ -90,7 +90,10 @@ Page({
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
-
+  tabPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'rela');
+  },
   intoPathRedi(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');

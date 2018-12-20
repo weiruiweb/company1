@@ -48,7 +48,6 @@
 	</view>
 </view>
 </view>
-
 <view class="bottom_spacing"></view>
 <view class="navbar">
     <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Index/index">

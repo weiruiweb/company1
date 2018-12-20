@@ -9,14 +9,14 @@ view{
 	margin:36rpx 0;
 }
 .contact_list{
-	height: 64rpx;
+	height:80rpx;
 	font-size: 28rpx;
 	color:#666;
 	width:100%;
 }
 .contact_list image{
-	width:28rpx;
-	height:30rpx;
+	width:48rpx;
+	height:50rpx;
 	margin-right: 10rpx;
 }
 .contact_left{

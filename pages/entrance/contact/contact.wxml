@@ -2,23 +2,23 @@
 <view class="contact">
   <view class="contact_cont flexRowBetween">
       <view class="contact_left">
-          <view class="contact_list flex">
-            <view class="contact_left1">
+          <view class="contact_list flex" bindtap="phoneCall">
+            <view class="contact_left1 flex">
               <image src="/images/phone1.png"></image>
             </view>
-              <view class="font26 color6 contact_center">{{web_noticeData.contactPhone}}</view>
+              <view class="font30 color6 contact_center">{{web_noticeData.contactPhone}}</view>
           </view>
           <view class="contact_list flex">
             <view class="contact_left1">
               <image src="/images/email.png"></image>
             </view>  
-              <view class="font26 color6 contact_center avoidOverflow">{{web_noticeData.description}}</view>
+              <view class="font30 color6 contact_center avoidOverflow">{{web_noticeData.description}}</view>
           </view>
           <view class="contact_list flex">
             <view class="contact_left1">
               <image src="/images/position.png"></image>
             </view>
-              <view class="font26 color6">{{web_noticeData.title
+              <view class="font30 color6">{{web_noticeData.title
               }}</view>
           </view>
       </view>

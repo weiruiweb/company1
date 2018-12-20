@@ -197,7 +197,10 @@ Page({
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
-  
+  tabPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'rela');
+  },
   intoPathRedirect(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');

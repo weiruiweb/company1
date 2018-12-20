@@ -148,7 +148,9 @@
   </view>
 
 </view>
- 
+<view class="toBack flex" bindtap="tabPath" data-path="/pages/entrance/index/index">
+  <view class="toBack_cont font24 color1">首页</view>
+</view> 
 <view class="solely font22" style="text-align:center;">
   技术支持:西安纯粹科技有限公司
 </view>

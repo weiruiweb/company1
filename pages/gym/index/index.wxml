@@ -142,3 +142,6 @@
         <view class="text" style="{{fonts[2].font}}">我的</view>
     </view>
 </view>
+<view class="toBack flex" bindtap="tabPath" data-path="/pages/entrance/index/index">
+  <view class="toBack_cont font24 color1">首页</view>
+</view> 

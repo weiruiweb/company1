@@ -167,7 +167,10 @@ Page({
   },
 
 
-
+  tabPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'rela');
+  },
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

@@ -150,7 +150,9 @@
     </view>
   </block>
 </view>
-
+<view class="toBack flex" bindtap="tabPath" data-path="/pages/entrance/index/index">
+  <view class="toBack_cont font24 color1">首页</view>
+</view>
 <view class="navbar">
       <view class="navbar_item" >
         <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">

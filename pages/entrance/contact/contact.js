@@ -48,7 +48,12 @@ Page({
     };
     api.articleGet(postData,callback);
   },
-
+  phoneCall() {
+    const self = this;
+    wx.makePhoneCall({
+      phoneNumber: self.data.noticeData.contactPhone,
+    })
+  },
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');

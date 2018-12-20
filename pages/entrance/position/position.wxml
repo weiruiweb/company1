@@ -1,15 +1,15 @@
 
 <view class="User_cont">
 	<block wx:for="{{web_mainData}}" wx:key="id">
-		<view class="w710 flexRowBetween">
-			<view class="clientList_center font30 color3" style="align-items:center;">
+		<view class="w710 flexs bgs">
+			<view class="clientList_center font32 color" style="align-items:center;">
 				{{item.title}}
 			</view>
 			<view class="clientList_right">
 				<view class="clientTime color9 font24">{{item.create_time}}</view>
 			</view>
 		</view>
-		<view class="w710 position_condition flex">
+		<view class="w710 position_condition flex  bgs">
 			<view class="position_left flex">
 				<image src="/images/project3.png"></image>
 				<text class="font28 color6">{{item.passage1}}人</text>
@@ -18,11 +18,11 @@
 				{{item.passage1}}/月
 			</view>
 		</view>
-		<view class="w710 font28 color9 address flex" bindtap="intoMap">
+		<view class="w710 font28 color9 address flex  bgs" bindtap="intoMap">
 			<image src="/images/position.png"></image>
 			<text>雁塔区科技路高新大都荟7号楼A座</text>
 		</view>
-		<view class="client_intro flexRowBetween font30 w710">
+		<view class="client_intro flexRowBetween font30 w710  bgs">
 			<view class="content ql-editor">
 				<import src="../../../wxParse/wxParse.wxml"/>
 			    <template is="wxParse" data="{{wxParseData:item.content}}"/>

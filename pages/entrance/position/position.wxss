@@ -1,14 +1,19 @@
+page{
+  width:100%;
+  min-height:100%;
+  background:#f6f6f6;
+}
 .clientList_center{
+  padding-top:30rpx;
   width:50%;
-  height:60rpx;
 }
 .clientList_right{
+  padding-top:30rpx;
   width:50%;
   text-align:right;
-  height:60rpx;
 }
 .position_condition{
-  height:60rpx;
+  height:76rpx;
   border-bottom:solid 1px #e0e0e0;
 }
 .position_left,.position_right{
@@ -35,5 +40,15 @@
   border-bottom:solid 1px #e0e0e0;
 }
 .client_intro{
-  margin-top:30rpx;
+  padding:30rpx 2.6%;
+  margin-bottom:30rpx
+}
+.bgs{
+  background:#fff;
+}
+.wxParse-p{
+  margin:14rpx 0;
+}
+.flexs{
+  display:flex;
 }

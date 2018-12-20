@@ -92,7 +92,11 @@
     </block>  
   </view>
 </view>
-<view class="bottom_spacing"></view>
+<view class="solely" style="font-size:20rpx;color:#666;text-align:center;">
+  技术支持:西安纯粹科技有限公司
+</view>
+<view style="height:120rpx;width:100%;">
+</view>
 <view class="navbar">
     <view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/hair/Index/index">
        <view class="nav_top">
@@ -124,4 +128,7 @@
         </view>
         <view class="text">我的</view>
     </view>
+</view>
+<view class="toBack flex" bindtap="tabPath" data-path="/pages/entrance/index/index">
+  <view class="toBack_cont font24 color1">首页</view>
 </view>

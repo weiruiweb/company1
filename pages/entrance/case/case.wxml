@@ -1,6 +1,6 @@
 
 <wxs src="../../../utils/func.wxs" module="func" />
-<view class="menu w710" bindtap="menu">
+<view class="menu w710" bindtap="menu_show">
   <view class="menu_click flex menu_top">
     <image src="/images/down1.png"></image>
   </view>
@@ -16,7 +16,7 @@
       <view class="menu_all flex">
         <block wx:for="{{web_labelData}}" wx:key="id" >
            
-          <view class="menu_item font26 color6"  bindtap="this_choose"  data-id="{{item.id}}" data-text="{{item.title}}" style="{{func.inArray(item.id,web_menu_array)!=-1?'border-bottom:1px solid  #21c3d4':''}}">{{item.title}}</view> 
+          <view class="menu_item font26 color6"  bindtap="this_choose"  data-id="{{item.id}}" data-text="{{item.title}}" style="{{func.inArray(item.id,web_menu_array)!=-1?'border-bottom:1px solid #21c3d4;color:#21c3d4':''}}">{{item.title}}</view> 
         </block>
       </view>
   </view>

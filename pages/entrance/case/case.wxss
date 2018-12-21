@@ -69,7 +69,8 @@ page{
 	padding-bottom:30rpx;
 }
 .menu_choose{
-	height:90rpx;
+	padding:0 20rpx;
+	min-height:90rpx;
 	border-bottom: solid 1px #e0e0e0;
 }
 .menu_all{

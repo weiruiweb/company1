@@ -27,6 +27,7 @@ Page({
       self.data.currentId = options.id;
       self.data.index = options.index
     };
+    console.log('options',options)
     self.setData({
       web_index:self.data.index,
       web_currentId:self.data.currentId

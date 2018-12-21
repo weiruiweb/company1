@@ -55,7 +55,6 @@ Page({
       },300);
       self.data.menu_array = [];
       self.setData({
-        web_menu_array:self.data.menu_array,
         web_mainData:self.data.mainData
       })
     };
@@ -101,10 +100,12 @@ Page({
 
   },
 
-  menu(e){
+  menu_show(e){
     const self = this;
     self.setData({
-      is_show:true
+      is_show:true,
+      web_submitData:[],
+      web_menu_array:[],
     })
   },
 
@@ -115,33 +116,30 @@ Page({
       self.getMainData();
     };
   },
-
   this_choose(e){ 
     const self = this;
     var text = e.currentTarget.dataset.text;
     var currentId = e.currentTarget.dataset.id;
-
     var position = self.data.submitData.passage_array.indexOf(text);
     var position1 = self.data.menu_array.indexOf(currentId);
+
     if(position>=0){
       self.data.submitData.passage_array.splice(position, 1); 
     }else{
-
       self.data.submitData.passage_array.push(text);
-      console.log(self.data.submitData.passage_array)
     };
+
     if(position1>=0){
       self.data.menu_array.splice(position1, 1);
     }else{
       self.data.menu_array.push(currentId);
     }
-    
     self.setData({
        web_submitData:self.data.submitData,
        web_menu_array:self.data.menu_array,
     });
+    console.log('web_submitData',self.data.submitData.passage_array);
     console.log('web_menu_array',self.data.menu_array);
-    self.getMainData(true);
   },
 
   menu_hidden(){
@@ -149,6 +147,7 @@ Page({
     self.setData({
       is_show:false
     });
+    self.getMainData(true);
   },
 
   intoPath(e){

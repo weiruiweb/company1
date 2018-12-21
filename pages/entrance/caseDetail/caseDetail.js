@@ -18,6 +18,7 @@ Page({
     previousMargin: 0,
     swiperIndex:0,
     nextMargin: 0,
+    urlSet:[],
     isFirstLoadAllStandard:['getMainData'],
     searchItem:{
       thirdapp_id:getApp().globalData.solely_thirdapp_id
@@ -58,5 +59,20 @@ Page({
       swiperIndex: e.detail.current,
     })
   },
-
+  previewImg(e){
+      const self = this;
+      var index = e.currentTarget.dataset.index;
+      if(self.data.mainData.bannerImg.length>0){
+        for(var i=0;i<self.data.mainData.bannerImg.length;i++){
+            self.data.urlSet.push(self.data.mainData.bannerImg[i].url);
+        }
+      }
+      wx.previewImage({
+        current: self.data.mainData.bannerImg[index].url,
+        urls: self.data.urlSet,
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    },
 })

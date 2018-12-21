@@ -23,7 +23,7 @@
         <view class="wx_detail flex">
             <block  wx:for="{{web_mainData.bannerImg}}">  
                 <view class="deatil_list">
-                    <image src="{{item.url}}" class="img-responsive"/>
+                    <image src="{{item.url}}" class="img-responsive" data-index='{{index}}' bindtap='previewImg'/>
                 </view>
             </block>
         </view>

@@ -46,8 +46,8 @@
 
 		<view class="madeContItem madeShow">
 			<block wx:for="{{web_mainData}}" wx:key="id">
-				<view class="shopping_item" >
-					<view class="shopping_img" bindtap="intoPath" data-path="/pages/mall/detail/detail?id={{item.id}}&&is_group={{item.is_group}}">
+				<view class="shopping_item"  bindtap="intoPath" data-path="/pages/mall/detail/detail?id={{item.id}}&&is_group={{item.is_group}}">
+					<view class="shopping_img">
 						<image src="{{item.mainImg[0].url}}"></image>
 					</view>
 					<view class="shopping_name">

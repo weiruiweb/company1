@@ -9,78 +9,56 @@ Page({
 
 
   data: {
+    
     mainData:[],
     chooseId:[],
     tabCurrent:0,
     isShow:false,
-    labelData:[],
     complete_api:[],
     keys:[],
-    values:[],
-    skuData:{},
+    values:[],    
     count:1,
     id:'',
-    sku_item:[],
-    choose_sku_item:[],
+    searchItem:{
+      status:['in',1]
+    },
+    skuIdArray:[],
+    skuData:[],
+    choosed_sku_item:[],
+    can_choose_sku_item:[],
+    skuLabelData:[],
     buttonType:'',
-
+    buttonClicked:true,
+    isInCollectData:false,
+    is_collect:false,
+    isFirstLoadAllStandard:['getMainData','getMessageData'],
+    messageData:[],
   },
-  
+
   onLoad(options){
     const self = this;
-    console.log(self.data.skuData);
-    
-    wx.showLoading();
-    if(!wx.getStorageSync('mall_token')){
-      var token = new Token();
-      token.getUserInfo();
-    };
-    self.setData({
-      fonts:app.globalData.font,
-      img1:app.globalData.img,
-      img:app.globalData.hair,
-      web_count:self.data.count
-    });
+    console.log(options)
+    api.commonInit(self);
     if(options.id){
-      self.data.id = options.id
+      self.data.id = options.id;
     };
-    self.getMainData();
-    
-    if(wx.getStorageSync('collectData')[self.data.id]){
-      self.setData({
-        url: '/images/collect1.png',
-      });
-    }else{
-      self.setData({
-        url: '/images/collect.png',
-      });
+    if(options.is_group){
+      self.data.is_group = options.is_group
     };
+
+
     wx.showShareMenu({
       withShareTicket: true
     });
+    self.getMainData();
+    
+    self.setData({
+      web_count:self.data.count,
+    });
+    
   },
-  collect(){
-    const self = this;  
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      setTimeout(function(){
-        wx.showLoading();
-      },800)   
-      return;
-    };
-    const id = self.data.id;
-    if(wx.getStorageSync('collectData')&&wx.getStorageSync('collectData')[id]){
-      api.deleteFootOne(id,'collectData');
-      self.setData({
-        url: '/images/collect.png',
-      });
-    }else{
-      api.footOne(self.data.mainData,'id',100,'collectData');  
-      self.setData({
-        url: '/images/collect1.png',
-      });
-    };
-  },
+
+
 
   getMainData(){
     const self = this;
@@ -88,6 +66,7 @@ Page({
     postData.searchItem = {
       thirdapp_id:getApp().globalData.hair_thirdapp_id,
     };
+    console.log(13,self.data.id);
     postData.getBefore={
       sku:{
         tableName:'sku',
@@ -105,69 +84,123 @@ Page({
         middleKey:'product_no',
         key:'product_no',
         condition:'=',
-        searchItem:{
-          status:['in',[1]]
-        },
+        searchItem:api.cloneForm(self.data.searchItem)
       } 
-    };
+    }; 
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];
+
         for(var key in self.data.mainData.label){
+            console.log('self.data.mainData.sku_array',self.data.mainData.sku_array)
           if(self.data.mainData.sku_array.indexOf(parseInt(key))!=-1){
-            self.data.labelData.push(self.data.mainData.label[key])
+            self.data.skuLabelData.push(self.data.mainData.label[key])
           };    
         };
-        
+
         for (var i = 0; i < self.data.mainData.sku.length; i++) {
           if(self.data.mainData.sku[i].id==self.data.id){
-            self.data.skuData = api.cloneForm(self.data.mainData.sku[i]);
+            self.data.choosed_skuData = api.cloneForm(self.data.mainData.sku[i]);
+            self.data.choosed_sku_item = api.cloneForm(self.data.mainData.sku[i].sku_item);
+            var skuRes = api.skuChoose(self.data.mainData.sku,self.data.choosed_sku_item);
+            self.data.can_choose_sku_item = skuRes.can_choose_sku_item;
+            
           };
-          self.data.choose_sku_item.push.apply(self.data.choose_sku_item,self.data.mainData.sku[i].sku_item);
+          self.data.skuIdArray.push(self.data.mainData.sku[i].id);//为了抓所有Sku的评论
         };
-
-        self.data.sku_item = self.data.skuData.sku_item;
+        console.log('self.data.skuIdArray',self.data.skuIdArray)
         self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
-        self.data.complete_api.push('getMainData');
-
+        console.log(self.data.mainData)
       }else{
         api.showToast('商品信息有误','none');
       };
+      console.log('getMainData',self.data.choosed_skuData);
+      console.log('getMainDataweb_skuData',self.data.skuLabelData);
 
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+      self.getMessageData();
       self.setData({
-        web_skuData:self.data.skuData,
-        web_labelData:self.data.labelData,
+        web_choosed_skuData:self.data.choosed_skuData,
+        web_skuLabelData:self.data.skuLabelData,
         web_mainData:self.data.mainData,
-        web_sku_item:self.data.sku_item,
-        web_choose_sku_item:self.data.choose_sku_item,
+        web_choosed_sku_item:self.data.choosed_sku_item,
+        web_can_choose_sku_item:self.data.can_choose_sku_item,
       });
-      console.log('self.data.labelData',self.data.labelData)
-      self.checkLoadComplete();
+
+      /*sku逻辑说明
+      被选中的sku数据choosed_skuData
+      被选中的sku_item choosed_sku_item
+      可供选择的sku_item can_choose_sku_item(包括被选中的sku_item)
+       api.skuChoose(sku数据，被选中的sku_item)返回choosed_skuData，choosed_sku_item
+      */
+
     };
+
     api.productGet(postData,callback);
   },
 
-
-  counter(e){
+  chooseSku(e){
     const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      setTimeout(function(){
-        wx.showLoading();
-      },800)   
+
+    
+    var id = api.getDataSet(e,'id');
+    if(self.data.can_choose_sku_item.indexOf(id)==-1){
       return;
     };
-    if(api.getDataSet(e,'type')=='+'){
-      self.data.count++;
-    }else if(self.data.skuData.count > '1'){
-      self.data.count--;
-    }
-    self.data.skuData.count = self.data.count
+
+    var index = self.data.choosed_sku_item.indexOf(id);
+    if(index==-1){
+      self.data.choosed_sku_item.push(id);
+    }else{
+      self.data.choosed_sku_item.splice(index,1);
+    };
+    var skuRes = api.skuChoose(self.data.mainData.sku,self.data.choosed_sku_item);
+    self.data.choosed_skuData = skuRes.choosed_skuData;
+    self.data.can_choose_sku_item = skuRes.can_choose_sku_item;
+
+    self.data.count = 1;
+    self.countTotalPrice();
+    self.setData({
+      web_choosed_sku_item:self.data.choosed_sku_item,
+      web_choosed_skuData:self.data.choosed_skuData,
+      web_can_choose_sku_item:self.data.can_choose_sku_item,
+    });
+    
+  },
+
+
+  //计算数量
+  counter(e){
+
+    const self = this;
+
+    if(JSON.stringify(self.data.choosed_skuData)!='{}'){
+      if(api.getDataSet(e,'type')=='+'){
+        self.data.count++;
+      }else if(self.data.choosed_skuData.count > '1'){
+        self.data.count--;
+      }
+      self.data.choosed_skuData.count = self.data.count;
+    }else{
+      self.data.count = 1;
+    };
+    self.countTotalPrice();
+
+  },
+
+  //计算总价
+  countTotalPrice(){  
+    const self = this;
+    var totalPrice = 0;
+    if(JSON.stringify(self.data.choosed_skuData)!='{}'){
+      totalPrice += self.data.count*parseFloat(self.data.choosed_skuData.price);
+      self.data.totalPrice = totalPrice.toFixed(2);
+    };
+    self.data.totalPrice = totalPrice;
     self.setData({
       web_count:self.data.count,
-      web_skuData:self.data.skuData,
+      web_totalPrice:self.data.totalPrice
     });
-    self.countTotalPrice();
   },
 
   bindManual(e) {
@@ -177,150 +210,137 @@ Page({
       web_count:count
     });
   },
-  select_this(e){
-    const self = this;
-    self.setData({
-      tabCurrent:e.currentTarget.dataset.current
-    });
-  },
 
-  countTotalPrice(){  
-    const self = this;
-    var totalPrice = 0;
-    totalPrice += self.data.count*parseFloat(self.data.skuData.price);
-    self.data.totalPrice = totalPrice;
-    self.setData({
-      web_totalPrice:self.data.totalPrice.toFixed(2)
-    });
-  },
+
 
   selectModel(e){
     const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      setTimeout(function(){
-        wx.showLoading();
-      },800)   
-      return;
-    };
+    api.buttonCanClick
     self.data.buttonType = api.getDataSet(e,'type');
     console.log( self.data.buttonType)
-    var isShow = !self.data.isShow;
+    self.data.isShow = !self.data.isShow;
     self.setData({
       web_buttonType:self.data.buttonType,
-      isShow:isShow
+      isShow:self.data.isShow
     })
+
   },
 
-  addCart(){
+  addCart(e){
     const self = this;
-    self.data.skuData.count = self.data.count;
-    self.data.skuData.isSelect = true;
-    console.log(self.data.skuData);
-    if(self.data.skuData.id !=''&&self.data.skuData.id !=undefined){
-      api.footOne(self.data.skuData,'id',100,'cartData'); 
-      api.showToast('已加入购物车啦','none')
-    }else{
-      api.showToast('请完善信息','none')
-    }
+    let formId = e.detail.formId;
+    if(JSON.stringify(self.data.choosed_skuData)=='{}'){
+      api.showToast('未选中商品','success');
+      return;
+    };
+    self.data.choosed_skuData.count = self.data.count;
+    self.data.choosed_skuData.isSelect = true;
+    var res = api.setStorageArray('cartData',self.data.choosed_skuData,'id',999); 
+    if(res){
+      api.showToast('加入成功','success');
+      self.data.isShow = !self.data.isShow;
+      self.setData({
+        isShow:self.data.isShow
+      })
+    };
+    var cartData = api.getStorageArray('cartData');
+    var cartRes = api.findItemInArray(cartData,'id',self.data.id);
+    self.data.cart_count = cartRes.length>0?cartRes[1].count:0;
+    self.setData({
+      web_cart_count:self.data.cart_count,
+    }); 
   },
 
   goBuy(){
+
     const self = this;
-    const skuDatas = [];
-    skuDatas.push({
-      id:self.data.id,
-      count:self.data.count
-    });
-    console.log(skuDatas);
-    if(self.data.skuData.id !=''&&self.data.skuData.id !=undefined){
-      wx.setStorageSync('payPro',skuDatas);
-      api.pathTo('/pages/mall/confirmOrder/confirmOrder','nav')
-    }else{
-      api.showToast('请完善信息','none')
-    }
-    self.setData({
-      isShow:true
-    })
-  },
-
-
-
-  chooseSku(e){
-    const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      setTimeout(function(){
-        wx.showLoading();
-      },800)   
+    api.buttonCanClick(self);
+    
+    if(JSON.stringify(self.data.choosed_skuData)=='{}'){
+      api.showToast('未选中商品','success');
       return;
     };
-    self.data.skuData = {};
-    self.data.id = '';
-    
-    self.data.count = 1;
-    delete self.data.totalPrice;
-    var id = api.getDataSet(e,'id');
-    
-    if(self.data.choose_sku_item.indexOf(id)==-1){
-      return;
-    };
-    self.data.choose_sku_item = [];
-    var parentid = api.getDataSet(e,'parentid');
-    var sku = self.data.mainData.label[parentid];
 
-    for(var i=0;i<sku.child.length;i++){
-      if(self.data.sku_item.indexOf(sku.child[i].id)!=-1){
-        self.data.sku_item.splice(self.data.sku_item.indexOf(sku.child[i].id), 1);
-      };
-      self.data.choose_sku_item.push(sku.child[i].id);
-    };
+       
+        const c_postData = {
+          tokenFuncName:'getHairToken',
+          sku:[
+            {
+              id:self.data.choosed_skuData.id,
+              count:self.data.count
+            }
+          ],
+          type:1
 
-    
-    for (var i = 0; i < self.data.mainData.sku.length; i++) {
-      if(self.data.mainData.sku[i].sku_item.indexOf(parseInt(id))!=-1){
-        self.data.choose_sku_item.push.apply(self.data.choose_sku_item,self.data.mainData.sku[i].sku_item);  
-      };
-    };
-
-    for(var i=0;i<self.data.sku_item.length;i++){
-      if(self.data.choose_sku_item.indexOf(parseInt(self.data.sku_item[i]))==-1){
-        self.data.sku_item.splice(i, 1); 
-      };
-    };
-    self.data.sku_item.push(id);
-
-    for(var i=0;i<self.data.mainData.sku.length;i++){ 
-      if(JSON.stringify(self.data.mainData.sku[i].sku_item.sort())==JSON.stringify(self.data.sku_item.sort())){
-        self.data.id = self.data.mainData.sku[i].id;
-        self.data.skuData = api.cloneForm(self.data.mainData.sku[i]);
-      };   
-    };
-    self.setData({
-      web_totalPrice:'',
-      web_count:self.data.count,
-      web_sku_item:self.data.sku_item,
-      web_skuData:self.data.skuData,
-      web_choose_sku_item:self.data.choose_sku_item,
-    });
-    
+        };
+        if(self.data.choosed_skuData.is_group==1){
+          c_postData.isGroup=true;
+          c_postData.type = 5
+        };
+        if(self.data.group_no&&self.data.group_no!="undefined"){
+          c_postData.group_no=self.data.group_no
+        };
+        const c_callback = (res)=>{
+          api.buttonCanClick(self,true);
+          if(res&&res.solely_code==100000){
+            api.pathTo('/pages/hair/confirmOrder/confirmOrder?order_id='+res.info.id,'nav');        
+          }else{
+            api.showToast(res.msg,'none');
+          };
+        };
+        api.addOrder(c_postData,c_callback);
   },
+
+  getMessageData(isNew){
+    const self = this;
+    if(isNew){
+      api.clearPageIndex(self); 
+    };
+    const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
+    postData.tokenFuncName='getHairToken',
+    postData.searchItem = {
+      relation_id:['in',self.data.skuIdArray],
+      type:2
+    };
+    postData.order = {
+      create_time:'desc'
+    };
+    postData.getAfter = {
+      user:{
+        tableName:'user',
+        middleKey:'user_no',
+        key:'user_no',
+        searchItem:{
+          status:1
+        },
+        condition:'='
+      }
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.messageData.push.apply(self.data.messageData,res.info.data);
+      }else{
+        self.data.isLoadAll = true;
+      };
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMessageData',self);
+      self.setData({
+        web_num:res.info.total,
+        web_messageData:self.data.messageData,
+      });  
+    };
+    api.messageGet(postData,callback);
+  },
+
 
   onShareAppMessage(res){
-    const self = this;
-    if(self.data.buttonClicked){
-      api.showToast('数据有误请稍等','none');
-      setTimeout(function(){
-        wx.showLoading();
-      },800)   
-      return;
-    };
-     console.log(res)
+    const self = this
+      console.log(res)
       if(res.from == 'button'){
         self.data.shareBtn = true;
       }else{   
         self.data.shareBtn = false;
-      }
+      };
       return {
         title: '纯粹科技',
         path: 'pages/detail/detail?id='+self.data.id,
@@ -351,16 +371,6 @@ Page({
   },
 
 
-
-  checkLoadComplete(){
-    const self = this;
-    var complete = api.checkArrayEqual(self.data.complete_api,['getMainData']);
-    if(complete){
-      wx.hideLoading();
-      self.data.buttonClicked = false;
-    };
-  },
-
   intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
@@ -372,5 +382,14 @@ Page({
       isShow:false
     })
   },
+  
+  select_this(e){
+    const self = this;
+    self.setData({
+      tabCurrent:e.currentTarget.dataset.current
+    })
+    console.log(self.data.tabCurrent)
+  },
 
 })
+

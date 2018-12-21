@@ -76,13 +76,6 @@
 								<view class="text2">{{item.creta_time}}</view>
 							</view>
 						</view>
-						<view class="star flexRowBetween">
-							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-							<view class="star_icon scale2" style="{{img}};background-position:-544px -94px"></view>
-						</view>
 					</view>
 					<view class="comment_cont">
 						{{item.content}}

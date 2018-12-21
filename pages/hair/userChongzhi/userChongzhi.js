@@ -45,13 +45,15 @@ Page({
     const postData = {
       tokenFuncName:'getHairToken',
     };
-    postData.data = {
+ /*   postData.data = {
       price:self.data.submitData.price
-    };
+    };*/
     postData.pay = {};
 
       postData.pay = {
-        wxPay:parseFloat(self.data.submitData.price),
+        wxPay:{
+          price:parseFloat(self.data.submitData.price)
+        },
         wxPayStatus:0,
       };
     

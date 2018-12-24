@@ -44,6 +44,7 @@
   </view>
 
 </view>
+
 <view  class="module" style="width:70%;margin:0 auto">
   <view class="module_item" style="width:50%;"  data-path="/pages/mall/gongzhonghao/gongzhonghao?name=score" bindtap="intoPath">
     <view class="item_top">
@@ -66,8 +67,8 @@
   <view class="service_tlt scale1" style="width:154px;height:40px;{{img}};background-position: -396px -148px;">
     <text class="text1">服务类别</text>
   </view>
-  <view class="service_cont" data-path="/pages/mall/Sort/sort" bindtap="intoPathRedi">
-    <view class="service_left">
+  <view class="service_cont" >
+    <view class="service_left" data-path="/pages/mall/Sort/sort" bindtap="intoPathRedi">
       <view class="service_leftT">
        <text class="text1">微信小程序</text>
         <text class="text2" style="{{fonts[1].font}}">联系更紧密</text>
@@ -76,8 +77,8 @@
         <image src="/images/sort_Img1.jpg"></image>
       </view>
     </view>
-    <view class="service_right" data-path="/pages/mall/Sort/sort?id=36&&index=2" bindtap="intoPathRedi">
-      <view class="service_rightT">
+    <view class="service_right" >
+      <view class="service_rightT" data-path="/pages/mall/Sort/sort?id=36&&index=2" bindtap="intoPathRedi">
           <view class="service_top  flexRowBetween">
           <view class="serviceTLeft flex">
             <view>

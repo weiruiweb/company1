@@ -1,7 +1,7 @@
 <!--Beginappointment.wxml-->
 <view class="shore_choose ">
    
-     <picker bindchange="bindPickerChange" value="{{index}}" range="{{web_storeArray}}" style="width:100%;">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{web_storeArray}}" style="width:100%;">
         <view class="picker flexRowBetween">
          <input class="input2"  value="{{web_storeArray[index]}}"></input>
           <view class="next_page">
@@ -12,37 +12,40 @@
     
 </view>
 <view class="shore_choose ">
-    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{index}}" range="{{web_multiArray}}" style="width:100%;">
-    <view class="picker flexRowBetween"> 
-    <input class="input2"  value="{{web_multiArray[index][web_multiArray[index]]}}"></input>
-    <view class="next_page">
-      <image src="/images/next_page.jpg"></image>
-    </view>
-    </view>
+  <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{web_mainData}}" style="width:100%;" range-key="description">
+        <view class="picker flexRowBetween">
+         <input class="input2"  value="{{web_mainData[index1].description}}"></input>
+          <view class="next_page">
+            <image src="/images/next_page.jpg"></image>
+          </view>
+        </view>
   </picker>
 </view>
+
 <view class="shore_choose">
     <view class="choose_line">
         <text class="txt">服务类型</text>
-        <text class="txt1  {{isChoose == 0?'this_item':''}}" data-type="0" bindtap="choose">洗剪吹</text> 
-        <text class="txt1 {{isChoose == 1?'this_item':''}}" data-type="1" bindtap="choose">烫发</text> 
-        <text class="txt1 {{isChoose == 2?'this_item':''}}" data-type="2" bindtap="choose">染发</text>  
+        <block wx:for="{{web_mainData[0].sku}}" wx:key="id">
+          <text class="txt1  {{web_choosedSkuId == item.id?'this_item':''}}" data-id="{{item.id}}" bindtap="chooseSku" data-index="{{index}}">{{item.title}}</text> 
+        </block>
     </view>
 </view>
-<view class="shore_choose ">
+
+<view class="shore_choose " style="display:flex">
   <text class="input_before">预留电话</text>
   <input class="input2"></input>  
 </view>
+
 <view class="shore_choose flexRowBetween">
     <text class="input_before">人数</text>
     <view class="edit_number flexRowBetween">
-      <view class="minus">-</view>
-      <view class="number">1</view>
-      <view class="add">+</view>
-
+      <view class="minus" data-type="-" bindtap="counter">-</view>
+      <input class="number" type="number" bindchange="bindManual" value="{{web_count}}" />
+      <view class="add" data-type="+" bindtap="counter">+</view>
     </view>
 </view>
-<view class="shore_choose ">
+
+<!--<view class="shore_choose ">
     <view class="w100 flexRowBetween" style="width:100%;">
     <text style="width:25%;overflow:hidden;">预约时长</text>
     <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}"  style="width:75%;overflow:hidden;">
@@ -241,17 +244,17 @@
             </view>
         </view>
     </view>
-</view>
+</view>-->
 <view id="begin_appoint" class="flexRowBetween">
   <view class="begin_left flexRowBetween">
     <view class="text1">
       预约定金
     </view>
     <view class="text2">
-      ¥{{web_mainData.price}}
+      ¥{{web_totalPrice}}
     </view>
   </view>
-  <view class="begin_right">
+  <view class="begin_right" bindtap="{{web_buttonCanClick?'addOrder':''}}">
       立即预约
   </view>
 </view>

@@ -34,18 +34,12 @@
         <image src="/image/next_page.jpg"></image>
       </view>
   </view>
-  <view class="service_list flexRowBetween">
-      <text class="text1">单人自身洗剪吹一次</text>
-      <text class="text2">¥222.0</text>
-  </view>
-  <view class="service_list flexRowBetween">
-      <text class="text1">单人自身洗剪吹一次</text>
-      <text class="text2">¥222.0</text>
-  </view>
-  <view class="service_list flexRowBetween">
-      <text class="text1">单人自身洗剪吹一次</text>
-      <text class="text2">¥222.0</text>
-  </view>
+  <block wx:for="{{web_mainData.sku}}" wx:key="id">
+    <view class="service_list flexRowBetween">
+        <text class="text1">{{item.title}}</text>
+        <text class="text2">¥{{item.price}}</text>
+    </view>
+  </block>
   <view class="sumbit_btn" data-path="/pages/hair/beginAppoint/beginAppoint?id={{web_mainData.id}}" bindtap="intoPath"> 
       立即预约
   </view>

@@ -18,6 +18,7 @@ Page({
     self.data.id =  options.id;
     self.getMainData();
     self.setData({
+    
       img:app.globalData.hair
     });
   },
@@ -34,6 +35,15 @@ Page({
         tableName:'OrderItem',
         middleKey:'id',
         key:'product_id',
+        searchItem:{
+          status:1
+        },
+        condition:'='
+      },
+      sku:{
+        tableName:'sku',
+        middleKey:'product_no',
+        key:'product_no',
         searchItem:{
           status:1
         },

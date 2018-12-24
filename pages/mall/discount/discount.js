@@ -76,7 +76,7 @@ Page({
     console.log('postData',postData)
     const callback = (res)=>{
       if(res&&res.solely_code==100000){
-        api.showToast('领取成功！','none')
+        api.showToast('领取成功！','none',2000)
         self.data.discount = true;    
       }else{
         api.showToast(res.msg,'none')

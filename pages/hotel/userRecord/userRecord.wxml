@@ -2,7 +2,7 @@
 <view id="credit">
   <view class="credit_top">
     <view style="width:100%;height:126rpx;overflow: hidden;margin-top:60rpx;">
-      <view class="scale" style="width:160px;height:126px;{{img}};background-position: -140px -113px;margin:0rpx auto">
+      <view class="scale" style="width:106px;height:106px;{{img}};background-position: -138px -113px;margin:0rpx auto">
       </view>
     </view>
     <text>目前余额:</text>

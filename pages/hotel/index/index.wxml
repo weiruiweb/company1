@@ -123,7 +123,7 @@
     </view>
   </view>
 </view>
-<view class="kefu scale6" style="width:150px;height:150px;{{img}};background-position: -245px -100px">
+<view class="kefu scale6" style="width:150px;height:150px;{{img}};background-position: -245px -96px">
   
 </view>
 <view class="solely" style="font-size:20rpx;color:#666;text-align:center;">

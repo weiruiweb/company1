@@ -1,22 +1,44 @@
 <!--user.wxml-->
-
-<view class="User_cont">
+<view class="w710">
 	<block wx:for="{{web_mainData}}" wx:key="id">
-		<view class="clientList flex2">
-			<view class="client_img">
-				<image src="{{item.mainImg[0].url}}" style="border-radius:50%"></image>
-			</view>
-			<view class="clientList_center">
-				<view class="clientName font32 color3">
-					{{item.title}}
+		<view class="business_card" bindtap="intoPath" data-path="/pages/entrance/partnerDetail/partnerDetail?id={{item.id}}">
+			<view class="w690">
+				<view class="card_name font30 ">
+					{{item.title}}<text class="font24 color6">销售主管</text>
 				</view>
-				<view class="font28 color9">
-					<view class="client_intro">
-						{{item.description}}	
+				<view class="card_detail flex">
+					<view class="card_cont flex">
+						<view class="card_left">
+							<image src="{{item.mainImg[0].url}}"></image>
+						</view>
+						<view class="card_right">
+							<view class="card_in">
+								<view class="card_list flex">
+									<view class="card_img">
+										<image src="/images/icon1@2x.png"></image>
+									</view>
+									<view class="card_txt font24 color3 avoidOverflow">{{item.contactPhone}}</view>
+								</view>
+								<view class="card_list flex">
+									<view class="card_img">
+										<image src="/images/icon2@2x.png"></image>
+									</view>
+									<view class="card_txt font24 color3 avoidOverflow">563485263@qq.com</view>
+								</view>
+								<view class="card_list flex">
+									<view class="card_img">
+										<image src="/images/icon3@2x.png"></image>
+									</view>
+									<view class="card_txt font24 color3 avoidOverflow">西安市雁塔区高新大都荟A座2007</view>
+								</view>
+							</view>
+						</view>
 					</view>
 				</view>
 			</view>
+			<view class="card_bottom bg1"></view>
 		</view>
 	</block>
 </view>
+
 

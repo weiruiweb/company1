@@ -1,0 +1,103 @@
+.partnerInfor{
+  width:100%;
+  height:330rpx;
+}
+.partnerIn{
+  width:100%;
+  height:200rpx;
+}
+.user_img{
+  width:160rpx;
+  height:160rpx;
+  border-radius:50%;
+  overflow: hidden;
+  margin:0 auto;
+  border:solid 1px #fff;
+}
+.user_img image{
+  width:100%;
+  height:100%;
+}
+.user_name{
+  text-align:center;
+}
+.person_share button{
+  width:206rpx;
+  height:54rpx;
+  text-align:center;
+  line-height:54rpx;
+  border-radius:10rpx;
+  display:inline-block;
+  margin:0 26rpx;
+}
+.button_one{
+  border:solid 1px #21c3d4;
+}
+.color2{
+  color:#222;
+}
+.user_basic{
+  margin-top:0.5rem;
+}
+.user_tilte{
+  width:130rpx;
+  height:36rpx;
+  text-align:center;
+  position: relative;
+}
+.basic_in{
+  z-index:9;
+  position: absolute;
+  left: 0;
+  top:0;
+  width:100%;
+  text-align:center;
+}
+.bottom_line{
+  position:absolute;
+  left: 0;
+  bottom:0;
+  width:100%;
+  height:6rpx;
+  background: linear-gradient(to bottom,rgba(72,222,223,1.00),rgba(42,154,225,1.00));
+  z-index:1;
+}
+.basic_list{
+  width:100%;
+  height:80rpx;
+  margin-top:20rpx;
+  border-bottom:solid 1px #f4f4f4;
+}
+.basic_left{
+  width:18%;
+}
+.basic_right{
+  width:64%;
+}
+.basic_handle{
+  width:26%;
+}
+.basic_handle button{
+  width:130rpx;
+  height:50rpx;
+  border-radius:40rpx;
+  text-align: center;
+  line-height:50rpx;
+}
+.sign_name{
+  margin-top:50rpx;
+}
+.album{
+  flex-wrap:wrap;
+  margin-top:50rpx;
+}
+.album_item{
+  width:33.333%;
+  height:280rpx;
+  text-align:center;
+  margin-bottom:30rpx;
+}
+.album_item image{
+ width:220rpx;
+  height:280rpx;
+}

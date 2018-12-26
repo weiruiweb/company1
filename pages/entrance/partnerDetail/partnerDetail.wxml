@@ -1,0 +1,92 @@
+<!--user.wxml-->
+<view class="w710">
+	<view class="partnerInfor flex">
+		<view class="partnerIn">
+			<view class="user_img">
+              <image src="{{web_mainData.mainImg&&web_mainData.mainImg[0]?web_mainData.mainImg[0].url:''}}"></image>
+            </view>
+            <view class="font30 user_name color3">
+				{{web_mainData.title}}<text class="font24 color6">销售主管</text>
+			</view>
+		</view>
+	</view>
+	<view class="person_share flexCenter">
+		<button class="font24 color3 button_one" bindtap="addContact">同步到通讯录</button>
+		<button class="font24 color1 bg1"  open-type='share'>分享名片</button>
+	</view>
+	<view class="user_basic">
+		<view class="user_tilte">
+			<view class="font30 color2 basic_in">个人信息</view>
+			<view class="bottom_line"></view>
+		</view>
+		<view class="basic_box">
+			<view class="basic_list flex">
+				<view class="basic_left color9 font28">
+					手机
+				</view>
+				<view class="basic_right font28 color2">
+					{{web_mainData.contactPhone}}
+				</view>
+				<view class="basic_handle">
+					<button class="color1 font24 bg1" bindtap="call_phone">打电话</button>
+				</view>
+			</view>
+			<view class="basic_list flex">
+				<view class="basic_left color9 font28">
+					微信
+				</view>
+				<view class="basic_right font28 color2">
+					13568974565
+				</view>
+				<view class="basic_handle">
+					<button class="color1 font24 bg1" bindtap="copyBtn">加微信</button>
+				</view>
+			</view>
+			<view class="basic_list flex">
+				<view class="basic_left color9 font28">
+					邮箱
+				</view>
+				<view class="basic_right font28 color2" style="width:72%">
+					13568974565
+				</view>
+			</view>
+			<view class="basic_list flex">
+				<view class="basic_left color9 font28">
+					公司
+				</view>
+				<view class="basic_right font28 color2" style="width:72%">
+					13568974565
+				</view>
+			</view>
+			<view class="basic_list flex">
+				<view class="basic_left color9 font28">
+					地址
+				</view>
+				<view class="basic_right font28 color2" style="width:72%">
+					西安市雁塔区高新大都荟A座2007
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="user_basic">
+		<view class="user_tilte">
+			<view class="font30 color2 basic_in">个性签名</view>
+			<view class="bottom_line"></view>
+		</view>
+		<view class="font28 color2 sign_name">{{web_mainData.description}}</view>
+	</view>
+	<view class="user_basic">
+		<view class="user_tilte">
+			<view class="font30 color2 basic_in">照片展示</view>
+			<view class="bottom_line"></view>
+		</view>
+	</view>
+</view>
+<view class="album flex" style="padding:0 1%;">
+	<view class="album_item" wx:for="{{web_mainData.bannerImg}}">
+		<image src="{{item.url}}" data-index='{{index}}' bindtap='previewImg'></image>
+	</view>
+	
+</view>
+
+

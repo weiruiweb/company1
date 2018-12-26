@@ -38,3 +38,65 @@
 .flex2{
   display:flex;
 }
+/*********************card**********************/
+page{
+  width:100%;
+  min-height: 100%;
+  background:#f2f2f2;
+  padding-bottom: 30rpx;
+}
+.business_card{
+  width:100%;
+  height:330rpx;
+  border-radius:20rpx;
+  overflow:hidden;
+  background:#fff;
+  margin-top:28rpx;
+}
+.w690{
+  width:92%;
+  padding:0 4%;
+}
+.card_name{
+  width:100%;
+  height:68rpx;
+  border-bottom:solid 1px #21c3d4;
+  overflow:hidden;
+  line-height:80rpx;
+  color:#222;
+}
+.card_detail{
+  width:100%;
+  height:240rpx;
+}
+.card_cont{
+  width:100%;
+  height:160rpx;
+}
+.card_left{
+  width:29%;
+  border-right:solid 1px #21c3d4;
+}
+.card_right{
+  width:71%;
+}
+.card_left image{
+  width:160rpx;
+  height:160rpx;
+}
+.card_img{
+  width:15%;
+  text-align:center;
+}
+.card_txt{
+  width:85%;
+}
+.card_img image{
+  width:22rpx;
+  height:22rpx;
+  margin:0 auto;
+}
+.card_bottom{
+  width:100%;
+  height:20rpx;
+}

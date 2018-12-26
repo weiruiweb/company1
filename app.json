@@ -15,6 +15,7 @@
     "pages/entrance/userResume/userResume",
     "pages/entrance/login/login",
     "pages/entrance/partner/partner",
+    "pages/entrance/partnerDetail/partnerDetail",
     "pages/entrance/project/project",
     "pages/entrance/position/position",
     "pages/entrance/contact/contact",

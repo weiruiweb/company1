@@ -106,8 +106,8 @@ class Base{
         })
     }
 
-    parentAdd(tokenFuncName,parent_no,callback){
-       var token = new Token({parent_no:parent_no});
+    parentAdd(tokenFuncName,parent_no,callback,passage1){
+       var token = new Token({parent_no:parent_no,passage1:passage1});
        token[tokenFuncName](callback,{refreshToken:true});
     }
 

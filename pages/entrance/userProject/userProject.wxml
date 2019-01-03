@@ -5,7 +5,7 @@
 			<view class="project_name flex">
 				<view class="project_Left">
 					<view class="name_box">
-						<view class="name_cont font32 color1">{{item.title}}</view>
+						<view class="name_cont font32 color1">{{item.name}}</view>
 					</view>
 				</view>
 				<view class="project_right font26 color9">

@@ -172,10 +172,14 @@ class Token {
                     postData.parent_no = self.g_params.parent_no;
                     console.log(self.g_params)
                 };
+                if(self.g_params&&self.g_params.passage1){
+                    postData.passage1 = self.g_params.passage1;
+                    console.log(self.g_params)
+                };
                 if(wx.getStorageSync('openidP')){
                     postData.openid = wx.getStorageSync('openidP');
                 };
-                console.log(postData)
+                console.log('postData',postData)
                 wx.request({
                     url: 'https://www.solelycloud.com/api/public/index.php/api/v1/Base/ProgrameToken/get',
                     method:'POST',

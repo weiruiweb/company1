@@ -1,19 +1,7 @@
 <!--pages/ classify.wxml-->
-<view class="submit_info" bindtap="tabPath" style="margin-top:20rpx" data-path="/pages/mall/Index/index?name=mall">
-	商城小程序
-</view>
-<view class="submit_info" bindtap="tabPath" style="margin-top:20rpx" data-path="/pages/exhibition/index/index?name=exhibition">
-	官网展示小程序	
-</view>
-<view class="submit_info" bindtap="tabPath" style="margin-top:20rpx" data-path="/pages/hotel/index/index?name=hotel">
-	酒店行业
-</view>
-<view class="submit_info" bindtap="tabPath" style="margin-top:20rpx" data-path="/pages/hair/Index/index?name=hair">
-	美发行业
-</view>
-<view class="submit_info" bindtap="tabPath" style="margin-top:20rpx" data-path="/pages/restaurant/Index/index?name=restaurant">
-	餐饮行业
-</view>
-<view class="submit_info" bindtap="tabPath" style="margin-top:20rpx" data-path="/pages/gym/index/index?name=gym">
-	健身房小程序
-</view>
+<block wx:for="{{web_mainData}}" wx:key="id">
+	<view class="submit_info" bindtap="tabPath" style="margin-top:20rpx" data-path="{{item.url}}">
+		{{item.title}}
+	</view>
+</block>
+

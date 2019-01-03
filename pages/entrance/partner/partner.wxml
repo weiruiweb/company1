@@ -4,7 +4,7 @@
 		<view class="business_card" bindtap="intoPath" data-path="/pages/entrance/partnerDetail/partnerDetail?id={{item.id}}">
 			<view class="w690">
 				<view class="card_name font30 ">
-					{{item.title}}<text class="font24 color6">销售主管</text>
+					{{item.title}}<text class="font24 color6">{{item.small_title}}</text>
 				</view>
 				<view class="card_detail flex">
 					<view class="card_cont flex">
@@ -23,13 +23,13 @@
 									<view class="card_img">
 										<image src="/images/icon2@2x.png"></image>
 									</view>
-									<view class="card_txt font24 color3 avoidOverflow">563485263@qq.com</view>
+									<view class="card_txt font24 color3 avoidOverflow">{{item.passage2}}</view>
 								</view>
 								<view class="card_list flex">
 									<view class="card_img">
 										<image src="/images/icon3@2x.png"></image>
 									</view>
-									<view class="card_txt font24 color3 avoidOverflow">西安市雁塔区高新大都荟A座2007</view>
+									<view class="card_txt font24 color3 avoidOverflow">{{item.passage3}}</view>
 								</view>
 							</view>
 						</view>

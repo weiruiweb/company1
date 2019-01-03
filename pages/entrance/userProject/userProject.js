@@ -31,23 +31,14 @@ Page({
           api.pathTo('/pages/entrance/userInfor/userInfor','redi')
         });
         return;
-      }; 
+        }; 
         const postData={};
+        postData.tokenFuncName='getEntranceToken';
         postData.paginate = api.cloneForm(self.data.paginate);
         postData.searchItem = {
           thirdapp_id:getApp().globalData.solely_thirdapp_id,
-          contactPhone:res.info.data[0].phone
-        };
-        postData.getBefore ={
-         caseData:{
-            tableName:'label',
-            searchItem:{
-              title:['=',['项目管理']],
-            },
-            middleKey:'menu_id',
-            key:'id',
-            condition:'in',
-          },
+          client_no:wx.getStorageSync('entrance_info').user_no,
+          user_type:2
         };
         const callback =(res)=>{
           if(res.info.data.length>0){
@@ -61,7 +52,7 @@ Page({
             web_mainData:self.data.mainData,
           });
         };
-        api.articleGet(postData,callback);
+        api.projectGet(postData,callback);
       }     
     } 
     api.userInfoGet(c_postData,c_callback)  

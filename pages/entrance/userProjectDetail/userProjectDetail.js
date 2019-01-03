@@ -24,9 +24,11 @@ Page({
   getMainData(){
     const self= this;
     const postData = {};
+    postData.tokenFuncName = 'getEntranceToken';
     postData.searchItem ={
       thirdapp_id:app.globalData.solely_thirdapp_id,
-      id:self.data.id
+      id:self.data.id,
+      user_type:2
     };
     postData.searchItem.id = self.data.id;
     const callback = (res)=>{
@@ -40,7 +42,7 @@ Page({
         web_mainData:self.data.mainData,
       });   
     };
-    api.articleGet(postData,callback);
+    api.projectGet(postData,callback);
   },
   
   intoPath(e){

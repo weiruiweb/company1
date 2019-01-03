@@ -34,7 +34,7 @@ page{
 }
 .add_detail{
 	width:94%;
-	height:606rpx;
+	height:515rpx;
 	border-radius: 20rpx;
 	background:#f2f2f2;
 	padding:3%;

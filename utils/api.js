@@ -129,6 +129,103 @@ class Api extends Base{
         this.request(allParams);       
     }
 
+    projectGet(param,callback){
+        var allParams ={
+            url:'Common/Project/get',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
+    }
+
+    projectDelete(param,callback){
+        var allParams ={
+            url:'Common/Project/delete',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
+    }
+
+    projectAdd(param,callback){
+        var allParams ={
+            url:'Common/Project/add',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
+    }
+
+    projectUpdate(param,callback){
+        var allParams ={
+            url:'Common/Project/update',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
+    }    
+
+
+    processGet(param,callback){
+        var allParams ={
+            url:'Common/Process/get',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
+    }
+
+    processDelete(param,callback){
+        var allParams ={
+            url:'Common/Process/delete',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
+    }
+
+    processAdd(param,callback){
+        var allParams ={
+            url:'Common/Process/add',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
+    }
+
+    processUpdate(param,callback){
+        var allParams ={
+            url:'Common/Process/update',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);       
+    }
+
     logGet(param,callback){
         var allParams ={
             url:'Common/Log/get',

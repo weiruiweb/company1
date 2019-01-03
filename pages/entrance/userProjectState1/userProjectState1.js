@@ -29,19 +29,9 @@ Page({
     postData.searchItem ={
       thirdapp_id:app.globalData.solely_thirdapp_id,
       id:self.data.id,
-      user_type:1
+      user_type:2
     };
-    postData.getAfter = {
-    	article:{
-    		tableName:'article',
-    		middleKey:'passage_array',
-    		key:'id',
-    		searchItem:{
-    			status:1
-    		},
-    		condition:'='
-    	}
-    };
+
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];
@@ -52,29 +42,30 @@ Page({
         web_mainData:self.data.mainData,
       });  
     };
-    api.messageGet(postData,callback);
+    api.processGet(postData,callback);
   },
 
 
 
 
-  messageUpdate(){
+  processUpdate(){
     const self =this;
     api.buttonCanClick(self);
     const postData = {};
     postData.tokenFuncName = 'getEntranceToken';
     postData.data = {
-    	behavior:0
+    	step:3
     };
     const callback = (data)=>{
     	if(data.solely_code==100000){
     		api.showToast('已同意','none')
     	}else{
     		api.showToast(data.msg,'none')
-    	}
+    	};
+    	self.getMainData()
       api.buttonCanClick(self,true);
     };
-    api.messageUpdate(postData,callback);
+    api.processUpdate(postData,callback);
   },
 
 

@@ -6,7 +6,7 @@
               <image src="{{web_mainData.mainImg&&web_mainData.mainImg[0]?web_mainData.mainImg[0].url:''}}"></image>
             </view>
             <view class="font30 user_name color3">
-				{{web_mainData.title}}<text class="font24 color6">销售主管</text>
+				{{web_mainData.title}}<text class="font24 color6">{{web_mainData.small_title}}</text>
 			</view>
 		</view>
 	</view>
@@ -36,7 +36,7 @@
 					微信
 				</view>
 				<view class="basic_right font28 color2">
-					13568974565
+					{{web_mainData.keywords}}
 				</view>
 				<view class="basic_handle">
 					<button class="color1 font24 bg1" bindtap="copyBtn">加微信</button>
@@ -47,7 +47,7 @@
 					邮箱
 				</view>
 				<view class="basic_right font28 color2" style="width:72%">
-					13568974565
+					{{web_mainData.passage2}}
 				</view>
 			</view>
 			<view class="basic_list flex">
@@ -55,7 +55,7 @@
 					公司
 				</view>
 				<view class="basic_right font28 color2" style="width:72%">
-					13568974565
+					{{web_mainData.passage1}}
 				</view>
 			</view>
 			<view class="basic_list flex">
@@ -63,7 +63,7 @@
 					地址
 				</view>
 				<view class="basic_right font28 color2" style="width:72%">
-					西安市雁塔区高新大都荟A座2007
+					{{web_mainData.passage3}}
 				</view>
 			</view>
 		</view>

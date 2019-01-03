@@ -69,12 +69,12 @@
 				<view class="state_right flex">
 					<view class="state_right_box">
 						<view class="state_top flex">
-							<view class="font28 color6" style="width:55%;">{{item.title}}</view>
+							<view class="font28 color6" style="width:55%;">{{item.name}}</view>
 							<view class="font26 color9" style="width:45%;">{{item.create_time}}</view>
 						</view>
 						<view class="state_bottom">
-							<view class="font28 color6" style="width:30%;">剩余工期：</view>
-							<view class="font26 color9 state_text" style="width:60%;">{{item.article[0].passage1}}个工作日</view>
+							<view class="font28 color6" style="width:30%;">描述：</view>
+							<view class="font26 color9 state_text" style="width:60%;">{{item.description}}</view>
 							<view class="next_page" style="width:10%;">
 								<image src="/images/next_page.jpg"></image>
 							</view>

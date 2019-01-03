@@ -9,8 +9,8 @@ Page({
   data: {
     searchItem:{
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
-      
-      user_type:1
+      process_type:2,
+      user_type:['in',[1,2]]
     },
     labelData:[],
     mainData:[],
@@ -23,7 +23,6 @@ Page({
     const self = this;
     api.commonInit(self);
     self.data.id = options.id;
-    self.getMainData();
     self.getProjectData();
     
   },
@@ -38,8 +37,8 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName='getEntranceToken';
     postData.searchItem = api.cloneForm(self.data.searchItem);
-    postData.searchItem.passage_array=self.data.id;
-    postData.getAfter = {
+    postData.searchItem.project_no=self.data.projectData.project_no;
+/*    postData.getAfter = {
     	article:{
     		tableName:'article',
     		middleKey:'passage_array',
@@ -49,7 +48,7 @@ Page({
     		},
     		condition:'='
     	}
-    };
+    };*/
     const callback =(res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
@@ -67,20 +66,23 @@ Page({
         web_mainData:self.data.mainData,
       });
     };
-    api.messageGet(postData,callback);
+    api.processGet(postData,callback);
   },
 
   getProjectData(){
     const self= this;
     const postData = {};
+    postData.tokenFuncName = 'getEntranceToken';
     postData.searchItem ={
       thirdapp_id:app.globalData.solely_thirdapp_id,
-      id:self.data.id
+      id:self.data.id,
+      user_type:2,
+
     };
     postData.getAfter = {
       userOne:{
-        tableName:'user',
-        middleKey:'user_no',
+        tableName:'User',
+        middleKey:'project_manager',
         key:'user_no',
         searchItem:{
           status:1
@@ -88,8 +90,8 @@ Page({
         condition:'='
       },
       userTwo:{
-        tableName:'user',
-        middleKey:'passage3',
+        tableName:'User',
+        middleKey:'sales_manager',
         key:'user_no',
         searchItem:{
           status:1
@@ -106,8 +108,9 @@ Page({
       self.setData({
         web_projectData:self.data.projectData,
       });   
+      self.getMainData()
     };
-    api.articleGet(postData,callback);
+    api.projectGet(postData,callback);
   },
 
 

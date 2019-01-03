@@ -33,15 +33,17 @@ Page({
     const postData = {};
     postData.tokenFuncName = 'getEntranceToken';
     const callback = (res)=>{
-      console.log(res)
+      if(res.info.data.length>0){
+        self.data.sForm.name = res.info.data[0].info.name;
+        self.data.sForm.phone = res.info.data[0].info.phone; 
+        self.data.sForm.address = res.info.data[0].info.address;
+        self.data.sForm.email = res.info.data[0].info.email;
+        self.data.sForm.level = res.info.data[0].info.level;
+        self.data.sForm.passage1 = res.info.data[0].info.passage1;
+        self.data.sForm.idCard = res.info.data[0].info.idCard 
+      };
       self.data.mainData = res;
-      self.data.sForm.name = res.info.data[0].info.name;
-      self.data.sForm.phone = res.info.data[0].info.phone; 
-      self.data.sForm.address = res.info.data[0].info.address;
-      self.data.sForm.email = res.info.data[0].info.email;
-      self.data.sForm.level = res.info.data[0].info.level;
-      self.data.sForm.passage1 = res.info.data[0].info.passage1;
-      self.data.sForm.idCard = res.info.data[0].info.idCard
+     
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'userInfoGet',self);
       self.setData({
         web_sForm:self.data.sForm,

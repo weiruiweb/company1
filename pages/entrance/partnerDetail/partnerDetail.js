@@ -14,9 +14,26 @@ Page({
 
   onLoad(options){
     const self = this;
-     self.data.id = options.id;
+    self.data.id = options.id;
     api.commonInit(self);
-    self.getMainData();
+    if(options.scene){
+      var scene = decodeURIComponent(options.scene)
+    };
+    if(options.parent_no){
+      var parent_no = options.parent_no
+    };
+    if(options.passage1){
+      var passage1 = options.passage1
+    };
+    console.log('options',options)
+    if(parent_no&&passage1){
+       const callback=(res)=>{
+        self.getMainData();
+      };
+      api.parentAdd('getEntranceToken',parent_no,callback,passage1); 
+    }else{
+      self.getMainData();
+    }
   },
 
 
@@ -61,6 +78,8 @@ Page({
         complete: function(res) {},
       })
     },
+
+
   onShareAppMessage(res){
     const self = this;
     if(self.data.buttonClicked){
@@ -78,7 +97,7 @@ Page({
       }
       return {
         title: self.data.mainData.title,
-        path: 'pages/entrance/partnerDetail/partnerDetail?id='+self.data.id,
+        path: 'pages/entrance/partnerDetail/partnerDetail?passage1='+self.data.id+'&&parent_no='+wx.getStorageSync('entrance_info').user_no,
         success: function (res){
           console.log(res);
           console.log(parentNo)
@@ -115,14 +134,15 @@ Page({
     })
   },
   call_phone(){
+    const self = this;
     wx.makePhoneCall({
-      phoneNumber: '18192654258'
+      phoneNumber: 'self.data.mainData.contactPhone,'
     })
   },
   copyBtn: function (e) {
     const self = this;
     wx.setClipboardData({
-      data: self.data.mainData.contactPhone,
+      data: self.data.mainData.keywords,
       success: function (res) {
         wx.showToast({
           title: '复制成功',

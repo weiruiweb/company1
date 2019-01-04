@@ -95,6 +95,7 @@ Page({
     if(pass){
       if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
         api.showToast('手机格式不正确','none')
+        api.buttonCanClick(self,true);
       }else{
         wx.showLoading();
         const callback = (user,res) =>{

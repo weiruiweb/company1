@@ -3,17 +3,17 @@
 	<view class="input_list1 font30 flex">
     <view class="input_icon"><image src="/images/icon5.png"></image></view>
 		<view class="input_before1">姓名:</view>
-		<view class="input">张三</view>
+		<view class="input">{{web_mainData.title}}</view>
 	</view>
 	<view class="input_list1 font30 flex">
     <view class="input_icon"><image src="/images/icon6.png"></image></view>
 		<view class="input_before1">电话:</view>
-		<view class="input">18755544545</view>
+		<view class="input">{{web_mainData.phone}}</view>
 	</view>
 	<view class="input_list1 flex" style="justify-content:flex-start">
     <view class="input_icon"><image src="/images/partaner_icon4.png"></image></view>
 		<text class="font30 input_before1">性别:</text>
-		<view class="input font26">女</view>
+		<view class="input font26">{{web_mainData.gender ==0?'女':'男'}}</view>
 	</view>
 
 	<view class="input_list1 flex" style="justify-content:flex-start">
@@ -24,12 +24,12 @@
 	<view class="input_list1 font30 flex">
     <view class="input_icon"><image src="/images/partaner_icon3.png"></image></view>
 		<view class="input_before1" style="width:40%;">毕业院校及专业:</view>
-		<view class="input"></view>
+		<view class="input">{{web_mainData.description}}</view>
 	</view>
   <view class="input_list1 font30 flex">
-    <view class="input_icon"><image src="/images/icon14.png"></image></view>
+    <view class="input_icon"><image src="/images/icon12.png"></image></view>
     <view class="input_before1">投递职位:</view>
-    <view class="input">网络营销</view>
+    <view class="input">{{web_mainData.position[0].title}}</view>
   </view>
 
   <view class="input_list1 font30 flex">
@@ -43,15 +43,15 @@
           </view>
           <view class="things_right flexRowBetween font28" style="width:50%;">
               <view class="thing1  flexRowBetween" style="width:24%;text-align: center;">
-                  <view class="font28"  style="text-align: center;width:100%;">2012</view>
+                  <view class="font28"  style="text-align: center;width:100%;"></view>
               </view>
               <view class="years font28 ">年</view>
               <view class="thing1  flexRowBetween"  style="width:24%;text-align: center;">
-                  <view class="font28"  style="text-align: center;width:100%;">9</view>
+                  <view class="font28"  style="text-align: center;width:100%;"></view>
               </view>
                <view class="years font28">月</view>
               <view class="thing1  flexRowBetween"  style="width:24%;text-align: center;">
-                  <view class="font28" style="text-align: center;width:100%;">1</view>
+                  <view class="font28" style="text-align: center;width:100%;"></view>
               </view>
                <view class="years font28 ">日</view>
           </view>
@@ -65,14 +65,14 @@
     </view>
   	<view class="input_before1" style="width:26%;">工作经历:</view>
   </view>
-  <view class="experence font28 color6">工作经历工作经历工作经历工作经历工作经历工作经历工作经历工作经历工作经历工作经历工作经历</view>
+  <view class="experence font28 color6">{{web_mainData.content}}</view>
   <view class="uplode">
         <view class="input_icon">
           <image src="/images/icon15.png"></image>
         </view>
         <view class="input_before1 font30 color6" style="width:24%;">上传照片</view>
         <view class="uplode_img">
-          <image src="/images/index_icon4.png"></image>
+          <image src="{{web_mainData.mainImg[0].url}}"></image>
       </view>
   </view>
   <view class="input_list1 font30 flex">

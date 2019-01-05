@@ -42,11 +42,11 @@
     </view>     
 </view>
 <view class="w710">
-  <view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeSalaryDetail/employeSalaryDetail">
+  <view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeSalaryDetail/employeSalaryDetail?id={{web_mainData.id}}">
     <view class="user_info font28 color3">
-		2015-5-5
+		{{web_mainData.title}}
     </view>
-    <view class="font24 salary" style="color:#eb3434">¥5000</view>
+    <view class="font24 salary" style="color:#eb3434">¥{{web_mainData.passage6}}</view>
     <view class="next_page flex">
 
       <image src="/images/next_page.jpg"></image>

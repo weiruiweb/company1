@@ -30,6 +30,7 @@ class Token {
             return wx.getStorageSync('entrance_token');
         }
     }
+
     getMallToken(callback,postData) { 
 
         if((postData&&postData.refreshToken)||!wx.getStorageSync('mall_token')){
@@ -101,6 +102,19 @@ class Token {
         }
     } 
 
+    getHotelToken(callback,postData) { 
+
+        if((postData&&postData.refreshToken)||!wx.getStorageSync('hotel_token')){
+            var params = {
+                token_name:'hotel_token',
+                info_name:'hotel_info',
+                thirdapp_id:22
+            };
+            this.getUserInfo(params,callback);
+        }else{
+            return wx.getStorageSync('hotel_token');
+        }
+    } 
 
     
 

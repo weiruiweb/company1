@@ -7,10 +7,7 @@ const token = new Token();
 
 Page({
   data: {
-
-
    mainData:[],
- 
    isFirstLoadAllStandard:['getMainData'],
   },
 

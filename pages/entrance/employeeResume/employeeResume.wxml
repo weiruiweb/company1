@@ -1,33 +1,27 @@
-<view class="resume_list flex w710 bgs" bindtap="intoPath" data-path="/pages/entrance/employeeResumeDetail/employeeResumeDetail">
-    <view class="resume_cont flex">
-        <view class="resume_left">
-            <view class="user_img">
-                 <open-data type="userAvatarUrl"></open-data>
-            </view>
-        </view>
-        <view class="resume_right">
-            <view class="font26 color6">林小妹</view>
-            <view class="condition flex">
-                <view class="flex condition_item">
-                    <image src="/images/partaner_icon1.png"></image>
-                    <text class="font22 color6">西安</text>
-                </view>
-                <view class="flex condition_item">
-                    <image src="/images/partaner_icon4.png"></image>
-                    <text class="font22 color6">女</text>
-                </view>
-                <view class="flex condition_item">
-                    <image src="/images/partaner_icon2.png"></image>
-                    <text class="font22 color6">大专</text>
-                </view>
-                <view class="flex condition_item">
-                    <image src="/images/partaner_icon3.png"></image>
-                    <text class="font22 color6">1-3</text>
+<block wx:for="{{web_mainData}}">
+    <view class="resume_list flex w710 bgs" bindtap="intoPath" data-path="/pages/entrance/employeeResumeDetail/employeeResumeDetail?id={{item.id}}">
+        <view class="resume_cont flex">
+            <view class="resume_left">
+                <view class="user_img">
+                     <open-data type="userAvatarUrl"></open-data>
                 </view>
             </view>
-            <view class="font22 color6">
-                应聘职位:<text>前端</text>
+            <view class="resume_right">
+                <view class="font26 color6">{{item.title}}</view>
+                <view class="condition flex">
+                    <view class="flex condition_item">
+                        <image src="/images/partaner_icon2.png"></image>
+                        <text class="font22 color6">{{item.description}}</text>
+                    </view>
+                    <!-- <view class="flex condition_item">
+                        <image src="/images/partaner_icon4.png"></image>
+                        <text class="font22 color6">{{item.gender}}</text>
+                    </view> -->
+                </view>
+                <view class="font22 color6">
+                    应聘职位:<text>{{item.position[0].title}}</text>
+                </view>
             </view>
         </view>
     </view>
-</view>
+</block>

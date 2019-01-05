@@ -1,5 +1,8 @@
 <view class="w710">
   <view class="employeeRegister bgs font26">
-    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+    <view class="content ql-editor">
+        <import src="../../../wxParse/wxParse.wxml"/>
+        <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+    </view>
   </view>
 </view>

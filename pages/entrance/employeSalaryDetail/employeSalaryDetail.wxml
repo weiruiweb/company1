@@ -9,73 +9,76 @@
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">职位</view>
       <view class="register_cont color6 font28">
-        UI设计
+        {{web_mainData.small_title}}
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">底薪</view>
       <view class="register_cont color6 font28">
-        2000元
+        {{web_mainData.description}}元
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">基本薪资</view>
       <view class="register_cont color6 font28">
-        4000元
+        {{web_mainData.contactPhone}}元
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">收款</view>
       <view class="register_cont color6 font28">
-        -
+        {{web_mainData.passage1}}
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">提成</view>
       <view class="register_cont color6 font28">
-        -
+        {{web_mainData.passage2}}
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">迟到扣款</view>
       <view class="register_cont color6 font28 color_other">
-        -100元
+        -{{web_mainData.listorder}}元
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">日志扣款</view>
       <view class="register_cont color6 font28 color_other">
-        -100元
+        -{{web_mainData.view_count}}元
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">请假(天)</view>
       <view class="register_cont color6 font28">
-        -
+        {{web_mainData.passage3}}
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">旷工</view>
       <view class="register_cont color6 font28">
-        -
+        {{web_mainData.passage4}}
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">其他</view>
       <view class="register_cont color6 font28">
-        -
+        <view class="content ql-editor">
+            <import src="../../../wxParse/wxParse.wxml"/>
+            <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+        </view>
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">实际出勤</view>
       <view class="register_cont color6 font28">
-        25天
+        {{web_mainData.passage5}}天
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">总计</view>
       <view class="register_cont color6 font28 color_other">
-        ¥5000
+        ¥{{web_mainData.passage6}}
       </view>
     </view>
   </view>

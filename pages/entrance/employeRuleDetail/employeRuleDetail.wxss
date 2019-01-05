@@ -1,0 +1,31 @@
+page{
+	width:100%;
+	min-height:100%;
+	background:#f4f4f4;
+}
+.employeeRegister{
+	padding:2.6%;
+	width:94.8%;
+	border-radius:10rpx;
+	margin-top:20rpx;
+}
+.bgs{
+	background:#fff;
+}
+.registerList{
+	height:82rpx;
+}
+.register_tlt{
+	width:23%;
+	color:#333;
+}
+.register_cont{
+	width:77%;
+}
+.register_cont image{
+	width:140rpx;
+	height:160rpx;
+}
+.color_other{
+	color:#eb3434;
+}

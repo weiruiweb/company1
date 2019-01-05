@@ -1,0 +1,35 @@
+
+<view class="w710">
+  <view class="employeeRegister flexRowBetween" bindtap="intoPath" data-path="/pages/entrance/employeRuleDetail/employeRuleDetail">
+    <view class="user_info font28 color3 flex">
+		<image src="/images/icon17.png"></image>
+        <text class="font26 color3">外出制度</text>
+    </view>
+    <view class="next_page flex">
+      <image src="/images/next_page.jpg"></image>
+    </view>
+  </view>
+</view>
+<view class="w710">
+  <view class="employeeRegister flexRowBetween" bindtap="intoPath" data-path="/pages/entrance/employeRuleDetail/employeRuleDetail">
+    <view class="user_info font28 color3 flex">
+        <image src="/images/icon18.png"></image>
+        <text class="font26 color3">考勤制度</text>
+    </view>
+    <view class="next_page flex">
+      <image src="/images/next_page.jpg"></image>
+    </view>
+  </view>
+</view>
+<view class="w710">
+  <view class="employeeRegister flexRowBetween" bindtap="intoPath" data-path="/pages/entrance/employeRuleDetail/employeRuleDetail">
+    <view class="user_info font28 color3 flex">
+        <image src="/images/icon19.png"></image>
+        <text class="font26 color3">日志制度</text>
+    </view>
+    <view class="next_page flex">
+      <image src="/images/next_page.jpg"></image>
+    </view>
+  </view>
+</view>
+

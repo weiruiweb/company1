@@ -1,0 +1,67 @@
+<!--index3.wxml-->
+<view class="banner">
+    <image src="/images/user_banner1.jpg"></image>
+    <view class="banner_box flex">
+        <view style="width:100%;">
+            <view class="wx_img flex">
+                <view class="user_img">
+                  <open-data type="userAvatarUrl"></open-data>
+                </view>
+            </view>
+            <view class="font28 color3 flex" style="width:100%;text-align:center;margin-top: 20rpx;">
+                <open-data type="userNickName" lang="zh_CN" style="margin:0 auto;"></open-data>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="sort flex">
+    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/employeeResume/employeeResume">
+        <view class="item_box flex">
+            <view style="width:100%;">
+                <image src="/images/employees_icon1.png"></image>
+                <view class="font28 color3">简历管理</view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/employeeRegister/employeeRegister">
+        <view class="item_box flex" style="border-left:solid 1px #bfbfbf;border-right:solid 1px #bfbfbf">
+            <view style="width:100%;">
+                <image src="/images/employees_icon2.png"></image>
+                <view class="font28 color3">外出登记</view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/employeeProject/employeeProject">
+        <view class="item_box flex">
+            <view style="width:100%;">
+                <image src="/images/employees_icon3.png"></image>
+                <view class="font28 color3">项目管理</view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/employeeCustomer/employeeCustomer">
+        <view class="item_box flex">
+            <view style="width:100%;">
+                <image src="/images/employees_icon4.png"></image>
+                <view class="font28 color3">推广客户</view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/employeeSalary/employeeSalary">
+        <view class="item_box flex" style="border-left:solid 1px #bfbfbf;">
+            <view style="width:100%;">
+                <image src="/images/employees_icon5.png"></image>
+                <view class="font28 color3">我的薪资</view>
+            </view>
+        </view>
+    </view>
+    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/employeeRule/employeeRule">
+        <view class="item_box flex" style="border-left:solid 1px #bfbfbf;">
+            <view style="width:100%;">
+                <image src="/images/employees_icon6.png"></image>
+                <view class="font28 color3">公司规定</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="font22 color6" style="text-align:center;">技术支持：西安纯粹科技有限公司</view>

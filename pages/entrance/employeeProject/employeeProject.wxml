@@ -1,0 +1,24 @@
+<!--User.wxml-->
+<view class="w710">
+
+		<view class="project" >
+			<view class="project_name flex">
+				<view class="project_Left">
+					<view class="name_box">
+						<view class="name_cont font32 color1">{{item.name}}</view>
+					</view>
+				</view>
+				<view class="project_right font26 color9">
+					{{item.create_time}}
+				</view>
+			</view>
+			<view class="flex check_project">
+				<view class="check1 font32 color1" bindtap="intoPath" data-path="/pages/entrance/employeeProjectDetail/employeeProjectDetail?id={{item.id}}" style="border-right:solid 1px #e0e0e0;">
+					查看详细信息
+				</view>
+				<view class="check1 font32 color1" bindtap="intoPath" data-path="/pages/entrance/employeeProjectState/employeeProjectState?id={{item.id}}">
+					查看项目动态
+				</view>
+			</view>
+		</view>
+</view>

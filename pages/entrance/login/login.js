@@ -20,7 +20,7 @@ Page({
           web_show:false
         });
         wx.redirectTo({
-          url: '/pages/entrance/project/project'
+          url: '/pages/entrance/employeeUser/employeeUser'
         })
     }
   },

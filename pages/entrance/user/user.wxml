@@ -1,6 +1,6 @@
 <!--index3.wxml-->
 <view class="banner">
-    <image src="/images/user_banner.png"></image>
+    <image src="/images/user_banner1.jpg"></image>
     <view class="banner_box flex">
         <view style="width:100%;">
             <view class="wx_img flex">

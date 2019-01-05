@@ -1,0 +1,11 @@
+<view class="w710">
+  <view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeeRegisterDetail/employeeRegisterDetail">
+    <view class="font24 color6">2019-9-9</view>
+    <view class="next_page">
+      <image src="/images/next_page.jpg"></image>
+    </view>
+  </view>
+</view>
+<view class="register" bindtap="intoPath" data-path="/pages/entrance/employeeRegisterNow/employeeRegisterNow">
+  +
+</view>

@@ -36,3 +36,10 @@ textarea{
 	border:solid 1px #e0e0e0;
 	height:scroll;
 }
+.input_icon{
+	width:6%;
+}
+.input_icon image {
+	width:22rpx;
+	height:24rpx;
+}

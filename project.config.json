@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 68,
+			"current": 75,
 			"list": [
 				{
 					"id": 0,
@@ -446,7 +446,50 @@
 				{
 					"id": -1,
 					"name": "个人信息",
-					"pathName": "pages/entrance/partnerDetail/partnerDetail"
+					"pathName": "pages/entrance/partnerDetail/partnerDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "职位详情",
+					"pathName": "pages/entrance/positionDetail/positionDetail",
+					"query": "id=114"
+				},
+				{
+					"id": 70,
+					"name": "员工登录",
+					"pathName": "pages/entrance/employeeUser/employeeUser",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收到简历",
+					"pathName": "pages/entrance/employeeResume/employeeResume",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "员工登录页面",
+					"pathName": "pages/entrance/employeeUser/employeeUser",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "简历详情",
+					"pathName": "pages/entrance/employeeResumeDetail/employeeResumeDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "外出登记详细请",
+					"pathName": "pages/entrance/employeeRegisterDetail/employeeRegisterDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/entrance/user/user",
+					"query": ""
 				}
 			]
 		}

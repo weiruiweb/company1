@@ -1,32 +1,36 @@
 
 <view class="User_cont">
 	<block wx:for="{{web_mainData}}" wx:key="id">
-		<view class="w710 flexs bgs">
-			<view class="clientList_center font32 color" style="align-items:center;">
-				{{item.title}}
+		<view bindtap="intoPath" data-path="/pages/entrance/positionDetail/positionDetail?id={{item.id}}">
+			<view class="w710 flexs bgs position_cont">
+				<view class="clientList_center font28 color3" style="align-items:center;">
+					{{item.title}}
+				</view>
+				<view class="clientList_right">
+					<view class="clientTime color font28">{{item.passage1}}</view>
+				</view>
 			</view>
-			<view class="clientList_right">
-				<view class="clientTime color9 font24">{{item.create_time}}</view>
+			<view class="w710 font24 color3 bgs" style="padding-top:20rpx;padding-bottom:30rpx;">西安纯粹科技有限公司</view>
+			<view class="w710 condition flex bgs">
+				<view class="condition_item color9 font22">
+					西安雁塔区
+				</view>
+				<view class="condition_item color9 font22">
+					经验不限
+				</view>
+				<view class="condition_item color9 font22">
+					学历不限
+				</view>
 			</view>
-		</view>
-		<view class="w710 position_condition flex  bgs">
-			<view class="position_left flex">
-				<image src="/images/project3.png"></image>
-				<text class="font28 color6">{{item.passage1}}人</text>
+			<view class="w710 flex bgs" style="height:120rpx;">
+				<view class="sender flex">
+					<view class="sender_img">
+						<image src="/images/index_icon5.png"></image>
+					</view>
+					<text class="font22 color9">招聘者·李希</text>
+				</view>
 			</view>
-			<view class="position_right color font30">
-				{{item.passage1}}/月
-			</view>
-		</view>
-		<view class="w710 font28 color9 address flex  bgs" bindtap="intoMap">
-			<image src="/images/position.png"></image>
-			<text>雁塔区科技路高新大都荟7号楼A座</text>
-		</view>
-		<view class="client_intro flexRowBetween font30 w710  bgs">
-			<view class="content ql-editor">
-				<import src="../../../wxParse/wxParse.wxml"/>
-			    <template is="wxParse" data="{{wxParseData:item.content}}"/>
-			</view>
+
 		</view>
 	</block>
 </view>

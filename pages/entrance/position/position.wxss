@@ -5,11 +5,11 @@ page{
 }
 .clientList_center{
   padding-top:30rpx;
-  width:50%;
+  width:65%;
 }
 .clientList_right{
   padding-top:30rpx;
-  width:50%;
+  width:35%;
   text-align:right;
 }
 .position_condition{
@@ -51,4 +51,30 @@ page{
 }
 .flexs{
   display:flex;
+}
+.condition{
+  flex-wrap:wrap;
+}
+.condition_item{
+  padding:10rpx 18rpx;
+  background:#f3feff;
+  margin-right:30rpx;
+}
+.sender{
+  width:100%;
+  height:60rpx;
+}
+.sender_img{
+  width:50rpx;
+  height:50rpx;
+  overflow:hidden;
+  border-radius:50%;
+  margin-right:20rpx;
+}
+.sender image{
+  width:100%;
+  height:100%;
+}
+.position_cont{
+  margin-top:20rpx;
 }

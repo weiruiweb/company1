@@ -1,0 +1,47 @@
+
+<view class="User_cont w710">
+	<view class="position_basic">
+		<view class="w710 flexs bgs position_cont">
+			<view class="clientList_center font28 color3" style="align-items:center;">
+				{{web_mainData.title}}
+			</view>
+			<view class="clientList_right">
+				<view class="clientTime color font28">{{item.passage1}}</view>
+			</view>
+		</view>
+		<view class="w710 flex address">
+			<image src="/images/partaner_icon1.png"></image>
+			<view class="font24 color6 avoidOverflow" style="width:80%;">{{item.passage2}}</view>
+		</view>
+		<view class="w710 condition flex bgs">
+			<view class="condition_item flex">
+				<image src="/images/partaner_icon2.png"></image>
+				<text class="font24 color6">经验不限</text>
+			</view>
+			<view class="condition_item flex">
+				<image src="/images/partaner_icon3.png"></image>
+				<text class="font24 color6">经验不限</text>
+			</view>
+		</view>
+	</view>
+	<view class="position_basic position_detail">
+		<view class="position_tlt font28 color3">职位详情</view>
+		<view class="font24 color6">
+			<view class="content ql-editor">
+				<import src="../../../wxParse/wxParse.wxml"/>
+			    <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+			</view>
+		</view>
+	</view>
+	<view class="position_basic position_detail">
+		<view class="position_tlt font28 color3">任职要求</view>
+		<view class="font24 color6">
+			{{web_mainData.description}}
+		</view>
+	</view>
+		
+</view>
+<view style="width:100%;height:150rpx;"></view>
+<form bindsubmit="submit" report-submit="true">
+  <button  formType="submit"  bindgetuserinfo="{{web_buttonCanClick?'submit':''}}" style="line-height:80rpx;" class="submit_info">投递简历</button>
+</form>

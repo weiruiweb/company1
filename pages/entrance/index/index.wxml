@@ -24,7 +24,7 @@
       <view class="left_cont"  bindtap="intoPath" data-path="/pages/classify/classify">
         <view style="color:#2997e1">精品体验</view>
         <view class="font28 color6">微信会员共享</view>
-        <image src="/images/index1.png"></image>
+        <image src="/images/index1.jpg"></image>
       </view>
     </view>
     <view class="great_right">

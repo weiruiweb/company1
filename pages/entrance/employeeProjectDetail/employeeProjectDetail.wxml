@@ -1,0 +1,83 @@
+<!--User.wxml-->
+<view class="w710">
+	<view class="project">
+		<view class="project_name flex">
+			<view class="name_box">
+				<view class="name_cont font32 color1">{{web_mainData.name}}</view>
+			</view>
+		</view>
+		<view class="input_list1 w710 bgs font30 flex">
+			<view class="list_img flex">
+				<image src="/images/project1.png"></image>
+			</view>
+			<view class="input_before1">项目名称:</view>
+			<view class="input">{{web_mainData.name}}</view>
+		</view>
+		<view class="input_list1 w710 bgs  font30 flex">
+			<view class="list_img flex">
+				<image src="/images/project3.png"></image>
+			</view>
+			<view class="input_before1">客户名称:</view>
+			<view class="input">{{web_mainData.client}}</view>
+		</view>
+		<view class="input_list1 w710 bgs  font30 flex">
+			<view class="list_img flex">
+				<image src="/images/project4.png"></image>
+			</view>
+			<view class="input_before1">客户电话:</view>
+			<view class="input">{{web_mainData.phone}}</view>
+		</view>
+		<view class="input_list1 w710 bgs  font30 flex">
+			<view class="list_img flex">
+				<image src="/images/project5.png"></image>
+			</view>
+			<view class="input_before1">项目状态:</view>
+			<view class="input">{{web_mainData.project_status}}</view>
+		</view>
+		<view class="input_list1 w710 bgs  font30 flex">
+			<view class="list_img flex">
+				<image src="/images/project6.png"></image>
+			</view>
+			<view class="input_before1">项目付款标准:</view>
+			<view class="input">{{web_mainData.pay_standard}}</view>
+			
+			</view>
+		</view>
+		<view class="input_list1 w710 bgs  font30 flex">
+			<view class="list_img flex">
+				<image src="/images/project7.png"></image>
+			</view>
+			<view class="input_before1">项目工期:</view>
+			<view class="input">{{web_mainData.period}}</view>
+		</view>
+		<view class="input_list1 w710 bgs  font30 flex">
+			<view class="list_img flex">
+				<image src="/images/project8.png"></image>
+			</view>
+			<view class="input_before1">项目剩余工期:</view>
+			<view class="input">{{web_mainData.left_period}}</view>
+		</view>
+		<view class="input_list1 w710 bgs  font30 flex">
+			<view class="list_img flex">
+				<image src="/images/project9.png"></image>
+			</view>
+			<view class="input_before1">项目总金额:</view>
+			<view class="input">{{web_mainData.total_amount}}</view>
+		</view>
+		<view class="w710 bgs font30" style="padding-top:30rpx;padding-bottom:40rpx;display:flex;">
+			<view class="list_img flex" style="width:8%;">
+				<image src="/images/project3.png"></image>
+			</view>
+			<view class="input_before1" style="width:24%;">项目备注:</view>
+			<view class="input">
+		    <view class="content ql-editor">
+				<import src="../../../wxParse/wxParse.wxml"/>
+			    <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+			</view>
+		</view>
+	</view>
+</view>
+
+	<button  bindtap="intoPath" data-path="/pages/entrance/userProjectState/userProjectState?id={{web_mainData.id}}" style="line-height:80rpx;margin-top:80rpx;" class="submit_info">项目动态
+	</button>
+

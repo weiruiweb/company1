@@ -12,12 +12,12 @@
 	</view>
 	<view class="person_share flexCenter">
 		<button class="font24 color3 button_one" bindtap="addContact">同步到通讯录</button>
-		<button class="font24 color1 bg1"  open-type='share'>分享名片</button>
+		<button class="font24 color1 linear"  open-type='share'>分享名片</button>
 	</view>
 	<view class="user_basic">
-		<view class="user_tilte">
+		<view class="user_tilte  flex">
+			<image src="/images/icon5.png"></image>
 			<view class="font30 color2 basic_in">个人信息</view>
-			<view class="bottom_line"></view>
 		</view>
 		<view class="basic_box">
 			<view class="basic_list flex">
@@ -28,7 +28,7 @@
 					{{web_mainData.contactPhone}}
 				</view>
 				<view class="basic_handle">
-					<button class="color1 font24 bg1" bindtap="call_phone">打电话</button>
+					<button class="color1 font24 linear" bindtap="call_phone">打电话</button>
 				</view>
 			</view>
 			<view class="basic_list flex">
@@ -39,7 +39,7 @@
 					{{web_mainData.keywords}}
 				</view>
 				<view class="basic_handle">
-					<button class="color1 font24 bg1" bindtap="copyBtn">加微信</button>
+					<button class="color1 font24 linear" bindtap="copyBtn">加微信</button>
 				</view>
 			</view>
 			<view class="basic_list flex">
@@ -69,16 +69,16 @@
 		</view>
 	</view>
 	<view class="user_basic">
-		<view class="user_tilte">
+		<view class="user_tilte  flex">
+			<image src="/images/partaner1.jpg"></image>
 			<view class="font30 color2 basic_in">个性签名</view>
-			<view class="bottom_line"></view>
 		</view>
 		<view class="font28 color2 sign_name">{{web_mainData.description}}</view>
 	</view>
 	<view class="user_basic">
-		<view class="user_tilte">
+		<view class="user_tilte flex">
+			<image src="/images/partaner2.jpg"></image>
 			<view class="font30 color2 basic_in">照片展示</view>
-			<view class="bottom_line"></view>
 		</view>
 	</view>
 </view>

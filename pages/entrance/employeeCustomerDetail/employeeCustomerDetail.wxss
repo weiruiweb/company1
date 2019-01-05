@@ -1,0 +1,43 @@
+page{
+	width:100%;
+	min-height:100%;
+	background:#f4f4f4;
+}
+.employeeRegister{
+	height:140rpx;
+	padding:0 2.6%;
+	width:94.8%;
+	border-radius:10rpx;
+	margin-top:20rpx;
+}
+.bgs{
+	background:#fff;
+}
+.register{
+	width:116rpx;
+	height:116rpx;
+	background:linear-gradient(to bottom,rgba(72,222,223,1.00),rgba(42,154,225,1.00));
+	position:fixed;
+	bottom:20%;
+	right:0;
+	border-radius:50%;
+	font-size:80rpx;
+	color:#fff;
+	text-align:center;
+	line-height:108rpx;
+}
+.user_left{
+	width:20%;
+}
+.user_info{
+	width:74%;
+}
+.next_page{
+	width:6%;
+}
+.user_img{
+	width:100rpx;
+	height:100rpx;
+	border-radius:50%;
+	overflow:hidden;
+}

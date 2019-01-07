@@ -21,44 +21,30 @@ Page({
 
   getMainData(){
     const  self =this;
-    const c_postData = {
-      tokenFuncName:'getEntranceToken'
+    const postData={};
+    postData.token = wx.getStorageSync('threeToken');
+    postData.paginate = api.cloneForm(self.data.paginate);
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.solely_thirdapp_id,
+      user_no:wx.getStorageSync('threeInfo').parent_no,
+      project_manager:wx.getStorageSync('threeInfo').user_no,
+      status:1,
     };
-    const c_callback = (res) =>{
-      if(res){
-        if(res.info.data[0].phone.length == 0){
-          api.showToast('请补全信息','none',2000,function(){
-          api.pathTo('/pages/entrance/userInfor/userInfor','redi')
-        });
-        return;
-        }; 
-        const postData={};
-        postData.tokenFuncName='getEntranceToken';
-        postData.paginate = api.cloneForm(self.data.paginate);
-        postData.searchItem = {
-          thirdapp_id:getApp().globalData.solely_thirdapp_id,
-          client_no:wx.getStorageSync('entrance_info').user_no,
-          user_type:2
-        };
-        const callback =(res)=>{
-          if(res.info.data.length>0){
-            self.data.mainData.push.apply(self.data.mainData,res.info.data);
-          }else{
-            self.data.isLoadAll = true;
-            api.showToast('没有更多了','none');
-          };
-          api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
-          self.setData({
-            web_mainData:self.data.mainData,
-          });
-        };
-        api.projectGet(postData,callback);
-      }     
-    } 
-    api.userInfoGet(c_postData,c_callback)  
-  },
-
-
+    const callback =(res)=>{
+      if(res.info.data.length>0){
+        self.data.mainData.push.apply(self.data.mainData,res.info.data);
+      }else{
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','none');
+      };
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+      self.setData({
+        web_mainData:self.data.mainData,
+      });
+    };
+    api.projectGet(postData,callback);
+  },     
+  
   onReachBottom() {
     const self = this;
     if(!self.data.isLoadAll&&self.data.buttonCanClick){

@@ -1,18 +1,18 @@
 <view class="w710">
     <view class="bgs">
-      <view class="employeeRegister flexRowBetween " bindtap="intoPath" data-path="/pages/entrance/employeeRegisterDetail/employeeRegisterDetail">
+      <view class="employeeRegister flexRowBetween">
       	<view class="user_left">
     	  	<view class="user_img">
-    	  		<open-data type="userAvatarUrl"></open-data>
+    	  		<image src="{{web_mainData.headImgUrl==''?'web_mainData.headImgUrl':'/images/index_icon2.png'}}"></image>
     	  	</view>
     	</view>
         <view class="user_info">
-    		<view class="font28 color3">昵称昵称</view>
-    		<view class="font24 color9">2015-5-5</view>
+    		<view class="font28 color3">{{web_mainData.nickname}}</view>
+    		<view class="font24 color9">{{web_mainData.create_time}}</view>
         </view>
       </view>
       <view class="font28 color6 w710" style="padding-bottom:40rpx;">
-          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          {{web_mainData.passage1}}
       </view>
     </view>
 </view>

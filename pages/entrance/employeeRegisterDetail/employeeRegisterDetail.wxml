@@ -3,31 +3,36 @@
     <view class="flexRowBetween registerList">
       <view class="font24 color6 register_tlt">时间</view>
       <view class="register_cont color6 font28">
-        2019-01-02
+        {{web_mainData.create_time}}
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font24 color6 register_tlt">地点</view>
       <view class="register_cont color6 font28">
-        地址地址地址地址地址地址地址地址地址地址地址地址
+        {{web_mainData.keywords}}
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font24 color6 register_tlt">缘由</view>
       <view class="register_cont color6 font28">
-        见客户
+        {{web_mainData.description}}
       </view>
     </view>
     <view class="flexRowBetween registerList">
       <view class="font24 color6 register_tlt">备注</view>
       <view class="register_cont color6 font28">
-        见客户
+        <view class="content ql-editor">
+            <import src="../../../wxParse/wxParse.wxml"/>
+            <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+        </view>
       </view>
     </view>
     <view style="display:flex;margin-top:30rpx;">
       <view class="font24 color6 register_tlt">拍照片上传</view>
       <view class="register_cont color6 font28">
-        <image src="/images/sort_Img1.jpg"></image>
+        <block wx:for="{{web_mainData.mainImg}}">
+          <image src="{{item.url}}"></image>
+        </block>
       </view>
     </view>
   </view>

@@ -7,9 +7,13 @@ const token = new Token();
 
 Page({
   data: {
-    array: ['邀面试', '拒绝', '待定', '入职'],
+    array_behavior:['邀面试', '拒绝', '待定', '入职'],
+    submitData:{
+      behavior:'',
+      passage1:'',
+    } ,
     mainData:[],
-    isFirstLoadAllStandard:['getMianData']
+    isFirstLoadAllStandard:['getMianData'],
   },
 
   onLoad(options){
@@ -17,6 +21,10 @@ Page({
     api.commonInit(self);
     self.data.id = options.id;
     self.getMianData();
+    self.setData({
+      web_buttonCanClick:self.data.buttonCanClick,
+      web_submitData:self.data.submitData
+    })
   },
 
   getMianData(isNew){
@@ -61,6 +69,42 @@ Page({
     };
     api.messageGet(postData,callback);
   },
+  submit(){
+    const self = this;
+    api.buttonCanClick(self);
+    const pass = api.checkComplete(self.data.submitData);
+    if(pass){
+        api.buttonCanClick(self,true)
+        const callback = (user,res) =>{
+          self.messageAdd(); 
+        }
+     }else{
+        api.showToast('请补全信息','none')
+        api.buttonCanClick(self,true)
+     };
+  },
+  messageAdd(){
+    const self =this;
+    const postData = {};
+    postData.tokenFuncName = 'getEntranceToken';
+    postData.data = {};
+    postData.data = api.cloneForm(self.data.submitData);
+    const callback = (data)=>{
+      if(data.solely_code==100000){
+        api.showToast('简历处理成功','none',1000,function(){
+          setTimeout(function(){
+            wx.navigateBack({
+              delta:1
+            }) 
+          },1000);  
+        }) 
+      }else{
+        api.showToast(data.msg,'none')
+      }
+      api.buttonCanClick(self,true)
+    };
+    api.messageAdd(postData,callback);
+  },
 
   intoPath(e){
     const self = this;
@@ -83,8 +127,21 @@ Page({
       index: e.detail.value
     })
   },
-
- 
+  changeBind(e){
+    const self = this;
+    if(api.getDataSet(e,'value')){
+      self.data.submitData[api.getDataSet(e,'key')] = api.getDataSet(e,'value');
+    }else{
+      api.fillChange(e,self,'submitData');
+    };
+    self.setData({
+      web_submitData:self.data.submitData,
+    }); 
+    console.log(self.data.submitData)
+  },
+  formIdAdd(e){
+    api.WxFormIdAdd(e.detail.formId,(new Date()).getTime()/1000+7*86400);  
+  },
 })
 
   

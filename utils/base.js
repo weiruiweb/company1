@@ -44,6 +44,7 @@ class Base{
                 // 异常不要返回到回调中，就在request中处理，记录日志并showToast一个统一的错误即可
                 var code = res.data.solely_code;
                 if (res.data.solely_code == '200000') {
+                    console.log('params.data.tokenFuncName',params)
                     token[params.data.tokenFuncName](callback,{refreshToken:true});
                 } else {
                     params.sCallback && params.sCallback(res.data);

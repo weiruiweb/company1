@@ -40,7 +40,7 @@ Page({
       if(res){       
           wx.setStorageSync('threeInfo',res.data.info); 
           wx.redirectTo({
-            url: '/pages/entrance/project/project'
+            url: '/pages/entrance/employeeUser/employeeUser'
           })
           api.showToast('登陆成功','none')  
       }else{

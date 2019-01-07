@@ -31,6 +31,16 @@ class Token {
         }
     }
 
+    getProjectToken(callback,postData) { 
+
+        if((postData&&postData.refreshToken)||!wx.getStorageSync('entrance_token')){
+            console.log('未完成');
+            return;
+        }else{
+            return wx.getStorageSync('threeToken');
+        }
+    }
+
     getMallToken(callback,postData) { 
 
         if((postData&&postData.refreshToken)||!wx.getStorageSync('mall_token')){

@@ -79,9 +79,9 @@
     <view class="input_icon"><image src="/images/icon16.png"></image></view>
     <view class="input_before1">处理结果:</view>
     <view class="input">
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array_behavior}}">
         <view class="interviwe flex">
-          <view class="picker">{{array[index]}}</view>
+          <view class="picker">{{web_submitData.behavior}}</view>
           <view class="derection">
             <image src="/images/up.png"></image>
           </view>
@@ -91,9 +91,9 @@
   </view>
 </view>
 <view class="w710">
-  <textarea placeholder="备注"></textarea>
+  <textarea placeholder="备注" data-key="passage1" value="{{web_submitData.passage1}}" bindtap="changeBind"></textarea>
 </view>
 
-<form bindsubmit="formIdAdd" report-submit="true">
-	<button  formType="submit"  bindgetuserinfo="{{web_buttonCanClick?'submit':''}}" style="line-height:80rpx;margin-top:100rpx;" class="submit_info">确认</button>
+<form>
+	<button  formType="submit"  bindtap="{{web_buttonCanClick?'submit':''}}" style="line-height:80rpx;margin-top:100rpx;" class="submit_info">确认</button>
 </form>

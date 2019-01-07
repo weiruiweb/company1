@@ -6,16 +6,24 @@ import {Token} from '../../../utils/token.js';
 const token = new Token();
 Page({
   data: {
+    searchItem:{
+      thirdapp_id:getApp().globalData.solely_thirdapp_id,
+    },
+    startTime:'',
+    endTime:'',
     mainData:[],
-    isFirstLoadAllStandard:['getMianData']
+    isFirstLoadAllStandard:['getMainData']
   },
   onLoad() {
     const self = this;
     api.commonInit(self);
-    self.getMianData();
+    self.getMainData();
   },
-  getMianData(){
-    const self =this;
+   getMainData(isNew){
+    const  self =this;
+    if(isNew){
+      api.clearPageIndex(self)
+    };
     const postData = {};
     postData.searchItem = {
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
@@ -42,9 +50,39 @@ Page({
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
+  },
+
+  onPullDownRefresh(){
+    const self = this;
+    wx.showNavigationBarLoading(); 
+    delete self.data.searchItem.create_time;
+    self.setData({
+      web_startTime:'',
+      web_endTime:'',
+    });
+    self.getMainData(true);
+  },
+
   bindTimeChange: function(e) {
+    const self = this;
+    var label = api.getDataSet(e,'type');
     this.setData({
-      time: e.detail.value
-    })
+      ['web_'+label]: e.detail.value
+    });
+    self.data[label+'stap'] = new Date(self.data.date+' '+e.detail.value).getTime()/1000;
+    if(self.data.endTimestap&&self.data.startTimestap){
+      self.data.searchItem.create_time = ['between',[self.data.startTimestap,self.data.endTimestap]];
+    }else if(self.data.startTimestap){
+      self.data.searchItem.create_time = ['>',self.data.startTimestap];
+    }else{
+      self.data.searchItem.create_time = ['<',self.data.endTimestap];
+    };
+    self.getMainData(true);   
   },
 })

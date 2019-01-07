@@ -1,11 +1,11 @@
 <!--User.wxml-->
 <view class="w710">
-
+	<block wx:for="{{web_mainData}}">
 		<view class="project" >
 			<view class="project_name flex">
 				<view class="project_Left">
 					<view class="name_box">
-						<view class="name_cont font32 color1">{{item.name}}</view>
+						<view class="name_cont font32 color1 avoidOverflow">{{item.name}}</view>
 					</view>
 				</view>
 				<view class="project_right font26 color9">
@@ -21,4 +21,5 @@
 				</view>
 			</view>
 		</view>
+	</block>
 </view>

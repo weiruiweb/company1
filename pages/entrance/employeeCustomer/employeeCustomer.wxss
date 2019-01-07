@@ -68,3 +68,7 @@ page{
 	height:10rpx;
 	margin-left:10rpx;
 }
+.user_img image{
+	width:100%;
+	height:100%;
+}

@@ -24,11 +24,8 @@ Page({
   },
 
 
-  getMainData(isNew){
+  getMainData(){
     const  self =this;
-    if(isNew){
-      api.clearPageIndex(self)
-    };
     const postData={};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {

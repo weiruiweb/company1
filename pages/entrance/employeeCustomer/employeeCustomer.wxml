@@ -2,13 +2,13 @@
     <view class="date_item">
         <view style="width:45%;display:flex;align-items:center;">
             <view class="date_left" style="color:#00c6f7;width:100%;">
-                <picker  mode="date"  bindchange="bindTimeChange" >
+                <picker mode="date" value="{{web_startTime}}" data-type="startTime" bindchange="bindTimeChange" >
                     <view style="display:flex;align-items:center;width:100%;height:100%;">
                         <view style="width:85%;height:70rpx;">
                             <view class="picker text">
                               起始日期
                             </view>
-                            <view class="text  font22" >{{time}}</view>
+                            <view class="text  font22" >{{web_startTime}}</view>
                         </view>
                         <view style="width:15%;height:70rpx;align-items:center;">
                             <image src="/images/up_icon2.jpg"></image>
@@ -23,13 +23,13 @@
     <view class="date_item">
         <view style="width:45%;display:flex;align-items:center;">
             <view class="date_left" style="color:#00c6f7;width:100%;">
-                <picker  mode="date" bindchange="bindTimeChange" >
+                <picker  mode="date" value="{{web_endTime}}" data-type="endTime" bindchange="bindTimeChange">
                     <view style="display:flex;align-items:center;width:100%;height:100%;">
                         <view style="width:85%;height:70rpx;">
                             <view class="picker text">
                               截至日期
                             </view>
-                            <view class="text font22">{{time}}</view>
+                            <view class="text font22">{{web_endTime}}</view>
                         </view>
                         <view style="width:15%;height:70rpx;">
                             <image src="/images/up_icon1.jpg"></image>
@@ -42,32 +42,20 @@
     </view>     
 </view>
 <view class="w710">
-  <view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeeCustomerDetail/employeeCustomerDetail">
-  	<view class="user_left">
-	  	<view class="user_img">
-	  		<open-data type="userAvatarUrl"></open-data>
-	  	</view>
-	</view>
-    <view class="user_info">
-		<view class="font28 color3">昵称昵称</view>
-		<view class="font24 color9">2015-5-5</view>
-    </view>
-    <view class="next_page">
-      <image src="/images/next_page.jpg"></image>
-    </view>
-  </view>
-  <view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeeCustomerDetail/employeeCustomerDetail">
-  	<view class="user_left">
-	  	<view class="user_img">
-	  		<open-data type="userAvatarUrl"></open-data>
-	  	</view>
-	</view>
-    <view class="user_info">
-		<view class="font28 color3">昵称昵称</view>
-		<view class="font24 color9">2015-5-5</view>
-    </view>
-    <view class="next_page">
-      <image src="/images/next_page.jpg"></image>
-    </view>
-  </view>
+    <block wx:for="{{web_mainData}}">
+      <view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeeCustomerDetail/employeeCustomerDetail?id={{item.id}}">
+      	<view class="user_left">
+    	  	<view class="user_img">
+    	  		<image src="{{item.headImgUrl==''?'item.headImgUrl':'/images/index_icon2.png'}}"></image>
+    	  	</view>
+    	</view>
+        <view class="user_info">
+    		<view class="font28 color3">{{item.nickname}}</view>
+    		<view class="font24 color9">{{item.userInfo.create_time}}</view>
+        </view>
+        <view class="next_page">
+          <image src="/images/next_page.jpg"></image>
+        </view>
+      </view>
+    </block>
 </view>

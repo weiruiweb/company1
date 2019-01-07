@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 76,
+			"current": 77,
 			"list": [
 				{
 					"id": 0,
@@ -496,6 +496,11 @@
 					"name": "薪资详情",
 					"pathName": "pages/entrance/employeSalaryDetail/employeSalaryDetail",
 					"query": "id=127"
+				},
+				{
+					"id": -1,
+					"name": "外出登记",
+					"pathName": "pages/entrance/employeeRegisterNow/employeeRegisterNow"
 				}
 			]
 		}

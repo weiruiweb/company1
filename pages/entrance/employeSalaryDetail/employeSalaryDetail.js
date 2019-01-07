@@ -28,9 +28,17 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
-      id:self.data.id
+      id:self.data.id,
     };
-    
+    // postData.getAfter = {
+    //   UserInfo:{
+    //     tableName:'Article',
+    //     middle_key:'relation_id',
+    //     key:'id',
+    //     condition:'=',
+    //     status:1
+    //   }
+    // };
     const callback =(res)=>{
       console.log(res);
       self.data.mainData = res.info.data[0];

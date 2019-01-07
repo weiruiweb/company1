@@ -6,7 +6,6 @@ import {Token} from '../../../utils/token.js';
 const token = new Token();
 Page({
   data: {
-
     positionData:[],
     submitData:{
       title:'',
@@ -162,7 +161,6 @@ Page({
       
    };
   },
-
 
   upLoadImg(){
     const self = this;

@@ -57,8 +57,10 @@ Page({
         wx.hideNavigationBarLoading();
         wx.stopPullDownRefresh();
       },300);
+      self.data.isShowMore = false;
       self.setData({
-        web_mainData:self.data.mainData
+        web_mainData:self.data.mainData,
+        web_isShowMore:self.data.isShowMore
       })
     };
     api.articleGet(postData, callback);
@@ -80,7 +82,7 @@ Page({
       if(res.info.data.length>0){
         self.data.labelData.push.apply(self.data.labelData,res.info.data)
       }
-      self.data.isShowMore = false;
+      
     
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
       self.setData({

@@ -7,7 +7,7 @@ const token = new Token();
 Page({
   data: {
     submitData:{
-    	keywords:'',
+    	
     	description:'',
     	content:'',
     	mainImg:[],

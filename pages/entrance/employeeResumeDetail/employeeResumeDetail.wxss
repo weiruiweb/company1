@@ -15,14 +15,15 @@ page{
 	height:88rpx;
 	border-bottom:solid 1px #e0e0e0;
 }
-.input_list1 .input_before{
+.input_list1 .input_before1{
 	width:22%;
-	color:#000;
+	color:#222;
 }
 .input_list1 .input{
 	width:70%;
 	color:#666;
 	padding-left:2%;
+	font-size:26rpx;
 }
 .next image{
 	width:12rpx;

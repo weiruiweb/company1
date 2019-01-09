@@ -98,7 +98,7 @@
     <view class="input_icon">
       <image src="/images/partaner_icon2.png"></image>
     </view>
-  	<view class="input_before1" style="width:26%;">工作经历:</view>
+  	<view class="input_before1 color2" style="width:26%;">工作经历:</view>
   	<textarea placeholder="请输入工作经历" data-key="content" bindblur="changeBind" value="{{web_submitData.content}}"></textarea>
   </view>
 
@@ -106,7 +106,7 @@
         <view class="input_icon">
           <image src="/images/icon15.png"></image>
         </view>
-        <view class="input_before1 font30 color6" style="width:24%;">上传照片</view>
+        <view class="input_before1 font30 color2" style="width:24%;">上传照片</view>
         <view class="w710 uplode flex" id="uploaderFiles">
         <view class="uploder flexRowBetween">
             <block  wx:for="{{web_submitData.mainImg}}" wx:key="{{index}}">

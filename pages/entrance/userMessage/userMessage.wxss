@@ -3,6 +3,7 @@
 @import "../../../wxParse/wxParse.wxss"
 page{
 	background:#f2f2f2;
+	overflow:hidden;
 }
 textarea{
 	width:94%;

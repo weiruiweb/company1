@@ -91,9 +91,12 @@ Page({
     delete self.data.searchItem.create_time;
     delete self.data.searchItem.relation_id;
     delete self.data.searchItem.behavior;
+   
     self.setData({
       web_startTime:'',
       web_endTime:'',
+      web_index:'',
+      web_indexOne:''
     });
     self.getMainData(true);
   },

@@ -87,7 +87,6 @@ page{
 	height:10rpx;
 	margin-left:10rpx;
 }
-.User_cont{background:#f2f2f2;width:100%;height:100%;}
 .clientList{padding:40rpx 22rpx;background:#fff;border-bottom:5rpx solid #f2f2f2}
 .clientList image{width:124rpx;height:124rpx;}
 .clientList_center{width:290rpx;}
@@ -128,18 +127,24 @@ page{
 
 }
 .User_cont{
+	background:#f2f2f2;
+	width:100%;
 	width:50%;
-	height:300rpx;
+	height:140rpx;
 	text-align:center;
 }
 .user_img{
-	width:150rpx;
-	height:150rpx;
+	width:100rpx;
+	height:100rpx;
 	overflow:hidden;
-	margin:0 auto 30rpx auto;
+	border-radius:50%;
+	margin-right:24rpx;
 }
 .user_img image{
-	width:150rpx;
-	height:150rpx;
+	width:100%;
+	height:100%;
 	margin:0 auto;
+}
+.user_infor{
+	text-align:left;
 }

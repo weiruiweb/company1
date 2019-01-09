@@ -12,7 +12,6 @@
 			</view>
 			
 			<view class="w710 condition flex bgs">
-				
 				<view class="condition_item color9 font22">
 					{{item.passage3}}
 				</view>

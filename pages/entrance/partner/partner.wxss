@@ -65,6 +65,9 @@ page{
   line-height:80rpx;
   color:#222;
 }
+.card_name  text{
+  margin-left:30rpx;
+}
 .card_detail{
   width:100%;
   height:240rpx;
@@ -75,7 +78,7 @@ page{
 }
 .card_left{
   width:29%;
-  border-right:solid 1px #21c3d4;
+  /*border-right:solid 1px #21c3d4;*/
 }
 .card_right{
   width:71%;
@@ -83,6 +86,7 @@ page{
 .card_left image{
   width:160rpx;
   height:160rpx;
+  border-radius:50%;
 }
 .card_img{
   width:15%;

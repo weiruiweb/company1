@@ -12,7 +12,7 @@
                 <view style="width:100%;text-align:center">{{web_mainData.info.name}}</view>
             </view>
         </view>
-        <view style="position:absolute;top:20rpx;right:20rpx;font-size:30rpx;width:150rpx;height:50rpx;background-color:#21c3d4;border-radius:30rpx;color:#e5e5e5;text-align:center" bindtap="removeStorageSync">退出登陆</view>
+        <view style="position:absolute;top:20rpx;right:0rpx;font-size:30rpx;width:90rpx;height:50rpx;color:#222;text-align:center" bindtap="removeStorageSync">退出</view>
     </view>
 </view>
 <view class="sort flex">
@@ -65,4 +65,4 @@
         </view>
     </view>
 </view>
-<view class="font22 color6" style="text-align:center;">技术支持：西安纯粹科技有限公司</view>
+<view class="font22 color6 soleTech" style="text-align:center;">版权所有：西安纯粹科技有限公司</view>

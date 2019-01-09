@@ -96,7 +96,7 @@ Page({
         self.data.shareBtn = false;
       }
       return {
-        title: self.data.mainData.title,
+        title: self.data.mainData.title+'   小程序、app、软件开发服务商',
         path: 'pages/entrance/partnerDetail/partnerDetail?relation_user='+self.data.mainData.relation_user+'&&parent_no='+wx.getStorageSync('entrance_info').user_no,
         success: function (res){
           console.log(res);

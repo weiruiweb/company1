@@ -79,18 +79,18 @@ page{
 	height:24rpx;
 }
 .input_list1{
-	width:100%;
+	width:50%;
 	height:88rpx;
 	border-bottom:solid 1px #e0e0e0;
 }
-.input_list1 .input_before{
-	width:22%;
+.input_list1 .input_before1{
+	width:35%;
 	color:#000;
 }
 .input_list1 .input{
-	width:70%;
+	width:90%;
 	color:#666;
-	padding-left:2%;
+	padding:0 5%;
 }
 .next image{
 	width:12rpx;
@@ -124,7 +124,7 @@ page{
 	height:12rpx;
 }
 .interviwe{
-	width:60%;
+	width:94%;
 	height:40rpx;
 	border:solid 1px #cfcfcf;
 	border-radius:10rpx;
@@ -152,4 +152,8 @@ textarea{
 	border-radius:0;
 	width:100%;
 	margin-bottom:0;
+}
+.linear {
+background:linear-gradient(115deg, rgba(109,233,229,1.00),rgba(83,170,231,1.00));
+
 }

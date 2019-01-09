@@ -11,6 +11,7 @@ Page({
    mainData:[],
    getBefore:{},
    isFirstLoadAllStandard:['getMainData'],
+   isShowMore:false
   },
 
   onLoad(options){
@@ -48,15 +49,12 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
-      setTimeout(function()
-      {
-        wx.hideNavigationBarLoading();
-        wx.stopPullDownRefresh();
-      },300);
       api.buttonCanClick(self,true);
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+      self.data.isShowMore = false;
       self.setData({
         web_mainData:self.data.mainData,
+        web_isShowMore:self.data.isShowMore
       });
     };
     api.articleGet(postData,callback);
@@ -108,6 +106,10 @@ Page({
     const self = this;
     if(!self.data.isLoadAll&&self.data.buttonCanClick){
       self.data.paginate.currentPage++;
+      self.data.isShowMore = true;
+      self.setData({
+        web_isShowMore:self.data.isShowMore
+      });
       self.getMainData();
     };
   },

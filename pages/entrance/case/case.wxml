@@ -28,8 +28,14 @@
 </view>
 <view class="mask"  bindtap="menu_hidden" wx:if="{{is_show}}" catchtouchmove="true">
 </view>
-<view wx:if="{{web_isShowMore}}">加载中...</view>
-<view class="font22 color6" style="text-align:center;">技术支持：西安纯粹科技有限公司</view>
+<view wx:if="{{web_isShowMore}}">
+    <view class="loading_box flexCenter">
+      <view class="loading3 loading3_1"></view>
+      <view class="loading3 loading3_2"></view>
+      <view class="loading3 loading3_3"></view>
+    </view>
+</view>
+<view class="font22 color6 soleTech" style="text-align:center;">版权所有：西安纯粹科技有限公司</view>
 <view style="width:100%;height:120rpx;"></view>
 <view class="navbar">
     <view class="navbar_item flex"  bindtap="intoPathRedirect" data-path="/pages/entrance/index/index">

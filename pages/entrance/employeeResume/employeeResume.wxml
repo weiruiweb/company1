@@ -41,32 +41,32 @@
         </view> 
     </view>     
 </view>
-<view class="input_list1 font30 flex">
-    <view class="input_before1">状态筛选:</view>
-    <view class="input">
-      <picker bindchange="behaviorChange" value="{{index}}" range="{{array_behavior}}">
-        <view class="interviwe flex">
-          <view class="picker">{{array_behavior[web_index]}}</view>
-          <view class="derection">
-            <image src="/images/up.png"></image>
-          </view>
+<view class="flex w710">
+    <view class="input_list1 font30 flex">
+        <view class="input">
+          <picker bindchange="behaviorChange" value="{{index}}"  range="{{array_behavior}}">
+            <view class="interviwe flex">
+              <view class="picker avoidOverflow">{{array_behavior[web_index]?array_behavior[web_index]:'筛选情况'}}</view>
+              <view class="derection">
+                <image src="/images/up.png"></image>
+              </view>
+            </view>
+          </picker>
         </view>
-      </picker>
-    </view>
- </view>
- <view class="input_list1 font30 flex">
-    <view class="input_before1">投递职位筛选:</view>
-    <view class="input">
-      <picker bindchange="positionChange" value="{{index}}" range="{{web_positionData}}" range-key ="title">
-        <view class="interviwe flex">
-          <view class="picker">{{web_positionData[web_indexOne].title}}</view>
-          <view class="derection">
-            <image src="/images/up.png"></image>
-          </view>
+     </view>
+     <view class="input_list1 font30 flex">
+        <view class="input">
+          <picker bindchange="positionChange" value="{{index}}" range="{{web_positionData}}" range-key ="title">
+            <view class="interviwe flex">
+              <view class="picker avoidOverflow">{{web_positionData[web_indexOne].title?web_positionData[web_indexOne].title:'投递职位'}}</view>
+              <view class="derection">
+                <image src="/images/up.png"></image>
+              </view>
+            </view>
+          </picker>
         </view>
-      </picker>
-    </view>
- </view>
+     </view>
+</view>
 <block wx:for="{{web_mainData}}">
     <view class="resume_list flex w710 bgs" bindtap="intoPath" data-path="/pages/entrance/employeeResumeDetail/employeeResumeDetail?id={{item.id}}" style="position:relative">
         <view class="resume_cont flex">
@@ -82,16 +82,13 @@
                         <image src="/images/partaner_icon2.png"></image>
                         <text class="font22 color6">{{item.description}}</text>
                     </view>
-                    <!-- <view class="flex condition_item">
-                        <image src="/images/partaner_icon4.png"></image>
-                        <text class="font22 color6">{{item.gender}}</text>
-                    </view> -->
+                
                 </view>
                 <view class="font22 color6">
                     应聘职位:<text>{{item.position[0].title}}</text>
                 </view>
             </view>
         </view>
-        <view style="position:absolute;top:20rpx;right:20rpx;font-size:30rpx;width:150rpx;height:46rpx;background-color:red;border-radius:30rpx;color:#fff;text-align:center" wx:if="{{item.behavior==0}}">未处理</view>
+        <view class="linear font24" style="position:absolute;top:20rpx;right:20rpx;font-size:30rpx;width:150rpx;height:46rpx;background-color:red;border-radius:30rpx;color:#fff;text-align:center" wx:if="{{item.behavior==0}}">未处理</view>
     </view>
 </block>

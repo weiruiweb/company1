@@ -7,12 +7,6 @@
       </view>
     </view>
     <view class="flexRowBetween registerList">
-      <view class="font24 color6 register_tlt">地点</view>
-      <view class="register_cont color6 font28">
-        {{web_mainData.keywords}}
-      </view>
-    </view>
-    <view class="flexRowBetween registerList">
       <view class="font24 color6 register_tlt">缘由</view>
       <view class="register_cont color6 font28">
         {{web_mainData.description}}

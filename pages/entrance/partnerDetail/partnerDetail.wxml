@@ -6,7 +6,8 @@
               <image src="{{web_mainData.mainImg&&web_mainData.mainImg[0]?web_mainData.mainImg[0].url:''}}"></image>
             </view>
             <view class="font30 user_name color3">
-				{{web_mainData.title}}<text class="font24 color6">{{web_mainData.small_title}}</text>
+				{{web_mainData.title}}
+				<text class="font24 color6">{{web_mainData.small_title}}</text>
 			</view>
 		</view>
 	</view>
@@ -21,10 +22,10 @@
 		</view>
 		<view class="basic_box">
 			<view class="basic_list flex">
-				<view class="basic_left color9 font28">
+				<view class="basic_left color2 font28">
 					手机
 				</view>
-				<view class="basic_right font28 color2">
+				<view class="basic_right font26 color9">
 					{{web_mainData.contactPhone}}
 				</view>
 				<view class="basic_handle">
@@ -32,10 +33,10 @@
 				</view>
 			</view>
 			<view class="basic_list flex">
-				<view class="basic_left color9 font28">
+				<view class="basic_left color2 font28">
 					微信
 				</view>
-				<view class="basic_right font28 color2">
+				<view class="basic_right font26 color9">
 					{{web_mainData.keywords}}
 				</view>
 				<view class="basic_handle">
@@ -43,26 +44,26 @@
 				</view>
 			</view>
 			<view class="basic_list flex">
-				<view class="basic_left color9 font28">
+				<view class="basic_left color2 font28">
 					邮箱
 				</view>
-				<view class="basic_right font28 color2" style="width:72%">
+				<view class="basic_right font26 color9" style="width:72%">
 					{{web_mainData.passage2}}
 				</view>
 			</view>
 			<view class="basic_list flex">
-				<view class="basic_left color9 font28">
+				<view class="basic_left color2 font28">
 					公司
 				</view>
-				<view class="basic_right font28 color2" style="width:72%">
+				<view class="basic_right font26 color9" style="width:72%">
 					{{web_mainData.passage1}}
 				</view>
 			</view>
 			<view class="basic_list flex">
-				<view class="basic_left color9 font28">
+				<view class="basic_left color2 font28">
 					地址
 				</view>
-				<view class="basic_right font28 color2" style="width:72%">
+				<view class="basic_right font26 color9" style="width:72%">
 					{{web_mainData.passage3}}
 				</view>
 			</view>
@@ -82,8 +83,8 @@
 		</view>
 	</view>
 </view>
-<view class="toBack flex">
-  <button class="toBack_cont font24 color1" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">咨询</button>
+<view class="consult flex">
+  <button class="consult_cont font24 color1" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">咨询</button>
 </view>
 <view class="album flex" style="padding:0 1%;">
 	<view class="album_item" wx:for="{{web_mainData.bannerImg}}">

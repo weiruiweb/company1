@@ -151,6 +151,8 @@ swiper{
 }
 .product_name {
 	width:100%;
+	height:60rpx;
+	line-height:60rpx;
 }
 .product_name image{
 	width:22rpx;
@@ -179,7 +181,6 @@ swiper{
 	color:#fff;
 	}
 .case{margin-top:32rpx;
-	margin-bottom:130rpx;
 }
 .case_cont image{
 	width:485rpx;
@@ -224,11 +225,13 @@ swiper{
 .case_top .case_left{
 	width:67%;
 	height:306rpx;
+	
 }
 .case_bottom .case_left{
-	width:67%;
+	width:485rpx;
 	height:306rpx;
 	text-align:right;
+	position: relative;
 }
 .case_bottom .case_left image{
 	float:right;
@@ -240,5 +243,19 @@ swiper{
 	width:485rpx;
 	height:306rpx;
 	overflow:hidden;
-
+	position: relative;
+}
+.recommend_img{
+	width:100%;
+	height:210rpx;
+	position:relative;
+	overflow:hidden;
+}
+.mask{
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.4);
+	position: absolute;
+	left:0;
+	top:0;
 }

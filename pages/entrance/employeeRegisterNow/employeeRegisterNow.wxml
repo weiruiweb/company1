@@ -21,13 +21,7 @@
       style="width: 100%; height: 150px;"
       enable-scroll="{{enableScroll}}"
     ></map>
-    <view class="flexRowBetween registerList">
-      <view class="font24 color6 register_tlt">地点</view>
-      <input class="register_cont color6 font28"  data-key="keywords" value="{{web_submitData.keywords}}" bindinput="changeBind">
-        
-      </input>
-    </view>
-    <view class="flexRowBetween registerList">
+    <view class="flexRowBetween registerList" style="margin-top:50rpx;">
       <view class="font24 color6 register_tlt">缘由</view>
       <input class="register_cont color6 font28" value="{{web_submitData.description}}"  data-key="description" bindinput="changeBind">
       </input>

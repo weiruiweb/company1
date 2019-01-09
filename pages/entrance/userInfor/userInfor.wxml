@@ -16,18 +16,6 @@
 		<view class="input_before1">公司名称:</view>
 		<input placeholder="请输入公司名称" data-key="email" bindblur="changeBind" value="{{web_sForm.email}}"></input>
 	</view>
-	<view class="input_list1 font30 flex">
-		<view class="input_before1">开户行:</view>
-		<input placeholder="请输入开户行" data-key="level" bindblur="changeBind" value="{{web_sForm.level}}"></input>
-	</view>
-	<view class="input_list1 font30 flex">
-		<view class="input_before1">开户行地址:</view>
-		<input placeholder="请输入开户地址" data-key="passage1" bindblur="changeBind" value="{{web_sForm.passage1}}" style="width:72%;"></input>
-	</view>
-	<view class="input_list1 font30 flex">
-		<view class="input_before1">开户行账号:</view>
-		<input placeholder="请输入开户行账号" data-key="idCard" bindblur="changeBind" value="{{web_sForm.idCard}}" style="width:72%;"></input>
-	</view>
 </view>
 <form bindsubmit="formIdAdd" report-submit="true">
 	<button  form-type="submit" style="line-height:80rpx;margin-top:100rpx;" class="submit_info" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}">提交</button>

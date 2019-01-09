@@ -11,7 +11,7 @@
   height:160rpx;
   border-radius:50%;
   overflow: hidden;
-  margin:0 auto;
+  margin:0 auto 20rpx auto;
   border:solid 1px #fff;
 }
 .user_img image{
@@ -40,11 +40,15 @@
   color:#222;
 }
 .user_basic{
-  margin-top:0.5rem;
+  margin:30rpx 0;
 }
 .user_tilte{
   width:100%;
-  height:36rpx;
+  height:80rpx;
+  line-height:80rpx;
+}
+.basic_in{
+  font-size:34rpx;
 }
 .basic_list{
   width:100%;
@@ -89,4 +93,27 @@
   width:30rpx;
   height:30rpx;
   margin-right:20rpx;
+}
+.consult {
+width:135rpx;
+  height:135rpx;
+  border-radius:50%;
+  position:fixed;
+  right:-65rpx;
+  top:65%;
+  background:linear-gradient(to bottom,rgba(72,222,223,1.00),rgba(42,154,225,1.00));
+  box-shadow:6rpx 0 20rpx #84ddf3;
+
+}
+.consult_cont{
+  width:30%;
+  margin-right:57%;
+  text-align:center;
+  line-height:normal;
+}
+.button-hover{
+  background:none;
+}
+.user_name text{
+  margin-left:30rpx;
 }

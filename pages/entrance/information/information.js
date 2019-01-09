@@ -48,6 +48,11 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','fail');
       };
+      setTimeout(function()
+      {
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+      },300);
       api.buttonCanClick(self,true);
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
@@ -57,7 +62,12 @@ Page({
     api.articleGet(postData,callback);
   },
 
+   onPullDownRefresh(){
+    const self = this;
+    wx.showNavigationBarLoading(); 
+    self.getMainData(true)
 
+  },
 
   tab(e){
     const self = this;

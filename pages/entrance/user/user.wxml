@@ -39,7 +39,7 @@
             </view>
         </view>
     </view>
-    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/login/login">
+    <view class="sort_item flex" bindtap="intoPathRedi" data-path="/pages/entrance/login/login">
         <view class="item_box flex">
             <view style="width:100%;">
                 <image src="/images/user_icon4.png"></image>
@@ -59,7 +59,7 @@
 <view class="font22 color6" style="text-align:center;">技术支持：西安纯粹科技有限公司</view>
 <view style="width:100%;height:120rpx;"></view>
 <view class="navbar">
-    <view class="navbar_item flex"  bindtap="intoPathRedirect" data-path="/pages/entrance/index/index">
+    <view class="navbar_item flex"  bindtap="intoPathRedi" data-path="/pages/entrance/index/index">
         <view style="width:100%;text-align: center;">
             <view class="nav_img">
               <image src="/images/navbar1.png"></image>
@@ -67,7 +67,7 @@
             <view class="text">首页</view>
         </view>
     </view>
-    <view class="navbar_item flex"  bindtap="intoPathRedirect" data-path="/pages/entrance/case/case">
+    <view class="navbar_item flex"  bindtap="intoPathRedi" data-path="/pages/entrance/case/case">
         <view style="width:100%;text-align: center;">
             <view class="nav_img">
                <image src="/images/navbar2.png"></image>
@@ -75,7 +75,7 @@
             <view class="text">行业案例</view>
         </view>
     </view>
-    <view class="navbar_item flex" bindtap="intoPathRedirect" data-path="/pages/entrance/information/information">
+    <view class="navbar_item flex" bindtap="intoPathRedi" data-path="/pages/entrance/information/information">
         <view style="width:100%;text-align: center;">
             <view class="nav_img">
                <image src="/images/navbar3.png"></image>

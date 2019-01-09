@@ -40,5 +40,5 @@
 		</view>
 	</block>
 </view>
-
+<view wx:if="{{web_isShowMore}}">加载中...</view>
 

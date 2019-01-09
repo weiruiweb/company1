@@ -26,4 +26,5 @@
   <form bindsubmit="submit" report-submit="true">
     <button form-type="submit" class="submit_info" style="width:700rpx;margin:160rpx auto 0 auto;height:88rpx;line-height:88rpx;border-radius: 50rpx;">登录</button>
   </form>
+  <view style="position:absolute;top:20rpx;right:20rpx;font-size:30rpx;width:150rpx;height:50rpx;background-color:#21c3d4;border-radius:30rpx;color:#fff;text-align:center;line-height:50rpx" bindtap="back" data-path="/pages/entrance/user/user">返回</view>
 </view>

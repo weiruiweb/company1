@@ -123,6 +123,7 @@ Page({
         }
       }
   },
+
   addContact(){
     const self = this;
       wx.addPhoneContact({
@@ -133,12 +134,63 @@ Page({
         }
     })
   },
+
+  getPhoneNumber(e) {
+    const self = this;
+    console.log('e',e);
+    if(e.detail.errMsg=='getPhoneNumber:fail user deny'){
+      return
+    };
+    const postData = {
+      appid:wx.getStorageSync('entrance_info').thirdApp.appid,
+      tokenFuncName:'getEntranceToken',
+      encryptedData:e.detail.encryptedData,
+      iv:e.detail.iv
+    };
+    const callback = (res) =>{
+      if(res.solely_code==100000){
+        self.data.phoneData = res.info.phoneNumber;
+        wx.showModal({
+            title: '已发送请求',
+            content: '我们已收到您的咨询请求\r\n稍微将安排专人与您通话\r\n请确保手机畅通！',
+            confirmColor:'#21c3d4',
+            showCancel:false,
+            success(res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              }
+            }
+          })  
+      }
+      self.messageAdd();
+      console.log(res)
+    }
+    api.decryptWxInfo(postData,callback)
+  },
+
+  messageAdd(){
+    const self =this;
+    const postData = {};
+    postData.tokenFuncName = 'getEntranceToken';
+    postData.data = {
+      type:11,
+      phone:self.data.phoneData,
+      relation_id:self.data.id,
+      title:self.data.mainData.title,
+    };
+    const callback = (data)=>{
+      console.log(res)
+    };
+    api.messageAdd(postData,callback);
+  },
+
   call_phone(){
     const self = this;
     wx.makePhoneCall({
       phoneNumber: 'self.data.mainData.contactPhone,'
     })
   },
+
   copyBtn: function (e) {
     const self = this;
     wx.setClipboardData({

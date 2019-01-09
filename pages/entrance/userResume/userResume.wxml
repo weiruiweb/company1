@@ -130,6 +130,7 @@
 
 </view>
 
+<form bindsubmit="formIdAdd" report-submit="true">
+  <button  form-type="submit" style="line-height:80rpx;margin-top:100rpx;" class="submit_info" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}">提交</button>
+</form>
 
-
-	<button  formType="submit" bindtap="{{web_buttonCanClick?'submit':''}}" style="line-height:80rpx;margin-top:100rpx;" class="submit_info">提交</button>

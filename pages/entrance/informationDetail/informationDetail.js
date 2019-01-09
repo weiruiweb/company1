@@ -33,6 +33,7 @@ Page({
     self.data.id = options.id;
     self.getMainData();
   },
+
   getMainData(){
     const self= this;
     const postData = {};
@@ -52,6 +53,7 @@ Page({
     };
     api.articleGet(postData,callback);
   },
+  
   swiperChange(e) {
     const that = this;
     that.setData({

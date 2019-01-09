@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "收到简历"
+  "navigationBarTitleText": "收到简历",
+  "enablePullDownRefresh":true
 }

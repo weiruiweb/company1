@@ -1,5 +1,5 @@
 <!--index1.wxml-->
-<view class="tab font30 flexRowBetween">
+<view class="tab font30 flexRowBetween" style="position:fixed;top:0;width:100%">
     <view class="tab_item {{currentId == 0?'tab_this':''}}" data-id="0" bindtap="{{web_buttonCanClick?'tab':''}}">
         企业动态
     </view>
@@ -7,7 +7,7 @@
         合作须知
     </view>
 </view>
-
+<view style="width:100%;height:100rpx"></view>
 <view class="w710">
     <block wx:for="{{web_mainData}}" wx:key="id">
         <view class="product flexRowBetween w710" bindtap="intoPath" data-path="/pages/entrance/informationDetail/informationDetail?id={{item.id}}">
@@ -17,7 +17,7 @@
                 </view>
                 <view class="product_right flexRowBetween">
                     <view class="product_detail">
-                        <view class="font32 product_top">{{item.title}}</view>
+                        <view class="font30 product_top">{{item.title}}</view>
                         <view class="font26 color6 product_center">{{item.description}}</view>
                         <view class="font24 color9 product_top">
                            {{item.create_time}}

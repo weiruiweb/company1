@@ -81,7 +81,7 @@
     <view class="input">
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array_behavior}}">
         <view class="interviwe flex">
-          <view class="picker">{{array_behavior[web_index]}}</view>
+          <view class="picker">{{array_behavior[web_submitData.behavior]}}</view>
           <view class="derection">
             <image src="/images/up.png"></image>
           </view>

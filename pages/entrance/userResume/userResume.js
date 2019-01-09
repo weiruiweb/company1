@@ -34,8 +34,8 @@ Page({
     self.getRandomColor();
     self.setData({
     	web_submitData:self.data.submitData,
-    	web_buttonCanClick:self.data.buttonCanClick,
-      web_index:0
+        web_buttonCanClick:self.data.buttonCanClick,
+        web_index:0
     })
  
   },
@@ -148,8 +148,11 @@ Page({
       if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
         api.showToast('手机格式不正确','none')
         api.buttonCanClick(self,true)
-      }else{
-        self.messageAdd(); 
+      }else{ 
+        const callback = (user,res) =>{
+          self.messageAdd(); 
+        };
+       api.getAuthSetting(callback);
       }
    }else{
       api.showToast('请补全信息','none')
@@ -285,7 +288,7 @@ Page({
           },1000);  
         }) 
     	}else{
-    		api.showToast(data.msg,'none')
+    		api.showToast(data.msg,'none',1000)
     	}
     	api.buttonCanClick(self,true)
     };

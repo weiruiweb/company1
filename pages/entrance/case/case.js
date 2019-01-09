@@ -17,7 +17,8 @@ Page({
     isFirstLoadAllStandard:['getLabelData','getMainData'],
     searchItem:{
       thirdapp_id:21
-    }
+    },
+    isShowMore:false,
   },
   
 
@@ -26,6 +27,7 @@ Page({
     api.commonInit(self);
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.setData({
+       web_isShowMore:self.data.isShowMore,
       web_menu_array:self.data.menu_array
     });
     self.getMainData();
@@ -78,8 +80,11 @@ Page({
       if(res.info.data.length>0){
         self.data.labelData.push.apply(self.data.labelData,res.info.data)
       }
+      self.data.isShowMore = false;
+    
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
       self.setData({
+        web_isShowMore:self.data.isShowMore,
         web_labelData:self.data.labelData
       });
     };
@@ -108,6 +113,10 @@ Page({
   onReachBottom() {
     const self = this;
     if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.isShowMore = true;
+      self.setData({
+        web_isShowMore:self.data.isShowMore
+      })
       self.data.paginate.currentPage++;
       self.getMainData();
     };

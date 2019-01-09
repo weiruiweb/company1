@@ -68,11 +68,9 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 
-  intoPathRedi(e){
+  back(e){
     const self = this;
-    wx.navigateBack({
-      delta:1
-    })
+    api.pathTo(api.getDataSet(e,'path'),'rela');
   },
  
 })

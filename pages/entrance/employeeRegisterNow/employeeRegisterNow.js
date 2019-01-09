@@ -14,16 +14,15 @@ Page({
     	type:4,
       passage1:'',
       passage2:'',
+
     },
-    isFirstLoadAllStandard:['getLocation']
+    isFirstLoadAllStandard:['getLocation'],
+    enableScroll:false
   },
   onLoad() {
     const self = this;
     api.commonInit(self);
     self.getLocation();
-    self.setData({
-      web_submitData:self.data.submitData,
-    })
   },
 
   submit(){
@@ -119,10 +118,17 @@ Page({
         if(res.errMsg=="getLocation:ok"){
           self.data.submitData.passage1 = res.longitude
           self.data.submitData.passage2 = res.latitude
-        }
+        };
+        self.setData({
+          web_submitData:self.data.submitData,
+        }); 
       }
     });
     api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLocation',self)
+  },
+
+  regionchange(e) {
+    console.log(e.type)
   },
 
 })

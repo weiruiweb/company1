@@ -6,8 +6,10 @@ import {Token} from '../../../utils/token.js';
 const token = new Token();
 
 Page({
+
   data: {
    mainData:[],
+   isFirstLoadAllStandard:['getMainData']
   },
 
   onLoad(options){
@@ -32,12 +34,19 @@ Page({
     };
     const callback =(res)=>{
       console.log(res);
+
       self.data.mainData = res.info.data[0];
       self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });
     };
     api.articleGet(postData,callback);
+  },
+
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 })

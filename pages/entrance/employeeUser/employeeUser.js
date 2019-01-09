@@ -41,12 +41,15 @@ Page({
 
   submit(e){
     const self = this;
-    if(self.data.mainData.primary_scope<30){
-      api.showToast('您没有此权限','none');
-      return;
-    };
-    api.pathTo(api.getDataSet(e,'path'),'nav');
-    
+    if(self.data.mainData.info.behavior==4){
+      api.pathTo(api.getDataSet(e,'path'),'nav');
+    }else{
+      api.showToast('您没有此权限','none',1000);
+    } 
+  },
+  
+  removeStorageSync(){
+    api.logOff();
   },
 
   intoPath(e){

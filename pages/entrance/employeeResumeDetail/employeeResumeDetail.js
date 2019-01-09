@@ -27,13 +27,9 @@ Page({
     })
   },
 
-  getMianData(isNew){
+  getMianData(){
     const self = this;
-    if(isNew){
-      api.clearPageIndex(self)
-    };
     const postData = {};
-    postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName = 'getEmployeeToken';
     postData.searchItem = {
       id:self.data.id,
@@ -56,6 +52,8 @@ Page({
       if(res){
         self.data.mainData=res.info.data[0]; 
         console.log(999,self.data.mainData);
+        self.data.submitData.behavior = parseInt(self.data.mainData.behavior)-1;
+        self.data.submitData.passage1  = self.data.mainData.passage1
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none') 
@@ -63,6 +61,7 @@ Page({
       api.buttonCanClick(self,true);
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
+        web_submitData: self.data.submitData,
         web_mainData:self.data.mainData,
       });
     

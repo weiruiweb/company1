@@ -5,17 +5,18 @@
         <view style="width:100%;">
             <view class="wx_img flex">
                 <view class="user_img">
-                  <open-data type="userAvatarUrl"></open-data>
+                  <image src="{{web_mainData.mainImg[0].url}}" class="user_img" style="width:146rpx;height:146rpx;"></image>
                 </view>
             </view>
-            <view class="font28 color3 flex" style="width:100%;text-align:center;margin-top: 20rpx;">
-                <open-data type="userNickName" lang="zh_CN" style="margin:0 auto;"></open-data>
+            <view class="font28 color3 flex" style="margin-top: 20rpx;">
+                <view style="width:100%;text-align:center">{{web_mainData.info.name}}</view>
             </view>
         </view>
+        <view style="position:absolute;top:20rpx;right:20rpx;font-size:30rpx;width:150rpx;height:50rpx;background-color:#21c3d4;border-radius:30rpx;color:#e5e5e5;text-align:center" bindtap="removeStorageSync">退出登陆</view>
     </view>
 </view>
 <view class="sort flex">
-    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/employeeResume/employeeResume">
+    <view class="sort_item flex" bindtap="submit" data-path="/pages/entrance/employeeResume/employeeResume">
         <view class="item_box flex">
             <view style="width:100%;">
                 <image src="/images/employees_icon1.png"></image>

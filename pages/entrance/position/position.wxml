@@ -10,16 +10,14 @@
 					<view class="clientTime color font28">{{item.passage1}}</view>
 				</view>
 			</view>
-			<view class="w710 font24 color3 bgs" style="padding-top:20rpx;padding-bottom:30rpx;">西安纯粹科技有限公司</view>
+			
 			<view class="w710 condition flex bgs">
+				
 				<view class="condition_item color9 font22">
-					西安雁塔区
+					{{item.passage3}}
 				</view>
 				<view class="condition_item color9 font22">
-					经验不限
-				</view>
-				<view class="condition_item color9 font22">
-					学历不限
+					{{item.passage4}}
 				</view>
 			</view>
 			<view class="w710 flex bgs" style="height:120rpx;">

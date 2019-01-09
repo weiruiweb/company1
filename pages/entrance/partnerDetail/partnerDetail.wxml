@@ -17,7 +17,7 @@
 	<view class="user_basic">
 		<view class="user_tilte  flex">
 			<image src="/images/icon5.png"></image>
-			<view class="font30 color2 basic_in">个人信息</view>
+			<view class="font30 color2 basic_in">个人名片</view>
 		</view>
 		<view class="basic_box">
 			<view class="basic_list flex">
@@ -81,6 +81,9 @@
 			<view class="font30 color2 basic_in">照片展示</view>
 		</view>
 	</view>
+</view>
+<view class="toBack flex">
+  <button class="toBack_cont font24 color1" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">咨询</button>
 </view>
 <view class="album flex" style="padding:0 1%;">
 	<view class="album_item" wx:for="{{web_mainData.bannerImg}}">

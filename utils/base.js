@@ -573,6 +573,8 @@ class Base{
                     web_buttonCanClick:self.data.buttonCanClick
                 });
             };
+            wx.hideNavigationBarLoading();
+            wx.stopPullDownRefresh();
             return true;
         }else{
             wx.setStorageSync('checkLoadAll',{path:path,testArray:testArray});
@@ -754,10 +756,10 @@ class Base{
     logOff(){
         const self = this;
         wx.removeStorageSync('login');
-        wx.removeStorageSync('threeInfo');
-        wx.removeStorageSync('threeToken');
+        wx.removeStorageSync('employeeToken');
+        wx.removeStorageSync('employeeInfo');
         if(!wx.getStorageSync('login')){
-            self.pathTo('/pages/User/user','tab')
+            self.pathTo('/pages/entrance/user/user','rela')
         }else{
             self.showToast('系统故障','fail')
         }

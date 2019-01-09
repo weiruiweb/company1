@@ -28,13 +28,17 @@ Page({
  
   onLoad(options) {
     const self = this;
+    self.init();
+    
+  },
+  init(){
+    const self = this;
     api.commonInit(self);
     self.getLabelData();
     self.getMainData();
     self.getSliderData();
-    token.getEntranceToken()
+    
   },
-  
   getSliderData(){
     const self = this;
     const postData = {};
@@ -76,9 +80,9 @@ Page({
     const callback =(res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
-      }else{
-        self.data.isLoadAll = true;
-        api.showToast('没有更多了','fail');
+        if(self.data.mainData.length>2){
+          self.data.mainData = self.data.mainData.slice(0,2) 
+        }
       };
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
@@ -102,10 +106,10 @@ Page({
     postData.searchItem.menu_id = ['in', self.data.menu_array]; 
     var callback = (res) => {
       if(res.info.data.length>0){
-        self.data.caseData.push.apply(self.data.caseData,res.info.data)
-      }else{
-        self.data.isLoadAll = true;
-        api.showToast('没有更多了','none')
+        self.data.caseData.push.apply(self.data.caseData,res.info.data);
+        if(self.data.caseData.length>4){
+          self.data.caseData = self.data.caseData.slice(0,4) 
+        }
       }
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getCaseData',self);
       self.data.menu_array = [];
@@ -124,6 +128,7 @@ Page({
       api.clearPageIndex(self)
     };
     var postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = { 
         type: 1,
         thirdapp_id: 21,
@@ -136,7 +141,7 @@ Page({
       for (var i = 0; i < res.info.data.length; i++) {
         self.data.menu_array.push(res.info.data[i].id)
       };
-       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLabelData',self);
       self.setData({
         web_labelData:self.data.labelData
       });
@@ -144,6 +149,13 @@ Page({
     };
     api.labelGet(postData,callback);
   },
+
+  onPullDownRefresh(){
+    const self = this;
+    wx.showNavigationBarLoading(); 
+    self.init();
+  },
+
 
   intoMap(){
     const self = this;
@@ -179,13 +191,7 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'redi');
   }, 
 
-  onReachBottom() {
-    const self = this;
-    if(!self.data.isLoadAll&&self.data.buttonCanClick){
-      self.data.paginate.currentPage++;
-      self.getMainData();
-    };
-  },
+
   
 })
 

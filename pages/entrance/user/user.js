@@ -45,8 +45,7 @@ Page({
       api.showToast('您没有此权限','none');
       return;
     };
-    api.pathTo(api.getDataSet(e,'path'),'nav');
-    
+    api.pathTo(api.getDataSet(e,'path'),'nav');   
   },
 
   intoPath(e){
@@ -54,14 +53,8 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 
-  intoPathRedi(e){
-    const self = this;
-    wx.navigateBack({
-      delta:1
-    })
-  },
 
-  intoPathRedirect(e){
+  intoPathRedi(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
   },

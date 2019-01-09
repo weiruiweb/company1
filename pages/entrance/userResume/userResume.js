@@ -10,7 +10,7 @@ Page({
     submitData:{
       title:'',
       phone:'',
-      keywords:'',
+      passage_array:'',
       type:10,
       gender:'',
       mainImg:[],
@@ -56,7 +56,7 @@ Page({
     }
     var currentdate = year + seperator1 + month + seperator1 + strDate;
     api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
-    self.data.submitData.keywords =  currentdate.split('-')
+    self.data.submitData.passage_array =  currentdate.split('-')
     self.setData({
       web_submitData:self.data.submitData
     })
@@ -92,12 +92,12 @@ Page({
    bindDateChange: function(e) {
     const self = this;
     console.log('picker发送选择改变，携带值为', e.detail.value);
-    self.data.submitData.keywords = e.detail.value.split("-");
-    console.log(self.data.submitData.keywords)
+    self.data.submitData.passage_array = e.detail.value.split("-");
+    console.log(self.data.submitData.passage_array)
     self.setData({
       web_submitData:self.data.submitData
     })
-    new Date(self.data.submitData.keywords.join("-")).getTime();
+    new Date(self.data.submitData.passage_array.join("-")).getTime();
   },
 
 
@@ -149,11 +149,8 @@ Page({
         api.showToast('手机格式不正确','none')
         api.buttonCanClick(self,true)
       }else{
-        const callback = (user,res) =>{
-          self.messageAdd(); 
-       	};
-       api.getAuthSetting(callback);  
-     }
+        self.messageAdd(); 
+      }
    }else{
       api.showToast('请补全信息','none')
       api.buttonCanClick(self,true)

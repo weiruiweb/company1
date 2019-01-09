@@ -43,15 +43,15 @@
           </view>
           <view class="things_right flexRowBetween font28" style="width:50%;">
               <view class="thing1  flexRowBetween" style="width:24%;text-align: center;">
-                  <view class="font28"  style="text-align: center;width:100%;"></view>
+                  <view class="font28"  style="text-align: center;width:100%;">{{web_mainData.passage_array[0]}}</view>
               </view>
               <view class="years font28 ">年</view>
               <view class="thing1  flexRowBetween"  style="width:24%;text-align: center;">
-                  <view class="font28"  style="text-align: center;width:100%;"></view>
+                  <view class="font28"  style="text-align: center;width:100%;">{{web_mainData.passage_array[1]}}</view>
               </view>
                <view class="years font28">月</view>
               <view class="thing1  flexRowBetween"  style="width:24%;text-align: center;">
-                  <view class="font28" style="text-align: center;width:100%;"></view>
+                  <view class="font28" style="text-align: center;width:100%;">{{web_mainData.passage_array[2]}}</view>
               </view>
                <view class="years font28 ">日</view>
           </view>
@@ -81,7 +81,7 @@
     <view class="input">
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array_behavior}}">
         <view class="interviwe flex">
-          <view class="picker">{{web_submitData.behavior}}</view>
+          <view class="picker">{{array_behavior[web_index]}}</view>
           <view class="derection">
             <image src="/images/up.png"></image>
           </view>
@@ -91,7 +91,7 @@
   </view>
 </view>
 <view class="w710">
-  <textarea placeholder="备注" data-key="passage1" value="{{web_submitData.passage1}}" bindtap="changeBind"></textarea>
+  <textarea placeholder="备注" data-key="passage1" value="{{web_submitData.passage1}}" bindinput="changeBind"></textarea>
 </view>
 
 <form>

@@ -19,32 +19,36 @@ Page({
   },
 
 
-  getMainData(isNew){
+  getMainData(){
     const  self =this;
-    if(isNew){
-      api.clearPageIndex(self)
-    };
     const postData={};
-    postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
       id:self.data.id,
     };
-    // postData.getAfter = {
-    //   UserInfo:{
-    //     tableName:'Article',
-    //     middle_key:'relation_id',
-    //     key:'id',
-    //     condition:'=',
-    //     status:1
-    //   }
-    // };
+    postData.getAfter = {
+      userInfo:{
+        tableName:'UserInfo',
+        middleKey:'relation_user',
+        key:'user_no',
+        searchItem:{
+          status:1
+        },
+        condition:'='
+      }
+    };
     const callback =(res)=>{
       console.log(res);
-      self.data.mainData = res.info.data[0];
-      self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
-       api.buttonCanClick(self,true);
-        api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+      if(res.info.data.length>0){
+        self.data.mainData = res.info.data[0];
+        self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
+      }else{
+        api.showToast('数据错误',none,1000)
+      };
+      
+     
+      api.buttonCanClick(self,true);
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });

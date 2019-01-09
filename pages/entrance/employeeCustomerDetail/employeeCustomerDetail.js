@@ -29,13 +29,13 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('threeToken');
+    postData.tokenFuncName = 'getEmployeeToken';
     postData.searchItem = {
       id:self.data.id,
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
     };
     postData.getAfter = {
-      'userInfo':{
+      userInfo:{
         tableName:'User',
         key:'user_no',
         middleKey:'parent_no',

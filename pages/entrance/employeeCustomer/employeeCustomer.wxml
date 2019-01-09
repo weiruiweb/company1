@@ -46,12 +46,12 @@
       <view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeeCustomerDetail/employeeCustomerDetail?id={{item.id}}">
       	<view class="user_left">
     	  	<view class="user_img">
-    	  		<image src="{{item.headImgUrl==''?'item.headImgUrl':'/images/index_icon2.png'}}"></image>
+    	  		<image src="{{item.userInfo[0].headImgUrl==''?'item.userInfo[0].headImgUrl':'/images/index_icon2.png'}}"></image>
     	  	</view>
     	</view>
         <view class="user_info">
-    		<view class="font28 color3">{{item.nickname}}</view>
-    		<view class="font24 color9">{{item.userInfo.create_time}}</view>
+    		<view class="font28 color3">{{item.userInfo[0].nickname}}</view>
+    		<view class="font24 color9">{{item.userInfo[0].create_time}}</view>
         </view>
         <view class="next_page">
           <image src="/images/next_page.jpg"></image>

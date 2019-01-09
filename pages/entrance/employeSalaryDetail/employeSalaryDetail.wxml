@@ -3,7 +3,7 @@
     <view class="flexRowBetween registerList">
       <view class="font28 color6 register_tlt">姓名</view>
       <view class="register_cont color6 font28">
-        张海军
+        {{web_mainData.userInfo[0].name}}
       </view>
     </view>
     <view class="flexRowBetween registerList">

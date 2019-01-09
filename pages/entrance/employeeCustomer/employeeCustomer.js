@@ -9,7 +9,8 @@ Page({
     startTime:'',
     endTime:'',
     searchItem:{
-      
+      user_type:0,
+      thirdapp_id:getApp().globalData.solely_thirdapp_id
     },
     mainData:[],
     isFirstLoadAllStandard:['getMainData'],
@@ -21,27 +22,26 @@ Page({
     api.commonInit(self);
     self.getMainData();
   },
- getMainData(isNew){
+
+
+  getMainData(isNew){
     const  self =this;
     if(isNew){
       api.clearPageIndex(self)
     };
-  const postData={};
+    const postData={};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('threeToken');
-    postData.searchItem = {
-      thirdapp_id:getApp().globalData.solely_thirdapp_id,
-      parent_no:wx.getStorageSync('entrance_info').user_no,
-      //status:1,
-    };
+    postData.tokenFuncName = 'getEmployeeToken';
+    postData.searchItem = api.cloneForm(self.data.searchItem);
+    postData.searchItem.parent_no = wx.getStorageSync('employeeInfo').user_no
     postData.order = {
       create_time:'desc',
     };
     postData.getAfter = {
-      'userInfo':{
+      userInfo:{
         tableName:'User',
         key:'user_no',
-        middleKey:'parent_no',
+        middleKey:'user_no',
         condition:'=',
         searchItem:{
           status:1
@@ -56,17 +56,24 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       };
+      setTimeout(function()
+      {
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+      },300);
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
       });
     };
-    api.distributionGet(postData,callback);
- },
- intoPath(e){
+    api.userGet(postData,callback);
+  },
+
+  intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
+
   onReachBottom() {
     const self = this;
     if(!self.data.isLoadAll&&self.data.buttonCanClick){

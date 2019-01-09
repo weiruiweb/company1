@@ -34,7 +34,7 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('threeToken');
+    postData.tokenFuncName = 'getEmployeeToken';
     postData.searchItem = {
       id:self.data.id,
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
@@ -69,24 +69,27 @@ Page({
     };
     api.messageGet(postData,callback);
   },
+
   submit(){
     const self = this;
     api.buttonCanClick(self);
     const pass = api.checkComplete(self.data.submitData);
-    if(pass){
-        api.buttonCanClick(self,true)
-        const callback = (user,res) =>{
-          self.messageAdd(); 
-        }
+    if(pass){     
+        self.messageUpdate(); 
      }else{
-        api.showToast('请补全信息','none')
+        api.showToast('请补全信息','none',1000)
         api.buttonCanClick(self,true)
      };
   },
-  messageAdd(){
+
+  messageUpdate(){
     const self =this;
     const postData = {};
-    postData.tokenFuncName = 'getEntranceToken';
+    postData.tokenFuncName = 'getEmployeeToken';
+    postData.searchItem={
+      id:self.data.id,
+      user_type:0
+    };
     postData.data = {};
     postData.data = api.cloneForm(self.data.submitData);
     const callback = (data)=>{
@@ -103,7 +106,7 @@ Page({
       }
       api.buttonCanClick(self,true)
     };
-    api.messageAdd(postData,callback);
+    api.messageUpdate(postData,callback);
   },
 
   intoPath(e){
@@ -122,11 +125,17 @@ Page({
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
   },
+
   bindPickerChange(e) {
+    const self = this;
+    console.log(parseInt(e.detail.value)+1);
+    var index = e.detail.value;
+    self.data.submitData.behavior = parseInt(e.detail.value)+1;
     this.setData({
-      index: e.detail.value
+      web_index: e.detail.value
     })
   },
+
   changeBind(e){
     const self = this;
     if(api.getDataSet(e,'value')){
@@ -139,9 +148,7 @@ Page({
     }); 
     console.log(self.data.submitData)
   },
-  formIdAdd(e){
-    api.WxFormIdAdd(e.detail.formId,(new Date()).getTime()/1000+7*86400);  
-  },
+ 
 })
 
   

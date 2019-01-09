@@ -97,7 +97,7 @@ Page({
       }
       return {
         title: self.data.mainData.title,
-        path: 'pages/entrance/partnerDetail/partnerDetail?passage1='+self.data.id+'&&parent_no='+wx.getStorageSync('entrance_info').user_no,
+        path: 'pages/entrance/partnerDetail/partnerDetail?relation_user='+self.data.mainData.relation_user+'&&parent_no='+wx.getStorageSync('entrance_info').user_no,
         success: function (res){
           console.log(res);
           console.log(parentNo)

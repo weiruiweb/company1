@@ -112,19 +112,7 @@ class Token {
         }
     } 
 
-    getHotelToken(callback,postData) { 
 
-        if((postData&&postData.refreshToken)||!wx.getStorageSync('hotel_token')){
-            var params = {
-                token_name:'hotel_token',
-                info_name:'hotel_info',
-                thirdapp_id:22
-            };
-            this.getUserInfo(params,callback);
-        }else{
-            return wx.getStorageSync('hotel_token');
-        }
-    } 
 
     
 
@@ -135,7 +123,18 @@ class Token {
     }    
 
  
+    getEmployeeToken(callback,postData) { 
 
+        if((postData&&postData.refreshToken)||!wx.getStorageSync('employeeToken')){
+            wx.removeStorageSync('employeeToken');
+            wx.removeStorageSync('employeeInfo');
+            wx.redirectTo({
+              url: '/pages/entrance/login/login'
+            });
+        }else{
+            return wx.getStorageSync('employeeToken');
+        }
+    }
    
 
 
@@ -196,8 +195,8 @@ class Token {
                     postData.parent_no = self.g_params.parent_no;
                     console.log(self.g_params)
                 };
-                if(self.g_params&&self.g_params.passage1){
-                    postData.passage1 = self.g_params.passage1;
+                if(self.g_params&&self.g_params.relation_user){
+                    postData.relation_user = self.g_params.relation_user;
                     console.log(self.g_params)
                 };
                 if(wx.getStorageSync('openidP')){
@@ -250,7 +249,7 @@ class Token {
                 success:function(res){
                     console.log(res)
                     if(res.data&&res.data.token){
-                        wx.setStorageSync('threeToken', res.data.token);
+                        wx.setStorageSync('employeeToken', res.data.token);
                         var login = wx.getStorageSync('login');   
                         wx.setStorageSync('login',login);
                         if(params&&callback){  

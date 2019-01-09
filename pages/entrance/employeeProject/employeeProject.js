@@ -8,27 +8,52 @@ const token = new Token();
 Page({
 
   data: {
+
     mainData:[],
-    isFirstLoadAllStandard:['getMainData'],
+    isFirstLoadAllStandard:['userGet','getMainData'],
   },
 
   onLoad: function () {
     const self = this;
     api.commonInit(self);  	
-    self.getMainData();
+    self.userGet();
+  },
+
+  userGet(){
+    const self = this;
+    const postData = {};
+    postData.tokenFuncName = 'getEmployeeToken';
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.userData = res.info.data[0];
+      };
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'userGet',self);
+      self.setData({
+        web_userData:self.data.userData,
+      });
+      self.getMainData()
+    };
+    api.userGet(postData,callback);
   },
 
 
-  getMainData(){
+  getMainData(isNew){
     const  self =this;
+    if(isNew){
+      api.clearPageIndex(self)
+    };
     const postData={};
-    postData.token = wx.getStorageSync('threeToken');
+    postData.tokenFuncName = 'getEmployeeToken';
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
-      user_no:wx.getStorageSync('threeInfo').parent_no,
-      project_manager:wx.getStorageSync('threeInfo').user_no,
-      status:1,
+      user_type:2
+    };
+    if(self.data.userData.info.behavior==2){
+      postData.searchItem.sales_manager = self.data.userData.user_no
+    };
+    if(self.data.userData.info.behavior==3){
+      postData.searchItem.project_manager = self.data.userData.user_no
     };
     const callback =(res)=>{
       if(res.info.data.length>0){

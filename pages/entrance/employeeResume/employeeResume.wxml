@@ -3,7 +3,7 @@
         <view class="resume_cont flex">
             <view class="resume_left">
                 <view class="user_img">
-                     <open-data type="userAvatarUrl"></open-data>
+                    <image src="{{item.user[0].headImgUrl}}" class="user_img"></image>
                 </view>
             </view>
             <view class="resume_right">

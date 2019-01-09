@@ -9,12 +9,11 @@ Page({
   data: {
     searchItem:{
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
-      process_type:2,
       user_type:['in',[1,2]]
     },
     labelData:[],
     mainData:[],
-    isFirstLoadAllStandard:['getMainData','getProjectData'],
+    isFirstLoadAllStandard:['getMainData','getProjectData','userGet'],
     startTime:'',
     endTime:'',
   },
@@ -27,6 +26,22 @@ Page({
     
   },
 
+  userGet(){
+    const self = this;
+    const postData = {};
+    postData.tokenFuncName = 'getEmployeeToken';
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.userData = res.info.data[0];
+      };
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'userGet',self);
+      self.setData({
+        web_userData:self.data.userData,
+      });
+      self.getMainData()
+    };
+    api.userGet(postData,callback);
+  },
 
   getMainData(isNew){
     const  self =this;
@@ -35,20 +50,20 @@ Page({
     };
     const postData={};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.tokenFuncName='getEntranceToken';
+    postData.tokenFuncName = 'getEmployeeToken';
     postData.searchItem = api.cloneForm(self.data.searchItem);
     postData.searchItem.project_no=self.data.projectData.project_no;
-/*    postData.getAfter = {
-    	article:{
-    		tableName:'article',
-    		middleKey:'passage_array',
-    		key:'id',
-    		searchItem:{
-    			status:1
-    		},
-    		condition:'='
-    	}
-    };*/
+    if(self.data.userData.info.behavior==1){
+      postData.searchItem.step = ['in',[3,4,5]]
+    };
+    if(self.data.userData.info.behavior==2){
+      postData.searchItem.step = ['in',[1,3]];
+      postData.searchItem.function_type=['NOT IN',[6]]
+    };
+    if(self.data.userData.info.behavior==2){
+      postData.searchItem.step = ['in',[1,2,3]];
+      postData.searchItem.function_type=['NOT IN',[6]]
+    };
     const callback =(res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
@@ -72,7 +87,7 @@ Page({
   getProjectData(){
     const self= this;
     const postData = {};
-    postData.tokenFuncName = 'getEntranceToken';
+    postData.tokenFuncName = 'getEmployeeToken';
     postData.searchItem ={
       thirdapp_id:app.globalData.solely_thirdapp_id,
       id:self.data.id,
@@ -108,7 +123,7 @@ Page({
       self.setData({
         web_projectData:self.data.projectData,
       });   
-      self.getMainData()
+      self.userGet()
     };
     api.projectGet(postData,callback);
   },

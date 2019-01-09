@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "推广客户"
+  "navigationBarTitleText": "推广客户",
+   "enablePullDownRefresh":true
 }

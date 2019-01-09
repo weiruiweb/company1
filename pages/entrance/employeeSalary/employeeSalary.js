@@ -8,48 +8,60 @@ Page({
   data: {
     searchItem:{
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
+      menu_id:135,
     },
     startTime:'',
     endTime:'',
     mainData:[],
     isFirstLoadAllStandard:['getMainData']
   },
+
   onLoad() {
     const self = this;
     api.commonInit(self);
     self.getMainData();
   },
+
+
    getMainData(isNew){
     const  self =this;
     if(isNew){
       api.clearPageIndex(self)
     };
     const postData = {};
-    postData.searchItem = {
-      thirdapp_id:getApp().globalData.solely_thirdapp_id,
-      menu_id:135,
-      relation_user:wx.getStorageSync('threeInfo').user_no,
-    };
-   const callback =(res)=>{
+    postData.paginate = api.cloneForm(self.data.paginate);
+    postData.searchItem = api.cloneForm(self.data.searchItem)
+    postData.relation_user = wx.getStorageSync('employeeInfo').user_no;
+
+    const callback =(res)=>{
     console.log(1000,res);
-        if(res){
-          self.data.mainData=res.info.data[0];
-        }else{
-          self.data.isLoadAll = true;
-          api.showToast('没有更多了','none');
-        };
-        api.buttonCanClick(self,true);
-        api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
-        self.setData({
-          web_mainData:self.data.mainData,
-        });
+      if(res){
+        self.data.mainData.push.apply(self.data.mainData,res.info.data)
+      }else{
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','none',1000);
       };
-      api.articleGet(postData,callback);
+      setTimeout(function()
+      {
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+      },300);
+      api.buttonCanClick(self,true);
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+      self.setData({
+        web_mainData:self.data.mainData,
+      });
+    };
+    api.articleGet(postData,callback);
   },
- intoPath(e){
+
+
+  intoPath(e){
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
+
+
   onReachBottom() {
     const self = this;
     if(!self.data.isLoadAll&&self.data.buttonCanClick){

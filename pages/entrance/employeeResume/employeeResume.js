@@ -7,23 +7,23 @@ const token = new Token();
 Page({
   data: {
     mainData:[],
-    isFirstLoadAllStandard:['getMianData']
+    isFirstLoadAllStandard:['getMainData']
   },
 
   onLoad(options){
     const self = this;
     api.commonInit(self);
-    self.getMianData();
+    self.getMainData();
   },
 
-  getMianData(isNew){
+  getMainData(isNew){
     const self = this;
     if(isNew){
       api.clearPageIndex(self)
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.token = wx.getStorageSync('threeToken');
+    postData.tokenFuncName = 'getEmployeeToken';
     postData.searchItem = {
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
       type:10,
@@ -34,6 +34,15 @@ Page({
         tableName:'Article',
         middleKey:'relation_id',
         key:'id',
+        searchItem:{
+          status:1,
+        },
+        condition:'='
+      },
+      user:{
+        tableName:'User',
+        middleKey:'user_no',
+        key:'user_no',
         searchItem:{
           status:1,
         },
@@ -56,6 +65,15 @@ Page({
     };
     api.messageGet(postData,callback);
   },
+
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
+  },
+
 
   intoPath(e){
     const self = this;

@@ -25,7 +25,7 @@ Page({
   userGet(){
     const self = this;
     const postData = {};
-    postData.tokenFuncName = 'getEntranceToken';
+    postData.tokenFuncName = 'getEmployeeToken';
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];

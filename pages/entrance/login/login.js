@@ -15,7 +15,7 @@ Page({
 
   onShow(){
     const self = this;
-    if(wx.getStorageSync('threeInfo')&&wx.getStorageSync('threeToken')){
+    if(wx.getStorageSync('employeeInfo')&&wx.getStorageSync('employeeToken')){
         self.setData({
           web_show:false
         });
@@ -28,7 +28,6 @@ Page({
   submit(){
     const self = this;
     var postData={};
-    postData.tokenFuncName = 'getEntranceToken';
     wx.showLoading(); 
     if(api.checkComplete(self.data.sForm)){
          
@@ -38,7 +37,7 @@ Page({
     }
     const callback = (res)=>{
       if(res){       
-          wx.setStorageSync('threeInfo',res.data.info); 
+          wx.setStorageSync('employeeInfo',res.data.info); 
           wx.redirectTo({
             url: '/pages/entrance/employeeUser/employeeUser'
           })

@@ -25,7 +25,7 @@ Page({
   getMainData(){
     const self= this;
     const postData = {};
-    postData.tokenFuncName='getEntranceToken';
+    postData.tokenFuncName = 'getEmployeeToken';
     postData.searchItem ={
       thirdapp_id:app.globalData.solely_thirdapp_id,
       id:self.data.id,
@@ -52,7 +52,7 @@ Page({
     const self =this;
     api.buttonCanClick(self);
     const postData = {};
-    postData.tokenFuncName = 'getEntranceToken';
+    postData.tokenFuncName = 'getEmployeeToken';
     postData.data = {
     	step:3
     };

@@ -12,32 +12,32 @@ Page({
     	content:'',
     	mainImg:[],
     	type:4,
-      // passage1:'',
-      // passage2:'',
+      passage1:'',
+      passage2:'',
     },
-    buttonCanClick:false,
+    isFirstLoadAllStandard:['getLocation']
   },
   onLoad() {
     const self = this;
+    api.commonInit(self);
+    self.getLocation();
     self.setData({
-    	web_buttonCanClick:self.data.buttonCanClick,
       web_submitData:self.data.submitData,
     })
   },
+
   submit(){
     const self = this;
     api.buttonCanClick(self);
     const pass = api.checkComplete(self.data.submitData);
     if(pass){
-      const callback = (res) =>{
-          self.messageAdd(); 
-       };
-      api.getAuthSetting(callback);   
+        self.messageAdd(); 
     }else{
       api.showToast('请补全信息','none');
       api.buttonCanClick(self,true);
     };
   },
+
   upLoadImg(){
     const self = this;
     if(self.data.submitData.mainImg.length>2){
@@ -74,28 +74,30 @@ Page({
       }
     })
   },
+
   messageAdd(){
     const self =this;
     const postData = {};
-    postData.tokenFuncName = 'getEntranceToken';
+    postData.tokenFuncName = 'getEmployeeToken';
     postData.data = {};
     postData.data = api.cloneForm(self.data.submitData);
     const callback = (data)=>{
     	if(data.solely_code==100000){
     		api.showToast('登记成功','none',1000,function(){
           setTimeout(function(){
-            wx.redirectTo({
-              url: '/pages/entrance/employeeRegister/employeeRegister'
+            wx.navigateBack({
+              delta:1
             })
           },1000);  
         }) 
     	}else{
-    		api.showToast(data.msg,'none')
+    		api.showToast(data.msg,'none',100)
     	}
     	api.buttonCanClick(self,true)
     };
     api.messageAdd(postData,callback);
   },
+
   changeBind(e){
     const self = this;
     if(api.getDataSet(e,'value')){
@@ -108,4 +110,19 @@ Page({
     }); 
     console.log(self.data.submitData)
   },
+
+  getLocation(){
+    const self=this;
+    wx.getLocation({
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success: function (res) {
+        if(res.errMsg=="getLocation:ok"){
+          self.data.submitData.passage1 = res.longitude
+          self.data.submitData.passage2 = res.latitude
+        }
+      }
+    });
+    api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLocation',self)
+  },
+
 })

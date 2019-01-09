@@ -2,7 +2,7 @@
     <view class="date_item">
         <view style="width:45%;display:flex;align-items:center;">
             <view class="date_left" style="color:#00c6f7;width:100%;">
-                <picker  value="{{web_startTime}}" data-type="startTime" bindchange="bindTimeChange">
+                <picker mode="date" value="{{web_startTime}}" data-type="startTime" bindchange="bindTimeChange" >
                     <view style="display:flex;align-items:center;width:100%;height:100%;">
                         <view style="width:85%;height:70rpx;">
                             <view class="picker text">
@@ -23,7 +23,7 @@
     <view class="date_item">
         <view style="width:45%;display:flex;align-items:center;">
             <view class="date_left" style="color:#00c6f7;width:100%;">
-                <picker  value="{{web_endTime}}" data-type="startTime" bindchange="bindTimeChange" >
+                <picker mode="date" value="{{web_endTime}}" data-type="web_endTime" bindchange="bindTimeChange" >
                     <view style="display:flex;align-items:center;width:100%;height:100%;">
                         <view style="width:85%;height:70rpx;">
                             <view class="picker text">
@@ -32,7 +32,7 @@
                             <view class="text font22">{{web_endTime}}</view>
                         </view>
                         <view style="width:15%;height:70rpx;">
-                            <image src="/images/up_icon1.jpg"></image>
+                            <image src="/images/up_icon2.jpg"></image>
                         </view>
                     </view>
                 </picker>
@@ -41,15 +41,17 @@
         </view> 
     </view>     
 </view>
-<view class="w710">
-  <view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeSalaryDetail/employeSalaryDetail?id={{web_mainData.id}}">
-    <view class="user_info font28 color3">
-		{{web_mainData.title}}
-    </view>
-    <view class="font24 salary" style="color:#eb3434">¥{{web_mainData.passage6}}</view>
-    <view class="next_page flex">
+<block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="w710">
+      <view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeSalaryDetail/employeSalaryDetail?id={{item.id}}">
+        <view class="user_info font28 color3">
+    		{{item.title}}
+        </view>
+        <view class="font24 salary" style="color:#eb3434">¥{{item.passage6}}</view>
+        <view class="next_page flex">
 
-      <image src="/images/next_page.jpg"></image>
+          <image src="/images/next_page.jpg"></image>
+        </view>
+      </view>
     </view>
-  </view>
-</view>
+</block>

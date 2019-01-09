@@ -1,6 +1,6 @@
 <!--User.wxml-->
 <view class="w710">
-	<block wx:for="{{web_mainData}}">
+	<block wx:for="{{web_mainData}}" wx:key="id">
 		<view class="project" >
 			<view class="project_name flex">
 				<view class="project_Left">

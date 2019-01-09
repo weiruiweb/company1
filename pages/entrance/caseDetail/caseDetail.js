@@ -59,6 +59,7 @@ Page({
       swiperIndex: e.detail.current,
     })
   },
+  
   previewImg(e){
       const self = this;
       var index = e.currentTarget.dataset.index;

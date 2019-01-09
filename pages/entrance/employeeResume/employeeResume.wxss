@@ -41,7 +41,7 @@ page{
 	width:76%;
 }
 .resume_list{
-	margin-top:20rpx;
+	margin-bottom:20rpx;
 }
 .date{
 	height:90rpx;
@@ -81,7 +81,6 @@ page{
 .input_list1{
 	width:50%;
 	height:88rpx;
-	border-bottom:solid 1px #e0e0e0;
 }
 .input_list1 .input_before1{
 	width:35%;

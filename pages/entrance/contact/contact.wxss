@@ -1,5 +1,8 @@
 /**index.wxss**/
 @import "../../../wxParse/wxParse.wxss"; 
+page{
+	overflow:hidden;
+}
 view{
 	color:#666;
 }

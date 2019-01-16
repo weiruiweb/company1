@@ -42,6 +42,7 @@ page{
 .uplode_img{
 	width:140rpx;
 	height:160rpx;
+	margin-right:20rpx;
 }
 .uplode_img image{
 	width:100%;

@@ -21,8 +21,13 @@ page{
 	bottom:20%;
 	right:0;
 	border-radius:50%;
-	font-size:80rpx;
 	color:#fff;
+}
+.add{
+	width:54rpx;
+	height:54rpx;
+	margin:0 auto;
+	line-height:54rpx;
 	text-align:center;
-	line-height:108rpx;
+	font-size:54rpx;
 }

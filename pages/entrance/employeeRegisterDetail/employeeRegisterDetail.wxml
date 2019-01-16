@@ -34,7 +34,7 @@
         <view class="uplode_img" wx:for="{{web_submitData.mainImg}}">
           <image src="{{item.url}}"></image>
         </view>
-        <view class="uolode_item"  bindtap="upLoadImg">
+        <view class="uolode_item"  bindtap="upLoadImg" wx:if="{{web_submitData.mainImg.length<3}}">
           +
         </view>
       </view>

@@ -186,6 +186,7 @@ Page({
       };
       if(findCoupon.type==3){
         var couponPrice = findCoupon.discount;
+        console.log('findCoupon.discount',findCoupon.discount)
       }else if(findCoupon.type==4){
         var couponPrice = findCoupon.discount*self.data.price;
       };
@@ -205,24 +206,38 @@ Page({
     const self = this;
     
 
-    if(api.getDataSet(e,"key")=='score'){
+if(api.getDataSet(e,"key")=='score'){
       var testScore = api.getDataSet(e,"score");
-      var orderItem_id = api.getDataSet(e,"orderItem_id");
-      self.data.scoreForm[orderItem_id] = e.detail.value;
+      var orderitemid = api.getDataSet(e,"orderitemid");
+  
+
+      console.log('testScore',testScore);
+      console.log('orderitemid',orderitemid);
+      if(parseFloat(e.detail.value)>0){
+        self.data.scoreForm[orderitemid] = e.detail.value;
+      }else{
+        self.data.scoreForm[orderitemid] = 0;
+      };
+      
       self.data.scoreForm.score = 0;
+      console.log('self.data.scoreForm',self.data.scoreForm);
+      self.data.sForm.score = 0;
       for(var key in self.data.scoreForm){
-        self.data.sForm.score += self.data.scoreForm[key];
+        self.data.sForm.score += parseFloat(self.data.scoreForm[key]);
       };
       console.log('inputBind',self.data.sForm.score);
+      
       if(self.data.sForm.score>self.data.userData.score||!testScore||(testScore&&self.data.sForm.score>testScore)){
         api.showToast('积分不符合规则','error');
-        self.data.sForm.score = '';
+        self.data.sForm.score = 0;
         self.setData({
           web_sForm:self.data.sForm,
         }); 
         return;
       };
     };
+
+
     if(api.getDataSet(e,"key")=='balance'){
       api.fillChange(e,self,'sForm');
       if(self.data.sForm.balance>self.data.userData.balance){

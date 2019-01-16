@@ -1,26 +1,19 @@
 <!--manageAddress.wxml-->
-<view class="user_input">
-	<view class="users_detail flexRowBetween">
-		<view class="input_note">收货人:</view>
-		<input placeholder="请输入收货人" value="{{web_mainData.name}}"  data-key="name" bindblur="inputChange"></input>
-	</view>
+<view class="user_input flexRowBetween w710">
+	<view class="input_note font30">收货人:</view>
+	<input placeholder="请输入收货人" value="{{web_mainData.name}}"  data-key="name" bindblur="inputChange"></input>
 </view>
-<view class="user_input">
-	<view class="users_detail flexRowBetween">
-		<view class="input_note">手机号码:</view>
-		<input placeholder="请输入手机号码" style="width:64%;" value="{{web_mainData.phone}}"  data-key="phone" bindblur="inputChange"></input>
-		<view class="address_right flexRowBetween" style="width:13%;">
-			<view style="height:100%;" class="flex">
-				<view class="next_page scale2" style="width:12px;height:20px;float:right;{{img}};background-position:-657px -46px"></view>
-			</view>
-		</view>
-	</view>
+<view class="user_input flexRowBetween  w710">
+	<view class="input_note font30">手机号码:</view>
+	<input placeholder="请输入手机号码" value="{{web_mainData.phone}}"  data-key="phone" bindblur="inputChange"></input>
+
+	
 </view>
-<view class="user_input">
-	<view class="users_detail flexRowBetween" bindtap="chooseLocation" style="justify-content:left">
+<view class="user_input flexRowBetween  w710" bindtap="chooseLocation">
+	<view class="users_detail flexRowBetween"  style="justify-content:left">
 
 		<text style="line-height:50px;font-size:30rpx">点击选取位置:</text>
-		<text style="line-height:50px;font-size:30rpx;color:#999">{{web_name}}</text>
+		<text style="line-height:50px;font-size:30rpx;color:#999">{{web_mainData.city}}</text>
 	</view>
 </view>
 
@@ -29,20 +22,14 @@
 	<textarea value="{{web_mainData.detail}}" style="border:1px solid #E5E5E5;height:200rpx;border-radius:15rpx;width:250px;margin:17px 10px;#999" class='user_textarea' data-key="detail" bindinput="inputChange"></textarea>
 </view>
 
-
-
-<view class="user_input flexRowBetween" style="margin-top:170rpx">
-	<view class="input_note address_set">设为默认地址</view>
+<view class="user_input flexRowBetween   w710" style="margin-top:170rpx">
+	<view class="input_note font30 address_set">设为默认地址</view>
 	<view class="body-view">
-		<switch bindchange="switch2Change" />
+		<switch bindchange="switch2Change" checked="{{web_isdefault==1?true:''}}"/>
 	</view>
 </view>
-
 <view class="address_btn">
-	<view class="submit_info">
-		<form bindsubmit="submit" class="form_button" report-submit="true">
-			<button form-type="submit" class="form_btn color1">保存</button>
-		</form>
-	</view>
+<view class="submit_info" bindtap="{{web_buttonCanClick?'submit':''}}">
+	保存
 </view>
-
+</view>

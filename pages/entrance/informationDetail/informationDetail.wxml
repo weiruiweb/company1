@@ -25,9 +25,9 @@
 			<view class="state_right_box">
 				<view class="state_top flex font28">
 					<view class="content ql-editor">
-                        <import src="../../../wxParse/wxParse.wxml"/>
-                        <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
-                    </view> 
+              <import src="../../../wxParse/wxParse.wxml"/>
+              <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+          </view> 
 				</view>
 	
 			</view>

@@ -99,7 +99,7 @@ Page({
       if(data.solely_code==100000){
         api.showToast('完善成功','none');
         setTimeout(function(){
-          api.pathTo('/pages/mall/User/user','redi')
+          api.pathTo('/pages/mall/User/user','rela')
         },1000);  
       }else{
         api.showToast('网络故障','none')

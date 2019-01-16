@@ -536,8 +536,7 @@ class Base{
     checkComplete(obj){
         var pass = true;
         for(var key in obj){
-
-          if(!obj[key]){
+          if(!obj[key]||JSON.stringify(obj[key])=='[]'||JSON.stringify(obj[key])=='{}'){
             if(obj[key]===0){
                 pass = true;
             }else{
@@ -546,7 +545,6 @@ class Base{
           };
         };
         return pass;
-        console.log(pass);
     };
 
     getcurrentPage(){

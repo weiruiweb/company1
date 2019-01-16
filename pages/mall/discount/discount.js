@@ -12,7 +12,7 @@ Page({
       thirdapp_id:getApp().globalData.mall_thirdapp_id,
       type:3
     },
-
+    isShowMore:false,
     img:"background:url('/images/small.png')",
     discount:false,
     isFirstLoadAllStandard:['getMainData'],
@@ -37,10 +37,11 @@ Page({
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','none');
+        self.data.isShowMore = false;
       };
       self.setData({
         web_mainData:self.data.mainData,
+        web_isShowMore:self.data.isShowMore
       });   
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);  
     };
@@ -117,9 +118,13 @@ Page({
 
 
 
-  onReachBottom: function () {
+  onReachBottom() {
     const self = this;
     if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.isShowMore = true;
+      self.setData({
+        web_isShowMore:self.data.isShowMore
+      })
       self.data.paginate.currentPage++;
       self.getMainData();
     };

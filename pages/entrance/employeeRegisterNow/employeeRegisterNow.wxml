@@ -6,7 +6,7 @@
         2019-01-02
       </input>
     </view> -->
-    <map
+    <!--    <map
       id="map"
       longitude="{{web_submitData.passage1}}"
       latitude="{{web_submitData.passage2}}"
@@ -20,18 +20,18 @@
       show-location
       style="width: 100%; height: 150px;"
       enable-scroll="{{enableScroll}}"
-    ></map>
+    ></map>-->
     <view class="flexRowBetween registerList" style="margin-top:50rpx;">
       <view class="font24 color6 register_tlt">缘由</view>
       <input class="register_cont color6 font28" value="{{web_submitData.description}}"  data-key="description" bindinput="changeBind">
       </input>
     </view>
-    <view class="flexRowBetween registerList">
+    <!--   <view class="flexRowBetween registerList">
       <view class="font24 color6 register_tlt">备注</view>
-      <input class="register_cont color6 font28" data-key="content"  value="{{web_submitData.content}}" bindinput="changeBind">
+      cc
       </input>
-    </view>
-    <view style="display:flex;margin-top:30rpx;">
+    </view>-->
+    <!--   <view style="display:flex;margin-top:30rpx;">
       <view class="font24 color6 register_tlt" style="width:24%;" >拍照片上传</view>
       <view class="uplode color6 font28 flex">
         
@@ -42,9 +42,9 @@
           +
         </view>
       </view>
-    </view>
+    </view>-->
   </view>
 </view>
 <form  report-submit="true">
-  <button  formType="submit"  bindtap="{{web_buttonCanClick?'submit':''}}" style="line-height:80rpx;" class="submit_info">确认</button>
+  <button  formType="submit"  bindtap="{{web_buttonCanClick?'submit':''}}" style="line-height:80rpx;" class="submit_info">出发</button>
 </form>

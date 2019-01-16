@@ -22,8 +22,8 @@ Page({
     if(options.parent_no){
       var parent_no = options.parent_no
     };
-    if(options.passage1){
-      var passage1 = options.passage1
+    if(options.relation_user){
+      var passage1 = options.relation_user
     };
     console.log('options',options)
     if(parent_no&&passage1){
@@ -96,8 +96,8 @@ Page({
         self.data.shareBtn = false;
       }
       return {
-        title: self.data.mainData.title+'   小程序、app、软件开发服务商',
-        path: 'pages/entrance/partnerDetail/partnerDetail?relation_user='+self.data.mainData.relation_user+'&&parent_no='+wx.getStorageSync('entrance_info').user_no,
+        title: self.data.mainData.title+'小程序、app、软件开发服务商',
+        path: 'pages/entrance/partnerDetail/partnerDetail?relation_user='+self.data.mainData.relation_user+'&&parent_no='+wx.getStorageSync('entrance_info').user_no+'&&id='+self.data.id,
         success: function (res){
           console.log(res);
           console.log(parentNo)
@@ -152,7 +152,7 @@ Page({
         self.data.phoneData = res.info.phoneNumber;
         wx.showModal({
             title: '已发送请求',
-            content: '我们已收到您的咨询请求\r\n稍微将安排专人与您通话\r\n请确保手机畅通！',
+            content: '我们已收到您的咨询请求\r\n稍后将安排专人与您通话\r\n请确保手机畅通！',
             confirmColor:'#21c3d4',
             showCancel:false,
             success(res) {

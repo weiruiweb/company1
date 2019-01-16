@@ -1,12 +1,26 @@
 <view class="w710">
   <block wx:for="{{web_mainData}}">
 	  <view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeeRegisterDetail/employeeRegisterDetail?id={{item.id}}">
-	    <view class="font24 color6">{{item.create_time}}</view>
+	    <view class="font24 color6">{{item.description}}</view>
+	    <view>
+	    <view class="font24 color6" wx:if="{{item.behavior==1}}" style="color:red">状态:在途中(去)</view>
+	    <view class="font24 color6" wx:if="{{item.behavior==2}}" style="color:red">状态:洽谈中</view>
+	    <view class="font24 color6" wx:if="{{item.behavior==3}}" style="color:red">状态:在途中(返)</view>
+	    <view class="font24 color6" wx:if="{{item.behavior==4}}" style="color:red">状态:已完结</view>
+	    <view class="font24 color6">出发时间:{{item.create_time}}</view>
+	    </view>
 	    <view class="next_page">
 	      <image src="/images/next_page.jpg"></image>
 	    </view>
 	  </view>
 	</block>
+</view>
+<view wx:if="{{web_isShowMore}}">
+    <view class="loading_box flexCenter">
+      <view class="loading3 loading3_1"></view>
+      <view class="loading3 loading3_2"></view>
+      <view class="loading3 loading3_3"></view>
+    </view>
 </view>
 <view class="register" bindtap="intoPath" data-path="/pages/entrance/employeeRegisterNow/employeeRegisterNow">
   +

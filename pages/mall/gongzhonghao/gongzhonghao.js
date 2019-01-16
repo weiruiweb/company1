@@ -23,6 +23,7 @@ Page({
     order:{
       multi:'asc'
     },
+    isShowMore:false,
     isShow:false,
     isFirstLoadAllStandard:['getMainData','getLabelData'],
 
@@ -79,12 +80,13 @@ Page({
         self.data.mainData.push.apply(self.data.mainData,res.info.data)
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','none');
+        self.data.isShowMore = false;
       }
       api.buttonCanClick(self,true);
       self.setData({
         web_mainData:self.data.mainData,
-      });  
+        web_isShowMore:self.data.isShowMore
+      })  
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);  
     };
     api.skuGet(postData,callback);
@@ -169,6 +171,18 @@ Page({
     self.setData({
       web_sForm:self.data.sForm
     })
+  },
+
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.isShowMore = true;
+      self.setData({
+        web_isShowMore:self.data.isShowMore
+      })
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
   },
 
   intoPath(e){

@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 79,
+			"current": 80,
 			"list": [
 				{
 					"id": 0,
@@ -512,7 +512,13 @@
 				{
 					"id": -1,
 					"name": "收到简历",
-					"pathName": "pages/entrance/employeeResume/employeeResume"
+					"pathName": "pages/entrance/employeeResume/employeeResume",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "外出登记",
+					"pathName": "pages/entrance/employeeRegister/employeeRegister"
 				}
 			]
 		}

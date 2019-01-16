@@ -8,6 +8,7 @@ const token = new Token();
 Page({
   data: {
    mainData:[],
+   isShowMore:false,
    isFirstLoadAllStandard:['getMainData'],
   },
 
@@ -48,11 +49,13 @@ Page({
         }
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','fail');
+        self.data.isShowMore = false;
       };
+      
       api.buttonCanClick(self,true);
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
+        web_isShowMore:self.data.isShowMore,
         web_mainData:self.data.mainData,
       });
     };
@@ -62,10 +65,16 @@ Page({
   onReachBottom() {
     const self = this;
     if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.isShowMore = true;
+      self.setData({
+        web_isShowMore:self.data.isShowMore
+      })
       self.data.paginate.currentPage++;
       self.getMainData();
     };
   },
+
+
   intoMap(){
     const self = this;
     wx.getLocation({

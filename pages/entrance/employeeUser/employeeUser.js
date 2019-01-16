@@ -26,6 +26,8 @@ Page({
     const self = this;
     const postData = {};
     postData.tokenFuncName = 'getEmployeeToken';
+    postData.searchItem = {};
+    postData.searchItem.user_no = wx.getStorageSync('employeeInfo').user_no;
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData = res.info.data[0];

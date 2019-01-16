@@ -26,3 +26,28 @@ page{
 	width:140rpx;
 	height:160rpx;
 }
+.uplode{
+	width:76%;
+}
+.uolode_item{
+	width:140rpx;
+	height:160rpx;
+	border-radius:16rpx;
+	background:#f4f4f4;
+	font-size:90rpx;
+	line-height:150rpx;
+	text-align:center;
+	margin-right:20rpx;
+}
+.uplode_img{
+	width:140rpx;
+	height:160rpx;
+}
+.uplode_img image{
+	width:100%;
+	height:100%;
+}
+.submit_info{
+	width:94%;
+	margin-top:200rpx;
+}

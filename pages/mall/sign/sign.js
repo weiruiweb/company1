@@ -402,7 +402,7 @@ Page({
         },
         
         searchItem:{
-          _no:wx.getStorageSync('mall_info')._no,
+          user_no:wx.getStorageSync('mall_info').user_no,
           type:3,
         }
       }

@@ -48,8 +48,8 @@ Page({
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data)
       }else{
+        self.data.isShowMore = false;
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','none')
       }
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       setTimeout(function()
@@ -57,7 +57,7 @@ Page({
         wx.hideNavigationBarLoading();
         wx.stopPullDownRefresh();
       },300);
-      self.data.isShowMore = false;
+      
       self.setData({
         web_mainData:self.data.mainData,
         web_isShowMore:self.data.isShowMore

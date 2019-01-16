@@ -28,15 +28,15 @@ Page({
     const postData={};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      thirdapp_id:getApp().globalData.solely_thirdapp_id
+      
     };
     postData.getBefore = {
       partner:{
-        tableName:'label',
+        tableName:'Label',
         searchItem:{
           title:['=',['公司小程序']],
         },
-        middleKey:'parentId',
+        middleKey:'parentid',
         key:'id',
         condition:'in',
       },

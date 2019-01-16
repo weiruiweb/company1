@@ -32,15 +32,15 @@
 			</view>
 			<view  class="product_item flex {{web_order.sale_count?'changeColor':''}}" data-key="sale_count" bindtap="{{web_buttonCanClick?'changeOrder':''}}">
 				<text>销量</text>
-				<view class="order_des scale2" style="{{img}};{{web_order.sale_count == 'asc'?'background-position: -596px -46px;':'background-position: -566px -46px;'}}"></view>
+				<view class="order_des scale2" style="{{img}};{{web_order.sale_count?(web_order.sale_count == 'asc'?'background-position: -596px -46px;':'background-position: -566px -46px;'):'background-position: -482px -46px'}}"></view>
 			</view>
 			<view  class="product_item flex {{web_order.create_time?'changeColor':''}}" data-key="create_time" bindtap="{{web_buttonCanClick?'changeOrder':''}}">
 				<text>新品</text>
-				<view class="order_des scale2" style="{{img}};{{web_order.create_time == 'asc'?'background-position: -596px -46px':'background-position: -566px -46px'}}"></view>
+				<view class="order_des scale2" style="{{img}};{{web_order.create_time?(web_order.create_time == 'asc'?'background-position: -596px -46px':'background-position: -566px -46px'):'background-position: -482px -46px'}}"></view>
 			</view>
 			<view  class="product_item flex {{web_order.price?'changeColor':''}}" data-key="price" bindtap="{{web_buttonCanClick?'changeOrder':''}}">
 				<text>价格</text>
-				<view class="order_des scale2" style="{{img}};{{web_order.price == 'asc'?'background-position: -596px -46px':'background-position: -566px -46px'}}"></view>
+				<view class="order_des scale2" style="{{img}};{{web_order.price?(web_order.price == 'asc'?'background-position: -596px -46px':'background-position: -566px -46px'):'background-position: -482px -46px'}}"></view>
 			</view>
 		</view>
 
@@ -67,4 +67,11 @@
 		</view>
 	</view>
 </view>
+</view>
+<view wx:if="{{web_isShowMore}}">
+    <view class="loading_box flexCenter">
+      <view class="loading3 loading3_1"></view>
+      <view class="loading3 loading3_2"></view>
+      <view class="loading3 loading3_3"></view>
+    </view>
 </view>

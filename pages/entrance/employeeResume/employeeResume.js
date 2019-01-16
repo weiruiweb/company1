@@ -14,6 +14,7 @@ Page({
       user_type:0,
     },
     mainData:[],
+    isShowMore:false,
     positionData:[],
     isFirstLoadAllStandard:['getMainData','getPositonData'],
     array_behavior:['未处理','邀面试', '拒绝', '待定', '入职'],
@@ -60,7 +61,7 @@ Page({
         self.data.mainData.push.apply(self.data.mainData,res.info.data); 
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','none') 
+        self.data.isShowMore = false;
       };
       setTimeout(function()
       {
@@ -71,7 +72,8 @@ Page({
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_mainData:self.data.mainData,
-      });
+        web_isShowMore:self.data.isShowMore
+      })
     
     };
     api.messageGet(postData,callback);
@@ -80,6 +82,10 @@ Page({
   onReachBottom() {
     const self = this;
     if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.isShowMore = true;
+      self.setData({
+        web_isShowMore:self.data.isShowMore
+      })
       self.data.paginate.currentPage++;
       self.getMainData();
     };

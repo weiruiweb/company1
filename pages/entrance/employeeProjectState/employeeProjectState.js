@@ -13,35 +13,22 @@ Page({
     },
     labelData:[],
     mainData:[],
-    isFirstLoadAllStandard:['getMainData','getProjectData','userGet'],
+    isFirstLoadAllStandard:['getMainData','getProjectData'],
     startTime:'',
     endTime:'',
+    isShowMore:false,
   },
 
   onLoad: function (options) {
     const self = this;
     api.commonInit(self);
+
     self.data.id = options.id;
     self.getProjectData();
     
   },
 
-  userGet(){
-    const self = this;
-    const postData = {};
-    postData.tokenFuncName = 'getEmployeeToken';
-    const callback = (res)=>{
-      if(res.info.data.length>0){
-        self.data.userData = res.info.data[0];
-      };
-      api.checkLoadAll(self.data.isFirstLoadAllStandard,'userGet',self);
-      self.setData({
-        web_userData:self.data.userData,
-      });
-      self.getMainData()
-    };
-    api.userGet(postData,callback);
-  },
+
 
   getMainData(isNew){
     const  self =this;
@@ -53,7 +40,7 @@ Page({
     postData.tokenFuncName = 'getEmployeeToken';
     postData.searchItem = api.cloneForm(self.data.searchItem);
     postData.searchItem.project_no=self.data.projectData.project_no;
-    if(self.data.userData.info.behavior==1){
+/*    if(self.data.userData.info.behavior==1){
       postData.searchItem.step = ['in',[3,4,5]]
     };
     if(self.data.userData.info.behavior==2){
@@ -63,13 +50,13 @@ Page({
     if(self.data.userData.info.behavior==2){
       postData.searchItem.step = ['in',[1,2,3]];
       postData.searchItem.function_type=['NOT IN',[6]]
-    };
+    };*/
     const callback =(res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','fail');
+        self.data.isShowMore = false;
       };
       setTimeout(function()
       {
@@ -77,9 +64,11 @@ Page({
         wx.stopPullDownRefresh();
       },300);
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+      
       self.setData({
         web_mainData:self.data.mainData,
-      });
+        web_isShowMore:self.data.isShowMore
+      })
     };
     api.processGet(postData,callback);
   },
@@ -91,8 +80,6 @@ Page({
     postData.searchItem ={
       thirdapp_id:app.globalData.solely_thirdapp_id,
       id:self.data.id,
-      user_type:2,
-
     };
     postData.getAfter = {
       userOne:{
@@ -123,7 +110,7 @@ Page({
       self.setData({
         web_projectData:self.data.projectData,
       });   
-      self.userGet()
+      self.getMainData();
     };
     api.projectGet(postData,callback);
   },
@@ -132,6 +119,10 @@ Page({
   onReachBottom() {
     const self = this;
     if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.isShowMore = true;
+      self.setData({
+        web_isShowMore:self.data.isShowMore
+      })
       self.data.paginate.currentPage++;
       self.getMainData();
     };

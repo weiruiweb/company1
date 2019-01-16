@@ -8,6 +8,7 @@ const token = new Token();
 Page({
   data: {
     caseData:[],
+    isShowMore:false,
     isFirstLoadAllStandard:['getMainData'],
   },
 
@@ -56,12 +57,13 @@ Page({
         self.data.caseData.push.apply(self.data.caseData,res.info.data);
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','fail');
+        self.data.isShowMore = false;
       };
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({
         web_caseData:self.data.caseData,
-      });
+        web_isShowMore:self.data.isShowMore
+      })  
     };
     api.articleGet(postData,callback);
   },
@@ -80,6 +82,10 @@ Page({
   onReachBottom() {
     const self = this;
     if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.isShowMore = true;
+      self.setData({
+        web_isShowMore:self.data.isShowMore
+      })
       self.data.paginate.currentPage++;
       self.getMainData();
     };

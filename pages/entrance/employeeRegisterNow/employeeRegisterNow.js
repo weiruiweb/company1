@@ -9,31 +9,35 @@ Page({
     submitData:{
     	
     	description:'',
-    	content:'',
-    	mainImg:[],
+    	//content:'',
+    	//mainImg:[],
     	type:4,
-      passage1:'',
-      passage2:'',
-
+      //passage1:'',
+      //passage2:'',
+      behavior:1
     },
     isFirstLoadAllStandard:['getLocation'],
     enableScroll:false
   },
+
   onLoad() {
     const self = this;
     api.commonInit(self);
-    self.getLocation();
+    /*self.getLocation();*/
   },
 
   submit(){
     const self = this;
     api.buttonCanClick(self);
+    
+
     const pass = api.checkComplete(self.data.submitData);
     if(pass){
         self.messageAdd(); 
     }else{
-      api.showToast('请补全信息','none');
       api.buttonCanClick(self,true);
+      api.showToast('请补全信息','none');
+      
     };
   },
 
@@ -62,6 +66,7 @@ Page({
 
     wx.chooseImage({
       count:1,
+      sourceType:['camera'],
       success: function(res) {
         console.log(res);
         var tempFilePaths = res.tempFilePaths;
@@ -80,6 +85,7 @@ Page({
     postData.tokenFuncName = 'getEmployeeToken';
     postData.data = {};
     postData.data = api.cloneForm(self.data.submitData);
+    postData.data.user_no = wx.getStorageSync('employeeInfo').user_no;
     const callback = (data)=>{
     	if(data.solely_code==100000){
     		api.showToast('登记成功','none',1000,function(){
@@ -110,7 +116,7 @@ Page({
     console.log(self.data.submitData)
   },
 
-  getLocation(){
+/*  getLocation(){
     const self=this;
     wx.getLocation({
       type: 'gcj02', //返回可以用于wx.openLocation的经纬度
@@ -125,7 +131,7 @@ Page({
       }
     });
     api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLocation',self)
-  },
+  },*/
 
   regionchange(e) {
     console.log(e.type)

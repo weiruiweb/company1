@@ -11,6 +11,7 @@ Page({
       menu_id:135,
     },
     startTime:'',
+    isShowMore:false,
     endTime:'',
     mainData:[],
     isFirstLoadAllStandard:['getMainData']
@@ -31,15 +32,15 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = api.cloneForm(self.data.searchItem)
-    postData.relation_user = wx.getStorageSync('employeeInfo').user_no;
-
+    postData.searchItem.relation_user = wx.getStorageSync('employeeInfo').user_no;
+    
     const callback =(res)=>{
     console.log(1000,res);
       if(res){
         self.data.mainData.push.apply(self.data.mainData,res.info.data)
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','none',1000);
+        self.data.isShowMore = false;
       };
       setTimeout(function()
       {
@@ -48,9 +49,11 @@ Page({
       },300);
       api.buttonCanClick(self,true);
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+      
       self.setData({
         web_mainData:self.data.mainData,
-      });
+        web_isShowMore:self.data.isShowMore
+      })
     };
     api.articleGet(postData,callback);
   },
@@ -65,6 +68,10 @@ Page({
   onReachBottom() {
     const self = this;
     if(!self.data.isLoadAll&&self.data.buttonCanClick){
+      self.data.isShowMore = true;
+      self.setData({
+        web_isShowMore:self.data.isShowMore
+      })
       self.data.paginate.currentPage++;
       self.getMainData();
     };

@@ -8,6 +8,7 @@
     "pages/entrance/caseDetail/caseDetail",
     "pages/entrance/userMessage/userMessage",
     "pages/entrance/userInfor/userInfor",
+    "pages/entrance/employeeLeave/employeeLeave",
     "pages/entrance/userProject/userProject",
     "pages/entrance/userProjectDetail/userProjectDetail",
     "pages/entrance/userProjectState/userProjectState",

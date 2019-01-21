@@ -1,0 +1,85 @@
+page{
+	width:100%;
+	min-height:100%;
+}
+.registerList{
+	margin-bottom:30rpx;
+}
+.register_tlt{
+	width:20%;
+}
+.register_cont{
+	width:76%;
+	height:300rpx;
+	border-radius:10rpx;
+	background:#f4f4f4;
+	padding:3%;
+}
+.register_cont image{
+	width:140rpx;
+	height:160rpx;
+}
+.submit_info{
+	width:94%;
+	margin-top:200rpx;
+}
+.registerList textarea{
+	
+}
+.register_tlt text{
+	color:#fa504b;
+}
+.register_type{
+	width:50%;
+	height:60rpx;
+}
+.choose_time{
+	width:86%;
+}
+.flex_no{
+	display:flex;
+}
+.register_type image{
+	width:16rpx;
+	height:14rpx;
+}
+.type_cont{
+	width:44%;
+	height:100%;
+	padding:0 2%;
+	border:solid 1px #e0e0e0;
+}
+.choose_time_box{
+	width:95%;
+	height:60rpx;
+	margin-bottom:20rpx;
+}
+.choose_time image{
+	width:14rpx;
+	height:16rpx;
+}
+.choose_time_box image{
+	width:30rpx;
+	height:30rpx;
+}
+.picker_in{
+	width:240rpx;
+	height:100%;
+}
+.picker_in picker{
+	width:100%;
+	height:100%;
+}
+picker{
+	width:100%;
+	height:100%;
+}
+.picker{
+	width:95%;
+	height:100%;
+}
+.picker_cont{
+	width:80%;
+	height:60rpx;
+	display:float:left;
+}

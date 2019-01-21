@@ -64,5 +64,13 @@
             </view>
         </view>
     </view>
+    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/employeeLeave/employeeLeave">
+        <view class="item_box flex" style="border-right:solid 1px #bfbfbf;">
+            <view style="width:100%;">
+                <image src="/images/icon7@2x.png"></image>
+                <view class="font28 color3">请假</view>
+            </view>
+        </view>
+    </view>
 </view>
 <view class="font22 color6 soleTech" style="text-align:center;">版权所有：西安纯粹科技有限公司</view>

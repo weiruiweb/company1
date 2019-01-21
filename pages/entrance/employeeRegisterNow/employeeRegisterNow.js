@@ -17,13 +17,17 @@ Page({
       behavior:1
     },
     isFirstLoadAllStandard:['getLocation'],
-    enableScroll:false
+    enableScroll:false,
+    buttonCanClick:true
   },
 
   onLoad() {
     const self = this;
-    api.commonInit(self);
+    //api.commonInit(self);
     /*self.getLocation();*/
+    self.setData({
+      web_buttonCanClick:self.data.buttonCanClick
+    });
   },
 
   submit(){

@@ -1,0 +1,36 @@
+<view class="w710">
+	<view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeeLeaveDetail/employeeLeaveDetail">
+	  	<view class="employeeLeft">
+		  	<view class="flexRowBetween" style="margin-bottom:40rpx;"> 
+		  		<view class="font24 color6">申请时间:2015-9-9</view>
+			    <view class="font24 color">状态:已申请</view>
+		    </view>
+		    <view class="font24 color6 avoidOverflow">去旅游去旅游去旅游去旅游去旅游去旅游去旅游去旅游去旅游</view>
+		</view>
+	    <view class="next_page">
+	      <image src="/images/next_page.jpg"></image>
+	    </view>
+	 </view>
+	 <view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeeLeaveDetail/employeeLeaveDetail">
+	  	<view class="employeeLeft">
+		  	<view class="flexRowBetween" style="margin-bottom:40rpx;"> 
+		  		<view class="font24 color6">申请时间:2015-9-9</view>
+			    <view class="font24 color">状态:已申请</view>
+		    </view>
+		    <view class="font24 color6 avoidOverflow">去旅游去旅游去旅游去旅游去旅游去旅游去旅游去旅游去旅游</view>
+		</view>
+	    <view class="next_page">
+	      <image src="/images/next_page.jpg"></image>
+	    </view>
+	 </view>
+</view>
+<view wx:if="{{web_isShowMore}}">
+    <view class="loading_box flexCenter">
+      <view class="loading3 loading3_1"></view>
+      <view class="loading3 loading3_2"></view>
+      <view class="loading3 loading3_3"></view>
+    </view>
+</view>
+<view class="register flex" bindtap="intoPath" data-path="/pages/entrance/employeeLeave/employeeLeave">
+  <view class="add color1">+</view>
+</view>

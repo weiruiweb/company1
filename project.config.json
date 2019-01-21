@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 81,
+			"current": 83,
 			"list": [
 				{
 					"id": 0,
@@ -524,7 +524,19 @@
 				{
 					"id": -1,
 					"name": "请假",
-					"pathName": "pages/entrance/employeeLeave/employeeLeave"
+					"pathName": "pages/entrance/employeeLeave/employeeLeave",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "请假",
+					"pathName": "pages/entrance/employeerequestRegister/employeerequestRegister",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "请假详细",
+					"pathName": "pages/entrance/employeeLeaveDetail/employeeLeaveDetail"
 				}
 			]
 		}

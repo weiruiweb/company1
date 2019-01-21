@@ -1,0 +1,51 @@
+<wxs module="func" src="../../../utils/func.wxs" />
+<view class="w710">
+  <view class="employeeRegister bgs">
+    <view class="flex_no registerList" style="margin-top:50rpx;">
+      <view class="font24 color3 register_tlt"><text>*</text>请假事由</view>
+      <view class="register_cont bg1 color6 font28">请假事由请假事由请假事由请假事由请假事由请假事由请假事由请假事由请假事由
+      </view>
+    </view>
+    <view class="flex_no registerList" style="margin-top:50rpx;">
+      <view class="font24 color3 register_tlt"><text>*</text>请假类型</view>
+      <view class="color6 font28 flex register_type">
+        <view class="type_cont flex" style="width:94%">
+          旅游
+        </view>
+      </view>
+    </view>
+    <view class="registerList flex_no" style="margin-top:50rpx;">
+      <view class="font24 color3 register_tlt"><text>*</text>起止时间</view>
+      <view class="choose_time">
+
+        <view class="color6 font28 flexRowBetween choose_time_box">
+          <view class="type_cont flexRowBetween">
+            2015-9-8 12:00
+          </view>
+
+          <view class="type_cont flexRowBetween">
+            2015-9-8 12:00
+          </view>
+        </view>
+        <view class="color6 font28 flexRowBetween choose_time_box">
+          <view class="type_cont flexRowBetween">
+            2015-9-8 12:00
+          </view>
+
+          <view class="type_cont flexRowBetween">
+            2015-9-8 12:00
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="flex registerList flex" style="margin-top:50rpx;">
+      <view class="font24 color3 register_tlt"><text>*</text>时长(小时)</view>
+      <view class="color6 font28 flex register_type">
+        <view class="type_cont flex" style="width:68%;">68</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="color font28" style="text-align: center;">
+  申请状态:通过审核
+</view>

@@ -1,8 +1,9 @@
+<wxs module="func" src="../../../utils/func.wxs" />
 <view class="w710">
   <view class="employeeRegister bgs">
     <view class="flex_no registerList" style="margin-top:50rpx;">
       <view class="font24 color3 register_tlt"><text>*</text>请假事由</view>
-      <textarea class="register_cont color6 font28" value="">
+      <textarea class="register_cont color6 font28" value="{{web_submitData.description}}" data-key="description" bindblur="changeBind">
       </textarea>
     </view>
     <view class="flex_no registerList" style="margin-top:50rpx;">
@@ -11,7 +12,7 @@
         <view class="type_cont" style="width:94%">
           <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
             <view class="flex" style="width:100%;height:60rpx;">
-              <view class="picker flex">{{array[index]}}</view>
+              <view class="picker flex">{{array[web_index]}}</view>
               <image src="/images/down.png"></image>
             </view>
           </picker>
@@ -21,27 +22,30 @@
     <view class="registerList flex_no" style="margin-top:50rpx;">
       <view class="font24 color3 register_tlt"><text>*</text>起止时间</view>
       <view class="choose_time">
+
         <view class="color6 font28 flexRowBetween choose_time_box">
           <view class="type_cont flexRowBetween">
-            <picker mode="date" value="{{web_endDate}}" end="2019-01-12" end="2050-09-01" bindchange="changeEndDate" class="flex">
+            <picker mode="date" value="{{web_startDate}}" start="{{func.timestampToTimeTwo(web_today)}}" end="2050-09-01" bindchange="changeStartDate" class="flex">
               <view class="picker_in flexRowBetween">
-                <view class="picker_cont flex" style="width:80%;">{{web_endDate}}</view>
+                <view class="picker_cont flex" style="width:80%;">{{web_startDate}}</view>
                 <image src="/images/icon@2x.png"></image>
               </view>
             </picker>
           </view>
+
           <view class="type_cont flexRowBetween">
-            <picker mode="time" value="{{web_endTime}}"  start="00:00"  end="24:00"  bindchange="changeEndTime" class="flex">
-            <view class="picker_in flexRowBetween">
-               <view class="picker_cont flex" style="width:80%;">{{web_endTime}}</view>
-              <image src="/images/icon@2x.png"></image>
+            <picker mode="time" value=""  start="00:00"  end="24:00"  bindchange="changeStartTime" class="flex">
+              <view class="picker_in flexRowBetween">
+                <view class="picker_cont flex" style="width:80%;">{{web_startTime}}</view>
+                <image src="/images/icon@2x.png"></image>
+              </view>
+            </picker>
             </view>
-          </picker>
-          </view>
         </view>
+
         <view class="color6 font28 flexRowBetween choose_time_box">
           <view class="type_cont flexRowBetween">
-            <picker mode="date" value="{{web_endDate}}" end="2019-01-12" end="2050-09-01" bindchange="changeEndDate" class="flex">
+            <picker mode="date" value="{{web_endDate}}" start="{{func.timestampToTimeTwo(web_today)}}" end="2050-09-01" bindchange="changeEndDate" class="flex">
               <view class="picker_in flexRowBetween">
                 <view class="picker_cont flex" style="width:80%;">{{web_endDate}}</view>
                 <image src="/images/icon@2x.png"></image>
@@ -49,7 +53,7 @@
             </picker>
           </view>
           <view class="type_cont flexRowBetween">
-            <picker mode="time" value="{{web_endTime}}"  start="00:00"  end="24:00"  bindchange="changeEndTime" class="flex">
+            <picker mode="time" value=""  start="00:00"  end="24:00"  bindchange="changeEndTime" class="flex">
             <view class="picker_in flexRowBetween">
                <view class="picker_cont  flex" style="width:80%;">{{web_endTime}}</view>
               <image src="/images/icon@2x.png"></image>
@@ -62,11 +66,11 @@
     <view class="flex registerList flex" style="margin-top:50rpx;">
       <view class="font24 color3 register_tlt"><text>*</text>时长(小时)</view>
       <view class="color6 font28 flex register_type">
-        <input class="type_cont" style="width:68%;"></input>
+        <input class="type_cont" style="width:68%;"  value="{{web_submitData.keywords}}" data-key="keywords" bindblur="changeBind"></input>
       </view>
     </view>
   </view>
 </view>
 <form  report-submit="true">
-  <button  formType="submit"  style="line-height:80rpx;" class="submit_info">提交</button>
+  <button  formType="submit"  style="line-height:80rpx;" class="submit_info" bindtap="{{web_buttonCanClick?'submit':''}}">提交</button>
 </form>

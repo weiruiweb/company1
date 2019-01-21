@@ -20,6 +20,19 @@ var timestampToTime = function(timestamp) {
 
 }
 
+var timestampToTimeTwo = function(timestamp) {
+    
+    timestamp = parseInt(timestamp);
+    
+    var format = getDate(timestamp).getFullYear()+'-'+(getDate(timestamp).getMonth()+1)+'-'+getDate(timestamp).getDate()+'  ';
+
+
+
+    return format;
+
+}
+
+
 var timeToTimestamp= function(format){
     
     var mydata=format.replace('-', '/'); 
@@ -122,6 +135,6 @@ module.exports = {
   getArrayByTarget: getArrayByTarget,
   inArray:inArray,
   shortString:shortString
- 
+  timestampToTimeTwo:timestampToTimeTwo
  
 };

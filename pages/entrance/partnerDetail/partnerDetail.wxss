@@ -1,6 +1,7 @@
 .partnerInfor{
   width:100%;
   height:330rpx;
+  position:relative;
 }
 .partnerIn{
   width:100%;
@@ -116,4 +117,15 @@ width:135rpx;
 }
 .user_name text{
   margin-left:30rpx;
+}
+.comeback{
+  width:50rpx;
+  height:50rpx;
+  position:absolute;
+  left:0rpx;
+  top:0rpx;
+}
+.comeback image{
+  width:100%;
+  height:100%;
 }

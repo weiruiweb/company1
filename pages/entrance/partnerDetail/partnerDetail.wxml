@@ -1,6 +1,9 @@
 <!--user.wxml-->
 <view class="w710">
 	<view class="partnerInfor flex">
+		<view class="comeback" bindtap="intoPath" data-path="/pages/entrance/index/index">
+			<image src="/images/comeBack.png"></image>
+		</view>
 		<view class="partnerIn">
 			<view class="user_img">
               <image src="{{web_mainData.mainImg&&web_mainData.mainImg[0]?web_mainData.mainImg[0].url:''}}"></image>

@@ -213,5 +213,8 @@ Page({
     const self = this;
     api.pathTo(api.getDataSet(e,'path'),'redi');
   }, 
-  
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
+  },
 })

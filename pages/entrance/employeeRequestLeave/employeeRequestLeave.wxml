@@ -1,29 +1,24 @@
 <view class="w710">
-	<view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeeLeaveDetail/employeeLeaveDetail">
-	  	<view class="employeeLeft">
-		  	<view class="flexRowBetween" style="margin-bottom:40rpx;"> 
-		  		<view class="font24 color6">申请时间:2015-9-9</view>
-			    <view class="font24 color">状态:已申请</view>
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeeLeaveDetail/employeeLeaveDetail?id={{item.id}}">
+		  	<view class="employeeLeft">
+			  	<view class="flexRowBetween" style="margin-bottom:40rpx;"> 
+			  		<view class="font24 color6">申请时间:{{item.create_time}}</view>
+				    <view class="font24 color" wx:if="{{item.behavior==1}}">状态:已申请</view>
+				    <view class="font24 color" wx:if="{{item.behavior==2}}">状态:部门审核</view>
+				    <view class="font24 color" wx:if="{{item.behavior==3}}">状态:人事审核</view>
+				    <view class="font24 color" wx:if="{{item.behavior==4}}">状态:公司审核</view>
+			
+			    </view>
+			    <view class="font24 color6 avoidOverflow">{{item.description}}</view>
+			</view>
+		    <view class="next_page">
+		      <image src="/images/next_page.jpg"></image>
 		    </view>
-		    <view class="font24 color6 avoidOverflow">去旅游去旅游去旅游去旅游去旅游去旅游去旅游去旅游去旅游</view>
-		</view>
-	    <view class="next_page">
-	      <image src="/images/next_page.jpg"></image>
-	    </view>
-	 </view>
-	 <view class="employeeRegister flexRowBetween bgs" bindtap="intoPath" data-path="/pages/entrance/employeeLeaveDetail/employeeLeaveDetail">
-	  	<view class="employeeLeft">
-		  	<view class="flexRowBetween" style="margin-bottom:40rpx;"> 
-		  		<view class="font24 color6">申请时间:2015-9-9</view>
-			    <view class="font24 color">状态:已申请</view>
-		    </view>
-		    <view class="font24 color6 avoidOverflow">去旅游去旅游去旅游去旅游去旅游去旅游去旅游去旅游去旅游</view>
-		</view>
-	    <view class="next_page">
-	      <image src="/images/next_page.jpg"></image>
-	    </view>
-	 </view>
+		 </view>
+	 </block>
 </view>
+
 <view wx:if="{{web_isShowMore}}">
     <view class="loading_box flexCenter">
       <view class="loading3 loading3_1"></view>

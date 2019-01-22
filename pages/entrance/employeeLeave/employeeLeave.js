@@ -15,7 +15,8 @@ Page({
         keywords:'',
         class:'',
         behavior:1,
-        description:''
+        description:'',
+        type:5
       },
       buttonCanClick:true
   },
@@ -120,7 +121,6 @@ Page({
     postData.tokenFuncName = 'getEmployeeToken';
     postData.data = {};
     postData.data = api.cloneForm(self.data.submitData);
-    postData.data.behavior = 0;
     const callback = (data)=>{
       if(data.solely_code==100000){
         api.showToast('申请成功','none',1000,function(){

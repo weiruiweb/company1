@@ -81,5 +81,5 @@ picker{
 .picker_cont{
 	width:80%;
 	height:60rpx;
-	display:float:left;
+	display:flex;
 }

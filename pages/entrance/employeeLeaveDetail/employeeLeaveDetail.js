@@ -7,123 +7,57 @@ const token = new Token();
 Page({
   data: {
       
-      index:0,
-      array: ['病假', '事假','调休','年假','婚假','丧假','产假'],
-      submitData:{
-        leave_time:'',
-        back_time:'',
-        keywords:'',
-        class:'',
-        behavior:1,
-        description:''
-      },
-      buttonCanClick:true
+    isFirstLoadAllStandard:['getMainData']
   },
 
-  onLoad() {
+  onLoad(options) {
     const self = this;
-    self.data.today = new Date(new Date().toLocaleDateString()).getTime();
-    console.log(self.data.selectData)
+    api.commonInit(self);
     self.setData({
-      web_index:self.data.index,
-      web_today:self.data.today,
-      web_buttonCanClick:self.data.buttonCanClick
-    })
+      web_behavior:options.behavior
+    });
+    self.data.id = options.id;
+    self.getMainData()
   },
 
-  bindPickerChange(e) {
-    const self = this;
-    console.log(parseInt(e.detail.value)+1);
-    var index = e.detail.value;
-    self.data.submitData.class = parseInt(e.detail.value)+1;
-    this.setData({
-      web_index: e.detail.value
-    })
-    console.log('self.data.submitData',self.data.submitData)
-  },
 
-  changeStartDate(e){
+  getMainData(){
     const self = this;
-    self.data.startDate = e.detail.value;
-    self.setData({
-      web_startDate:self.data.startDate
-    })
-  },
-
-  changeStartTime(e) {
-    const self = this;
-  
-    if(self.data.startDate){
-      self.data.leave_time = self.data.startDate+' '+e.detail.value;
-      self.data.submitData.leave_time = api.timeToTimestamp(self.data.leave_time)*1000;
-      console.log(self.data.submitData.leave_time)
-      self.setData({
-        web_startTime:e.detail.value
-      })
-    }else{
-      api.showToast('请选择起始日期','none',1000)
+    const postData = {};
+    postData.tokenFuncName = 'getEmployeeToken';
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.solely_thirdapp_id,
+      id:self.data.id
     };
-    self.computHour()
-  },
-
-  changeEndDate(e){
-    const self = this;
- 
-    self.data.endDate = e.detail.value;
-    self.setData({
-      web_endDate:self.data.endDate
-    })
-  },
-
-  changeEndTime(e) {
-    const self = this;
-
-    if(self.data.endDate){
-      self.data.back_time = self.data.endDate+' '+e.detail.value;
-      self.data.submitData.back_time = api.timeToTimestamp(self.data.back_time)*1000;
-      console.log(self.data.submitData.back_time)
+    const callback = (res)=>{ 
+      if(res.info.data.length>0){
+        self.data.mainData=res.info.data[0]
+      }else{
+        api.showToast('数据错误','none')
+      };
+      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+      self.data.isShowMore = false;
       self.setData({
-        web_endTime:e.detail.value
-      })
-    }else{
-      api.showToast('请选择结束日期','none',1000)
-    }
-    self.computHour()
-  },
-
-  computHour(){
-    const self = this;
-    if(self.data.submitData.back_time&&self.data.submitData.leave_time){
-      self.data.submitData.keywords = (self.data.submitData.back_time-self.data.submitData.leave_time)/3600000
+        web_mainData:self.data.mainData,
+      }) 
     };
-    self.setData({
-      web_submitData:self.data.submitData
-    })
+    api.messageGet(postData,callback);
   },
 
-  submit(){
-    const self = this;
-    api.buttonCanClick(self);
-    const pass = api.checkComplete(self.data.submitData);
-    console.log('pass',pass);
-    if(pass){
-      self.messageAdd(); 
-   }else{
-      api.buttonCanClick(self,true)
-      api.showToast('请补全信息','none') 
-   };
-  },
-
-  messageAdd(){
+  messageUpdate(){
     const self =this;
     const postData = {};
     postData.tokenFuncName = 'getEmployeeToken';
-    postData.data = {};
-    postData.data = api.cloneForm(self.data.submitData);
-    postData.data.behavior = 0;
+    postData.searchItem={
+      id:self.data.id,
+      user_type:1
+    };
+    postData.data = {
+      behavior:3
+    };
     const callback = (data)=>{
       if(data.solely_code==100000){
-        api.showToast('申请成功','none',1000,function(){
+        api.showToast('审批成功','none',1000,function(){
           setTimeout(function(){
             wx.navigateBack({
               delta:1
@@ -131,23 +65,11 @@ Page({
           },1000);  
         }) 
       }else{
-        api.showToast(data.msg,'none',1000)
+        api.showToast(data.msg,'none')
       }
       api.buttonCanClick(self,true)
     };
-    api.messageAdd(postData,callback);
+    api.messageUpdate(postData,callback);
   },
-
-  changeBind(e){
-    const self = this;
-    if(api.getDataSet(e,'value')){
-      self.data.submitData[api.getDataSet(e,'key')] = api.getDataSet(e,'value');
-    }else{
-      api.fillChange(e,self,'submitData');
-    };
-    self.setData({
-      web_submitData:self.data.submitData,
-    }); 
-    console.log(self.data.submitData)
-  },
+  
 })

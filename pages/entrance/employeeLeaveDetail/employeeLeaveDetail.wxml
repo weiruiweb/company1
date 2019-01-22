@@ -3,14 +3,33 @@
   <view class="employeeRegister bgs">
     <view class="flex_no registerList" style="margin-top:50rpx;">
       <view class="font24 color3 register_tlt"><text>*</text>请假事由</view>
-      <view class="register_cont bg1 color6 font28">请假事由请假事由请假事由请假事由请假事由请假事由请假事由请假事由请假事由
+      <view class="register_cont bg1 color6 font28">{{web_mainData.description}}
       </view>
     </view>
     <view class="flex_no registerList" style="margin-top:50rpx;">
       <view class="font24 color3 register_tlt"><text>*</text>请假类型</view>
       <view class="color6 font28 flex register_type">
-        <view class="type_cont flex" style="width:94%">
-          旅游
+ 
+        <view class="type_cont flex" style="width:94%" wx:if="{{web_mainData.class==1}}">
+          病假
+        </view>
+        <view class="type_cont flex" style="width:94%" wx:if="{{web_mainData.class==2}}">
+          事假
+        </view>
+        <view class="type_cont flex" style="width:94%" wx:if="{{web_mainData.class==3}}">
+          调休
+        </view>
+        <view class="type_cont flex" style="width:94%" wx:if="{{web_mainData.class==4}}">
+          年假
+        </view>
+        <view class="type_cont flex" style="width:94%" wx:if="{{web_mainData.class==5}}">
+          婚假
+        </view>
+        <view class="type_cont flex" style="width:94%" wx:if="{{web_mainData.class==6}}">
+          丧假
+        </view>
+        <view class="type_cont flex" style="width:94%" wx:if="{{web_mainData.class==7}}">
+          产假
         </view>
       </view>
     </view>
@@ -20,32 +39,32 @@
 
         <view class="color6 font28 flexRowBetween choose_time_box">
           <view class="type_cont flexRowBetween">
-            2015-9-8 12:00
+            {{func.timestampToTime(web_mainData.leave_time)}}
           </view>
 
-          <view class="type_cont flexRowBetween">
-            2015-9-8 12:00
-          </view>
         </view>
         <view class="color6 font28 flexRowBetween choose_time_box">
           <view class="type_cont flexRowBetween">
-            2015-9-8 12:00
+            {{func.timestampToTime(web_mainData.back_time)}}
           </view>
 
-          <view class="type_cont flexRowBetween">
-            2015-9-8 12:00
-          </view>
+
         </view>
       </view>
     </view>
     <view class="flex registerList flex" style="margin-top:50rpx;">
       <view class="font24 color3 register_tlt"><text>*</text>时长(小时)</view>
       <view class="color6 font28 flex register_type">
-        <view class="type_cont flex" style="width:68%;">68</view>
+        <view class="type_cont flex" style="width:68%;">{{web_mainData.keywords}}</view>
       </view>
     </view>
   </view>
 </view>
-<view class="color font28" style="text-align: center;">
-  申请状态:通过审核
-</view>
+
+<view class="color font28" style="text-align: center;" wx:if="{{web_mainData.behavior==1}}">状态:已申请</view>
+<view class="color font28" style="text-align: center;" wx:if="{{web_mainData.behavior==2}}">状态:部门审核</view>
+<view class="color font28" style="text-align: center;" wx:if="{{web_mainData.behavior==3}}">状态:人事审核</view>
+<view class="color font28" style="text-align: center;" wx:if="{{web_mainData.behavior==4}}">状态:公司审核</view>
+
+
+  <button  formType="submit"  bindtap="{{web_mainData.behavior==3?'':'messageUpdate'}}" style="line-height:80rpx;margin-top:100rpx;" class="submit_info" wx:if="{{web_behavior==4}}">{{web_mainData.behavior==3?'已审核':'确认审核'}}</button>

@@ -3,7 +3,7 @@ var timestampToTime = function(timestamp) {
     
     timestamp = parseInt(timestamp);
     
-    var format = getDate(timestamp).getFullYear()+'/'+(getDate(timestamp).getMonth()+1)+'/'+getDate(timestamp).getDate()+'  ';
+    var format = getDate(timestamp).getFullYear()+'-'+(getDate(timestamp).getMonth()+1)+'-'+getDate(timestamp).getDate()+'  ';
 
     if(getDate(timestamp).getHours()<10){
     	var format = format + '0' + getDate(timestamp).getHours();

@@ -14,19 +14,22 @@ Page({
   onLoad(options){
     const self = this;
     api.commonInit(self);
-
+    if(options.behavior){
+      self.data.behavior = options.behavior
+    }
   },
 
   onShow(){
     const self = this;
-    self.getMainData(true);
+    self.getMainData(true,self.data.behavior);
   },
 
-  getMainData(isNew){
+  getMainData(isNew,behavior){
     const self = this;
     if(isNew){
       api.clearPageIndex(self)
     };
+    console.log('behavior',behavior)
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName = 'getEmployeeToken';
@@ -35,6 +38,9 @@ Page({
       //user_no:wx.getStorageSync('employeeInfo').user_no,
       type:5,
     };
+    if(behavior!=4){
+      postData.searchItem.user_no=wx.getStorageSync('employeeInfo').user_no
+    }
     const callback = (res)=>{ 
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data); 
@@ -45,6 +51,7 @@ Page({
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.data.isShowMore = false;
       self.setData({
+        web_behavior:self.data.behavior,
         web_mainData:self.data.mainData,
         web_isShowMore:self.data.isShowMore
       })

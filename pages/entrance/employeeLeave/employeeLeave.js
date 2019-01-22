@@ -121,6 +121,7 @@ Page({
     postData.tokenFuncName = 'getEmployeeToken';
     postData.data = {};
     postData.data = api.cloneForm(self.data.submitData);
+    postData.data.user_no = wx.getStorageSync('employeeInfo').user_no;
     const callback = (data)=>{
       if(data.solely_code==100000){
         api.showToast('申请成功','none',1000,function(){

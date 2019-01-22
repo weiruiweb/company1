@@ -76,8 +76,7 @@ Page({
     postData.searchItem ={
       thirdapp_id:app.globalData.solely_thirdapp_id,
       id:self.data.id,
-      user_type:2,
-
+      user_type:['in',[1,2]],
     };
     postData.getAfter = {
       userOne:{

@@ -29,7 +29,7 @@ Page({
     postData.searchItem ={
       thirdapp_id:app.globalData.solely_thirdapp_id,
       id:self.data.id,
-      user_type:['in',[1,2]]
+      user_type:['in',[0,1,2]]
     };
 
     const callback = (res)=>{

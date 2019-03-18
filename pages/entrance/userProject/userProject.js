@@ -38,7 +38,7 @@ Page({
         postData.searchItem = {
           thirdapp_id:getApp().globalData.solely_thirdapp_id,
           client_no:wx.getStorageSync('entrance_info').user_no,
-          user_type:1
+          user_type:['in',[0,1,2]]
         };
         const callback =(res)=>{
           if(res.info.data.length>0){

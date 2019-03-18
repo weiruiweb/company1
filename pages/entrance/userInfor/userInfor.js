@@ -10,9 +10,9 @@ Page({
       phone:'',
       address:'',
       email:'', 
-      level:'',
+  /*    level:'',
       passage1:'',
-      idCard:'' 
+      idCard:'' */
     },
     isFirstLoadAllStandard:['userInfoGet'],
   },
@@ -38,9 +38,9 @@ Page({
         self.data.sForm.phone = res.info.data[0].info.phone; 
         self.data.sForm.address = res.info.data[0].info.address;
         self.data.sForm.email = res.info.data[0].info.email;
-        self.data.sForm.level = res.info.data[0].info.level;
+        /* self.data.sForm.level = res.info.data[0].info.level;
         self.data.sForm.passage1 = res.info.data[0].info.passage1;
-        self.data.sForm.idCard = res.info.data[0].info.idCard 
+        self.data.sForm.idCard = res.info.data[0].info.idCard */
       };
       self.data.mainData = res;
      

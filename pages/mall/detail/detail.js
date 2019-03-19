@@ -31,7 +31,7 @@ Page({
     buttonClicked:true,
     isInCollectData:false,
     is_collect:false,
-    isFirstLoadAllStandard:['getMainData','getMessageData'],
+    isFirstLoadAllStandard:['getMainData'],
     messageData:[],
   },
 
@@ -97,7 +97,7 @@ Page({
     console.log(13,self.data.id);
     postData.getBefore={
       sku:{
-        tableName:'sku',
+        tableName:'Sku',
         searchItem:{
           id:['in',[self.data.id]]
         },
@@ -111,7 +111,7 @@ Page({
     };
     postData.getAfter={
       sku:{
-        tableName:'sku',
+        tableName:'Sku',
         middleKey:'product_no',
         key:'product_no',
         condition:'=',
@@ -152,7 +152,7 @@ Page({
       console.log('getMainDataweb_skuData',self.data.skuLabelData);
 
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
-      self.getMessageData();
+      //self.getMessageData();
       self.setData({
         web_choosed_skuData:self.data.choosed_skuData,
         web_skuLabelData:self.data.skuLabelData,
@@ -303,18 +303,21 @@ Page({
        
         const c_postData = {
           tokenFuncName:'getMallToken',
-          sku:[
+          orderList:[
             {
-              id:self.data.choosed_skuData.id,
-              count:self.data.count
+              sku:[
+                {
+                  id:self.data.choosed_skuData.id,
+                  count:self.data.count
+                }
+              ],
+              type:1
             }
           ],
-          type:1
-
         };
         if(self.data.choosed_skuData.is_group==1){
           c_postData.isGroup=true;
-          c_postData.type = 5
+          c_postData.type = 5;
         };
         if(self.data.group_no&&self.data.group_no!="undefined"){
           c_postData.group_no=self.data.group_no
@@ -356,7 +359,7 @@ Page({
     };
     postData.getAfter = {
       user:{
-        tableName:'user',
+        tableName:'User',
         middleKey:'user_no',
         key:'user_no',
         searchItem:{

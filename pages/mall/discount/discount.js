@@ -10,7 +10,6 @@ Page({
     mainData:[],
     searchItem:{
       thirdapp_id:getApp().globalData.mall_thirdapp_id,
-      type:3
     },
     isShowMore:false,
     img:"background:url('/images/small.png')",
@@ -45,7 +44,7 @@ Page({
       });   
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);  
     };
-    api.productGet(postData,callback);
+    api.couponGet(postData,callback);
   },
 
   addOrder(e){
@@ -62,17 +61,9 @@ Page({
     var limit = api.getDataSet(e,'limit');
     const postData = {
       tokenFuncName:'getMallToken',
-      product:[
-        {id:id,count:1}
-      ],
-      pay:{score:0},
-      type:type,
-      data:{
-        end_time:new Date().getTime() + duration,
-        limit:limit,
-        discount:discount,
-        standard:standard,
-      }
+      coupon_id:id,
+      pay:{score:10},
+      
     };
     console.log('postData',postData)
     const callback = (res)=>{
@@ -84,7 +75,7 @@ Page({
       }
       api.buttonCanClick(self,true);
     };
-    api.addOrder(postData,callback);
+    api.CouponAdd(postData,callback);
 
   },
 

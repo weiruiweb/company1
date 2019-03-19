@@ -43,7 +43,7 @@ Page({
     };
     postData.getBefore = {
       caseData:{
-        tableName:'label',
+        tableName:'Label',
         searchItem:{
           title:['=',['案例展示']],
         },

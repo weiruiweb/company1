@@ -144,7 +144,7 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName = 'getMallToken';
-    postData.searchItem = api.cloneForm(self.data.searchItemTwo)
+    //postData.searchItem = api.cloneForm(self.data.searchItemTwo)
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.couponData.push.apply(self.data.couponData,res.info.data);
@@ -156,7 +156,7 @@ Page({
       });  
       self.countPrice();
     };
-    api.orderGet(postData,callback);
+    api.UserCouponGet(postData,callback);
 
   },
 
@@ -168,7 +168,7 @@ Page({
     console.log('findCoupon',findCoupon)
     if(findCoupon){
       findCoupon = findCoupon[1];
-      var findSameCoupon = api.findItemsInArray(self.data.pay.coupon,'product_id',findCoupon.products[0].snap_product.id);
+      var findSameCoupon = api.findItemsInArray(self.data.pay.coupon,'product_id',id);
     }else{
       api.showToast('优惠券错误','error');
       return;
@@ -184,10 +184,10 @@ Page({
         api.showToast('叠加使用超限','error');
         return;
       };
-      if(findCoupon.type==3){
+      if(findCoupon.type==1){
         var couponPrice = findCoupon.discount;
         console.log('findCoupon.discount',findCoupon.discount)
-      }else if(findCoupon.type==4){
+      }else if(findCoupon.type==2){
         var couponPrice = findCoupon.discount*self.data.price;
       };
       if(parseFloat(couponPrice)+parseFloat(self.data.couponTotalPrice)>parseFloat(self.data.price)){
@@ -196,7 +196,6 @@ Page({
       self.data.pay.coupon.push({
         id:id,
         price:couponPrice,
-        product_id:findCoupon.products[0].snap_product.id
       });
     };
     self.countPrice();
@@ -206,7 +205,7 @@ Page({
     const self = this;
     
 
-if(api.getDataSet(e,"key")=='score'){
+    if(api.getDataSet(e,"key")=='score'){
       var testScore = api.getDataSet(e,"score");
       var orderitemid = api.getDataSet(e,"orderitemid");
   

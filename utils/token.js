@@ -47,7 +47,7 @@ class Token {
             var params = {
                 token_name:'mall_token',
                 info_name:'mall_info',
-                thirdapp_id:23
+                thirdapp_id:2
             };
             this.getUserInfo(params,callback);
         }else{
@@ -204,7 +204,7 @@ class Token {
                 };
                 console.log('postData',postData)
                 wx.request({
-                    url: 'https://www.solelycloud.com/api/public/index.php/api/v1/Base/ProgrameToken/get',
+                    url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/ProgramToken/get',
                     method:'POST',
                     data:postData,
                     success:function(res){

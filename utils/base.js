@@ -12,10 +12,13 @@ class Base{
     request(params) {
         var that = this;
         getApp().globalData.buttonClick = true;
-        var baseRestUrl = 'https://www.solelycloud.com/api/public/index.php/api/v1/';
+        //var baseRestUrl = 'https://www.solelycloud.com/api/public/index.php/api/v1/';
+        var baseRestUrl = 'https://api.solelycloud.com/api/public/index.php/api/v1/';
         var url=baseRestUrl + params.url;
         const callback = (res)=>{
-            that.request(params);
+
+            that.request(params);   
+            
         };
 
         if(params.data.tokenFuncName){

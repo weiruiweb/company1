@@ -454,6 +454,54 @@ class Api extends Base{
         this.request(allParams);
     }
 
+    couponGet(param,callback){
+        var allParams ={
+            url:'Common/Coupon/get',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }
+
+    UserCouponGet(param,callback){
+        var allParams ={
+            url:'Common/UserCoupon/get',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }
+
+    CouponPay(param,callback){
+        var allParams ={
+            url:'Base/CouponPay/couponPay',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }
+
+    CouponAdd(param,callback){
+        var allParams ={
+            url:'Func/Coupon/addCoupon',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    } 
+
 
     userInfoGet(param,callback){
         var allParams ={

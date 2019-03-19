@@ -6,11 +6,12 @@ const token = new Token();
 
 
 Page({
+  
   data: {
     labelData:[],
     mainData:[],
     index:0,
-    currentId:32,
+    currentId:18,
     isLoadAll:false,
     sForm:{
       item:''

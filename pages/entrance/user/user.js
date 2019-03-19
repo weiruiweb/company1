@@ -23,6 +23,7 @@ Page({
   
 
   userGet(){
+    
     const self = this;
     const postData = {};
     postData.tokenFuncName = 'getEntranceToken';
@@ -34,9 +35,9 @@ Page({
       self.setData({
         web_mainData:self.data.mainData,
       });
-      
     };
     api.userGet(postData,callback);
+
   },
 
   submit(e){

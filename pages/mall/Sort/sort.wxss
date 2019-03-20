@@ -21,17 +21,25 @@ page{
 	font-size:24rpx;}
 .made_product{
 
-	height:86vh
+	
 }
 .made_sort{
 	width:27%;
 	text-align:center;
 	background:#fff;
 	position:fixed;
-	left:0
+	left:0;
+	height:86vh
+}
+::-webkit-scrollbar
+{
+width: 0;
+height: 0;
+color: transparent;
 }
 .made_cont{
 	width:70%;
+	height:86vh;
 	background:#fff;}
 .madeSort{
 	height:auto;

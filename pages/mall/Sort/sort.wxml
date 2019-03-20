@@ -10,7 +10,7 @@
 		<view style="width:27%;height:100%"></view>
 		
 		<view class="made_sort" style="overflow: scroll;">
-			<block wx:for="{{web_labelData}}" wx:key="id">
+			<block wx:for="{{web_mainData}}" wx:key="id">
 				<view class="madeSort">
 					<view class="left_bar {{web_index == index?'made_bg':''}}" data-index="{{index}}" data-id="{{item.child[0].id}}" catchtap="{{web_buttonCanClick?'menuTap':''}}">
 						<view class="lsort_LeftAll">
@@ -19,7 +19,7 @@
 						
 						<view class="small_sort">
 							<view class="small_txt">
-								<block wx:for="{{web_labelData[index].child}}" wx:for-item="c_item" wx:for-index="c_index">
+								<block wx:for="{{web_mainData[index].child}}" wx:for-item="c_item" wx:for-index="c_index">
 									<text class="text2" catchtap="{{web_buttonCanClick?'menuTap':''}}"  data-id="{{c_item.id}}" data-index="{{index}}" style="{{fonts[2].font}};{{web_currentId == c_item.id?'color:#39bddf':''}}">{{c_item.title}}</text>
 								</block>
 							</view>
@@ -32,22 +32,24 @@
 		
 		
 		<view class="made_cont">
-			<view class="flexRowBetween made_tlt">
-				<view class="made_name">{{web_labelData[web_index].title}}-{{web_labelData[web_index].child[web_currentId].title}}</view>
-			</view>	
-			<view class="made_case">
-				<block wx:for="{{web_mainData}}" wx:key="id">
-					<view class="made_item" bindtap="intoPath" data-path="/pages/mall/gongzhonghao/gongzhonghao?id={{item.id}}">
-						<image src="{{item.mainImg[0].url}}"></image>
-						<view class="product_name" style="{{fonts[2].font}}">{{item.title}}</view>
-					</view>
-				</block>
+			<view style="height:86vh" wx:for="{{web_right_mainData}}" wx:key="id">
+				<view class="flexRowBetween made_tlt">
+					<view class="made_name">{{item.title}}</view>
+				</view>	
+				<view class="made_case">
+					<block wx:for="{{web_right_mainData[index].child}}" wx:for-item="c_item" wx:for-index="c_index">
+						<view class="made_item" bindtap="intoPath" data-path="/pages/mall/gongzhonghao/gongzhonghao?id={{item.id}}">
+							<image src="{{c_item.mainImg[0].url}}"></image>
+							<view class="product_name" style="{{fonts[2].font}}">{{c_item.title}}</view>
+						</view>
+					</block>
+				</view>
 			</view>
 		</view>
 	</view>
 </view>
 <view style="height:110rpx"></view>
-<view class="navbar">
+<view class="navbar" style="height:9vh">
       <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pages/mall/Index/index">
           <view class="nav_img" style="{{img}};width:44rpx;height:42rpx;background-position: -21px -94rpx;">
           </view>
@@ -70,7 +72,7 @@
     </view>
 </view>
 
-<view class="navbar">
+<view class="navbar" style="height:9vh">
       <view class="navbar_item" bindtap="intoPathRedi" data-path="/pages/mall/Index/index">
         <view style="height:50%;overflow: hidden;margin-top: 14rpx" class="flex">
           <view class="nav_img scale2" style="{{img}};width:44px;height:42px;background-position: -138px -94px;">

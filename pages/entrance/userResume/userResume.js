@@ -17,7 +17,7 @@ Page({
       content:'',
       description:'',
       relation_id:'',
-      class:''
+      /* class:'' */
     }, 
     isFirstLoadAllStandard:['getMainData','getPositonData'],
 

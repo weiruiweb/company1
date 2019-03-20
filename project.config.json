@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 84,
+			"current": 85,
 			"list": [
 				{
 					"id": 0,
@@ -544,6 +544,13 @@
 					"name": "商品详情",
 					"pathName": "pages/mall/detail/detail",
 					"query": "id=20",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/mall/Sort/sort",
+					"query": "",
 					"scene": null
 				}
 			]

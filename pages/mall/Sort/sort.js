@@ -88,7 +88,7 @@ Page({
       postData.searchItem.parentid = currentId
     }else{
       postData.searchItem.parentid = self.data.currentId
-    }
+    };
 
     const callback = (res)=>{
       if(res.info.data.length>0){
@@ -97,6 +97,9 @@ Page({
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');
       };
+      var left_mainData = [];
+      var right_mainData = [];
+      
       api.buttonCanClick(self,true);
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
       self.setData({

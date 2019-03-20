@@ -33,7 +33,7 @@ Page({
       web_index:self.data.index,
       web_currentId:self.data.currentId
     });
-    self.getMainData()
+   self.getMainData()
   },
 
 
@@ -119,6 +119,19 @@ Page({
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.labelData.push.apply(self.data.labelData,res.info.data);
+/* 				for (var i = 0; i < self.data.labelData.length; i++) {
+					if(self.data.labelData[i].child.length>0){
+						for (var j = 0; j < self.data.labelData[i].child.length; j++) {
+							console.log(self.data.labelData[i].child[j])
+						  if(self.data.labelData[i].child[j].child.length>0){
+								for (var k = 0; k < self.data.labelData[i].child[j].child.length; k++) {
+									self.data.mainData.push(self.data.labelData[i].child[j].child[k])
+								}
+							}
+						}
+					}
+				} */
+				console.log(self.data.mainData)
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');

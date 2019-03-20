@@ -3,9 +3,13 @@
 	<view class="search">
 		<input placeholder="搜索商品名称" bindblur="search" data-key="item"></input>
 	</view>
-
+	<view style="width:100%;height:5vh;padding:22rpx 24rpx 22rpx;"></view>
+	
 	<view class="made_product" style="display:flex">
-		<view class="made_sort">
+
+		<view style="width:27%;height:100%"></view>
+		
+		<view class="made_sort" style="overflow: scroll;">
 			<block wx:for="{{web_labelData}}" wx:key="id">
 				<view class="madeSort">
 					<view class="left_bar {{web_index == index?'made_bg':''}}" data-index="{{index}}" data-id="{{item.child[0].id}}" catchtap="{{web_buttonCanClick?'menuTap':''}}">
@@ -25,10 +29,11 @@
 				</view>
 			</block>
 		</view>
-
+		
+		
 		<view class="made_cont">
 			<view class="flexRowBetween made_tlt">
-				<view class="made_name">{{web_labelData[web_index].title}}</view>
+				<view class="made_name">{{web_labelData[web_index].title}}-{{web_labelData[web_index].child[web_currentId].title}}</view>
 			</view>	
 			<view class="made_case">
 				<block wx:for="{{web_mainData}}" wx:key="id">
@@ -41,7 +46,7 @@
 		</view>
 	</view>
 </view>
-
+<view style="height:110rpx"></view>
 <view class="navbar">
       <view class="navbar_item"  bindtap="intoPathRedi" data-path="/pages/mall/Index/index">
           <view class="nav_img" style="{{img}};width:44rpx;height:42rpx;background-position: -21px -94rpx;">

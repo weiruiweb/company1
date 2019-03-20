@@ -1,32 +1,34 @@
 /**index.wxss**/
 @import "../../../wxParse/wxParse.wxss"; 
 page{
-	width:100%;
-	min-height:100%;
+	width:100vw;
+	min-height:100vh;
 	background:#f5f5f5;
 }
 #sort{
 	background:#f5f5f5;
-	padding-top:35rpx;
+	height:100vh;
 }
-.search{margin:0rpx 24rpx 22rpx;}
+.search{padding:22rpx 24rpx 22rpx;position: fixed;background: #fff;height:5vh}
 .search input{
 	width:656rpx;
 	padding:0px 25rpx;
-	height:56rpx;
-	line-height:56rpx;
+	height:5vh;
+	line-height:5vh;
 	background:#e5e5e5;
 	border-radius:20rpx;
 	color:#979797;
 	font-size:24rpx;}
 .made_product{
-	margin-bottom:120rpx;
+
+	height:86vh
 }
 .made_sort{
 	width:27%;
 	text-align:center;
 	background:#fff;
-	min-height:100%;
+	position:fixed;
+	left:0
 }
 .made_cont{
 	width:70%;

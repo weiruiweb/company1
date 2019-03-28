@@ -1,50 +1,50 @@
 <!--sort wxml-->
-<view id="sort">
-	<view class="search">
-		<input placeholder="搜索商品名称" bindblur="search" data-key="item"></input>
+<view id="sort"  >
+
+	<view class="search" >
+		<input placeholder="搜索商品名称{{testtest}}" bindblur="search" data-key="item"></input>
 	</view>
 	<view style="width:100%;height:5vh;padding:22rpx 24rpx 22rpx;"></view>
 	
-	<view class="made_product" style="display:flex">
+	<view class="made_product" style="display:flex" bindtouchend="touchEnd">
 
 		<view style="width:27%;height:100%"></view>
 		
-		<view class="made_sort" style="overflow: scroll;">
+		<view class="made_sort" style="overflow: scroll;" >
 			<block wx:for="{{web_mainData}}" wx:key="id">
-				<view class="madeSort">
-					<view class="left_bar {{web_index == index?'made_bg':''}}" data-index="{{index}}" data-id="{{item.child[0].id}}" catchtap="{{web_buttonCanClick?'menuTap':''}}">
+				<view class="madeSort" style="transform:translateZ(0);">
+					<view class="left_bar {{web_right_mainData[web_nowIndex].parentid == item.id?'made_bg':''}}" data-index="{{index}}" data-id="{{item.child[0].id}}" catchtap="{{web_buttonCanClick?'menuTap':''}}">
 						<view class="lsort_LeftAll">
 							<view class="img_bg text1 active" style="{{fonts[4].font}}">{{item.title}}</view>
 						</view> 
-						
 						<view class="small_sort">
 							<view class="small_txt">
 								<block wx:for="{{web_mainData[index].child}}" wx:for-item="c_item" wx:for-index="c_index">
-									<text class="text2" catchtap="{{web_buttonCanClick?'menuTap':''}}"  data-id="{{c_item.id}}" data-index="{{index}}" style="{{fonts[2].font}};{{web_currentId == c_item.id?'color:#39bddf':''}}">{{c_item.title}}</text>
+									<text class="text2" catchtap="{{web_buttonCanClick?'menuTap':''}}"  data-index="{{c_item.index}}"  style="{{fonts[2].font}};{{web_right_mainData[web_nowIndex].id == c_item.id?'color:#39bddf':''}}">{{c_item.title}}{{c_item.index}}</text>
 								</block>
 							</view>
 						</view>
-
 					</view>	
 				</view>
 			</block>
 		</view>
 		
-		
-		<view class="made_cont">
-			<view style="height:86vh" wx:for="{{web_right_mainData}}" wx:key="id">
-				<view class="flexRowBetween made_tlt">
-					<view class="made_name">{{item.title}}</view>
-				</view>	
-				<view class="made_case">
-					<block wx:for="{{web_right_mainData[index].child}}" wx:for-item="c_item" wx:for-index="c_index">
-						<view class="made_item" bindtap="intoPath" data-path="/pages/mall/gongzhonghao/gongzhonghao?id={{item.id}}">
-							<image src="{{c_item.mainImg[0].url}}"></image>
-							<view class="product_name" style="{{fonts[2].font}}">{{c_item.title}}</view>
-						</view>
-					</block>
-				</view>
-			</view>
+		<view class="made_cont" id="test" style="transition:all 1s linear;"  bindtap="changeScrollDirect" bindlongtap="changeScrollDirect"  bindtouchend="changeScrollDirect">
+      <block wx:for="{{web_right_mainData}}" wx:key="id">
+        <view id="{{item.id}}" style="height:86vh;"  >
+          <view class="flexRowBetween made_tlt">
+            <view class="made_name">{{item.title}}</view>
+          </view> 
+          <view class="made_case">
+            <block wx:for="{{web_right_mainData[index].child}}" wx:for-item="c_item" wx:for-index="c_index">
+              <view class="made_item" bindtap="intoPath" data-path="/pages/mall/gongzhonghao/gongzhonghao?id={{item.id}}">
+                <image src="{{c_item.mainImg[0].url}}"></image>
+                <view class="product_name" style="{{fonts[2].font}}">{{c_item.title}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
 		</view>
 	</view>
 </view>

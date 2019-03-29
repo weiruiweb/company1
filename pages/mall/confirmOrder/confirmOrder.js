@@ -176,7 +176,7 @@ Page({
     if(findItem){
       self.data.pay.coupon.splice(findItem[0],1);
     }else{
-      if((self.data.price-self.data.couponTotalPrice)<findCoupon.standard){
+      if((self.data.price-self.data.couponTotalPrice)<findCoupon.condition){
         api.showToast('金额不达标','error');
         return;
       };
@@ -188,7 +188,8 @@ Page({
         var couponPrice = findCoupon.discount;
         console.log('findCoupon.discount',findCoupon.discount)
       }else if(findCoupon.type==2){
-        var couponPrice = findCoupon.discount*self.data.price;
+				
+        var couponPrice = parseFloat(self.data.price).toFixed(2) - parseFloat(findCoupon.discount/10*self.data.price).toFixed(2);
       };
       if(parseFloat(couponPrice)+parseFloat(self.data.couponTotalPrice)>parseFloat(self.data.price)){
         couponPrice = parseFloat(self.data.price).toFixed(2) - parseFloat(self.data.couponTotalPrice).toFixed(2);

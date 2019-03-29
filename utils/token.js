@@ -204,7 +204,7 @@ class Token {
                 };
                 console.log('postData',postData)
                 wx.request({
-                    url: 'https://api.solelycloud.com/api/public/index.php/api/v1/Base/ProgramToken/get',
+                    url: 'https://106.12.155.217/api/public/index.php/api/v1/Base/ProgramToken/get',
                     method:'POST',
                     data:postData,
                     success:function(res){
@@ -243,7 +243,7 @@ class Token {
                 password:wx.getStorageSync('login').password,
             }
             wx.request({
-                url: 'https://www.solelycloud.com/api/public/index.php/api/v1/Func/Common/loginByUp',
+                url: 'https://106.12.155.217/api/public/index.php/api/v1/Func/Common/loginByUp',
                 method:'POST',
                 data:postData,
                 success:function(res){

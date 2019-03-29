@@ -13,7 +13,7 @@ class Base{
         var that = this;
         getApp().globalData.buttonClick = true;
         //var baseRestUrl = 'https://www.solelycloud.com/api/public/index.php/api/v1/';
-        var baseRestUrl = 'https://api.solelycloud.com/api/public/index.php/api/v1/';
+        var baseRestUrl = 'https://106.12.155.217/api/public/index.php/api/v1/';
         var url=baseRestUrl + params.url;
         const callback = (res)=>{
 

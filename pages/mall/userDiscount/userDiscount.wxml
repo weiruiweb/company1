@@ -17,11 +17,11 @@
 				<image src="/images/discount4.jpg"></image>
 				 	<view class="ticket_cont">
 			   		<view class="discount_left">
-			   			¥<text>{{item.products[0].snap_product.discount}}</text>
+			   			¥<text>{{item.discount}}</text>
 			   		</view>
 			   		<view class="discount_center">
-			   			<view class="discount_txt1">{{item.products[0].snap_product.title}}</view>
-			   			<view class="discount_txt2">{{func.timestampToTime(item.products[0].snap_product.end_time)}}前有效</view>
+			   			<view class="discount_txt1">{{item.title}}</view>
+			   			<view class="discount_txt2">{{func.timestampToTime(item.invalid_time)}}前有效</view>
 			   		</view>
 				</view>
 			</view>
@@ -33,14 +33,14 @@
 			   <image src="/images/discount5.jpg"></image>
 			   <view class="ticket_cont">
 			   		<view class="discount_left discount_left1" style="width:40%">
-			   			<text>{{item.products[0].snap_product.discount}}</text>折
+			   			<text>{{item.discount}}</text>折
 			   		</view>
 			   		<view class="discount_center discount_center1" style="width:60%">
 			   			<view class="discount_txt1">
-							<view>{{item.products[0].snap_product.description}}</view>
+							<view>{{item.description}}</view>
 			   			</view>
 			   			<view class="discount_txt2">
-			   				<view>{{func.timestampToTime(item.products[0].snap_product.deadline)}}前限量领取</view>
+			   				<view>{{func.timestampToTime(item.invalid_time)}}前有效</view>
 			   			</view>
 			   		</view>
 			   </view>

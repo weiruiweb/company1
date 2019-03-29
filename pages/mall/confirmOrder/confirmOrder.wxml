@@ -91,20 +91,20 @@
 	<view style="font-size:28rpx">其他抵扣：{{web_pay.other?web_pay.other:'0'}}</view>
 </view>
 <block wx:for="{{web_couponData}}" wx:key="id" >
-	<view class="ticket flex" wx:if="{{item.type=='4'}}">
+	<view class="ticket flex" wx:if="{{item.type=='2'}}">
 	    <view class="ticket_bg">
 	    	<view class="font24 ticket_tlt">优惠券</view>
 	        <image src="/images/discount4.jpg"></image>
 	        <view class="ticket_cont">
 	            <view class="discount_left">
-	                <text>{{item.products[0].snap_product.discount}}</text>折
+	                <text>{{item.discount}}</text>折
 	            </view>
 	            <view class="discount_center discount_center1">
 	                <view class="discount_txt1">
-	                    <view>{{item.products[0].snap_product.description}}</view>
+	                    <view>{{item.description}}</view>
 	                </view>
 	                <view class="discount_txt2">
-	                    <view>{{func.timestampToTime(item.products[0].snap_product.end_time)}}前有效</view>
+	                    <view>{{func.timestampToTime(item.invalid_time)}}前有效</view>
 	                </view>
 	            </view>
 	            <view class="select_discount">
@@ -124,11 +124,11 @@
 	        <view class="ticket_cont">
 	            <view class="discount_left">
 	                ¥
-	                <text>{{item.products[0].snap_product.discount}}</text>
+	                <text>{{item.discount}}</text>
 	            </view>
 	            <view class="discount_center">
-	                <view class="discount_txt1">{{item.products[0].snap_product.description}}</view>
-	                <view class="discount_txt2">{{func.timestampToTime(item.products[0].snap_product.end_time)}}前有效</view>
+	                <view class="discount_txt1">{{item.description}}</view>
+	                <view class="discount_txt2">{{func.timestampToTime(item.invalid_time)}}前有效</view>
 	            </view>
 	            <view class="select_discount">
 		    		<view class="submit_info bg font24" data-id="{{item.id}}" data-count="{{item.discount}}" bindtap="useCoupon" style="width:140rpx;color:#666;font-size:24rpx;height:50rpx;line-height: 50rpx;">点击使用

@@ -10,7 +10,7 @@ Page({
     mainData:[],
     searchItem:{
       thirdapp_id:getApp().globalData.thirdapp_id,
-      type:3
+      type:1
     },
     isFirstLoadAllStandard:['getOrderData']
   },
@@ -31,7 +31,6 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.tokenFuncName = 'getMallToken';
     postData.searchItem = api.cloneForm(self.data.searchItem);
-    postData.searchItem.user_no = wx.getStorageSync('info').user_no;
     postData.order = {
       create_time:'desc'
     };
@@ -48,7 +47,7 @@ Page({
         web_mainData:self.data.mainData,
       });     
     };
-    api.orderGet(postData,callback);
+    api.UserCouponGet(postData,callback);
 
   },
 
@@ -71,9 +70,9 @@ Page({
       thirdapp_id:getApp().globalData.thirdapp_id,
     };
     if(num=='0'){
-      self.data.searchItem.type = '3';
+      self.data.searchItem.type = '1';
     }else if(num=='1'){
-      self.data.searchItem.type = '4';
+      self.data.searchItem.type = '2';
     };
     self.setData({
       web_mainData:[],

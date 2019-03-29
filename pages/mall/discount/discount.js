@@ -10,6 +10,7 @@ Page({
     mainData:[],
     searchItem:{
       thirdapp_id:getApp().globalData.mall_thirdapp_id,
+			type:1
     },
     isShowMore:false,
     img:"background:url('/images/small.png')",
@@ -62,7 +63,7 @@ Page({
     const postData = {
       tokenFuncName:'getMallToken',
       coupon_id:id,
-      pay:{score:10},
+      pay:{score:0},
       
     };
     console.log('postData',postData)
@@ -97,9 +98,9 @@ Page({
       thirdapp_id:getApp().globalData.mall_thirdapp_id,
     };
     if(num=='0'){
-      self.data.searchItem.type = '3';
+      self.data.searchItem.type = '1';
     }else if(num=='1'){
-      self.data.searchItem.type = '4';
+      self.data.searchItem.type = '2';
     }
     self.setData({
       web_mainData:[],

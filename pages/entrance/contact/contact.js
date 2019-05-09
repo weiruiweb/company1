@@ -26,7 +26,7 @@ Page({
     };
     postData.getBefore = {
       aboutData:{
-        tableName:'label',
+        tableName:'Label',
         searchItem:{
           title:['=',['联系我们']],
         },

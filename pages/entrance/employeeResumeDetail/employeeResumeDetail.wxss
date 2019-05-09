@@ -4,11 +4,13 @@ page{
 }
 .input_icon{
 	width:6%;
+	margin-right: 20rpx;
 }
 
 .input_icon image{
-	width:22rpx;
-	height:24rpx;
+	width:30rpx;
+	height:30rpx;
+	
 }
 .input_list1{
 	width:100%;

@@ -35,31 +35,29 @@
 
 
 
-### user表
+user表
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
 | nickname | varchar(255) | 微信昵称 |
 | openid | varchar(255)| 微信openid |
 | headImgUrl | varchar(9999) | 微信头像 |
-| primary_scope | int(255) | 权限级别：90平台管理员;60超级管理员;30管理员;10用户 |
-| user_type | itinyint(10) | 0,小程序用户;2,cms用户; |
-| user_no | varchar(255) | 用户编号 |
+| primary_scope| int(255) | 权限级别：90平台管理员;60超级管理员;30管理员;10用户 |
+| user_type| itinyint(10) | 0,小程序用户;2,cms用户; |
+| user_no| varchar(255)|用户编号|
 
 
-
-### user_info表
+user_info表
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
 | gender | tinyint(2) | 性别:1.男;2.女 |
+| level | varchar(30) |  所在国家名称 |
 | address | varchar(255) | 所在城市名称 |
 | phone | varchar(255) | 电话 |
-| level | varchar(30) | 员工级别 |
-| behavior | tinyint(2) | 1.开发2.销售3.运营4.人事 |
 
 
-### label表
+label表
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------  | 
@@ -70,7 +68,7 @@
 
 
 
-### article表
+article表
 
 | 字段 | 类型 | 说明 |
 | ------    |  :------:  | ------  | 
@@ -82,7 +80,7 @@
 
 
 
-### message表-留言(type=1)
+message表-留言(type=1)
 
 | 字段 | 类型 | 说明 |
 | ------    |  :------:  | ------  | 
@@ -93,7 +91,7 @@
 
 
 
-### log表
+log表
 
 | 字段 | 类型 | 说明 |
 | ------    |  :------:  | ------  | 
@@ -103,7 +101,7 @@
 
 
 
-### pay_log表
+pay_log表
 
 | 字段 | 类型 | 说明 |
 | ------    |  :------:  | ------  | 
@@ -121,7 +119,7 @@
 
 
 
-### coupon表
+coupon表
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -142,7 +140,7 @@
 
 
 
-### user_coupon表
+user_coupon表
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -151,9 +149,9 @@
 
 
 
-## 项目管理相关表
+##项目管理相关表
 
-### project表
+project表-update
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -163,7 +161,7 @@
 | phone | varchar(200) | 客户电话 |
 | description | varchar(255) | 项目描述 |
 | project_status | varchar(200) | 项目状态 |
-| pay_standard | varchar(200) | 项目付款说明 |
+| pay_standard | varchar(200) | 项目付款标准 |
 | content | text | 项目详情 |
 | period | varchar(200) | 项目工期 |
 | strat_time | bigint(13) | 开始开发时间 |
@@ -183,7 +181,7 @@
 
 
 
-### process表
+process表
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -198,12 +196,11 @@
 | content | text | 详情 |
 | description | varchar(255) | 描述 |
 | mainImg | text | 主图 |
-| file | text | 文件上传 |
 | project_no | varchar(255) | 关联project表 |
 
 
 
-### payment表
+payment表-new
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -213,7 +210,7 @@
 
 
 
-### client客户表
+client客户表-new
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -222,23 +219,22 @@
 | address | varchar(255) | 地址 |
 | mainImg | text | 主图 |
 | description | varchar(255) | 需求简介 |
-| step | tinyint(2) | 1.待联系，2.沟通中，3.已面访，4.签单 |
+| step | tinyint(2) | 1.待联系，2.沟通中，3.已面访，4.签单，5.失效 |
 | origin | tinyint(2) | 来源：1.58，2.百度，3.猪八戒，4.解放号，5.汇桔网 |
 | plan_time | bigint(13) | 计划回访时间 |
-| sales_manager | varchar(255) | 销售经理user_no |
 
 
 
-### conversation客户沟通表
+conversation客户沟通表-new
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
 | client_id | int(11) | 关联client表 |
-| description | varchar(255) | 沟通内容 | 
+| description | varchar(255) | 沟通内容 |
 
 
 
-### operation渠道客户表(有效客户自动保存到客户表)
+operation渠道客户表(有效客户自动保存到客户表)
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -247,14 +243,12 @@
 | address | varchar(255) | 地址 |
 | mainImg | text | 主图 |
 | description | varchar(255) | 需求简介 |
-| step | tinyint(2) | 1.有效,2.无效 |
+| step | tinyint(2) | 1.待确认,2.有效,3.无效 |
 | origin | tinyint(2) | 来源：1.58,2.百度,3.猪八戒,4.解放号,5.汇桔网 |
-| sales_manager | varchar(255) | 销售经理user_no |
-| day_time | varchar(50) | 日期 |
 
 
 
-### salesphone电话数据表
+salesphone电话数据表
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -266,7 +260,7 @@
 
 
 
-### salary工资条表
+salary工资条表-new
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -276,12 +270,10 @@
 | base | decimal(10,2) | 底薪 |
 | performance | decimal(10,2) | 绩效 |
 | basic_salary | decimal(10,2) | 基本薪资 |
-| reward | decimal(10,2) | 奖励金额 |
+| collect | decimal(10,2) | 收款 |
 | achievement | decimal(10,2) | 提成 |
 | late | decimal(10,2) | 迟到扣款 |
 | journal | decimal(10,2) | 日志扣款 |
-| per_reward | decimal(10,2) | 绩效奖励 |
-| per_punish | decimal(10,2) | 绩效扣除 |
 | leave | decimal(10,2) | 请假（天） |
 | absenteeism | decimal(10,2) | 旷工（天） |
 | attendance | decimal(10,2) | 实际出勤 |
@@ -290,21 +282,7 @@
 
 
 
-### salary_flow工资流水
-
-| 字段 | 类型 | 说明 |
-| ------    | ------  | ------ |
-| type | tinyint(2) | 1.奖励，2.扣款，3.绩效奖励，4.绩效扣除 |
-| score | int(11) | 绩效分 |
-| money | decimal(10,2) | 金额 |
-| description | varchar(255) | 说明 |
-| relation_id | int(11) | 关联salary |
-| relation_user | varchar(255) | 关联user表 |
-| record_time | int(11) | 记录时间 |
-
-
-
-### resume简历表
+resume简历表-new
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -314,8 +292,7 @@
 | mainImg | text | 头像 |
 | content | text | 工作经历 |
 | college | varchar(255) | 毕业院校以及专业 |
-| education | varchar(100) | 学历 |
-| passage_array | varchar(255) | 出生年月 |
+| birth | varchar(255) | 出生年月 |
 | phone | varchar(255) | 联系电话 |
 | origin | tinyint(2) | 1.智联2.公司要约3.boss直聘 |
 | behavior | tinyint(2) | 状态：1.待面试，2.已面试，3.已入职，4.未通过 |
@@ -323,7 +300,7 @@
 
 
 
-### statistics表-运营数据(type=1)
+statistics表-运营数据(type=1)
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -331,12 +308,11 @@
 | valid_num | int(11) | 有效客户 |
 | invalid_num | int(11) | 无效客户 |
 | cost | decimal(10,2) | 花费 |
-| day_time | varchar(50) | 日期 |
 | origin | tinyint(2) | 来源：1.58，2.百度，3.猪八戒，4.解放号，5.汇桔网 |
 
 
 
-### statistics表-HR数据(type=2)
+statistics表-HR数据(type=2)
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -347,18 +323,7 @@
 
 
 
-### daily表-日志-new
-
-| 字段 | 类型 | 说明 |
-| ------    | ------  | ------ | 
-| type | tinyint(2) | 1.日期2.内容 |
-| day_time | int(11) | 记录日期 |
-| content | varchar(500) | 内容 |
-| behavior | tinyint(2) | 1.合格2.超时 |
-
-
-
-### message表-外出记录(type=4)
+message表-外出记录(type=4)-update
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 
@@ -371,20 +336,7 @@
 
 
 
-### message表-请假(type=5)
-
-| 字段 | 类型 | 说明 |
-| ------    | ------  | ------ | 
-| keywords | varchar(255) | 时长 |
-| description | varchar(255) | 请假事由 |
-| class | tinyint(2) | 请假类型：1.病假,2.事假,3.调休,4.年假,5.婚假,6.丧假,7.产假 |
-| behavior | tinyint(2) | 审核状态：1.申请中,2.部门审核,3.人事审核,4.公司审核 |
-| passage1 | text | HR审核天数 |
-
-
-
-
-### message表-咨询管理(type=11)
+message表-咨询管理(type=5)-update
 
 | 字段 | 类型 | 说明 |
 | ------    | ------  | ------ | 

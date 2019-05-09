@@ -151,6 +151,23 @@ Page({
         behavior:4
       }
     };
+		if(self.data.mainData.behavior==3){
+		  postData.saveAfter =
+			[
+					{
+				  tableName:'Daily',
+				  FuncName:'add',
+				  data:{
+				    content:'外出返回',
+						thirdapp_id:22,
+						behavior:1
+				  }
+				}
+			] 
+			
+				
+			}
+		
     const callback = (data)=>{
       if(data.solely_code==100000){
         api.showToast('登记成功','none',1000,function(){
@@ -163,7 +180,7 @@ Page({
       }else{
         api.showToast(data.msg,'none',100)
       }
-      api.buttonCanClick(self,true)
+
     };
     api.messageUpdate(postData,callback);
   },
@@ -184,9 +201,11 @@ Page({
   getLocation(){
     const self=this;
     wx.getLocation({
-      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      type: 'wgs84', //返回可以用于wx.openLocation的经纬度
       success: function (res) {
+				console.log(res)
         if(res.errMsg=="getLocation:ok"){
+					api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLocation',self)
           self.data.submitData.passage1 = res.longitude
           self.data.submitData.passage2 = res.latitude
         };
@@ -195,7 +214,7 @@ Page({
         }); 
       }
     });
-    api.checkLoadAll(self.data.isFirstLoadAllStandard,'getLocation',self)
+    
   },
 
   intoPath(e){

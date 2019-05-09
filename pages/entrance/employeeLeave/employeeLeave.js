@@ -24,7 +24,7 @@ Page({
   onLoad() {
     const self = this;
     self.data.today = new Date(new Date().toLocaleDateString()).getTime();
-    console.log(self.data.selectData)
+    console.log(self.data.today)
     self.setData({
       web_index:self.data.index,
       web_today:self.data.today,

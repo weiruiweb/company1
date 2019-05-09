@@ -13,7 +13,8 @@ page{
 	background:#fff;
 }
 .registerList{
-	height:78rpx;
+	height:90rpx;
+	border-bottom:1px solid #e5e5e5
 }
 .register_tlt{
 	width:20%;
@@ -23,25 +24,26 @@ page{
 	width:80%;
 }
 .register_cont image{
-	width:140rpx;
-	height:160rpx;
+	width:200rpx;
+	height:200rpx;
 }
 .uplode{
 	width:76%;
 }
 .uolode_item{
-	width:140rpx;
-	height:160rpx;
-	border-radius:16rpx;
+	width:200rpx;
+	height:200rpx;
+	border-radius:10rpx;
 	background:#f4f4f4;
 	font-size:90rpx;
-	line-height:150rpx;
+	line-height:200rpx;
 	text-align:center;
 	margin-right:20rpx;
+	border:1px solid #e5e5e5;
 }
 .uplode_img{
-	width:140rpx;
-	height:160rpx;
+	width:200rpx;
+	height:200rpx;
 	margin-right:20rpx;
 }
 .uplode_img image{
@@ -51,4 +53,5 @@ page{
 .submit_info{
 	width:94%;
 	margin-top:200rpx;
+	border-radius: 10rpx;
 }

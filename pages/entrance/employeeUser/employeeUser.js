@@ -41,6 +41,8 @@ Page({
     api.userGet(postData,callback);
   },
 
+
+
   submit(e){
     const self = this;
     if(self.data.mainData.info.behavior==4){

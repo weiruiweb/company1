@@ -32,7 +32,7 @@ Page({
     };
     postData.getBefore = {
       partner:{
-        tableName:'label',
+        tableName:'Label',
         searchItem:{
           title:['=',['热招职位']],
         },
@@ -78,7 +78,7 @@ Page({
   intoMap(){
     const self = this;
     wx.getLocation({
-      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      type: 'wgs84', //返回可以用于wx.openLocation的经纬度
       success: function (res) {  //因为这里得到的是你当前位置的经纬度
         var latitude = res.latitude
         var longitude = res.longitude

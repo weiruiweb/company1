@@ -23,6 +23,13 @@ page{
 	width:12rpx;
 	height:20rpx;
 }
+.delete{
+	width:40rpx;
+	height:40rpx;
+	position:absolute;
+	right:-20rpx;
+	top:-20rpx;
+}
 .picker{
 	width:100%;
 }
@@ -38,10 +45,14 @@ textarea{
 }
 .input_icon{
 	width:6%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 1%;
 }
 .input_icon image {
-	width:22rpx;
-	height:24rpx;
+	width:30rpx;
+	height:30rpx;
 }
 .color2{
 	color:#222;

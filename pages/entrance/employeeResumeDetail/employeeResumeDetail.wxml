@@ -24,7 +24,7 @@
 	<view class="input_list1 font30 flex">
     <view class="input_icon"><image src="/images/partaner_icon3.png"></image></view>
 		<view class="input_before1" style="width:40%;">毕业院校及专业:</view>
-		<view class="input">{{web_mainData.description}}</view>
+		<view class="input">{{web_mainData.college}}</view>
 	</view>
   <view class="input_list1 font30 flex">
     <view class="input_icon"><image src="/images/icon12.png"></image></view>
@@ -32,56 +32,45 @@
     <view class="input">{{web_mainData.position[0].title}}</view>
   </view>
 
-  <view class="input_list1 font30 flex">
-    <view class="input_icon">
-      <image src="/images/icon13.png"></image>
-    </view>
-    <picker mode="date"  start="2000-01-01" end="2050-01-01" bindchange="bindDateChange" style="width:100%;">
-      <view class="picker flex">
-          <view class="input_before1 font28 flex" style="width:22%;">
-              出生日期:
-          </view>
-          <view class="things_right flexRowBetween font28" style="width:50%;">
-              <view class="thing1  flexRowBetween" style="width:24%;text-align: center;">
-                  <view class="font28"  style="text-align: center;width:100%;">{{web_mainData.passage_array[0]}}</view>
-              </view>
-              <view class="years font28 ">年</view>
-              <view class="thing1  flexRowBetween"  style="width:24%;text-align: center;">
-                  <view class="font28"  style="text-align: center;width:100%;">{{web_mainData.passage_array[1]}}</view>
-              </view>
-               <view class="years font28">月</view>
-              <view class="thing1  flexRowBetween"  style="width:24%;text-align: center;">
-                  <view class="font28" style="text-align: center;width:100%;">{{web_mainData.passage_array[2]}}</view>
-              </view>
-               <view class="years font28 ">日</view>
-          </view>
-      </view>
-    </picker>
+	<view class="input_list1 font30 flex">
+    <view class="input_icon"><image src="/images/icon12.png"></image></view>
+    <view class="input_before1">出生日期:</view>
+    <view class="input">{{web_mainData.passage_array[0]}}年{{web_mainData.passage_array[1]}}月{{web_mainData.passage_array[2]}}日</view>
   </view>
 
   <view class="font30" style="margin-top:20rpx;display:flex;">
     <view class="input_icon">
       <image src="/images/partaner_icon2.png"></image>
     </view>
-  	<view class="input_before1" style="width:26%;">工作经历:</view>
+  	<view class="input_before1" style="width:22%;color: #222;">工作经历:</view>
   </view>
   <view class="experence font28 color6">{{web_mainData.content}}</view>
-  <view class="uplode">
-        <view class="input_icon">
-          <image src="/images/icon15.png"></image>
-        </view>
-        <view class="input_before1 font30 color6" style="width:24%;">上传照片</view>
-        <view class="uplode_img">
-          <image src="{{web_mainData.mainImg[0].url}}"></image>
-      </view>
+  <view class="input_list1 font30 flex" style="border: none;">
+  	 <view class="input_icon">
+  	   <image src="/images/icon15.png"></image>
+  	 </view>
+  	 <view class="input_before1 font30 color2" style="width:24%;">上传照片</view>
   </view>
+
+        
+   <view class=" uplode flex" id="uploaderFiles">
+        <view class="uploder flexRowBetween">
+            <block  wx:for="{{web_mainData.mainImg}}" wx:key="{{index}}">
+                <view class="upload_box">
+                    <view class="uploader_item forgive_number" bindtap="previewImg" data-index="{{index}}" style="margin-right: 30rpx">
+                        <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" />  
+                    </view> 
+                </view>
+            </block>
+        </view>
+    </view>
   <view class="input_list1 font30 flex">
     <view class="input_icon"><image src="/images/icon16.png"></image></view>
     <view class="input_before1">处理结果:</view>
     <view class="input">
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array_behavior}}">
         <view class="interviwe flex">
-          <view class="picker">{{array_behavior[web_submitData.behavior]}}</view>
+          <view class="picker">{{array_behavior[web_index]}}</view>
           <view class="derection">
             <image src="/images/up.png"></image>
           </view>
@@ -91,7 +80,7 @@
   </view>
 </view>
 <view class="w710">
-  <textarea placeholder="备注" data-key="passage1" value="{{web_submitData.passage1}}" bindinput="changeBind"></textarea>
+  <textarea placeholder="备注" data-key="remark" value="{{web_submitData.remark}}" bindinput="changeBind"></textarea>
 </view>
 
 <form>

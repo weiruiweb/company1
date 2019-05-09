@@ -26,7 +26,7 @@
       优惠券
     </view>
   </view>
-  <view class="module_item"  bindtap="intoPath" data-path="/pages/mall/about/about">
+<!--  <view class="module_item"  bindtap="intoPath" data-path="/pages/mall/about/about">
     <view class="item_top">
      <view class="menu_icon1 scale" style="{{img}};background-position: -1px 0rpx;"></view>
     </view>
@@ -41,11 +41,9 @@
     <view  class="text" style="{{fonts[3].font}}">
       案例体验
     </view>
-  </view>
+  </view> -->
 
-</view>
 
-<view  class="module" style="width:70%;margin:0 auto">
   <view class="module_item" style="width:50%;"  data-path="/pages/mall/gongzhonghao/gongzhonghao?name=score" bindtap="intoPath">
     <view class="item_top">
      <view class="menu_icon1 scale" style="{{img}};background-position: -472px -198px;"></view>
@@ -65,9 +63,32 @@
 </view>
 <view class="service">
   <view class="service_tlt scale1" style="width:154px;height:40px;{{img}};background-position: -396px -148px;">
-    <text class="text1">服务类别</text>
+    <text class="text1">热门商品</text>
   </view>
-  <view class="service_cont" >
+	
+	<view class="madeContItem madeShow">
+		<block wx:for="{{web_skuData}}" wx:key="id">
+			<view class="shopping_item"  bindtap="intoPath" data-path="/pages/mall/detail/detail?id={{item.id}}&&is_group={{item.is_group}}">
+				<view class="shopping_img">
+					<image src="{{item.mainImg[0].url}}"></image>
+				</view>
+				<view class="shopping_name">
+					<text class="text1">{{item.title}}</text>
+					<text class="text2">{{item.description}}</text>
+					
+					<view class="flexRowBetween" style="align-items:center;height:30%;">
+						<view style="width:55%;"><text class="price">¥{{item.price}}</text></view>
+						<view class="edit_number" style="width:45%;display:flex;align-items:center;" data-index="{{index}}"  bindtap="addCart">
+							<view class="text" >{{item.sale_count}}件已售</view>
+							<view class="scale3" style="{{img}};width:44px;height:42px;background-position: -238px -94px;" ></view>
+						</view>
+					</view>
+				</view>	
+			</view>
+		</block>
+	</view>
+	</view>
+ <!-- <view class="service_cont" >
     <view class="service_left" data-path="/pages/mall/Sort/sort" bindtap="intoPathRedi">
       <view class="service_leftT">
        <text class="text1">微信小程序</text>
@@ -113,8 +134,9 @@
     <text>纯粹科技</text>
     <view class="more">了解更多 ></view>
   </view>
-</view>
-<view class="case">
+</view> -->
+<view style="width:100%;height:110rpx"></view>
+<!-- <view class="case">
   <view class="service_tlt scale1" style="width:154px;height:40px;{{img}};background-position: -396px -148px;">
     <text class="text1">案例展示</text>
   </view>
@@ -150,7 +172,7 @@
       </view>
     </view>
   </block>
-</view>
+</view> -->
 <view wx:if="{{web_isShowMore}}">
     <view class="loading_box flexCenter">
       <view class="loading3 loading3_1"></view>

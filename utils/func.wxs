@@ -22,10 +22,10 @@ var timestampToTime = function(timestamp) {
 
 var timestampToTimeTwo = function(timestamp) {
     
-    timestamp = parseInt(timestamp);
-    
+    timestamp = parseInt(timestamp)*1000;
+    console.log(getDate(timestamp).getFullYear())
     var format = getDate(timestamp).getFullYear()+'-'+(getDate(timestamp).getMonth()+1)+'-'+getDate(timestamp).getDate()+'  ';
-
+	
 
 
     return format;

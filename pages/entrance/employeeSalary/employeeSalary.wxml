@@ -47,7 +47,7 @@
         <view class="user_info font28 color3">
     		{{item.title}}
         </view>
-        <view class="font24 salary" style="color:#eb3434">¥{{item.passage6}}</view>
+        <view class="font24 salary" style="color:#eb3434">¥{{item.total}}</view>
         <view class="next_page flex">
 
           <image src="/images/next_page.jpg"></image>

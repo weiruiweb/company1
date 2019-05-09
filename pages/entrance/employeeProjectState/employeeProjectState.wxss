@@ -59,8 +59,8 @@ page{
 }
 .date{
 	height:90rpx;
-	border-top:solid 1px #ccc;
-	border-bottom:solid 1px #ccc;
+	border-top:solid 1px #e5e5e5;
+	border-bottom:solid 1px #e5e5e5;
 	display:flex;
 	align-items: center;
   	justify-content: center;
@@ -72,7 +72,7 @@ page{
 }
 .date_item{
 	height:70rpx;
-	border-right:solid 1px #ccc;
+	border-right:solid 1px #e5e5e5;
 	width:50%;
 	text-align:center;
 	display:flex;

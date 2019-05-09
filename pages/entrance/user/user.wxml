@@ -23,8 +23,8 @@
             </view>
         </view>
     </view>
-    <view class="sort_item flex" bindtap="submit" data-path="/pages/entrance/userProject/userProject">
-        <view class="item_box flex" style="border-left:solid 1px #bfbfbf;border-right:solid 1px #bfbfbf">
+    <view class="sort_item flex" style="border-left:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5" bindtap="submit" data-path="/pages/entrance/userProject/userProject">
+        <view class="item_box flex" >
             <view style="width:100%;">
                 <image src="/images/user_icon2.png"></image>
                 <view class="font28 color3">我的项目</view>
@@ -47,8 +47,8 @@
             </view>
         </view>
     </view>
-    <view class="sort_item flex" bindtap="intoPath" data-path="/pages/entrance/userResume/userResume">
-        <view class="item_box flex" style="border-left:solid 1px #bfbfbf;">
+    <view class="sort_item flex"  style="border-left:solid 1px #e5e5e5;" bindtap="intoPath" data-path="/pages/entrance/userResume/userResume">
+        <view class="item_box flex" >
             <view style="width:100%;">
                 <image src="/images/user_icon5.png"></image>
                 <view class="font28 color3">投递简历</view>

@@ -8,7 +8,6 @@ Page({
   data: {
     searchItem:{
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
-      menu_id:135,
     },
     startTime:'',
     isShowMore:false,
@@ -30,6 +29,7 @@ Page({
       api.clearPageIndex(self)
     };
     const postData = {};
+		postData.tokenFuncName = 'getEmployeeToken';
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = api.cloneForm(self.data.searchItem)
     postData.searchItem.relation_user = wx.getStorageSync('employeeInfo').user_no;
@@ -55,7 +55,7 @@ Page({
         web_isShowMore:self.data.isShowMore
       })
     };
-    api.articleGet(postData,callback);
+    api.salaryGet(postData,callback);
   },
 
 

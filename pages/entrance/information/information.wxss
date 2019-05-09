@@ -19,9 +19,9 @@ page{
 	border-bottom:solid 1px #21c3d4;
 }
 .product{
-	height:196rpx;
+	height:245rpx;
 	background:#fff;
-	border-radius: 20rpx;
+	border:none;
 	margin-top:20rpx;
 }
 .product_box{
@@ -40,7 +40,7 @@ page{
 .product_left image{
 	width:192rpx;
 	height:156rpx;
-	border-radius:20rpx;
+
 }
 .product_right{
 	width:67.5%;

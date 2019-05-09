@@ -24,7 +24,7 @@ Page({
     };
     postData.getBefore = {
       partner:{
-        tableName:'label',
+        tableName:'Label',
         searchItem:{
           title:['=',['公司规定']],
         },

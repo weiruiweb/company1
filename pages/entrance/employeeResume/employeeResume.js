@@ -10,14 +10,13 @@ Page({
     endTime:'',
     searchItem:{
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
-      type:10,
       user_type:0,
     },
     mainData:[],
     isShowMore:false,
     positionData:[],
     isFirstLoadAllStandard:['getMainData','getPositonData'],
-    array_behavior:['未处理','邀面试', '拒绝', '待定', '入职'],
+    array_behavior:['待面试', '已面试', '已入职', '未通过'],
   },
 
   onLoad(options){
@@ -29,6 +28,7 @@ Page({
 
   getMainData(isNew){
     const self = this;
+		api.buttonCanClick(self);
     if(isNew){
       api.clearPageIndex(self)
     };
@@ -76,7 +76,7 @@ Page({
       })
     
     };
-    api.messageGet(postData,callback);
+    api.resumeGet(postData,callback);
   },
 
   onReachBottom() {
@@ -99,8 +99,8 @@ Page({
     delete self.data.searchItem.behavior;
    
     self.setData({
-      web_startTime:'',
-      web_endTime:'',
+      web_date:'',
+
       web_index:'',
       web_indexOne:''
     });
@@ -109,18 +109,17 @@ Page({
 
   bindTimeChange: function(e) {
     const self = this;
-    var label = api.getDataSet(e,'type');
-    this.setData({
-      ['web_'+label]: e.detail.value
-    });
-    self.data[label+'stap'] = new Date(self.data.date+' '+e.detail.value).getTime()/1000;
-    if(self.data.endTimestap&&self.data.startTimestap){
-      self.data.searchItem.create_time = ['between',[self.data.startTimestap,self.data.endTimestap]];
-    }else if(self.data.startTimestap){
-      self.data.searchItem.create_time = ['>',self.data.startTimestap];
-    }else{
-      self.data.searchItem.create_time = ['<',self.data.endTimestap];
-    };
+		var date = e.detail.value;  
+		self.setData({
+			web_date:date
+		});
+		date = date.replace(/-/g,'/'); 
+		var startTimestamp = new Date(date).getTime()/1000;
+		var endTimestamp = startTimestamp+24*60*60-1;
+		
+		console.log(startTimestamp);
+		console.log(endTimestamp);
+		self.data.searchItem.create_time = ['between',[startTimestamp,endTimestamp]]
     self.getMainData(true);   
   },
 
@@ -132,7 +131,7 @@ Page({
     };
     postData.getBefore = {
       partner:{
-        tableName:'label',
+        tableName:'Label',
         searchItem:{
           title:['=',['热招职位']],
         },
@@ -165,11 +164,11 @@ Page({
     const self = this;
     console.log(parseInt(e.detail.value));
     var index = e.detail.value;
-    self.data.searchItem.behavior = parseInt(e.detail.value);
+    self.data.searchItem.behavior = parseInt(e.detail.value)+1;
     self.setData({
       web_index: e.detail.value
     });
-    self.getMainData(self)
+    self.getMainData(true)
   },
 
   positionChange(e) {
@@ -180,7 +179,7 @@ Page({
     self.setData({
       web_indexOne: e.detail.value
     });
-    self.getMainData(self)
+    self.getMainData(true)
   },
 
   intoPathRedi(e){

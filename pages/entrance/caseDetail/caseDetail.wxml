@@ -1,17 +1,15 @@
 <!--User.wxml-->
-<view class="banner">
-   <image src="{{web_mainData.mainImg[0].url}}"></image>   
+<view style="width:100%">
+   <image src="{{web_mainData.bannerImg[0].url}}" mode="widthFix" style="width:100%"></image>   
 </view>
-<view class="w710" style="height:100%;">
+<view  style="height:100%;">
 	<view class="state">
 		<view class="state_right">
 			<view class="state_right_box">
-				<view class="state_top flex">
-					<view class="font24 color3" style="width:65%;">{{web_mainData.title}}</view>
+				<view class="state_top">
+					<view class="font24 color3" style="text-align: center;height:80rpx;line-height:80rpx;">{{web_mainData.title}}</view>
 				</view>
-	
-			</view>
-			
+			</view>	
 		</view>
 	</view>
 </view>
@@ -21,13 +19,12 @@
             <view class="font32 color3">界面展示</view>
         </view>
         <view class="wx_detail flex">
-            <block  wx:for="{{web_mainData.bannerImg}}">  
+            <block  wx:for="{{web_mainData.bannerImg}}" wx:if="{{index>0}}">  
                 <view class="deatil_list">
-                    <image src="{{item.url}}" class="img-responsive" data-index='{{index}}' bindtap='previewImg'/>
+                    <image src="{{item.url}}" class="img-responsive" data-index='{{index}}' bindtap='previewImg' mode="widthFix"/>
                 </view>
             </block>
-        </view>
-         
+        </view>        
     </view>
 </view>
 

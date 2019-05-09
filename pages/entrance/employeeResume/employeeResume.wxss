@@ -130,7 +130,7 @@ page{
 	padding:0 3%;
 }
 .picker{
-	width:80%;
+
 	font-size:26rpx;
 }
 .derection{

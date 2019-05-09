@@ -66,12 +66,12 @@ swiper{
 }
 .banner{
 	width:100%;
-	height:400rpx;
+
 	overflow: hidden;
 }
 .banner image{
 	width:100%;
-	height:100%;
+
 }
 .state{
 	margin-top: 20rpx;
@@ -81,10 +81,10 @@ swiper{
 	height:100%;
 }
 .state_right_box{
-	width:94%;
-	padding:3%;
+	width:100%;
+
 	background:#fff;
-	border-radius: 20rpx;
+
 }
 .state_top{
 	margin-bottom:16rpx;
@@ -96,14 +96,14 @@ swiper{
 	border-radius: 16rpx;
 }
 .deatil_list{
-  width:50%;
+  width:100%;
   text-align:center;
   margin-bottom:20rpx
 }
 .deatil_list image{
-  width:360rpx;
-  height:645rpx;
-  margin:0 auto;
+  width:100%;
+
+
 }
 .wx_detail{
   flex-wrap:wrap;

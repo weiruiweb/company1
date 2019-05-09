@@ -11,7 +11,7 @@ App({
   },
 
   globalData: {
-    mall_thirdapp_id:2,
+    mall_thirdapp_id:23,
     exhibition_thirdapp_id:26,
     hair_thirdapp_id:24,
     hotel_thirdapp_id:27,

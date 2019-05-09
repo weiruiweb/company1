@@ -93,29 +93,36 @@ Page({
   },
 
 
-  getCaseData(isNew){
+  getCaseData(){
     var self = this;
-    if(isNew){
-      api.clearPageIndex(self)
-    };
     var postData = {};
-    postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      thirdapp_id:21
-    }
-    postData.searchItem.menu_id = ['in', self.data.menu_array]; 
+			thirdapp_id:getApp().globalData.solely_thirdapp_id
+		}
+  	postData.getBefore ={
+  		 	caseData:{
+  		    tableName:'Label',
+  		    searchItem:{
+  		      parentid:['in',[146]]
+  		    },
+  		    middleKey:'menu_id',
+  		    key:'id',
+  		    condition:'in',
+  			},
+  	};
     var callback = (res) => {
       if(res.info.data.length>0){
-        self.data.caseData.push.apply(self.data.caseData,res.info.data);
-        if(self.data.caseData.length>4){
-          self.data.caseData = self.data.caseData.slice(0,4) 
-        }
+        self.data.caseData.push.apply(self.data.caseData,res.info.data)
+				if(res.info.data.length>4){
+				  self.data.caseData = self.data.caseData.slice(0,4) 
+				}
       }
       api.checkLoadAll(self.data.isFirstLoadAllStandard,'getCaseData',self);
-      self.data.menu_array = [];
+  
+      
       self.setData({
-        web_menu_array:self.data.menu_array,
-        web_caseData:self.data.caseData
+        web_caseData:self.data.caseData,
+
       })
     };
     api.articleGet(postData, callback);
@@ -160,7 +167,7 @@ Page({
   intoMap(){
     const self = this;
     wx.getLocation({
-      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      type: 'wgs84', //返回可以用于wx.openLocation的经纬度
       success: function (res) {  //因为这里得到的是你当前位置的经纬度
         var latitude = res.latitude
         var longitude = res.longitude

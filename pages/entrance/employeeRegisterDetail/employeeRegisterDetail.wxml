@@ -28,18 +28,20 @@
       </view>
     </view>
     <view style="display:flex;margin-top:30rpx;">
-      <view class="font24 color6 register_tlt" style="width:24%;" >拍照片上传</view>
+      <view class="font24 color6 register_tlt" style="width:24%;" >拍照片</view>
       <view class="uplode color6 font28 flex">
         
-        <view class="uplode_img" wx:for="{{web_submitData.mainImg}}">
-          <image src="{{item.url}}"></image>
-        </view>
-        <view class="uolode_item"  bindtap="upLoadImg" wx:if="{{web_submitData.mainImg.length<3}}">
-          +
-        </view>
+        
       </view>
     </view>
-
+		<view style="display:flex;margin-top:30rpx;">
+			<view class="uplode_img" wx:for="{{web_submitData.mainImg}}">
+				<image src="{{item.url}}"></image>
+			</view>
+			<view class="uolode_item"  bindtap="upLoadImg" wx:if="{{web_submitData.mainImg.length<3}}">
+				+
+			</view>
+		</view>
 </view>
 
 

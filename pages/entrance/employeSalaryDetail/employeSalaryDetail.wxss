@@ -21,7 +21,11 @@ page{
 	color:#333;
 }
 .register_cont{
-	width:77%;
+	width:52%;
+}
+.more{
+	width:25%;
+	text-align: right;
 }
 .register_cont image{
 	width:140rpx;

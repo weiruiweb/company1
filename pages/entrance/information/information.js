@@ -19,7 +19,7 @@ Page({
     api.commonInit(self);
     self.data.getBefore = {
       caseData:{
-        tableName:'label',
+        tableName:'Label',
         searchItem:{
           title:['=',['企业动态']],
         },
@@ -74,7 +74,7 @@ Page({
     if(currentId==0){
       self.data.getBefore = {
         caseData:{
-          tableName:'label',
+          tableName:'Label',
           searchItem:{
             title:['=',['企业动态']],
           },
@@ -86,7 +86,7 @@ Page({
     }else if(currentId==1){
       self.data.getBefore = {
         caseData:{
-          tableName:'label',
+          tableName:'Label',
           searchItem:{
             title:['=',['合作须知']],
           },

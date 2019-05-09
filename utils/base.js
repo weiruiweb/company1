@@ -12,13 +12,14 @@ class Base{
     request(params) {
         var that = this;
         getApp().globalData.buttonClick = true;
-        //var baseRestUrl = 'https://www.solelycloud.com/api/public/index.php/api/v1/';
-        var baseRestUrl = 'https://106.12.155.217/api/public/index.php/api/v1/';
-        var url=baseRestUrl + params.url;
+        //var baseRestUrl = 'http://106.12.155.217/api/public/index.php/api/v1/';
+        var baseRestUrl = 'http://106.12.155.217/api/public/index.php/api/v1/';
+         var url=baseRestUrl + params.url;
         const callback = (res)=>{
-
-            that.request(params);   
-            
+            if(res){
+                params.data.refreshToken=false;
+            };
+            that.request(params);
         };
 
         if(params.data.tokenFuncName){
@@ -85,7 +86,7 @@ class Base{
             };
         };
         wx.uploadFile({
-            url: 'https://www.solelycloud.com/api/public/index.php/api/v1/Base/FtpFile/upload',
+            url: 'http://106.12.155.217/api/public/index.php/api/v1/Base/FtpFile/upload',
             filePath:filePath,
             name:name,
             formData:formData,

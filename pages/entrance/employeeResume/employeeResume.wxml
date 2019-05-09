@@ -1,45 +1,23 @@
 <view class="date font30">
     <view class="date_item">
-        <view style="width:45%;display:flex;align-items:center;">
+        
             <view class="date_left" style="color:#00c6f7;width:100%;">
-                <picker mode="date" value="{{web_startTime}}" data-type="startTime" bindchange="bindTimeChange" >
-                    <view style="display:flex;align-items:center;width:100%;height:100%;">
-                        <view style="width:85%;height:70rpx;">
+                <picker mode="date" value="{{web_date}}" data-type="date" bindchange="bindTimeChange" >
+                  
+                     
                             <view class="picker text">
-                              起始日期
+                              选择日期
                             </view>
-                            <view class="text  font22" >{{web_startTime}}</view>
-                        </view>
-                        <view style="width:15%;height:70rpx;align-items:center;">
-                            <image src="/images/up_icon2.jpg"></image>
-                        </view>
-                    </view> 
+                            <view class="text  font22" >{{web_date}}</view>
+                        
+                       
+                 
                 </picker>
                 
             </view>
             
-        </view> 
-    </view>
-    <view class="date_item">
-        <view style="width:45%;display:flex;align-items:center;">
-            <view class="date_left" style="color:#00c6f7;width:100%;">
-                <picker mode="date" value="{{web_endTime}}" data-type="web_endTime" bindchange="bindTimeChange" >
-                    <view style="display:flex;align-items:center;width:100%;height:100%;">
-                        <view style="width:85%;height:70rpx;">
-                            <view class="picker text">
-                              截至日期
-                            </view>
-                            <view class="text font22">{{web_endTime}}</view>
-                        </view>
-                        <view style="width:15%;height:70rpx;">
-                            <image src="/images/up_icon2.jpg"></image>
-                        </view>
-                    </view>
-                </picker>
-            </view>
-            
-        </view> 
-    </view>     
+        
+    </view>  
 </view>
 <view class="flex w710">
     <view class="input_list1 font30 flex">
@@ -76,19 +54,22 @@
                 </view>
             </view>
             <view class="resume_right">
-                <view class="font26 color6">{{item.title}}</view>
-                <view class="condition flex">
+                <view class="font26 color6" style="height:40rpx;line-height: 40rpx;">{{item.title}}</view>
+                <view class="condition flex" style="height:40rpx;line-height: 40rpx;">
                     <view class="flex condition_item">
                         <image src="/images/partaner_icon2.png"></image>
-                        <text class="font22 color6">{{item.description}}</text>
+                        <text class="font22 color6">{{item.college}}</text>
                     </view>
                 
                 </view>
-                <view class="font22 color6">
+                <view class="font22 color6" style="height:40rpx;line-height: 40rpx;">
                     应聘职位:<text>{{item.position[0].title}}</text>
                 </view>
+				<view class="font22 color6" style="height:40rpx;line-height: 40rpx;">
+				    投递时间:<text>{{item.create_time}}</text>
+				</view>
             </view>
         </view>
-        <view class="linear font24" style="position:absolute;top:20rpx;right:20rpx;font-size:30rpx;width:150rpx;height:46rpx;background-color:red;border-radius:30rpx;color:#fff;text-align:center" wx:if="{{item.behavior==0}}">未处理</view>
+        <view class="linear font24" style="position:absolute;top:20rpx;right:20rpx;font-size:30rpx;width:150rpx;height:46rpx;background-color:red;border-radius:30rpx;color:#fff;text-align:center" wx:if="{{item.behavior==1}}">未处理</view>
     </view>
 </block>

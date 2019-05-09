@@ -4,7 +4,7 @@ page{
 	background:#f4f4f4;
 }
 .employeeRegister{
-	height:100rpx;
+	
 	padding:0 2.6%;
 	width:94.8%;
 	border-radius:10rpx;
@@ -12,6 +12,10 @@ page{
 }
 .bgs{
 	background:#fff;
+}
+.view_height{
+	height:50rpx;
+	line-height: 50rpx;
 }
 .register{
 	width:116rpx;

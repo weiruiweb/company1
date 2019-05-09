@@ -128,6 +128,19 @@ class Api extends Base{
         };
         this.request(allParams);       
     }
+	
+	dailyUpdate(param,callback){
+	    var allParams ={
+	        url:'Common/Daily/update',
+	        type:'post',
+	        data:param,
+	        sCallback: function(data) {
+	            callback && callback(data);
+	        }
+	    };
+	    this.request(allParams);       
+	}
+	
 
     projectGet(param,callback){
         var allParams ={
@@ -176,7 +189,116 @@ class Api extends Base{
         };
         this.request(allParams);       
     }    
-
+	
+	resumeGet(param,callback){
+	    var allParams ={
+	        url:'Common/Resume/get',
+	        type:'post',
+	        data:param,
+	        sCallback: function(data) {
+	            callback && callback(data);
+	        }
+	    };
+	    this.request(allParams);       
+	}
+	
+	resumeDelete(param,callback){
+	    var allParams ={
+	        url:'Common/Resume/delete',
+	        type:'post',
+	        data:param,
+	        sCallback: function(data) {
+	            callback && callback(data);
+	        }
+	    };
+	    this.request(allParams);       
+	}
+	
+	resumeAdd(param,callback){
+	    var allParams ={
+	        url:'Common/Resume/add',
+	        type:'post',
+	        data:param,
+	        sCallback: function(data) {
+	            callback && callback(data);
+	        }
+	    };
+	    this.request(allParams);       
+	}
+	
+	resumeUpdate(param,callback){
+	    var allParams ={
+	        url:'Common/Resume/update',
+	        type:'post',
+	        data:param,
+	        sCallback: function(data) {
+	            callback && callback(data);
+	        }
+	    };
+	    this.request(allParams);       
+	}  
+	
+	salaryGet(param,callback){
+	    var allParams ={
+	        url:'Common/Salary/get',
+	        type:'post',
+	        data:param,
+	        sCallback: function(data) {
+	            callback && callback(data);
+	        }
+	    };
+	    this.request(allParams);       
+	}
+	
+	salaryFlowGet(param,callback){
+	    var allParams ={
+	        url:'Common/SalaryFlow/get',
+	        type:'post',
+	        data:param,
+	        sCallback: function(data) {
+	            callback && callback(data);
+	        }
+	    };
+	    this.request(allParams);       
+	}
+	
+	salaryDelete(param,callback){
+	    var allParams ={
+	        url:'Common/Salary/delete',
+	        type:'post',
+	        data:param,
+	        sCallback: function(data) {
+	            callback && callback(data);
+	        }
+	    };
+	    this.request(allParams);       
+	}
+	
+	salaryAdd(param,callback){
+	    var allParams ={
+	        url:'Common/Salary/add',
+	        type:'post',
+	        data:param,
+	        sCallback: function(data) {
+	            callback && callback(data);
+	        }
+	    };
+	    this.request(allParams);       
+	}
+	
+	salaryUpdate(param,callback){
+	    var allParams ={
+	        url:'Common/Salary/update',
+	        type:'post',
+	        data:param,
+	        sCallback: function(data) {
+	            callback && callback(data);
+	        }
+	    };
+	    this.request(allParams);       
+	}  
+	
+	
 
     processGet(param,callback){
         var allParams ={

@@ -28,9 +28,7 @@ Page({
   onLoad(options) {
     const self = this;
     api.commonInit(self);
-    if(options.name){
-      self.data.searchItem.thirdapp_id = 21
-    };
+    
     self.data.id = options.id;
     self.getMainData();
   },

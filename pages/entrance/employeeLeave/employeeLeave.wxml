@@ -25,7 +25,7 @@
 
         <view class="color6 font28 flexRowBetween choose_time_box">
           <view class="type_cont flexRowBetween">
-            <picker mode="date" value="{{web_startDate}}" start="{{func.timestampToTimeTwo(web_today)}}" end="2050-09-01" bindchange="changeStartDate" class="flex">
+            <picker mode="date" value="{{web_startDate}}" start="{{func.timestampToTimeTwo(web_today/1000)}}" end="2050-09-01" bindchange="changeStartDate" class="flex">
               <view class="picker_in flexRowBetween">
                 <view class="picker_cont flex" style="width:80%;">{{web_startDate}}</view>
                 <image src="/images/icon@2x.png"></image>
@@ -45,7 +45,7 @@
 
         <view class="color6 font28 flexRowBetween choose_time_box">
           <view class="type_cont flexRowBetween">
-            <picker mode="date" value="{{web_endDate}}" start="{{func.timestampToTimeTwo(web_today)}}" end="2050-09-01" bindchange="changeEndDate" class="flex">
+            <picker mode="date" value="{{web_endDate}}" start="{{func.timestampToTimeTwo(web_today/1000)}}" end="2050-09-01" bindchange="changeEndDate" class="flex">
               <view class="picker_in flexRowBetween">
                 <view class="picker_cont flex" style="width:80%;">{{web_endDate}}</view>
                 <image src="/images/icon@2x.png"></image>

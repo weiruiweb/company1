@@ -13,54 +13,68 @@
 	<view class="input_list1 flex" style="justify-content:flex-start">
    <view class="input_icon"><image src="/images/partaner_icon4.png"></image></view>
 		<text class="font30 input_before1">性别:</text>
-		<view data-value="1" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:100rpx;align-items:center">
+		<view data-value="1" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:40rpx;align-items:center">
 			<image src="{{web_submitData.gender=='1'?'/images/male_a.png':'/images/male.jpg'}}" style="width:40rpx;height:40rpx;margin-right:10rpx;" ></image>
       		<view class="font28" style="{{web_submitData.gender=='1'?'color:#21c3d4':''}}">男</view>
 		</view>
    		
-		<view data-value="0" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:80rpx;align-items:center">
-			<image src="{{web_submitData.gender=='0'?'/images/female_a.jpg':'/images/female.jpg'}}" style="width:40rpx;height:40rpx;margin-right:10rpx" ></image>
-      		<view class="font28" style="{{web_submitData.gender=='0'?'color:#21c3d4':''}}">女</view>
+		<view data-value="2" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:80rpx;align-items:center">
+			<image src="{{web_submitData.gender=='2'?'/images/female_a.jpg':'/images/female.jpg'}}" style="width:40rpx;height:40rpx;margin-right:10rpx" ></image>
+      		<view class="font28" style="{{web_submitData.gender=='2'?'color:#21c3d4':''}}">女</view>
 		</view>
 	</view>
 
 	<view class="input_list1 flex" style="justify-content:flex-start">
     <view class="input_icon"><image src="/images/icon12.png"></image></view>
 		<view class="font30 input_before1" style="width:22%;">投递来源:</view>
-		<view class="flexRowCenter" data-value="0" style="width:22%" data-key="class" bindtap="changeBind">
-			<image src="{{web_submitData.class=='0'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:30rpx;height:30rpx;margin-right:10rpx;" ></image>
-      		<view style="font-size:15px">智联</view>
+		<view class="flexRowCenter" data-value="1" style="width:22%" data-key="origin" bindtap="changeBind">
+			<image src="{{web_submitData.origin=='1'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:30rpx;height:30rpx;margin-right:10rpx;" ></image>
+      		<view style="font-size:14px">智联</view>
 		</view>
    		
-		<view class="flexRowCenter" data-value="1" style="width:26%"  data-key="class" bindtap="changeBind">
-			<image src="{{web_submitData.class=='1'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:30rpx;height:30rpx;margin-right:10rpx" ></image>
-      		<view style="font-size:15px">公司邀约</view>
+		<view class="flexRowCenter" data-value="2" style="width:26%"  data-key="origin" bindtap="changeBind">
+			<image src="{{web_submitData.origin=='2'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:30rpx;height:30rpx;margin-right:10rpx" ></image>
+      		<view style="font-size:14px">公司邀约</view>
 		</view>
 
-		<view data-value="2" style="width:31%"  data-key="class" bindtap="changeBind" class="flexRowCenter">
-			<image src="{{web_submitData.class=='2'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:30rpx;height:30rpx;margin-right:10rpx" ></image>
-      		<view style="font-size:15px">BOSS直聘</view>
+		<view data-value="2" style="width:31%"  data-value="3"  data-key="origin" bindtap="changeBind" class="flexRowCenter">
+			<image src="{{web_submitData.origin=='3'?'/images/mall_select_active.jpg':'/images/select.png'}}" style="width:30rpx;height:30rpx;margin-right:10rpx" ></image>
+      		<view style="font-size:14px">BOSS直聘</view>
 		</view>
 	</view>
 
-
+	<view class="input_list1 font30 flex">
+	   <view class="input_icon"><image src="/images/partaner_icon3.png"></image></view>
+	   <picker bindchange="educationChange" value="{{index}}"  range="{{educationData}}" style="width:100%;">
+	     <view class="picker flex">
+	       <view class="input_before1 font30 flex" style="width:22%;">
+	         学历:
+	       </view>
+	       <view class="things_right flexRowBetween font28" style="width:70%;">
+	         <view class="thing1  flexRowBetween">
+	             <view class="font28"  style="text-align: center;width:100%;">{{educationData[web_index1]?educationData[web_index1]:'请选择学历'}}</view>
+	         </view>
+	       </view>
+	     </view>
+	   </picker>
+	 </view>
 
 	<view class="input_list1 font30 flex">
     <view class="input_icon"><image src="/images/partaner_icon3.png"></image></view>
-		<view class="input_before1" style="width:40%;">毕业院校及专业:</view>
-		<input placeholder="请输入毕业院校及专业" data-key="description" bindblur="changeBind" value="{{web_submitData.description}}"></input>
+		<view class="input_before1 font30" style="width:40%;">毕业院校及专业:</view>
+		<input placeholder="请输入毕业院校及专业" data-key="college" bindblur="changeBind" value="{{web_submitData.college}}"></input>
 	</view>
 
  <view class="input_list1 font30 flex">
     <view class="input_icon"><image src="/images/icon10.png"></image></view>
     <picker bindchange="PositionChange" value="{{index}}"  range="{{web_positionData}}" range-key ="title" style="width:100%;">
       <view class="picker flex">
-        <view class="input_before1 font28 flex" style="width:22%;">
+        <view class="input_before1 font30 flex" style="width:22%;">
           投递职位:
         </view>
         <view class="things_right flexRowBetween font28" style="width:70%;">
           <view class="thing1  flexRowBetween">
-              <view class="font28"  style="text-align: center;width:100%;">{{web_positionData[web_index].title}}</view>
+              <view class="font28"  style="text-align: center;width:100%;">{{web_positionData[web_index].title?web_positionData[web_index].title:'请选择要投递的职位'}}</view>
           </view>
         </view>
       </view>
@@ -73,7 +87,7 @@
     </view>
     <picker mode="date"  start="1970-01-01" end="2019-01-01" bindchange="bindDateChange" style="width:100%;">
       <view class="picker flex">
-          <view class="input_before1 font28 flex" style="width:22%;">
+          <view class="input_before1 font30 flex" style="width:22%;">
               出生日期:
           </view>
           <view class="things_right flexRowBetween font28" style="width:50%;">
@@ -93,44 +107,41 @@
       </view>
     </picker>
   </view>
-
-  <view class="font30" style="margin-top:20rpx;display:flex;">
-    <view class="input_icon">
-      <image src="/images/partaner_icon2.png"></image>
-    </view>
-  	<view class="input_before1 color2" style="width:26%;">工作经历:</view>
-  	<textarea placeholder="请输入工作经历" data-key="content" bindblur="changeBind" value="{{web_submitData.content}}"></textarea>
+  <view class="input_list1 font30 flex" style="border: none;">
+	 <view class="input_icon">
+	   <image src="/images/partaner_icon2.png"></image>
+	 </view>
+	 <view class="input_before1 color2 font30" style="width:26%;">工作经历:</view>  
+  </view>
+  <textarea class="font28" style="width:93%" placeholder="请输入工作经历" data-key="content" bindblur="changeBind" value="{{web_submitData.content}}"></textarea>
+  <view class="input_list1 font30 flex" style="border: none;">
+  	 <view class="input_icon">
+  	   <image src="/images/icon15.png"></image>
+  	 </view>
+  	 <view class="input_before1 font30 color2" style="width:24%;">上传照片</view>
   </view>
 
-  <view class="w710"  style="margin-top: 50rpx;display:flex;" >
-        <view class="input_icon">
-          <image src="/images/icon15.png"></image>
-        </view>
-        <view class="input_before1 font30 color2" style="width:24%;">上传照片</view>
-        <view class="w710 uplode flex" id="uploaderFiles">
+        
+   <view class=" uplode flex" id="uploaderFiles">
         <view class="uploder flexRowBetween">
             <block  wx:for="{{web_submitData.mainImg}}" wx:key="{{index}}">
                 <view class="upload_box">
-                    <view class = 'circle left-circle' style="{{rotate}}"></view>
-                    <view class = 'circle right-circle'></view>
-                    <view class="uploader_item forgive_number" bindtap="previewImage" id="{{item.url}}">
-                        <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" />
-                        <view class="color1 font32 percent flex" wx:if="{{percent <=99}}" >
-                            <view class="percent_number" style="text-align:center;">{{percent}}%</view>
-                        </view>
+                    <view class="uploader_item forgive_number"  style="margin-right: 30rpx;position:relative">
+                        <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}"/>   
+						 <image src="/images/deleteImg.png" class="delete" bindtap="delete" style="width:40rpx;height:40rpx;" data-index="{{index}}"></image>
                     </view> 
                 </view>
             </block>
-            <view  class="uploader_item" bindtap="upLoadImg" wx:if="{{web_submitData.mainImg.length<1}}">
+            <view  class="uploader_item" bindtap="upLoadImg" wx:if="{{web_submitData.mainImg.length<3}}">
                 <image src="/images/upload.png"></image>
             </view>
         </view>
     </view>
-  </view>
+
 
 </view>
 
-<form bindsubmit="formIdAdd" report-submit="true">
+<form bindsubmit="{{web_buttonCanClick?'formIdAdd':''}}" report-submit="true">
   <button  form-type="submit" style="line-height:80rpx;margin-top:100rpx;" class="submit_info" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}">提交</button>
 </form>
 

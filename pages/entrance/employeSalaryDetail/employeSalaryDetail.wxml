@@ -1,96 +1,141 @@
+<wxs src="../../../utils/func.wxs" module="func" />
 <view class="w710">
   <view class="employeeRegister bgs">
-    <view class="flexRowBetween registerList">
+    <view class="flex registerList">
       <view class="font28 color6 register_tlt">姓名</view>
       <view class="register_cont color6 font28">
-        {{web_mainData.userInfo[0].name}}
+        {{web_mainData.user.name}}
       </view>
     </view>
-    <view class="flexRowBetween registerList" style="background-color:#f4f4f4">
+    <view class="flex registerList" style="background-color:#f4f4f4">
       <view class="font28 color6 register_tlt">职位</view>
       <view class="register_cont color6 font28">
-        {{web_mainData.small_title}}
+        {{web_mainData.position}}
       </view>
     </view>
-    <view class="flexRowBetween registerList">
+    <view class="flex registerList">
       <view class="font28 color6 register_tlt">底薪</view>
       <view class="register_cont color6 font28">
-        {{web_mainData.description}}
+        {{web_mainData.base}}
       </view>
     </view>
-    <view class="flexRowBetween registerList" style="background-color:#f4f4f4">
+		<view class="flex registerList"  style="background-color:#f4f4f4">
+		  <view class="font28 color6 register_tlt">绩效</view>
+		  <view class="register_cont color6 font28">
+		    {{web_mainData.performance }}
+		  </view>
+		</view>
+    <view class="flex registerList" >
       <view class="font28 color6 register_tlt">基本薪资</view>
       <view class="register_cont color6 font28">
-        {{web_mainData.contactPhone}}
+        {{web_mainData.basic_salary}}
       </view>
     </view>
-    <view class="flexRowBetween registerList">
+		<view class="flex registerList" style="background-color:#f4f4f4">
+		  <view class="font28 color6 register_tlt">奖励金额</view>
+		  <view class="register_cont color6 font28">
+		    {{web_mainData.reward}}
+		  </view>
+			<view class="color_other font28 more" bindtap="showReward"  wx:if="{{web_mainData.reward>0}}">{{!web_isShowReward?'查看详情':'收起'}}</view>
+		</view>
+		<view class="flex registerList" wx:for="{{web_flowData}}" wx:if="{{item.money>0&&web_isShowReward}}">
+		  <view class="font28 color6 register_tlt">{{item.description}}</view>
+		  <view class="register_cont color6 font28">
+		    {{item.money}}
+		  </view>
+			<view class="color6 font28 more"> {{func.timestampToTimeTwo(item.record_time)}}</view>
+		</view>
+		<view class="flex registerList" >
+		  <view class="font28 color6 register_tlt">扣除金额</view>
+		  <view class="register_cont color6 font28">
+		    {{web_mainData.punish}}
+		  </view>
+			<view class="color_other font28 more" bindtap="showPunish" wx:if="{{web_mainData.punish<0}}">{{!web_isShowPunish?'查看详情':'收起'}}</view>
+		</view>
+		<view class="flex registerList" wx:for="{{web_flowData}}" wx:if="{{item.money<0&&web_isShowPunish}}">
+		  <view class="font28 color6 register_tlt">{{item.description}}</view>
+		  <view class="register_cont color6 font28">
+		    {{item.money}}
+		  </view>
+			<view class="color6 font28 more"> {{func.timestampToTimeTwo(item.record_time)}}</view>
+		</view>
+		<view class="flex registerList" style="background-color:#f4f4f4">
+		  <view class="font28 color6 register_tlt">绩效扣除</view>
+		  <view class="register_cont color6 font28 ">
+		    {{web_mainData.per_punish}}
+		  </view>
+		</view>
+		<view class="flex registerList" >
+		  <view class="font28 color6 register_tlt">绩效奖励</view>
+		  <view class="register_cont color6 font28 ">
+		    {{web_mainData.per_reward}}
+		  </view>
+		</view>
+		
+    <!-- <view class="flex registerList">
       <view class="font28 color6 register_tlt">收款</view>
       <view class="register_cont color6 font28">
-        {{web_mainData.passage1}}
+        {{web_mainData.collect}}
       </view>
     </view>
-    <view class="flexRowBetween registerList" style="background-color:#f4f4f4">
+    <view class="flex registerList" style="background-color:#f4f4f4">
       <view class="font28 color6 register_tlt">提成</view>
       <view class="register_cont color6 font28">
-        {{web_mainData.passage2}}
+        {{web_mainData.achievement}}
       </view>
     </view>
-    <view class="flexRowBetween registerList">
+    <view class="flex registerList">
       <view class="font28 color6 register_tlt">迟到扣款</view>
       <view class="register_cont color6 font28 color_other">
-        {{web_mainData.listorder}}
+        {{web_mainData.late}}
       </view>
     </view>
-    <view class="flexRowBetween registerList" style="background-color:#f4f4f4">
+    <view class="flex registerList" style="background-color:#f4f4f4">
       <view class="font28 color6 register_tlt">日志扣款</view>
       <view class="register_cont color6 font28 color_other">
-        {{web_mainData.view_count}}
+        {{web_mainData.journal}}
       </view>
     </view>
-    <view class="flexRowBetween registerList">
+    <view class="flex registerList">
       <view class="font28 color6 register_tlt">绩效扣款</view>
       <view class="register_cont color6 font28 color_other">
-        {{web_mainData.passage7}}
+        {{web_mainData.per_punish}}
       </view>
     </view>
-    <view class="flexRowBetween registerList" style="background-color:#f4f4f4">
+    <view class="flex registerList" style="background-color:#f4f4f4">
       <view class="font28 color6 register_tlt">绩效奖励</view>
       <view class="register_cont color6 font28 ">
-        {{web_mainData.passage8}}
+        {{web_mainData.per_reward}}
       </view>
     </view>
-    <view class="flexRowBetween registerList">
+    <view class="flex registerList">
       <view class="font28 color6 register_tlt">请假(天)</view>
       <view class="register_cont color6 font28">
-        {{web_mainData.passage3}}
+        {{web_mainData.leave}}
       </view>
     </view>
-    <view class="flexRowBetween registerList" style="background-color:#f4f4f4">
+    <view class="flex registerList" style="background-color:#f4f4f4">
       <view class="font28 color6 register_tlt">旷工</view>
       <view class="register_cont color6 font28">
-        {{web_mainData.passage4}}
+        {{web_mainData.absenteeism}}
       </view>
     </view>
-    <view class="flexRowBetween registerList">
+    <view class="flex registerList">
       <view class="font28 color6 register_tlt">其他</view>
       <view class="register_cont color6 font28">
-        <view class="content ql-editor">
-            <import src="../../../wxParse/wxParse.wxml"/>
-            <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
-        </view>
+        {{web_mainData.other}}
       </view>
     </view>
-    <view class="flexRowBetween registerList" style="background-color:#f4f4f4">
+    <view class="flex registerList" style="background-color:#f4f4f4">
       <view class="font28 color6 register_tlt">实际出勤</view>
       <view class="register_cont color6 font28">
-        {{web_mainData.passage5}}天
+        {{web_mainData.attendance}}天
       </view>
-    </view>
-    <view class="flexRowBetween registerList">
+    </view> -->
+    <view class="flex registerList">
       <view class="font28 color6 register_tlt">总计</view>
       <view class="register_cont color6 font28 color_other">
-        ¥{{web_mainData.passage6}}
+        ¥{{web_mainData.total}}
       </view>
     </view>
   </view>

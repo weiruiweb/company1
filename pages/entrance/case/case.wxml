@@ -7,12 +7,18 @@
 </view>
 <view class="menu_cont w710 bg1" style="{{is_show?'top:0':''}}">
   <view class="w710">
-
+			<view class=" font30" style="text-align: center;color:#21c3d4;height:80rpx;line-height: 80rpx;">行业</view>
       <view class="menu_all flex">
         <block wx:for="{{web_labelData}}" wx:key="id" >
           <view class="menu_item font26 color6"  bindtap="this_choose"  data-id="{{item.id}}"  style="{{func.inArray(item.id,web_menu_array)!=-1?'border-bottom:1px solid #21c3d4;color:#21c3d4':''}}">{{item.title}}</view> 
         </block>
       </view>
+			<view class=" font30" style="text-align: center;color:#21c3d4;height:80rpx;line-height: 80rpx;">类型</view>
+			<view class="menu_all flex">
+			  <block wx:for="{{web_labelDataTwo}}" wx:key="id" >
+			    <view class="menu_item font26 color6"  bindtap="this_chooseTwo"  data-id="{{item.id}}"  style="{{func.inArray(item.id,web_menu_arrayTwo)!=-1?'border-bottom:1px solid #21c3d4;color:#21c3d4':''}}">{{item.title}}</view> 
+			  </block>
+			</view>
   </view>
   <view class="menu_click flex" bindtap="menu_hidden">
     <image src="/images/up1.png"></image>
@@ -20,7 +26,7 @@
 </view>
 <view class="w710 index_product flexRowBetween">
   <block wx:for="{{web_mainData}}" wx:key="id">
-    <view class="recommend_left" bindtap="intoPath" data-path="/pages/entrance/caseDetail/caseDetail?id={{item.id}}&&name=case">
+    <view class="recommend_left" bindtap="intoPath" data-path="/pages/entrance/caseDetail/caseDetail?id={{item.id}}">
         <image src="{{item.mainImg[0].url}}"></image>
         <view class="product_name font28">{{item.title}}</view>
     </view>

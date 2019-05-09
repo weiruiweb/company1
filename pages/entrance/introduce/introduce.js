@@ -32,7 +32,7 @@ Page({
     };
     postData.getBefore ={
      caseData:{
-        tableName:'label',
+        tableName:'Label',
         searchItem:{
           title:['=',['公司介绍']],
         },

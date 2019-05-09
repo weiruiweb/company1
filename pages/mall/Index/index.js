@@ -10,6 +10,7 @@ Page({
     caseData:[],
     isShowMore:false,
     isFirstLoadAllStandard:['getMainData'],
+		skuData:[]
   },
 
 
@@ -27,10 +28,12 @@ Page({
     if(scene){
        const callback=(res)=>{
         self.getMainData();
+				self.getSkuData()
       };
       api.parentAdd('getMallToken',scene,callback); 
     }else{
       self.getMainData();
+			self.getSkuData()
     }
    
   },
@@ -68,6 +71,32 @@ Page({
     };
     api.articleGet(postData,callback);
   },
+	
+	 getSkuData(){
+	  const self = this;
+	  const postData = {};
+	  postData.paginate = self.data.paginate;
+	  postData.searchItem = {
+	    thirdapp_id:getApp().globalData.mall_thirdapp_id
+	  };
+	  const callback = (res)=>{
+	    if(res.info.data.length>0){
+	      self.data.skuData.push.apply(self.data.skuData,res.info.data);
+				if(res.info.data.length>4){
+				  self.data.skuData = self.data.skuData.slice(0,4) 
+				}
+	    }else{
+	      self.data.isLoadAll = true;
+	      self.data.isShowMore = false;
+	    };
+	    api.checkLoadAll(self.data.isFirstLoadAllStandard,'getMainData',self);
+	    self.setData({
+	      web_skuData:self.data.skuData,
+	      web_isShowMore:self.data.isShowMore
+	    })  
+	  };
+	  api.skuGet(postData,callback);
+	},
 
   onShareAppMessage(res){
     const self = this;

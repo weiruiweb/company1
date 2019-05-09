@@ -67,7 +67,7 @@
 
 <view class="w710" style="height:100%;margin-top:20rpx;">
 	<block wx:for="{{web_mainData}}" wx:key="id">
-		<view class="state" bindtap="intoPath" data-path="/pages/entrance/userProjectState1/userProjectState1?id={{item.id}}">
+		<view class="state" bindtap="intoPath" data-path="/pages/entrance/employeeProjectState1/employeeProjectState1?id={{item.id}}">
 			<view class="state_cont flex">
 				<view class="state_left flex">
 					<view class="circle"></view>

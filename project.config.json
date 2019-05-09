@@ -15,6 +15,8 @@
 	"appid": "wx4c16a5493b7fff43",
 	"projectname": "company1",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -33,7 +35,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 86,
+			"current": 76,
 			"list": [
 				{
 					"id": 0,
@@ -492,10 +494,11 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 76,
 					"name": "薪资详情",
 					"pathName": "pages/entrance/employeSalaryDetail/employeSalaryDetail",
-					"query": "id=127"
+					"query": "id=6",
+					"scene": null
 				},
 				{
 					"id": -1,
@@ -557,6 +560,7 @@
 					"id": -1,
 					"name": "商品分类",
 					"pathName": "pages/mall/Sort/sort",
+					"query": "",
 					"scene": null
 				}
 			]

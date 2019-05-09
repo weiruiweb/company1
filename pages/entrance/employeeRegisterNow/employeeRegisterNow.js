@@ -40,7 +40,7 @@ Page({
         self.messageAdd(); 
     }else{
       api.buttonCanClick(self,true);
-      api.showToast('请补全信息','none');
+      api.showToast('请填写外出缘由','none');
       
     };
   },

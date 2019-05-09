@@ -26,19 +26,14 @@ Page({
     };
     const c_callback = (res) =>{
       if(res){
-        if(res.info.data[0].phone.length == 0){
-          api.showToast('请补全信息','none',2000,function(){
-          api.pathTo('/pages/entrance/userInfor/userInfor','redi')
-        });
-        return;
-        }; 
+       
         const postData={};
         postData.tokenFuncName='getEntranceToken';
         postData.paginate = api.cloneForm(self.data.paginate);
         postData.searchItem = {
           thirdapp_id:getApp().globalData.solely_thirdapp_id,
           client_no:wx.getStorageSync('entrance_info').user_no,
-          user_type:['in',[0,1,2]]
+          
         };
         const callback =(res)=>{
           if(res.info.data.length>0){

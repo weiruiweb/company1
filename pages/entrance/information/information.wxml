@@ -18,7 +18,7 @@
                 <view class="product_right flexRowBetween">
                     <view class="product_detail">
                         <view class="font30 product_top">{{item.title}}</view>
-                        <view class="font26 color6 product_center">{{item.description}}</view>
+                        <view class="font26 color6 product_center"></view>
                         <view class="font24 color9 product_top">
                            {{item.create_time}}
                         </view>

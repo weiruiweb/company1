@@ -36,7 +36,7 @@ Page({
     };
     postData.getBefore = {
       partner:{
-        tableName:'label',
+        tableName:'Label',
         searchItem:{
           title:['=',['出色伙伴']],
         },

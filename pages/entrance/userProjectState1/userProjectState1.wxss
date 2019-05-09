@@ -37,4 +37,5 @@ page{
 	border-radius: 20rpx;
 	background:#f2f2f2;
 	padding:3%;
+	overflow: auto;
 }

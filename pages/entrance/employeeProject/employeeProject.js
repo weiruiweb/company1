@@ -50,14 +50,15 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       thirdapp_id:getApp().globalData.solely_thirdapp_id,
+			user_type:['in',[1,2]]
     };
-    /*console.log(self.data.userData.info.behavior)
+    console.log(self.data.userData.info.behavior)
     if(self.data.userData.info.behavior==2){
       postData.searchItem.sales_manager = self.data.userData.user_no
     };
     if(self.data.userData.info.behavior==3){
       postData.searchItem.project_manager = self.data.userData.user_no
-    };*/
+    };
     const callback =(res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);

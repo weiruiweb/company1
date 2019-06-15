@@ -13,7 +13,7 @@
 	<view class="input_list1 flex" style="justify-content:flex-start">
     <view class="input_icon"><image src="/images/partaner_icon4.png"></image></view>
 		<text class="font30 input_before1">性别:</text>
-		<view class="input font26">{{web_mainData.gender ==0?'女':'男'}}</view>
+		<view class="input font26">{{web_mainData.gender ==2?'女':'男'}}</view>
 	</view>
 
 	<view class="input_list1 flex" style="justify-content:flex-start">

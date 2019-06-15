@@ -41,7 +41,34 @@ Page({
     api.userGet(postData,callback);
   },
 
-
+	test(){
+		const self = this;
+		const postData = {};
+		postData.tokenFuncName = 'getEmployeeToken';
+		postData.data={
+			create_time:1560570949,
+			behavior:1
+		};
+		postData.searchItem = {
+			id:2818
+		};
+		postData.searchItem.user_no = wx.getStorageSync('employeeInfo').user_no;
+		postData.saveAfter = [{
+		  tableName:'Daily',
+		  FuncName:'update',
+		  searchItem:{
+		    id:2817
+		  },
+		  data:{
+		    create_time:1560570949
+		  }
+		}]
+		const callback = (res)=>{
+		  
+		  
+		};
+		api.dailyUpdate(postData,callback);
+	},
 
   submit(e){
     const self = this;
